@@ -1,0 +1,21 @@
+{
+  "annotation-create": {
+    "button": "[data-testid=\"annotation-create-button\"]",
+    "modal": "[data-testid=\"annotation-create-modal\"]",
+    "name-input": "[data-testid=\"annotation-create-name-input\"]",
+    "abbreviation-input": "[data-testid=\"annotation-create-abbreviation-input\"]",
+    "taxonomy-type-select": "[data-testid=\"annotation-create-taxonomy-type-select\"]",
+    "color-picker": "[data-testid=\"annotation-create-color-picker\"]",
+    "cancel-button": "[data-testid=\"annotation-create-cancel-button\"]",
+    "submit-button": "[data-testid=\"annotation-create-submit-button\"]"
+  },
+  "annotation-export": {
+    "button": "[data-testid=\"annotation-export-button\"]"
+  },
+  "annotation-table": {
+    "root": "[data-testid=\"annotation-table\"]"
+  },
+  "annotation-update": {
+    "button": "[data-testid=\"annotation-update-button\"]"
+  }
+}

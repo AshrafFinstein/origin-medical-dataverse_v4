@@ -1,0 +1,39 @@
+{
+  "epic-search": {
+    "button": "[data-testid=\"epic-search-button\"]",
+    "modal": "[data-testid=\"epic-search-modal\"]",
+    "input": "[data-testid=\"epic-search-input\"]",
+    "submit-button": "[data-testid=\"epic-search-submit-button\"]",
+    "results-table": "[data-testid=\"epic-search-results-table\"]"
+  },
+  "epic-delete": {
+    "session-requests-button": "[data-testid=\"epic-delete-session-requests-button\"]",
+    "modal": "[data-testid=\"epic-delete-modal\"]",
+    "cancel-button": "[data-testid=\"epic-delete-cancel-button\"]",
+    "confirm-button": "[data-testid=\"epic-delete-confirm-button\"]"
+  },
+  "epic-create": {
+    "button": "[data-testid=\"epic-create-button\"]",
+    "modal": "[data-testid=\"epic-create-modal\"]",
+    "name-input": "[data-testid=\"epic-create-name-input\"]",
+    "description-input": "[data-testid=\"epic-create-description-input\"]",
+    "cancel-button": "[data-testid=\"epic-create-cancel-button\"]",
+    "submit-button": "[data-testid=\"epic-create-submit-button\"]"
+  },
+  "epic-table": {
+    "root": "[data-testid=\"epic-table\"]"
+  },
+  "delete-session": {
+    "requests-modal": "[data-testid=\"delete-session-requests-modal\"]",
+    "requests-table": "[data-testid=\"delete-session-requests-table\"]"
+  },
+  "reject-delete": {
+    "request-modal": "[data-testid=\"reject-delete-request-modal\"]"
+  },
+  "reject-request": {
+    "session-name-input": "[data-testid=\"reject-request-session-name-input\"]",
+    "reason-input": "[data-testid=\"reject-request-reason-input\"]",
+    "cancel-button": "[data-testid=\"reject-request-cancel-button\"]",
+    "confirm-button": "[data-testid=\"reject-request-confirm-button\"]"
+  }
+}

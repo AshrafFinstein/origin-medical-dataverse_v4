@@ -1,0 +1,8 @@
+{
+  "ce-edit": {
+    "form": "[data-testid=\"ce-edit-form\"]"
+  },
+  "ce-comment": {
+    "textarea": "[data-testid=\"ce-comment-textarea\"]"
+  }
+}

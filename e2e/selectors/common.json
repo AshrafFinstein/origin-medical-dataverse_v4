@@ -1,0 +1,81 @@
+{
+  "header-logo": {
+    "root": "[data-testid=\"header-logo\"]"
+  },
+  "header-masters": {
+    "link": "[data-testid=\"header-masters-link\"]"
+  },
+  "header-logout": {
+    "button": "[data-testid=\"header-logout-button\"]"
+  },
+  "logout-modal": {
+    "root": "[data-testid=\"logout-modal\"]"
+  },
+  "logout-cancel": {
+    "button": "[data-testid=\"logout-cancel-button\"]"
+  },
+  "logout-confirm": {
+    "button": "[data-testid=\"logout-confirm-button\"]"
+  },
+  "master-tabs": {
+    "root": "[data-testid=\"master-tabs\"]"
+  },
+  "master-tab": {
+    "label": "[data-testid=\"master-tab-label\"]",
+    "taxonomy": "[data-testid=\"master-tab-taxonomy\"]",
+    "annotation": "[data-testid=\"master-tab-annotation\"]",
+    "session-label": "[data-testid=\"master-tab-session-label\"]",
+    "structure-group": "[data-testid=\"master-tab-structure-group\"]",
+    "user-group": "[data-testid=\"master-tab-user-group\"]",
+    "session-codes": "[data-testid=\"master-tab-session-codes\"]",
+    "role-permissions": "[data-testid=\"master-tab-role-permissions\"]",
+    "users": "[data-testid=\"master-tab-users\"]"
+  },
+  "role-permission": {
+    "create-button": "[data-testid=\"role-permission-create-button\"]",
+    "table": "[data-testid=\"role-permission-table\"]",
+    "create-modal": "[data-testid=\"role-permission-create-modal\"]",
+    "create-name-input": "[data-testid=\"role-permission-create-name-input\"]",
+    "create-cancel-button": "[data-testid=\"role-permission-create-cancel-button\"]",
+    "create-submit-button": "[data-testid=\"role-permission-create-submit-button\"]",
+    "update-button": "[data-testid=\"role-permission-update-button\"]"
+  },
+  "ra-video": {
+    "list": "[data-testid=\"ra-video-list\"]",
+    "player": "[data-testid=\"ra-video-player\"]"
+  },
+  "`ra-video": {
+    "thumbnail-${index}`": "[data-testid=\"`ra-video-thumbnail-${index}`\"]"
+  },
+  "ra-play": {
+    "button": "[data-testid=\"ra-play-button\"]"
+  },
+  "ra-pause": {
+    "button": "[data-testid=\"ra-pause-button\"]"
+  },
+  "ra-loop": {
+    "toggle": "[data-testid=\"ra-loop-toggle\"]"
+  },
+  "ra-playback": {
+    "speed-button": "[data-testid=\"ra-playback-speed-button\"]"
+  },
+  "ra-fullscreen": {
+    "button": "[data-testid=\"ra-fullscreen-button\"]"
+  },
+  "ra-comment": {
+    "toggle-button": "[data-testid=\"ra-comment-toggle-button\"]",
+    "textarea": "[data-testid=\"ra-comment-textarea\"]"
+  },
+  "`ce-section": {
+    "legend-${section.index}`": "[data-testid=\"`ce-section-legend-${section.index}`\"]",
+    "visibility-checkbox-${section.index}`": "[data-testid=\"`ce-section-visibility-checkbox-${section.index}`\"]"
+  },
+  "`ce-measurement": {
+    "toggle-${section.index}-${measurement.index}`": "[data-testid=\"`ce-measurement-toggle-${section.index}-${measurement.index}`\"]",
+    "visibility-${section.index}-${measurement.index}`": "[data-testid=\"`ce-measurement-visibility-${section.index}-${measurement.index}`\"]",
+    "unreliable-${section.index}-${measurement.index}`": "[data-testid=\"`ce-measurement-unreliable-${section.index}-${measurement.index}`\"]"
+  },
+  "`ce-assessment": {
+    "option-${section.index}-${assessment.index}-${name}`": "[data-testid=\"`ce-assessment-option-${section.index}-${assessment.index}-${name}`\"]"
+  }
+}

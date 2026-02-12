@@ -1,0 +1,16 @@
+{
+  "label-create": {
+    "button": "[data-testid=\"label-create-button\"]",
+    "modal": "[data-testid=\"label-create-modal\"]",
+    "name-input": "[data-testid=\"label-create-name-input\"]",
+    "abbreviation-input": "[data-testid=\"label-create-abbreviation-input\"]",
+    "cancel-button": "[data-testid=\"label-create-cancel-button\"]",
+    "submit-button": "[data-testid=\"label-create-submit-button\"]"
+  },
+  "label-export": {
+    "button": "[data-testid=\"label-export-button\"]"
+  },
+  "label-table": {
+    "root": "[data-testid=\"label-table\"]"
+  }
+}

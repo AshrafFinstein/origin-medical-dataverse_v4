@@ -1,0 +1,38 @@
+{
+  "dl-visualization": {
+    "lock-button": "[data-testid=\"dl-visualization-lock-button\"]",
+    "unlock-button": "[data-testid=\"dl-visualization-unlock-button\"]"
+  },
+  "dl-annotation": {
+    "button": "[data-testid=\"dl-annotation-button\"]"
+  },
+  "dl-invert": {
+    "color-checkbox": "[data-testid=\"dl-invert-color-checkbox\"]"
+  },
+  "dl-marker": {
+    "mode-toggle-button": "[data-testid=\"dl-marker-mode-toggle-button\"]"
+  },
+  "dl-delete": {
+    "annotation-modal": "[data-testid=\"dl-delete-annotation-modal\"]",
+    "annotation-no-button": "[data-testid=\"dl-delete-annotation-no-button\"]",
+    "annotation-yes-button": "[data-testid=\"dl-delete-annotation-yes-button\"]"
+  },
+  "dl-unsaved": {
+    "changes-modal": "[data-testid=\"dl-unsaved-changes-modal\"]",
+    "discard-button": "[data-testid=\"dl-unsaved-discard-button\"]",
+    "save-button": "[data-testid=\"dl-unsaved-save-button\"]",
+    "before-qc-modal": "[data-testid=\"dl-unsaved-before-qc-modal\"]",
+    "before-qc-dont-save-button": "[data-testid=\"dl-unsaved-before-qc-dont-save-button\"]",
+    "before-qc-save-button": "[data-testid=\"dl-unsaved-before-qc-save-button\"]"
+  },
+  "dl-label": {
+    "menu": "[data-testid=\"dl-label-menu\"]",
+    "menu-search-input": "[data-testid=\"dl-label-menu-search-input\"]",
+    "menu-apply-button": "[data-testid=\"dl-label-menu-apply-button\"]"
+  },
+  "dl-copy": {
+    "annotation-modal": "[data-testid=\"dl-copy-annotation-modal\"]",
+    "annotation-cancel-button": "[data-testid=\"dl-copy-annotation-cancel-button\"]",
+    "annotation-replace-button": "[data-testid=\"dl-copy-annotation-replace-button\"]"
+  }
+}

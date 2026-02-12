@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npx playwright install)",
+      "Bash(npm test:*)",
+      "Bash(start /B npm run dev)",
+      "Bash(timeout:*)",
+      "Bash(curl:*)",
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "Bash(npm run generate-tests:stats:*)",
+      "Bash(npx ts-node:*)"
+    ]
+  }
+}

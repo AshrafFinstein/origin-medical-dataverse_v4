@@ -1,0 +1,386 @@
+
+Running 16 tests using 1 worker
+
+  ✘   1 tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:25:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1549: Verify File name visible after selection when user selects a valid JSON file (7.3s)
+  ✘   2 tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:40:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1550: Verify Multiple files listed when user selects multiple JSON files (30.1s)
+  ✘   3 tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:55:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1551: Verify Remove icon visible when file names are listed (7.0s)
+  ✘   4 tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:70:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1552: Verify Remove selected file when files are displayed (7.1s)
+  ✘   5 tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:85:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1553: Verify Correct file name displayed when file with specific name is selected (7.2s)
+  ✘   6 tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:100:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1554: Verify File names readable when list of files displayed (6.9s)
+  ✘   7 tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:115:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1555: Verify Immediate reflection in UI when file is selected (30.1s)
+  ✘   8 tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:130:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1556: Verify File name persists during navigation when files are listed (30.1s)
+  ✘   9 tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:144:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1557: Verify Replace file when a file is already selected (30.1s)
+  ✘  10 tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:159:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1558: Verify No file selected when user does not select any file (30.1s)
+  ✘  11 tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:174:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1559: Verify Unsupported file type ignored when user selects non-JSON file (30.3s)
+  ✘  12 tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:189:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1560: Verify Large number of files when 50+ files selected (30.2s)
+  ✘  13 tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:204:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1561: Verify Keyboard accessibility for remove when file list focused (30.2s)
+  ✘  14 tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:218:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1562: Verify Visual alignment when file list displayed (7.4s)
+  ✘  15 tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:233:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1563: Verify Very long file name when file name exceeds 100 characters (30.1s)
+  ✘  16 tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:250:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1564: Verify Very long file name when file name exceeds 100 characters (30.1s)
+
+
+  1) tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:25:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1549: Verify File name visible after selection when user selects a valid JSON file 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mtrue[39m
+    Received: [31mfalse[39m
+
+      33 |     // Verify element visibility
+      34 |     const isVisible = await sessionPage.verifyElementVisible('session-create-button');
+    > 35 |     expect(isVisible).toBe(true);
+         |                       ^
+      36 |
+      37 |     await page.waitForLoadState('domcontentloaded');
+      38 |   });
+        at C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:35:23
+
+    Error Context: ..\test-results\tests-analytics-URS-DV-AN--0f756-r-selects-a-valid-JSON-file\error-context.md
+
+  2) tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:40:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1550: Verify Multiple files listed when user selects multiple JSON files 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: page.selectOption: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('[data-testid="session-status-select"]')[22m
+
+
+       at pages\base.page.ts:45
+
+      43 |
+      44 |   async selectOption(selector: string, value: string) {
+    > 45 |     await this.page.selectOption(selector, value);
+         |                     ^
+      46 |   }
+      47 |
+      48 |   async check(selector: string) {
+        at SessionPage.selectOption (C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\pages\base.page.ts:45:21)
+        at SessionPage.selectFromDropdown (C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\pages\session.page.ts:499:18)
+        at C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:49:23
+
+    Error Context: ..\test-results\tests-analytics-URS-DV-AN--24d08-selects-multiple-JSON-files\error-context.md
+
+  3) tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:55:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1551: Verify Remove icon visible when file names are listed 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mtrue[39m
+    Received: [31mfalse[39m
+
+      63 |     // Verify element visibility
+      64 |     const isVisible = await sessionPage.verifyElementVisible('session-create-button');
+    > 65 |     expect(isVisible).toBe(true);
+         |                       ^
+      66 |
+      67 |     await page.waitForLoadState('domcontentloaded');
+      68 |   });
+        at C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:65:23
+
+    Error Context: ..\test-results\tests-analytics-URS-DV-AN--a743b--when-file-names-are-listed\error-context.md
+
+  4) tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:70:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1552: Verify Remove selected file when files are displayed 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mtrue[39m
+    Received: [31mfalse[39m
+
+      78 |     // Verify element visibility
+      79 |     const isVisible = await sessionPage.verifyElementVisible('session-create-button');
+    > 80 |     expect(isVisible).toBe(true);
+         |                       ^
+      81 |
+      82 |     await page.waitForLoadState('domcontentloaded');
+      83 |   });
+        at C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:80:23
+
+    Error Context: ..\test-results\tests-analytics-URS-DV-AN--57443-le-when-files-are-displayed\error-context.md
+
+  5) tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:85:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1553: Verify Correct file name displayed when file with specific name is selected 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mtrue[39m
+    Received: [31mfalse[39m
+
+      93 |     // Verify element visibility
+      94 |     const isVisible = await sessionPage.verifyElementVisible('session-create-button');
+    > 95 |     expect(isVisible).toBe(true);
+         |                       ^
+      96 |
+      97 |     await page.waitForLoadState('domcontentloaded');
+      98 |   });
+        at C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:95:23
+
+    Error Context: ..\test-results\tests-analytics-URS-DV-AN--58b0b-h-specific-name-is-selected\error-context.md
+
+  6) tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:100:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1554: Verify File names readable when list of files displayed 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mtrue[39m
+    Received: [31mfalse[39m
+
+      108 |     // Verify element visibility
+      109 |     const isVisible = await sessionPage.verifyElementVisible('session-create-button');
+    > 110 |     expect(isVisible).toBe(true);
+          |                       ^
+      111 |
+      112 |     await page.waitForLoadState('domcontentloaded');
+      113 |   });
+        at C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:110:23
+
+    Error Context: ..\test-results\tests-analytics-URS-DV-AN--4231c-hen-list-of-files-displayed\error-context.md
+
+  7) tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:115:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1555: Verify Immediate reflection in UI when file is selected 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: page.selectOption: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('[data-testid="session-status-select"]')[22m
+
+
+       at pages\base.page.ts:45
+
+      43 |
+      44 |   async selectOption(selector: string, value: string) {
+    > 45 |     await this.page.selectOption(selector, value);
+         |                     ^
+      46 |   }
+      47 |
+      48 |   async check(selector: string) {
+        at SessionPage.selectOption (C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\pages\base.page.ts:45:21)
+        at SessionPage.selectFromDropdown (C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\pages\session.page.ts:499:18)
+        at C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:124:23
+
+    Error Context: ..\test-results\tests-analytics-URS-DV-AN--25edf-in-UI-when-file-is-selected\error-context.md
+
+  8) tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:130:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1556: Verify File name persists during navigation when files are listed 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: page.waitForSelector: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('[data-testid="session-table"]') to be visible[22m
+
+
+       at pages\base.page.ts:120
+
+      118 |   // Wait helpers
+      119 |   async waitForSelector(selector: string, options?: { timeout?: number; state?: 'visible' | 'hidden' | 'attached' | 'detached' }) {
+    > 120 |     await this.page.waitForSelector(selector, options ?? {});
+          |                     ^
+      121 |   }
+      122 |
+      123 |   async waitForText(text: string, options?: { timeout?: number }) {
+        at SessionPage.waitForSelector (C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\pages\base.page.ts:120:21)
+        at SessionPage.waitForSessionTable (C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\pages\session.page.ts:419:16)
+        at C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:139:23
+
+    Error Context: ..\test-results\tests-analytics-URS-DV-AN--3d5f2-ation-when-files-are-listed\error-context.md
+
+  9) tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:144:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1557: Verify Replace file when a file is already selected 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: page.selectOption: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('[data-testid="session-status-select"]')[22m
+
+
+       at pages\base.page.ts:45
+
+      43 |
+      44 |   async selectOption(selector: string, value: string) {
+    > 45 |     await this.page.selectOption(selector, value);
+         |                     ^
+      46 |   }
+      47 |
+      48 |   async check(selector: string) {
+        at SessionPage.selectOption (C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\pages\base.page.ts:45:21)
+        at SessionPage.selectFromDropdown (C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\pages\session.page.ts:499:18)
+        at C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:153:23
+
+    Error Context: ..\test-results\tests-analytics-URS-DV-AN--40d7d--a-file-is-already-selected\error-context.md
+
+  10) tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:159:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1558: Verify No file selected when user does not select any file 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: page.selectOption: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('[data-testid="session-status-select"]')[22m
+
+
+       at pages\base.page.ts:45
+
+      43 |
+      44 |   async selectOption(selector: string, value: string) {
+    > 45 |     await this.page.selectOption(selector, value);
+         |                     ^
+      46 |   }
+      47 |
+      48 |   async check(selector: string) {
+        at SessionPage.selectOption (C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\pages\base.page.ts:45:21)
+        at SessionPage.selectFromDropdown (C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\pages\session.page.ts:499:18)
+        at C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:168:23
+
+    Error Context: ..\test-results\tests-analytics-URS-DV-AN--7bd6c-er-does-not-select-any-file\error-context.md
+
+  11) tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:174:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1559: Verify Unsupported file type ignored when user selects non-JSON file 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: page.selectOption: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('[data-testid="session-status-select"]')[22m
+
+
+       at pages\base.page.ts:45
+
+      43 |
+      44 |   async selectOption(selector: string, value: string) {
+    > 45 |     await this.page.selectOption(selector, value);
+         |                     ^
+      46 |   }
+      47 |
+      48 |   async check(selector: string) {
+        at SessionPage.selectOption (C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\pages\base.page.ts:45:21)
+        at SessionPage.selectFromDropdown (C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\pages\session.page.ts:499:18)
+        at C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:183:23
+
+    Error Context: ..\test-results\tests-analytics-URS-DV-AN--b52bc--user-selects-non-JSON-file\error-context.md
+
+  12) tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:189:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1560: Verify Large number of files when 50+ files selected 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: page.selectOption: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('[data-testid="session-status-select"]')[22m
+
+
+       at pages\base.page.ts:45
+
+      43 |
+      44 |   async selectOption(selector: string, value: string) {
+    > 45 |     await this.page.selectOption(selector, value);
+         |                     ^
+      46 |   }
+      47 |
+      48 |   async check(selector: string) {
+        at SessionPage.selectOption (C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\pages\base.page.ts:45:21)
+        at SessionPage.selectFromDropdown (C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\pages\session.page.ts:499:18)
+        at C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:198:23
+
+    Error Context: ..\test-results\tests-analytics-URS-DV-AN--cbec6-iles-when-50-files-selected\error-context.md
+
+  13) tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:204:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1561: Verify Keyboard accessibility for remove when file list focused 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: page.waitForSelector: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('[data-testid="session-table"]') to be visible[22m
+
+
+       at pages\base.page.ts:120
+
+      118 |   // Wait helpers
+      119 |   async waitForSelector(selector: string, options?: { timeout?: number; state?: 'visible' | 'hidden' | 'attached' | 'detached' }) {
+    > 120 |     await this.page.waitForSelector(selector, options ?? {});
+          |                     ^
+      121 |   }
+      122 |
+      123 |   async waitForText(text: string, options?: { timeout?: number }) {
+        at SessionPage.waitForSelector (C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\pages\base.page.ts:120:21)
+        at SessionPage.waitForSessionTable (C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\pages\session.page.ts:419:16)
+        at C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:213:23
+
+    Error Context: ..\test-results\tests-analytics-URS-DV-AN--ea247-move-when-file-list-focused\error-context.md
+
+  14) tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:218:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1562: Verify Visual alignment when file list displayed 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mtrue[39m
+    Received: [31mfalse[39m
+
+      226 |     // Verify element visibility
+      227 |     const isVisible = await sessionPage.verifyElementVisible('session-create-button');
+    > 228 |     expect(isVisible).toBe(true);
+          |                       ^
+      229 |
+      230 |     await page.waitForLoadState('domcontentloaded');
+      231 |   });
+        at C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:228:23
+
+    Error Context: ..\test-results\tests-analytics-URS-DV-AN--67706-nt-when-file-list-displayed\error-context.md
+
+  15) tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:233:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1563: Verify Very long file name when file name exceeds 100 characters 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: page.waitForSelector: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('[data-testid="session-table"]') to be visible[22m
+
+
+       at pages\base.page.ts:120
+
+      118 |   // Wait helpers
+      119 |   async waitForSelector(selector: string, options?: { timeout?: number; state?: 'visible' | 'hidden' | 'attached' | 'detached' }) {
+    > 120 |     await this.page.waitForSelector(selector, options ?? {});
+          |                     ^
+      121 |   }
+      122 |
+      123 |   async waitForText(text: string, options?: { timeout?: number }) {
+        at SessionPage.waitForSelector (C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\pages\base.page.ts:120:21)
+        at SessionPage.waitForSessionTable (C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\pages\session.page.ts:419:16)
+        at C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:242:23
+
+    Error Context: ..\test-results\tests-analytics-URS-DV-AN--4dc79-name-exceeds-100-characters\error-context.md
+
+  16) tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:250:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1564: Verify Very long file name when file name exceeds 100 characters 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: page.waitForSelector: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('[data-testid="session-table"]') to be visible[22m
+
+
+       at pages\base.page.ts:120
+
+      118 |   // Wait helpers
+      119 |   async waitForSelector(selector: string, options?: { timeout?: number; state?: 'visible' | 'hidden' | 'attached' | 'detached' }) {
+    > 120 |     await this.page.waitForSelector(selector, options ?? {});
+          |                     ^
+      121 |   }
+      122 |
+      123 |   async waitForText(text: string, options?: { timeout?: number }) {
+        at SessionPage.waitForSelector (C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\pages\base.page.ts:120:21)
+        at SessionPage.waitForSessionTable (C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\pages\session.page.ts:419:16)
+        at C:\Users\Finstein-Emp\Documents\projects\Dataverse_v4\e2e\tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:259:23
+
+    Error Context: ..\test-results\tests-analytics-URS-DV-AN--95aa4-name-exceeds-100-characters\error-context.md
+
+  16 failed
+    tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:25:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1549: Verify File name visible after selection when user selects a valid JSON file 
+    tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:40:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1550: Verify Multiple files listed when user selects multiple JSON files 
+    tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:55:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1551: Verify Remove icon visible when file names are listed 
+    tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:70:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1552: Verify Remove selected file when files are displayed 
+    tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:85:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1553: Verify Correct file name displayed when file with specific name is selected 
+    tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:100:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1554: Verify File names readable when list of files displayed 
+    tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:115:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1555: Verify Immediate reflection in UI when file is selected 
+    tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:130:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1556: Verify File name persists during navigation when files are listed 
+    tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:144:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1557: Verify Replace file when a file is already selected 
+    tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:159:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1558: Verify No file selected when user does not select any file 
+    tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:174:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1559: Verify Unsupported file type ignored when user selects non-JSON file 
+    tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:189:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1560: Verify Large number of files when 50+ files selected 
+    tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:204:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1561: Verify Keyboard accessibility for remove when file list focused 
+    tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:218:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1562: Verify Visual alignment when file list displayed 
+    tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:233:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1563: Verify Very long file name when file name exceeds 100 characters 
+    tests\analytics\URS-DV-AN-13\SRS-114-SDS-114.spec.ts:250:7 › URS-DV-AN-13: Verify File name visible after selection when user selects a › UTC-1564: Verify Very long file name when file name exceeds 100 characters 

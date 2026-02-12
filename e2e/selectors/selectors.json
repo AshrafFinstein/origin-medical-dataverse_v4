@@ -1,0 +1,23 @@
+{
+  "login": {
+    "usernameInput": "[data-testid='username-input']",
+    "passwordInput": "[data-testid='password-input']",
+    "loginButton": "[data-testid='login-button']",
+    "errorMessage": "[data-testid='error-message']",
+    "rememberMeCheckbox": "[data-testid='remember-me-checkbox']"
+  },
+  "dashboard": {
+    "pageTitle": "h1",
+    "navigationMenu": "[role='navigation']",
+    "userProfile": "[data-testid='user-profile']",
+    "logoutButton": "[data-testid='logout-button']",
+    "epicsTab": "[data-testid='epics-tab']",
+    "projectsTab": "[data-testid='projects-tab']",
+    "sessionsTab": "[data-testid='sessions-tab']"
+  },
+  "common": {
+    "loadingSpinner": "[data-testid='loading-spinner']",
+    "errorToast": "[data-testid='error-toast']",
+    "successToast": "[data-testid='success-toast']"
+  }
+}

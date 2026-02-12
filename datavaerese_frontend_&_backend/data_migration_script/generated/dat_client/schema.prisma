@@ -1,0 +1,238 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/dat_client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = ""
+}
+
+model CESession {
+  id                             String                           @id
+  createdAt                      DateTime                         @default(now())
+  updatedAt                      DateTime
+  name                           String                           @db.VarChar(300)
+  description                    String                           @db.VarChar(1000)
+  priority                       Int
+  sop                            String[]
+  resultTemplate                 Json
+  projectId                      String
+  Project                        Project                          @relation(fields: [projectId], references: [id])
+  ExtractedResourcesInCESessions ExtractedResourcesInCESessions[]
+  UsersInCESessions              UsersInCESessions[]
+}
+
+model DLSession {
+  id                             String                           @id
+  createdAt                      DateTime                         @default(now())
+  updatedAt                      DateTime
+  name                           String                           @db.VarChar(300)
+  description                    String                           @db.VarChar(1000)
+  priority                       Int
+  sop                            String[]
+  projectId                      String
+  Project                        Project                          @relation(fields: [projectId], references: [id])
+  ExtractedResourcesInDLSessions ExtractedResourcesInDLSessions[]
+  LabelsInDLSessions             LabelsInDLSessions[]
+  UsersInDLSessions              UsersInDLSessions[]
+}
+
+model Epic {
+  id          String    @id
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime
+  name        String    @unique @db.VarChar(300)
+  description String    @db.VarChar(1000)
+  Project     Project[]
+}
+
+model ExtractedResource {
+  id                             String                           @id
+  createdAt                      DateTime                         @default(now())
+  updatedAt                      DateTime
+  metadata                       Json
+  rawResourceId                  String
+  RawResource                    RawResource                      @relation(fields: [rawResourceId], references: [id])
+  ExtractedResourcesInCESessions ExtractedResourcesInCESessions[]
+  ExtractedResourcesInDLSessions ExtractedResourcesInDLSessions[]
+}
+
+model ExtractedResourcesInCESessions {
+  extractedResourceId String
+  cESessionId         String
+  index               Int
+  status              ExtractedResourceStatus @default(PENDING)
+  result              Json
+  CESession           CESession               @relation(fields: [cESessionId], references: [id])
+  ExtractedResource   ExtractedResource       @relation(fields: [extractedResourceId], references: [id])
+
+  @@id([extractedResourceId, cESessionId])
+  @@unique([cESessionId, index])
+}
+
+model ExtractedResourcesInDLSessions {
+  extractedResourceId                    String
+  dLSessionId                            String
+  status                                 ExtractedResourceStatus                  @default(PENDING)
+  DLSession                              DLSession                                @relation(fields: [dLSessionId], references: [id])
+  ExtractedResource                      ExtractedResource                        @relation(fields: [extractedResourceId], references: [id])
+  LabelsInExtractedResourcesInDLSessions LabelsInExtractedResourcesInDLSessions[]
+
+  @@id([extractedResourceId, dLSessionId])
+}
+
+model Label {
+  id                                     String                                   @id
+  createdAt                              DateTime                                 @default(now())
+  updatedAt                              DateTime
+  name                                   String                                   @db.VarChar(300)
+  abbreviation                           String                                   @db.VarChar(100)
+  LabelsInDLSessions                     LabelsInDLSessions[]
+  LabelsInExtractedResourcesInDLSessions LabelsInExtractedResourcesInDLSessions[]
+}
+
+model LabelsInDLSessions {
+  labelId     String
+  dLSessionId String
+  DLSession   DLSession @relation(fields: [dLSessionId], references: [id])
+  Label       Label     @relation(fields: [labelId], references: [id])
+
+  @@id([labelId, dLSessionId])
+}
+
+model LabelsInExtractedResourcesInDLSessions {
+  labelId                        String
+  extractedResourceId            String
+  dLSessionId                    String
+  ExtractedResourcesInDLSessions ExtractedResourcesInDLSessions @relation(fields: [extractedResourceId, dLSessionId], references: [extractedResourceId, dLSessionId])
+  Label                          Label                          @relation(fields: [labelId], references: [id])
+
+  @@id([labelId, extractedResourceId, dLSessionId])
+}
+
+model Patient {
+  id        String   @id
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+  Visit     Visit[]
+}
+
+model Project {
+  id              String            @id
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime
+  name            String            @unique @db.VarChar(300)
+  description     String            @db.VarChar(1000)
+  epicId          String
+  Epic            Epic              @relation(fields: [epicId], references: [id])
+  CESession       CESession[]
+  DLSession       DLSession[]
+  RASession       RASession[]
+  UsersInProjects UsersInProjects[]
+}
+
+model RASession {
+  id                 String               @id
+  createdAt          DateTime             @default(now())
+  updatedAt          DateTime
+  name               String               @db.VarChar(300)
+  description        String               @db.VarChar(1000)
+  priority           Int
+  sop                String[]
+  template           Json
+  projectId          String
+  Project            Project              @relation(fields: [projectId], references: [id])
+  UsersInRASessions  UsersInRASessions[]
+  VisitsInRASessions VisitsInRASessions[]
+}
+
+model RawResource {
+  id                String              @id
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime
+  metadata          Json
+  machine           String
+  center            String
+  visitId           String
+  Visit             Visit               @relation(fields: [visitId], references: [id])
+  ExtractedResource ExtractedResource[]
+}
+
+model UsersInCESessions {
+  userId      String
+  cESessionId String
+  userRole    SessionUserRole
+  CESession   CESession       @relation(fields: [cESessionId], references: [id])
+
+  @@id([userId, cESessionId, userRole])
+}
+
+model UsersInDLSessions {
+  userId      String
+  dLSessionId String
+  userRole    SessionUserRole
+  DLSession   DLSession       @relation(fields: [dLSessionId], references: [id])
+
+  @@id([userId, dLSessionId, userRole])
+}
+
+model UsersInProjects {
+  userId    String
+  projectId String
+  userRole  ProjectUserRole
+  Project   Project         @relation(fields: [projectId], references: [id])
+
+  @@id([userId, projectId, userRole])
+}
+
+model UsersInRASessions {
+  userId      String
+  rASessionId String
+  userRole    SessionUserRole
+  RASession   RASession       @relation(fields: [rASessionId], references: [id])
+
+  @@id([userId, rASessionId, userRole])
+}
+
+model Visit {
+  id                 String               @id
+  createdAt          DateTime             @default(now())
+  updatedAt          DateTime
+  patientId          String
+  Patient            Patient              @relation(fields: [patientId], references: [id])
+  RawResource        RawResource[]
+  VisitsInRASessions VisitsInRASessions[]
+}
+
+model VisitsInRASessions {
+  visitId     String
+  rASessionId String
+  index       Int
+  content     Json
+  status      ExtractedResourceStatus @default(PENDING)
+  result      Json
+  RASession   RASession               @relation(fields: [rASessionId], references: [id])
+  Visit       Visit                   @relation(fields: [visitId], references: [id])
+
+  @@id([visitId, rASessionId])
+  @@unique([rASessionId, index])
+}
+
+enum ExtractedResourceStatus {
+  PENDING
+  IN_REVIEW
+  REJECTED
+  ACCEPTED
+}
+
+enum ProjectUserRole {
+  NORMAL
+  LEAD_ANALYST
+  PROJECT_MASTER
+}
+
+enum SessionUserRole {
+  ACTIVITY
+  QUALITY_CONTROLLER
+}

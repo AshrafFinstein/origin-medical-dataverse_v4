@@ -1,0 +1,398 @@
+{
+  "patients": [
+    {
+      "id": "patient_4fce39c10c2b44a7a73d6d6742d19544",
+      "visits": [
+        {
+          "rawResources": [
+            {
+              "metadata": {
+                "type": "DICOM",
+                "size": "9999"
+              },
+              "machine": "VolusonE8",
+              "center": "BFMC",
+              "extractedResources": [
+                {
+                  "id": "tranche_2/extracted_resources/patient_4fce39c10c2b44a7a73d6d6742d19544/8dba9f80a55a48f4b427968af31bbeee/35bb6c71c5f349738ee8512247473d86_00000.png",
+                  "metadata": {
+                    "type": "image/png",
+                    "pixelResolution": 0.1,
+                    "width": 1024,
+                    "height": 720
+                  },
+                  "thumbnailUrl": "https://originhealth.ai/api/v1/extracted-resources/tranche_2/extracted_resources/patient_4fce39c10c2b44a7a73d6d6742d19544/8dba9f80a55a48f4b427968af31bbeee/35bb6c71c5f349738ee8512247473d86_00000.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "rawResources": [
+            {
+              "metadata": {
+                "type": "DICOM",
+                "size": "9999"
+              },
+              "machine": "VolusonE8",
+              "center": "BFMC",
+              "extractedResources": [
+                {
+                  "id": "tranche_2/extracted_resources/patient_4fce39c10c2b44a7a73d6d6742d19544/8dba9f80a55a48f4b427968af31bbeee/35bb6c71c5f349738ee8512247473d86_00001.png",
+                  "metadata": {
+                    "type": "image/png",
+                    "pixelResolution": 0.1,
+                    "width": 1024,
+                    "height": 720
+                  },
+                  "thumbnailUrl": "https://originhealth.ai/api/v1/extracted-resources/tranche_2/extracted_resources/patient_4fce39c10c2b44a7a73d6d6742d19544/8dba9f80a55a48f4b427968af31bbeee/35bb6c71c5f349738ee8512247473d86_00001.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "rawResources": [
+            {
+              "metadata": {
+                "type": "DICOM",
+                "size": "9999"
+              },
+              "machine": "VolusonE8",
+              "center": "BFMC",
+              "extractedResources": [
+                {
+                  "id": "tranche_2/extracted_resources/patient_4fce39c10c2b44a7a73d6d6742d19544/8dba9f80a55a48f4b427968af31bbeee/35bb6c71c5f349738ee8512247473d86_00002.png",
+                  "metadata": {
+                    "type": "image/png",
+                    "pixelResolution": 0.1,
+                    "width": 1024,
+                    "height": 720
+                  },
+                  "thumbnailUrl": "https://originhealth.ai/api/v1/extracted-resources/tranche_2/extracted_resources/patient_4fce39c10c2b44a7a73d6d6742d19544/8dba9f80a55a48f4b427968af31bbeee/35bb6c71c5f349738ee8512247473d86_00002.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "rawResources": [
+            {
+              "metadata": {
+                "type": "DICOM",
+                "size": "9999"
+              },
+              "machine": "VolusonE8",
+              "center": "BFMC",
+              "extractedResources": [
+                {
+                  "id": "tranche_2/extracted_resources/patient_4fce39c10c2b44a7a73d6d6742d19544/8dba9f80a55a48f4b427968af31bbeee/35bb6c71c5f349738ee8512247473d86_00003.png",
+                  "metadata": {
+                    "type": "image/png",
+                    "pixelResolution": 0.1,
+                    "width": 1024,
+                    "height": 720
+                  },
+                  "thumbnailUrl": "https://originhealth.ai/api/v1/extracted-resources/tranche_2/extracted_resources/patient_4fce39c10c2b44a7a73d6d6742d19544/8dba9f80a55a48f4b427968af31bbeee/35bb6c71c5f349738ee8512247473d86_00003.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "rawResources": [
+            {
+              "metadata": {
+                "type": "DICOM",
+                "size": "9999"
+              },
+              "machine": "VolusonE8",
+              "center": "BFMC",
+              "extractedResources": [
+                {
+                  "id": "tranche_2/extracted_resources/patient_4fce39c10c2b44a7a73d6d6742d19544/8dba9f80a55a48f4b427968af31bbeee/35bb6c71c5f349738ee8512247473d86_00004.png",
+                  "metadata": {
+                    "type": "image/png",
+                    "pixelResolution": 0.1,
+                    "width": 1024,
+                    "height": 720
+                  },
+                  "thumbnailUrl": "https://originhealth.ai/api/v1/extracted-resources/tranche_2/extracted_resources/patient_4fce39c10c2b44a7a73d6d6742d19544/8dba9f80a55a48f4b427968af31bbeee/35bb6c71c5f349738ee8512247473d86_00004.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "rawResources": [
+            {
+              "metadata": {
+                "type": "DICOM",
+                "size": "9999"
+              },
+              "machine": "VolusonE8",
+              "center": "BFMC",
+              "extractedResources": [
+                {
+                  "id": "tranche_2/extracted_resources/patient_4fce39c10c2b44a7a73d6d6742d19544/8dba9f80a55a48f4b427968af31bbeee/35bb6c71c5f349738ee8512247473d86_00005.png",
+                  "metadata": {
+                    "type": "image/png",
+                    "pixelResolution": 0.1,
+                    "width": 1024,
+                    "height": 720
+                  },
+                  "thumbnailUrl": "https://originhealth.ai/api/v1/extracted-resources/tranche_2/extracted_resources/patient_4fce39c10c2b44a7a73d6d6742d19544/8dba9f80a55a48f4b427968af31bbeee/35bb6c71c5f349738ee8512247473d86_00005.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "rawResources": [
+            {
+              "metadata": {
+                "type": "DICOM",
+                "size": "9999"
+              },
+              "machine": "VolusonE8",
+              "center": "BFMC",
+              "extractedResources": [
+                {
+                  "id": "tranche_2/extracted_resources/patient_4fce39c10c2b44a7a73d6d6742d19544/8dba9f80a55a48f4b427968af31bbeee/35bb6c71c5f349738ee8512247473d86_00006.png",
+                  "metadata": {
+                    "type": "image/png",
+                    "pixelResolution": 0.1,
+                    "width": 1024,
+                    "height": 720
+                  },
+                  "thumbnailUrl": "https://originhealth.ai/api/v1/extracted-resources/tranche_2/extracted_resources/patient_4fce39c10c2b44a7a73d6d6742d19544/8dba9f80a55a48f4b427968af31bbeee/35bb6c71c5f349738ee8512247473d86_00006.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "rawResources": [
+            {
+              "metadata": {
+                "type": "DICOM",
+                "size": "9999"
+              },
+              "machine": "VolusonE8",
+              "center": "BFMC",
+              "extractedResources": [
+                {
+                  "id": "tranche_2/extracted_resources/patient_4fce39c10c2b44a7a73d6d6742d19544/8dba9f80a55a48f4b427968af31bbeee/35bb6c71c5f349738ee8512247473d86_00007.png",
+                  "metadata": {
+                    "type": "image/png",
+                    "pixelResolution": 0.1,
+                    "width": 1024,
+                    "height": 720
+                  },
+                  "thumbnailUrl": "https://originhealth.ai/api/v1/extracted-resources/tranche_2/extracted_resources/patient_4fce39c10c2b44a7a73d6d6742d19544/8dba9f80a55a48f4b427968af31bbeee/35bb6c71c5f349738ee8512247473d86_00007.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "rawResources": [
+            {
+              "metadata": {
+                "type": "DICOM",
+                "size": "9999"
+              },
+              "machine": "VolusonE8",
+              "center": "BFMC",
+              "extractedResources": [
+                {
+                  "id": "tranche_2/extracted_resources/patient_4fce39c10c2b44a7a73d6d6742d19544/8dba9f80a55a48f4b427968af31bbeee/35bb6c71c5f349738ee8512247473d86_00008.png",
+                  "metadata": {
+                    "type": "image/png",
+                    "pixelResolution": 0.1,
+                    "width": 1024,
+                    "height": 720
+                  },
+                  "thumbnailUrl": "https://originhealth.ai/api/v1/extracted-resources/tranche_2/extracted_resources/patient_4fce39c10c2b44a7a73d6d6742d19544/8dba9f80a55a48f4b427968af31bbeee/35bb6c71c5f349738ee8512247473d86_00008.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "rawResources": [
+            {
+              "metadata": {
+                "type": "DICOM",
+                "size": "9999"
+              },
+              "machine": "VolusonE8",
+              "center": "BFMC",
+              "extractedResources": [
+                {
+                  "id": "tranche_2/extracted_resources/patient_4fce39c10c2b44a7a73d6d6742d19544/8dba9f80a55a48f4b427968af31bbeee/35bb6c71c5f349738ee8512247473d86_00009.png",
+                  "metadata": {
+                    "type": "image/png",
+                    "pixelResolution": 0.1,
+                    "width": 1024,
+                    "height": 720
+                  },
+                  "thumbnailUrl": "https://originhealth.ai/api/v1/extracted-resources/tranche_2/extracted_resources/patient_4fce39c10c2b44a7a73d6d6742d19544/8dba9f80a55a48f4b427968af31bbeee/35bb6c71c5f349738ee8512247473d86_00009.png"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "patient_4fc9112b9fac494fb71841beb84a6083",
+      "visits": [
+        {
+          "rawResources": [
+            {
+              "metadata": {
+                "type": "DICOM",
+                "size": "9999"
+              },
+              "machine": "VolusonE8",
+              "center": "BFMC",
+              "extractedResources": [
+                {
+                  "id": "tranche_2/extracted_resources/patient_4fc9112b9fac494fb71841beb84a6083/a3abd0d5ad7a4db09eabfdc820978dab/1d0a3700b80f4b548e7a95d5d97c3f86_00000.png",
+                  "metadata": {
+                    "type": "image/png",
+                    "pixelResolution": 0.1,
+                    "width": 1024,
+                    "height": 720
+                  },
+                  "thumbnailUrl": "https://originhealth.ai/api/v1/extracted-resources/tranche_2/extracted_resources/patient_4fc9112b9fac494fb71841beb84a6083/a3abd0d5ad7a4db09eabfdc820978dab/1d0a3700b80f4b548e7a95d5d97c3f86_00000.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "rawResources": [
+            {
+              "metadata": {
+                "type": "DICOM",
+                "size": "9999"
+              },
+              "machine": "VolusonE8",
+              "center": "BFMC",
+              "extractedResources": [
+                {
+                  "id": "tranche_2/extracted_resources/patient_4fc9112b9fac494fb71841beb84a6083/a3abd0d5ad7a4db09eabfdc820978dab/1d0a3700b80f4b548e7a95d5d97c3f86_00001.png",
+                  "metadata": {
+                    "type": "image/png",
+                    "pixelResolution": 0.1,
+                    "width": 1024,
+                    "height": 720
+                  },
+                  "thumbnailUrl": "https://originhealth.ai/api/v1/extracted-resources/tranche_2/extracted_resources/patient_4fc9112b9fac494fb71841beb84a6083/a3abd0d5ad7a4db09eabfdc820978dab/1d0a3700b80f4b548e7a95d5d97c3f86_00001.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "rawResources": [
+            {
+              "metadata": {
+                "type": "DICOM",
+                "size": "9999"
+              },
+              "machine": "VolusonE8",
+              "center": "BFMC",
+              "extractedResources": [
+                {
+                  "id": "tranche_2/extracted_resources/patient_4fc9112b9fac494fb71841beb84a6083/a3abd0d5ad7a4db09eabfdc820978dab/1d0a3700b80f4b548e7a95d5d97c3f86_00002.png.png",
+                  "metadata": {
+                    "type": "image/png",
+                    "pixelResolution": 0.1,
+                    "width": 1024,
+                    "height": 720
+                  },
+                  "thumbnailUrl": "https://originhealth.ai/api/v1/extracted-resources/tranche_2/extracted_resources/patient_4fc9112b9fac494fb71841beb84a6083/a3abd0d5ad7a4db09eabfdc820978dab/1d0a3700b80f4b548e7a95d5d97c3f86_00002.png.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "rawResources": [
+            {
+              "metadata": {
+                "type": "DICOM",
+                "size": "9999"
+              },
+              "machine": "VolusonE8",
+              "center": "BFMC",
+              "extractedResources": [
+                {
+                  "id": "tranche_2/extracted_resources/patient_4fc9112b9fac494fb71841beb84a6083/a3abd0d5ad7a4db09eabfdc820978dab/1d0a3700b80f4b548e7a95d5d97c3f86_00003.png",
+                  "metadata": {
+                    "type": "image/png",
+                    "pixelResolution": 0.1,
+                    "width": 1024,
+                    "height": 720
+                  },
+                  "thumbnailUrl": "https://originhealth.ai/api/v1/extracted-resources/tranche_2/extracted_resources/patient_4fc9112b9fac494fb71841beb84a6083/a3abd0d5ad7a4db09eabfdc820978dab/1d0a3700b80f4b548e7a95d5d97c3f86_00003.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "rawResources": [
+            {
+              "metadata": {
+                "type": "DICOM",
+                "size": "9999"
+              },
+              "machine": "VolusonE8",
+              "center": "BFMC",
+              "extractedResources": [
+                {
+                  "id": "tranche_2/extracted_resources/patient_4fc9112b9fac494fb71841beb84a6083/a3abd0d5ad7a4db09eabfdc820978dab/1d0a3700b80f4b548e7a95d5d97c3f86_00004.png",
+                  "metadata": {
+                    "type": "image/png",
+                    "pixelResolution": 0.1,
+                    "width": 1024,
+                    "height": 720
+                  },
+                  "thumbnailUrl": "https://originhealth.ai/api/v1/extracted-resources/tranche_2/extracted_resources/patient_4fc9112b9fac494fb71841beb84a6083/a3abd0d5ad7a4db09eabfdc820978dab/1d0a3700b80f4b548e7a95d5d97c3f86_00004.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "rawResources": [
+            {
+              "metadata": {
+                "type": "DICOM",
+                "size": "9999"
+              },
+              "machine": "VolusonE8",
+              "center": "BFMC",
+              "extractedResources": [
+                {
+                  "id": "tranche_2/extracted_resources/patient_4fc9112b9fac494fb71841beb84a6083/a3abd0d5ad7a4db09eabfdc820978dab/1d0a3700b80f4b548e7a95d5d97c3f86_00005.png",
+                  "metadata": {
+                    "type": "image/png",
+                    "pixelResolution": 0.1,
+                    "width": 1024,
+                    "height": 720
+                  },
+                  "thumbnailUrl": "https://originhealth.ai/api/v1/extracted-resources/tranche_2/extracted_resources/patient_4fc9112b9fac494fb71841beb84a6083/a3abd0d5ad7a4db09eabfdc820978dab/1d0a3700b80f4b548e7a95d5d97c3f86_00005.png"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

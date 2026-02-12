@@ -1,0 +1,68 @@
+{
+  "user-type": {
+    "code-create-button": "[data-testid=\"user-type-code-create-button\"]",
+    "code-table": "[data-testid=\"user-type-code-table\"]",
+    "code-create-modal": "[data-testid=\"user-type-code-create-modal\"]",
+    "code-add-code-button": "[data-testid=\"user-type-code-add-code-button\"]",
+    "code-create-cancel-button": "[data-testid=\"user-type-code-create-cancel-button\"]",
+    "code-create-submit-button": "[data-testid=\"user-type-code-create-submit-button\"]"
+  },
+  "`user-type": {
+    "code-create-input-${index}`": "[data-testid=\"`user-type-code-create-input-${index}`\"]"
+  },
+  "use-case": {
+    "code-create-button": "[data-testid=\"use-case-code-create-button\"]",
+    "code-table": "[data-testid=\"use-case-code-table\"]",
+    "code-create-modal": "[data-testid=\"use-case-code-create-modal\"]",
+    "code-add-code-button": "[data-testid=\"use-case-code-add-code-button\"]",
+    "code-create-cancel-button": "[data-testid=\"use-case-code-create-cancel-button\"]",
+    "code-create-submit-button": "[data-testid=\"use-case-code-create-submit-button\"]"
+  },
+  "`use-case": {
+    "code-create-input-${index}`": "[data-testid=\"`use-case-code-create-input-${index}`\"]"
+  },
+  "sub-project": {
+    "code-create-button": "[data-testid=\"sub-project-code-create-button\"]",
+    "code-table": "[data-testid=\"sub-project-code-table\"]",
+    "code-create-modal": "[data-testid=\"sub-project-code-create-modal\"]",
+    "code-add-code-button": "[data-testid=\"sub-project-code-add-code-button\"]",
+    "code-create-cancel-button": "[data-testid=\"sub-project-code-create-cancel-button\"]",
+    "code-create-submit-button": "[data-testid=\"sub-project-code-create-submit-button\"]"
+  },
+  "`sub-project": {
+    "code-create-input-${index}`": "[data-testid=\"`sub-project-code-create-input-${index}`\"]"
+  },
+  "project-code": {
+    "create-button": "[data-testid=\"project-code-create-button\"]",
+    "table": "[data-testid=\"project-code-table\"]",
+    "create-modal": "[data-testid=\"project-code-create-modal\"]",
+    "add-code-button": "[data-testid=\"project-code-add-code-button\"]",
+    "create-cancel-button": "[data-testid=\"project-code-create-cancel-button\"]",
+    "create-submit-button": "[data-testid=\"project-code-create-submit-button\"]"
+  },
+  "`project-code": {
+    "create-input-${index}`": "[data-testid=\"`project-code-create-input-${index}`\"]"
+  },
+  "center-code": {
+    "create-button": "[data-testid=\"center-code-create-button\"]",
+    "table": "[data-testid=\"center-code-table\"]",
+    "create-modal": "[data-testid=\"center-code-create-modal\"]",
+    "add-code-button": "[data-testid=\"center-code-add-code-button\"]",
+    "create-cancel-button": "[data-testid=\"center-code-create-cancel-button\"]",
+    "create-submit-button": "[data-testid=\"center-code-create-submit-button\"]"
+  },
+  "`center-code": {
+    "create-input-${index}`": "[data-testid=\"`center-code-create-input-${index}`\"]"
+  },
+  "anatomy-plane": {
+    "code-create-button": "[data-testid=\"anatomy-plane-code-create-button\"]",
+    "code-table": "[data-testid=\"anatomy-plane-code-table\"]",
+    "code-create-modal": "[data-testid=\"anatomy-plane-code-create-modal\"]",
+    "code-add-code-button": "[data-testid=\"anatomy-plane-code-add-code-button\"]",
+    "code-create-cancel-button": "[data-testid=\"anatomy-plane-code-create-cancel-button\"]",
+    "code-create-submit-button": "[data-testid=\"anatomy-plane-code-create-submit-button\"]"
+  },
+  "`anatomy-plane": {
+    "code-create-input-${index}`": "[data-testid=\"`anatomy-plane-code-create-input-${index}`\"]"
+  }
+}

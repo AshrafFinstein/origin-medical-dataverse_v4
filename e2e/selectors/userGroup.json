@@ -1,0 +1,13 @@
+{
+  "user-group": {
+    "create-button": "[data-testid=\"user-group-create-button\"]",
+    "table": "[data-testid=\"user-group-table\"]",
+    "create-modal": "[data-testid=\"user-group-create-modal\"]",
+    "create-name-input": "[data-testid=\"user-group-create-name-input\"]",
+    "create-description-input": "[data-testid=\"user-group-create-description-input\"]",
+    "create-select-all-assignees": "[data-testid=\"user-group-create-select-all-assignees\"]",
+    "create-assignees-select": "[data-testid=\"user-group-create-assignees-select\"]",
+    "create-cancel-button": "[data-testid=\"user-group-create-cancel-button\"]",
+    "create-submit-button": "[data-testid=\"user-group-create-submit-button\"]"
+  }
+}

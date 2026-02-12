@@ -1,0 +1,19 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  symlinks: true
+  paths:
+    - /logs/log_success.log
+  json.keys_under_root: true
+  json.add_error_key: true
+
+logging.level: debug
+
+cloud.id: "dataverse:YXAtc291dGgtMS5hd3MuZWxhc3RpYy1jbG91ZC5jb206NDQzJDE2MWMwZTc1YjMxNTRkYjRhNGUzNGNjNmQxNTk3NTEyJGM5NDlhN2ZjNDJkMDQzODdhZGUzM2M2OGViZjZiOTk5"
+cloud.auth: "elastic:7q7bHnFXWD6M2kJVQgfSTbX2"
+
+output.elasticsearch:
+  index: "dataverse-logs_%{+yyyy.MM.dd}"
+
+setup.template.name: "filebeat-7.0.0"
+setup.template.pattern: "filebeat-7.0.0-*"

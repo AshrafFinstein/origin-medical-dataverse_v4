@@ -1,0 +1,117 @@
+{
+  "session-breadcrumb": {
+    "root": "[data-testid=\"session-breadcrumb\"]",
+    "home": "[data-testid=\"session-breadcrumb-home\"]",
+    "epic": "[data-testid=\"session-breadcrumb-epic\"]",
+    "project": "[data-testid=\"session-breadcrumb-project\"]"
+  },
+  "session-back": {
+    "button": "[data-testid=\"session-back-button\"]"
+  },
+  "session-search": {
+    "input": "[data-testid=\"session-search-input\"]",
+    "icon": "[data-testid=\"session-search-icon\"]"
+  },
+  "session-image": {
+    "search-button": "[data-testid=\"session-image-search-button\"]",
+    "count-input": "[data-testid=\"session-image-count-input\"]",
+    "search-modal": "[data-testid=\"session-image-search-modal\"]",
+    "search-input": "[data-testid=\"session-image-search-input\"]",
+    "search-table": "[data-testid=\"session-image-search-table\"]"
+  },
+  "session-create": {
+    "button": "[data-testid=\"session-create-button\"]",
+    "modal": "[data-testid=\"session-create-modal\"]"
+  },
+  "session-table": {
+    "root": "[data-testid=\"session-table\"]"
+  },
+  "session-name": {
+    "input": "[data-testid=\"session-name-input\"]"
+  },
+  "session-auto": {
+    "generate-checkbox": "[data-testid=\"session-auto-generate-checkbox\"]"
+  },
+  "session-description": {
+    "input": "[data-testid=\"session-description-input\"]"
+  },
+  "session-session": {
+    "labels-select": "[data-testid=\"session-session-labels-select\"]"
+  },
+  "session-status": {
+    "select": "[data-testid=\"session-status-select\"]"
+  },
+  "session-project": {
+    "code-select": "[data-testid=\"session-project-code-select\"]"
+  },
+  "session-sub": {
+    "project-code-select": "[data-testid=\"session-sub-project-code-select\"]"
+  },
+  "session-use": {
+    "case-code-select": "[data-testid=\"session-use-case-code-select\"]"
+  },
+  "session-anatomy": {
+    "plane-code-select": "[data-testid=\"session-anatomy-plane-code-select\"]"
+  },
+  "session-center": {
+    "code-select": "[data-testid=\"session-center-code-select\"]"
+  },
+  "session-user": {
+    "type-code-select": "[data-testid=\"session-user-type-code-select\"]"
+  },
+  "session-set": {
+    "code-input": "[data-testid=\"session-set-code-input\"]"
+  },
+  "session-generate": {
+    "name-button": "[data-testid=\"session-generate-name-button\"]"
+  },
+  "session-assignees": {
+    "select-all": "[data-testid=\"session-assignees-select-all\"]",
+    "select": "[data-testid=\"session-assignees-select\"]"
+  },
+  "session-reviewers": {
+    "select-all": "[data-testid=\"session-reviewers-select-all\"]",
+    "select": "[data-testid=\"session-reviewers-select\"]"
+  },
+  "session-approval": {
+    "level-select": "[data-testid=\"session-approval-level-select\"]"
+  },
+  "session-labels": {
+    "select": "[data-testid=\"session-labels-select\"]"
+  },
+  "session-import": {
+    "csv-button": "[data-testid=\"session-import-csv-button\"]"
+  },
+  "session-s3": {
+    "modal": "[data-testid=\"session-s3-modal\"]",
+    "key-input": "[data-testid=\"session-s3-key-input\"]",
+    "upload-button": "[data-testid=\"session-s3-upload-button\"]"
+  },
+  "session-delete": {
+    "modal": "[data-testid=\"session-delete-modal\"]",
+    "name": "[data-testid=\"session-delete-name\"]",
+    "reason-input": "[data-testid=\"session-delete-reason-input\"]",
+    "cancel-button": "[data-testid=\"session-delete-cancel-button\"]",
+    "request-button": "[data-testid=\"session-delete-request-button\"]"
+  },
+  "session-label": {
+    "create-button": "[data-testid=\"session-label-create-button\"]",
+    "table": "[data-testid=\"session-label-table\"]",
+    "create-modal": "[data-testid=\"session-label-create-modal\"]",
+    "create-name-input": "[data-testid=\"session-label-create-name-input\"]",
+    "create-description-input": "[data-testid=\"session-label-create-description-input\"]",
+    "create-color-picker": "[data-testid=\"session-label-create-color-picker\"]",
+    "create-cancel-button": "[data-testid=\"session-label-create-cancel-button\"]",
+    "create-submit-button": "[data-testid=\"session-label-create-submit-button\"]",
+    "update-button": "[data-testid=\"session-label-update-button\"]"
+  },
+  "session-codes": {
+    "tabs": "[data-testid=\"session-codes-tabs\"]",
+    "tab-project-code": "[data-testid=\"session-codes-tab-project-code\"]",
+    "tab-sub-project-code": "[data-testid=\"session-codes-tab-sub-project-code\"]",
+    "tab-use-case-code": "[data-testid=\"session-codes-tab-use-case-code\"]",
+    "tab-anatomy-plane-code": "[data-testid=\"session-codes-tab-anatomy-plane-code\"]",
+    "tab-center-code": "[data-testid=\"session-codes-tab-center-code\"]",
+    "tab-user-type-code": "[data-testid=\"session-codes-tab-user-type-code\"]"
+  }
+}

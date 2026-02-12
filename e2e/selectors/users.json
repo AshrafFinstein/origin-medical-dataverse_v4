@@ -1,0 +1,9 @@
+{
+  "user-table": {
+    "root": "[data-testid=\"user-table\"]"
+  },
+  "user-view": {
+    "permissions-modal": "[data-testid=\"user-view-permissions-modal\"]",
+    "permissions-cancel-button": "[data-testid=\"user-view-permissions-cancel-button\"]"
+  }
+}

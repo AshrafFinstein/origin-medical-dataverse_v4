@@ -1,0 +1,47 @@
+{
+  "name": "dataverse_v4",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report",
+    "test:chrome": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:webkit": "playwright test --project=webkit",
+    "test:generate": "ts-node e2e/utils/test-generator.ts",
+    "test:clean": "ts-node -e \"require('./e2e/utils/test-generator').TestGenerator.prototype.cleanGeneratedTests()\"",
+    "extract-selectors": "ts-node e2e/scripts/extract-selectors.ts",
+    "generate-tests": "ts-node e2e/scripts/generate-tests.ts -e requirements-excel-file/dataverse-Testcases-V4.xlsx",
+    "generate-tests:stats": "ts-node e2e/scripts/generate-tests.ts -e requirements-excel-file/dataverse-Testcases-V4.xlsx --stats",
+    "generate-tests:dry-run": "ts-node e2e/scripts/generate-tests.ts -e requirements-excel-file/dataverse-Testcases-V4.xlsx --dry-run",
+    "generate-tests:high-priority": "ts-node e2e/scripts/generate-tests.ts -e requirements-excel-file/dataverse-Testcases-V4.xlsx -p high",
+    "test:parallel": "playwright test --workers=6",
+    "test:verify-framework": "playwright test e2e/tests/verify-framework.spec.ts",
+    "test:setup-auth": "playwright test --config playwright.config.ts --project=setup"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@faker-js/faker": "^9.9.0",
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.2.3",
+    "axios": "^1.13.5",
+    "commander": "^14.0.3",
+    "dotenv": "^17.2.4",
+    "exceljs": "^4.4.0",
+    "glob": "^13.0.2",
+    "playwright": "^1.58.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "allure-playwright": "^3.4.5",
+    "eslint": "^9.39.2",
+    "playwright-extra": "^4.3.6"
+  }
+}
