@@ -6,8 +6,8 @@ import { Selectors, getDynamicSelector } from '../selectors';
  * All page objects should extend this class
  */
 export abstract class BasePage {
-  protected page: Page;
-  protected selectors = Selectors;
+  public page: Page;
+  public selectors = Selectors;
 
   constructor(page: Page) {
     this.page = page;
@@ -30,7 +30,7 @@ export abstract class BasePage {
   }
 
   async clickByText(text: string) {
-    await this.page.click(`text=${text}`);
+    await this.page.getByText(text, { exact: true }).click();
   }
 
   async fill(selector: string, value: string) {
@@ -43,6 +43,10 @@ export abstract class BasePage {
 
   async selectOption(selector: string, value: string) {
     await this.page.selectOption(selector, value);
+  }
+
+  async selectMultipleOptions(selector: string, values: string[]) {
+    await this.page.selectOption(selector, values);
   }
 
   async check(selector: string) {
@@ -59,6 +63,14 @@ export abstract class BasePage {
 
   async press(selector: string, key: string) {
     await this.page.press(selector, key);
+  }
+
+  async pressKey(key: string) {
+    await this.page.keyboard.press(key);
+  }
+
+  async typeByKeyboard(text: string) {
+    await this.page.keyboard.type(text);
   }
 
   // Getters
@@ -94,6 +106,10 @@ export abstract class BasePage {
     return await this.page.isChecked(selector);
   }
 
+  async isTextVisible(text: string): Promise<boolean> {
+    return await this.page.getByText(text, { exact: true }).isVisible();
+  }
+
   async getCount(selector: string): Promise<number> {
     return await this.page.locator(selector).count();
   }
@@ -108,7 +124,7 @@ export abstract class BasePage {
   }
 
   // Dynamic selectors
-  protected getSelector(
+  public getSelector(
     selector: string,
     replacements?: Record<string, string | number>
   ): string {
@@ -129,48 +145,52 @@ export abstract class BasePage {
   }
 
   async waitForToast(type: 'success' | 'error' = 'success', timeout: number = 5000) {
-    // Wait for Naive UI toast notification
-    // Naive UI uses n-message component for toasts
-    const toastSelector = type === 'success'
-      ? '.n-message--success-type'
-      : '.n-message--error-type';
-
+    const toastSelector = this.selectors.common['ui-toast'][type];
     try {
       await this.waitForSelector(toastSelector, { timeout, state: 'visible' });
     } catch {
-      console.warn(`Toast notification (${type}) did not appear within ${timeout}ms`);
+      // Toasts can be transient or intentionally absent in negative tests.
     }
   }
 
+  async getToastMessage(type: 'success' | 'error', timeout: number = 5000): Promise<string> {
+    await this.waitForToast(type, timeout);
+    const message = await this.page.locator(this.selectors.common['ui-toast'][type]).first().textContent();
+    return message ?? '';
+  }
+
   async waitForLoadingComplete() {
-    // Wait for Naive UI loading spinners to disappear
-    const loadingSelector = '.n-spin, .n-skeleton';
+    // Wait for all loading indicators to disappear
+    const loadingSelectors = [
+      this.selectors.common['ui-loading'].spin,
+      this.selectors.common['ui-loading'].skeleton,
+      this.selectors.common['ui-loading']['custom-indicator'],
+    ];
 
-    try {
-      // Wait for loading to appear (max 2 seconds)
-      await this.page.waitForSelector(loadingSelector, {
-        state: 'visible',
-        timeout: 2000,
-      });
+    for (const selector of loadingSelectors) {
+      try {
+        // Wait for loading to appear (max 1 second)
+        const isVisible = await this.page.locator(selector).isVisible().catch(() => false);
 
-      // Wait for loading to disappear (max 30 seconds)
-      await this.page.waitForSelector(loadingSelector, {
-        state: 'hidden',
-        timeout: 30000,
-      });
-    } catch {
-      // Loading spinner might not appear for fast operations
+        if (isVisible) {
+          // Wait for loading to disappear (max 30 seconds)
+          await this.page.waitForSelector(selector, {
+            state: 'hidden',
+            timeout: 30000,
+          });
+        }
+      } catch {
+        // Loading spinner might not be present
+      }
     }
   }
 
   async waitForModalOpen(timeout: number = 5000) {
-    // Wait for Naive UI modal to open
-    await this.waitForSelector('.n-modal-container', { timeout, state: 'visible' });
+    await this.waitForSelector(this.selectors.common['ui-modal'].container, { timeout, state: 'visible' });
   }
 
   async waitForModalClose(timeout: number = 5000) {
-    // Wait for Naive UI modal to close
-    await this.waitForSelector('.n-modal-container', { timeout, state: 'hidden' });
+    await this.waitForSelector(this.selectors.common['ui-modal'].container, { timeout, state: 'hidden' });
   }
 
   // Screenshot helpers

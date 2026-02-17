@@ -9,12 +9,32 @@ import * as fs from 'fs';
  * - Saves storage state for all parallel workers to reuse
  */
 async function globalSetup(config: FullConfig) {
-  // Load environment variables from the backend .env file
-  dotenv.config({ path: path.join(__dirname, '../datavaerese_frontend_&_backend/.env') });
+  void config;
+  // Load environment variables from repository root .env
+  dotenv.config({ path: path.join(__dirname, '../.env') });
 
-  const username = process.env.ADMIN_USERNAME || 'ashraf.a@finstein.ai';
-  const password = process.env.ADMIN_PASSWORD || 'yxD21p)E1)SL';
-  const baseUrl = process.env.API_URL || 'http://localhost:3000';
+  const username = process.env.APP_USERNAME || process.env.ADMIN_USERNAME;
+  const password = process.env.APP_PASSWORD || process.env.ADMIN_PASSWORD;
+  const baseUrl = process.env.baseURL || process.env.UAT_URL || process.env.API_URL || 'http://localhost:3000';
+
+  if (!username || !password) {
+    throw new Error('APP_USERNAME and APP_PASSWORD (or ADMIN_USERNAME and ADMIN_PASSWORD) must be set for browser authentication setup.');
+  }
+
+  // Check if auth state already exists and is recent (less than 12 hours old)
+  const authStatePath = './playwright/.auth/state.json';
+  if (fs.existsSync(authStatePath)) {
+    const stats = fs.statSync(authStatePath);
+    const ageInHours = (Date.now() - stats.mtimeMs) / (1000 * 60 * 60);
+
+    if (ageInHours < 12) {
+      console.log('✅ Using existing authentication (saved ' + ageInHours.toFixed(1) + ' hours ago)');
+      console.log('   Skipping login - auth state is still valid\n');
+      return; // Skip authentication
+    } else {
+      console.log('⚠️  Auth state is old (' + ageInHours.toFixed(1) + ' hours) - re-authenticating...\n');
+    }
+  }
 
   console.log('🔐 Authenticating via browser login...');
   console.log(`   Username: ${username}`);
@@ -61,34 +81,66 @@ async function globalSetup(config: FullConfig) {
       await passwordInput.waitFor({ state: 'visible', timeout: 10000 });
       await passwordInput.fill(password);
 
-      // Check for CAPTCHA
-      const captchaPresent = await page.locator('iframe[src*="recaptcha"], iframe[title*="reCAPTCHA"], #recaptcha, .g-recaptcha').count() > 0;
+      // Wait a moment for CAPTCHA to load
+      await page.waitForTimeout(2000);
+
+      // Check for CAPTCHA (both reCAPTCHA and text-based image CAPTCHA)
+      const recaptchaPresent = await page.locator('iframe[src*="recaptcha"], iframe[title*="reCAPTCHA"], #recaptcha, .g-recaptcha').count() > 0;
+      const textCaptchaPresent = await page.locator('input[name*="captcha" i], input[placeholder*="captcha" i], input[aria-label*="captcha" i]').count() > 0;
+      const captchaPresent = recaptchaPresent || textCaptchaPresent;
 
       if (captchaPresent) {
-        console.log('⚠️  ═══════════════════════════════════════════════════');
-        console.log('⚠️  CAPTCHA DETECTED - PLEASE SOLVE IT NOW!');
-        console.log('⚠️  You have 90 seconds to solve the CAPTCHA');
-        console.log('⚠️  The browser window is now visible');
-        console.log('⚠️  ═══════════════════════════════════════════════════');
-        await page.waitForTimeout(90000);  // 90 seconds
+        console.log('');
+        console.log('⚠️  ═══════════════════════════════════════════════════════════');
+        console.log('⚠️  ');
+        console.log('⚠️    CAPTCHA DETECTED - ACTION REQUIRED!');
+        console.log('⚠️  ');
+        if (textCaptchaPresent) {
+          console.log('⚠️    Type: Text-based CAPTCHA');
+          console.log('⚠️    Action: Type the code shown in the image');
+        } else {
+          console.log('⚠️    Type: reCAPTCHA');
+          console.log('⚠️    Action: Check the "I\'m not a robot" box');
+        }
+        console.log('⚠️  ');
+        console.log('⚠️    The browser window should be VISIBLE on your screen');
+        console.log('⚠️    After solving, click the Continue/Submit button');
+        console.log('⚠️  ');
+        console.log('⚠️    Waiting 120 seconds for you to solve...');
+        console.log('⚠️  ');
+        console.log('⚠️  ═══════════════════════════════════════════════════════════');
+        console.log('');
+
+        // Wait 120 seconds for user to solve CAPTCHA
+        await page.waitForTimeout(120000);  // 2 minutes
+
+        console.log('   ⏳ Timeout finished - checking if login succeeded...');
+      } else {
+        // No CAPTCHA - click submit button automatically
+        console.log('   🔑 Submitting login...');
+        const submitButton = page.locator('button[type="submit"], button[name="action"]').first();
+        await submitButton.click();
       }
-
-      // Click submit button
-      console.log('   🔑 Submitting login...');
-      const submitButton = page.locator('button[type="submit"], button[name="action"]').first();
-      await submitButton.click();
-
-      // Take screenshot after submit
-      await page.waitForTimeout(2000);
-      await page.screenshot({ path: 'playwright/.auth/debug-after-submit.png', fullPage: true });
-      console.log('   📸 Screenshot after submit: playwright/.auth/debug-after-submit.png');
 
       // Wait for navigation back to application
       console.log('   ⏳ Waiting for successful login redirect...');
       console.log(`   Current URL: ${page.url()}`);
-      await page.waitForURL(/dataverse|dashboard|localhost:\d+\/(?!login)/, { timeout: 30000 });
-      console.log(`   ✓ Redirected to: ${page.url()}`);
-      await page.waitForLoadState('networkidle');
+
+      try {
+        // Wait for redirect (either user submitted after CAPTCHA, or auto-submit worked)
+        await page.waitForURL(/dataverse|dashboard|localhost:\d+\/(?!login)/, { timeout: 60000 });
+        console.log(`   ✓ Redirected to: ${page.url()}`);
+        await page.waitForLoadState('networkidle');
+
+        // Take success screenshot
+        await page.screenshot({ path: 'playwright/.auth/login-success.png', fullPage: true });
+        console.log('   📸 Success screenshot: playwright/.auth/login-success.png');
+      } catch (error) {
+        // Still on login page - take screenshot for debugging
+        await page.screenshot({ path: 'playwright/.auth/login-failed.png', fullPage: true });
+        console.log('   📸 Failed screenshot: playwright/.auth/login-failed.png');
+        throw error;
+      }
     } else {
       console.log('   ✓ Already on application (no login needed)');
     }
@@ -101,8 +153,9 @@ async function globalSetup(config: FullConfig) {
     await browser.close();
 
     console.log('✅ Authentication complete - state saved to ./playwright/.auth/state.json');
-  } catch (error: any) {
-    console.error('❌ Authentication failed:', error.message);
+  } catch (error: unknown) {
+    const authError = error as { message?: string };
+    console.error('❌ Authentication failed:', authError.message || 'Unknown error');
     console.error('   Make sure the application is running at:', baseUrl);
     throw error;
   }

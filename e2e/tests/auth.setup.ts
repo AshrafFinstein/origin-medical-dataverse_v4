@@ -1,0 +1,185 @@
+import { test as setup } from '@playwright/test';
+import { performLogin } from '../utils/auth.service';
+import * as dotenv from 'dotenv';
+import * as path from 'path';
+import * as fs from 'fs';
+
+// Load .env files
+dotenv.config({ path: path.resolve(process.cwd(), '.env') });
+dotenv.config({
+  path: path.resolve(process.cwd(), 'datavaerese_frontend_&_backend', '.env'),
+});
+
+const AUTH_STATE_PATH = './playwright/.auth/state.json';
+
+setup('authenticate and save storage state', async ({ browser }) => {
+  // ─── 12-hour cache ──────────────────────────────────────────────────
+  if (fs.existsSync(AUTH_STATE_PATH)) {
+    const stats = fs.statSync(AUTH_STATE_PATH);
+    const ageInHours = (Date.now() - stats.mtimeMs) / (1000 * 60 * 60);
+    if (ageInHours < 12) {
+      console.log(`Using existing auth state (${ageInHours.toFixed(1)} hours old)`);
+      return;
+    }
+  }
+
+  // ─── Strategy 1: API-based login (Password Grant — no browser) ────
+  try {
+    await performLogin();
+    if (fs.existsSync(AUTH_STATE_PATH)) {
+      console.log('API login succeeded.');
+      return;
+    }
+  } catch (apiError: unknown) {
+    const msg = (apiError as { message?: string }).message || '';
+    console.log(`API login not available: ${msg}`);
+    console.log('Falling back to browser-based login...');
+  }
+
+  // ─── Strategy 2: Browser-based login ──────────────────────────────
+  const username = process.env.APP_USERNAME || process.env.ADMIN_USERNAME;
+  const password = process.env.APP_PASSWORD || process.env.ADMIN_PASSWORD;
+  const baseUrl = (
+    process.env.AUTH0_BASE_URL ||
+    process.env.baseURL ||
+    process.env.UAT_URL ||
+    process.env.API_URL ||
+    'http://localhost:3000'
+  ).replace(/\/+$/, '');
+
+  if (!username || !password) {
+    throw new Error('APP_USERNAME and APP_PASSWORD must be set in .env');
+  }
+
+  console.log('Authenticating via browser login...');
+  console.log(`   Username: ${username}`);
+  console.log(`   Base URL: ${baseUrl}`);
+
+  // Ensure auth directory exists
+  const authDir = path.resolve('playwright/.auth');
+  if (!fs.existsSync(authDir)) {
+    fs.mkdirSync(authDir, { recursive: true });
+  }
+
+  const context = await browser.newContext();
+  const page = await context.newPage();
+
+  try {
+    // Navigate to the app — will redirect to Auth0 if not logged in
+    console.log('   Navigating to application...');
+    await page.goto(baseUrl, { waitUntil: 'load', timeout: 30000 });
+    await page.waitForTimeout(3000);
+
+    const currentUrl = page.url();
+    console.log(`   Current URL: ${currentUrl}`);
+
+    if (currentUrl.includes('auth0.com') || currentUrl.includes('/login') || currentUrl.includes('/u/login')) {
+      console.log('   Auth0 login page detected');
+
+      // Fill email/username
+      const emailInput = page.locator('input[type="email"], input[name="email"], input[name="username"], input#username').first();
+      await emailInput.waitFor({ state: 'visible', timeout: 10000 });
+      await emailInput.fill(username);
+
+      // Fill password
+      const passwordInput = page.locator('input[type="password"], input[name="password"], input#password').first();
+      await passwordInput.waitFor({ state: 'visible', timeout: 10000 });
+      await passwordInput.fill(password);
+
+      // Short wait for any CAPTCHA to appear
+      await page.waitForTimeout(2000);
+
+      // Check for CAPTCHA
+      const captchaIframe = await page.locator('iframe[src*="recaptcha"], iframe[title*="reCAPTCHA"]').count();
+      const captchaInput = await page.locator('input[name*="captcha" i], #captcha').count();
+      const captchaPresent = captchaIframe > 0 || captchaInput > 0;
+
+      if (captchaPresent) {
+        console.log('');
+        console.log('  ══════════════════════════════════════════════════════');
+        console.log('   CAPTCHA DETECTED — Manual action required!');
+        console.log('   The browser window should be visible on your screen.');
+        console.log('   Please solve the CAPTCHA and click Continue/Submit.');
+        console.log('   Waiting up to 120 seconds...');
+        console.log('  ══════════════════════════════════════════════════════');
+        console.log('');
+
+        // Wait for either CAPTCHA to be solved (URL changes) or timeout
+        try {
+          await page.waitForURL(
+            (url) => !url.toString().includes('auth0.com'),
+            { timeout: 120000 },
+          );
+        } catch {
+          // Check if we're still on login page
+          if (page.url().includes('auth0.com')) {
+            await page.screenshot({ path: 'playwright/.auth/captcha-timeout.png', fullPage: true });
+            throw new Error('CAPTCHA was not solved within 120 seconds. Screenshot saved to playwright/.auth/captcha-timeout.png');
+          }
+        }
+      } else {
+        // No CAPTCHA — submit the form
+        console.log('   No CAPTCHA detected — submitting login form...');
+        const submitButton = page.locator('button[type="submit"], button[name="action"], button[data-action-button-primary="true"]').first();
+        await submitButton.click();
+      }
+
+      // Wait for redirect back to the app
+      console.log('   Waiting for login redirect...');
+      try {
+        await page.waitForURL(
+          (url) => !url.toString().includes('auth0.com'),
+          { timeout: 60000 },
+        );
+        console.log(`   Redirected to: ${page.url()}`);
+      } catch {
+        await page.screenshot({ path: 'playwright/.auth/login-failed.png', fullPage: true });
+        throw new Error(
+          `Login redirect failed. Still on: ${page.url()}. Screenshot saved to playwright/.auth/login-failed.png`,
+        );
+      }
+
+      // Wait for the app to fully load and set cookies
+      await page.waitForLoadState('load');
+      await page.waitForTimeout(3000);
+
+    } else {
+      console.log('   Already on application (no login needed)');
+    }
+
+    // Save the authenticated storage state
+    await context.storageState({ path: AUTH_STATE_PATH });
+    console.log(`   Auth state saved to ${AUTH_STATE_PATH}`);
+
+    // Verify the saved state has the expected cookie
+    const savedState = JSON.parse(fs.readFileSync(AUTH_STATE_PATH, 'utf8'));
+    const cookieName = process.env.AUTH0_COOKIE_NAME || 'dataverse-auth0-cookies';
+    const authCookie = savedState.cookies?.find((c: { name: string }) => c.name === cookieName);
+    if (authCookie) {
+      console.log(`   Auth cookie '${cookieName}' found (${authCookie.value.length} chars)`);
+    } else {
+      console.log(`   WARNING: Auth cookie '${cookieName}' NOT found in saved state.`);
+      console.log(`   Available cookies: ${savedState.cookies?.map((c: { name: string }) => c.name).join(', ') || 'none'}`);
+    }
+
+    // Fix secure flag for HTTP base URLs.
+    // Auth0 callback sets Secure unconditionally, but Playwright won't send
+    // secure cookies over plain HTTP, causing SSR to redirect to login.
+    if (baseUrl.startsWith('http://')) {
+      let patched = false;
+      for (const cookie of savedState.cookies || []) {
+        if (cookie.secure) {
+          cookie.secure = false;
+          patched = true;
+        }
+      }
+      if (patched) {
+        fs.writeFileSync(AUTH_STATE_PATH, JSON.stringify(savedState, null, 2));
+        console.log('   Patched cookie secure=false for HTTP base URL');
+      }
+    }
+
+  } finally {
+    await context.close();
+  }
+});

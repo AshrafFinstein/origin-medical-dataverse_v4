@@ -1,6 +1,7 @@
 import { test, expect } from '../../fixtures/test-data.fixture';
 import { SessionPage } from '../../pages/session.page';
 import { TestData } from '../../test-data/test-data';
+import { EpicSelectors, ProjectSelectors, SessionSelectors, getDynamicSelector } from '../../selectors';
 
 /**
  * Example Test Using Test Data Fixture
@@ -15,7 +16,7 @@ test.describe('Example: Using Test Data Fixture', () => {
     // Page is at home, ready for navigation
 
     // Verify Epic button exists
-    const epicButton = testDataPage.locator('[data-testid="epic-go-button-0"]');
+    const epicButton = testDataPage.locator(getDynamicSelector(EpicSelectors['epic-go'].button, { index: 0 }));
     await expect(epicButton).toBeVisible();
 
     console.log('✅ Epic exists and is visible');
@@ -28,10 +29,10 @@ test.describe('Example: Using Test Data Fixture', () => {
     await sessionPage.navigateToModule();
 
     // Verify we're on session page
-    const sessionTable = testDataPage.locator('[data-testid="session-table"]');
+    const sessionTable = testDataPage.locator(SessionSelectors['session-table'].root);
     await expect(sessionTable).toBeVisible();
 
-    const createButton = testDataPage.locator('[data-testid="session-create-button"]');
+    const createButton = testDataPage.locator(SessionSelectors['session-create'].button);
     await expect(createButton).toBeVisible();
 
     console.log('✅ Successfully navigated to session page');
@@ -44,10 +45,10 @@ test.describe('Example: Using Test Data Fixture', () => {
 
     // Can use epicId to navigate directly
     await testDataPage.goto(`/epic/${epicId}`);
-    await testDataPage.waitForLoadState('networkidle');
+    await testDataPage.waitForLoadState('load');
 
     // Should see project button
-    const projectButton = testDataPage.locator('[data-testid="project-go-button-0"]');
+    const projectButton = testDataPage.locator(getDynamicSelector(ProjectSelectors['project-go'].button, { index: 0 }));
     await expect(projectButton).toBeVisible();
 
     console.log('✅ Epic ID works for direct navigation');
@@ -60,10 +61,10 @@ test.describe('Example: Using Test Data Fixture', () => {
 
     // Can use projectId to navigate directly
     await testDataPage.goto(`/project/${projectId}`);
-    await testDataPage.waitForLoadState('networkidle');
+    await testDataPage.waitForLoadState('load');
 
     // Should see session elements
-    const sessionTable = testDataPage.locator('[data-testid="session-table"]');
+    const sessionTable = testDataPage.locator(SessionSelectors['session-table'].root);
     await expect(sessionTable).toBeVisible();
 
     console.log('✅ Project ID works for direct navigation');
@@ -96,7 +97,7 @@ test.describe('Example: Using Global Setup', () => {
   test('should work with standard page object', async ({ page }) => {
     // Epic + Project created by global.setup.ts
     await page.goto(TestData.urls.homePage);
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('load');
 
     const sessionPage = new SessionPage(page);
     await sessionPage.navigateToModule();

@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from '../../../fixtures/auth.fixture';
 import { SessionPage } from '../../../pages/session.page';
 import { TestData } from '../../../test-data/test-data';
 import { SessionSelectors, CommonSelectors } from '../../../selectors';
@@ -19,7 +19,7 @@ test.describe('URS-DV-AN-13: Verify File names displayed after selection when us
 
     // Navigate to home page
     await page.goto(TestData.urls.homePage);
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('load');
   });
 
   test('UTC-1595: Verify File names displayed after selection when user selects multiple JSON file', async ({ page }) => {

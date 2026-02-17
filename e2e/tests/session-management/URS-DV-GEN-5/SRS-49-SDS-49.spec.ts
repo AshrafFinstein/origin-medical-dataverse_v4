@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from '../../../fixtures/auth.fixture';
 import { SessionPage } from '../../../pages/session.page';
 import { TestData } from '../../../test-data/test-data';
 import { SessionSelectors, LabelSelectors, CommonSelectors } from '../../../selectors';
@@ -19,7 +19,7 @@ test.describe('URS-DV-GEN-5: Verify Show No Data when results are empty when the
 
     // Navigate to home page
     await page.goto(TestData.urls.homePage);
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('load');
   });
 
   test('UTC-575: Verify Show No Data when results are empty when the field has no records', async ({ page }) => {

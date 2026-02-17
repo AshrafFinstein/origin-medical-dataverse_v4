@@ -7,6 +7,10 @@ export const environments = {
     baseURL: 'https://staging.dataverse.com',
     apiURL: 'https://staging.dataverse.com/api',
   },
+  uat: {
+    baseURL: process.env.UAT_URL || 'https://uat.dataverse.com',
+    apiURL: process.env.UAT_API_URL || `${process.env.UAT_URL || 'https://uat.dataverse.com'}/api`,
+  },
   production: {
     baseURL: 'https://dataverse.com',
     apiURL: 'https://dataverse.com/api',

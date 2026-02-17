@@ -34,5 +34,8 @@
     "removal-modal": "[data-testid=\"project-user-removal-modal\"]",
     "removal-cancel-button": "[data-testid=\"project-user-removal-cancel-button\"]",
     "removal-confirm-button": "[data-testid=\"project-user-removal-confirm-button\"]"
+  },
+  "project-go": {
+    "button": "[data-testid=\"project-go-button-${index}\"]"
   }
 }

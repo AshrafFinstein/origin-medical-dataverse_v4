@@ -77,5 +77,17 @@
   },
   "`ce-assessment": {
     "option-${section.index}-${assessment.index}-${name}`": "[data-testid=\"`ce-assessment-option-${section.index}-${assessment.index}-${name}`\"]"
+  },
+  "ui-toast": {
+    "success": ".n-message--success-type",
+    "error": ".n-message--error-type"
+  },
+  "ui-modal": {
+    "container": ".n-modal-container"
+  },
+  "ui-loading": {
+    "spin": ".n-spin",
+    "skeleton": ".n-skeleton",
+    "custom-indicator": ".custom-loading-indicator"
   }
 }

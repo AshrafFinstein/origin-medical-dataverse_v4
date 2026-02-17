@@ -1,75 +1,70 @@
-import { Page, Locator } from '@playwright/test';
+import { Page } from '@playwright/test';
+import { BasePage } from './base.page';
 import selectors from '../selectors/selectors.json';
 
-export class LoginPage {
-  readonly page: Page;
-  readonly usernameInput: Locator;
-  readonly passwordInput: Locator;
-  readonly loginButton: Locator;
-  readonly errorMessage: Locator;
-  readonly rememberMeCheckbox: Locator;
-
+export class LoginPage extends BasePage {
   constructor(page: Page) {
-    this.page = page;
-    this.usernameInput = page.locator(selectors.login.usernameInput);
-    this.passwordInput = page.locator(selectors.login.passwordInput);
-    this.loginButton = page.locator(selectors.login.loginButton);
-    this.errorMessage = page.locator(selectors.login.errorMessage);
-    this.rememberMeCheckbox = page.locator(selectors.login.rememberMeCheckbox);
+    super(page);
   }
 
   async goto() {
-    await this.page.goto('/login');
-    await this.page.waitForLoadState('domcontentloaded');
+    await super.goto('/login');
   }
 
   async login(username: string, password: string, rememberMe: boolean = false) {
-    await this.usernameInput.fill(username);
-    await this.passwordInput.fill(password);
+    await this.fill(selectors.login.usernameInput, username);
+    await this.fill(selectors.login.passwordInput, password);
     if (rememberMe) {
-      await this.rememberMeCheckbox.check();
+      await this.check(selectors.login.rememberMeCheckbox);
     }
-    await this.loginButton.click();
+    await this.click(selectors.login.loginButton);
   }
 
   async getErrorMessage(): Promise<string> {
-    await this.errorMessage.waitFor({ state: 'visible' });
-    return await this.errorMessage.textContent() || '';
+    await this.waitForSelector(selectors.login.errorMessage, { state: 'visible' });
+    return await this.getText(selectors.login.errorMessage);
   }
 
   async isLoginButtonEnabled(): Promise<boolean> {
-    return await this.loginButton.isEnabled();
+    return await this.isEnabled(selectors.login.loginButton);
   }
 
   async isLoginButtonVisible(): Promise<boolean> {
-    return await this.loginButton.isVisible();
+    return await this.isVisible(selectors.login.loginButton);
   }
 
   async navigateToLogin(url: string) {
-    await this.page.goto(url);
+    await super.goto(url);
+  }
+
+  /**
+   * Unified login flow for spec-level usage.
+   * Navigates to the base URL and authenticates only if redirected to login/Auth0.
+   */
+  async performLogin(username: string, password: string, baseUrl: string) {
+    await this.page.goto(baseUrl);
     await this.page.waitForLoadState('domcontentloaded');
+
+    const currentUrl = this.page.url();
+    if (currentUrl.includes('auth0.com') || currentUrl.includes('/login')) {
+      await this.loginWithAuth0(username, password);
+      await this.page.waitForLoadState('networkidle');
+    }
   }
 
   async loginWithDynamicCaptcha(email: string, password: string) {
-    // Wait for email input
-    const emailInput = this.page.locator('input[type="email"], input[name="email"]');
-    await emailInput.waitFor({ state: 'visible', timeout: 10000 });
-    await emailInput.fill(email);
+    await this.waitForSelector(selectors.login.auth0EmailInput, { state: 'visible', timeout: 10000 });
+    await this.fill(selectors.login.auth0EmailInput, email);
 
-    // Wait for password input
-    const passwordInput = this.page.locator('input[type="password"], input[name="password"]');
-    await passwordInput.waitFor({ state: 'visible', timeout: 10000 });
-    await passwordInput.fill(password);
+    await this.waitForSelector(selectors.login.auth0PasswordInput, { state: 'visible', timeout: 10000 });
+    await this.fill(selectors.login.auth0PasswordInput, password);
 
-    // Click submit button
-    const submitButton = this.page.locator('button[type="submit"]');
-    await submitButton.click();
+    await this.click(selectors.login.auth0SubmitButton);
 
     // Wait for navigation or error
     try {
       await this.page.waitForURL(/dataverse|dashboard|\/(?!login)/, { timeout: 15000 });
     } catch {
-      // If URL doesn't change, wait for network idle
       await this.page.waitForLoadState('networkidle', { timeout: 15000 });
     }
   }
@@ -79,58 +74,30 @@ export class LoginPage {
    * This method handles the Auth0 login flow and waits for CAPTCHA if present
    */
   async loginWithAuth0(email: string, password: string) {
-    console.log('🔐 Starting Auth0 login...');
-
-    // Wait for Auth0 login page to load
     await this.page.waitForLoadState('networkidle');
 
     try {
-      // Fill email field (Auth0 uses 'email' or 'username')
-      const emailInput = this.page.locator('input[type="email"], input[name="email"], input[name="username"]').first();
-      await emailInput.waitFor({ state: 'visible', timeout: 10000 });
-      await emailInput.fill(email);
-      console.log('   ✓ Email filled');
+      await this.waitForSelector(selectors.login.auth0EmailInput, { state: 'visible', timeout: 10000 });
+      await this.fill(selectors.login.auth0EmailInput, email);
 
-      // Fill password field
-      const passwordInput = this.page.locator('input[type="password"], input[name="password"]').first();
-      await passwordInput.waitFor({ state: 'visible', timeout: 10000 });
-      await passwordInput.fill(password);
-      console.log('   ✓ Password filled');
+      await this.waitForSelector(selectors.login.auth0PasswordInput, { state: 'visible', timeout: 10000 });
+      await this.fill(selectors.login.auth0PasswordInput, password);
 
-      // Check for CAPTCHA
-      const captchaPresent = await this.page.locator('iframe[src*="recaptcha"], iframe[title*="reCAPTCHA"], #recaptcha, .g-recaptcha').count() > 0;
+      const captchaPresent = await this.getCount(selectors.login.auth0CaptchaFrame) > 0;
 
       if (captchaPresent) {
-        console.log('⚠️  CAPTCHA detected - waiting for manual solve (60s timeout)');
-        console.log('   Please solve the CAPTCHA in the browser...');
-
-        // Wait for CAPTCHA to be solved (check for submit button to be enabled or CAPTCHA to disappear)
-        await this.page.waitForTimeout(60000); // 60 second timeout for manual CAPTCHA solve
+        await this.page.waitForLoadState('domcontentloaded', { timeout: 60000 });
       }
 
-      // Click submit/continue button
-      const submitButton = this.page.locator('button[type="submit"], button[name="action"]').first();
-      await submitButton.waitFor({ state: 'visible', timeout: 5000 });
-      await submitButton.click();
-      console.log('   ✓ Submit button clicked');
+      await this.waitForSelector(selectors.login.auth0SubmitButton, { state: 'visible', timeout: 5000 });
+      await this.click(selectors.login.auth0SubmitButton);
 
-      // Wait for redirect back to application
-      // Auth0 redirects back to the callback URL
       await this.page.waitForURL(/dataverse|dashboard|localhost:\d+\/(?!login)/, { timeout: 30000 });
-      console.log('   ✓ Redirected to application');
-
-      // Wait for network to be idle (ensures full page load)
       await this.page.waitForLoadState('networkidle');
-      console.log('   ✓ Page loaded');
-
-    } catch (error: any) {
-      console.error('❌ Auth0 login failed:', error.message);
-
-      // Take screenshot for debugging
+    } catch (error) {
       await this.page.screenshot({ path: `playwright/.auth/login-error-${Date.now()}.png`, fullPage: true });
-      console.log('   📸 Error screenshot saved');
-
-      throw error;
+      const message = error instanceof Error ? error.message : 'Unknown Auth0 login error';
+      throw new Error(`Auth0 login failed: ${message}`);
     }
   }
 }

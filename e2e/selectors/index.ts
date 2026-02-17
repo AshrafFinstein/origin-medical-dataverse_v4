@@ -78,9 +78,9 @@ export function getDynamicSelector(
 ): string {
   let result = selector;
   for (const [key, value] of Object.entries(replacements)) {
-    // Replace both {key} and ${key} formats
-    result = result.replace(new RegExp(`\\{${key}\\}`, 'g'), value.toString());
+    // Replace ${key} first (before {key}, since {key} is a substring of ${key})
     result = result.replace(new RegExp(`\\$\\{${key}\\}`, 'g'), value.toString());
+    result = result.replace(new RegExp(`\\{${key}\\}`, 'g'), value.toString());
   }
   return result;
 }

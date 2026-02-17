@@ -1,5 +1,6 @@
 import { test, expect } from '../../../fixtures/auth.fixture';
 import { LoginPage } from '../../../pages/login.page';
+import { CommonSelectors } from '../../../selectors';
 
 /**
  * Test Suite: Login Module - Authentication
@@ -34,7 +35,7 @@ test.describe('Login - Basic Authentication', () => {
     expect(page.url()).toContain('/');
 
     // Verify user is logged in
-    const isLoggedIn = await page.isVisible('[data-testid="header-logout-button"]');
+    const isLoggedIn = await page.isVisible(CommonSelectors['header-logout'].button);
     expect(isLoggedIn).toBe(true);
 
     console.log('✅ Login successful');

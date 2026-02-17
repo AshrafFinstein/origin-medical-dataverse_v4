@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from '../../../fixtures/auth.fixture';
 import { DataLabellingPage } from '../../../pages/data-labelling.page';
 import { TestData } from '../../../test-data/test-data';
 import { DataLabellingSelectors, CommonSelectors } from '../../../selectors';
@@ -19,7 +19,7 @@ test.describe('URS-DV-GEN-16: Verify Trigger deletion modal when mark selected w
 
     // Navigate to home page
     await page.goto(TestData.urls.homePage);
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('load');
   });
 
   test('UTC-1704: Verify Trigger deletion modal when mark selected when a canvas annotation mark i', async ({ page }) => {

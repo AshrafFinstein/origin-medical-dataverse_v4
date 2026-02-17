@@ -12,5 +12,8 @@
   },
   "label-table": {
     "root": "[data-testid=\"label-table\"]"
+  },
+  "label-search": {
+    "input": "input[type=\"search\"], input[placeholder*=\"Search\"]"
   }
 }

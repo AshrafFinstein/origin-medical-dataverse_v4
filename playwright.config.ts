@@ -1,18 +1,18 @@
 import { defineConfig, devices } from '@playwright/test';
 import * as dotenv from 'dotenv';
 
-// Load environment variables from app folder
-dotenv.config({ path: './datavaerese_frontend_&_backend/.env' });
+// Load environment variables from repository root .env only.
+dotenv.config({ path: './.env' });
+
+const resolvedBaseUrl = (process.env.baseURL || process.env.UAT_URL || process.env.API_URL || 'http://localhost:3000').replace(/\/+$/, '');
+const useTestDataSetup = process.env.USE_TEST_DATA_SETUP === 'true';
 
 export default defineConfig({
   testDir: './e2e/tests',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 2 : 6, // Run tests in parallel across 6 workers locally
-
-  // Global setup to authenticate once before all tests
-  globalSetup: require.resolve('./e2e/global-setup'),
+  workers: process.env.CI ? 1 : 1, // Run tests in parallel across 1 workers locally
 
   // Test timeout
   timeout: parseInt(process.env.TEST_TIMEOUT || '60000'),
@@ -26,7 +26,7 @@ export default defineConfig({
   ],
 
   use: {
-    baseURL: process.env.API_URL || 'http://localhost:3000',
+    baseURL: resolvedBaseUrl,
 
     // Capture trace on first retry
     trace: 'on-first-retry',
@@ -48,23 +48,42 @@ export default defineConfig({
   },
 
   projects: [
-    // Setup project - runs once before all tests to create test data
+    // Auth setup — tries API login first, falls back to browser login.
+    // Browser runs headed so user can solve CAPTCHA if needed.
     {
-      name: 'setup',
-      testMatch: /.*\.setup\.ts/,
+      name: 'auth-setup',
+      testMatch: /.*auth\.setup\.ts/,
+      timeout: 180_000,
       use: {
-        storageState: './playwright/.auth/state.json',
+        headless: false,
       },
     },
 
-    // Main test project
+    // Test data setup — optional, creates Epic + Project via browser.
+    // Enable with USE_TEST_DATA_SETUP=true.
+    ...(
+      useTestDataSetup
+        ? [
+            {
+              name: 'setup',
+              testMatch: /.*global\.setup\.ts/,
+              dependencies: ['auth-setup'],
+              use: {
+                storageState: './playwright/.auth/state.json',
+              },
+            },
+          ]
+        : []
+    ),
+
+    // Main test project: always executes spec files from e2e/tests.
     {
       name: 'chromium',
-      dependencies: ['setup'], // Run setup project first
+      dependencies: useTestDataSetup ? ['setup'] : ['auth-setup'],
+      testMatch: /.*\.spec\.ts/,
       use: {
         ...devices['Desktop Chrome'],
         headless: process.env.HEADLESS === 'true',
-        // All parallel workers share this storage state (authenticated session)
         storageState: './playwright/.auth/state.json',
       },
     },

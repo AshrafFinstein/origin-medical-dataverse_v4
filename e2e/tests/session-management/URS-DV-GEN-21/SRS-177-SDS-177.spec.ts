@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from '../../../fixtures/auth.fixture';
 import { SessionPage } from '../../../pages/session.page';
 import { TestData } from '../../../test-data/test-data';
 import { SessionSelectors, CommonSelectors } from '../../../selectors';
@@ -19,7 +19,7 @@ test.describe('URS-DV-GEN-21: Verify system prevents saving duplicate Structure 
 
     // Navigate to home page
     await page.goto(TestData.urls.homePage);
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('load');
   });
 
   test('UTC-2013: Verify system prevents saving duplicate Structure Group Name when a structure gr', async ({ page }) => {

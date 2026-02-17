@@ -30,9 +30,21 @@
     "menu-search-input": "[data-testid=\"dl-label-menu-search-input\"]",
     "menu-apply-button": "[data-testid=\"dl-label-menu-apply-button\"]"
   },
+  "dl-canvas": {
+    "root": "canvas"
+  },
+  "dl-counter": {
+    "root": ".image-counter"
+  },
+  "dl-status": {
+    "saved-indicator": "text=All changes saved"
+  },
   "dl-copy": {
     "annotation-modal": "[data-testid=\"dl-copy-annotation-modal\"]",
     "annotation-cancel-button": "[data-testid=\"dl-copy-annotation-cancel-button\"]",
     "annotation-replace-button": "[data-testid=\"dl-copy-annotation-replace-button\"]"
+  },
+  "dl-annotation-items": {
+    "root": ".annotation-item, .konvajs-content rect"
   }
 }

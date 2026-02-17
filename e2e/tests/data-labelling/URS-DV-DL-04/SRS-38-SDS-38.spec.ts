@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from '../../../fixtures/auth.fixture';
 import { DataLabellingPage } from '../../../pages/data-labelling.page';
 import { TestData } from '../../../test-data/test-data';
 import { DataLabellingSelectors, CommonSelectors } from '../../../selectors';
@@ -13,13 +13,12 @@ test.describe('URS-DV-DL-04: Verify Show empty state when no results found when 
   let datalabellingPage: DataLabellingPage;
 
   test.beforeEach(async ({ page }) => {
-    // Authentication handled by global-setup.ts and storageState
-    // Just initialize page object
+  
     datalabellingPage = new DataLabellingPage(page);
 
     // Navigate to home page
     await page.goto(TestData.urls.homePage);
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('load');
   });
 
   test('UTC-457: Verify Show empty state when no results found when filters/search return zero re', async ({ page }) => {

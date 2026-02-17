@@ -3,17 +3,19 @@
  */
 
 export const TestData = {
+  baseUrl: process.env.baseURL || process.env.UAT_URL || process.env.API_URL || 'http://localhost:3000',
+
   // URLs
   urls: {
-    loginPage: process.env.API_URL || 'http://localhost:3000/login',
-    homePage: process.env.API_URL || 'http://localhost:3000',
-    dashboard: `${process.env.API_URL || 'http://localhost:3000'}/dashboard`,
+    loginPage: `${process.env.baseURL || process.env.UAT_URL || process.env.API_URL || 'http://localhost:3000'}/login`,
+    homePage: process.env.baseURL || process.env.UAT_URL || process.env.API_URL || 'http://localhost:3000',
+    dashboard: `${process.env.baseURL || process.env.UAT_URL || process.env.API_URL || 'http://localhost:3000'}/dashboard`,
   },
 
   // Valid credentials
   validCredentials: {
-    email: process.env.ADMIN_USERNAME || 'ashraf.a@finstein.ai',
-    password: process.env.ADMIN_PASSWORD || 'yxD21p)E1)SL',
+    email: process.env.APP_USERNAME || process.env.ADMIN_USERNAME || 'ashraf.a@finstein.ai',
+    password: process.env.APP_PASSWORD || process.env.ADMIN_PASSWORD || 'yxD21p)E1)SL',
   },
 
   // Invalid credentials for negative tests
@@ -25,8 +27,8 @@ export const TestData = {
   // Test users for role-based testing
   testUsers: {
     admin: {
-      email: process.env.ADMIN_USERNAME || 'ashraf.a@finstein.ai',
-      password: process.env.ADMIN_PASSWORD || 'yxD21p)E1)SL',
+      email: process.env.APP_USERNAME || process.env.ADMIN_USERNAME || 'ashraf.a@finstein.ai',
+      password: process.env.APP_PASSWORD || process.env.ADMIN_PASSWORD || 'yxD21p)E1)SL',
       role: 'admin',
     },
     reviewer: {

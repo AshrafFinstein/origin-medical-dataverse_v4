@@ -35,5 +35,8 @@
     "reason-input": "[data-testid=\"reject-request-reason-input\"]",
     "cancel-button": "[data-testid=\"reject-request-cancel-button\"]",
     "confirm-button": "[data-testid=\"reject-request-confirm-button\"]"
+  },
+  "epic-go": {
+    "button": "[data-testid=\"epic-go-button-${index}\"]"
   }
 }

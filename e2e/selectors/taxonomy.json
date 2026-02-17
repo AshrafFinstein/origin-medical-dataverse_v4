@@ -9,6 +9,9 @@
   "taxonomy-table": {
     "root": "[data-testid=\"taxonomy-table\"]"
   },
+  "taxonomy-annotation-rows": {
+    "root": "[data-testid^=\"taxonomy-annotation-row-\"]"
+  },
   "`taxonomy-annotation": {
     "row-${index}`": "[data-testid=\"`taxonomy-annotation-row-${index}`\"]",
     "select-${index}`": "[data-testid=\"`taxonomy-annotation-select-${index}`\"]"
