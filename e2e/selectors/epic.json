@@ -15,8 +15,8 @@
   "epic-create": {
     "button": "[data-testid=\"epic-create-button\"]",
     "modal": "[data-testid=\"epic-create-modal\"]",
-    "name-input": "[data-testid=\"epic-create-name-input\"]",
-    "description-input": "[data-testid=\"epic-create-description-input\"]",
+    "name-input": "[data-testid=\"epic-create-name-input\"] input",
+    "description-input": "[data-testid=\"epic-create-description-input\"] textarea",
     "cancel-button": "[data-testid=\"epic-create-cancel-button\"]",
     "submit-button": "[data-testid=\"epic-create-submit-button\"]"
   },
@@ -38,5 +38,55 @@
   },
   "epic-go": {
     "button": "[data-testid=\"epic-go-button-${index}\"]"
+  },
+  "epic-edit": {
+    "button": "[data-testid=\"epic-edit-button-${index}\"]"
+  },
+  "epic-update": {
+    "button": "[data-testid=\"epic-update-button-${index}\"]"
+  },
+  "epic-cancel": {
+    "button": "[data-testid=\"epic-cancel-button-${index}\"]"
+  },
+  "epic-delete-action": {
+    "button": "[data-testid=\"epic-delete-button-${index}\"]"
+  },
+  "epic-name-input": {
+    "input": "[data-testid=\"epic-name-input-${index}\"]"
+  },
+  "epic-description-input": {
+    "input": "[data-testid=\"epic-description-input-${index}\"]"
+  },
+  "epic-actions-row": {
+    "root": "[data-testid=\"epic-actions-row-${index}\"]"
+  },
+  "epic-create-modal": {
+    "close-button": "[data-testid=\"epic-create-modal\"] .n-card-header__close"
+  },
+  "epic-create-validation": {
+    "name-error": "[data-testid=\"epic-create-modal\"] .n-form-item-feedback--error, [data-testid=\"epic-create-modal\"] .text-red-500"
+  },
+  "epic-table-header": {
+    "name": "[data-testid=\"epic-table\"] th:has-text(\"Name\")",
+    "updated-at": "[data-testid=\"epic-table\"] th:has-text(\"Updated at\")",
+    "created-at": "[data-testid=\"epic-table\"] th:has-text(\"Created at\")",
+    "description": "[data-testid=\"epic-table\"] th:has-text(\"Description\")",
+    "actions": "[data-testid=\"epic-table\"] th:has-text(\"Actions\")"
+  },
+  "epic-table-sort": {
+    "name": "[data-testid=\"epic-table\"] th:has-text(\"Name\")",
+    "updated-at": "[data-testid=\"epic-table\"] th:has-text(\"Updated at\")",
+    "created-at": "[data-testid=\"epic-table\"] th:has-text(\"Created at\")"
+  },
+  "epic-pagination": {
+    "root": ".n-pagination, .n-data-table__pagination",
+    "prev": ".n-pagination .n-pagination-item:first-child",
+    "next": ".n-pagination .n-pagination-item:last-child",
+    "page-items": ".n-pagination .n-pagination-item",
+    "page-number-items": ".n-pagination-item:not(.n-pagination-item--prev):not(.n-pagination-item--next)",
+    "page-active": ".n-pagination-item--active",
+    "size-picker": ".n-pagination-size-picker, .n-pagination [class*=\"size-picker\"], .n-pagination :has-text(\" / page\")",
+    "size-label": ".n-pagination .n-pagination-size-picker .n-base-selection-label, .n-pagination .n-pagination-size-picker, .n-pagination :has-text(\" / page\")",
+    "size-option": ".n-base-select-option"
   }
 }

@@ -1,0 +1,15 @@
+{
+  "validName": "Epic Release 1",
+  "validDescription": "Epic for Sprint 1 planning",
+  "validNameAlt": "Release Planning Epic",
+  "validDescriptionAlt": "Details for release planning",
+  "emptyName": "",
+  "spaceOnly": " ",
+  "specialChars": "@#$%^",
+  "longNameLength": 101,
+  "longDescriptionLength": 300,
+  "pageSize20": 20,
+  "pageSizeOptions": [10, 20, 30],
+  "nameRequiredError": "Name is required",
+  "nameLeadingSpaceError": "Name cannot start with a space"
+}

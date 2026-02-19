@@ -3,26 +3,58 @@ import { BaseModule } from '../shared/base-module';
 import type { EpicData, EpicSearchCriteria } from './index';
 
 export class EpicCrudModule extends BaseModule {
-  async createEpic(data: EpicData) {
+  async openCreateEpicModal() {
     await this.click(this.selectors.epic['epic-create'].button);
-    await this.waitForModalOpen();
-    await this.waitForSelector(this.selectors.epic['epic-create'].modal);
-    await this.fill(this.selectors.epic['epic-create']['name-input'], data.name);
+    await this.waitForSelector(this.selectors.epic['epic-create'].modal, { state: 'visible' });
+  }
+
+  async closeCreateEpicModalWithCloseIcon() {
+    await this.click(this.selectors.epic['epic-create-modal']['close-button']);
+    await this.waitForSelector(this.selectors.epic['epic-create'].modal, { state: 'hidden' });
+  }
+
+  async closeCreateEpicModalWithCancelButton() {
+    await this.click(this.selectors.epic['epic-create']['cancel-button']);
+    await this.waitForSelector(this.selectors.epic['epic-create'].modal, { state: 'hidden' });
+  }
+
+  async submitCreateEpic() {
+    await this.click(this.selectors.epic['epic-create']['submit-button']);
+  }
+
+  async fillEpicName(name: string) {
+    await this.fill(this.selectors.epic['epic-create']['name-input'], name);
+  }
+
+  async fillEpicDescription(description: string) {
+    await this.fill(this.selectors.epic['epic-create']['description-input'], description);
+  }
+
+  async focusEpicDescription() {
+    await this.click(this.selectors.epic['epic-create']['description-input']);
+  }
+
+  async focusEpicName() {
+    await this.click(this.selectors.epic['epic-create']['name-input']);
+  }
+
+  async createEpic(data: EpicData) {
+    await this.openCreateEpicModal();
+    await this.fillEpicName(data.name);
 
     if (data.description) {
-      await this.fill(this.selectors.epic['epic-create']['description-input'], data.description);
+      await this.fillEpicDescription(data.description);
     }
 
-    await this.click(this.selectors.epic['epic-create']['submit-button']);
+    await this.submitCreateEpic();
     await this.waitForToast('success');
-    await this.waitForModalClose();
+    await this.waitForSelector(this.selectors.epic['epic-create'].modal, { state: 'hidden' });
   }
 
   async cancelEpicCreation() {
-    await this.click(this.selectors.epic['epic-create'].button);
-    await this.waitForModalOpen();
+    await this.openCreateEpicModal();
     await this.click(this.selectors.epic['epic-create']['cancel-button']);
-    await this.waitForModalClose();
+    await this.waitForSelector(this.selectors.epic['epic-create'].modal, { state: 'hidden' });
   }
 
   async searchEpic(criteria: EpicSearchCriteria) {
