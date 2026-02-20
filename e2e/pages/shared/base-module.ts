@@ -24,8 +24,16 @@ export abstract class BaseModule {
     return this.ctx.click(selector);
   }
 
+  protected clickByTestId(testId: string) {
+    return this.ctx.clickByTestId(testId);
+  }
+
   protected fill(selector: string, value: string) {
     return this.ctx.fill(selector, value);
+  }
+
+  protected fillByTestId(testId: string, value: string) {
+    return this.ctx.fillByTestId(testId, value);
   }
 
   protected selectOption(selector: string, value: string) {
@@ -36,11 +44,34 @@ export abstract class BaseModule {
     return this.ctx.isVisible(selector);
   }
 
+  protected isVisibleByTestId(testId: string) {
+    return this.ctx.isVisibleByTestId(testId);
+  }
+
+  protected isHiddenByTestId(testId: string) {
+    return this.ctx.isHiddenByTestId(testId);
+  }
+
+  protected getByTestId(testId: string) {
+    return this.ctx.getByTestId(testId);
+  }
+
+  protected getValueByTestId(testId: string) {
+    return this.ctx.getValueByTestId(testId);
+  }
+
   protected waitForSelector(
     selector: string,
     options?: { timeout?: number; state?: 'visible' | 'hidden' | 'attached' | 'detached' }
   ) {
     return this.ctx.waitForSelector(selector, options);
+  }
+
+  protected waitForTestId(
+    testId: string,
+    options?: { timeout?: number; state?: 'visible' | 'hidden' | 'attached' | 'detached' }
+  ) {
+    return this.ctx.waitForTestId(testId, options);
   }
 
   protected waitForLoadingComplete() {

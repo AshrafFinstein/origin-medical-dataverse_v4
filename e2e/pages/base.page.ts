@@ -25,8 +25,21 @@ export abstract class BasePage {
   }
 
   // Interactions
+  private resolveSelector(selector: string): string {
+    if (selector.includes('[data-testid')) return selector;
+    if (/[\\s>+~,.#:\[\]]/.test(selector)) return selector;
+    return `[data-testid="${selector}"]`;
+  }
+
   async click(selector: string) {
-    await this.page.click(selector);
+    const resolved = this.resolveSelector(selector);
+    const base = this.page.locator(resolved);
+    const inputLike = base.locator('input, textarea, [contenteditable="true"]');
+    if (await inputLike.count() > 0) {
+      await inputLike.first().click();
+      return;
+    }
+    await base.click();
   }
 
   async clickByText(text: string) {
@@ -34,7 +47,14 @@ export abstract class BasePage {
   }
 
   async fill(selector: string, value: string) {
-    await this.page.fill(selector, value);
+    const resolved = this.resolveSelector(selector);
+    const base = this.page.locator(resolved);
+    const inputLike = base.locator('input, textarea, [contenteditable="true"]');
+    if (await inputLike.count() > 0) {
+      await inputLike.first().fill(value);
+      return;
+    }
+    await base.fill(value);
   }
 
   async clear(selector: string) {
@@ -75,35 +95,48 @@ export abstract class BasePage {
 
   // Getters
   async getText(selector: string): Promise<string> {
-    return await this.page.textContent(selector) || '';
+    const resolved = this.resolveSelector(selector);
+    return await this.page.textContent(resolved) || '';
   }
 
   async getValue(selector: string): Promise<string> {
-    return await this.page.inputValue(selector);
+    const resolved = this.resolveSelector(selector);
+    const base = this.page.locator(resolved);
+    const inputLike = base.locator('input, textarea');
+    if (await inputLike.count() > 0) {
+      return await inputLike.first().inputValue();
+    }
+    return await base.inputValue();
   }
 
   async getAttribute(selector: string, name: string): Promise<string | null> {
-    return await this.page.getAttribute(selector, name);
+    const resolved = this.resolveSelector(selector);
+    return await this.page.getAttribute(resolved, name);
   }
 
   async isVisible(selector: string): Promise<boolean> {
-    return await this.page.isVisible(selector);
+    const resolved = this.resolveSelector(selector);
+    return await this.page.isVisible(resolved);
   }
 
   async isHidden(selector: string): Promise<boolean> {
-    return await this.page.isHidden(selector);
+    const resolved = this.resolveSelector(selector);
+    return await this.page.isHidden(resolved);
   }
 
   async isEnabled(selector: string): Promise<boolean> {
-    return await this.page.isEnabled(selector);
+    const resolved = this.resolveSelector(selector);
+    return await this.page.isEnabled(resolved);
   }
 
   async isDisabled(selector: string): Promise<boolean> {
-    return await this.page.isDisabled(selector);
+    const resolved = this.resolveSelector(selector);
+    return await this.page.isDisabled(resolved);
   }
 
   async isChecked(selector: string): Promise<boolean> {
-    return await this.page.isChecked(selector);
+    const resolved = this.resolveSelector(selector);
+    return await this.page.isChecked(resolved);
   }
 
   async isTextVisible(text: string): Promise<boolean> {
@@ -111,12 +144,62 @@ export abstract class BasePage {
   }
 
   async getCount(selector: string): Promise<number> {
-    return await this.page.locator(selector).count();
+    const resolved = this.resolveSelector(selector);
+    return await this.page.locator(resolved).count();
   }
 
   // Locator helpers
   getLocator(selector: string): Locator {
-    return this.page.locator(selector);
+    const resolved = this.resolveSelector(selector);
+    return this.page.locator(resolved);
+  }
+
+  getByTestId(testId: string): Locator {
+    return this.page.getByTestId(testId);
+  }
+
+  async clickByTestId(testId: string) {
+    const base = this.page.getByTestId(testId);
+    const inputLike = base.locator('input, textarea, [contenteditable="true"]');
+    if (await inputLike.count() > 0) {
+      await inputLike.first().click();
+      return;
+    }
+    await base.click();
+  }
+
+  async fillByTestId(testId: string, value: string) {
+    const base = this.page.getByTestId(testId);
+    const inputLike = base.locator('input, textarea, [contenteditable="true"]');
+    if (await inputLike.count() > 0) {
+      await inputLike.first().fill(value);
+      return;
+    }
+    await base.fill(value);
+  }
+
+  async getValueByTestId(testId: string): Promise<string> {
+    const base = this.page.getByTestId(testId);
+    const inputLike = base.locator('input, textarea');
+    if (await inputLike.count() > 0) {
+      return await inputLike.first().inputValue();
+    }
+    return await base.inputValue();
+  }
+
+  async isVisibleByTestId(testId: string): Promise<boolean> {
+    return await this.page.getByTestId(testId).isVisible();
+  }
+
+  async isHiddenByTestId(testId: string): Promise<boolean> {
+    return await this.page.getByTestId(testId).isHidden();
+  }
+
+  async waitForTestId(
+    testId: string,
+    options?: { timeout?: number; state?: 'visible' | 'hidden' | 'attached' | 'detached' }
+  ) {
+    await this.page.getByTestId(testId).waitFor(options ?? {});
   }
 
   getLocatorByText(text: string): Locator {
@@ -133,7 +216,8 @@ export abstract class BasePage {
 
   // Wait helpers
   async waitForSelector(selector: string, options?: { timeout?: number; state?: 'visible' | 'hidden' | 'attached' | 'detached' }) {
-    await this.page.waitForSelector(selector, options ?? {});
+    const resolved = this.resolveSelector(selector);
+    await this.page.waitForSelector(resolved, options ?? {});
   }
 
   async waitForText(text: string, options?: { timeout?: number }) {

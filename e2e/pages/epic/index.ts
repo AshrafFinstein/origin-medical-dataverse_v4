@@ -60,6 +60,7 @@ export class EpicPage extends BasePage {
   async getCreateEpicDescriptionValue() { return this.validation.getCreateEpicDescriptionValue(); }
   async getEpicNameValidationMessage() { return this.validation.getEpicNameValidationMessage(); }
   async getCreateEpicValidationMessages() { return this.validation.getCreateEpicValidationMessages(); }
+  async getEpicDescriptionValidationMessage() { return this.validation.getEpicDescriptionValidationMessage(); }
   async isEpicDeleteModalOpen() { return this.validation.isEpicDeleteModalOpen(); }
   async isEpicTableHeaderVisible(headerKey: 'name' | 'updated-at' | 'created-at' | 'description' | 'actions') { return this.validation.isEpicTableHeaderVisible(headerKey); }
   async isEpicActionsRowVisible(index: number) { return this.validation.isEpicActionsRowVisible(index); }

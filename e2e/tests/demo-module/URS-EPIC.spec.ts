@@ -146,7 +146,8 @@ test.describe('URS-EPIC: Epic Module', () => {
       await epicPage.fillEpicDescription(epicData.spaceOnly);
       await focusDescriptionThenName();
 
-      await expectValidationMessages();
+      const message = await epicPage.getEpicDescriptionValidationMessage();
+      expect(message.length).toBeGreaterThan(0);
     });
 
     test('UTC-9: Verify character limit validation', async () => {

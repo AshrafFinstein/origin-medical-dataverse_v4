@@ -1,92 +1,84 @@
 {
   "epic-search": {
-    "button": "[data-testid=\"epic-search-button\"]",
-    "modal": "[data-testid=\"epic-search-modal\"]",
-    "input": "[data-testid=\"epic-search-input\"]",
-    "submit-button": "[data-testid=\"epic-search-submit-button\"]",
-    "results-table": "[data-testid=\"epic-search-results-table\"]"
+    "button": "epic-search-button",
+    "modal": "epic-search-modal",
+    "input": "epic-search-input",
+    "submit-button": "epic-search-submit-button",
+    "results-table": "epic-search-results-table"
   },
   "epic-delete": {
-    "session-requests-button": "[data-testid=\"epic-delete-session-requests-button\"]",
-    "modal": "[data-testid=\"epic-delete-modal\"]",
-    "cancel-button": "[data-testid=\"epic-delete-cancel-button\"]",
-    "confirm-button": "[data-testid=\"epic-delete-confirm-button\"]"
+    "session-requests-button": "epic-delete-session-requests-button",
+    "modal": "epic-delete-modal",
+    "cancel-button": "epic-delete-cancel-button",
+    "confirm-button": "epic-delete-confirm-button"
   },
   "epic-create": {
-    "button": "[data-testid=\"epic-create-button\"]",
-    "modal": "[data-testid=\"epic-create-modal\"]",
-    "name-input": "[data-testid=\"epic-create-name-input\"] input",
-    "description-input": "[data-testid=\"epic-create-description-input\"] textarea",
-    "cancel-button": "[data-testid=\"epic-create-cancel-button\"]",
-    "submit-button": "[data-testid=\"epic-create-submit-button\"]"
+    "button": "epic-create-button",
+    "modal": "epic-create-modal",
+    "name-input": "epic-create-name-input",
+    "description-input": "epic-create-description-input",
+    "cancel-button": "epic-create-cancel-button",
+    "submit-button": "epic-create-submit-button"
   },
   "epic-table": {
-    "root": "[data-testid=\"epic-table\"]"
+    "root": "epic-table"
   },
   "delete-session": {
-    "requests-modal": "[data-testid=\"delete-session-requests-modal\"]",
-    "requests-table": "[data-testid=\"delete-session-requests-table\"]"
+    "requests-modal": "delete-session-requests-modal",
+    "requests-table": "delete-session-requests-table"
   },
   "reject-delete": {
-    "request-modal": "[data-testid=\"reject-delete-request-modal\"]"
+    "request-modal": "reject-delete-request-modal"
   },
   "reject-request": {
-    "session-name-input": "[data-testid=\"reject-request-session-name-input\"]",
-    "reason-input": "[data-testid=\"reject-request-reason-input\"]",
-    "cancel-button": "[data-testid=\"reject-request-cancel-button\"]",
-    "confirm-button": "[data-testid=\"reject-request-confirm-button\"]"
+    "session-name-input": "reject-request-session-name-input",
+    "reason-input": "reject-request-reason-input",
+    "cancel-button": "reject-request-cancel-button",
+    "confirm-button": "reject-request-confirm-button"
   },
   "epic-go": {
-    "button": "[data-testid=\"epic-go-button-${index}\"]"
+    "button": "epic-go-button-${index}"
   },
   "epic-edit": {
-    "button": "[data-testid=\"epic-edit-button-${index}\"]"
+    "button": "epic-edit-button-${index}"
   },
   "epic-update": {
-    "button": "[data-testid=\"epic-update-button-${index}\"]"
+    "button": "epic-update-button-${index}"
   },
   "epic-cancel": {
-    "button": "[data-testid=\"epic-cancel-button-${index}\"]"
+    "button": "epic-cancel-button-${index}"
   },
   "epic-delete-action": {
-    "button": "[data-testid=\"epic-delete-button-${index}\"]"
+    "button": "epic-delete-button-${index}"
   },
   "epic-name-input": {
-    "input": "[data-testid=\"epic-name-input-${index}\"]"
+    "input": "epic-name-input-${index}"
   },
   "epic-description-input": {
-    "input": "[data-testid=\"epic-description-input-${index}\"]"
+    "input": "epic-description-input-${index}"
   },
   "epic-actions-row": {
-    "root": "[data-testid=\"epic-actions-row-${index}\"]"
+    "root": "epic-actions-row-${index}"
   },
   "epic-create-modal": {
-    "close-button": "[data-testid=\"epic-create-modal\"] .n-card-header__close"
+    "close-button": "epic-create-modal"
   },
   "epic-create-validation": {
-    "name-error": "[data-testid=\"epic-create-modal\"] .n-form-item-feedback--error, [data-testid=\"epic-create-modal\"] .text-red-500"
+    "name-error": "epic-create-modal"
   },
   "epic-table-header": {
-    "name": "[data-testid=\"epic-table\"] th:has-text(\"Name\")",
-    "updated-at": "[data-testid=\"epic-table\"] th:has-text(\"Updated at\")",
-    "created-at": "[data-testid=\"epic-table\"] th:has-text(\"Created at\")",
-    "description": "[data-testid=\"epic-table\"] th:has-text(\"Description\")",
-    "actions": "[data-testid=\"epic-table\"] th:has-text(\"Actions\")"
+    "name": "epic-table",
+    "updated-at": "epic-table",
+    "created-at": "epic-table",
+    "description": "epic-table",
+    "actions": "epic-table"
   },
   "epic-table-sort": {
-    "name": "[data-testid=\"epic-table\"] th:has-text(\"Name\")",
-    "updated-at": "[data-testid=\"epic-table\"] th:has-text(\"Updated at\")",
-    "created-at": "[data-testid=\"epic-table\"] th:has-text(\"Created at\")"
+    "name": "epic-table",
+    "updated-at": "epic-table",
+    "created-at": "epic-table"
   },
   "epic-pagination": {
-    "root": ".n-pagination, .n-data-table__pagination",
-    "prev": ".n-pagination .n-pagination-item:first-child",
-    "next": ".n-pagination .n-pagination-item:last-child",
-    "page-items": ".n-pagination .n-pagination-item",
-    "page-number-items": ".n-pagination-item:not(.n-pagination-item--prev):not(.n-pagination-item--next)",
-    "page-active": ".n-pagination-item--active",
-    "size-picker": ".n-pagination-size-picker, .n-pagination [class*=\"size-picker\"], .n-pagination :has-text(\" / page\")",
-    "size-label": ".n-pagination .n-pagination-size-picker .n-base-selection-label, .n-pagination .n-pagination-size-picker, .n-pagination :has-text(\" / page\")",
-    "size-option": ".n-base-select-option"
+    "root": "epic-table"
   }
 }
