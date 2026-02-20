@@ -1,0 +1,379 @@
+{
+  "spec_file": "e2e/tests/data-management/URS-DV-DM-08/SRS-035/SDS-035.spec.ts",
+  "plan_urs": "URS-DV-DM-08",
+  "srs_str": "035",
+  "domain": "data-management",
+  "page_class": "AnalyticsPage",
+  "page_import": "analytics.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-1250",
+      "srs_id": "SRS-96",
+      "sds_id": "SDS-96",
+      "summary": "Verify Large number of files\nwhen 50+ JSON files selected",
+      "description": "Feature: Multiple JSON File Selection for bulk staging\nScenario: Large number of files\nGiven 50+ JSON files selected\nWhen staging occurs\nThen UI should remain responsive",
+      "acceptance": "UI should remain responsive\nThe behavior should be validated when staging occurs."
+    },
+    {
+      "test_id": "UTC-1251",
+      "srs_id": "SRS-96",
+      "sds_id": "SDS-96",
+      "summary": "Verify Correct filenames retained\nwhen files staged",
+      "description": "Feature: Multiple JSON File Selection for bulk staging\nScenario: Correct filenames retained\nGiven files staged\nWhen displayed\nThen filenames should match original files exactly",
+      "acceptance": "Filenames should match original files exactly\nThe behavior should be validated when displayed."
+    },
+    {
+      "test_id": "UTC-1252",
+      "srs_id": "SRS-96",
+      "sds_id": "SDS-96",
+      "summary": "Verify Clear empty state\nwhen no files staged",
+      "description": "Feature: Multiple JSON File Selection for bulk staging\nScenario: Clear empty state\nGiven no files staged\nWhen viewing list\nThen empty state should display or list remain clean",
+      "acceptance": "Empty state should display or list remain clean\nThe behavior should be validated when viewing list."
+    },
+    {
+      "test_id": "UTC-1253",
+      "srs_id": "SRS-96",
+      "sds_id": "SDS-96",
+      "summary": "Verify Keyboard accessibility\nwhen upload zone focused",
+      "description": "Feature: Multiple JSON File Selection for bulk staging\nScenario: Keyboard accessibility\nGiven upload zone focused\nWhen Enter pressed\nThen file picker should open",
+      "acceptance": "File picker should open\nThe behavior should be validated when Enter pressed."
+    },
+    {
+      "test_id": "UTC-1254",
+      "srs_id": "SRS-96",
+      "sds_id": "SDS-96",
+      "summary": "Verify Duplicate same file twice\nwhen same file selected twice",
+      "description": "Feature: Multiple JSON File Selection for bulk staging\nScenario: Duplicate same file twice\nGiven same file selected twice\nWhen staging occurs\nThen system should handle without crash",
+      "acceptance": "System should handle without crash\nThe behavior should be validated when staging occurs."
+    },
+    {
+      "test_id": "UTC-1255",
+      "srs_id": "SRS-96",
+      "sds_id": "SDS-96",
+      "summary": "Verify Ready before import\nwhen files staged",
+      "description": "Feature: Multiple JSON File Selection for bulk staging\nScenario: Ready before import\nGiven files staged\nWhen user clicks Import\nThen staged files should be available for processing",
+      "acceptance": "Staged files should be available for processing\nThe behavior should be validated when user clicks Import."
+    },
+    {
+      "test_id": "UTC-1256",
+      "srs_id": "SRS-97",
+      "sds_id": "SDS-97",
+      "summary": "Verify Upload zone visibility\nwhen Session Creation page loads",
+      "description": "Feature: Upload Area and Interaction for JSON files\nScenario: Upload zone visibility\nGiven Session Creation page loads\nWhen upload component renders\nThen dashed-border upload area should be visible",
+      "acceptance": "Dashed-border upload area should be visible\nThe behavior should be validated when upload component renders."
+    },
+    {
+      "test_id": "UTC-1257",
+      "srs_id": "SRS-97",
+      "sds_id": "SDS-97",
+      "summary": "Verify Upload icon presence\nwhen upload zone is displayed",
+      "description": "Feature: Upload Area and Interaction for JSON files\nScenario: Upload icon presence\nGiven upload zone is displayed\nWhen user views the area\nThen upload icon should be clearly visible",
+      "acceptance": "Upload icon should be clearly visible\nThe behavior should be validated when user views the area."
+    },
+    {
+      "test_id": "UTC-1258",
+      "srs_id": "SRS-97",
+      "sds_id": "SDS-97",
+      "summary": "Verify Instruction text clarity\nwhen upload zone visible",
+      "description": "Feature: Upload Area and Interaction for JSON files\nScenario: Instruction text clarity\nGiven upload zone visible\nWhen user reads instructions\nThen text should indicate drag-and-drop and click upload support",
+      "acceptance": "Text should indicate drag-and-drop and click upload support\nThe behavior should be validated when user reads instructions."
+    },
+    {
+      "test_id": "UTC-1259",
+      "srs_id": "SRS-97",
+      "sds_id": "SDS-97",
+      "summary": "Verify Click to open file picker\nwhen user clicks upload area",
+      "description": "Feature: Upload Area and Interaction for JSON files\nScenario: Click to open file picker\nGiven user clicks upload area\nWhen click event triggered\nThen OS file picker should open",
+      "acceptance": "OS file picker should open\nThe behavior should be validated when click event triggered."
+    },
+    {
+      "test_id": "UTC-1260",
+      "srs_id": "SRS-97",
+      "sds_id": "SDS-97",
+      "summary": "Verify Drag file into area\nwhen user drags JSON file over zone",
+      "description": "Feature: Upload Area and Interaction for JSON files\nScenario: Drag file into area\nGiven user drags JSON file over zone\nWhen file dropped\nThen drop event should trigger file selection handler",
+      "acceptance": "Drop event should trigger file selection handler\nThe behavior should be validated when file dropped."
+    },
+    {
+      "test_id": "UTC-1261",
+      "srs_id": "SRS-97",
+      "sds_id": "SDS-97",
+      "summary": "Verify Multiple file drag-and-drop\nwhen multiple JSON files dropped",
+      "description": "Feature: Upload Area and Interaction for JSON files\nScenario: Multiple file drag-and-drop\nGiven multiple JSON files dropped\nWhen drop event processed\nThen all files should be staged",
+      "acceptance": "All files should be staged\nThe behavior should be validated when drop event processed."
+    },
+    {
+      "test_id": "UTC-1262",
+      "srs_id": "SRS-97",
+      "sds_id": "SDS-97",
+      "summary": "Verify Visual feedback on drag hover\nwhen user drags file over zone",
+      "description": "Feature: Upload Area and Interaction for JSON files\nScenario: Visual feedback on drag hover\nGiven user drags file over zone\nWhen hovering\nThen zone should highlight visually",
+      "acceptance": "Zone should highlight visually\nThe behavior should be validated when hovering."
+    },
+    {
+      "test_id": "UTC-1263",
+      "srs_id": "SRS-97",
+      "sds_id": "SDS-97",
+      "summary": "Verify Files list shown below upload zone\nwhen files selected",
+      "description": "Feature: Upload Area and Interaction for JSON files\nScenario: Files list shown below upload zone\nGiven files selected\nWhen staging completes\nThen file list should appear below upload area",
+      "acceptance": "File list should appear below upload area\nThe behavior should be validated when staging completes."
+    },
+    {
+      "test_id": "UTC-1264",
+      "srs_id": "SRS-97",
+      "sds_id": "SDS-97",
+      "summary": "Verify Correct file objects passed to handler\nwhen files selected",
+      "description": "Feature: Upload Area and Interaction for JSON files\nScenario: Correct file objects passed to handler\nGiven files selected\nWhen selection event fires\nThen file objects should be passed to validation handler",
+      "acceptance": "File objects should be passed to validation handler\nThe behavior should be validated when selection event fires."
+    },
+    {
+      "test_id": "UTC-1265",
+      "srs_id": "SRS-97",
+      "sds_id": "SDS-97",
+      "summary": "Verify Upload zone remains visible after selection\nwhen files selected",
+      "description": "Feature: Upload Area and Interaction for JSON files\nScenario: Upload zone remains visible after selection\nGiven files selected\nWhen list populates\nThen upload area should remain available for more files",
+      "acceptance": "Upload area should remain available for more files\nThe behavior should be validated when list populates."
+    },
+    {
+      "test_id": "UTC-1266",
+      "srs_id": "SRS-97",
+      "sds_id": "SDS-97",
+      "summary": "Verify Reject unsupported file type\nwhen non-JSON file dropped",
+      "description": "Feature: Upload Area and Interaction for JSON files\nScenario: Reject unsupported file type\nGiven non-JSON file dropped\nWhen validation occurs\nThen file should not be staged",
+      "acceptance": "File should not be staged\nThe behavior should be validated when validation occurs."
+    },
+    {
+      "test_id": "UTC-1267",
+      "srs_id": "SRS-97",
+      "sds_id": "SDS-97",
+      "summary": "Verify Empty drop action\nwhen no files dropped",
+      "description": "Feature: Upload Area and Interaction for JSON files\nScenario: Empty drop action\nGiven no files dropped\nWhen event triggered\nThen system should not crash or add entries",
+      "acceptance": "System should not crash or add entries\nThe behavior should be validated when event triggered."
+    },
+    {
+      "test_id": "UTC-1268",
+      "srs_id": "SRS-97",
+      "sds_id": "SDS-97",
+      "summary": "Verify Keyboard activation\nwhen upload zone focused",
+      "description": "Feature: Upload Area and Interaction for JSON files\nScenario: Keyboard activation\nGiven upload zone focused\nWhen Enter/Space pressed\nThen file picker should open",
+      "acceptance": "File picker should open\nThe behavior should be validated when Enter/Space pressed."
+    },
+    {
+      "test_id": "UTC-1269",
+      "srs_id": "SRS-97",
+      "sds_id": "SDS-97",
+      "summary": "Verify Browser without drag-drop support\nwhen browser lacks drag-drop",
+      "description": "Feature: Upload Area and Interaction for JSON files\nScenario: Browser without drag-drop support\nGiven browser lacks drag-drop\nWhen user clicks area\nThen file picker fallback should still work",
+      "acceptance": "File picker fallback should still work\nThe behavior should be validated when user clicks area."
+    },
+    {
+      "test_id": "UTC-1270",
+      "srs_id": "SRS-97",
+      "sds_id": "SDS-97",
+      "summary": "Verify Quick responsiveness\nwhen large file selection",
+      "description": "Feature: Upload Area and Interaction for JSON files\nScenario: Quick responsiveness\nGiven large file selection\nWhen files staged\nThen UI should remain responsive without freeze",
+      "acceptance": "UI should remain responsive without freeze\nThe behavior should be validated when files staged."
+    },
+    {
+      "test_id": "UTC-1271",
+      "srs_id": "SRS-97",
+      "sds_id": "SDS-97",
+      "summary": "Verify Clear multiple-file support indication\nwhen user reads upload text",
+      "description": "Feature: Upload Area and Interaction for JSON files\nScenario: Clear multiple-file support indication\nGiven user reads upload text\nWhen reviewing instructions\nThen message should clearly state multiple files supported",
+      "acceptance": "Message should clearly state multiple files supported\nThe behavior should be validated when reviewing instructions."
+    },
+    {
+      "test_id": "UTC-1272",
+      "srs_id": "SRS-97",
+      "sds_id": "SDS-97",
+      "summary": "Verify Repeat selections allowed\nwhen files already selected",
+      "description": "Feature: Upload Area and Interaction for JSON files\nScenario: Repeat selections allowed\nGiven files already selected\nWhen user selects more files\nThen new files should append to list",
+      "acceptance": "New files should append to list\nThe behavior should be validated when user selects more files."
+    },
+    {
+      "test_id": "UTC-1273",
+      "srs_id": "SRS-97",
+      "sds_id": "SDS-97",
+      "summary": "Verify Event binding correctness\nwhen drop or change event occurs",
+      "description": "Feature: Upload Area and Interaction for JSON files\nScenario: Event binding correctness\nGiven drop or change event occurs\nWhen triggered\nThen selection handler should execute exactly once",
+      "acceptance": "Selection handler should execute exactly once\nThe behavior should be validated when triggered."
+    },
+    {
+      "test_id": "UTC-1274",
+      "srs_id": "SRS-98",
+      "sds_id": "SDS-98",
+      "summary": "Verify Validate duplicates on import trigger\nwhen JSON files are selected",
+      "description": "Feature: Duplicate Image Detection during JSON Import\nScenario: Validate duplicates on import trigger\nGiven JSON files are selected\nWhen user clicks Import\nThen system should cross-reference file image IDs with existing session data",
+      "acceptance": "System should cross-reference file image IDs with existing session data\nThe behavior should be validated when user clicks Import."
+    },
+    {
+      "test_id": "UTC-1275",
+      "srs_id": "SRS-98",
+      "sds_id": "SDS-98",
+      "summary": "Verify No duplicates found\nwhen selected files contain unique images",
+      "description": "Feature: Duplicate Image Detection during JSON Import\nScenario: No duplicates found\nGiven selected files contain unique images\nWhen import starts\nThen files should import directly without showing modal",
+      "acceptance": "Files should import directly without showing modal\nThe behavior should be validated when import starts."
+    },
+    {
+      "test_id": "UTC-1276",
+      "srs_id": "SRS-98",
+      "sds_id": "SDS-98",
+      "summary": "Verify Duplicates detected\nwhen selected files contain duplicate image IDs",
+      "description": "Feature: Duplicate Image Detection during JSON Import\nScenario: Duplicates detected\nGiven selected files contain duplicate image IDs\nWhen validation completes\nThen duplicate detection modal should appear",
+      "acceptance": "Duplicate detection modal should appear\nThe behavior should be validated when validation completes."
+    },
+    {
+      "test_id": "UTC-1277",
+      "srs_id": "SRS-98",
+      "sds_id": "SDS-98",
+      "summary": "Verify Modal title visibility\nwhen duplicates exist",
+      "description": "Feature: Duplicate Image Detection during JSON Import\nScenario: Modal title visibility\nGiven duplicates exist\nWhen modal opens\nThen title “Duplicate Images Detected” should be clearly visible",
+      "acceptance": "Title \"Duplicate Images Detected\" should be clearly visible\nThe behavior should be validated when modal opens."
+    },
+    {
+      "test_id": "UTC-1278",
+      "srs_id": "SRS-98",
+      "sds_id": "SDS-98",
+      "summary": "Verify Modal displays filename\nwhen duplicate files detected",
+      "description": "Feature: Duplicate Image Detection during JSON Import\nScenario: Modal displays filename\nGiven duplicate files detected\nWhen modal appears\nThen filename should be listed in modal",
+      "acceptance": "Filename should be listed in modal\nThe behavior should be validated when modal appears."
+    },
+    {
+      "test_id": "UTC-1279",
+      "srs_id": "SRS-98",
+      "sds_id": "SDS-98",
+      "summary": "Verify Modal displays counts\nwhen duplicates detected",
+      "description": "Feature: Duplicate Image Detection during JSON Import\nScenario: Modal displays counts\nGiven duplicates detected\nWhen modal loads\nThen total images count and duplicate count should be displayed",
+      "acceptance": "Total images count and duplicate count should be displayed\nThe behavior should be validated when modal loads."
+    },
+    {
+      "test_id": "UTC-1280",
+      "srs_id": "SRS-98",
+      "sds_id": "SDS-98",
+      "summary": "Verify Modal action buttons visible\nwhen modal open",
+      "description": "Feature: Duplicate Image Detection during JSON Import\nScenario: Modal action buttons visible\nGiven modal open\nWhen user views options\nThen Yes and No buttons should be visible",
+      "acceptance": "Yes and No buttons should be visible\nThe behavior should be validated when user views options."
+    },
+    {
+      "test_id": "UTC-1281",
+      "srs_id": "SRS-98",
+      "sds_id": "SDS-98",
+      "summary": "Verify User selects No\nwhen duplicate modal displayed",
+      "description": "Feature: Duplicate Image Detection during JSON Import\nScenario: User selects No\nGiven duplicate modal displayed\nWhen user clicks No\nThen import should be aborted for that file",
+      "acceptance": "Import should be aborted for that file\nThe behavior should be validated when user clicks No."
+    },
+    {
+      "test_id": "UTC-1282",
+      "srs_id": "SRS-98",
+      "sds_id": "SDS-98",
+      "summary": "Verify User selects Yes\nwhen duplicate modal displayed",
+      "description": "Feature: Duplicate Image Detection during JSON Import\nScenario: User selects Yes\nGiven duplicate modal displayed\nWhen user clicks Yes\nThen system should proceed with non-duplicate entries only",
+      "acceptance": "System should proceed with non-duplicate entries only\nThe behavior should be validated when user clicks Yes."
+    },
+    {
+      "test_id": "UTC-1283",
+      "srs_id": "SRS-98",
+      "sds_id": "SDS-98",
+      "summary": "Verify Only unique images stored\nwhen import proceeds",
+      "description": "Feature: Duplicate Image Detection during JSON Import\nScenario: Only unique images stored\nGiven import proceeds\nWhen processing completes\nThen database should contain only non-duplicate images",
+      "acceptance": "Database should contain only non-duplicate images\nThe behavior should be validated when processing completes."
+    },
+    {
+      "test_id": "UTC-1284",
+      "srs_id": "SRS-98",
+      "sds_id": "SDS-98",
+      "summary": "Verify Accurate duplicate count\nwhen duplicates present",
+      "description": "Feature: Duplicate Image Detection during JSON Import\nScenario: Accurate duplicate count\nGiven duplicates present\nWhen modal shows counts\nThen count should match database results",
+      "acceptance": "Count should match database results\nThe behavior should be validated when modal shows counts."
+    },
+    {
+      "test_id": "UTC-1285",
+      "srs_id": "SRS-98",
+      "sds_id": "SDS-98",
+      "summary": "Verify Empty file\nwhen file contains no images",
+      "description": "Feature: Duplicate Image Detection during JSON Import\nScenario: Empty file\nGiven file contains no images\nWhen imported\nThen no duplicate check should fail or crash",
+      "acceptance": "No duplicate check should fail or crash\nThe behavior should be validated when imported."
+    },
+    {
+      "test_id": "UTC-1286",
+      "srs_id": "SRS-98",
+      "sds_id": "SDS-98",
+      "summary": "Verify Modal closes safely\nwhen modal open",
+      "description": "Feature: Duplicate Image Detection during JSON Import\nScenario: Modal closes safely\nGiven modal open\nWhen user dismisses\nThen UI should return to staging state without error",
+      "acceptance": "UI should return to staging state without error\nThe behavior should be validated when user dismisses."
+    },
+    {
+      "test_id": "UTC-1287",
+      "srs_id": "SRS-98",
+      "sds_id": "SDS-98",
+      "summary": "Verify Multiple files with mixed duplicates\nwhen several files selected",
+      "description": "Feature: Duplicate Image Detection during JSON Import\nScenario: Multiple files with mixed duplicates\nGiven several files selected\nWhen validation runs\nThen modal should display discrepancies per file",
+      "acceptance": "Modal should display discrepancies per file\nThe behavior should be validated when validation runs."
+    },
+    {
+      "test_id": "UTC-1288",
+      "srs_id": "SRS-98",
+      "sds_id": "SDS-98",
+      "summary": "Verify Large dataset validation\nwhen large file (1000+ images)",
+      "description": "Feature: Duplicate Image Detection during JSON Import\nScenario: Large dataset validation\nGiven large file (1000+ images)\nWhen checking duplicates\nThen validation should complete within acceptable time (<2s)",
+      "acceptance": "Validation should complete within acceptable time (<2s)\nThe behavior should be validated when checking duplicates."
+    },
+    {
+      "test_id": "UTC-1289",
+      "srs_id": "SRS-98",
+      "sds_id": "SDS-98",
+      "summary": "Verify Clear explanation message\nwhen duplicates detected",
+      "description": "Feature: Duplicate Image Detection during JSON Import\nScenario: Clear explanation message\nGiven duplicates detected\nWhen modal displayed\nThen user-friendly message should explain impact",
+      "acceptance": "User-friendly message should explain impact\nThe behavior should be validated when modal displayed."
+    },
+    {
+      "test_id": "UTC-1290",
+      "srs_id": "SRS-98",
+      "sds_id": "SDS-98",
+      "summary": "Verify Keyboard support\nwhen modal focused",
+      "description": "Feature: Duplicate Image Detection during JSON Import\nScenario: Keyboard support\nGiven modal focused\nWhen user presses Enter/Space\nThen selected action button should activate",
+      "acceptance": "Selected action button should activate\nThe behavior should be validated when user presses Enter/Space."
+    },
+    {
+      "test_id": "UTC-1291",
+      "srs_id": "SRS-98",
+      "sds_id": "SDS-98",
+      "summary": "Verify Retry after cancel\nwhen user clicks No",
+      "description": "Feature: Duplicate Image Detection during JSON Import\nScenario: Retry after cancel\nGiven user clicks No\nWhen importing again with corrected file\nThen import should proceed normally",
+      "acceptance": "Import should proceed normally\nThe behavior should be validated when importing again with corrected file."
+    },
+    {
+      "test_id": "UTC-1292",
+      "srs_id": "SRS-99",
+      "sds_id": "SDS-99",
+      "summary": "Verify Processing completes within 3 seconds\nwhen multiple JSON files are selected",
+      "description": "Feature: Upload Performance Standards with Async Processing and UI Feedback\nScenario: Processing completes within 3 seconds\nGiven multiple JSON files are selected\nWhen user confirms Import\nThen image grid should update within 3 seconds",
+      "acceptance": "Image grid should update within 3 seconds\nThe behavior should be validated when user confirms Import."
+    },
+    {
+      "test_id": "UTC-1293",
+      "srs_id": "SRS-99",
+      "sds_id": "SDS-99",
+      "summary": "Verify Spinner visible during processing\nwhen import is triggered",
+      "description": "Feature: Upload Performance Standards with Async Processing and UI Feedback\nScenario: Spinner visible during processing\nGiven import is triggered\nWhen processing starts\nThen a central loading spinner should be displayed",
+      "acceptance": "A central loading spinner should be displayed\nThe behavior should be validated when processing starts."
+    },
+    {
+      "test_id": "UTC-1294",
+      "srs_id": "SRS-99",
+      "sds_id": "SDS-99",
+      "summary": "Verify Spinner overlay blocks actions\nwhen spinner displayed",
+      "description": "Feature: Upload Performance Standards with Async Processing and UI Feedback\nScenario: Spinner overlay blocks actions\nGiven spinner displayed\nWhen user attempts interaction\nThen actions should be temporarily disabled",
+      "acceptance": "Actions should be temporarily disabled\nThe behavior should be validated when user attempts interaction."
+    },
+    {
+      "test_id": "UTC-1295",
+      "srs_id": "SRS-99",
+      "sds_id": "SDS-99",
+      "summary": "Verify Async processing initiated\nwhen import begins",
+      "description": "Feature: Upload Performance Standards with Async Processing and UI Feedback\nScenario: Async processing initiated\nGiven import begins\nWhen backend parsing starts\nThen files should be processed asynchronously without freezing UI",
+      "acceptance": "Files should be processed asynchronously without freezing UI\nThe behavior should be validated when backend parsing starts."
+    }
+  ]
+}

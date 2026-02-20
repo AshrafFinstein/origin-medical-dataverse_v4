@@ -1,0 +1,235 @@
+{
+  "spec_file": "e2e/tests/general/URS-DV-GEN-13/SRS-050/SDS-050.spec.ts",
+  "plan_urs": "URS-DV-GEN-13",
+  "srs_str": "050",
+  "domain": "general",
+  "page_class": "EpicPage",
+  "page_import": "epic.page",
+  "goto_method": "goto",
+  "test_cases": [
+    {
+      "test_id": "UTC-1901",
+      "srs_id": "SRS-144",
+      "sds_id": "SDS-144",
+      "summary": "Verify Data refresh after action\nwhen admin approves request",
+      "description": "Feature: Administrative Request Dashboard\nScenario: Data refresh after action\nGiven admin approves request\nWhen action completes\nThen table should update instantly without reload",
+      "acceptance": "Table should update instantly without reload\nThe behavior should be validated when action completes."
+    },
+    {
+      "test_id": "UTC-1902",
+      "srs_id": "SRS-144",
+      "sds_id": "SDS-144",
+      "summary": "Verify Correct DB update\nwhen request approved/rejected",
+      "description": "Feature: Administrative Request Dashboard\nScenario: Correct DB update\nGiven request approved/rejected\nWhen backend saves\nThen database should store updated status and reason",
+      "acceptance": "Database should store updated status and reason\nThe behavior should be validated when backend saves."
+    },
+    {
+      "test_id": "UTC-1903",
+      "srs_id": "SRS-144",
+      "sds_id": "SDS-144",
+      "summary": "Verify Dashboard load performance\nwhen 500+ requests exist",
+      "description": "Feature: Administrative Request Dashboard\nScenario: Dashboard load performance\nGiven 500+ requests exist\nWhen page loads\nThen dashboard should render within acceptable time (<2s)",
+      "acceptance": "Dashboard should render within acceptable time (<2s)\nThe behavior should be validated when page loads."
+    },
+    {
+      "test_id": "UTC-1904",
+      "srs_id": "SRS-144",
+      "sds_id": "SDS-144",
+      "summary": "Verify API failure handling\nwhen server error occurs",
+      "description": "Feature: Administrative Request Dashboard\nScenario: API failure handling\nGiven server error occurs\nWhen dashboard loads\nThen non-blocking error message should be shown",
+      "acceptance": "Non-blocking error message should be shown\nThe behavior should be validated when dashboard loads."
+    },
+    {
+      "test_id": "UTC-1905",
+      "srs_id": "SRS-145",
+      "sds_id": "SDS-145",
+      "summary": "Verify Approve button visibility\nwhen admin opens deletion dashboard",
+      "description": "Feature: Final Deletion Approval\nScenario: Approve button visibility\nGiven admin opens deletion dashboard\nWhen a request is in Pending state\nThen green Approve button should be visible",
+      "acceptance": "Green Approve button should be visible\nThe behavior should be validated when a request is in Pending state."
+    },
+    {
+      "test_id": "UTC-1906",
+      "srs_id": "SRS-145",
+      "sds_id": "SDS-145",
+      "summary": "Verify Confirmation modal shown\nwhen admin clicks Approve",
+      "description": "Feature: Final Deletion Approval\nScenario: Confirmation modal shown\nGiven admin clicks Approve\nWhen action triggered\nThen final confirmation modal should appear",
+      "acceptance": "Final confirmation modal should appear\nThe behavior should be validated when action triggered."
+    },
+    {
+      "test_id": "UTC-1907",
+      "srs_id": "SRS-145",
+      "sds_id": "SDS-145",
+      "summary": "Verify Cancel deletion\nwhen confirmation modal displayed",
+      "description": "Feature: Final Deletion Approval\nScenario: Cancel deletion\nGiven confirmation modal displayed\nWhen admin clicks Cancel/No\nThen session should not be deleted",
+      "acceptance": "Session should not be deleted\nThe behavior should be validated when admin clicks Cancel/No."
+    },
+    {
+      "test_id": "UTC-1908",
+      "srs_id": "SRS-145",
+      "sds_id": "SDS-145",
+      "summary": "Verify Approve deletion successfully\nwhen confirmation modal displayed",
+      "description": "Feature: Final Deletion Approval\nScenario: Approve deletion successfully\nGiven confirmation modal displayed\nWhen admin clicks Yes/Approve\nThen session should be permanently deleted",
+      "acceptance": "Session should be permanently deleted\nThe behavior should be validated when admin clicks Yes/Approve."
+    },
+    {
+      "test_id": "UTC-1909",
+      "srs_id": "SRS-145",
+      "sds_id": "SDS-145",
+      "summary": "Verify Success notification\nwhen session deleted",
+      "description": "Feature: Final Deletion Approval\nScenario: Success notification\nGiven session deleted\nWhen action completes\nThen success toast 'Session deleted successfully' should appear",
+      "acceptance": "Success toast 'Session deleted successfully' should appear\nThe behavior should be validated when action completes."
+    },
+    {
+      "test_id": "UTC-1910",
+      "srs_id": "SRS-145",
+      "sds_id": "SDS-145",
+      "summary": "Verify Remove from active session list\nwhen session deleted",
+      "description": "Feature: Final Deletion Approval\nScenario: Remove from active session list\nGiven session deleted\nWhen dashboard refreshes\nThen session should not appear in active session list",
+      "acceptance": "Session should not appear in active session list\nThe behavior should be validated when dashboard refreshes."
+    },
+    {
+      "test_id": "UTC-1911",
+      "srs_id": "SRS-145",
+      "sds_id": "SDS-145",
+      "summary": "Verify Request status update\nwhen session deletion approved",
+      "description": "Feature: Final Deletion Approval\nScenario: Request status update\nGiven session deletion approved\nWhen backend updates\nThen request status should change to Approved",
+      "acceptance": "Request status should change to Approved\nThe behavior should be validated when backend updates."
+    },
+    {
+      "test_id": "UTC-1912",
+      "srs_id": "SRS-145",
+      "sds_id": "SDS-145",
+      "summary": "Verify Cascading delete executed\nwhen session has images and labels",
+      "description": "Feature: Final Deletion Approval\nScenario: Cascading delete executed\nGiven session has images and labels\nWhen deletion approved\nThen all related records should be removed",
+      "acceptance": "All related records should be removed\nThe behavior should be validated when deletion approved."
+    },
+    {
+      "test_id": "UTC-1913",
+      "srs_id": "SRS-145",
+      "sds_id": "SDS-145",
+      "summary": "Verify Prevent partial deletion\nwhen deletion triggered",
+      "description": "Feature: Final Deletion Approval\nScenario: Prevent partial deletion\nGiven deletion triggered\nWhen transaction executes\nThen either all related data deleted or none",
+      "acceptance": "Either all related data deleted or none\nThe behavior should be validated when transaction executes."
+    },
+    {
+      "test_id": "UTC-1914",
+      "srs_id": "SRS-145",
+      "sds_id": "SDS-145",
+      "summary": "Verify Only admin can approve\nwhen non-admin user logged in",
+      "description": "Feature: Final Deletion Approval\nScenario: Only admin can approve\nGiven non-admin user logged in\nWhen accessing approval action\nThen Approve button should be hidden or disabled",
+      "acceptance": "Approve button should be hidden or disabled\nThe behavior should be validated when accessing approval action."
+    },
+    {
+      "test_id": "UTC-1915",
+      "srs_id": "SRS-145",
+      "sds_id": "SDS-145",
+      "summary": "Verify Direct API access blocked\nwhen non-admin user calls delete API",
+      "description": "Feature: Final Deletion Approval\nScenario: Direct API access blocked\nGiven non-admin user calls delete API\nWhen request sent\nThen server should return 403 Forbidden",
+      "acceptance": "Server should return 403 Forbidden\nThe behavior should be validated when request sent."
+    },
+    {
+      "test_id": "UTC-1916",
+      "srs_id": "SRS-145",
+      "sds_id": "SDS-145",
+      "summary": "Verify Session currently active\nwhen session being edited by another user",
+      "description": "Feature: Final Deletion Approval\nScenario: Session currently active\nGiven session being edited by another user\nWhen admin tries to approve\nThen deletion should be blocked with message",
+      "acceptance": "Deletion should be blocked with message\nThe behavior should be validated when admin tries to approve."
+    },
+    {
+      "test_id": "UTC-1917",
+      "srs_id": "SRS-145",
+      "sds_id": "SDS-145",
+      "summary": "Verify Real-time UI update\nwhen session deleted",
+      "description": "Feature: Final Deletion Approval\nScenario: Real-time UI update\nGiven session deleted\nWhen dashboard is open\nThen row should disappear without page reload",
+      "acceptance": "Row should disappear without page reload\nThe behavior should be validated when dashboard is open."
+    },
+    {
+      "test_id": "UTC-1918",
+      "srs_id": "SRS-145",
+      "sds_id": "SDS-145",
+      "summary": "Verify Invalid session ID\nwhen request references invalid session",
+      "description": "Feature: Final Deletion Approval\nScenario: Invalid session ID\nGiven request references invalid session\nWhen deletion attempted\nThen safe error message should be shown",
+      "acceptance": "Safe error message should be shown\nThe behavior should be validated when deletion attempted."
+    },
+    {
+      "test_id": "UTC-1919",
+      "srs_id": "SRS-145",
+      "sds_id": "SDS-145",
+      "summary": "Verify Large data deletion performance\nwhen session contains many assets",
+      "description": "Feature: Final Deletion Approval\nScenario: Large data deletion performance\nGiven session contains many assets\nWhen deletion approved\nThen deletion should complete within acceptable time",
+      "acceptance": "Deletion should complete within acceptable time\nThe behavior should be validated when deletion approved."
+    },
+    {
+      "test_id": "UTC-1920",
+      "srs_id": "SRS-145",
+      "sds_id": "SDS-145",
+      "summary": "Verify Audit logging\nwhen session deleted",
+      "description": "Feature: Final Deletion Approval\nScenario: Audit logging\nGiven session deleted\nWhen action completes\nThen audit log should record admin, timestamp, and session ID",
+      "acceptance": "Audit log should record admin, timestamp, and session ID\nThe behavior should be validated when action completes."
+    },
+    {
+      "test_id": "UTC-1921",
+      "srs_id": "SRS-146",
+      "sds_id": "SDS-146",
+      "summary": "Verify Reject button visibility\nwhen admin opens deletion dashboard",
+      "description": "Feature: Request Rejection Protocol\nScenario: Reject button visibility\nGiven admin opens deletion dashboard\nWhen request is in Pending state\nThen red Reject button should be visible",
+      "acceptance": "Red Reject button should be visible\nThe behavior should be validated when request is in Pending state."
+    },
+    {
+      "test_id": "UTC-1922",
+      "srs_id": "SRS-146",
+      "sds_id": "SDS-146",
+      "summary": "Verify Reject modal opens\nwhen admin clicks Reject button",
+      "description": "Feature: Request Rejection Protocol\nScenario: Reject modal opens\nGiven admin clicks Reject button\nWhen action triggered\nThen 'Reject Delete Session Request' modal should open",
+      "acceptance": "Reject Delete Session Request' modal should open\nThe behavior should be validated when action triggered."
+    },
+    {
+      "test_id": "UTC-1923",
+      "srs_id": "SRS-146",
+      "sds_id": "SDS-146",
+      "summary": "Verify Rejection reason field visible\nwhen modal is opened",
+      "description": "Feature: Request Rejection Protocol\nScenario: Rejection reason field visible\nGiven modal is opened\nWhen modal loads\nThen Rejection Reason text area should be visible",
+      "acceptance": "Rejection Reason text area should be visible\nThe behavior should be validated when modal loads."
+    },
+    {
+      "test_id": "UTC-1924",
+      "srs_id": "SRS-146",
+      "sds_id": "SDS-146",
+      "summary": "Verify Submit rejection without reason\nwhen reason field is optional",
+      "description": "Feature: Request Rejection Protocol\nScenario: Submit rejection without reason\nGiven reason field is optional\nWhen admin submits rejection\nThen request should be rejected successfully",
+      "acceptance": "Request should be rejected successfully\nThe behavior should be validated when admin submits rejection."
+    },
+    {
+      "test_id": "UTC-1925",
+      "srs_id": "SRS-146",
+      "sds_id": "SDS-146",
+      "summary": "Verify Submit rejection with reason\nwhen admin enters valid reason",
+      "description": "Feature: Request Rejection Protocol\nScenario: Submit rejection with reason\nGiven admin enters valid reason\nWhen rejection submitted\nThen reason should be stored with request",
+      "acceptance": "Reason should be stored with request\nThe behavior should be validated when rejection submitted."
+    },
+    {
+      "test_id": "UTC-1926",
+      "srs_id": "SRS-146",
+      "sds_id": "SDS-146",
+      "summary": "Verify Character limit validation\nwhen reason exceeds 500 characters",
+      "description": "Feature: Request Rejection Protocol\nScenario: Character limit validation\nGiven reason exceeds 500 characters\nWhen submitting\nThen submission should be blocked",
+      "acceptance": "Submission should be blocked\nThe behavior should be validated when submitting."
+    },
+    {
+      "test_id": "UTC-1927",
+      "srs_id": "SRS-146",
+      "sds_id": "SDS-146",
+      "summary": "Verify Boundary length acceptance\nwhen reason equals 500 characters",
+      "description": "Feature: Request Rejection Protocol\nScenario: Boundary length acceptance\nGiven reason equals 500 characters\nWhen submitting\nThen rejection should be allowed",
+      "acceptance": "Rejection should be allowed\nThe behavior should be validated when submitting."
+    },
+    {
+      "test_id": "UTC-1928",
+      "srs_id": "SRS-146",
+      "sds_id": "SDS-146",
+      "summary": "Verify Request status updated\nwhen rejection confirmed",
+      "description": "Feature: Request Rejection Protocol\nScenario: Request status updated\nGiven rejection confirmed\nWhen backend processes\nThen request status should change to Rejected",
+      "acceptance": "Request status should change to Rejected\nThe behavior should be validated when backend processes."
+    }
+  ]
+}

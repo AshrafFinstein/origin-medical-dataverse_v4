@@ -1,0 +1,227 @@
+{
+  "spec_file": "e2e/tests/data-management/URS-DV-DM-06/SRS-029/SDS-029.spec.ts",
+  "plan_urs": "URS-DV-DM-06",
+  "srs_str": "029",
+  "domain": "data-management",
+  "page_class": "S3StoragePage",
+  "page_import": "s3-storage.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-730",
+      "srs_id": "SRS-61",
+      "sds_id": "SDS-61",
+      "summary": "Verify Canvas receives standardized asset\nwhen asset normalization completed",
+      "description": "Feature: Unified cross-bucket processing pipeline\nScenario: Canvas receives standardized asset\nGiven asset normalization completed\nWhen labeling canvas loads\nThen image should render without format issues",
+      "acceptance": "Image should render without format issues\nThe behavior should be validated when labeling canvas loads."
+    },
+    {
+      "test_id": "UTC-731",
+      "srs_id": "SRS-61",
+      "sds_id": "SDS-61",
+      "summary": "Verify Uniform status indicator display\nwhen assets from any bucket",
+      "description": "Feature: Unified cross-bucket processing pipeline\nScenario: Uniform status indicator display\nGiven assets from any bucket\nWhen processing starts\nThen same processing status indicator should be displayed",
+      "acceptance": "Same processing status indicator should be displayed\nThe behavior should be validated when processing starts."
+    },
+    {
+      "test_id": "UTC-732",
+      "srs_id": "SRS-61",
+      "sds_id": "SDS-61",
+      "summary": "Verify Pipeline executes after bucket resolution\nwhen bucket resolution completes",
+      "description": "Feature: Unified cross-bucket processing pipeline\nScenario: Pipeline executes after bucket resolution\nGiven bucket resolution completes\nWhen asset is fetched\nThen pipeline should automatically trigger",
+      "acceptance": "Pipeline should automatically trigger\nThe behavior should be validated when asset is fetched."
+    },
+    {
+      "test_id": "UTC-733",
+      "srs_id": "SRS-61",
+      "sds_id": "SDS-61",
+      "summary": "Verify No manual bucket selection required\nwhen user loads assets",
+      "description": "Feature: Unified cross-bucket processing pipeline\nScenario: No manual bucket selection required\nGiven user loads assets\nWhen processing occurs\nThen system should not prompt for bucket input",
+      "acceptance": "System should not prompt for bucket input\nThe behavior should be validated when processing occurs."
+    },
+    {
+      "test_id": "UTC-734",
+      "srs_id": "SRS-61",
+      "sds_id": "SDS-61",
+      "summary": "Verify Continue session on single asset failure\nwhen one asset fails normalization",
+      "description": "Feature: Unified cross-bucket processing pipeline\nScenario: Continue session on single asset failure\nGiven one asset fails normalization\nWhen exception occurs\nThen only that asset should be marked Failed and others continue",
+      "acceptance": "Only that asset should be marked Failed and others continue\nThe behavior should be validated when exception occurs."
+    },
+    {
+      "test_id": "UTC-735",
+      "srs_id": "SRS-61",
+      "sds_id": "SDS-61",
+      "summary": "Verify Failed asset visibly marked\nwhen normalization fails",
+      "description": "Feature: Unified cross-bucket processing pipeline\nScenario: Failed asset visibly marked\nGiven normalization fails\nWhen grid refreshes\nThen asset should show Failed status",
+      "acceptance": "Asset should show Failed status\nThe behavior should be validated when grid refreshes."
+    },
+    {
+      "test_id": "UTC-736",
+      "srs_id": "SRS-61",
+      "sds_id": "SDS-61",
+      "summary": "Verify Processing within SLA\nwhen dataset up to 200 assets",
+      "description": "Feature: Unified cross-bucket processing pipeline\nScenario: Processing within SLA\nGiven dataset up to 200 assets\nWhen pipeline executes\nThen processing should complete within defined response time",
+      "acceptance": "Processing should complete within defined response time\nThe behavior should be validated when pipeline executes."
+    },
+    {
+      "test_id": "UTC-737",
+      "srs_id": "SRS-61",
+      "sds_id": "SDS-61",
+      "summary": "Verify Retry after temporary failure\nwhen temporary processing failure",
+      "description": "Feature: Unified cross-bucket processing pipeline\nScenario: Retry after temporary failure\nGiven temporary processing failure\nWhen retry triggered\nThen asset should re-enter pipeline successfully",
+      "acceptance": "Asset should re-enter pipeline successfully\nThe behavior should be validated when retry triggered."
+    },
+    {
+      "test_id": "UTC-738",
+      "srs_id": "SRS-61",
+      "sds_id": "SDS-61",
+      "summary": "Verify Metadata preserved after normalization\nwhen asset metadata exists",
+      "description": "Feature: Unified cross-bucket processing pipeline\nScenario: Metadata preserved after normalization\nGiven asset metadata exists\nWhen normalization completes\nThen metadata should remain unchanged",
+      "acceptance": "Metadata should remain unchanged\nThe behavior should be validated when normalization completes."
+    },
+    {
+      "test_id": "UTC-739",
+      "srs_id": "SRS-61",
+      "sds_id": "SDS-61",
+      "summary": "Verify Handles mixed provider sources simultaneously\nwhen assets from multiple providers load together",
+      "description": "Feature: Unified cross-bucket processing pipeline\nScenario: Handles mixed provider sources simultaneously\nGiven assets from multiple providers load together\nWhen pipeline processes\nThen all should process without conflict",
+      "acceptance": "All should process without conflict\nThe behavior should be validated when pipeline processes."
+    },
+    {
+      "test_id": "UTC-740",
+      "srs_id": "SRS-61",
+      "sds_id": "SDS-61",
+      "summary": "Verify No provider exposure in UI\nwhen processing is complete",
+      "description": "Feature: Unified cross-bucket processing pipeline\nScenario: No provider exposure in UI\nGiven processing is complete\nWhen user views UI\nThen bucket/provider info should not be exposed",
+      "acceptance": "Bucket/provider info should not be exposed\nThe behavior should be validated when user views UI."
+    },
+    {
+      "test_id": "UTC-741",
+      "srs_id": "SRS-61",
+      "sds_id": "SDS-61",
+      "summary": "Verify Consistent downstream module integration\nwhen asset processed",
+      "description": "Feature: Unified cross-bucket processing pipeline\nScenario: Consistent downstream module integration\nGiven asset processed\nWhen QC/labeling modules access asset\nThen standardized format should work without errors",
+      "acceptance": "Standardized format should work without errors\nThe behavior should be validated when QC/labeling modules access asset."
+    },
+    {
+      "test_id": "UTC-742",
+      "srs_id": "SRS-62",
+      "sds_id": "SDS-62",
+      "summary": "Verify Logs generated for bucket resolution\nwhen a bucket is resolved",
+      "description": "Feature: Multi-bucket telemetry & error visibility\nScenario: Logs generated for bucket resolution\nGiven a bucket is resolved\nWhen resolution completes\nThen structured log entry should be recorded with bucketId and timestamp",
+      "acceptance": "Structured log entry should be recorded with bucketId and timestamp\nThe behavior should be validated when resolution completes."
+    },
+    {
+      "test_id": "UTC-743",
+      "srs_id": "SRS-62",
+      "sds_id": "SDS-62",
+      "summary": "Verify Logs generated for routing operation\nwhen a routing request occurs",
+      "description": "Feature: Multi-bucket telemetry & error visibility\nScenario: Logs generated for routing operation\nGiven a routing request occurs\nWhen adapter routes storage call\nThen routing details should be logged",
+      "acceptance": "Routing details should be logged\nThe behavior should be validated when adapter routes storage call."
+    },
+    {
+      "test_id": "UTC-744",
+      "srs_id": "SRS-62",
+      "sds_id": "SDS-62",
+      "summary": "Verify Metrics captured for latency\nwhen an image fetch request",
+      "description": "Feature: Multi-bucket telemetry & error visibility\nScenario: Metrics captured for latency\nGiven an image fetch request\nWhen operation completes\nThen latency metric should be recorded",
+      "acceptance": "Latency metric should be recorded\nThe behavior should be validated when operation completes."
+    },
+    {
+      "test_id": "UTC-745",
+      "srs_id": "SRS-62",
+      "sds_id": "SDS-62",
+      "summary": "Verify Trace generated per request\nwhen signed URL generation occurs",
+      "description": "Feature: Multi-bucket telemetry & error visibility\nScenario: Trace generated per request\nGiven signed URL generation occurs\nWhen request executes\nThen distributed traceId should be created",
+      "acceptance": "Distributed traceId should be created\nThe behavior should be validated when request executes."
+    },
+    {
+      "test_id": "UTC-746",
+      "srs_id": "SRS-62",
+      "sds_id": "SDS-62",
+      "summary": "Verify Admin dashboard shows error count\nwhen bucket failures occur",
+      "description": "Feature: Multi-bucket telemetry & error visibility\nScenario: Admin dashboard shows error count\nGiven bucket failures occur\nWhen admin opens monitoring dashboard\nThen per-bucket error counts should be displayed",
+      "acceptance": "Per-bucket error counts should be displayed\nThe behavior should be validated when admin opens monitoring dashboard."
+    },
+    {
+      "test_id": "UTC-747",
+      "srs_id": "SRS-62",
+      "sds_id": "SDS-62",
+      "summary": "Verify Latency graph display\nwhen operations executed",
+      "description": "Feature: Multi-bucket telemetry & error visibility\nScenario: Latency graph display\nGiven operations executed\nWhen dashboard loads\nThen latency graphs should be rendered",
+      "acceptance": "Latency graphs should be rendered\nThe behavior should be validated when dashboard loads."
+    },
+    {
+      "test_id": "UTC-748",
+      "srs_id": "SRS-62",
+      "sds_id": "SDS-62",
+      "summary": "Verify Image fetch failure triggers log\nwhen fetch fails",
+      "description": "Feature: Multi-bucket telemetry & error visibility\nScenario: Image fetch failure triggers log\nGiven fetch fails\nWhen exception occurs\nThen error log with reason should be recorded",
+      "acceptance": "Error log with reason should be recorded\nThe behavior should be validated when exception occurs."
+    },
+    {
+      "test_id": "UTC-749",
+      "srs_id": "SRS-62",
+      "sds_id": "SDS-62",
+      "summary": "Verify User sees non-blocking toast on failure\nwhen image fetch fails",
+      "description": "Feature: Multi-bucket telemetry & error visibility\nScenario: User sees non-blocking toast on failure\nGiven image fetch fails\nWhen UI handles error\nThen user should see friendly toast message",
+      "acceptance": "User should see friendly toast message\nThe behavior should be validated when UI handles error."
+    },
+    {
+      "test_id": "UTC-750",
+      "srs_id": "SRS-62",
+      "sds_id": "SDS-62",
+      "summary": "Verify No technical stack trace shown\nwhen backend error occurs",
+      "description": "Feature: Multi-bucket telemetry & error visibility\nScenario: No technical stack trace shown\nGiven backend error occurs\nWhen user views UI\nThen stack traces should not be exposed",
+      "acceptance": "Stack traces should not be exposed\nThe behavior should be validated when user views UI."
+    },
+    {
+      "test_id": "UTC-751",
+      "srs_id": "SRS-62",
+      "sds_id": "SDS-62",
+      "summary": "Verify Retry without session reset\nwhen operation fails",
+      "description": "Feature: Multi-bucket telemetry & error visibility\nScenario: Retry without session reset\nGiven operation fails\nWhen user retries\nThen operation should reattempt without session refresh",
+      "acceptance": "Operation should reattempt without session refresh\nThe behavior should be validated when user retries."
+    },
+    {
+      "test_id": "UTC-752",
+      "srs_id": "SRS-62",
+      "sds_id": "SDS-62",
+      "summary": "Verify Manual refresh supported\nwhen error state occurs",
+      "description": "Feature: Multi-bucket telemetry & error visibility\nScenario: Manual refresh supported\nGiven error state occurs\nWhen user refreshes grid\nThen data should reload correctly",
+      "acceptance": "Data should reload correctly\nThe behavior should be validated when user refreshes grid."
+    },
+    {
+      "test_id": "UTC-753",
+      "srs_id": "SRS-62",
+      "sds_id": "SDS-62",
+      "summary": "Verify Telemetry buffered during export failure\nwhen monitoring export fails",
+      "description": "Feature: Multi-bucket telemetry & error visibility\nScenario: Telemetry buffered during export failure\nGiven monitoring export fails\nWhen telemetry captured\nThen logs should buffer locally until restored",
+      "acceptance": "Logs should buffer locally until restored\nThe behavior should be validated when telemetry captured."
+    },
+    {
+      "test_id": "UTC-754",
+      "srs_id": "SRS-62",
+      "sds_id": "SDS-62",
+      "summary": "Verify Logging does not slow operations\nwhen high-volume requests",
+      "description": "Feature: Multi-bucket telemetry & error visibility\nScenario: Logging does not slow operations\nGiven high-volume requests\nWhen telemetry runs\nThen performance should remain within SLA",
+      "acceptance": "Performance should remain within SLA\nThe behavior should be validated when telemetry runs."
+    },
+    {
+      "test_id": "UTC-755",
+      "srs_id": "SRS-62",
+      "sds_id": "SDS-62",
+      "summary": "Verify Logs contain traceId and bucketId consistently\nwhen multiple operations occur",
+      "description": "Feature: Multi-bucket telemetry & error visibility\nScenario: Logs contain traceId and bucketId consistently\nGiven multiple operations occur\nWhen logs generated\nThen identifiers should be present in all records",
+      "acceptance": "Identifiers should be present in all records\nThe behavior should be validated when logs generated."
+    },
+    {
+      "test_id": "UTC-756",
+      "srs_id": "SRS-62",
+      "sds_id": "SDS-62",
+      "summary": "Verify Session continues after recoverable failure\nwhen one bucket request fails",
+      "description": "Feature: Multi-bucket telemetry & error visibility\nScenario: Session continues after recoverable failure\nGiven one bucket request fails\nWhen other operations run\nThen session should not terminate",
+      "acceptance": "Session should not terminate\nThe behavior should be validated when other operations run."
+    }
+  ]
+}

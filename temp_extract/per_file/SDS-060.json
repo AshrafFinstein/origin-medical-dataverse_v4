@@ -1,0 +1,347 @@
+{
+  "spec_file": "e2e/tests/annotation/URS-DV-DA-16/SRS-060/SDS-060.spec.ts",
+  "plan_urs": "URS-DV-DA-16",
+  "srs_str": "060",
+  "domain": "annotation",
+  "page_class": "AnnotationLabelsPage",
+  "page_import": "annotation-labels.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-2463",
+      "srs_id": "SRS-237",
+      "sds_id": "SDS-237",
+      "summary": "Verify Data unchanged after block\nwhen unauthorized attempt",
+      "description": "Feature: Role-based label modification security\nScenario: Data unchanged after block\nGiven unauthorized attempt\nWhen request blocked\nThen labels remain unchanged in DB",
+      "acceptance": "Labels remain unchanged in DB\nThe behavior should be validated when request blocked."
+    },
+    {
+      "test_id": "UTC-2464",
+      "srs_id": "SRS-237",
+      "sds_id": "SDS-237",
+      "summary": "Verify Role validation before action\nwhen user clicks Apply",
+      "description": "Feature: Role-based label modification security\nScenario: Role validation before action\nGiven user clicks Apply\nWhen request initiated\nThen permission must be validated before processing",
+      "acceptance": "Permission must be validated before processing\nThe behavior should be validated when request initiated."
+    },
+    {
+      "test_id": "UTC-2465",
+      "srs_id": "SRS-237",
+      "sds_id": "SDS-237",
+      "summary": "Verify Session role update reflected immediately\nwhen admin role revoked during session",
+      "description": "Feature: Role-based label modification security\nScenario: Session role update reflected immediately\nGiven admin role revoked during session\nWhen page refresh occurs\nThen controls become disabled",
+      "acceptance": "Controls become disabled\nThe behavior should be validated when page refresh occurs."
+    },
+    {
+      "test_id": "UTC-2466",
+      "srs_id": "SRS-237",
+      "sds_id": "SDS-237",
+      "summary": "Verify Multiple users with different roles\nwhen mixed roles logged in",
+      "description": "Feature: Role-based label modification security\nScenario: Multiple users with different roles\nGiven mixed roles logged in\nWhen each loads page\nThen only permitted users see enabled actions",
+      "acceptance": "Only permitted users see enabled actions\nThe behavior should be validated when each loads page."
+    },
+    {
+      "test_id": "UTC-2467",
+      "srs_id": "SRS-237",
+      "sds_id": "SDS-237",
+      "summary": "Verify Tooltip guidance\nwhen disabled control hovered",
+      "description": "Feature: Role-based label modification security\nScenario: Tooltip guidance\nGiven disabled control hovered\nWhen tooltip appears\nThen message explains permission restriction",
+      "acceptance": "Message explains permission restriction\nThe behavior should be validated when tooltip appears."
+    },
+    {
+      "test_id": "UTC-2468",
+      "srs_id": "SRS-237",
+      "sds_id": "SDS-237",
+      "summary": "Verify Keyboard shortcut blocked\nwhen unauthorized user",
+      "description": "Feature: Role-based label modification security\nScenario: Keyboard shortcut blocked\nGiven unauthorized user\nWhen Backspace pressed\nThen removal action should not trigger",
+      "acceptance": "Removal action should not trigger\nThe behavior should be validated when Backspace pressed."
+    },
+    {
+      "test_id": "UTC-2469",
+      "srs_id": "SRS-237",
+      "sds_id": "SDS-237",
+      "summary": "Verify API audit log entry\nwhen unauthorized attempt",
+      "description": "Feature: Role-based label modification security\nScenario: API audit log entry\nGiven unauthorized attempt\nWhen blocked\nThen system logs security audit event",
+      "acceptance": "System logs security audit event\nThe behavior should be validated when blocked."
+    },
+    {
+      "test_id": "UTC-2470",
+      "srs_id": "SRS-237",
+      "sds_id": "SDS-237",
+      "summary": "Verify Permission check latency\nwhen user performs action",
+      "description": "Feature: Role-based label modification security\nScenario: Permission check latency\nGiven user performs action\nWhen validation occurs\nThen permission check completes instantly (<200ms)",
+      "acceptance": "Permission check completes instantly (<200ms)\nThe behavior should be validated when validation occurs."
+    },
+    {
+      "test_id": "UTC-2471",
+      "srs_id": "SRS-238",
+      "sds_id": "SDS-238",
+      "summary": "Verify Popup opens instantly\nwhen user right-clicks image",
+      "description": "Feature: Responsive label interaction performance\nScenario: Popup opens instantly\nGiven user right-clicks image\nWhen label popup opens\nThen popup should render within 200 ms",
+      "acceptance": "Popup should render within 200 ms\nThe behavior should be validated when label popup opens."
+    },
+    {
+      "test_id": "UTC-2472",
+      "srs_id": "SRS-238",
+      "sds_id": "SDS-238",
+      "summary": "Verify No UI freeze on popup load\nwhen popup opens",
+      "description": "Feature: Responsive label interaction performance\nScenario: No UI freeze on popup load\nGiven popup opens\nWhen labels load\nThen UI remains responsive",
+      "acceptance": "UI remains responsive\nThe behavior should be validated when labels load."
+    },
+    {
+      "test_id": "UTC-2473",
+      "srs_id": "SRS-238",
+      "sds_id": "SDS-238",
+      "summary": "Verify Search debounce response\nwhen user types in search",
+      "description": "Feature: Responsive label interaction performance\nScenario: Search debounce response\nGiven user types in search\nWhen characters entered\nThen results update within 300 ms",
+      "acceptance": "Results update within 300 ms\nThe behavior should be validated when characters entered."
+    },
+    {
+      "test_id": "UTC-2474",
+      "srs_id": "SRS-238",
+      "sds_id": "SDS-238",
+      "summary": "Verify Dynamic search without reload\nwhen search input",
+      "description": "Feature: Responsive label interaction performance\nScenario: Dynamic search without reload\nGiven search input\nWhen filtering labels\nThen list updates dynamically without page refresh",
+      "acceptance": "List updates dynamically without page refresh\nThe behavior should be validated when filtering labels."
+    },
+    {
+      "test_id": "UTC-2475",
+      "srs_id": "SRS-238",
+      "sds_id": "SDS-238",
+      "summary": "Verify Checkbox selection speed\nwhen label list visible",
+      "description": "Feature: Responsive label interaction performance\nScenario: Checkbox selection speed\nGiven label list visible\nWhen selecting checkbox\nThen selection highlights instantly",
+      "acceptance": "Selection highlights instantly\nThe behavior should be validated when selecting checkbox."
+    },
+    {
+      "test_id": "UTC-2476",
+      "srs_id": "SRS-238",
+      "sds_id": "SDS-238",
+      "summary": "Verify Apply button enablement speed\nwhen at least one label selected",
+      "description": "Feature: Responsive label interaction performance\nScenario: Apply button enablement speed\nGiven at least one label selected\nWhen selection occurs\nThen Apply button enables immediately",
+      "acceptance": "Apply button enables immediately\nThe behavior should be validated when selection occurs."
+    },
+    {
+      "test_id": "UTC-2477",
+      "srs_id": "SRS-238",
+      "sds_id": "SDS-238",
+      "summary": "Verify Apply action latency\nwhen labels selected",
+      "description": "Feature: Responsive label interaction performance\nScenario: Apply action latency\nGiven labels selected\nWhen Apply clicked\nThen labels appear on image within 500 ms",
+      "acceptance": "Labels appear on image within 500 ms\nThe behavior should be validated when Apply clicked."
+    },
+    {
+      "test_id": "UTC-2478",
+      "srs_id": "SRS-238",
+      "sds_id": "SDS-238",
+      "summary": "Verify Remove action latency\nwhen labels assigned",
+      "description": "Feature: Responsive label interaction performance\nScenario: Remove action latency\nGiven labels assigned\nWhen Remove triggered\nThen labels disappear instantly",
+      "acceptance": "Labels disappear instantly\nThe behavior should be validated when Remove triggered."
+    },
+    {
+      "test_id": "UTC-2479",
+      "srs_id": "SRS-238",
+      "sds_id": "SDS-238",
+      "summary": "Verify Asynchronous processing\nwhen apply/remove in progress",
+      "description": "Feature: Responsive label interaction performance\nScenario: Asynchronous processing\nGiven apply/remove in progress\nWhen request sent\nThen UI should not block other interactions",
+      "acceptance": "UI should not block other interactions\nThe behavior should be validated when request sent."
+    },
+    {
+      "test_id": "UTC-2480",
+      "srs_id": "SRS-238",
+      "sds_id": "SDS-238",
+      "summary": "Verify Multiple quick selections\nwhen rapid multiple clicks",
+      "description": "Feature: Responsive label interaction performance\nScenario: Multiple quick selections\nGiven rapid multiple clicks\nWhen selecting labels repeatedly\nThen UI should remain stable and responsive",
+      "acceptance": "UI should remain stable and responsive\nThe behavior should be validated when selecting labels repeatedly."
+    },
+    {
+      "test_id": "UTC-2481",
+      "srs_id": "SRS-238",
+      "sds_id": "SDS-238",
+      "summary": "Verify Large dataset performance\nwhen 500+ labels loaded",
+      "description": "Feature: Responsive label interaction performance\nScenario: Large dataset performance\nGiven 500+ labels loaded\nWhen popup opens\nThen load time remains under 1 sec",
+      "acceptance": "Load time remains under 1 sec\nThe behavior should be validated when popup opens."
+    },
+    {
+      "test_id": "UTC-2482",
+      "srs_id": "SRS-238",
+      "sds_id": "SDS-238",
+      "summary": "Verify Scrolling smoothness\nwhen long label list",
+      "description": "Feature: Responsive label interaction performance\nScenario: Scrolling smoothness\nGiven long label list\nWhen scrolling\nThen scrolling remains smooth without lag",
+      "acceptance": "Scrolling remains smooth without lag\nThe behavior should be validated when scrolling."
+    },
+    {
+      "test_id": "UTC-2483",
+      "srs_id": "SRS-238",
+      "sds_id": "SDS-238",
+      "summary": "Verify Popup close speed\nwhen popup open",
+      "description": "Feature: Responsive label interaction performance\nScenario: Popup close speed\nGiven popup open\nWhen Cancel clicked\nThen popup closes instantly",
+      "acceptance": "Popup closes instantly\nThe behavior should be validated when Cancel clicked."
+    },
+    {
+      "test_id": "UTC-2484",
+      "srs_id": "SRS-238",
+      "sds_id": "SDS-238",
+      "summary": "Verify API delay handling\nwhen slow network",
+      "description": "Feature: Responsive label interaction performance\nScenario: API delay handling\nGiven slow network\nWhen apply action delayed\nThen non-blocking toast appears without freezing UI",
+      "acceptance": "Non-blocking toast appears without freezing UI\nThe behavior should be validated when apply action delayed."
+    },
+    {
+      "test_id": "UTC-2485",
+      "srs_id": "SRS-238",
+      "sds_id": "SDS-238",
+      "summary": "Verify API failure resilience\nwhen apply fails",
+      "description": "Feature: Responsive label interaction performance\nScenario: API failure resilience\nGiven apply fails\nWhen error occurs\nThen previous UI state remains intact and toast shown",
+      "acceptance": "Previous UI state remains intact and toast shown\nThe behavior should be validated when error occurs."
+    },
+    {
+      "test_id": "UTC-2486",
+      "srs_id": "SRS-238",
+      "sds_id": "SDS-238",
+      "summary": "Verify Consecutive operations\nwhen multiple apply/remove cycles",
+      "description": "Feature: Responsive label interaction performance\nScenario: Consecutive operations\nGiven multiple apply/remove cycles\nWhen executed repeatedly\nThen performance remains consistent without degradation",
+      "acceptance": "Performance remains consistent without degradation\nThe behavior should be validated when executed repeatedly."
+    },
+    {
+      "test_id": "UTC-2487",
+      "srs_id": "SRS-238",
+      "sds_id": "SDS-238",
+      "summary": "Verify Visual feedback clarity\nwhen label applied",
+      "description": "Feature: Responsive label interaction performance\nScenario: Visual feedback clarity\nGiven label applied\nWhen action completes\nThen success toast appears immediately",
+      "acceptance": "Success toast appears immediately\nThe behavior should be validated when action completes."
+    },
+    {
+      "test_id": "UTC-2488",
+      "srs_id": "SRS-239",
+      "sds_id": "SDS-239",
+      "summary": "Verify Popup controls clearly visible\nwhen user opens label popup",
+      "description": "Feature: User-friendly labeling workflow experience\nScenario: Popup controls clearly visible\nGiven user opens label popup\nWhen popup renders\nThen search, labels, and Apply button should be clearly visible",
+      "acceptance": "Search, labels, and Apply button should be clearly visible\nThe behavior should be validated when popup renders."
+    },
+    {
+      "test_id": "UTC-2489",
+      "srs_id": "SRS-239",
+      "sds_id": "SDS-239",
+      "summary": "Verify Search field guidance\nwhen popup open",
+      "description": "Feature: User-friendly labeling workflow experience\nScenario: Search field guidance\nGiven popup open\nWhen user views search field\nThen placeholder text should guide label search",
+      "acceptance": "Placeholder text should guide label search\nThe behavior should be validated when user views search field."
+    },
+    {
+      "test_id": "UTC-2490",
+      "srs_id": "SRS-239",
+      "sds_id": "SDS-239",
+      "summary": "Verify Labels readable\nwhen labels listed",
+      "description": "Feature: User-friendly labeling workflow experience\nScenario: Labels readable\nGiven labels listed\nWhen user views list\nThen label text should be readable and properly spaced",
+      "acceptance": "Label text should be readable and properly spaced\nThe behavior should be validated when user views list."
+    },
+    {
+      "test_id": "UTC-2491",
+      "srs_id": "SRS-239",
+      "sds_id": "SDS-239",
+      "summary": "Verify Checkbox clarity\nwhen label list visible",
+      "description": "Feature: User-friendly labeling workflow experience\nScenario: Checkbox clarity\nGiven label list visible\nWhen selecting a checkbox\nThen selection state should be clearly highlighted",
+      "acceptance": "Selection state should be clearly highlighted\nThe behavior should be validated when selecting a checkbox."
+    },
+    {
+      "test_id": "UTC-2492",
+      "srs_id": "SRS-239",
+      "sds_id": "SDS-239",
+      "summary": "Verify Apply button default disabled\nwhen popup opens",
+      "description": "Feature: User-friendly labeling workflow experience\nScenario: Apply button default disabled\nGiven popup opens\nWhen no label selected\nThen Apply button should be disabled to prevent mistakes",
+      "acceptance": "Apply button should be disabled to prevent mistakes\nThe behavior should be validated when no label selected."
+    },
+    {
+      "test_id": "UTC-2493",
+      "srs_id": "SRS-239",
+      "sds_id": "SDS-239",
+      "summary": "Verify Apply button enabled feedback\nwhen label selected",
+      "description": "Feature: User-friendly labeling workflow experience\nScenario: Apply button enabled feedback\nGiven label selected\nWhen checkbox marked\nThen Apply button should enable clearly",
+      "acceptance": "Apply button should enable clearly\nThe behavior should be validated when checkbox marked."
+    },
+    {
+      "test_id": "UTC-2494",
+      "srs_id": "SRS-239",
+      "sds_id": "SDS-239",
+      "summary": "Verify Immediate label reflection\nwhen labels applied",
+      "description": "Feature: User-friendly labeling workflow experience\nScenario: Immediate label reflection\nGiven labels applied\nWhen action completes\nThen labels appear instantly below image",
+      "acceptance": "Labels appear instantly below image\nThe behavior should be validated when action completes."
+    },
+    {
+      "test_id": "UTC-2495",
+      "srs_id": "SRS-239",
+      "sds_id": "SDS-239",
+      "summary": "Verify Success confirmation message\nwhen labels applied",
+      "description": "Feature: User-friendly labeling workflow experience\nScenario: Success confirmation message\nGiven labels applied\nWhen process succeeds\nThen success toast should display clear message",
+      "acceptance": "Success toast should display clear message\nThe behavior should be validated when process succeeds."
+    },
+    {
+      "test_id": "UTC-2496",
+      "srs_id": "SRS-239",
+      "sds_id": "SDS-239",
+      "summary": "Verify Empty search result feedback\nwhen search text has no match",
+      "description": "Feature: User-friendly labeling workflow experience\nScenario: Empty search result feedback\nGiven search text has no match\nWhen filtering\nThen “No results found” message should display",
+      "acceptance": "\"No results found\" message should display\nThe behavior should be validated when filtering."
+    },
+    {
+      "test_id": "UTC-2497",
+      "srs_id": "SRS-239",
+      "sds_id": "SDS-239",
+      "summary": "Verify Cancel action clarity\nwhen popup open",
+      "description": "Feature: User-friendly labeling workflow experience\nScenario: Cancel action clarity\nGiven popup open\nWhen Cancel clicked\nThen popup should close without changes",
+      "acceptance": "Popup should close without changes\nThe behavior should be validated when Cancel clicked."
+    },
+    {
+      "test_id": "UTC-2498",
+      "srs_id": "SRS-239",
+      "sds_id": "SDS-239",
+      "summary": "Verify Confirmation modal clarity\nwhen removal initiated",
+      "description": "Feature: User-friendly labeling workflow experience\nScenario: Confirmation modal clarity\nGiven removal initiated\nWhen confirmation appears\nThen modal text clearly describes action",
+      "acceptance": "Modal text clearly describes action\nThe behavior should be validated when confirmation appears."
+    },
+    {
+      "test_id": "UTC-2499",
+      "srs_id": "SRS-239",
+      "sds_id": "SDS-239",
+      "summary": "Verify Yes/No button distinction\nwhen confirmation modal",
+      "description": "Feature: User-friendly labeling workflow experience\nScenario: Yes/No button distinction\nGiven confirmation modal\nWhen displayed\nThen Yes and No buttons should be visually distinct",
+      "acceptance": "Yes and No buttons should be visually distinct\nThe behavior should be validated when displayed."
+    },
+    {
+      "test_id": "UTC-2500",
+      "srs_id": "SRS-239",
+      "sds_id": "SDS-239",
+      "summary": "Verify No accidental apply\nwhen no label selected",
+      "description": "Feature: User-friendly labeling workflow experience\nScenario: No accidental apply\nGiven no label selected\nWhen user clicks Apply repeatedly\nThen no action should occur",
+      "acceptance": "No action should occur\nThe behavior should be validated when user clicks Apply repeatedly."
+    },
+    {
+      "test_id": "UTC-2501",
+      "srs_id": "SRS-239",
+      "sds_id": "SDS-239",
+      "summary": "Verify Selection persistence\nwhen labels selected",
+      "description": "Feature: User-friendly labeling workflow experience\nScenario: Selection persistence\nGiven labels selected\nWhen popup reopened\nThen previous selections should remain visible",
+      "acceptance": "Previous selections should remain visible\nThe behavior should be validated when popup reopened."
+    },
+    {
+      "test_id": "UTC-2502",
+      "srs_id": "SRS-239",
+      "sds_id": "SDS-239",
+      "summary": "Verify Keyboard navigation\nwhen popup open",
+      "description": "Feature: User-friendly labeling workflow experience\nScenario: Keyboard navigation\nGiven popup open\nWhen using Tab/Space/Enter\nThen controls should be accessible via keyboard",
+      "acceptance": "Controls should be accessible via keyboard\nThe behavior should be validated when using Tab/Space/Enter."
+    },
+    {
+      "test_id": "UTC-2503",
+      "srs_id": "SRS-239",
+      "sds_id": "SDS-239",
+      "summary": "Verify Consistent layout\nwhen multiple interactions",
+      "description": "Feature: User-friendly labeling workflow experience\nScenario: Consistent layout\nGiven multiple interactions\nWhen popup used repeatedly\nThen layout remains stable and predictable",
+      "acceptance": "Layout remains stable and predictable\nThe behavior should be validated when popup used repeatedly."
+    },
+    {
+      "test_id": "UTC-2504",
+      "srs_id": "SRS-239",
+      "sds_id": "SDS-239",
+      "summary": "Verify Non-technical error messaging\nwhen failure occurs",
+      "description": "Feature: User-friendly labeling workflow experience\nScenario: Non-technical error messaging\nGiven failure occurs\nWhen error shown\nThen message should be simple and user-friendly",
+      "acceptance": "Message should be simple and user-friendly\nThe behavior should be validated when error shown."
+    }
+  ]
+}

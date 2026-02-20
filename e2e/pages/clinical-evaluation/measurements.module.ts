@@ -1,12 +1,12 @@
 import { BaseModule } from '../shared/base-module';
-import { ClinicalEvaluationSelectors, getDynamicSelector } from '../../selectors';
+import { getDynamicSelector } from '../../selectors';
 
 import type { MeasurementData, AssessmentData, ClinicalEvaluationData } from './index';
 
 export class CEMeasurementsModule extends BaseModule {
   async toggleMeasurement(data: { sectionIndex: number; measurementIndex: number }) {
-    const selector = this.ctx.getSelector(
-      this.selectors.common['`ce-measurement']['toggle-${section.index}-${measurement.index}`'],
+    const selector = getDynamicSelector(
+      this.selectors.common['ce-measurement-toggle-${section.index}-${measurement.index}'],
       {
         'section.index': data.sectionIndex,
         'measurement.index': data.measurementIndex
@@ -18,8 +18,8 @@ export class CEMeasurementsModule extends BaseModule {
   }
 
   async setMeasurementVisibility(data: { sectionIndex: number; measurementIndex: number; visible: boolean }) {
-    const selector = this.ctx.getSelector(
-      this.selectors.common['`ce-measurement']['visibility-${section.index}-${measurement.index}`'],
+    const selector = getDynamicSelector(
+      this.selectors.common['ce-measurement-visibility-${section.index}-${measurement.index}'],
       {
         'section.index': data.sectionIndex,
         'measurement.index': data.measurementIndex
@@ -38,8 +38,8 @@ export class CEMeasurementsModule extends BaseModule {
   }
 
   async markMeasurementAsUnreliable(data: { sectionIndex: number; measurementIndex: number; unreliable: boolean }) {
-    const selector = this.ctx.getSelector(
-      this.selectors.common['`ce-measurement']['unreliable-${section.index}-${measurement.index}`'],
+    const selector = getDynamicSelector(
+      this.selectors.common['ce-measurement-unreliable-${section.index}-${measurement.index}'],
       {
         'section.index': data.sectionIndex,
         'measurement.index': data.measurementIndex
@@ -63,10 +63,13 @@ export class CEMeasurementsModule extends BaseModule {
       measurementIndex: data.measurementIndex
     });
 
-    const inputSelector = getDynamicSelector(ClinicalEvaluationSelectors['ce-measurement'].input, {
-      sectionIndex: data.sectionIndex,
-      measurementIndex: data.measurementIndex,
-    });
+    const inputSelector = getDynamicSelector(
+      this.selectors.clinicalEvaluation['ce-measurement-input-${sectionIndex}-${measurementIndex}'],
+      {
+        sectionIndex: data.sectionIndex,
+        measurementIndex: data.measurementIndex,
+      }
+    );
     await this.fill(inputSelector, data.value.toString());
 
     if (data.isUnreliable !== undefined) {
@@ -87,8 +90,8 @@ export class CEMeasurementsModule extends BaseModule {
   }
 
   async selectAssessmentOption(data: AssessmentData) {
-    const selector = this.ctx.getSelector(
-      this.selectors.common['`ce-assessment']['option-${section.index}-${assessment.index}-${name}`'],
+    const selector = getDynamicSelector(
+      this.selectors.common['ce-assessment-option-${section.index}-${assessment.index}-${name}'],
       {
         'section.index': data.sectionIndex,
         'assessment.index': data.assessmentIndex,
@@ -102,7 +105,7 @@ export class CEMeasurementsModule extends BaseModule {
 
   async completeClinicalEvaluation(data: ClinicalEvaluationData) {
     if (data.comment) {
-      await this.fill(this.selectors.clinicalEvaluation['ce-comment'].textarea, data.comment);
+      await this.fill(this.selectors.clinicalEvaluation['ce-comment-textarea'], data.comment);
       await this.waitForLoadingComplete();
     }
 

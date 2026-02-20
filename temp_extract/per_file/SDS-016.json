@@ -1,0 +1,195 @@
+{
+  "spec_file": "e2e/tests/data-labelling/URS-DV-DL-04/SRS-016/SDS-016.spec.ts",
+  "plan_urs": "URS-DV-DL-04",
+  "srs_str": "016",
+  "domain": "data-labelling",
+  "page_class": "DataLabellingPage",
+  "page_import": "data-labelling.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-432",
+      "srs_id": "SRS-35",
+      "sds_id": "SDS-35",
+      "summary": "Verify API failure\nwhen server update fails",
+      "description": "Feature: Label Application Workflow\nScenario: API failure\nGiven server update fails\nWhen APPLY is clicked\nThen a 'Failed to apply labels' toast should appear and state should revert",
+      "acceptance": "A 'Failed to apply labels' toast should appear and state should revert\nThe behavior should be validated when APPLY is clicked."
+    },
+    {
+      "test_id": "UTC-433",
+      "srs_id": "SRS-35",
+      "sds_id": "SDS-35",
+      "summary": "Verify Prevent apply with zero selection\nwhen no images selected",
+      "description": "Feature: Label Application Workflow\nScenario: Prevent apply with zero selection\nGiven no images selected\nWhen APPLY is attempted\nThen request should not be triggered",
+      "acceptance": "Request should not be triggered\nThe behavior should be validated when APPLY is attempted."
+    },
+    {
+      "test_id": "UTC-434",
+      "srs_id": "SRS-35",
+      "sds_id": "SDS-35",
+      "summary": "Verify Visual confirmation\nwhen labels are applied",
+      "description": "Feature: Label Application Workflow\nScenario: Visual confirmation\nGiven labels are applied\nWhen grid reloads\nThen updated labels should be clearly visible on each image card",
+      "acceptance": "Updated labels should be clearly visible on each image card\nThe behavior should be validated when grid reloads."
+    },
+    {
+      "test_id": "UTC-435",
+      "srs_id": "SRS-35",
+      "sds_id": "SDS-35",
+      "summary": "Verify Large batch labeling\nwhen many images selected",
+      "description": "Feature: Label Application Workflow\nScenario: Large batch labeling\nGiven many images selected\nWhen labels are applied\nThen operation should complete within acceptable time without UI freeze",
+      "acceptance": "Operation should complete within acceptable time without UI freeze\nThe behavior should be validated when labels are applied."
+    },
+    {
+      "test_id": "UTC-436",
+      "srs_id": "SRS-35",
+      "sds_id": "SDS-35",
+      "summary": "Verify Unauthorized user\nwhen user lacks permission",
+      "description": "Feature: Label Application Workflow\nScenario: Unauthorized user\nGiven user lacks permission\nWhen attempting to apply labels\nThen labeling action should be blocked",
+      "acceptance": "Labeling action should be blocked\nThe behavior should be validated when attempting to apply labels."
+    },
+    {
+      "test_id": "UTC-437",
+      "srs_id": "SRS-35",
+      "sds_id": "SDS-35",
+      "summary": "Verify Restore previous state\nwhen labeling fails",
+      "description": "Feature: Label Application Workflow\nScenario: Restore previous state\nGiven labeling fails\nWhen grid refresh occurs\nThen previous labels should remain unchanged",
+      "acceptance": "Previous labels should remain unchanged\nThe behavior should be validated when grid refresh occurs."
+    },
+    {
+      "test_id": "UTC-438",
+      "srs_id": "SRS-36",
+      "sds_id": "SDS-36",
+      "summary": "Verify pagination controls are displayed for large datasets\nwhen the user is viewing a grid with large dataset",
+      "description": "Feature: Pagination Controls – Visibility\n\nScenario: Verify pagination controls are displayed for large datasets\n\nGiven the user is viewing a grid with large dataset\nWhen the data is loaded\nThen pagination controls should be displayed including Total count, Previous, Current, and Next buttons",
+      "acceptance": "Pagination controls should be displayed including Total count, Previous, Current, and Next buttons\nThe behavior should be validated when the data is loaded."
+    },
+    {
+      "test_id": "UTC-439",
+      "srs_id": "SRS-36",
+      "sds_id": "SDS-36",
+      "summary": "Verify total record count is displayed\nwhen the grid data is displayed",
+      "description": "Feature: Pagination Controls – Total Count Display\n\nScenario: Verify total record count is displayed\n\nGiven the grid data is displayed\nWhen pagination controls are visible\nThen the total count should be displayed in the format “Total: [Count]”",
+      "acceptance": "The total count should be displayed in the format \"Total: [Count]\"\nThe behavior should be validated when pagination controls are visible."
+    },
+    {
+      "test_id": "UTC-440",
+      "srs_id": "SRS-36",
+      "sds_id": "SDS-36",
+      "summary": "Verify items per page dropdown options\nwhen pagination controls are visible",
+      "description": "Feature: Pagination Controls – Items Per Page Dropdown\n\nScenario: Verify items per page dropdown options\n\nGiven pagination controls are visible\nWhen the user opens the Items per page dropdown\nThen options 50, 100, and 200 should be available",
+      "acceptance": "Options 50, 100, and 200 should be available\nThe behavior should be validated when the user opens the Items per page dropdown."
+    },
+    {
+      "test_id": "UTC-441",
+      "srs_id": "SRS-36",
+      "sds_id": "SDS-36",
+      "summary": "Verify grid reloads when items per page is changed\nwhen the grid is displaying data",
+      "description": "Feature: Pagination Controls – Change Items Per Page\n\nScenario: Verify grid reloads when items per page is changed\n\nGiven the grid is displaying data\nWhen the user changes items per page value\nThen a new API request should be triggered with updated limit\nAnd the grid should reload with a loading spinner",
+      "acceptance": "A new API request should be triggered with updated limit\nThe behavior should be validated when the user changes items per page value."
+    },
+    {
+      "test_id": "UTC-442",
+      "srs_id": "SRS-36",
+      "sds_id": "SDS-36",
+      "summary": "Verify navigation using Next button\nwhen the user is on the current page",
+      "description": "Feature: Pagination Controls – Next Page Navigation\n\nScenario: Verify navigation using Next button\n\nGiven the user is on the current page\nWhen the user clicks the Next button\nThen the system should navigate to the next page\nAnd trigger a new API request with updated page parameter",
+      "acceptance": "The system should navigate to the next page\nThe behavior should be validated when the user clicks the Next button."
+    },
+    {
+      "test_id": "UTC-443",
+      "srs_id": "SRS-36",
+      "sds_id": "SDS-36",
+      "summary": "Verify navigation using Previous button\nwhen the user is not on the first page",
+      "description": "Feature: Pagination Controls – Previous Page Navigation\n\nScenario: Verify navigation using Previous button\n\nGiven the user is not on the first page\nWhen the user clicks the Previous button\nThen the system should navigate to the previous page",
+      "acceptance": "The system should navigate to the previous page\nThe behavior should be validated when the user clicks the Previous button."
+    },
+    {
+      "test_id": "UTC-444",
+      "srs_id": "SRS-36",
+      "sds_id": "SDS-36",
+      "summary": "Verify navigation using Goto input field\nwhen pagination controls are visible",
+      "description": "Feature: Pagination Controls – Goto Page Navigation\n\nScenario: Verify navigation using Goto input field\n\nGiven pagination controls are visible\nWhen the user enters a valid page number in the Goto field\nThen the grid should navigate to the specified page",
+      "acceptance": "The grid should navigate to the specified page\nThe behavior should be validated when the user enters a valid page number in the Goto field."
+    },
+    {
+      "test_id": "UTC-445",
+      "srs_id": "SRS-36",
+      "sds_id": "SDS-36",
+      "summary": "Verify system auto-corrects page number exceeding maximum pages\nwhen the total number of pages is limited",
+      "description": "Feature: Pagination Controls – Goto Page Upper Limit Handling\n\nScenario: Verify system auto-corrects page number exceeding maximum pages\n\nGiven the total number of pages is limited\nWhen the user enters a page number greater than the maximum in the Goto field\nThen the system should auto-correct to the last available page\nAnd load the corresponding data",
+      "acceptance": "The system should auto-correct to the last available page\nThe behavior should be validated when the user enters a page number greater than the maximum in the Goto field."
+    },
+    {
+      "test_id": "UTC-446",
+      "srs_id": "SRS-36",
+      "sds_id": "SDS-36",
+      "summary": "Verify loading spinner is displayed during data fetch\nwhen the user triggers pagination or page size change",
+      "description": "Feature: Pagination Controls – Loading State\n\nScenario: Verify loading spinner is displayed during data fetch\n\nGiven the user triggers pagination or page size change\nWhen a new API request is sent\nThen a loading spinner should be displayed until data loads",
+      "acceptance": "A loading spinner should be displayed until data loads\nThe behavior should be validated when a new API request is sent."
+    },
+    {
+      "test_id": "UTC-447",
+      "srs_id": "SRS-37",
+      "sds_id": "SDS-37",
+      "summary": "Verify Valid ID returns image\nwhen the grid contains images",
+      "description": "Feature: Search by Image ID – exact match\nScenario: Valid ID returns image\nGiven the grid contains images\nWhen the user enters a valid Image ID\nThen only the matching image should be displayed",
+      "acceptance": "Only the matching image should be displayed\nThe behavior should be validated when the user enters a valid Image ID."
+    },
+    {
+      "test_id": "UTC-448",
+      "srs_id": "SRS-37",
+      "sds_id": "SDS-37",
+      "summary": "Verify Search field visible on load\nwhen the grid page loads",
+      "description": "Feature: Search Input Visibility\nScenario: Search field visible on load\nGiven the grid page loads\nWhen the header renders\nThen the Search Image Id input should be visible",
+      "acceptance": "The Search Image Id input should be visible\nThe behavior should be validated when the header renders."
+    },
+    {
+      "test_id": "UTC-449",
+      "srs_id": "SRS-37",
+      "sds_id": "SDS-37",
+      "summary": "Verify Placeholder guidance\nwhen the input is empty",
+      "description": "Feature: Placeholder Text\nScenario: Placeholder guidance\nGiven the input is empty\nWhen displayed\nThen placeholder text 'Search Image Id' should be shown",
+      "acceptance": "Placeholder text 'Search Image Id' should be shown\nThe behavior should be validated when displayed."
+    },
+    {
+      "test_id": "UTC-450",
+      "srs_id": "SRS-37",
+      "sds_id": "SDS-37",
+      "summary": "Verify Debounce prevents rapid calls\nwhen the user types continuously",
+      "description": "Feature: Debounce Query\nScenario: Debounce prevents rapid calls\nGiven the user types continuously\nWhen input changes rapidly\nThen API should trigger only after 300ms idle",
+      "acceptance": "API should trigger only after 300ms idle\nThe behavior should be validated when input changes rapidly."
+    },
+    {
+      "test_id": "UTC-451",
+      "srs_id": "SRS-37",
+      "sds_id": "SDS-37",
+      "summary": "Verify Clear resets grid\nwhen text is entered",
+      "description": "Feature: Clear Button\nScenario: Clear resets grid\nGiven text is entered\nWhen the user clicks X\nThen the grid should reset to full dataset",
+      "acceptance": "The grid should reset to full dataset\nThe behavior should be validated when the user clicks X."
+    },
+    {
+      "test_id": "UTC-452",
+      "srs_id": "SRS-37",
+      "sds_id": "SDS-37",
+      "summary": "Verify Unknown ID searched\nwhen the entered ID does not exist",
+      "description": "Feature: No Match Handling\nScenario: Unknown ID searched\nGiven the entered ID does not exist\nWhen search executes\nThen Empty State view should be shown",
+      "acceptance": "Empty State view should be shown\nThe behavior should be validated when search executes."
+    },
+    {
+      "test_id": "UTC-453",
+      "srs_id": "SRS-37",
+      "sds_id": "SDS-37",
+      "summary": "Verify Invalid characters filtered\nwhen user enters special characters",
+      "description": "Feature: Special Character Removal\nScenario: Invalid characters filtered\nGiven user enters special characters\nWhen search triggers\nThen invalid characters should be stripped automatically",
+      "acceptance": "Invalid characters should be stripped automatically\nThe behavior should be validated when search triggers."
+    },
+    {
+      "test_id": "UTC-454",
+      "srs_id": "SRS-37",
+      "sds_id": "SDS-37",
+      "summary": "Verify Subset filtering\nwhen multiple IDs share prefix",
+      "description": "Feature: Partial Search Support\nScenario: Subset filtering\nGiven multiple IDs share prefix\nWhen partial text entered\nThen subset of matching images should be displayed",
+      "acceptance": "Subset of matching images should be displayed\nThe behavior should be validated when partial text entered."
+    }
+  ]
+}

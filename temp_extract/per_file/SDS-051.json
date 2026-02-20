@@ -1,0 +1,219 @@
+{
+  "spec_file": "e2e/tests/general/URS-DV-GEN-13/SRS-051/SDS-051.spec.ts",
+  "plan_urs": "URS-DV-GEN-13",
+  "srs_str": "051",
+  "domain": "general",
+  "page_class": "EpicPage",
+  "page_import": "epic.page",
+  "goto_method": "goto",
+  "test_cases": [
+    {
+      "test_id": "UTC-1929",
+      "srs_id": "SRS-146",
+      "sds_id": "SDS-146",
+      "summary": "Verify Session unlocked after rejection\nwhen session was locked for deletion",
+      "description": "Feature: Request Rejection Protocol\nScenario: Session unlocked after rejection\nGiven session was locked for deletion\nWhen rejection occurs\nThen session should revert to active state",
+      "acceptance": "Session should revert to active state\nThe behavior should be validated when rejection occurs."
+    },
+    {
+      "test_id": "UTC-1930",
+      "srs_id": "SRS-146",
+      "sds_id": "SDS-146",
+      "summary": "Verify Session available in lists\nwhen rejection completed",
+      "description": "Feature: Request Rejection Protocol\nScenario: Session available in lists\nGiven rejection completed\nWhen dashboard refreshes\nThen session should remain visible in active list",
+      "acceptance": "Session should remain visible in active list\nThe behavior should be validated when dashboard refreshes."
+    },
+    {
+      "test_id": "UTC-1931",
+      "srs_id": "SRS-146",
+      "sds_id": "SDS-146",
+      "summary": "Verify Success feedback shown\nwhen rejection completed",
+      "description": "Feature: Request Rejection Protocol\nScenario: Success feedback shown\nGiven rejection completed\nWhen action finishes\nThen success toast should appear",
+      "acceptance": "Success toast should appear\nThe behavior should be validated when action finishes."
+    },
+    {
+      "test_id": "UTC-1932",
+      "srs_id": "SRS-146",
+      "sds_id": "SDS-146",
+      "summary": "Verify Immediate UI update\nwhen rejection submitted",
+      "description": "Feature: Request Rejection Protocol\nScenario: Immediate UI update\nGiven rejection submitted\nWhen dashboard open\nThen status should update instantly without reload",
+      "acceptance": "Status should update instantly without reload\nThe behavior should be validated when dashboard open."
+    },
+    {
+      "test_id": "UTC-1933",
+      "srs_id": "SRS-146",
+      "sds_id": "SDS-146",
+      "summary": "Verify Only admin can reject\nwhen non-admin logged in",
+      "description": "Feature: Request Rejection Protocol\nScenario: Only admin can reject\nGiven non-admin logged in\nWhen accessing reject action\nThen reject button should be hidden/disabled",
+      "acceptance": "Reject button should be hidden/disabled\nThe behavior should be validated when accessing reject action."
+    },
+    {
+      "test_id": "UTC-1934",
+      "srs_id": "SRS-146",
+      "sds_id": "SDS-146",
+      "summary": "Verify Direct API rejection blocked\nwhen unauthorized API call",
+      "description": "Feature: Request Rejection Protocol\nScenario: Direct API rejection blocked\nGiven unauthorized API call\nWhen request sent\nThen server returns 403",
+      "acceptance": "Server returns 403\nThe behavior should be validated when request sent."
+    },
+    {
+      "test_id": "UTC-1935",
+      "srs_id": "SRS-146",
+      "sds_id": "SDS-146",
+      "summary": "Verify Cancel rejection\nwhen modal opened",
+      "description": "Feature: Request Rejection Protocol\nScenario: Cancel rejection\nGiven modal opened\nWhen admin clicks Cancel/Close\nThen request should remain Pending",
+      "acceptance": "Request should remain Pending\nThe behavior should be validated when admin clicks Cancel/Close."
+    },
+    {
+      "test_id": "UTC-1936",
+      "srs_id": "SRS-146",
+      "sds_id": "SDS-146",
+      "summary": "Verify Audit logging\nwhen rejection processed",
+      "description": "Feature: Request Rejection Protocol\nScenario: Audit logging\nGiven rejection processed\nWhen action recorded\nThen admin name, reason, and timestamp should be logged",
+      "acceptance": "Admin name, reason, and timestamp should be logged\nThe behavior should be validated when action recorded."
+    },
+    {
+      "test_id": "UTC-1937",
+      "srs_id": "SRS-146",
+      "sds_id": "SDS-146",
+      "summary": "Verify Fast rejection processing\nwhen rejection submitted",
+      "description": "Feature: Request Rejection Protocol\nScenario: Fast rejection processing\nGiven rejection submitted\nWhen backend processes\nThen response should complete within acceptable time",
+      "acceptance": "Response should complete within acceptable time\nThe behavior should be validated when backend processes."
+    },
+    {
+      "test_id": "UTC-1938",
+      "srs_id": "SRS-147",
+      "sds_id": "SDS-147",
+      "summary": "Verify Admin sees Delete button\nwhen user role is ADMIN",
+      "description": "Feature: Role-Based Delete Access\nScenario: Admin sees Delete button\nGiven user role is ADMIN\nWhen Epic page loads\nThen Delete Session button should be visible",
+      "acceptance": "Delete Session button should be visible\nThe behavior should be validated when Epic page loads."
+    },
+    {
+      "test_id": "UTC-1939",
+      "srs_id": "SRS-147",
+      "sds_id": "SDS-147",
+      "summary": "Verify Supervisor sees Delete button\nwhen user role is SUPERVISOR",
+      "description": "Feature: Role-Based Delete Access\nScenario: Supervisor sees Delete button\nGiven user role is SUPERVISOR\nWhen Epic page loads\nThen Delete Session button should be visible",
+      "acceptance": "Delete Session button should be visible\nThe behavior should be validated when Epic page loads."
+    },
+    {
+      "test_id": "UTC-1940",
+      "srs_id": "SRS-147",
+      "sds_id": "SDS-147",
+      "summary": "Verify Standard user cannot see Delete button\nwhen user role is REVIEWER",
+      "description": "Feature: Role-Based Delete Access\nScenario: Standard user cannot see Delete button\nGiven user role is REVIEWER\nWhen Epic page loads\nThen Delete Session button should not be visible",
+      "acceptance": "Delete Session button should not be visible\nThe behavior should be validated when Epic page loads."
+    },
+    {
+      "test_id": "UTC-1941",
+      "srs_id": "SRS-147",
+      "sds_id": "SDS-147",
+      "summary": "Verify Unauthorized user cannot see Delete Requests link\nwhen user lacks delete permission",
+      "description": "Feature: Role-Based Delete Access\nScenario: Unauthorized user cannot see Delete Requests link\nGiven user lacks delete permission\nWhen dashboard loads\nThen Delete Session Requests link should not render",
+      "acceptance": "Delete Session Requests link should not render\nThe behavior should be validated when dashboard loads."
+    },
+    {
+      "test_id": "UTC-1942",
+      "srs_id": "SRS-147",
+      "sds_id": "SDS-147",
+      "summary": "Verify Authorized user sees request controls\nwhen authorized role logged in",
+      "description": "Feature: Role-Based Delete Access\nScenario: Authorized user sees request controls\nGiven authorized role logged in\nWhen page renders\nThen deletion request controls should be enabled",
+      "acceptance": "Deletion request controls should be enabled\nThe behavior should be validated when page renders."
+    },
+    {
+      "test_id": "UTC-1943",
+      "srs_id": "SRS-147",
+      "sds_id": "SDS-147",
+      "summary": "Verify Role validated before render\nwhen login completed",
+      "description": "Feature: Role-Based Delete Access\nScenario: Role validated before render\nGiven login completed\nWhen UI initializes\nThen role should be validated before mounting delete components",
+      "acceptance": "Role should be validated before mounting delete components\nThe behavior should be validated when UI initializes."
+    },
+    {
+      "test_id": "UTC-1944",
+      "srs_id": "SRS-147",
+      "sds_id": "SDS-147",
+      "summary": "Verify No flicker of delete controls\nwhen unauthorized user logs in",
+      "description": "Feature: Role-Based Delete Access\nScenario: No flicker of delete controls\nGiven unauthorized user logs in\nWhen page loads\nThen delete controls should never briefly appear",
+      "acceptance": "Delete controls should never briefly appear\nThe behavior should be validated when page loads."
+    },
+    {
+      "test_id": "UTC-1945",
+      "srs_id": "SRS-147",
+      "sds_id": "SDS-147",
+      "summary": "Verify Direct URL access blocked\nwhen unauthorized user manually enters delete URL",
+      "description": "Feature: Role-Based Delete Access\nScenario: Direct URL access blocked\nGiven unauthorized user manually enters delete URL\nWhen request processed\nThen system should redirect to dashboard",
+      "acceptance": "System should redirect to dashboard\nThe behavior should be validated when request processed."
+    },
+    {
+      "test_id": "UTC-1946",
+      "srs_id": "SRS-147",
+      "sds_id": "SDS-147",
+      "summary": "Verify Access denied message shown\nwhen unauthorized access attempt",
+      "description": "Feature: Role-Based Delete Access\nScenario: Access denied message shown\nGiven unauthorized access attempt\nWhen redirect occurs\nThen Access Denied message should be displayed",
+      "acceptance": "Access Denied message should be displayed\nThe behavior should be validated when redirect occurs."
+    },
+    {
+      "test_id": "UTC-1947",
+      "srs_id": "SRS-147",
+      "sds_id": "SDS-147",
+      "summary": "Verify API protection for delete endpoint\nwhen unauthorized API call",
+      "description": "Feature: Role-Based Delete Access\nScenario: API protection for delete endpoint\nGiven unauthorized API call\nWhen request sent\nThen server should return 403 Forbidden",
+      "acceptance": "Server should return 403 Forbidden\nThe behavior should be validated when request sent."
+    },
+    {
+      "test_id": "UTC-1948",
+      "srs_id": "SRS-147",
+      "sds_id": "SDS-147",
+      "summary": "Verify Role stored in secure state\nwhen login success",
+      "description": "Feature: Role-Based Delete Access\nScenario: Role stored in secure state\nGiven login success\nWhen session initialized\nThen user role should be stored securely in state",
+      "acceptance": "User role should be stored securely in state\nThe behavior should be validated when session initialized."
+    },
+    {
+      "test_id": "UTC-1949",
+      "srs_id": "SRS-147",
+      "sds_id": "SDS-147",
+      "summary": "Verify Role change reflected dynamically\nwhen admin role downgraded",
+      "description": "Feature: Role-Based Delete Access\nScenario: Role change reflected dynamically\nGiven admin role downgraded\nWhen page refreshed\nThen delete controls should disappear",
+      "acceptance": "Delete controls should disappear\nThe behavior should be validated when page refreshed."
+    },
+    {
+      "test_id": "UTC-1950",
+      "srs_id": "SRS-147",
+      "sds_id": "SDS-147",
+      "summary": "Verify Supervisor retains access\nwhen supervisor logged in",
+      "description": "Feature: Role-Based Delete Access\nScenario: Supervisor retains access\nGiven supervisor logged in\nWhen navigating pages\nThen delete controls should remain visible",
+      "acceptance": "Delete controls should remain visible\nThe behavior should be validated when navigating pages."
+    },
+    {
+      "test_id": "UTC-1951",
+      "srs_id": "SRS-147",
+      "sds_id": "SDS-147",
+      "summary": "Verify Guest user login\nwhen guest role",
+      "description": "Feature: Role-Based Delete Access\nScenario: Guest user login\nGiven guest role\nWhen Epic page loads\nThen delete controls should not exist in DOM",
+      "acceptance": "Delete controls should not exist in DOM\nThe behavior should be validated when Epic page loads."
+    },
+    {
+      "test_id": "UTC-1952",
+      "srs_id": "SRS-147",
+      "sds_id": "SDS-147",
+      "summary": "Verify Clean UI for unauthorized users\nwhen unauthorized user logged in",
+      "description": "Feature: Role-Based Delete Access\nScenario: Clean UI for unauthorized users\nGiven unauthorized user logged in\nWhen viewing dashboard\nThen no empty space or broken layout should appear",
+      "acceptance": "No empty space or broken layout should appear\nThe behavior should be validated when viewing dashboard."
+    },
+    {
+      "test_id": "UTC-1953",
+      "srs_id": "SRS-147",
+      "sds_id": "SDS-147",
+      "summary": "Verify Unauthorized attempt logged\nwhen blocked access occurs",
+      "description": "Feature: Role-Based Delete Access\nScenario: Unauthorized attempt logged\nGiven blocked access occurs\nWhen system logs event́",
+      "acceptance": "Expected result should be displayed as per the scenario.\nThe behavior should be validated when system logs eventÌ."
+    },
+    {
+      "test_id": "UTC-1954",
+      "srs_id": "SRS-147",
+      "sds_id": "SDS-147",
+      "summary": "Verify Fast permission check\nwhen page loads",
+      "description": "Feature: Role-Based Delete Access\nScenario: Fast permission check\nGiven page loads\nWhen role validation runs\nThen rendering should not delay noticeably",
+      "acceptance": "Rendering should not delay noticeably\nThe behavior should be validated when role validation runs."
+    }
+  ]
+}

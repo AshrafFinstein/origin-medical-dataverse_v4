@@ -1,0 +1,75 @@
+{
+  "spec_file": "e2e/tests/annotation/URS-DV-DA-18/SRS-066/SDS-066.spec.ts",
+  "plan_urs": "URS-DV-DA-18",
+  "srs_str": "066",
+  "domain": "annotation",
+  "page_class": "DataLabellingPage",
+  "page_import": "data-labelling.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-2623",
+      "srs_id": "SRS-250",
+      "sds_id": "SDS-250",
+      "summary": "Verify annotations are copied to selected image via manual option\nwhen the image selection popup is displayed",
+      "description": "Feature: Copy Annotations – Manual Target Image Selection\n\nScenario: Verify annotations are copied to selected image via manual option\n\nGiven the image selection popup is displayed\nWhen the user selects a target image and confirms\nThen all saved annotations should be copied to the selected image",
+      "acceptance": "All saved annotations should be copied to the selected image\nThe behavior should be validated when the user selects a target image and confirms."
+    },
+    {
+      "test_id": "UTC-2624",
+      "srs_id": "SRS-250",
+      "sds_id": "SDS-250",
+      "summary": "Verify confirmation message after successful copy\nwhen annotations are copied successfully",
+      "description": "Feature: Copy Annotations – Success Confirmation Message\n\nScenario: Verify confirmation message after successful copy\n\nGiven annotations are copied successfully\nWhen the copy operation completes\nThen a confirmation message such as “Annotations copied to image XX” should be displayed",
+      "acceptance": "A confirmation message such as \"Annotations copied to image XX\" should be displayed\nThe behavior should be validated when the copy operation completes."
+    },
+    {
+      "test_id": "UTC-2625",
+      "srs_id": "SRS-250",
+      "sds_id": "SDS-250",
+      "summary": "Verify copy is blocked when unsaved annotations exist\nwhen the current image has unsaved annotations",
+      "description": "Feature: Copy Annotations – Unsaved Annotation Restriction\n\nScenario: Verify copy is blocked when unsaved annotations exist\n\nGiven the current image has unsaved annotations\nWhen the user attempts to copy annotations using shortcut or button\nThen the copy action should be blocked\nAnd an error message “Cannot copy annotations: Please save your annotations first” should be displayed",
+      "acceptance": "The copy action should be blocked\nThe behavior should be validated when the user attempts to copy annotations using shortcut or button."
+    },
+    {
+      "test_id": "UTC-2626",
+      "srs_id": "SRS-250",
+      "sds_id": "SDS-250",
+      "summary": "Verify target image view updates after copy\nwhen annotations are copied to a target image",
+      "description": "Feature: Copy Annotations – Target Image Update\n\nScenario: Verify target image view updates after copy\n\nGiven annotations are copied to a target image\nWhen the target image is opened\nThen the copied annotations should be visible and editable",
+      "acceptance": "The copied annotations should be visible and editable\nThe behavior should be validated when the target image is opened."
+    },
+    {
+      "test_id": "UTC-2627",
+      "srs_id": "SRS-251",
+      "sds_id": "SDS-251",
+      "summary": "Verify keyboard shortcut is supported for copying annotations to previous image\nwhen the user is viewing an image with saved annotations",
+      "description": "Feature: Copy Annotations – Previous Image Shortcut Availability\n\nScenario: Verify keyboard shortcut is supported for copying annotations to previous image\n\nGiven the user is viewing an image with saved annotations\nWhen the user presses Shift + Ctrl + Left Arrow\nThen the system should initiate the copy annotations action to the previous image",
+      "acceptance": "The system should initiate the copy annotations action to the previous image\nThe behavior should be validated when the user presses Shift + Ctrl + Left Arrow."
+    },
+    {
+      "test_id": "UTC-2628",
+      "srs_id": "SRS-251",
+      "sds_id": "SDS-251",
+      "summary": "Verify annotations are copied to the previous image using shortcut\nwhen the current image has one or more saved annotations",
+      "description": "Feature: Copy Annotations – Copy to Previous Image via Shortcut\n\nScenario: Verify annotations are copied to the previous image using shortcut\n\nGiven the current image has one or more saved annotations\nWhen the user presses Shift + Ctrl + Left Arrow\nThen all saved annotations should be copied to the previous image",
+      "acceptance": "All saved annotations should be copied to the previous image\nThe behavior should be validated when the user presses Shift + Ctrl + Left Arrow."
+    },
+    {
+      "test_id": "UTC-2629",
+      "srs_id": "SRS-251",
+      "sds_id": "SDS-251",
+      "summary": "Verify manual copy flow allows selecting a previous image\nwhen the Copy Annotation button is enabled",
+      "description": "Feature: Copy Annotations – Manual Copy Option to Previous Image\n\nScenario: Verify manual copy flow allows selecting a previous image\n\nGiven the Copy Annotation button is enabled\nWhen the user clicks the Copy Annotation button\nThen the “Select an image to copy annotations to” popup should be displayed with previous image options",
+      "acceptance": "The \"Select an image to copy annotations to\" popup should be displayed with previous image options\nThe behavior should be validated when the user clicks the Copy Annotation button."
+    },
+    {
+      "test_id": "UTC-2630",
+      "srs_id": "SRS-251",
+      "sds_id": "SDS-251",
+      "summary": "Verify annotations are copied to selected previous image via manual option\nwhen the image selection popup is displayed",
+      "description": "Feature: Copy Annotations – Manual Target Selection to Previous Image\n\nScenario: Verify annotations are copied to selected previous image via manual option\n\nGiven the image selection popup is displayed\nWhen the user selects a previous image and confirms\nThen all saved annotations should be copied to the selected previous image",
+      "acceptance": "All saved annotations should be copied to the selected previous image\nThe behavior should be validated when the user selects a previous image and confirms."
+    }
+  ]
+}

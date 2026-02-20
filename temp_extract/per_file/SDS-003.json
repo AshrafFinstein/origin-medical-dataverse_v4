@@ -1,0 +1,155 @@
+{
+  "spec_file": "e2e/tests/qc-workflow/URS-DV-QC-01/SRS-003/SDS-003.spec.ts",
+  "plan_urs": "URS-DV-QC-01",
+  "srs_str": "003",
+  "domain": "qc-workflow",
+  "page_class": "QcWorkflowPage",
+  "page_import": "qc-workflow.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-37",
+      "srs_id": "SRS-5",
+      "sds_id": "SDS-5",
+      "summary": "Verify Final level user rejects image\nwhen an image is in IN_REVIEW  state",
+      "description": "Feature: QC Decision – Reject Action\nAs a final approval user, the user wants to reject images that fail QC checks.\n\nScenario: Final level user rejects image\nGiven an image is in IN_REVIEW  state\nWhen the final level user clicks Reject\nThen the image should be rejected",
+      "acceptance": "The image should be rejected\nThe behavior should be validated when the final level user clicks Reject."
+    },
+    {
+      "test_id": "UTC-38",
+      "srs_id": "SRS-5",
+      "sds_id": "SDS-5",
+      "summary": "Verify Rejected image moves to previous level\nwhen an image is rejected at the final approval level",
+      "description": "Feature: QC Workflow Rollback – Final Rejection\nAs a system, rejected images must move back to the previous approval level.\n\nScenario: Rejected image moves to previous level\nGiven an image is rejected at the final approval level\nWhen the workflow is updated\nThen the image should move back to the previous approval level",
+      "acceptance": "The image should move back to the previous approval level\nThe behavior should be validated when the workflow is updated."
+    },
+    {
+      "test_id": "UTC-39",
+      "srs_id": "SRS-5",
+      "sds_id": "SDS-5",
+      "summary": "Verify REJECTED option available in Select Status\nwhen the user is on the Data Labeling page",
+      "description": "Feature: QC Status Filtering – REJECTED Option\nAs a user, the user wants to filter rejected images easily.\n\nScenario: REJECTED option available in Select Status\nGiven the user is on the Data Labeling page\nWhen the user clicks the Select Status dropdown\nThen the REJECTED option should be available",
+      "acceptance": "The REJECTED option should be available\nThe behavior should be validated when the user clicks the Select Status dropdown."
+    },
+    {
+      "test_id": "UTC-40",
+      "srs_id": "SRS-5",
+      "sds_id": "SDS-5",
+      "summary": "Verify Display rejected images under REJECTED status\nwhen the user selects REJECTED from the Select Status dropdown",
+      "description": "Feature: QC Image Listing – Rejected Images\nAs a user, the user wants to view rejected images separately.\n\nScenario: Display rejected images under REJECTED status\nGiven the user selects REJECTED from the Select Status dropdown\nWhen the image grid is displayed\nThen the rejected image should be displayed",
+      "acceptance": "The rejected image should be displayed\nThe behavior should be validated when the image grid is displayed."
+    },
+    {
+      "test_id": "UTC-41",
+      "srs_id": "SRS-5",
+      "sds_id": "SDS-5",
+      "summary": "Verify Display REJECTED L indicator\nwhen a rejected image is displayed under REJECTED status",
+      "description": "Feature: QC Rejection Indicator – Level\nAs a user, the user wants to see rejection level information clearly.\n\nScenario: Display REJECTED L indicator\nGiven a rejected image is displayed under REJECTED status\nWhen the image card is viewed\nThen REJECTED L should be displayed inside the image",
+      "acceptance": "REJECTED L should be displayed inside the image\nThe behavior should be validated when the image card is viewed."
+    },
+    {
+      "test_id": "UTC-42",
+      "srs_id": "SRS-5",
+      "sds_id": "SDS-5",
+      "summary": "Verify Rejected image hidden from IN_REVIEW\nwhen an image is rejected at the final level",
+      "description": "Feature: QC Status Consistency – Rejected Images\nAs a system, rejected images must not appear in active review lists.\n\nScenario: Rejected image hidden from IN_REVIEW\nGiven an image is rejected at the final level\nWhen the user filters images by IN_REVIEW status\nThen the rejected image should not be displayed",
+      "acceptance": "The rejected image should not be displayed\nThe behavior should be validated when the user filters images by IN_REVIEW status."
+    },
+    {
+      "test_id": "UTC-43",
+      "srs_id": "SRS-5",
+      "sds_id": "SDS-5",
+      "summary": "Verify Change Select Status to REJECTED\nwhen the user is on the Data Labeling page",
+      "description": "Feature: QC Status Filtering – REJECTED (Rollback)\nAs a previous level reviewer, the user wants to view rejected images.\n\nScenario: Change Select Status to REJECTED\nGiven the user is on the Data Labeling page\nWhen the user selects REJECTED from the Select Status dropdown\nThen the status filter should be updated to REJECTED",
+      "acceptance": "The status filter should be updated to REJECTED\nThe behavior should be validated when the user selects REJECTED from the Select Status dropdown."
+    },
+    {
+      "test_id": "UTC-44",
+      "srs_id": "SRS-5",
+      "sds_id": "SDS-5",
+      "summary": "Verify Display rejected images after rollback\nwhen Select Status is set to REJECTED",
+      "description": "Feature: QC Image Listing – Rejected (Previous Level)\nAs a previous level reviewer, the user wants to see rejected images.\n\nScenario: Display rejected images after rollback\nGiven Select Status is set to REJECTED\nWhen the image grid is displayed\nThen rejected images should be displayed",
+      "acceptance": "Rejected images should be displayed\nThe behavior should be validated when the image grid is displayed."
+    },
+    {
+      "test_id": "UTC-45",
+      "srs_id": "SRS-5",
+      "sds_id": "SDS-5",
+      "summary": "Verify Display REJECTED L indicator\nwhen rejected images are displayed",
+      "description": "Feature: QC Rejection Indicator – Rollback View\nAs a previous level reviewer, the user wants to see correct rejection level.\n\nScenario: Display REJECTED L indicator\nGiven rejected images are displayed\nWhen the image card is viewed\nThen REJECTED L  should be displayed inside the image",
+      "acceptance": "REJECTED L  should be displayed inside the image\nThe behavior should be validated when the image card is viewed."
+    },
+    {
+      "test_id": "UTC-46",
+      "srs_id": "SRS-5",
+      "sds_id": "SDS-5",
+      "summary": "Verify Enable Accept and Reject actions for rejected image\nwhen a rejected image is selected",
+      "description": "Feature: QC Rollback Actions – Previous Level\nAs a previous level reviewer, the user wants to take action on rejected images.\n\nScenario: Enable Accept and Reject actions for rejected image\nGiven a rejected image is selected\nWhen the image action panel is viewed\nThen Accept and Reject buttons should be enabled",
+      "acceptance": "Accept and Reject buttons should be enabled\nThe behavior should be validated when the image action panel is viewed."
+    },
+    {
+      "test_id": "UTC-47",
+      "srs_id": "SRS-5",
+      "sds_id": "SDS-5",
+      "summary": "Verify Reject moves image to earlier approval level\nwhen a rejected image is selected",
+      "description": "Feature: QC Rollback Workflow – Reject Action\nAs a previous level reviewer, the user wants to further reject the image.\n\nScenario: Reject moves image to earlier approval level\nGiven a rejected image is selected\nWhen the user clicks Reject\nThen the image should move to the earlier approval level",
+      "acceptance": "The image should move to the earlier approval level\nThe behavior should be validated when the user clicks Reject."
+    },
+    {
+      "test_id": "UTC-48",
+      "srs_id": "SRS-5",
+      "sds_id": "SDS-5",
+      "summary": "Verify Accept moves image to final approval level\nwhen a rejected image is selected",
+      "description": "Feature: QC Rollback Workflow – Accept Action\nAs a previous level reviewer, the user wants to forward the image again.\n\nScenario: Accept moves image to final approval level\nGiven a rejected image is selected\nWhen the user clicks Accept\nThen the image should move to the final approval level",
+      "acceptance": "The image should move to the final approval level\nThe behavior should be validated when the user clicks Accept."
+    },
+    {
+      "test_id": "UTC-49",
+      "srs_id": "SRS-6",
+      "sds_id": "SDS-6",
+      "summary": "Verify Move image out of Levels after acceptance\nwhen an image is accepted by a Levels user",
+      "description": "Feature: QC Workflow Progression\nAs a system, accepted images must move forward in the workflow.\n\nScenario: Move image out of Levels after acceptance\nGiven an image is accepted by a Levels user\nWhen the image status is updated\nThen the image should move to the next approval level or final stage",
+      "acceptance": "The image should move to the next approval level or final stage\nThe behavior should be validated when the image status is updated."
+    },
+    {
+      "test_id": "UTC-50",
+      "srs_id": "SRS-6",
+      "sds_id": "SDS-6",
+      "summary": "Verify Multiple users access same image\nwhen multiple users are configured under Approval Level",
+      "description": "Feature: QC Access – Multiple Reviewers\nAs a QC system, multiple reviewers must be able to view the same images.\n\nScenario: Multiple users access same image\nGiven multiple users are configured under Approval Level\nWhen each user accesses the same session\nThen the same IN_REVIEW  images should be visible",
+      "acceptance": "The same IN_REVIEW  images should be visible\nThe behavior should be validated when each user accesses the same session."
+    },
+    {
+      "test_id": "UTC-51",
+      "srs_id": "SRS-6",
+      "sds_id": "SDS-6",
+      "summary": "Verify Image moves to next approval level after acceptance at non-final level\nwhen an image is in IN_REVIEW status at a non-final approval level (e.g., Level 1 or Level 2)",
+      "description": "Feature: Image workflow progression after non-final approval\n\nScenario: Image moves to next approval level after acceptance at non-final level\n\nGiven an image is in IN_REVIEW status at a non-final approval level (e.g., Level 1 or Level 2)\nAnd the user belongs to the current active approval level\nWhen the user clicks Accept on the image\nThen the image should move to the next approval level in the workflow",
+      "acceptance": "The image should move to the next approval level in the workflow\nThe behavior should be validated when the user clicks Accept on the image."
+    },
+    {
+      "test_id": "UTC-52",
+      "srs_id": "SRS-6",
+      "sds_id": "SDS-6",
+      "summary": "Verify Image becomes editable at the new active level after workflow transition\nwhen the image has moved to the next approval level after acceptance",
+      "description": "Feature: Edit access at new active approval level\n\nScenario: Image becomes editable at the new active level after workflow transition\n\nGiven the image has moved to the next approval level after acceptance\nWhen a user from the new active approval level opens the image\nThen the image should be accessible and editable, with all editing tools enabled",
+      "acceptance": "The image should be accessible and editable, with all editing tools enabled\nThe behavior should be validated when a user from the new active approval level opens the image."
+    },
+    {
+      "test_id": "UTC-53",
+      "srs_id": "SRS-7",
+      "sds_id": "SDS-7",
+      "summary": "Verify Stage displayed as QUALITY CHECKER\nwhen the Final Approval Level user is on the Data Labeling page",
+      "description": "Feature: QC Session Details – Stage (Final Level)\nAs a final reviewer, the user wants to see correct stage information.\n\nScenario: Stage displayed as QUALITY CHECKER\nGiven the Final Approval Level user is on the Data Labeling page\nWhen the session details are viewed\nThen the Stage should be displayed as QUALITY CHECKER",
+      "acceptance": "The Stage should be displayed as QUALITY CHECKER\nThe behavior should be validated when the session details are viewed."
+    },
+    {
+      "test_id": "UTC-54",
+      "srs_id": "SRS-7",
+      "sds_id": "SDS-7",
+      "summary": "Verify Default Select Status is IN_REVIEW\nwhen the user is logged in as Final Approval Level",
+      "description": "Feature: QC Status Default – Final Level\nAs a final reviewer, the user wants default filters applied.\n\nScenario: Default Select Status is IN_REVIEW\nGiven the user is logged in as Final Approval Level\nWhen the Data Labeling page is opened\nThen the Select Status field should default to IN_REVIEW",
+      "acceptance": "The Select Status field should default to IN_REVIEW\nThe behavior should be validated when the Data Labeling page is opened."
+    }
+  ]
+}

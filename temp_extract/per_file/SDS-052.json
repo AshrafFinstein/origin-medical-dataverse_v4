@@ -1,0 +1,363 @@
+{
+  "spec_file": "e2e/tests/general/URS-DV-GEN-14/SRS-052/SDS-052.spec.ts",
+  "plan_urs": "URS-DV-GEN-14",
+  "srs_str": "052",
+  "domain": "general",
+  "page_class": "ProjectPage",
+  "page_import": "project.page",
+  "goto_method": "navigate",
+  "test_cases": [
+    {
+      "test_id": "UTC-1955",
+      "srs_id": "SRS-148",
+      "sds_id": "SDS-148",
+      "summary": "Verify system prevents save when Label Name is empty\nwhen the user is on the Create Label form",
+      "description": "Feature: Label Name Validation – Empty Name Block\n\nScenario: Verify system prevents save when Label Name is empty\n\nGiven the user is on the Create Label form\nWhen the user leaves the Label Name field empty\nAnd clicks Save\nThen the system should prevent submission\nAnd show toast message “Name is required”",
+      "acceptance": "The system should prevent submission\nThe behavior should be validated when the user leaves the Label Name field empty."
+    },
+    {
+      "test_id": "UTC-1956",
+      "srs_id": "SRS-148",
+      "sds_id": "SDS-148",
+      "summary": "Verify error message gives clear description for missing name\nwhen the user clicks Save without entering Label Name",
+      "description": "Feature: Label Name Validation – Error Message Clarity\n\nScenario: Verify error message gives clear description for missing name\n\nGiven the user clicks Save without entering Label Name\nWhen validation fails\nThen the error popup/toast should clearly describe the issue\nAnd should not show technical terms or codes",
+      "acceptance": "The error popup/toast should clearly describe the issue\nThe behavior should be validated when validation fails."
+    },
+    {
+      "test_id": "UTC-1957",
+      "srs_id": "SRS-149",
+      "sds_id": "SDS-149",
+      "summary": "Verify system prevents saving when Label Name exceeds 300 characters\nwhen the user is on Create Label form",
+      "description": "Feature: Label Name Max Length – Block >300 Characters\n\nScenario: Verify system prevents saving when Label Name exceeds 300 characters\n\nGiven the user is on Create Label form\nWhen the user enters a Label Name with more than 300 characters\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “Name must be 300 characters or less”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user enters a Label Name with more than 300 characters."
+    },
+    {
+      "test_id": "UTC-1958",
+      "srs_id": "SRS-149",
+      "sds_id": "SDS-149",
+      "summary": "Verify length violation message is detailed and user-friendly\nwhen the user clicks Save with name length >300",
+      "description": "Feature: Label Name Max Length – Error Message Clarity\n\nScenario: Verify length violation message is detailed and user-friendly\n\nGiven the user clicks Save with name length >300\nWhen validation fails\nThen the error message should clearly describe the maximum allowed limit\nAnd should not display technical error codes",
+      "acceptance": "The error message should clearly describe the maximum allowed limit\nThe behavior should be validated when validation fails."
+    },
+    {
+      "test_id": "UTC-1959",
+      "srs_id": "SRS-150",
+      "sds_id": "SDS-150",
+      "summary": "Verify system prevents saving when Label Name contains spaces/special characters\nwhen the user is on Create Label form",
+      "description": "Feature: Label Name Regex – Block Special Characters & Spaces\n\nScenario: Verify system prevents saving when Label Name contains spaces/special characters\n\nGiven the user is on Create Label form\nWhen the user enters Label Name as “Label Name@123”\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “Name can only contain letters, numbers, underscores, and hyphens”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user enters Label Name as \"Label Name@123\"."
+    },
+    {
+      "test_id": "UTC-1960",
+      "srs_id": "SRS-150",
+      "sds_id": "SDS-150",
+      "summary": "Verify system allows valid label name format\nwhen the user is on Create Label form",
+      "description": "Feature: Label Name Regex – Allow Valid Characters\n\nScenario: Verify system allows valid label name format\n\nGiven the user is on Create Label form\nWhen the user enters Label Name as “Label_Name-123”\nAnd clicks Save\nThen the system should allow submission successfully\nAnd no error message should be shown",
+      "acceptance": "The system should allow submission successfully\nThe behavior should be validated when the user enters Label Name as \"Label_Name-123\"."
+    },
+    {
+      "test_id": "UTC-1961",
+      "srs_id": "SRS-151",
+      "sds_id": "SDS-151",
+      "summary": "Verify system prevents saving duplicate Label Name\nwhen a label already exists with Name \"Brain\"",
+      "description": "Feature: Label Name Uniqueness – Duplicate Block\n\nScenario: Verify system prevents saving duplicate Label Name\n\nGiven a label already exists with Name “Brain”\nWhen the user enters Label Name as “Brain” again\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “A label with this name already exists. Please choose a different name”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user enters Label Name as \"Brain\" again."
+    },
+    {
+      "test_id": "UTC-1962",
+      "srs_id": "SRS-151",
+      "sds_id": "SDS-151",
+      "summary": "Verify duplicate message clearly explains why save failed\nwhen the user tries to save a duplicate label name",
+      "description": "Feature: Label Name Uniqueness – Error Message Detail\n\nScenario: Verify duplicate message clearly explains why save failed\n\nGiven the user tries to save a duplicate label name\nWhen backend returns count > 0\nThen the system should show a clear duplicate message\nAnd should not show technical DB error",
+      "acceptance": "The system should show a clear duplicate message\nThe behavior should be validated when backend returns count > 0."
+    },
+    {
+      "test_id": "UTC-1963",
+      "srs_id": "SRS-152",
+      "sds_id": "SDS-152",
+      "summary": "Verify system prevents saving when Abbreviation is empty\nwhen the user is on Create Label form",
+      "description": "Feature: Label Abbreviation Mandatory – Empty Block\n\nScenario: Verify system prevents saving when Abbreviation is empty\n\nGiven the user is on Create Label form\nWhen the user leaves Abbreviation field empty\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “Abbreviation is required”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user leaves Abbreviation field empty."
+    },
+    {
+      "test_id": "UTC-1964",
+      "srs_id": "SRS-152",
+      "sds_id": "SDS-152",
+      "summary": "Verify abbreviation error message is clear and user-friendly\nwhen the user clicks Save without abbreviation",
+      "description": "Feature: Label Abbreviation Mandatory – Error Message Clarity\n\nScenario: Verify abbreviation error message is clear and user-friendly\n\nGiven the user clicks Save without abbreviation\nWhen validation fails\nThen the error message should clearly describe the missing field\nAnd should not show technical error codes",
+      "acceptance": "The error message should clearly describe the missing field\nThe behavior should be validated when validation fails."
+    },
+    {
+      "test_id": "UTC-1965",
+      "srs_id": "SRS-153",
+      "sds_id": "SDS-153",
+      "summary": "Verify system prevents saving when Abbreviation exceeds 50 characters\nwhen the user is on Create Label form",
+      "description": "Feature: Abbreviation Max Length – Block >50 Characters\n\nScenario: Verify system prevents saving when Abbreviation exceeds 50 characters\n\nGiven the user is on Create Label form\nWhen the user enters Abbreviation with more than 50 characters\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “Abbreviation must be 50 characters or less”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user enters Abbreviation with more than 50 characters."
+    },
+    {
+      "test_id": "UTC-1966",
+      "srs_id": "SRS-153",
+      "sds_id": "SDS-153",
+      "summary": "Verify error message clearly states allowed length limit\nwhen the user enters abbreviation exceeding 50 characters",
+      "description": "Feature: Abbreviation Max Length – Message Mentions Limit\n\nScenario: Verify error message clearly states allowed length limit\n\nGiven the user enters abbreviation exceeding 50 characters\nWhen Save is clicked\nThen the toast message should clearly mention the 50 character limit",
+      "acceptance": "The toast message should clearly mention the 50 character limit\nThe behavior should be validated when Save is clicked."
+    },
+    {
+      "test_id": "UTC-1967",
+      "srs_id": "SRS-154",
+      "sds_id": "SDS-154",
+      "summary": "Verify system prevents save when abbreviation contains invalid characters\nwhen the user is on Create Label form",
+      "description": "Feature: Abbreviation Format – Block Special Characters\n\nScenario: Verify system prevents save when abbreviation contains invalid characters\n\nGiven the user is on Create Label form\nWhen the user enters Abbreviation as “AB@12#”\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “Abbreviation can only contain letters, numbers, hyphens, and underscores”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user enters Abbreviation as \"AB@12#\"."
+    },
+    {
+      "test_id": "UTC-1968",
+      "srs_id": "SRS-154",
+      "sds_id": "SDS-154",
+      "summary": "Verify system allows abbreviation with valid format\nwhen the user is on Create Label form",
+      "description": "Feature: Abbreviation Format – Allow Valid Characters\n\nScenario: Verify system allows abbreviation with valid format\n\nGiven the user is on Create Label form\nWhen the user enters Abbreviation as “AB_12-XY”\nAnd clicks Save\nThen the system should allow submission successfully\nAnd no format error should be shown",
+      "acceptance": "The system should allow submission successfully\nThe behavior should be validated when the user enters Abbreviation as \"AB_12-XY\"."
+    },
+    {
+      "test_id": "UTC-1969",
+      "srs_id": "SRS-155",
+      "sds_id": "SDS-155",
+      "summary": "Verify system prevents saving duplicate abbreviation\nwhen a label already exists with Abbreviation \"BRN_01\"",
+      "description": "Feature: Abbreviation Uniqueness – Duplicate Block\n\nScenario: Verify system prevents saving duplicate abbreviation\n\nGiven a label already exists with Abbreviation “BRN_01”\nWhen the user enters the same Abbreviation “BRN_01” again\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “A label with this abbreviation already exists. Please use a different abbreviation”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user enters the same Abbreviation \"BRN_01\" again."
+    },
+    {
+      "test_id": "UTC-1970",
+      "srs_id": "SRS-155",
+      "sds_id": "SDS-155",
+      "summary": "Verify duplicate abbreviation message clearly explains conflict\nwhen the user tries to save a duplicate abbreviation",
+      "description": "Feature: Abbreviation Uniqueness – Message Clarity\n\nScenario: Verify duplicate abbreviation message clearly explains conflict\n\nGiven the user tries to save a duplicate abbreviation\nWhen backend returns count > 0\nThen the system should show a clear message describing abbreviation already exists\nAnd should not show technical DB error",
+      "acceptance": "The system should show a clear message describing abbreviation already exists\nThe behavior should be validated when backend returns count > 0."
+    },
+    {
+      "test_id": "UTC-1971",
+      "srs_id": "SRS-156",
+      "sds_id": "SDS-156",
+      "summary": "Verify system prevents saving annotation when Name is empty\nwhen the user is on Create Annotation form",
+      "description": "Feature: Annotation Name Mandatory – Empty Block\n\nScenario: Verify system prevents saving annotation when Name is empty\n\nGiven the user is on Create Annotation form\nWhen the user leaves Annotation Name field empty\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “Name is required”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user leaves Annotation Name field empty."
+    },
+    {
+      "test_id": "UTC-1972",
+      "srs_id": "SRS-156",
+      "sds_id": "SDS-156",
+      "summary": "Verify missing name error message is clear and descriptive\nwhen the user clicks Save without entering Annotation Name",
+      "description": "Feature: Annotation Name Mandatory – Error Message Detail\n\nScenario: Verify missing name error message is clear and descriptive\n\nGiven the user clicks Save without entering Annotation Name\nWhen validation fails\nThen the error message should clearly describe the missing Name field\nAnd should not show technical codes",
+      "acceptance": "The error message should clearly describe the missing Name field\nThe behavior should be validated when validation fails."
+    },
+    {
+      "test_id": "UTC-1973",
+      "srs_id": "SRS-157",
+      "sds_id": "SDS-157",
+      "summary": "Verify system prevents saving when Annotation Name exceeds 300 characters\nwhen the user is on Create Annotation form",
+      "description": "Feature: Annotation Name Max Length – Block >300 Characters\n\nScenario: Verify system prevents saving when Annotation Name exceeds 300 characters\n\nGiven the user is on Create Annotation form\nWhen the user enters Annotation Name with more than 300 characters\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “Name must be 300 characters or less”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user enters Annotation Name with more than 300 characters."
+    },
+    {
+      "test_id": "UTC-1974",
+      "srs_id": "SRS-157",
+      "sds_id": "SDS-157",
+      "summary": "Verify max length message clearly states allowed limit\nwhen the user clicks Save with name length >300",
+      "description": "Feature: Annotation Name Max Length – Error Message Clarity\n\nScenario: Verify max length message clearly states allowed limit\n\nGiven the user clicks Save with name length >300\nWhen validation fails\nThen the toast message should clearly mention the 300 character limit\nAnd should not show technical DB error",
+      "acceptance": "The toast message should clearly mention the 300 character limit\nThe behavior should be validated when validation fails."
+    },
+    {
+      "test_id": "UTC-1975",
+      "srs_id": "SRS-158",
+      "sds_id": "SDS-158",
+      "summary": "Verify system prevents saving when annotation name contains lowercase letters\nwhen the user is on Create Annotation form",
+      "description": "Feature: Annotation Name Format – Block Lowercase Letters\n\nScenario: Verify system prevents saving when annotation name contains lowercase letters\n\nGiven the user is on Create Annotation form\nWhen the user enters Annotation Name as “Brain_01”\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “Name can only contain uppercase letters, numbers, underscores, and hyphens”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user enters Annotation Name as \"Brain_01\"."
+    },
+    {
+      "test_id": "UTC-1976",
+      "srs_id": "SRS-158",
+      "sds_id": "SDS-158",
+      "summary": "Verify system allows saving when annotation name matches regex format\nwhen the user is on Create Annotation form",
+      "description": "Feature: Annotation Name Format – Allow Uppercase Valid Format\n\nScenario: Verify system allows saving when annotation name matches regex format\n\nGiven the user is on Create Annotation form\nWhen the user enters Annotation Name as “BRAIN_01-AX”\nAnd clicks Save\nThen the system should allow save successfully\nAnd no format error message should appear",
+      "acceptance": "The system should allow save successfully\nThe behavior should be validated when the user enters Annotation Name as \"BRAIN_01-AX\"."
+    },
+    {
+      "test_id": "UTC-1977",
+      "srs_id": "SRS-159",
+      "sds_id": "SDS-159",
+      "summary": "Verify system prevents saving duplicate annotation name\nwhen an annotation already exists with Name \"BRAIN_01\"",
+      "description": "Feature: Annotation Name Uniqueness – Duplicate Block\n\nScenario: Verify system prevents saving duplicate annotation name\n\nGiven an annotation already exists with Name “BRAIN_01”\nWhen the user enters Annotation Name as “BRAIN_01” again\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “An annotation with this name already exists. Please choose a different name”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user enters Annotation Name as \"BRAIN_01\" again."
+    },
+    {
+      "test_id": "UTC-1978",
+      "srs_id": "SRS-159",
+      "sds_id": "SDS-159",
+      "summary": "Verify duplicate name message is detailed and user-friendly\nwhen the user tries to save an annotation with an existing name",
+      "description": "Feature: Annotation Name Uniqueness – Error Message Detail\n\nScenario: Verify duplicate name message is detailed and user-friendly\n\nGiven the user tries to save an annotation with an existing name\nWhen backend returns duplicate match\nThen the system should show a clear duplicate message\nAnd should not show technical database errors",
+      "acceptance": "The system should show a clear duplicate message\nThe behavior should be validated when backend returns duplicate match."
+    },
+    {
+      "test_id": "UTC-1979",
+      "srs_id": "SRS-160",
+      "sds_id": "SDS-160",
+      "summary": "Verify system prevents saving annotation when Abbreviation is empty\nwhen the user is on Create Annotation form",
+      "description": "Feature: Annotation Abbreviation Mandatory – Empty Block\n\nScenario: Verify system prevents saving annotation when Abbreviation is empty\n\nGiven the user is on Create Annotation form\nWhen the user leaves Abbreviation field empty\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “Abbreviation is required”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user leaves Abbreviation field empty."
+    },
+    {
+      "test_id": "UTC-1980",
+      "srs_id": "SRS-160",
+      "sds_id": "SDS-160",
+      "summary": "Verify abbreviation missing message is clear and descriptive\nwhen the user clicks Save without entering Abbreviation",
+      "description": "Feature: Annotation Abbreviation Mandatory – Error Message Clarity\n\nScenario: Verify abbreviation missing message is clear and descriptive\n\nGiven the user clicks Save without entering Abbreviation\nWhen validation fails\nThen the error message should clearly describe the missing Abbreviation field\nAnd should not show technical error codes",
+      "acceptance": "The error message should clearly describe the missing Abbreviation field\nThe behavior should be validated when validation fails."
+    },
+    {
+      "test_id": "UTC-1981",
+      "srs_id": "SRS-161",
+      "sds_id": "SDS-161",
+      "summary": "Verify system prevents saving when Abbreviation exceeds 300 characters\nwhen the user is on Create Annotation form",
+      "description": "Feature: Annotation Abbreviation Max Length – Block >300 Characters\n\nScenario: Verify system prevents saving when Abbreviation exceeds 300 characters\n\nGiven the user is on Create Annotation form\nWhen the user enters Abbreviation with more than 300 characters\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “Abbreviation must be 300 characters or less”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user enters Abbreviation with more than 300 characters."
+    },
+    {
+      "test_id": "UTC-1982",
+      "srs_id": "SRS-161",
+      "sds_id": "SDS-161",
+      "summary": "Verify max length message clearly mentions 300 character limit\nwhen the user enters abbreviation exceeding 300 characters",
+      "description": "Feature: Annotation Abbreviation Max Length – Error Message Mentions Limit\n\nScenario: Verify max length message clearly mentions 300 character limit\n\nGiven the user enters abbreviation exceeding 300 characters\nWhen Save is clicked\nThen the toast message should clearly mention the allowed maximum length",
+      "acceptance": "The toast message should clearly mention the allowed maximum length\nThe behavior should be validated when Save is clicked."
+    },
+    {
+      "test_id": "UTC-1983",
+      "srs_id": "SRS-162",
+      "sds_id": "SDS-162",
+      "summary": "Verify abbreviation allows only uppercase letters, numbers, underscores, and hyphens\nwhen the user is on the Create/Edit Annotation screen",
+      "description": "Feature: Annotation Abbreviation – Regex Validation\n\nScenario: Verify abbreviation allows only uppercase letters, numbers, underscores, and hyphens\n\nGiven the user is on the Create/Edit Annotation screen\nWhen the user enters abbreviation as abc@12\nAnd clicks Save\nThen the system should prevent saving\nAnd show toast message “Abbreviation can only contain uppercase letters, numbers, underscores, and hyphen",
+      "acceptance": "The system should prevent saving\nThe behavior should be validated when the user enters abbreviation as abc@12."
+    },
+    {
+      "test_id": "UTC-1984",
+      "srs_id": "SRS-162",
+      "sds_id": "SDS-162",
+      "summary": "Verify system allows saving when abbreviation matches regex format\nwhen the user is on Create Annotation form",
+      "description": "Feature: Annotation Abbreviation Format – Allow Valid Uppercase Format\n\nScenario: Verify system allows saving when abbreviation matches regex format\n\nGiven the user is on Create Annotation form\nWhen the user enters Abbreviation as “BRN_01-AX”\nAnd clicks Save\nThen the system should allow save successfully\nAnd no format error message should appear",
+      "acceptance": "The system should allow save successfully\nThe behavior should be validated when the user enters Abbreviation as \"BRN_01-AX\"."
+    },
+    {
+      "test_id": "UTC-1985",
+      "srs_id": "SRS-163",
+      "sds_id": "SDS-163",
+      "summary": "Verify system prevents saving duplicate annotation abbreviation\nwhen an annotation already exists with Abbreviation \"BRN_01\"",
+      "description": "Feature: Annotation Abbreviation Uniqueness – Duplicate Block\n\nScenario: Verify system prevents saving duplicate annotation abbreviation\n\nGiven an annotation already exists with Abbreviation “BRN_01”\nWhen the user enters Abbreviation as “BRN_01” again\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “An annotation with this abbreviation already exists. Please use a different abbreviation”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user enters Abbreviation as \"BRN_01\" again."
+    },
+    {
+      "test_id": "UTC-1986",
+      "srs_id": "SRS-163",
+      "sds_id": "SDS-163",
+      "summary": "Verify duplicate abbreviation message is detailed and user-friendly\nwhen the user tries to save a duplicate abbreviation",
+      "description": "Feature: Annotation Abbreviation Uniqueness – Message Clarity\n\nScenario: Verify duplicate abbreviation message is detailed and user-friendly\n\nGiven the user tries to save a duplicate abbreviation\nWhen backend returns duplicate match\nThen the system should show a clear duplicate message\nAnd should not show technical database errors",
+      "acceptance": "The system should show a clear duplicate message\nThe behavior should be validated when backend returns duplicate match."
+    },
+    {
+      "test_id": "UTC-1987",
+      "srs_id": "SRS-164",
+      "sds_id": "SDS-164",
+      "summary": "Verify system prevents saving annotation when Taxonomy Type is not selected\nwhen the user is on Create Annotation form",
+      "description": "Feature: Taxonomy Type Mandatory – Empty Block\n\nScenario: Verify system prevents saving annotation when Taxonomy Type is not selected\n\nGiven the user is on Create Annotation form\nWhen the user does not select any Taxonomy Type\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “Taxonomy Type is required”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user does not select any Taxonomy Type."
+    },
+    {
+      "test_id": "UTC-1988",
+      "srs_id": "SRS-164",
+      "sds_id": "SDS-164",
+      "summary": "Verify taxonomy error message clearly describes missing selection\nwhen the user clicks Save without selecting taxonomy type",
+      "description": "Feature: Taxonomy Type Mandatory – Error Message Clarity\n\nScenario: Verify taxonomy error message clearly describes missing selection\n\nGiven the user clicks Save without selecting taxonomy type\nWhen validation fails\nThen the error message should clearly describe the missing Taxonomy Type\nAnd should not show technical error codes",
+      "acceptance": "The error message should clearly describe the missing Taxonomy Type\nThe behavior should be validated when validation fails."
+    },
+    {
+      "test_id": "UTC-1989",
+      "srs_id": "SRS-165",
+      "sds_id": "SDS-165",
+      "summary": "Verify system prevents saving annotation when Color is not selected\nwhen the user is on Create Annotation form",
+      "description": "Feature: Color Code Mandatory – Empty Block\n\nScenario: Verify system prevents saving annotation when Color is not selected\n\nGiven the user is on Create Annotation form\nWhen the user does not select or enter a Color value\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “Color is required”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user does not select or enter a Color value."
+    },
+    {
+      "test_id": "UTC-1990",
+      "srs_id": "SRS-165",
+      "sds_id": "SDS-165",
+      "summary": "Verify color error message is clear and user-friendly\nwhen the user clicks Save without selecting a color",
+      "description": "Feature: Color Code Mandatory – Error Message Detail\n\nScenario: Verify color error message is clear and user-friendly\n\nGiven the user clicks Save without selecting a color\nWhen validation fails\nThen the toast message should clearly describe the missing Color field\nAnd should not show technical error codes",
+      "acceptance": "The toast message should clearly describe the missing Color field\nThe behavior should be validated when validation fails."
+    },
+    {
+      "test_id": "UTC-1991",
+      "srs_id": "SRS-166",
+      "sds_id": "SDS-166",
+      "summary": "Verify system prevents saving Session Label when Name is empty\nwhen the user is on Create Session Label form",
+      "description": "Feature: Session Label Name Mandatory – Empty Block\n\nScenario: Verify system prevents saving Session Label when Name is empty\n\nGiven the user is on Create Session Label form\nWhen the user leaves Name field empty\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “Name is required”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user leaves Name field empty."
+    },
+    {
+      "test_id": "UTC-1992",
+      "srs_id": "SRS-166",
+      "sds_id": "SDS-166",
+      "summary": "Verify missing name error message is clear and descriptive\nwhen the user clicks Save without entering Name",
+      "description": "Feature: Session Label Name Mandatory – Error Message Clarity\n\nScenario: Verify missing name error message is clear and descriptive\n\nGiven the user clicks Save without entering Name\nWhen validation fails\nThen the error message should clearly describe the missing Name field\nAnd should not show technical codes",
+      "acceptance": "The error message should clearly describe the missing Name field\nThe behavior should be validated when validation fails."
+    },
+    {
+      "test_id": "UTC-1993",
+      "srs_id": "SRS-167",
+      "sds_id": "SDS-167",
+      "summary": "Verify system prevents saving when Session Label Name exceeds 300 characters\nwhen the user is on Create Session Label form",
+      "description": "Feature: Session Label Name Max Length – Block >300 Characters\n\nScenario: Verify system prevents saving when Session Label Name exceeds 300 characters\n\nGiven the user is on Create Session Label form\nWhen the user enters Name with more than 300 characters\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “Name must be 300 characters or less”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user enters Name with more than 300 characters."
+    },
+    {
+      "test_id": "UTC-1994",
+      "srs_id": "SRS-167",
+      "sds_id": "SDS-167",
+      "summary": "Verify max length error message clearly states 300 character limit\nwhen the user enters Name exceeding 300 characters",
+      "description": "Feature: Session Label Name Max Length – Message Mentions Limit\n\nScenario: Verify max length error message clearly states 300 character limit\n\nGiven the user enters Name exceeding 300 characters\nWhen Save is clicked\nThen the toast message should clearly mention the allowed maximum length",
+      "acceptance": "The toast message should clearly mention the allowed maximum length\nThe behavior should be validated when Save is clicked."
+    },
+    {
+      "test_id": "UTC-1995",
+      "srs_id": "SRS-168",
+      "sds_id": "SDS-168",
+      "summary": "Verify system prevents saving when Session Label Name contains spaces/special characters\nwhen the user is on Create Session Label form",
+      "description": "Feature: Session Label Name Format – Block Spaces & Special Characters\n\nScenario: Verify system prevents saving when Session Label Name contains spaces/special characters\n\nGiven the user is on Create Session Label form\nWhen the user enters Name as “Label Name@01”\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “Name can only contain letters, numbers, underscores, and hyphens”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user enters Name as \"Label Name@01\"."
+    },
+    {
+      "test_id": "UTC-1996",
+      "srs_id": "SRS-168",
+      "sds_id": "SDS-168",
+      "summary": "Verify system allows saving when Session Label Name is valid\nwhen the user is on Create Session Label form",
+      "description": "Feature: Session Label Name Format – Allow Valid Name\n\nScenario: Verify system allows saving when Session Label Name is valid\n\nGiven the user is on Create Session Label form\nWhen the user enters Name as “Session_Label-01”\nAnd clicks Save\nThen the system should save successfully\nAnd no format error message should appear",
+      "acceptance": "The system should save successfully\nThe behavior should be validated when the user enters Name as \"Session_Label-01\"."
+    },
+    {
+      "test_id": "UTC-1997",
+      "srs_id": "SRS-169",
+      "sds_id": "SDS-169",
+      "summary": "Verify system prevents saving duplicate Session Label Name\nwhen a session label already exists with Name \"Urgent\"",
+      "description": "Feature: Session Label Name Uniqueness – Duplicate Block\n\nScenario: Verify system prevents saving duplicate Session Label Name\n\nGiven a session label already exists with Name “Urgent”\nWhen the user enters Session Label Name as “Urgent” again\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “A session label with this name already exists. Please choose a different name”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user enters Session Label Name as \"Urgent\" again."
+    },
+    {
+      "test_id": "UTC-1998",
+      "srs_id": "SRS-169",
+      "sds_id": "SDS-169",
+      "summary": "Verify duplicate message is clear and user-friendly\nwhen the user tries to save a duplicate session label name",
+      "description": "Feature: Session Label Name Uniqueness – Message Clarity\n\nScenario: Verify duplicate message is clear and user-friendly\n\nGiven the user tries to save a duplicate session label name\nWhen backend returns duplicate match\nThen the system should show a clear duplicate message\nAnd should not show technical database errors",
+      "acceptance": "The system should show a clear duplicate message\nThe behavior should be validated when backend returns duplicate match."
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "spec_file": "e2e/tests/data-management/URS-DV-DM-17/SRS-062/SDS-062.spec.ts",
+  "plan_urs": "URS-DV-DM-17",
+  "srs_str": "062",
+  "domain": "data-management",
+  "page_class": "S3StoragePage",
+  "page_import": "s3-storage.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-2533",
+      "srs_id": "SRS-241",
+      "sds_id": "SDS-241",
+      "summary": "Verify Clear success feedback\nwhen upload successful",
+      "description": "Feature: Upload Link JSON from S3 during session creation\nScenario: Clear success feedback\nGiven upload successful\nWhen completed\nThen success toast should be displayed",
+      "acceptance": "Success toast should be displayed\nThe behavior should be validated when completed."
+    },
+    {
+      "test_id": "UTC-2534",
+      "srs_id": "SRS-242",
+      "sds_id": "SDS-242",
+      "summary": "Verify S3 key input field visibility\nwhen Upload from S3 modal opens",
+      "description": "Feature: S3 Key Validation Before Upload\nScenario: S3 key input field visibility\nGiven Upload from S3 modal opens\nWhen UI renders\nThen an S3 Key input field with helper text should be displayed",
+      "acceptance": "An S3 Key input field with helper text should be displayed\nThe behavior should be validated when UI renders."
+    },
+    {
+      "test_id": "UTC-2535",
+      "srs_id": "SRS-242",
+      "sds_id": "SDS-242",
+      "summary": "Verify Upload button disabled by default\nwhen modal is opened",
+      "description": "Feature: S3 Key Validation Before Upload\nScenario: Upload button disabled by default\nGiven modal is opened\nWhen no value entered\nThen Upload button remains disabled",
+      "acceptance": "Upload button remains disabled\nThe behavior should be validated when no value entered."
+    },
+    {
+      "test_id": "UTC-2536",
+      "srs_id": "SRS-242",
+      "sds_id": "SDS-242",
+      "summary": "Verify Empty value blocked\nwhen S3 key is empty",
+      "description": "Feature: S3 Key Validation Before Upload\nScenario: Empty value blocked\nGiven S3 key is empty\nWhen user attempts upload\nThen validation message “Enter a valid S3 key path” should display",
+      "acceptance": "Validation message \"Enter a valid S3 key path\" should display\nThe behavior should be validated when user attempts upload."
+    },
+    {
+      "test_id": "UTC-2537",
+      "srs_id": "SRS-242",
+      "sds_id": "SDS-242",
+      "summary": "Verify Reject HTTP public URL\nwhen user enters https://public-url/file.json",
+      "description": "Feature: S3 Key Validation Before Upload\nScenario: Reject HTTP public URL\nGiven user enters https://public-url/file.json\nWhen validation runs\nThen Upload remains disabled and URL is rejected",
+      "acceptance": "Upload remains disabled and URL is rejected\nThe behavior should be validated when validation runs."
+    },
+    {
+      "test_id": "UTC-2538",
+      "srs_id": "SRS-242",
+      "sds_id": "SDS-242",
+      "summary": "Verify Reject HTTP protocol prefix\nwhen user enters http://bucket/key.json",
+      "description": "Feature: S3 Key Validation Before Upload\nScenario: Reject HTTP protocol prefix\nGiven user enters http://bucket/key.json\nWhen validation occurs\nThen inline message should show invalid format",
+      "acceptance": "Inline message should show invalid format\nThe behavior should be validated when validation occurs."
+    },
+    {
+      "test_id": "UTC-2539",
+      "srs_id": "SRS-242",
+      "sds_id": "SDS-242",
+      "summary": "Verify Reject malformed key\nwhen user enters special characters or spaces only",
+      "description": "Feature: S3 Key Validation Before Upload\nScenario: Reject malformed key\nGiven user enters special characters or spaces only\nWhen validated\nThen Upload button remains disabled",
+      "acceptance": "Upload button remains disabled\nThe behavior should be validated when validated."
+    },
+    {
+      "test_id": "UTC-2540",
+      "srs_id": "SRS-242",
+      "sds_id": "SDS-242",
+      "summary": "Verify Accept valid S3 object key\nwhen user enters bucket/folder/file.json",
+      "description": "Feature: S3 Key Validation Before Upload\nScenario: Accept valid S3 object key\nGiven user enters bucket/folder/file.json\nWhen validation passes\nThen Upload button becomes enabled",
+      "acceptance": "Upload button becomes enabled\nThe behavior should be validated when validation passes."
+    },
+    {
+      "test_id": "UTC-2541",
+      "srs_id": "SRS-242",
+      "sds_id": "SDS-242",
+      "summary": "Verify Backend request triggered only after valid input\nwhen valid key entered",
+      "description": "Feature: S3 Key Validation Before Upload\nScenario: Backend request triggered only after valid input\nGiven valid key entered\nWhen Upload clicked\nThen backend fetch request should be initiated",
+      "acceptance": "Backend fetch request should be initiated\nThe behavior should be validated when Upload clicked."
+    },
+    {
+      "test_id": "UTC-2542",
+      "srs_id": "SRS-242",
+      "sds_id": "SDS-242",
+      "summary": "Verify Prevent network call for invalid input\nwhen invalid key or URL entered",
+      "description": "Feature: S3 Key Validation Before Upload\nScenario: Prevent network call for invalid input\nGiven invalid key or URL entered\nWhen Upload attempted\nThen no backend/network call should be made",
+      "acceptance": "No backend/network call should be made\nThe behavior should be validated when Upload attempted."
+    },
+    {
+      "test_id": "UTC-2543",
+      "srs_id": "SRS-242",
+      "sds_id": "SDS-242",
+      "summary": "Verify Helper text guidance visible\nwhen user views input field",
+      "description": "Feature: S3 Key Validation Before Upload\nScenario: Helper text guidance visible\nGiven user views input field\nWhen no value entered\nThen helper text should guide correct S3 key format",
+      "acceptance": "Helper text should guide correct S3 key format\nThe behavior should be validated when no value entered."
+    },
+    {
+      "test_id": "UTC-2544",
+      "srs_id": "SRS-242",
+      "sds_id": "SDS-242",
+      "summary": "Verify Inline validation clears after correction\nwhen invalid key previously entered",
+      "description": "Feature: S3 Key Validation Before Upload\nScenario: Inline validation clears after correction\nGiven invalid key previously entered\nWhen corrected to valid format\nThen error message should disappear automatically",
+      "acceptance": "Error message should disappear automatically\nThe behavior should be validated when corrected to valid format."
+    },
+    {
+      "test_id": "UTC-2545",
+      "srs_id": "SRS-242",
+      "sds_id": "SDS-242",
+      "summary": "Verify Multiple rapid inputs handled correctly\nwhen user types quickly or edits repeatedly",
+      "description": "Feature: S3 Key Validation Before Upload\nScenario: Multiple rapid inputs handled correctly\nGiven user types quickly or edits repeatedly\nWhen validation runs\nThen UI remains responsive without lag",
+      "acceptance": "UI remains responsive without lag\nThe behavior should be validated when validation runs."
+    },
+    {
+      "test_id": "UTC-2546",
+      "srs_id": "SRS-242",
+      "sds_id": "SDS-242",
+      "summary": "Verify Whitespace-only value\nwhen user enters spaces only",
+      "description": "Feature: S3 Key Validation Before Upload\nScenario: Whitespace-only value\nGiven user enters spaces only\nWhen validated\nThen system treats it as empty and blocks upload",
+      "acceptance": "System treats it as empty and blocks upload\nThe behavior should be validated when validated."
+    },
+    {
+      "test_id": "UTC-2547",
+      "srs_id": "SRS-242",
+      "sds_id": "SDS-242",
+      "summary": "Verify Prevent external domain injection\nwhen user enters external domain link",
+      "description": "Feature: S3 Key Validation Before Upload\nScenario: Prevent external domain injection\nGiven user enters external domain link\nWhen validation occurs\nThen system must reject and show invalid key message",
+      "acceptance": "System must reject and show invalid key message\nThe behavior should be validated when validation occurs."
+    },
+    {
+      "test_id": "UTC-2548",
+      "srs_id": "SRS-243",
+      "sds_id": "SDS-243",
+      "summary": "Verify Confirmation dialog appears when folder not found\nwhen user enters non-existing S3 folder path",
+      "description": "Feature: S3 Folder Existence Confirmation\nScenario: Confirmation dialog appears when folder not found\nGiven user enters non-existing S3 folder path\nWhen Upload is initiated\nThen system should display confirmation dialog stating folder not found",
+      "acceptance": "System should display confirmation dialog stating folder not found\nThe behavior should be validated when Upload is initiated."
+    },
+    {
+      "test_id": "UTC-2549",
+      "srs_id": "SRS-243",
+      "sds_id": "SDS-243",
+      "summary": "Verify Dialog shows Confirm and Cancel options\nwhen confirmation dialog displayed",
+      "description": "Feature: S3 Folder Existence Confirmation\nScenario: Dialog shows Confirm and Cancel options\nGiven confirmation dialog displayed\nWhen user views dialog\nThen Confirm and Cancel buttons should be present",
+      "acceptance": "Confirm and Cancel buttons should be present\nThe behavior should be validated when user views dialog."
+    },
+    {
+      "test_id": "UTC-2550",
+      "srs_id": "SRS-243",
+      "sds_id": "SDS-243",
+      "summary": "Verify Upload paused until decision\nwhen dialog is displayed",
+      "description": "Feature: S3 Folder Existence Confirmation\nScenario: Upload paused until decision\nGiven dialog is displayed\nWhen user has not responded\nThen upload must not proceed automatically",
+      "acceptance": "Upload must not proceed automatically\nThe behavior should be validated when user has not responded."
+    },
+    {
+      "test_id": "UTC-2551",
+      "srs_id": "SRS-243",
+      "sds_id": "SDS-243",
+      "summary": "Verify Confirm creates folder and proceeds upload\nwhen folder does not exist",
+      "description": "Feature: S3 Folder Existence Confirmation\nScenario: Confirm creates folder and proceeds upload\nGiven folder does not exist\nWhen user clicks Confirm\nThen system should create folder and continue upload",
+      "acceptance": "System should create folder and continue upload\nThe behavior should be validated when user clicks Confirm."
+    },
+    {
+      "test_id": "UTC-2552",
+      "srs_id": "SRS-243",
+      "sds_id": "SDS-243",
+      "summary": "Verify Cancel stops upload\nwhen confirmation dialog shown",
+      "description": "Feature: S3 Folder Existence Confirmation\nScenario: Cancel stops upload\nGiven confirmation dialog shown\nWhen user clicks Cancel\nThen upload must be stopped",
+      "acceptance": "Upload must be stopped\nThe behavior should be validated when user clicks Cancel."
+    },
+    {
+      "test_id": "UTC-2553",
+      "srs_id": "SRS-243",
+      "sds_id": "SDS-243",
+      "summary": "Verify No partial file saved on cancel\nwhen user cancels upload",
+      "description": "Feature: S3 Folder Existence Confirmation\nScenario: No partial file saved on cancel\nGiven user cancels upload\nWhen operation stops\nThen no folder or file should be created",
+      "acceptance": "No folder or file should be created\nThe behavior should be validated when operation stops."
+    },
+    {
+      "test_id": "UTC-2554",
+      "srs_id": "SRS-243",
+      "sds_id": "SDS-243",
+      "summary": "Verify Existing folder bypasses dialog\nwhen folder already exists",
+      "description": "Feature: S3 Folder Existence Confirmation\nScenario: Existing folder bypasses dialog\nGiven folder already exists\nWhen Upload is initiated\nThen upload proceeds directly without confirmation",
+      "acceptance": "Upload proceeds directly without confirmation\nThe behavior should be validated when Upload is initiated."
+    },
+    {
+      "test_id": "UTC-2555",
+      "srs_id": "SRS-243",
+      "sds_id": "SDS-243",
+      "summary": "Verify Folder creation success notification\nwhen folder is newly created",
+      "description": "Feature: S3 Folder Existence Confirmation\nScenario: Folder creation success notification\nGiven folder is newly created\nWhen upload completes\nThen success toast should be displayed",
+      "acceptance": "Success toast should be displayed\nThe behavior should be validated when upload completes."
+    },
+    {
+      "test_id": "UTC-2556",
+      "srs_id": "SRS-243",
+      "sds_id": "SDS-243",
+      "summary": "Verify Folder creation failure\nwhen system fails to create folder",
+      "description": "Feature: S3 Folder Existence Confirmation\nScenario: Folder creation failure\nGiven system fails to create folder\nWhen Confirm clicked\nThen failure message should appear and upload should stop",
+      "acceptance": "Failure message should appear and upload should stop\nThe behavior should be validated when Confirm clicked."
+    },
+    {
+      "test_id": "UTC-2557",
+      "srs_id": "SRS-243",
+      "sds_id": "SDS-243",
+      "summary": "Verify Upload failure after folder creation\nwhen folder created successfully",
+      "description": "Feature: S3 Folder Existence Confirmation\nScenario: Upload failure after folder creation\nGiven folder created successfully\nWhen file upload fails\nThen system shows failure notification and no partial save",
+      "acceptance": "System shows failure notification and no partial save\nThe behavior should be validated when file upload fails."
+    },
+    {
+      "test_id": "UTC-2558",
+      "srs_id": "SRS-243",
+      "sds_id": "SDS-243",
+      "summary": "Verify Unauthorized folder creation blocked\nwhen insufficient permissions",
+      "description": "Feature: S3 Folder Existence Confirmation\nScenario: Unauthorized folder creation blocked\nGiven insufficient permissions\nWhen Confirm clicked\nThen upload is blocked with access denied message",
+      "acceptance": "Upload is blocked with access denied message\nThe behavior should be validated when Confirm clicked."
+    },
+    {
+      "test_id": "UTC-2559",
+      "srs_id": "SRS-243",
+      "sds_id": "SDS-243",
+      "summary": "Verify Dialog clearly shows folder path\nwhen confirmation popup shown",
+      "description": "Feature: S3 Folder Existence Confirmation\nScenario: Dialog clearly shows folder path\nGiven confirmation popup shown\nWhen displayed\nThen the missing folder path should be visible to user",
+      "acceptance": "The missing folder path should be visible to user\nThe behavior should be validated when displayed."
+    },
+    {
+      "test_id": "UTC-2560",
+      "srs_id": "SRS-243",
+      "sds_id": "SDS-243",
+      "summary": "Verify Multiple rapid uploads handled\nwhen repeated attempts with missing folders",
+      "description": "Feature: S3 Folder Existence Confirmation\nScenario: Multiple rapid uploads handled\nGiven repeated attempts with missing folders\nWhen confirming repeatedly\nThen system should behave consistently without duplicate folders",
+      "acceptance": "System should behave consistently without duplicate folders\nThe behavior should be validated when confirming repeatedly."
+    }
+  ]
+}

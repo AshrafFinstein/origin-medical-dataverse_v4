@@ -1,0 +1,235 @@
+{
+  "spec_file": "e2e/tests/session-management/URS-DV-GEN-15/SRS-056/SDS-056.spec.ts",
+  "plan_urs": "URS-DV-GEN-15",
+  "srs_str": "056",
+  "domain": "session-management",
+  "page_class": "SessionPage",
+  "page_import": "session.page",
+  "goto_method": "navigate",
+  "test_cases": [
+    {
+      "test_id": "UTC-2313",
+      "srs_id": "SRS-225",
+      "sds_id": "SDS-225",
+      "summary": "Verify Visual clarity for disabled options\nwhen dropdown open",
+      "description": "Feature: Restricted Session Status Selection\nScenario: Visual clarity for disabled options\nGiven dropdown open\nWhen disabled statuses shown\nThen they should appear greyed out or visually distinct",
+      "acceptance": "They should appear greyed out or visually distinct\nThe behavior should be validated when disabled statuses shown."
+    },
+    {
+      "test_id": "UTC-2314",
+      "srs_id": "SRS-225",
+      "sds_id": "SDS-225",
+      "summary": "Verify Keyboard cannot select disabled items\nwhen keyboard navigation used",
+      "description": "Feature: Restricted Session Status Selection\nScenario: Keyboard cannot select disabled items\nGiven keyboard navigation used\nWhen focusing disabled options\nThen selection should be blocked",
+      "acceptance": "Selection should be blocked\nThe behavior should be validated when focusing disabled options."
+    },
+    {
+      "test_id": "UTC-2315",
+      "srs_id": "SRS-225",
+      "sds_id": "SDS-225",
+      "summary": "Verify Dropdown loads instantly\nwhen page loads",
+      "description": "Feature: Restricted Session Status Selection\nScenario: Dropdown loads instantly\nGiven page loads\nWhen dropdown opens\nThen options should render without delay",
+      "acceptance": "Options should render without delay\nThe behavior should be validated when dropdown opens."
+    },
+    {
+      "test_id": "UTC-2316",
+      "srs_id": "SRS-225",
+      "sds_id": "SDS-225",
+      "summary": "Verify Edit session does not affect restriction\nwhen Create Session mode active",
+      "description": "Feature: Restricted Session Status Selection\nScenario: Edit session does not affect restriction\nGiven Create Session mode active\nWhen opening dropdown repeatedly\nThen restriction rules should remain enforced consistently",
+      "acceptance": "Restriction rules should remain enforced consistently\nThe behavior should be validated when opening dropdown repeatedly."
+    },
+    {
+      "test_id": "UTC-2317",
+      "srs_id": "SRS-226",
+      "sds_id": "SDS-226",
+      "summary": "Verify Default status set on form load\nwhen the user opens the Create Session form",
+      "description": "Feature: Default Session Status Selection\nScenario: Default status set on form load\nGiven the user opens the Create Session form\nWhen the form finishes loading\nThen the Session Status field should be pre-selected as “Yet to do”",
+      "acceptance": "The Session Status field should be pre-selected as \"Yet to do\"\nThe behavior should be validated when the form finishes loading."
+    },
+    {
+      "test_id": "UTC-2318",
+      "srs_id": "SRS-226",
+      "sds_id": "SDS-226",
+      "summary": "Verify No placeholder shown when default applied\nwhen the Create Session form loads",
+      "description": "Feature: Default Session Status Selection\nScenario: No placeholder shown when default applied\nGiven the Create Session form loads\nWhen Session Status is displayed\nThen the placeholder should not be shown and “Yet to do” should be selected",
+      "acceptance": "The placeholder should not be shown and \"Yet to do\" should be selected\nThe behavior should be validated when Session Status is displayed."
+    },
+    {
+      "test_id": "UTC-2319",
+      "srs_id": "SRS-226",
+      "sds_id": "SDS-226",
+      "summary": "Verify User can change default value\nwhen \"Yet to do\" is selected by default",
+      "description": "Feature: Default Session Status Selection\nScenario: User can change default value\nGiven “Yet to do” is selected by default\nWhen the user selects “In Progress”\nThen the Session Status field should update to “In Progress”",
+      "acceptance": "The Session Status field should update to \"In Progress\"\nThe behavior should be validated when the user selects \"In Progress\"."
+    },
+    {
+      "test_id": "UTC-2320",
+      "srs_id": "SRS-226",
+      "sds_id": "SDS-226",
+      "summary": "Verify Default value included in payload\nwhen the user does not change the default status",
+      "description": "Feature: Default Session Status Selection\nScenario: Default value included in payload\nGiven the user does not change the default status\nWhen the session is submitted\nThen the API payload should contain status = “Yet to do”",
+      "acceptance": "The API payload should contain status = \"Yet to do\"\nThe behavior should be validated when the session is submitted."
+    },
+    {
+      "test_id": "UTC-2321",
+      "srs_id": "SRS-226",
+      "sds_id": "SDS-226",
+      "summary": "Verify Updated value overrides default in payload\nwhen user changes status to \"In Progress\"",
+      "description": "Feature: Default Session Status Selection\nScenario: Updated value overrides default in payload\nGiven user changes status to “In Progress”\nWhen the session is submitted\nThen the API payload should contain status = “In Progress”",
+      "acceptance": "The API payload should contain status = \"In Progress\"\nThe behavior should be validated when the session is submitted."
+    },
+    {
+      "test_id": "UTC-2322",
+      "srs_id": "SRS-226",
+      "sds_id": "SDS-226",
+      "summary": "Verify Default persists on form re-render\nwhen the form re-renders due to state update",
+      "description": "Feature: Default Session Status Selection\nScenario: Default persists on form re-render\nGiven the form re-renders due to state update\nWhen no user change is made\nThen the Session Status should remain “Yet to do”",
+      "acceptance": "The Session Status should remain \"Yet to do\"\nThe behavior should be validated when no user change is made."
+    },
+    {
+      "test_id": "UTC-2323",
+      "srs_id": "SRS-226",
+      "sds_id": "SDS-226",
+      "summary": "Verify Session creation allowed without manual selection\nwhen the default status is set automatically",
+      "description": "Feature: Default Session Status Selection\nScenario: Session creation allowed without manual selection\nGiven the default status is set automatically\nWhen the user submits the form without changing status\nThen the session should be created successfully",
+      "acceptance": "The session should be created successfully\nThe behavior should be validated when the user submits the form without changing status."
+    },
+    {
+      "test_id": "UTC-2324",
+      "srs_id": "SRS-226",
+      "sds_id": "SDS-226",
+      "summary": "Verify Visual clarity of default value\nwhen the form loads",
+      "description": "Feature: Default Session Status Selection\nScenario: Visual clarity of default value\nGiven the form loads\nWhen user views the Session Status field\nThen “Yet to do” should be clearly visible as selected",
+      "acceptance": "\"Yet to do\" should be clearly visible as selected\nThe behavior should be validated when user views the Session Status field."
+    },
+    {
+      "test_id": "UTC-2325",
+      "srs_id": "SRS-226",
+      "sds_id": "SDS-226",
+      "summary": "Verify Default selection applied instantly\nwhen the Create Session form opens",
+      "description": "Feature: Default Session Status Selection\nScenario: Default selection applied instantly\nGiven the Create Session form opens\nWhen the Session Status dropdown renders\nThen the default value should appear without delay",
+      "acceptance": "The default value should appear without delay\nThe behavior should be validated when the Session Status dropdown renders."
+    },
+    {
+      "test_id": "UTC-2326",
+      "srs_id": "SRS-226",
+      "sds_id": "SDS-226",
+      "summary": "Verify Restriction rules remain intact\nwhen default is set to \"Yet to do\"",
+      "description": "Feature: Default Session Status Selection\nScenario: Restriction rules remain intact\nGiven default is set to “Yet to do”\nWhen dropdown is opened\nThen disabled options (Completed, Re-open) should remain disabled",
+      "acceptance": "Disabled options (Completed, Re-open) should remain disabled\nThe behavior should be validated when dropdown is opened."
+    },
+    {
+      "test_id": "UTC-2327",
+      "srs_id": "SRS-227",
+      "sds_id": "SDS-227",
+      "summary": "Verify Manual status change from dropdown\nwhen the session status is \"Yet to do\"",
+      "description": "Feature: Session Status Transition to In Progress\nScenario: Manual status change from dropdown\nGiven the session status is “Yet to do”\nWhen the user selects “In Progress” from the dropdown\nThen the status should update to “In Progress”",
+      "acceptance": "The status should update to \"In Progress\"\nThe behavior should be validated when the user selects \"In Progress\" from the dropdown."
+    },
+    {
+      "test_id": "UTC-2328",
+      "srs_id": "SRS-227",
+      "sds_id": "SDS-227",
+      "summary": "Verify Auto transition on session open\nwhen the session status is \"Yet to do\"",
+      "description": "Feature: Session Status Transition to In Progress\nScenario: Auto transition on session open\nGiven the session status is “Yet to do”\nWhen the user opens the session workspace\nThen the system should automatically change the status to “In Progress”",
+      "acceptance": "The system should automatically change the status to \"In Progress\"\nThe behavior should be validated when the user opens the session workspace."
+    },
+    {
+      "test_id": "UTC-2329",
+      "srs_id": "SRS-227",
+      "sds_id": "SDS-227",
+      "summary": "Verify Transition on first work action\nwhen the session is opened",
+      "description": "Feature: Session Status Transition to In Progress\nScenario: Transition on first work action\nGiven the session is opened\nWhen the user performs the first annotation or edit action\nThen the status should change to “In Progress”",
+      "acceptance": "The status should change to \"In Progress\"\nThe behavior should be validated when the user performs the first annotation or edit action."
+    },
+    {
+      "test_id": "UTC-2330",
+      "srs_id": "SRS-227",
+      "sds_id": "SDS-227",
+      "summary": "Verify Status persisted in backend\nwhen the status changes to \"In Progress\"",
+      "description": "Feature: Session Status Transition to In Progress\nScenario: Status persisted in backend\nGiven the status changes to “In Progress”\nWhen the change is saved\nThen the backend database should store status = “In Progress”",
+      "acceptance": "The backend database should store status = \"In Progress\"\nThe behavior should be validated when the change is saved."
+    },
+    {
+      "test_id": "UTC-2331",
+      "srs_id": "SRS-227",
+      "sds_id": "SDS-227",
+      "summary": "Verify Session list badge updates\nwhen the status becomes \"In Progress\"",
+      "description": "Feature: Session Status Transition to In Progress\nScenario: Session list badge updates\nGiven the status becomes “In Progress”\nWhen returning to session list\nThen the session badge should display “In Progress”",
+      "acceptance": "The session badge should display \"In Progress\"\nThe behavior should be validated when returning to session list."
+    },
+    {
+      "test_id": "UTC-2332",
+      "srs_id": "SRS-227",
+      "sds_id": "SDS-227",
+      "summary": "Verify Status retained after refresh\nwhen the status is \"In Progress\"",
+      "description": "Feature: Session Status Transition to In Progress\nScenario: Status retained after refresh\nGiven the status is “In Progress”\nWhen the page is refreshed\nThen the status should remain “In Progress”",
+      "acceptance": "The status should remain \"In Progress\"\nThe behavior should be validated when the page is refreshed."
+    },
+    {
+      "test_id": "UTC-2333",
+      "srs_id": "SRS-227",
+      "sds_id": "SDS-227",
+      "summary": "Verify Prevent invalid transition\nwhen workflow rules restrict certain states",
+      "description": "Feature: Session Status Transition to In Progress\nScenario: Prevent invalid transition\nGiven workflow rules restrict certain states\nWhen user tries invalid state selection\nThen system should block and show validation",
+      "acceptance": "System should block and show validation\nThe behavior should be validated when user tries invalid state selection."
+    },
+    {
+      "test_id": "UTC-2334",
+      "srs_id": "SRS-227",
+      "sds_id": "SDS-227",
+      "summary": "Verify Instant UI update\nwhen the status change is triggered",
+      "description": "Feature: Session Status Transition to In Progress\nScenario: Instant UI update\nGiven the status change is triggered\nWhen UI updates\nThen status badge and dropdown should update without delay",
+      "acceptance": "Status badge and dropdown should update without delay\nThe behavior should be validated when UI updates."
+    },
+    {
+      "test_id": "UTC-2335",
+      "srs_id": "SRS-227",
+      "sds_id": "SDS-227",
+      "summary": "Verify Dropdown clearly indicates active state\nwhen the status is \"In Progress\"",
+      "description": "Feature: Session Status Transition to In Progress\nScenario: Dropdown clearly indicates active state\nGiven the status is “In Progress”\nWhen viewing the dropdown\nThen it should be highlighted/visually distinct",
+      "acceptance": "It should be highlighted/visually distinct\nThe behavior should be validated when viewing the dropdown."
+    },
+    {
+      "test_id": "UTC-2336",
+      "srs_id": "SRS-227",
+      "sds_id": "SDS-227",
+      "summary": "Verify No duplicate transitions\nwhen the status is already \"In Progress\"",
+      "description": "Feature: Session Status Transition to In Progress\nScenario: No duplicate transitions\nGiven the status is already “In Progress”\nWhen user performs additional actions\nThen system should not send duplicate update requests",
+      "acceptance": "System should not send duplicate update requests\nThe behavior should be validated when user performs additional actions."
+    },
+    {
+      "test_id": "UTC-2337",
+      "srs_id": "SRS-228",
+      "sds_id": "SDS-228",
+      "summary": "Verify Red badge shown in session list\nwhen a session status is \"Yet to do\"",
+      "description": "Feature: Yet To Do Status Color Indicator\nScenario: Red badge shown in session list\nGiven a session status is “Yet to do”\nWhen the session list loads\nThen the status badge should display in red color",
+      "acceptance": "The status badge should display in red color\nThe behavior should be validated when the session list loads."
+    },
+    {
+      "test_id": "UTC-2338",
+      "srs_id": "SRS-228",
+      "sds_id": "SDS-228",
+      "summary": "Verify Red label shown in session details page\nwhen a session is opened with status \"Yet to do\"",
+      "description": "Feature: Yet To Do Status Color Indicator\nScenario: Red label shown in session details page\nGiven a session is opened with status “Yet to do”\nWhen the details page renders\nThen the status label should appear in red",
+      "acceptance": "The status label should appear in red\nThe behavior should be validated when the details page renders."
+    },
+    {
+      "test_id": "UTC-2339",
+      "srs_id": "SRS-228",
+      "sds_id": "SDS-228",
+      "summary": "Verify Styling applied dynamically based on status\nwhen the backend returns status = \"Yet to do\"",
+      "description": "Feature: Yet To Do Status Color Indicator\nScenario: Styling applied dynamically based on status\nGiven the backend returns status = “Yet to do”\nWhen UI binds data\nThen red styling should be automatically applied",
+      "acceptance": "Red styling should be automatically applied\nThe behavior should be validated when UI binds data."
+    },
+    {
+      "test_id": "UTC-2340",
+      "srs_id": "SRS-228",
+      "sds_id": "SDS-228",
+      "summary": "Verify No red color for other statuses\nwhen the session status is \"In Progress\" or \"Completed\"",
+      "description": "Feature: Yet To Do Status Color Indicator\nScenario: No red color for other statuses\nGiven the session status is “In Progress” or “Completed”\nWhen the list loads\nThen the status should not appear red",
+      "acceptance": "The status should not appear red\nThe behavior should be validated when the list loads."
+    }
+  ]
+}

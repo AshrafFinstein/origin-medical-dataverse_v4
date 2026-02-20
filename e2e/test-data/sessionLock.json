@@ -1,0 +1,7 @@
+{
+  "lockReason": "Session is complete and ready for archive",
+  "unlockReason": "Re-opening for corrections",
+  "restrictedActions": ["Edit", "Delete"],
+  "allowedActions": ["Duplicate"],
+  "lockRequiredStatus": "Completed"
+}

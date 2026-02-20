@@ -1,0 +1,10 @@
+{
+  "createAllowed": ["Yet To Do", "In Progress"],
+  "createDisabled": ["Completed", "Re-open"],
+  "default": "Yet To Do",
+  "transitionAllowed": ["In Progress", "Completed"],
+  "colors": {
+    "yetToDo": "red",
+    "inProgress": "blue"
+  }
+}

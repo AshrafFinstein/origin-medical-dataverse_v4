@@ -1,0 +1,379 @@
+{
+  "spec_file": "e2e/tests/data-management/URS-DV-DM-08/SRS-033/SDS-033.spec.ts",
+  "plan_urs": "URS-DV-DM-08",
+  "srs_str": "033",
+  "domain": "data-management",
+  "page_class": "AnalyticsPage",
+  "page_import": "analytics.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-1158",
+      "srs_id": "SRS-91",
+      "sds_id": "SDS-91",
+      "summary": "Verify Upload control visibility\nwhen Session Creation page loads",
+      "description": "Feature: JSON session configuration upload and association\nScenario: Upload control visibility\nGiven Session Creation page loads\nWhen metadata section renders\nThen JSON file upload control should be visible",
+      "acceptance": "JSON file upload control should be visible\nThe behavior should be validated when metadata section renders."
+    },
+    {
+      "test_id": "UTC-1159",
+      "srs_id": "SRS-91",
+      "sds_id": "SDS-91",
+      "summary": "Verify Upload label clarity\nwhen upload control is displayed",
+      "description": "Feature: JSON session configuration upload and association\nScenario: Upload label clarity\nGiven upload control is displayed\nWhen user views the field\nThen it should clearly indicate “Upload JSON File”",
+      "acceptance": "It should clearly indicate \"Upload JSON File\"\nThe behavior should be validated when user views the field."
+    },
+    {
+      "test_id": "UTC-1160",
+      "srs_id": "SRS-91",
+      "sds_id": "SDS-91",
+      "summary": "Verify File chooser opens\nwhen user clicks upload control",
+      "description": "Feature: JSON session configuration upload and association\nScenario: File chooser opens\nGiven user clicks upload control\nWhen action triggered\nThen native file picker should open",
+      "acceptance": "Native file picker should open\nThe behavior should be validated when action triggered."
+    },
+    {
+      "test_id": "UTC-1161",
+      "srs_id": "SRS-91",
+      "sds_id": "SDS-91",
+      "summary": "Verify Accept only JSON files\nwhen file picker opened",
+      "description": "Feature: JSON session configuration upload and association\nScenario: Accept only JSON files\nGiven file picker opened\nWhen user selects non-JSON file\nThen file should be rejected",
+      "acceptance": "File should be rejected\nThe behavior should be validated when user selects non-JSON file."
+    },
+    {
+      "test_id": "UTC-1162",
+      "srs_id": "SRS-91",
+      "sds_id": "SDS-91",
+      "summary": "Verify Valid JSON selected\nwhen valid JSON file selected",
+      "description": "Feature: JSON session configuration upload and association\nScenario: Valid JSON selected\nGiven valid JSON file selected\nWhen upload completes\nThen file should be accepted successfully",
+      "acceptance": "File should be accepted successfully\nThe behavior should be validated when upload completes."
+    },
+    {
+      "test_id": "UTC-1163",
+      "srs_id": "SRS-91",
+      "sds_id": "SDS-91",
+      "summary": "Verify Upload status visibility\nwhen file uploading",
+      "description": "Feature: JSON session configuration upload and association\nScenario: Upload status visibility\nGiven file uploading\nWhen process in progress\nThen loading indicator or progress should be shown",
+      "acceptance": "Loading indicator or progress should be shown\nThe behavior should be validated when process in progress."
+    },
+    {
+      "test_id": "UTC-1164",
+      "srs_id": "SRS-91",
+      "sds_id": "SDS-91",
+      "summary": "Verify Link JSON to session\nwhen upload successful",
+      "description": "Feature: JSON session configuration upload and association\nScenario: Link JSON to session\nGiven upload successful\nWhen session created\nThen JSON file should be associated with the session record",
+      "acceptance": "JSON file should be associated with the session record\nThe behavior should be validated when session created."
+    },
+    {
+      "test_id": "UTC-1165",
+      "srs_id": "SRS-91",
+      "sds_id": "SDS-91",
+      "summary": "Verify Metadata parsed correctly\nwhen JSON contains valid metadata",
+      "description": "Feature: JSON session configuration upload and association\nScenario: Metadata parsed correctly\nGiven JSON contains valid metadata\nWhen parsed\nThen session configuration should populate accordingly",
+      "acceptance": "Session configuration should populate accordingly\nThe behavior should be validated when parsed."
+    },
+    {
+      "test_id": "UTC-1166",
+      "srs_id": "SRS-91",
+      "sds_id": "SDS-91",
+      "summary": "Verify Structure defines labeling inputs\nwhen JSON defines labeling schema",
+      "description": "Feature: JSON session configuration upload and association\nScenario: Structure defines labeling inputs\nGiven JSON defines labeling schema\nWhen session loads\nThen labeling inputs should match schema",
+      "acceptance": "Labeling inputs should match schema\nThe behavior should be validated when session loads."
+    },
+    {
+      "test_id": "UTC-1167",
+      "srs_id": "SRS-91",
+      "sds_id": "SDS-91",
+      "summary": "Verify Invalid JSON format\nwhen malformed JSON uploaded",
+      "description": "Feature: JSON session configuration upload and association\nScenario: Invalid JSON format\nGiven malformed JSON uploaded\nWhen validation occurs\nThen user-friendly error message should display",
+      "acceptance": "User-friendly error message should display\nThe behavior should be validated when validation occurs."
+    },
+    {
+      "test_id": "UTC-1168",
+      "srs_id": "SRS-91",
+      "sds_id": "SDS-91",
+      "summary": "Verify Missing file handling\nwhen no file selected",
+      "description": "Feature: JSON session configuration upload and association\nScenario: Missing file handling\nGiven no file selected\nWhen user submits\nThen system should prompt user to upload file",
+      "acceptance": "System should prompt user to upload file\nThe behavior should be validated when user submits."
+    },
+    {
+      "test_id": "UTC-1169",
+      "srs_id": "SRS-91",
+      "sds_id": "SDS-91",
+      "summary": "Verify Cancel selection\nwhen file picker open",
+      "description": "Feature: JSON session configuration upload and association\nScenario: Cancel selection\nGiven file picker open\nWhen user cancels\nThen no upload should occur",
+      "acceptance": "No upload should occur\nThe behavior should be validated when user cancels."
+    },
+    {
+      "test_id": "UTC-1170",
+      "srs_id": "SRS-91",
+      "sds_id": "SDS-91",
+      "summary": "Verify Large JSON performance\nwhen large JSON file uploaded",
+      "description": "Feature: JSON session configuration upload and association\nScenario: Large JSON performance\nGiven large JSON file uploaded\nWhen processed\nThen upload and parse should complete within acceptable time (<2s)",
+      "acceptance": "Upload and parse should complete within acceptable time (<2s)\nThe behavior should be validated when processed."
+    },
+    {
+      "test_id": "UTC-1171",
+      "srs_id": "SRS-91",
+      "sds_id": "SDS-91",
+      "summary": "Verify Script injection prevention\nwhen JSON contains script tags",
+      "description": "Feature: JSON session configuration upload and association\nScenario: Script injection prevention\nGiven JSON contains script tags\nWhen parsed\nThen scripts should be sanitized and not executed",
+      "acceptance": "Scripts should be sanitized and not executed\nThe behavior should be validated when parsed."
+    },
+    {
+      "test_id": "UTC-1172",
+      "srs_id": "SRS-91",
+      "sds_id": "SDS-91",
+      "summary": "Verify Replace uploaded file\nwhen JSON already uploaded",
+      "description": "Feature: JSON session configuration upload and association\nScenario: Replace uploaded file\nGiven JSON already uploaded\nWhen user uploads new file\nThen previous file should be replaced",
+      "acceptance": "Previous file should be replaced\nThe behavior should be validated when user uploads new file."
+    },
+    {
+      "test_id": "UTC-1173",
+      "srs_id": "SRS-91",
+      "sds_id": "SDS-91",
+      "summary": "Verify Persist after navigation\nwhen JSON uploaded",
+      "description": "Feature: JSON session configuration upload and association\nScenario: Persist after navigation\nGiven JSON uploaded\nWhen navigating within form\nThen file reference should remain intact",
+      "acceptance": "File reference should remain intact\nThe behavior should be validated when navigating within form."
+    },
+    {
+      "test_id": "UTC-1174",
+      "srs_id": "SRS-91",
+      "sds_id": "SDS-91",
+      "summary": "Verify Included in API payload\nwhen JSON uploaded",
+      "description": "Feature: JSON session configuration upload and association\nScenario: Included in API payload\nGiven JSON uploaded\nWhen session saved\nThen file reference should be included in payload",
+      "acceptance": "File reference should be included in payload\nThe behavior should be validated when session saved."
+    },
+    {
+      "test_id": "UTC-1175",
+      "srs_id": "SRS-91",
+      "sds_id": "SDS-91",
+      "summary": "Verify Keyboard accessibility\nwhen upload control focused",
+      "description": "Feature: JSON session configuration upload and association\nScenario: Keyboard accessibility\nGiven upload control focused\nWhen Enter/Space pressed\nThen file chooser should open",
+      "acceptance": "File chooser should open\nThe behavior should be validated when Enter/Space pressed."
+    },
+    {
+      "test_id": "UTC-1176",
+      "srs_id": "SRS-92",
+      "sds_id": "SDS-92",
+      "summary": "Verify Authorized user can open page\nwhen user has session creation permission",
+      "description": "Feature: Role-Based Access Control for Session Creation\nScenario: Authorized user can open page\nGiven user has session creation permission\nWhen navigating to Session Creation page\nThen page should load successfully",
+      "acceptance": "Page should load successfully\nThe behavior should be validated when navigating to Session Creation page."
+    },
+    {
+      "test_id": "UTC-1177",
+      "srs_id": "SRS-92",
+      "sds_id": "SDS-92",
+      "summary": "Verify Unauthorized user blocked\nwhen user lacks session creation permission",
+      "description": "Feature: Role-Based Access Control for Session Creation\nScenario: Unauthorized user blocked\nGiven user lacks session creation permission\nWhen navigating to Session Creation page\nThen access should be denied",
+      "acceptance": "Access should be denied\nThe behavior should be validated when navigating to Session Creation page."
+    },
+    {
+      "test_id": "UTC-1178",
+      "srs_id": "SRS-92",
+      "sds_id": "SDS-92",
+      "summary": "Verify Direct URL restriction\nwhen unauthorized user",
+      "description": "Feature: Role-Based Access Control for Session Creation\nScenario: Direct URL restriction\nGiven unauthorized user\nWhen entering Session Creation URL directly\nThen system should prevent page load",
+      "acceptance": "System should prevent page load\nThe behavior should be validated when entering Session Creation URL directly."
+    },
+    {
+      "test_id": "UTC-1179",
+      "srs_id": "SRS-92",
+      "sds_id": "SDS-92",
+      "summary": "Verify Backend API protection\nwhen unauthorized user",
+      "description": "Feature: Role-Based Access Control for Session Creation\nScenario: Backend API protection\nGiven unauthorized user\nWhen calling session creation API\nThen server should return 401/403 response",
+      "acceptance": "Server should return 401/403 response\nThe behavior should be validated when calling session creation API."
+    },
+    {
+      "test_id": "UTC-1180",
+      "srs_id": "SRS-92",
+      "sds_id": "SDS-92",
+      "summary": "Verify Page content hidden\nwhen unauthorized user",
+      "description": "Feature: Role-Based Access Control for Session Creation\nScenario: Page content hidden\nGiven unauthorized user\nWhen page renders\nThen session creation form fields should not be visible",
+      "acceptance": "Session creation form fields should not be visible\nThe behavior should be validated when page renders."
+    },
+    {
+      "test_id": "UTC-1181",
+      "srs_id": "SRS-92",
+      "sds_id": "SDS-92",
+      "summary": "Verify Role validated before page load\nwhen page initialization",
+      "description": "Feature: Role-Based Access Control for Session Creation\nScenario: Role validated before page load\nGiven page initialization\nWhen authorization check executes\nThen permission validation should occur before rendering UI",
+      "acceptance": "Permission validation should occur before rendering UI\nThe behavior should be validated when authorization check executes."
+    },
+    {
+      "test_id": "UTC-1182",
+      "srs_id": "SRS-92",
+      "sds_id": "SDS-92",
+      "summary": "Verify Friendly access-denied message\nwhen authorization fails",
+      "description": "Feature: Role-Based Access Control for Session Creation\nScenario: Friendly access-denied message\nGiven authorization fails\nWhen blocked\nThen clear non-technical message should be shown",
+      "acceptance": "Clear non-technical message should be shown\nThe behavior should be validated when blocked."
+    },
+    {
+      "test_id": "UTC-1183",
+      "srs_id": "SRS-92",
+      "sds_id": "SDS-92",
+      "summary": "Verify No technical details exposed\nwhen unauthorized access attempt",
+      "description": "Feature: Role-Based Access Control for Session Creation\nScenario: No technical details exposed\nGiven unauthorized access attempt\nWhen error displayed\nThen stack traces or system details should not appear",
+      "acceptance": "Stack traces or system details should not appear\nThe behavior should be validated when error displayed."
+    },
+    {
+      "test_id": "UTC-1184",
+      "srs_id": "SRS-92",
+      "sds_id": "SDS-92",
+      "summary": "Verify Role change during session\nwhen user role revoked during active session",
+      "description": "Feature: Role-Based Access Control for Session Creation\nScenario: Role change during session\nGiven user role revoked during active session\nWhen page refreshed\nThen access should be immediately blocked",
+      "acceptance": "Access should be immediately blocked\nThe behavior should be validated when page refreshed."
+    },
+    {
+      "test_id": "UTC-1185",
+      "srs_id": "SRS-92",
+      "sds_id": "SDS-92",
+      "summary": "Verify Cached page restriction\nwhen unauthorized user uses browser back button",
+      "description": "Feature: Role-Based Access Control for Session Creation\nScenario: Cached page restriction\nGiven unauthorized user uses browser back button\nWhen returning to cached page\nThen page should revalidate and block access",
+      "acceptance": "Page should revalidate and block access\nThe behavior should be validated when returning to cached page."
+    },
+    {
+      "test_id": "UTC-1186",
+      "srs_id": "SRS-92",
+      "sds_id": "SDS-92",
+      "summary": "Verify Token/session expiration\nwhen session expires",
+      "description": "Feature: Role-Based Access Control for Session Creation\nScenario: Token/session expiration\nGiven session expires\nWhen user attempts page access\nThen user should be redirected to login",
+      "acceptance": "User should be redirected to login\nThe behavior should be validated when user attempts page access."
+    },
+    {
+      "test_id": "UTC-1187",
+      "srs_id": "SRS-92",
+      "sds_id": "SDS-92",
+      "summary": "Verify Button visibility control\nwhen unauthorized user",
+      "description": "Feature: Role-Based Access Control for Session Creation\nScenario: Button visibility control\nGiven unauthorized user\nWhen dashboard loads\nThen Create Session button should not be visible",
+      "acceptance": "Create Session button should not be visible\nThe behavior should be validated when dashboard loads."
+    },
+    {
+      "test_id": "UTC-1188",
+      "srs_id": "SRS-92",
+      "sds_id": "SDS-92",
+      "summary": "Verify Forced action attempt\nwhen unauthorized user manipulates request payload",
+      "description": "Feature: Role-Based Access Control for Session Creation\nScenario: Forced action attempt\nGiven unauthorized user manipulates request payload\nWhen attempting manual submission\nThen request should be rejected",
+      "acceptance": "Request should be rejected\nThe behavior should be validated when attempting manual submission."
+    },
+    {
+      "test_id": "UTC-1189",
+      "srs_id": "SRS-92",
+      "sds_id": "SDS-92",
+      "summary": "Verify Authorization check speed\nwhen user navigates to page",
+      "description": "Feature: Role-Based Access Control for Session Creation\nScenario: Authorization check speed\nGiven user navigates to page\nWhen validation occurs\nThen authorization check should complete without noticeable delay (<1s)",
+      "acceptance": "Authorization check should complete without noticeable delay (<1s)\nThe behavior should be validated when validation occurs."
+    },
+    {
+      "test_id": "UTC-1190",
+      "srs_id": "SRS-92",
+      "sds_id": "SDS-92",
+      "summary": "Verify Access attempt logging\nwhen unauthorized access attempt",
+      "description": "Feature: Role-Based Access Control for Session Creation\nScenario: Access attempt logging\nGiven unauthorized access attempt\nWhen blocked\nThen system should log the attempt for audit",
+      "acceptance": "System should log the attempt for audit\nThe behavior should be validated when blocked."
+    },
+    {
+      "test_id": "UTC-1191",
+      "srs_id": "SRS-93",
+      "sds_id": "SDS-93",
+      "summary": "Verify Open session creation without losing workspace\nwhen user is working on workspace grid",
+      "description": "Feature: Workspace State Preservation During Session Creation\nScenario: Open session creation without losing workspace\nGiven user is working on workspace grid\nWhen user navigates to Session Creation page\nThen current workspace data should remain unchanged",
+      "acceptance": "Current workspace data should remain unchanged\nThe behavior should be validated when user navigates to Session Creation page."
+    },
+    {
+      "test_id": "UTC-1192",
+      "srs_id": "SRS-93",
+      "sds_id": "SDS-93",
+      "summary": "Verify Return to workspace after session creation\nwhen user opened Session Creation",
+      "description": "Feature: Workspace State Preservation During Session Creation\nScenario: Return to workspace after session creation\nGiven user opened Session Creation\nWhen user navigates back\nThen workspace should display previous state",
+      "acceptance": "Workspace should display previous state\nThe behavior should be validated when user navigates back."
+    },
+    {
+      "test_id": "UTC-1193",
+      "srs_id": "SRS-93",
+      "sds_id": "SDS-93",
+      "summary": "Verify Scroll position retained\nwhen user scrolled to middle of workspace list",
+      "description": "Feature: Workspace State Preservation During Session Creation\nScenario: Scroll position retained\nGiven user scrolled to middle of workspace list\nWhen navigating away and returning\nThen scroll position should remain same",
+      "acceptance": "Scroll position should remain same\nThe behavior should be validated when navigating away and returning."
+    },
+    {
+      "test_id": "UTC-1194",
+      "srs_id": "SRS-93",
+      "sds_id": "SDS-93",
+      "summary": "Verify Filters preserved\nwhen filters applied in workspace",
+      "description": "Feature: Workspace State Preservation During Session Creation\nScenario: Filters preserved\nGiven filters applied in workspace\nWhen opening Session Creation and returning\nThen filters should remain active",
+      "acceptance": "Filters should remain active\nThe behavior should be validated when opening Session Creation and returning."
+    },
+    {
+      "test_id": "UTC-1195",
+      "srs_id": "SRS-93",
+      "sds_id": "SDS-93",
+      "summary": "Verify Search input preserved\nwhen search term entered",
+      "description": "Feature: Workspace State Preservation During Session Creation\nScenario: Search input preserved\nGiven search term entered\nWhen navigating to Session Creation and back\nThen search results should still be applied",
+      "acceptance": "Search results should still be applied\nThe behavior should be validated when navigating to Session Creation and back."
+    },
+    {
+      "test_id": "UTC-1196",
+      "srs_id": "SRS-93",
+      "sds_id": "SDS-93",
+      "summary": "Verify Selected items retained\nwhen multiple images selected",
+      "description": "Feature: Workspace State Preservation During Session Creation\nScenario: Selected items retained\nGiven multiple images selected\nWhen returning from Session Creation\nThen selected items should remain selected",
+      "acceptance": "Selected items should remain selected\nThe behavior should be validated when returning from Session Creation."
+    },
+    {
+      "test_id": "UTC-1197",
+      "srs_id": "SRS-93",
+      "sds_id": "SDS-93",
+      "summary": "Verify Unsaved changes retained\nwhen unsaved edits exist in workspace",
+      "description": "Feature: Workspace State Preservation During Session Creation\nScenario: Unsaved changes retained\nGiven unsaved edits exist in workspace\nWhen navigating away and back\nThen changes should not be lost",
+      "acceptance": "Changes should not be lost\nThe behavior should be validated when navigating away and back."
+    },
+    {
+      "test_id": "UTC-1198",
+      "srs_id": "SRS-93",
+      "sds_id": "SDS-93",
+      "summary": "Verify Session page opens independently\nwhen workspace loaded",
+      "description": "Feature: Workspace State Preservation During Session Creation\nScenario: Session page opens independently\nGiven workspace loaded\nWhen clicking Create Session\nThen session page should open separately without reloading workspace",
+      "acceptance": "Session page should open separately without reloading workspace\nThe behavior should be validated when clicking Create Session."
+    },
+    {
+      "test_id": "UTC-1199",
+      "srs_id": "SRS-93",
+      "sds_id": "SDS-93",
+      "summary": "Verify Fast return navigation\nwhen user returns to workspace",
+      "description": "Feature: Workspace State Preservation During Session Creation\nScenario: Fast return navigation\nGiven user returns to workspace\nWhen page renders\nThen view should load instantly without full reload",
+      "acceptance": "View should load instantly without full reload\nThe behavior should be validated when page renders."
+    },
+    {
+      "test_id": "UTC-1200",
+      "srs_id": "SRS-93",
+      "sds_id": "SDS-93",
+      "summary": "Verify No duplicate API calls\nwhen workspace already loaded",
+      "description": "Feature: Workspace State Preservation During Session Creation\nScenario: No duplicate API calls\nGiven workspace already loaded\nWhen returning from session page\nThen redundant API calls should not occur",
+      "acceptance": "Redundant API calls should not occur\nThe behavior should be validated when returning from session page."
+    },
+    {
+      "test_id": "UTC-1201",
+      "srs_id": "SRS-93",
+      "sds_id": "SDS-93",
+      "summary": "Verify Browser back button\nwhen user navigates using browser back",
+      "description": "Feature: Workspace State Preservation During Session Creation\nScenario: Browser back button\nGiven user navigates using browser back\nWhen returning to workspace\nThen state should still be preserved",
+      "acceptance": "State should still be preserved\nThe behavior should be validated when returning to workspace."
+    },
+    {
+      "test_id": "UTC-1202",
+      "srs_id": "SRS-93",
+      "sds_id": "SDS-93",
+      "summary": "Verify Multiple navigation cycles\nwhen user repeatedly opens and closes session page",
+      "description": "Feature: Workspace State Preservation During Session Creation\nScenario: Multiple navigation cycles\nGiven user repeatedly opens and closes session page\nWhen returning multiple times\nThen workspace state should remain consistent",
+      "acceptance": "Workspace state should remain consistent\nThe behavior should be validated when returning multiple times."
+    },
+    {
+      "test_id": "UTC-1203",
+      "srs_id": "SRS-93",
+      "sds_id": "SDS-93",
+      "summary": "Verify Task continuity\nwhen user mid-task in annotation or review",
+      "description": "Feature: Workspace State Preservation During Session Creation\nScenario: Task continuity\nGiven user mid-task in annotation or review\nWhen opening Session Creation and returning\nThen task progress should remain uninterrupted",
+      "acceptance": "Task progress should remain uninterrupted\nThe behavior should be validated when opening Session Creation and returning."
+    }
+  ]
+}

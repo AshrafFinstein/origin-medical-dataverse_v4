@@ -1,0 +1,307 @@
+{
+  "spec_file": "e2e/tests/general/URS-DV-GEN-12/SRS-045/SDS-045.spec.ts",
+  "plan_urs": "URS-DV-GEN-12",
+  "srs_str": "045",
+  "domain": "general",
+  "page_class": "VersionTrackerPage",
+  "page_import": "version-tracker.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-1736",
+      "srs_id": "SRS-126",
+      "sds_id": "SDS-126",
+      "summary": "Verify system assigns next sequential version number for new JSON version\nwhen a session exists with version history already available",
+      "description": "Feature: Version Tracker – Auto Sequential Version Number\n\nScenario: Verify system assigns next sequential version number for new JSON version\n\nGiven a session exists with version history already available\nWhen the user creates/downloads a new JSON version\nThen the system should automatically assign the next sequential version number",
+      "acceptance": "The system should automatically assign the next sequential version number\nThe behavior should be validated when the user creates/downloads a new JSON version."
+    },
+    {
+      "test_id": "UTC-1737",
+      "srs_id": "SRS-126",
+      "sds_id": "SDS-126",
+      "summary": "Verify system does not create duplicate version numbers\nwhen multiple versions already exist in version history",
+      "description": "Feature: Version Tracker – No Duplicate Version Numbers\n\nScenario: Verify system does not create duplicate version numbers\n\nGiven multiple versions already exist in version history\nWhen the user creates a new JSON version repeatedly\nThen each new version should have a unique sequential number without duplicates",
+      "acceptance": "Each new version should have a unique sequential number without duplicates\nThe behavior should be validated when the user creates a new JSON version repeatedly."
+    },
+    {
+      "test_id": "UTC-1738",
+      "srs_id": "SRS-126",
+      "sds_id": "SDS-126",
+      "summary": "Verify assigned version number is displayed in Version History list\nwhen a new JSON version is created successfully",
+      "description": "Feature: Version Tracker – Version Number Visible in History\n\nScenario: Verify assigned version number is displayed in Version History list\n\nGiven a new JSON version is created successfully\nWhen the user opens the Version History list\nThen the assigned version number should be displayed clearly for that entry",
+      "acceptance": "The assigned version number should be displayed clearly for that entry\nThe behavior should be validated when the user opens the Version History list."
+    },
+    {
+      "test_id": "UTC-1739",
+      "srs_id": "SRS-126",
+      "sds_id": "SDS-126",
+      "summary": "Verify version numbers follow correct increment order\nwhen the latest version is V3",
+      "description": "Feature: Version Tracker – Sequential Increment Pattern\n\nScenario: Verify version numbers follow correct increment order\n\nGiven the latest version is V3\nWhen the user creates a new JSON version\nThen the new version number should be V4",
+      "acceptance": "The new version number should be V4\nThe behavior should be validated when the user creates a new JSON version."
+    },
+    {
+      "test_id": "UTC-1740",
+      "srs_id": "SRS-126",
+      "sds_id": "SDS-126",
+      "summary": "Verify assigned version number persists after refresh/relogin\nwhen a new version was created successfully with a sequential number",
+      "description": "Feature: Version Tracker – Persist Version Number Correctly\n\nScenario: Verify assigned version number persists after refresh/relogin\n\nGiven a new version was created successfully with a sequential number\nWhen the user refreshes the page or logs out and logs in again\nThen the same version number should remain stored and visible in Version History",
+      "acceptance": "The same version number should remain stored and visible in Version History\nThe behavior should be validated when the user refreshes the page or logs out and logs in again."
+    },
+    {
+      "test_id": "UTC-1741",
+      "srs_id": "SRS-126",
+      "sds_id": "SDS-126",
+      "summary": "Verify version numbering is session-specific and sequential\nwhen two different sessions exist with their own version history",
+      "description": "Feature: Version Tracker – Sequential Numbering Across Multiple Sessions\n\nScenario: Verify version numbering is session-specific and sequential\n\nGiven two different sessions exist with their own version history\nWhen the user creates versions in both sessions\nThen each session should maintain independent sequential numbering without conflict",
+      "acceptance": "Each session should maintain independent sequential numbering without conflict\nThe behavior should be validated when the user creates versions in both sessions."
+    },
+    {
+      "test_id": "UTC-1742",
+      "srs_id": "SRS-126",
+      "sds_id": "SDS-126",
+      "summary": "Verify version numbers remain unique when two versions created simultaneously\nwhen two users attempt to create a JSON version at the same time for the same session",
+      "description": "Feature: Version Tracker – Concurrency Handling\n\nScenario: Verify version numbers remain unique when two versions created simultaneously\n\nGiven two users attempt to create a JSON version at the same time for the same session\nWhen both submit version creation concurrently\nThen the system should assign unique sequential version numbers without duplicates or conflicts",
+      "acceptance": "The system should assign unique sequential version numbers without duplicates or conflicts\nThe behavior should be validated when both submit version creation concurrently."
+    },
+    {
+      "test_id": "UTC-1743",
+      "srs_id": "SRS-127",
+      "sds_id": "SDS-127",
+      "summary": "Verify each generated JSON is stored as a new immutable version\nwhen version history already contains existing versions",
+      "description": "Feature: Version Tracker – New Version Stored as Separate Entry\n\nScenario: Verify each generated JSON is stored as a new immutable version\n\nGiven version history already contains existing versions\nWhen the user generates a new JSON version\nThen the system should store it as a new entry\nAnd should not overwrite any existing version",
+      "acceptance": "The system should store it as a new entry\nThe behavior should be validated when the user generates a new JSON version."
+    },
+    {
+      "test_id": "UTC-1744",
+      "srs_id": "SRS-127",
+      "sds_id": "SDS-127",
+      "summary": "Verify earlier versions remain unchanged after new version creation\nwhen V1 and V2 exist in version history",
+      "description": "Feature: Version Tracker – Previous Versions Remain Unchanged\n\nScenario: Verify earlier versions remain unchanged after new version creation\n\nGiven V1 and V2 exist in version history\nWhen the user generates V3\nThen V1 and V2 JSON content should remain unchanged",
+      "acceptance": "V1 and V2 JSON content should remain unchanged\nThe behavior should be validated when the user generates V3."
+    },
+    {
+      "test_id": "UTC-1745",
+      "srs_id": "SRS-127",
+      "sds_id": "SDS-127",
+      "summary": "Verify system does not provide option to overwrite an existing version\nwhen the user is viewing the Version History list",
+      "description": "Feature: Version Tracker – No Replace/Overwrite Option in UI\n\nScenario: Verify system does not provide option to overwrite an existing version\n\nGiven the user is viewing the Version History list\nWhen the user checks available actions for each version\nThen overwrite/replace option should not be available",
+      "acceptance": "Overwrite/replace option should not be available\nThe behavior should be validated when the user checks available actions for each version."
+    },
+    {
+      "test_id": "UTC-1746",
+      "srs_id": "SRS-127",
+      "sds_id": "SDS-127",
+      "summary": "Verify system does not allow deleting a version entry\nwhen the user is viewing Version History list",
+      "description": "Feature: Version Tracker – No Delete Option in UI\n\nScenario: Verify system does not allow deleting a version entry\n\nGiven the user is viewing Version History list\nWhen the user checks action buttons for a version entry\nThen Delete option should not be available",
+      "acceptance": "Delete option should not be available\nThe behavior should be validated when the user checks action buttons for a version entry."
+    },
+    {
+      "test_id": "UTC-1747",
+      "srs_id": "SRS-127",
+      "sds_id": "SDS-127",
+      "summary": "Verify version history persists after refresh/relogin\nwhen multiple versions exist in Version History list",
+      "description": "Feature: Version Tracker – Version History Always Retained\n\nScenario: Verify version history persists after refresh/relogin\n\nGiven multiple versions exist in Version History list\nWhen the user refreshes the page or logs out and logs in again\nThen all previously created versions should remain visible and unchanged",
+      "acceptance": "All previously created versions should remain visible and unchanged\nThe behavior should be validated when the user refreshes the page or logs out and logs in again."
+    },
+    {
+      "test_id": "UTC-1748",
+      "srs_id": "SRS-127",
+      "sds_id": "SDS-127",
+      "summary": "Verify system maintains full history even after many versions created\nwhen 20+ versions exist for a session",
+      "description": "Feature: Version Tracker – Storage Integrity After Multiple Versions\n\nScenario: Verify system maintains full history even after many versions created\n\nGiven 20+ versions exist for a session\nWhen the user creates another new version\nThen all versions should remain stored permanently without loss or corruption",
+      "acceptance": "All versions should remain stored permanently without loss or corruption\nThe behavior should be validated when the user creates another new version."
+    },
+    {
+      "test_id": "UTC-1749",
+      "srs_id": "SRS-127",
+      "sds_id": "SDS-127",
+      "summary": "Verify backend blocks deletion attempt for a version record\nwhen the system does not allow deleting versions",
+      "description": "Feature: Version Tracker – Attempt Delete via Direct Request Blocked\n\nScenario: Verify backend blocks deletion attempt for a version record\n\nGiven the system does not allow deleting versions\nWhen the user attempts to delete a version via API call or forced request\nThen the backend should reject the request\nAnd return access denied / operation not permitted response",
+      "acceptance": "The backend should reject the request\nThe behavior should be validated when the user attempts to delete a version via API call or forced request."
+    },
+    {
+      "test_id": "UTC-1750",
+      "srs_id": "SRS-128",
+      "sds_id": "SDS-128",
+      "summary": "Verify Download action is available for each version entry\nwhen version history contains JSON versions",
+      "description": "Feature: Version Download – Download Button Visibility\n\nScenario: Verify Download action is available for each version entry\n\nGiven version history contains JSON versions\nWhen the user opens Version History list\nThen Download action/button should be visible for each version entry",
+      "acceptance": "Download action/button should be visible for each version entry\nThe behavior should be validated when the user opens Version History list."
+    },
+    {
+      "test_id": "UTC-1751",
+      "srs_id": "SRS-128",
+      "sds_id": "SDS-128",
+      "summary": "Verify download starts when user selects a version and clicks Download\nwhen the user is authorized to download session versions",
+      "description": "Feature: Version Download – Initiate Download Successfully\n\nScenario: Verify download starts when user selects a version and clicks Download\n\nGiven the user is authorized to download session versions\nWhen the user selects a version entry\nAnd clicks Download\nThen the system should initiate JSON file download automatically",
+      "acceptance": "The system should initiate JSON file download automatically\nThe behavior should be validated when the user selects a version entry."
+    },
+    {
+      "test_id": "UTC-1752",
+      "srs_id": "SRS-128",
+      "sds_id": "SDS-128",
+      "summary": "Verify the selected version artifact is downloaded correctly\nwhen multiple versions exist in history (V1, V2, V3)",
+      "description": "Feature: Version Download – Correct Version Downloaded\n\nScenario: Verify the selected version artifact is downloaded correctly\n\nGiven multiple versions exist in history (V1, V2, V3)\nWhen the user downloads V2\nThen the downloaded JSON file should match V2 content stored in system",
+      "acceptance": "The downloaded JSON file should match V2 content stored in system\nThe behavior should be validated when the user downloads V2."
+    },
+    {
+      "test_id": "UTC-1753",
+      "srs_id": "SRS-128",
+      "sds_id": "SDS-128",
+      "summary": "Verify system validates authorization before download\nwhen the user does not have permission to download versions",
+      "description": "Feature: Version Download – Authorization Validation\n\nScenario: Verify system validates authorization before download\n\nGiven the user does not have permission to download versions\nWhen the user clicks Download for a version entry\nThen the system should block download\nAnd show user-friendly authorization failure message",
+      "acceptance": "The system should block download\nThe behavior should be validated when the user clicks Download for a version entry."
+    },
+    {
+      "test_id": "UTC-1754",
+      "srs_id": "SRS-128",
+      "sds_id": "SDS-128",
+      "summary": "Verify backend blocks direct download request without permission\nwhen the user is unauthorized",
+      "description": "Feature: Version Download – Backend Blocks Unauthorized API Download\n\nScenario: Verify backend blocks direct download request without permission\n\nGiven the user is unauthorized\nWhen the user attempts to download version artifact via direct API call\nThen backend should reject request\nAnd return access denied response",
+      "acceptance": "Backend should reject request\nThe behavior should be validated when the user attempts to download version artifact via direct API call."
+    },
+    {
+      "test_id": "UTC-1755",
+      "srs_id": "SRS-128",
+      "sds_id": "SDS-128",
+      "summary": "Verify user-friendly message shown when file cannot be retrieved\nwhen a version exists in UI but file is missing/corrupted in storage",
+      "description": "Feature: Version Download – File Retrieval Failure Handling\n\nScenario: Verify user-friendly message shown when file cannot be retrieved\n\nGiven a version exists in UI but file is missing/corrupted in storage\nWhen the user clicks Download\nThen the system should show a user-friendly message\nAnd download should not start",
+      "acceptance": "The system should show a user-friendly message\nThe behavior should be validated when the user clicks Download."
+    },
+    {
+      "test_id": "UTC-1756",
+      "srs_id": "SRS-128",
+      "sds_id": "SDS-128",
+      "summary": "Verify download streams directly without navigating away\nwhen the user is on Version History list",
+      "description": "Feature: Version Download – Secure Streaming (No Full Page Reload)\n\nScenario: Verify download streams directly without navigating away\n\nGiven the user is on Version History list\nWhen the user clicks Download\nThen the file should download directly\nAnd the user should remain on the same page",
+      "acceptance": "The file should download directly\nThe behavior should be validated when the user clicks Download."
+    },
+    {
+      "test_id": "UTC-1757",
+      "srs_id": "SRS-128",
+      "sds_id": "SDS-128",
+      "summary": "Verify downloaded file is valid JSON format\nwhen the user downloads a JSON version artifact",
+      "description": "Feature: Version Download – Download File Format Validation\n\nScenario: Verify downloaded file is valid JSON format\n\nGiven the user downloads a JSON version artifact\nWhen the file is opened in editor\nThen the content should be valid JSON and not corrupted",
+      "acceptance": "The content should be valid JSON and not corrupted\nThe behavior should be validated when the file is opened in editor."
+    },
+    {
+      "test_id": "UTC-1758",
+      "srs_id": "SRS-129",
+      "sds_id": "SDS-129",
+      "summary": "Verify Download button is disabled when no version is selected\nwhen the user opens the Version History list",
+      "description": "Feature: Version Download – Download Disabled by Default\n\nScenario: Verify Download button is disabled when no version is selected\n\nGiven the user opens the Version History list\nWhen no version row is selected\nThen the Download button should remain disabled or inactive",
+      "acceptance": "The Download button should remain disabled or inactive\nThe behavior should be validated when no version row is selected."
+    },
+    {
+      "test_id": "UTC-1759",
+      "srs_id": "SRS-129",
+      "sds_id": "SDS-129",
+      "summary": "Verify Download button becomes enabled after selecting a version row\nwhen the Version History list is displayed",
+      "description": "Feature: Version Download – Enable Download After Selection\n\nScenario: Verify Download button becomes enabled after selecting a version row\n\nGiven the Version History list is displayed\nWhen the user selects a valid version row (ex: V2)\nThen the Download button should become enabled/active",
+      "acceptance": "The Download button should become enabled/active\nThe behavior should be validated when the user selects a valid version row (ex: V2)."
+    },
+    {
+      "test_id": "UTC-1760",
+      "srs_id": "SRS-129",
+      "sds_id": "SDS-129",
+      "summary": "Verify selected version identifier is validated before download\nwhen a version row is selected",
+      "description": "Feature: Version Download – Correct Version Identifier Used\n\nScenario: Verify selected version identifier is validated before download\n\nGiven a version row is selected\nWhen the user clicks Download\nThen the system should validate the selected version identifier\nAnd start download only for the selected version",
+      "acceptance": "The system should validate the selected version identifier\nThe behavior should be validated when the user clicks Download."
+    },
+    {
+      "test_id": "UTC-1761",
+      "srs_id": "SRS-129",
+      "sds_id": "SDS-129",
+      "summary": "Verify changing selection updates which version is downloaded\nwhen the user selected version V2 and Download is enabled",
+      "description": "Feature: Version Download – Change Selection Updates Download Target\n\nScenario: Verify changing selection updates which version is downloaded\n\nGiven the user selected version V2 and Download is enabled\nWhen the user changes selection to V4\nAnd clicks Download\nThen the system should download V4 (not V2)",
+      "acceptance": "The system should download V4 (not V2)\nThe behavior should be validated when the user changes selection to V4."
+    },
+    {
+      "test_id": "UTC-1762",
+      "srs_id": "SRS-129",
+      "sds_id": "SDS-129",
+      "summary": "Verify system blocks download if selected row is invalid\nwhen the user selected a version row",
+      "description": "Feature: Version Download – Prevent Download With Invalid Selection\n\nScenario: Verify system blocks download if selected row is invalid\n\nGiven the user selected a version row\nWhen the selected version identifier is missing/invalid due to UI glitch\nThen the system should block download\nAnd show a user-friendly message",
+      "acceptance": "The system should block download\nThe behavior should be validated when the selected version identifier is missing/invalid due to UI glitch."
+    },
+    {
+      "test_id": "UTC-1763",
+      "srs_id": "SRS-129",
+      "sds_id": "SDS-129",
+      "summary": "Verify Download becomes disabled if selection is cleared\nwhen a version row is selected and Download is enabled",
+      "description": "Feature: Version Download – Disabled Again After Deselection\n\nScenario: Verify Download becomes disabled if selection is cleared\n\nGiven a version row is selected and Download is enabled\nWhen the user clears the selection (click outside / deselect row)\nThen the Download button should return to disabled/inactive state",
+      "acceptance": "The Download button should return to disabled/inactive state\nThe behavior should be validated when the user clears the selection (click outside / deselect row)."
+    },
+    {
+      "test_id": "UTC-1764",
+      "srs_id": "SRS-130",
+      "sds_id": "SDS-130",
+      "summary": "Verify version rows support single selection only\nwhen the user opens Version History list",
+      "description": "Feature: Version Selection – Single Selection UI Control\n\nScenario: Verify version rows support single selection only\n\nGiven the user opens Version History list\nWhen the list is displayed\nThen the system should allow selecting only one version row at a time",
+      "acceptance": "The system should allow selecting only one version row at a time\nThe behavior should be validated when the list is displayed."
+    },
+    {
+      "test_id": "UTC-1765",
+      "srs_id": "SRS-130",
+      "sds_id": "SDS-130",
+      "summary": "Verify selection indicator is visible for selected row\nwhen Version History list is displayed",
+      "description": "Feature: Version Selection – Row Highlight / Radio Visible\n\nScenario: Verify selection indicator is visible for selected row\n\nGiven Version History list is displayed\nWhen the user selects a version row\nThen the selected row should be highlighted or radio button should show selected state",
+      "acceptance": "The selected row should be highlighted or radio button should show selected state\nThe behavior should be validated when the user selects a version row."
+    },
+    {
+      "test_id": "UTC-1766",
+      "srs_id": "SRS-130",
+      "sds_id": "SDS-130",
+      "summary": "Verify previous selection is removed when new version selected\nwhen the user selected version V1",
+      "description": "Feature: Version Selection – Selecting New Row Deselects Previous\n\nScenario: Verify previous selection is removed when new version selected\n\nGiven the user selected version V1\nWhen the user selects version V3\nThen V1 should be deselected automatically\nAnd only V3 should remain selected",
+      "acceptance": "V1 should be deselected automatically\nThe behavior should be validated when the user selects version V3."
+    },
+    {
+      "test_id": "UTC-1767",
+      "srs_id": "SRS-130",
+      "sds_id": "SDS-130",
+      "summary": "Verify UI stores only one selected version identifier\nwhen a version is selected in Version History list",
+      "description": "Feature: Version Selection – Only One Identifier Stored\n\nScenario: Verify UI stores only one selected version identifier\n\nGiven a version is selected in Version History list\nWhen the user selects another version row\nThen the system should update selection state with only one active version identifier",
+      "acceptance": "The system should update selection state with only one active version identifier\nThe behavior should be validated when the user selects another version row."
+    },
+    {
+      "test_id": "UTC-1768",
+      "srs_id": "SRS-130",
+      "sds_id": "SDS-130",
+      "summary": "Verify user cannot multi-select versions using keyboard shortcuts\nwhen the Version History list is displayed",
+      "description": "Feature: Version Selection – Prevent Multi Select Using Keyboard\n\nScenario: Verify user cannot multi-select versions using keyboard shortcuts\n\nGiven the Version History list is displayed\nWhen the user attempts multi-select using Ctrl+Click or Shift+Click\nThen the system should still allow only one version selection at a time",
+      "acceptance": "The system should still allow only one version selection at a time\nThe behavior should be validated when the user attempts multi-select using Ctrl+Click or Shift+Click."
+    },
+    {
+      "test_id": "UTC-1769",
+      "srs_id": "SRS-130",
+      "sds_id": "SDS-130",
+      "summary": "Verify selection can be cleared safely (if supported)\nwhen a version row is selected",
+      "description": "Feature: Version Selection – Selection Clears Properly\n\nScenario: Verify selection can be cleared safely (if supported)\n\nGiven a version row is selected\nWhen the user clicks outside the table (or uses clear action if available)\nThen the selection should be cleared safely\nAnd no multiple selection should occur",
+      "acceptance": "The selection should be cleared safely\nThe behavior should be validated when the user clicks outside the table (or uses clear action if available)."
+    },
+    {
+      "test_id": "UTC-1770",
+      "srs_id": "SRS-131",
+      "sds_id": "SDS-131",
+      "summary": "Verify metadata fields are displayed in Version History table\nwhen version history contains JSON versions",
+      "description": "Feature: Version Metadata – Metadata Columns Visible\n\nScenario: Verify metadata fields are displayed in Version History table\n\nGiven version history contains JSON versions\nWhen the user opens Version History list\nThen Version Number, Created Date & Time, and Generated User details should be displayed",
+      "acceptance": "Version Number, Created Date & Time, and Generated User details should be displayed\nThe behavior should be validated when the user opens Version History list."
+    },
+    {
+      "test_id": "UTC-1771",
+      "srs_id": "SRS-131",
+      "sds_id": "SDS-131",
+      "summary": "Verify displayed version number matches stored value\nwhen a version exists in history with stored version number V5",
+      "description": "Feature: Version Metadata – Version Number Accuracy\n\nScenario: Verify displayed version number matches stored value\n\nGiven a version exists in history with stored version number V5\nWhen the Version History list is displayed\nThen the UI should display version number exactly as stored (V5)",
+      "acceptance": "The UI should display version number exactly as stored (V5)\nThe behavior should be validated when the Version History list is displayed."
+    },
+    {
+      "test_id": "UTC-1772",
+      "srs_id": "SRS-131",
+      "sds_id": "SDS-131",
+      "summary": "Verify creation date and time match stored value\nwhen a version entry exists with stored timestamp",
+      "description": "Feature: Version Metadata – Created Date & Time Accuracy\n\nScenario: Verify creation date and time match stored value\n\nGiven a version entry exists with stored timestamp\nWhen the Version History list is displayed\nThen the Created Date & Time should match the stored timestamp without alteration",
+      "acceptance": "The Created Date & Time should match the stored timestamp without alteration\nThe behavior should be validated when the Version History list is displayed."
+    }
+  ]
+}

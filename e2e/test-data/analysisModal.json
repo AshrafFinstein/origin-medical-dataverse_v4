@@ -1,0 +1,13 @@
+{
+  "tabs": ["Label Analysis", "Annotation Analysis", "Status Analysis"],
+  "defaultTab": "Label Analysis",
+  "pageSizes": [10, 20, 30],
+  "defaultPageSize": 10,
+  "filterCacheDurationMin": 5,
+  "filterMaxItems": 1000,
+  "sortableColumns": ["Count", "Name"],
+  "errorMessages": {
+    "noData": "No Data",
+    "fetchFailed": "Failed to fetch"
+  }
+}

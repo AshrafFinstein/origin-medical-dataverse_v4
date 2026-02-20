@@ -1,0 +1,419 @@
+{
+  "spec_file": "e2e/tests/security/URS-DV-SEC-10/SRS-040/SDS-040.spec.ts",
+  "plan_urs": "URS-DV-SEC-10",
+  "srs_str": "040",
+  "domain": "security",
+  "page_class": "AnalyticsPage",
+  "page_import": "analytics.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-1447",
+      "srs_id": "SRS-108",
+      "sds_id": "SDS-108",
+      "summary": "Verify Authorized user retrieves session metadata successfully\nwhen valid OAuth token and permitted role",
+      "description": "Feature: Session Details Retrieval API\nScenario: Authorized user retrieves session metadata successfully\nGiven valid OAuth token and permitted role\nWhen API is called with valid sessionId\nThen 200 response with session metadata in JSON should be returned",
+      "acceptance": "200 response with session metadata in JSON should be returned\nThe behavior should be validated when API is called with valid sessionId."
+    },
+    {
+      "test_id": "UTC-1448",
+      "srs_id": "SRS-108",
+      "sds_id": "SDS-108",
+      "summary": "Verify Excel export supported\nwhen valid request",
+      "description": "Feature: Session Details Retrieval API\nScenario: Excel export supported\nGiven valid request\nWhen format=excel parameter passed\nThen response should return session metadata in Excel format",
+      "acceptance": "Response should return session metadata in Excel format\nThe behavior should be validated when format=excel parameter passed."
+    },
+    {
+      "test_id": "UTC-1449",
+      "srs_id": "SRS-108",
+      "sds_id": "SDS-108",
+      "summary": "Verify Correct metadata fields returned\nwhen valid session exists",
+      "description": "Feature: Session Details Retrieval API\nScenario: Correct metadata fields returned\nGiven valid session exists\nWhen API called\nThen all expected fields (name, status, labels, dates) should match DB",
+      "acceptance": "All expected fields (name, status, labels, dates) should match DB\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1450",
+      "srs_id": "SRS-108",
+      "sds_id": "SDS-108",
+      "summary": "Verify Missing token\nwhen request without token",
+      "description": "Feature: Session Details Retrieval API\nScenario: Missing token\nGiven request without token\nWhen API called\nThen 401 Unauthorized should be returned",
+      "acceptance": "401 Unauthorized should be returned\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1451",
+      "srs_id": "SRS-108",
+      "sds_id": "SDS-108",
+      "summary": "Verify Expired token\nwhen expired token",
+      "description": "Feature: Session Details Retrieval API\nScenario: Expired token\nGiven expired token\nWhen API called\nThen 401 response should be returned",
+      "acceptance": "401 response should be returned\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1452",
+      "srs_id": "SRS-108",
+      "sds_id": "SDS-108",
+      "summary": "Verify Insufficient permissions\nwhen user without view permission",
+      "description": "Feature: Session Details Retrieval API\nScenario: Insufficient permissions\nGiven user without view permission\nWhen API called\nThen 403 Forbidden should be returned",
+      "acceptance": "403 Forbidden should be returned\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1453",
+      "srs_id": "SRS-108",
+      "sds_id": "SDS-108",
+      "summary": "Verify Tenant isolation\nwhen session belongs to different tenant",
+      "description": "Feature: Session Details Retrieval API\nScenario: Tenant isolation\nGiven session belongs to different tenant\nWhen API called\nThen metadata should not be exposed",
+      "acceptance": "Metadata should not be exposed\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1454",
+      "srs_id": "SRS-108",
+      "sds_id": "SDS-108",
+      "summary": "Verify Missing sessionId\nwhen no sessionId provided",
+      "description": "Feature: Session Details Retrieval API\nScenario: Missing sessionId\nGiven no sessionId provided\nWhen API called\nThen 400 Bad Request should be returned",
+      "acceptance": "400 Bad Request should be returned\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1455",
+      "srs_id": "SRS-108",
+      "sds_id": "SDS-108",
+      "summary": "Verify Invalid sessionId format\nwhen malformed ID",
+      "description": "Feature: Session Details Retrieval API\nScenario: Invalid sessionId format\nGiven malformed ID\nWhen API called\nThen 400 validation error returned",
+      "acceptance": "400 validation error returned\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1456",
+      "srs_id": "SRS-108",
+      "sds_id": "SDS-108",
+      "summary": "Verify Session not found\nwhen non-existing sessionId",
+      "description": "Feature: Session Details Retrieval API\nScenario: Session not found\nGiven non-existing sessionId\nWhen API called\nThen 404 Not Found should be returned",
+      "acceptance": "404 Not Found should be returned\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1457",
+      "srs_id": "SRS-108",
+      "sds_id": "SDS-108",
+      "summary": "Verify No internal error leakage\nwhen backend failure",
+      "description": "Feature: Session Details Retrieval API\nScenario: No internal error leakage\nGiven backend failure\nWhen API responds\nThen no stack trace or sensitive details should appear",
+      "acceptance": "No stack trace or sensitive details should appear\nThe behavior should be validated when API responds."
+    },
+    {
+      "test_id": "UTC-1458",
+      "srs_id": "SRS-108",
+      "sds_id": "SDS-108",
+      "summary": "Verify Consistent schema response\nwhen multiple calls",
+      "description": "Feature: Session Details Retrieval API\nScenario: Consistent schema response\nGiven multiple calls\nWhen comparing responses\nThen schema must remain identical",
+      "acceptance": "Schema must remain identical\nThe behavior should be validated when comparing responses."
+    },
+    {
+      "test_id": "UTC-1459",
+      "srs_id": "SRS-108",
+      "sds_id": "SDS-108",
+      "summary": "Verify Fast response time\nwhen normal load",
+      "description": "Feature: Session Details Retrieval API\nScenario: Fast response time\nGiven normal load\nWhen API called\nThen response should be under 2 seconds",
+      "acceptance": "Response should be under 2 seconds\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1460",
+      "srs_id": "SRS-108",
+      "sds_id": "SDS-108",
+      "summary": "Verify Concurrent requests\nwhen 50 parallel calls",
+      "description": "Feature: Session Details Retrieval API\nScenario: Concurrent requests\nGiven 50 parallel calls\nWhen executed\nThen all requests succeed without timeout",
+      "acceptance": "All requests succeed without timeout\nThe behavior should be validated when executed."
+    },
+    {
+      "test_id": "UTC-1461",
+      "srs_id": "SRS-108",
+      "sds_id": "SDS-108",
+      "summary": "Verify Special characters preserved\nwhen metadata contains special chars",
+      "description": "Feature: Session Details Retrieval API\nScenario: Special characters preserved\nGiven metadata contains special chars\nWhen API returns data\nThen characters should remain intact",
+      "acceptance": "Characters should remain intact\nThe behavior should be validated when API returns data."
+    },
+    {
+      "test_id": "UTC-1462",
+      "srs_id": "SRS-108",
+      "sds_id": "SDS-108",
+      "summary": "Verify Correct headers returned\nwhen successful request",
+      "description": "Feature: Session Details Retrieval API\nScenario: Correct headers returned\nGiven successful request\nWhen response received\nThen Content-Type should match requested format",
+      "acceptance": "Content-Type should match requested format\nThe behavior should be validated when response received."
+    },
+    {
+      "test_id": "UTC-1463",
+      "srs_id": "SRS-108",
+      "sds_id": "SDS-108",
+      "summary": "Verify Retry after transient DB failure\nwhen temporary backend issue",
+      "description": "Feature: Session Details Retrieval API\nScenario: Retry after transient DB failure\nGiven temporary backend issue\nWhen retried\nThen request succeeds",
+      "acceptance": "Request succeeds\nThe behavior should be validated when retried."
+    },
+    {
+      "test_id": "UTC-1464",
+      "srs_id": "SRS-108",
+      "sds_id": "SDS-108",
+      "summary": "Verify Large metadata response\nwhen session with many labels/fields",
+      "description": "Feature: Session Details Retrieval API\nScenario: Large metadata response\nGiven session with many labels/fields\nWhen API called\nThen response should handle without truncation",
+      "acceptance": "Response should handle without truncation\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1465",
+      "srs_id": "SRS-108",
+      "sds_id": "SDS-108",
+      "summary": "Verify Friendly error messages\nwhen failure case",
+      "description": "Feature: Session Details Retrieval API\nScenario: Friendly error messages\nGiven failure case\nWhen API returns error\nThen message should be non-technical",
+      "acceptance": "Message should be non-technical\nThe behavior should be validated when API returns error."
+    },
+    {
+      "test_id": "UTC-1466",
+      "srs_id": "SRS-108",
+      "sds_id": "SDS-108",
+      "summary": "Verify Role-based filtering\nwhen limited role",
+      "description": "Feature: Session Details Retrieval API\nScenario: Role-based filtering\nGiven limited role\nWhen API returns metadata\nThen restricted fields should not be included",
+      "acceptance": "Restricted fields should not be included\nThe behavior should be validated when API returns metadata."
+    },
+    {
+      "test_id": "UTC-1467",
+      "srs_id": "SRS-109",
+      "sds_id": "SDS-109",
+      "summary": "Verify Authorized user retrieves session name successfully\nwhen valid token and view permission",
+      "description": "Feature: Session Name Retrieval API\nScenario: Authorized user retrieves session name successfully\nGiven valid token and view permission\nWhen API is called with valid sessionId\nThen 200 response should return only { name } field",
+      "acceptance": "200 response should return only { name } field\nThe behavior should be validated when API is called with valid sessionId."
+    },
+    {
+      "test_id": "UTC-1468",
+      "srs_id": "SRS-109",
+      "sds_id": "SDS-109",
+      "summary": "Verify Response contains only name attribute\nwhen valid request",
+      "description": "Feature: Session Name Retrieval API\nScenario: Response contains only name attribute\nGiven valid request\nWhen API responds\nThen no extra metadata fields should be included",
+      "acceptance": "No extra metadata fields should be included\nThe behavior should be validated when API responds."
+    },
+    {
+      "test_id": "UTC-1469",
+      "srs_id": "SRS-109",
+      "sds_id": "SDS-109",
+      "summary": "Verify Lightweight response time\nwhen normal loadWhen API called",
+      "description": "Feature: Session Name Retrieval API\nScenario: Lightweight response time\nGiven normal loadWhen API called\nThen response time should be under 1 second",
+      "acceptance": "Response time should be under 1 second\nSystem should not allow invalid behavior."
+    },
+    {
+      "test_id": "UTC-1470",
+      "srs_id": "SRS-109",
+      "sds_id": "SDS-109",
+      "summary": "Verify Reduced payload size\nwhen session existsWhen API returns data",
+      "description": "Feature: Session Name Retrieval API\nScenario: Reduced payload size\nGiven session existsWhen API returns data\nThen payload size should be minimal (<1KB)",
+      "acceptance": "Payload size should be minimal (<1KB)\nSystem should not allow invalid behavior."
+    },
+    {
+      "test_id": "UTC-1471",
+      "srs_id": "SRS-109",
+      "sds_id": "SDS-109",
+      "summary": "Verify Missing tokenGiven request without authentication\nwhen API called",
+      "description": "Feature: Session Name Retrieval API\nScenario: Missing tokenGiven request without authentication\nWhen API called\nThen 401 Unauthorized returned",
+      "acceptance": "401 Unauthorized returned\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1472",
+      "srs_id": "SRS-109",
+      "sds_id": "SDS-109",
+      "summary": "Verify Insufficient permission\nwhen user without view access",
+      "description": "Feature: Session Name Retrieval API\nScenario: Insufficient permission\nGiven user without view access\nWhen API called\nThen 403 Forbidden returned",
+      "acceptance": "403 Forbidden returned\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1473",
+      "srs_id": "SRS-109",
+      "sds_id": "SDS-109",
+      "summary": "Verify Invalid sessionId format\nwhen malformed sessionId",
+      "description": "Feature: Session Name Retrieval API\nScenario: Invalid sessionId format\nGiven malformed sessionId\nWhen API called\nThen 400 Bad Request returned",
+      "acceptance": "400 Bad Request returned\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1474",
+      "srs_id": "SRS-109",
+      "sds_id": "SDS-109",
+      "summary": "Verify Session not found\nwhen non-existing sessionId",
+      "description": "Feature: Session Name Retrieval API\nScenario: Session not found\nGiven non-existing sessionId\nWhen API called\nThen 404 Not Found returned",
+      "acceptance": "404 Not Found returned\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1475",
+      "srs_id": "SRS-109",
+      "sds_id": "SDS-109",
+      "summary": "Verify Tenant isolation enforced\nwhen session belongs to another tenant",
+      "description": "Feature: Session Name Retrieval API\nScenario: Tenant isolation enforced\nGiven session belongs to another tenant\nWhen API calledThen access should be denied",
+      "acceptance": "Expected result should be displayed as per the scenario.\nThe behavior should be validated when API calledThen access should be denied."
+    },
+    {
+      "test_id": "UTC-1476",
+      "srs_id": "SRS-109",
+      "sds_id": "SDS-109",
+      "summary": "Verify Stable schema response\nwhen repeated calls",
+      "description": "Feature: Session Name Retrieval API\nScenario: Stable schema response\nGiven repeated calls\nWhen comparing responses\nThen response structure remains identical",
+      "acceptance": "Response structure remains identical\nThe behavior should be validated when comparing responses."
+    },
+    {
+      "test_id": "UTC-1477",
+      "srs_id": "SRS-109",
+      "sds_id": "SDS-109",
+      "summary": "Verify Concurrent requests handling\nwhen 100 parallel calls",
+      "description": "Feature: Session Name Retrieval API\nScenario: Concurrent requests handling\nGiven 100 parallel calls\nWhen executedThen all succeed without timeout",
+      "acceptance": "Expected result should be displayed as per the scenario.\nThe behavior should be validated when executedThen all succeed without timeout."
+    },
+    {
+      "test_id": "UTC-1478",
+      "srs_id": "SRS-109",
+      "sds_id": "SDS-109",
+      "summary": "Verify Correct name value returned\nwhen DB contains session name",
+      "description": "Feature: Session Name Retrieval API\nScenario: Correct name value returned\nGiven DB contains session name\nWhen API called\nThen returned name must match DB exactly",
+      "acceptance": "Returned name must match DB exactly\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1479",
+      "srs_id": "SRS-109",
+      "sds_id": "SDS-109",
+      "summary": "Verify No internal error leakage\nwhen backend error occurs",
+      "description": "Feature: Session Name Retrieval API\nScenario: No internal error leakage\nGiven backend error occurs\nWhen API fails\nThen no stack trace exposed",
+      "acceptance": "No stack trace exposed\nThe behavior should be validated when API fails."
+    },
+    {
+      "test_id": "UTC-1480",
+      "srs_id": "SRS-109",
+      "sds_id": "SDS-109",
+      "summary": "Verify Retry after transient failure\nwhen temporary DB disconnect",
+      "description": "Feature: Session Name Retrieval API\nScenario: Retry after transient failure\nGiven temporary DB disconnect\nWhen retriedThen request succeeds",
+      "acceptance": "Expected result should be displayed as per the scenario.\nThe behavior should be validated when retriedThen request succeeds."
+    },
+    {
+      "test_id": "UTC-1481",
+      "srs_id": "SRS-109",
+      "sds_id": "SDS-109",
+      "summary": "Verify Long session name handled\nwhen name length near max limit",
+      "description": "Feature: Session Name Retrieval API\nScenario: Long session name handled\nGiven name length near max limit\nWhen API called\nThen full name returned without truncation",
+      "acceptance": "Full name returned without truncation\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1482",
+      "srs_id": "SRS-110",
+      "sds_id": "SDS-110",
+      "summary": "Verify Authorized user retrieves patient count\nwhen valid token and view permission",
+      "description": "Feature: Patient Count Retrieval API\nScenario: Authorized user retrieves patient count\nGiven valid token and view permission\nWhen API is called with valid sessionId\nThen response should return 200 with {count} only",
+      "acceptance": "Response should return 200 with {count} only\nThe behavior should be validated when API is called with valid sessionId."
+    },
+    {
+      "test_id": "UTC-1483",
+      "srs_id": "SRS-110",
+      "sds_id": "SDS-110",
+      "summary": "Verify No patient identifiers exposed\nwhen valid request",
+      "description": "Feature: Patient Count Retrieval API\nScenario: No patient identifiers exposed\nGiven valid request\nWhen API responds\nThen response must not include patient IDs or PHI fields",
+      "acceptance": "Response must not include patient IDs or PHI fields\nThe behavior should be validated when API responds."
+    },
+    {
+      "test_id": "UTC-1484",
+      "srs_id": "SRS-110",
+      "sds_id": "SDS-110",
+      "summary": "Verify Zero patients case\nwhen session with no patients",
+      "description": "Feature: Patient Count Retrieval API\nScenario: Zero patients case\nGiven session with no patients\nWhen API called\nThen {count: 0} should be returned",
+      "acceptance": "{count: 0} should be returned\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1485",
+      "srs_id": "SRS-110",
+      "sds_id": "SDS-110",
+      "summary": "Verify Invalid sessionId format\nwhen malformed sessionId",
+      "description": "Feature: Patient Count Retrieval API\nScenario: Invalid sessionId format\nGiven malformed sessionId\nWhen API called\nThen 400 Bad Request returned",
+      "acceptance": "400 Bad Request returned\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1486",
+      "srs_id": "SRS-110",
+      "sds_id": "SDS-110",
+      "summary": "Verify Missing token\nwhen no authentication token",
+      "description": "Feature: Patient Count Retrieval API\nScenario: Missing token\nGiven no authentication token\nWhen API called\nThen 401 Unauthorized returned",
+      "acceptance": "401 Unauthorized returned\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1487",
+      "srs_id": "SRS-110",
+      "sds_id": "SDS-110",
+      "summary": "Verify Insufficient role permission\nwhen user lacks view access",
+      "description": "Feature: Patient Count Retrieval API\nScenario: Insufficient role permission\nGiven user lacks view access\nWhen API called\nThen 403 Forbidden returned",
+      "acceptance": "403 Forbidden returned\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1488",
+      "srs_id": "SRS-110",
+      "sds_id": "SDS-110",
+      "summary": "Verify Tenant isolation enforced\nwhen session belongs to another tenant",
+      "description": "Feature: Patient Count Retrieval API\nScenario: Tenant isolation enforced\nGiven session belongs to another tenant\nWhen API called\nThen access should be blocked",
+      "acceptance": "Access should be blocked\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1489",
+      "srs_id": "SRS-110",
+      "sds_id": "SDS-110",
+      "summary": "Verify Aggregate query accuracy\nwhen known dataset of 50 patients",
+      "description": "Feature: Patient Count Retrieval API\nScenario: Aggregate query accuracy\nGiven known dataset of 50 patients\nWhen API called\nThen count returned must equal 50",
+      "acceptance": "Count returned must equal 50\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1490",
+      "srs_id": "SRS-110",
+      "sds_id": "SDS-110",
+      "summary": "Verify Fast aggregate response\nwhen large dataset (10k+ records)",
+      "description": "Feature: Patient Count Retrieval API\nScenario: Fast aggregate response\nGiven large dataset (10k+ records)\nWhen API called\nThen response time should be under 2 seconds",
+      "acceptance": "Response time should be under 2 seconds\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1491",
+      "srs_id": "SRS-110",
+      "sds_id": "SDS-110",
+      "summary": "Verify Minimal payload size\nwhen valid request",
+      "description": "Feature: Patient Count Retrieval API\nScenario: Minimal payload size\nGiven valid request\nWhen API responds\nThen response size should remain small (<1KB)",
+      "acceptance": "Response size should remain small (<1KB)\nThe behavior should be validated when API responds."
+    },
+    {
+      "test_id": "UTC-1492",
+      "srs_id": "SRS-110",
+      "sds_id": "SDS-110",
+      "summary": "Verify Multiple concurrent requests\nwhen 100 parallel calls",
+      "description": "Feature: Patient Count Retrieval API\nScenario: Multiple concurrent requests\nGiven 100 parallel calls\nWhen executed\nThen all responses succeed without timeout",
+      "acceptance": "All responses succeed without timeout\nThe behavior should be validated when executed."
+    },
+    {
+      "test_id": "UTC-1493",
+      "srs_id": "SRS-110",
+      "sds_id": "SDS-110",
+      "summary": "Verify Retry after transient DB failure\nwhen temporary DB issue",
+      "description": "Feature: Patient Count Retrieval API\nScenario: Retry after transient DB failure\nGiven temporary DB issue\nWhen retried\nThen API should recover and return correct count",
+      "acceptance": "API should recover and return correct count\nThe behavior should be validated when retried."
+    },
+    {
+      "test_id": "UTC-1494",
+      "srs_id": "SRS-110",
+      "sds_id": "SDS-110",
+      "summary": "Verify No SQL or internal errors exposed\nwhen backend query failure",
+      "description": "Feature: Patient Count Retrieval API\nScenario: No SQL or internal errors exposed\nGiven backend query failure\nWhen API fails\nThen safe generic 500 message returned",
+      "acceptance": "Safe generic 500 message returned\nThe behavior should be validated when API fails."
+    },
+    {
+      "test_id": "UTC-1495",
+      "srs_id": "SRS-110",
+      "sds_id": "SDS-110",
+      "summary": "Verify Count updates after new patient added\nwhen new patient mapped to session",
+      "description": "Feature: Patient Count Retrieval API\nScenario: Count updates after new patient added\nGiven new patient mapped to session\nWhen API called again\nThen count should increment accordingly",
+      "acceptance": "Count should increment accordingly\nThe behavior should be validated when API called again."
+    },
+    {
+      "test_id": "UTC-1496",
+      "srs_id": "SRS-110",
+      "sds_id": "SDS-110",
+      "summary": "Verify Very large counts supported\nwhen session with >100k patients",
+      "description": "Feature: Patient Count Retrieval API\nScenario: Very large counts supported\nGiven session with >100k patients\nWhen API called\nThen large integer count returned correctly without overflow",
+      "acceptance": "Large integer count returned correctly without overflow\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1497",
+      "srs_id": "SRS-111",
+      "sds_id": "SDS-111",
+      "summary": "Verify Authorized user retrieves image count\nwhen valid token and permission",
+      "description": "Feature: Session Image Count API\nScenario: Authorized user retrieves image count\nGiven valid token and permission\nWhen API is called with valid sessionId\nThen response returns 200 with {imageCount} only",
+      "acceptance": "Response returns 200 with {imageCount} only\nThe behavior should be validated when API is called with valid sessionId."
+    }
+  ]
+}

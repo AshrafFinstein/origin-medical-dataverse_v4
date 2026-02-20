@@ -1,0 +1,131 @@
+{
+  "spec_file": "e2e/tests/session-management/URS-DV-GEN-19/SRS-068/SDS-068.spec.ts",
+  "plan_urs": "URS-DV-GEN-19",
+  "srs_str": "068",
+  "domain": "session-management",
+  "page_class": "SessionLockPage",
+  "page_import": "session-lock.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-2639",
+      "srs_id": "SRS-253",
+      "sds_id": "SDS-253",
+      "summary": "Verify Lock icon is visible when Lock permission is enabled in role\nwhen the admin enables \"Lock\" permission in Masters â†’ User Roles â†’ Session for the logged-in user role",
+      "description": "Feature: Session Lock Permission – Lock Icon Visible\n\nScenario: Verify Lock icon is visible when Lock permission is enabled in role\n\nGiven the admin enables “Lock” permission in Masters → User Roles → Session for the logged-in user role\nWhen the user navigates to Data Labelling Session list page\nThen Lock icon should be visible in Actions column for sessions",
+      "acceptance": "Lock icon should be visible in Actions column for sessions\nThe behavior should be validated when the user navigates to Data Labelling Session list page."
+    },
+    {
+      "test_id": "UTC-2640",
+      "srs_id": "SRS-253",
+      "sds_id": "SDS-253",
+      "summary": "Verify Lock icon is hidden when Lock permission is disabled in role\nwhen the admin disables \"Lock\" permission in Masters â†’ User Roles â†’ Session for the logged-in user role",
+      "description": "Feature: Session Lock Permission – Lock Icon Hidden\n\nScenario: Verify Lock icon is hidden when Lock permission is disabled in role\n\nGiven the admin disables “Lock” permission in Masters → User Roles → Session for the logged-in user role\nWhen the user navigates to Data Labelling Session list page\nThen Lock icon should not be visible in Actions column",
+      "acceptance": "Lock icon should not be visible in Actions column\nThe behavior should be validated when the user navigates to Data Labelling Session list page."
+    },
+    {
+      "test_id": "UTC-2641",
+      "srs_id": "SRS-253",
+      "sds_id": "SDS-253",
+      "summary": "Verify unauthorized user cannot access Lock Session popup\nwhen the user role does not have Lock permission enabled",
+      "description": "Feature: Session Lock Permission – Cannot Open Lock Popup Without Permission\n\nScenario: Verify unauthorized user cannot access Lock Session popup\n\nGiven the user role does not have Lock permission enabled\nWhen the user attempts to lock a session (directly via UI or shortcut)\nThen the system should block the action\nAnd Lock Session popup should not be accessible",
+      "acceptance": "The system should block the action\nThe behavior should be validated when the user attempts to lock a session (directly via UI or shortcut)."
+    },
+    {
+      "test_id": "UTC-2642",
+      "srs_id": "SRS-253",
+      "sds_id": "SDS-253",
+      "summary": "Verify Lock icon visibility updates after permission change\nwhen the user is logged in with a role where Lock permission is disabled",
+      "description": "Feature: Session Lock Permission – Permission Change Reflects Immediately\n\nScenario: Verify Lock icon visibility updates after permission change\n\nGiven the user is logged in with a role where Lock permission is disabled\nWhen admin enables Lock permission for that role\nAnd user refreshes or re-login to application\nThen Lock icon should appear in Actions column",
+      "acceptance": "Lock icon should appear in Actions column\nThe behavior should be validated when admin enables Lock permission for that role."
+    },
+    {
+      "test_id": "UTC-2643",
+      "srs_id": "SRS-253",
+      "sds_id": "SDS-253",
+      "summary": "Verify lock action is rejected even if API is triggered without permission\nwhen the user does not have Lock permission",
+      "description": "Feature: Session Lock Permission – Backend Restriction\n\nScenario: Verify lock action is rejected even if API is triggered without permission\n\nGiven the user does not have Lock permission\nWhen the user tries to perform lock action through direct request (bypass UI)\nThen the system should deny the request\nAnd session should not be locked",
+      "acceptance": "The system should deny the request\nThe behavior should be validated when the user tries to perform lock action through direct request (bypass UI)."
+    },
+    {
+      "test_id": "UTC-2644",
+      "srs_id": "SRS-253",
+      "sds_id": "SDS-253",
+      "summary": "Verify Unlock action is visible only if Lock permission exists\nwhen the user role has Lock permission enabled",
+      "description": "Feature: Session Lock Permission – Unlock Visible Only With Permission\n\nScenario: Verify Unlock action is visible only if Lock permission exists\n\nGiven the user role has Lock permission enabled\nAnd the session is already locked\nWhen the session list page is displayed\nThen Unlock icon/action should be visible for locked session",
+      "acceptance": "Unlock icon/action should be visible for locked session\nThe behavior should be validated when the session list page is displayed."
+    },
+    {
+      "test_id": "UTC-2645",
+      "srs_id": "SRS-253",
+      "sds_id": "SDS-253",
+      "summary": "Verify Unlock action is hidden when Lock permission is removed\nwhen a session is locked",
+      "description": "Feature: Session Lock Permission – Unlock Hidden Without Permission\n\nScenario: Verify Unlock action is hidden when Lock permission is removed\n\nGiven a session is locked\nAnd the admin removes Lock permission from the user role\nWhen the user opens the session list page\nThen Unlock icon should not be visible",
+      "acceptance": "Unlock icon should not be visible\nThe behavior should be validated when the user opens the session list page."
+    },
+    {
+      "test_id": "UTC-2646",
+      "srs_id": "SRS-253",
+      "sds_id": "SDS-253",
+      "summary": "Verify unauthorized user cannot unlock a locked session\nwhen a session is locked",
+      "description": "Feature: Session Lock Permission – Prevent Unlock Without Permission\n\nScenario: Verify unauthorized user cannot unlock a locked session\n\nGiven a session is locked\nAnd the user does not have Lock permission enabled\nWhen the user attempts to unlock the session\nThen the system should block unlock action\nAnd session should remain locked",
+      "acceptance": "The system should block unlock action\nThe behavior should be validated when the user attempts to unlock the session."
+    },
+    {
+      "test_id": "UTC-2647",
+      "srs_id": "SRS-253",
+      "sds_id": "SDS-253",
+      "summary": "Verify authorized user can lock and unlock session successfully\nwhen the user role has Lock permission enabled",
+      "description": "Feature: Session Lock Permission – Lock/Unlock Works for Authorized Role\n\nScenario: Verify authorized user can lock and unlock session successfully\n\nGiven the user role has Lock permission enabled\nWhen user locks a session by providing reason\nAnd user unlocks the same session by providing reason\nThen both actions should be completed successfully",
+      "acceptance": "Both actions should be completed successfully\nThe behavior should be validated when user locks a session by providing reason."
+    },
+    {
+      "test_id": "UTC-2648",
+      "srs_id": "SRS-253",
+      "sds_id": "SDS-253",
+      "summary": "Verify lock controls are fully hidden when permission is not granted\nwhen Lock permission is disabled for the role",
+      "description": "Feature: Session Lock Permission – No Partial Visibility\n\nScenario: Verify lock controls are fully hidden when permission is not granted\n\nGiven Lock permission is disabled for the role\nWhen the user opens session list page\nThen lock-related icons should not appear anywhere (Actions / menu / tooltip)",
+      "acceptance": "Lock-related icons should not appear anywhere (Actions / menu / tooltip)\nThe behavior should be validated when the user opens session list page."
+    },
+    {
+      "test_id": "UTC-2649",
+      "srs_id": "SRS-254",
+      "sds_id": "SDS-254",
+      "summary": "Verify lock icon is displayed when session status is Completed\nwhen the user is on Data Labelling Session list page",
+      "description": "Feature: Lock Icon – Visible for Completed Session\n\nScenario: Verify lock icon is displayed when session status is Completed\n\nGiven the user is on Data Labelling Session list page\nAnd a session status is set to Completed\nWhen the grid is displayed/refreshed\nThen the Lock icon should be visible for that Completed session row",
+      "acceptance": "The Lock icon should be visible for that Completed session row\nThe behavior should be validated when the grid is displayed/refreshed."
+    },
+    {
+      "test_id": "UTC-2650",
+      "srs_id": "SRS-254",
+      "sds_id": "SDS-254",
+      "summary": "Verify lock icon is not shown when session status is Yet to do\nwhen the user is on Data Labelling Session list page",
+      "description": "Feature: Lock Icon – Not Visible for Yet to do Session\n\nScenario: Verify lock icon is not shown when session status is Yet to do\n\nGiven the user is on Data Labelling Session list page\nWhen a session status is Yet to do\nThen the Lock icon should not be displayed for that session row",
+      "acceptance": "The Lock icon should not be displayed for that session row\nThe behavior should be validated when a session status is Yet to do."
+    },
+    {
+      "test_id": "UTC-2651",
+      "srs_id": "SRS-254",
+      "sds_id": "SDS-254",
+      "summary": "Verify lock icon is not shown when session status is In progress\nwhen the user is on Data Labelling Session list page",
+      "description": "Feature: Lock Icon – Not Visible for In progress Session\n\nScenario: Verify lock icon is not shown when session status is In progress\n\nGiven the user is on Data Labelling Session list page\nWhen a session status is In progress\nThen the Lock icon should not be displayed for that session row",
+      "acceptance": "The Lock icon should not be displayed for that session row\nThe behavior should be validated when a session status is In progress."
+    },
+    {
+      "test_id": "UTC-2652",
+      "srs_id": "SRS-254",
+      "sds_id": "SDS-254",
+      "summary": "Verify lock icon appears after session status is updated to Completed\nwhen the session status is not Completed initially",
+      "description": "Feature: Lock Icon – Appears After Status Change to Completed\n\nScenario: Verify lock icon appears after session status is updated to Completed\n\nGiven the session status is not Completed initially\nWhen the session status is changed to Completed\nAnd the user returns to session list page / refreshes grid\nThen the Lock icon should appear for that session row",
+      "acceptance": "The Lock icon should appear for that session row\nThe behavior should be validated when the session status is changed to Completed."
+    },
+    {
+      "test_id": "UTC-2653",
+      "srs_id": "SRS-254",
+      "sds_id": "SDS-254",
+      "summary": "Verify lock icon disappears if session status is changed from Completed to other status\nwhen the session status is Completed and Lock icon is visible",
+      "description": "Feature: Lock Icon – Removed When Status Changes from Completed\n\nScenario: Verify lock icon disappears if session status is changed from Completed to other status\n\nGiven the session status is Completed and Lock icon is visible\nWhen the session status changes to Re-open / In progress / Yet to do\nThen the Lock icon should no longer be displayed for that session row",
+      "acceptance": "The Lock icon should no longer be displayed for that session row\nThe behavior should be validated when the session status changes to Re-open / In progress / Yet to do."
+    }
+  ]
+}

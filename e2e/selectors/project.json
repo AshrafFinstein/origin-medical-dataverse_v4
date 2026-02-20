@@ -1,41 +1,25 @@
 {
-  "project-breadcrumb": {
-    "home": "[data-testid=\"project-breadcrumb-home\"]"
-  },
-  "project-back": {
-    "button": "[data-testid=\"project-back-button\"]"
-  },
-  "project-search": {
-    "button": "[data-testid=\"project-search-button\"]",
-    "modal": "[data-testid=\"project-search-modal\"]",
-    "input": "[data-testid=\"project-search-input\"]",
-    "submit-button": "[data-testid=\"project-search-submit-button\"]",
-    "results-table": "[data-testid=\"project-search-results-table\"]"
-  },
-  "project-create": {
-    "button": "[data-testid=\"project-create-button\"]",
-    "modal": "[data-testid=\"project-create-modal\"]",
-    "name-input": "[data-testid=\"project-create-name-input\"]",
-    "description-input": "[data-testid=\"project-create-description-input\"]",
-    "select-all-assignees": "[data-testid=\"project-create-select-all-assignees\"]",
-    "assignees-select": "[data-testid=\"project-create-assignees-select\"]",
-    "cancel-button": "[data-testid=\"project-create-cancel-button\"]",
-    "submit-button": "[data-testid=\"project-create-submit-button\"]"
-  },
-  "project-table": {
-    "root": "[data-testid=\"project-table\"]"
-  },
-  "project-delete": {
-    "modal": "[data-testid=\"project-delete-modal\"]",
-    "cancel-button": "[data-testid=\"project-delete-cancel-button\"]",
-    "confirm-button": "[data-testid=\"project-delete-confirm-button\"]"
-  },
-  "project-user": {
-    "removal-modal": "[data-testid=\"project-user-removal-modal\"]",
-    "removal-cancel-button": "[data-testid=\"project-user-removal-cancel-button\"]",
-    "removal-confirm-button": "[data-testid=\"project-user-removal-confirm-button\"]"
-  },
-  "project-go": {
-    "button": "[data-testid=\"project-go-button-${index}\"]"
-  }
+  "project-breadcrumb-home": "project-breadcrumb-home",
+  "project-back-button": "project-back-button",
+  "project-search-button": "project-search-button",
+  "project-search-modal": "project-search-modal",
+  "project-search-input": "project-search-input",
+  "project-search-submit-button": "project-search-submit-button",
+  "project-search-results-table": "project-search-results-table",
+  "project-create-button": "project-create-button",
+  "project-create-modal": "project-create-modal",
+  "project-create-name-input": "project-create-name-input",
+  "project-create-description-input": "project-create-description-input",
+  "project-create-select-all-assignees": "project-create-select-all-assignees",
+  "project-create-assignees-select": "project-create-assignees-select",
+  "project-create-cancel-button": "project-create-cancel-button",
+  "project-create-submit-button": "project-create-submit-button",
+  "project-table": "project-table",
+  "project-delete-modal": "project-delete-modal",
+  "project-delete-cancel-button": "project-delete-cancel-button",
+  "project-delete-confirm-button": "project-delete-confirm-button",
+  "project-user-removal-modal": "project-user-removal-modal",
+  "project-user-removal-cancel-button": "project-user-removal-cancel-button",
+  "project-user-removal-confirm-button": "project-user-removal-confirm-button",
+  "project-go-button-${index}": "project-go-button-${index}"
 }

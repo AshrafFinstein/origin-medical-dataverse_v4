@@ -2,12 +2,12 @@ import { BaseModule } from '../shared/base-module';
 
 export class EpicValidationModule extends BaseModule {
   async getEpicCount(): Promise<number> {
-    const tableSelector = this.selectors.epic['epic-table'].root;
+    const tableSelector = this.selectors.epic['epic-table'];
     return await this.ctx.getTableRowCount(tableSelector);
   }
 
   async getEpicName(rowIndex: number): Promise<string> {
-    const tableSelector = this.selectors.epic['epic-table'].root;
+    const tableSelector = this.selectors.epic['epic-table'];
     return await this.ctx.getTableCellText(tableSelector, rowIndex, 1);
   }
 
@@ -16,15 +16,15 @@ export class EpicValidationModule extends BaseModule {
   }
 
   async waitForEpicTable() {
-    await this.waitForSelector(this.selectors.epic['epic-table'].root);
+    await this.waitForSelector(this.selectors.epic['epic-table']);
     await this.waitForLoadingComplete();
   }
 
   async isEpicCreateModalOpen(): Promise<boolean> {
-    return await this.isVisible(this.selectors.epic['epic-create'].modal);
+    return await this.isVisible(this.selectors.epic['epic-create-modal']);
   }
 
   async isEpicDeleteModalOpen(): Promise<boolean> {
-    return await this.isVisible(this.selectors.epic['epic-delete'].modal);
+    return await this.isVisible(this.selectors.epic['epic-delete-modal']);
   }
 }

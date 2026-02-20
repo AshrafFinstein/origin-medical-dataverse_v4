@@ -1,0 +1,347 @@
+{
+  "spec_file": "e2e/tests/annotation/URS-DV-DA-11/SRS-042/SDS-042.spec.ts",
+  "plan_urs": "URS-DV-DA-11",
+  "srs_str": "042",
+  "domain": "annotation",
+  "page_class": "DataLabellingPage",
+  "page_import": "data-labelling.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-1610",
+      "srs_id": "SRS-118",
+      "sds_id": "SDS-118",
+      "summary": "Verify Undo icon visibility\nwhen annotation screen loads",
+      "description": "Feature: Undo Last Annotation Action\nScenario: Undo icon visibility\nGiven annotation screen loads\nWhen bottom toolbar renders\nThen curved left arrow Undo icon should be visible",
+      "acceptance": "Curved left arrow Undo icon should be visible\nThe behavior should be validated when bottom toolbar renders."
+    },
+    {
+      "test_id": "UTC-1611",
+      "srs_id": "SRS-118",
+      "sds_id": "SDS-118",
+      "summary": "Verify Default disabled state\nwhen no actions performed",
+      "description": "Feature: Undo Last Annotation Action\nScenario: Default disabled state\nGiven no actions performed\nWhen toolbar displayed\nThen Undo icon should appear greyed out",
+      "acceptance": "Undo icon should appear greyed out\nThe behavior should be validated when toolbar displayed."
+    },
+    {
+      "test_id": "UTC-1612",
+      "srs_id": "SRS-118",
+      "sds_id": "SDS-118",
+      "summary": "Verify Enable after action\nwhen annotation created",
+      "description": "Feature: Undo Last Annotation Action\nScenario: Enable after action\nGiven annotation created\nWhen action added to stack\nThen Undo icon should be enabled",
+      "acceptance": "Undo icon should be enabled\nThe behavior should be validated when action added to stack."
+    },
+    {
+      "test_id": "UTC-1613",
+      "srs_id": "SRS-118",
+      "sds_id": "SDS-118",
+      "summary": "Verify Undo last creation\nwhen annotation created",
+      "description": "Feature: Undo Last Annotation Action\nScenario: Undo last creation\nGiven annotation created\nWhen Undo clicked\nThen annotation should be removed from canvas",
+      "acceptance": "Annotation should be removed from canvas\nThe behavior should be validated when Undo clicked."
+    },
+    {
+      "test_id": "UTC-1614",
+      "srs_id": "SRS-118",
+      "sds_id": "SDS-118",
+      "summary": "Verify Undo movement\nwhen annotation moved",
+      "description": "Feature: Undo Last Annotation Action\nScenario: Undo movement\nGiven annotation moved\nWhen Undo clicked\nThen annotation should return to previous position",
+      "acceptance": "Annotation should return to previous position\nThe behavior should be validated when Undo clicked."
+    },
+    {
+      "test_id": "UTC-1615",
+      "srs_id": "SRS-118",
+      "sds_id": "SDS-118",
+      "summary": "Verify LIFO order maintained\nwhen multiple actions performed",
+      "description": "Feature: Undo Last Annotation Action\nScenario: LIFO order maintained\nGiven multiple actions performed\nWhen Undo clicked repeatedly\nThen actions should revert in reverse order",
+      "acceptance": "Actions should revert in reverse order\nThe behavior should be validated when Undo clicked repeatedly."
+    },
+    {
+      "test_id": "UTC-1616",
+      "srs_id": "SRS-118",
+      "sds_id": "SDS-118",
+      "summary": "Verify Stack transfer to Redo\nwhen Undo performed",
+      "description": "Feature: Undo Last Annotation Action\nScenario: Stack transfer to Redo\nGiven Undo performed\nWhen action reverted\nThen action should move to Redo stack",
+      "acceptance": "Action should move to Redo stack\nThe behavior should be validated when action reverted."
+    },
+    {
+      "test_id": "UTC-1617",
+      "srs_id": "SRS-118",
+      "sds_id": "SDS-118",
+      "summary": "Verify Ignore when stack empty\nwhen Undo stack empty",
+      "description": "Feature: Undo Last Annotation Action\nScenario: Ignore when stack empty\nGiven Undo stack empty\nWhen Undo clicked\nThen no change should occur",
+      "acceptance": "No change should occur\nThe behavior should be validated when Undo clicked."
+    },
+    {
+      "test_id": "UTC-1618",
+      "srs_id": "SRS-118",
+      "sds_id": "SDS-118",
+      "summary": "Verify Disabled after save\nwhen session saved",
+      "description": "Feature: Undo Last Annotation Action\nScenario: Disabled after save\nGiven session saved\nWhen toolbar updates\nThen Undo icon should be disabled",
+      "acceptance": "Undo icon should be disabled\nThe behavior should be validated when toolbar updates."
+    },
+    {
+      "test_id": "UTC-1619",
+      "srs_id": "SRS-118",
+      "sds_id": "SDS-118",
+      "summary": "Verify Keyboard shortcut works\nwhen actions available",
+      "description": "Feature: Undo Last Annotation Action\nScenario: Keyboard shortcut works\nGiven actions available\nWhen user presses Ctrl+Z\nThen last action should revert",
+      "acceptance": "Last action should revert\nThe behavior should be validated when user presses Ctrl+Z."
+    },
+    {
+      "test_id": "UTC-1620",
+      "srs_id": "SRS-118",
+      "sds_id": "SDS-118",
+      "summary": "Verify Shortcut disabled when inactive\nwhen Undo disabled",
+      "description": "Feature: Undo Last Annotation Action\nScenario: Shortcut disabled when inactive\nGiven Undo disabled\nWhen Ctrl+Z pressed\nThen no action should occur",
+      "acceptance": "No action should occur\nThe behavior should be validated when Ctrl+Z pressed."
+    },
+    {
+      "test_id": "UTC-1621",
+      "srs_id": "SRS-118",
+      "sds_id": "SDS-118",
+      "summary": "Verify Immediate UI update\nwhen Undo executed",
+      "description": "Feature: Undo Last Annotation Action\nScenario: Immediate UI update\nGiven Undo executed\nWhen action completes\nThen UI should update instantly without reload",
+      "acceptance": "UI should update instantly without reload\nThe behavior should be validated when action completes."
+    },
+    {
+      "test_id": "UTC-1622",
+      "srs_id": "SRS-118",
+      "sds_id": "SDS-118",
+      "summary": "Verify Rapid clicks handling\nwhen multiple rapid clicks",
+      "description": "Feature: Undo Last Annotation Action\nScenario: Rapid clicks handling\nGiven multiple rapid clicks\nWhen Undo pressed repeatedly\nThen system should not crash or duplicate actions",
+      "acceptance": "System should not crash or duplicate actions\nThe behavior should be validated when Undo pressed repeatedly."
+    },
+    {
+      "test_id": "UTC-1623",
+      "srs_id": "SRS-118",
+      "sds_id": "SDS-118",
+      "summary": "Verify Only unsaved changes revert\nwhen annotations saved",
+      "description": "Feature: Undo Last Annotation Action\nScenario: Only unsaved changes revert\nGiven annotations saved\nWhen Undo attempted\nThen saved actions should not revert",
+      "acceptance": "Saved actions should not revert\nThe behavior should be validated when Undo attempted."
+    },
+    {
+      "test_id": "UTC-1624",
+      "srs_id": "SRS-118",
+      "sds_id": "SDS-118",
+      "summary": "Verify Multiple undo performance\nwhen 20+ actions in stack",
+      "description": "Feature: Undo Last Annotation Action\nScenario: Multiple undo performance\nGiven 20+ actions in stack\nWhen Undo repeatedly\nThen UI should remain responsive",
+      "acceptance": "UI should remain responsive\nThe behavior should be validated when Undo repeatedly."
+    },
+    {
+      "test_id": "UTC-1625",
+      "srs_id": "SRS-118",
+      "sds_id": "SDS-118",
+      "summary": "Verify Clear visual feedback\nwhen actions available",
+      "description": "Feature: Undo Last Annotation Action\nScenario: Clear visual feedback\nGiven actions available\nWhen user views icon\nThen icon should be highlighted clearly",
+      "acceptance": "Icon should be highlighted clearly\nThe behavior should be validated when user views icon."
+    },
+    {
+      "test_id": "UTC-1626",
+      "srs_id": "SRS-119",
+      "sds_id": "SDS-119",
+      "summary": "Verify Redo icon visibility\nwhen annotation screen loads",
+      "description": "Feature: Redo Reverted Action\nScenario: Redo icon visibility\nGiven annotation screen loads\nWhen bottom toolbar renders\nThen curved right arrow Redo icon should be visible",
+      "acceptance": "Curved right arrow Redo icon should be visible\nThe behavior should be validated when bottom toolbar renders."
+    },
+    {
+      "test_id": "UTC-1627",
+      "srs_id": "SRS-119",
+      "sds_id": "SDS-119",
+      "summary": "Verify Default disabled state\nwhen no undo action performed",
+      "description": "Feature: Redo Reverted Action\nScenario: Default disabled state\nGiven no undo action performed\nWhen toolbar displayed\nThen Redo icon should appear greyed out",
+      "acceptance": "Redo icon should appear greyed out\nThe behavior should be validated when toolbar displayed."
+    },
+    {
+      "test_id": "UTC-1628",
+      "srs_id": "SRS-119",
+      "sds_id": "SDS-119",
+      "summary": "Verify Enable after undo\nwhen user performs Undo",
+      "description": "Feature: Redo Reverted Action\nScenario: Enable after undo\nGiven user performs Undo\nWhen action moves to Redo stack\nThen Redo icon should become enabled",
+      "acceptance": "Redo icon should become enabled\nThe behavior should be validated when action moves to Redo stack."
+    },
+    {
+      "test_id": "UTC-1629",
+      "srs_id": "SRS-119",
+      "sds_id": "SDS-119",
+      "summary": "Verify Restore last undone action\nwhen annotation undone",
+      "description": "Feature: Redo Reverted Action\nScenario: Restore last undone action\nGiven annotation undone\nWhen Redo clicked\nThen annotation should be restored on canvas",
+      "acceptance": "Annotation should be restored on canvas\nThe behavior should be validated when Redo clicked."
+    },
+    {
+      "test_id": "UTC-1630",
+      "srs_id": "SRS-119",
+      "sds_id": "SDS-119",
+      "summary": "Verify Restore movement\nwhen annotation position undone",
+      "description": "Feature: Redo Reverted Action\nScenario: Restore movement\nGiven annotation position undone\nWhen Redo clicked\nThen annotation returns to moved position",
+      "acceptance": "Annotation returns to moved position\nThe behavior should be validated when Redo clicked."
+    },
+    {
+      "test_id": "UTC-1631",
+      "srs_id": "SRS-119",
+      "sds_id": "SDS-119",
+      "summary": "Verify FIFO restoration order\nwhen multiple undo actions exist",
+      "description": "Feature: Redo Reverted Action\nScenario: FIFO restoration order\nGiven multiple undo actions exist\nWhen Redo clicked repeatedly\nThen actions should restore in correct order",
+      "acceptance": "Actions should restore in correct order\nThe behavior should be validated when Redo clicked repeatedly."
+    },
+    {
+      "test_id": "UTC-1632",
+      "srs_id": "SRS-119",
+      "sds_id": "SDS-119",
+      "summary": "Verify Stack movement validation\nwhen Redo executed",
+      "description": "Feature: Redo Reverted Action\nScenario: Stack movement validation\nGiven Redo executed\nWhen action restored\nThen item moves from Redo stack to Undo stack",
+      "acceptance": "Item moves from Redo stack to Undo stack\nThe behavior should be validated when action restored."
+    },
+    {
+      "test_id": "UTC-1633",
+      "srs_id": "SRS-119",
+      "sds_id": "SDS-119",
+      "summary": "Verify Disabled when stack empty\nwhen Redo stack empty",
+      "description": "Feature: Redo Reverted Action\nScenario: Disabled when stack empty\nGiven Redo stack empty\nWhen Redo clicked\nThen no change should occur",
+      "acceptance": "No change should occur\nThe behavior should be validated when Redo clicked."
+    },
+    {
+      "test_id": "UTC-1634",
+      "srs_id": "SRS-119",
+      "sds_id": "SDS-119",
+      "summary": "Verify New action clears Redo stack\nwhen undo performed",
+      "description": "Feature: Redo Reverted Action\nScenario: New action clears Redo stack\nGiven undo performed\nWhen new annotation created\nThen Redo stack should clear and button disabled",
+      "acceptance": "Redo stack should clear and button disabled\nThe behavior should be validated when new annotation created."
+    },
+    {
+      "test_id": "UTC-1635",
+      "srs_id": "SRS-119",
+      "sds_id": "SDS-119",
+      "summary": "Verify Disabled after save\nwhen session saved",
+      "description": "Feature: Redo Reverted Action\nScenario: Disabled after save\nGiven session saved\nWhen toolbar updates\nThen Redo icon should be disabled",
+      "acceptance": "Redo icon should be disabled\nThe behavior should be validated when toolbar updates."
+    },
+    {
+      "test_id": "UTC-1636",
+      "srs_id": "SRS-119",
+      "sds_id": "SDS-119",
+      "summary": "Verify Keyboard shortcut works\nwhen Redo available",
+      "description": "Feature: Redo Reverted Action\nScenario: Keyboard shortcut works\nGiven Redo available\nWhen user presses Ctrl+Shift+Z\nThen last undone action should be restored",
+      "acceptance": "Last undone action should be restored\nThe behavior should be validated when user presses Ctrl+Shift+Z."
+    },
+    {
+      "test_id": "UTC-1637",
+      "srs_id": "SRS-119",
+      "sds_id": "SDS-119",
+      "summary": "Verify Shortcut disabled when inactive\nwhen Redo disabled",
+      "description": "Feature: Redo Reverted Action\nScenario: Shortcut disabled when inactive\nGiven Redo disabled\nWhen shortcut pressed\nThen no action should occur",
+      "acceptance": "No action should occur\nThe behavior should be validated when shortcut pressed."
+    },
+    {
+      "test_id": "UTC-1638",
+      "srs_id": "SRS-119",
+      "sds_id": "SDS-119",
+      "summary": "Verify Immediate UI update\nwhen Redo clicked",
+      "description": "Feature: Redo Reverted Action\nScenario: Immediate UI update\nGiven Redo clicked\nWhen action restored\nThen UI updates instantly without reload",
+      "acceptance": "UI updates instantly without reload\nThe behavior should be validated when action restored."
+    },
+    {
+      "test_id": "UTC-1639",
+      "srs_id": "SRS-119",
+      "sds_id": "SDS-119",
+      "summary": "Verify Rapid clicks handling\nwhen multiple rapid clicks",
+      "description": "Feature: Redo Reverted Action\nScenario: Rapid clicks handling\nGiven multiple rapid clicks\nWhen Redo pressed repeatedly\nThen system should not crash or duplicate actions",
+      "acceptance": "System should not crash or duplicate actions\nThe behavior should be validated when Redo pressed repeatedly."
+    },
+    {
+      "test_id": "UTC-1640",
+      "srs_id": "SRS-119",
+      "sds_id": "SDS-119",
+      "summary": "Verify Large stack performance\nwhen 20+ actions in redo stack",
+      "description": "Feature: Redo Reverted Action\nScenario: Large stack performance\nGiven 20+ actions in redo stack\nWhen Redo repeatedly\nThen UI should remain responsive",
+      "acceptance": "UI should remain responsive\nThe behavior should be validated when Redo repeatedly."
+    },
+    {
+      "test_id": "UTC-1641",
+      "srs_id": "SRS-119",
+      "sds_id": "SDS-119",
+      "summary": "Verify Prevent redo after external refresh\nwhen external data refresh occurs",
+      "description": "Feature: Redo Reverted Action\nScenario: Prevent redo after external refresh\nGiven external data refresh occurs\nWhen Redo attempted\nThen action should be blocked safely",
+      "acceptance": "Action should be blocked safely\nThe behavior should be validated when Redo attempted."
+    },
+    {
+      "test_id": "UTC-1642",
+      "srs_id": "SRS-120",
+      "sds_id": "SDS-120",
+      "summary": "Verify Buttons visible on toolbar\nwhen annotation page loads",
+      "description": "Feature: Undo/Redo Visual States\nScenario: Buttons visible on toolbar\nGiven annotation page loads\nWhen bottom toolbar renders\nThen Undo and Redo buttons should be visible",
+      "acceptance": "Undo and Redo buttons should be visible\nThe behavior should be validated when bottom toolbar renders."
+    },
+    {
+      "test_id": "UTC-1643",
+      "srs_id": "SRS-120",
+      "sds_id": "SDS-120",
+      "summary": "Verify Default disabled state\nwhen no history exists",
+      "description": "Feature: Undo/Redo Visual States\nScenario: Default disabled state\nGiven no history exists\nWhen toolbar loads\nThen both buttons should appear disabled with 0.5 opacity",
+      "acceptance": "Both buttons should appear disabled with 0.5 opacity\nThe behavior should be validated when toolbar loads."
+    },
+    {
+      "test_id": "UTC-1644",
+      "srs_id": "SRS-120",
+      "sds_id": "SDS-120",
+      "summary": "Verify Undo enables after action\nwhen user performs an annotation",
+      "description": "Feature: Undo/Redo Visual States\nScenario: Undo enables after action\nGiven user performs an annotation\nWhen history stack updated\nThen Undo button should become enabled",
+      "acceptance": "Undo button should become enabled\nThe behavior should be validated when history stack updated."
+    },
+    {
+      "test_id": "UTC-1645",
+      "srs_id": "SRS-120",
+      "sds_id": "SDS-120",
+      "summary": "Verify Redo enables after undo\nwhen user performs Undo",
+      "description": "Feature: Undo/Redo Visual States\nScenario: Redo enables after undo\nGiven user performs Undo\nWhen redo stack has item\nThen Redo button should become enabled",
+      "acceptance": "Redo button should become enabled\nThe behavior should be validated when redo stack has item."
+    },
+    {
+      "test_id": "UTC-1646",
+      "srs_id": "SRS-120",
+      "sds_id": "SDS-120",
+      "summary": "Verify Disabled tooltip for Undo\nwhen Undo disabled",
+      "description": "Feature: Undo/Redo Visual States\nScenario: Disabled tooltip for Undo\nGiven Undo disabled\nWhen user hovers over button\nThen tooltip “No actions to undo” should appear",
+      "acceptance": "Tooltip \"No actions to undo\" should appear\nThe behavior should be validated when user hovers over button."
+    },
+    {
+      "test_id": "UTC-1647",
+      "srs_id": "SRS-120",
+      "sds_id": "SDS-120",
+      "summary": "Verify Disabled tooltip for Redo\nwhen Redo disabled",
+      "description": "Feature: Undo/Redo Visual States\nScenario: Disabled tooltip for Redo\nGiven Redo disabled\nWhen hovered\nThen tooltip “No actions to redo” should appear",
+      "acceptance": "Tooltip \"No actions to redo\" should appear\nThe behavior should be validated when hovered."
+    },
+    {
+      "test_id": "UTC-1648",
+      "srs_id": "SRS-120",
+      "sds_id": "SDS-120",
+      "summary": "Verify Buttons update dynamically\nwhen multiple actions performed",
+      "description": "Feature: Undo/Redo Visual States\nScenario: Buttons update dynamically\nGiven multiple actions performed\nWhen undo/redo stack changes\nThen buttons should toggle enabled/disabled instantly",
+      "acceptance": "Buttons should toggle enabled/disabled instantly\nThe behavior should be validated when undo/redo stack changes."
+    },
+    {
+      "test_id": "UTC-1649",
+      "srs_id": "SRS-120",
+      "sds_id": "SDS-120",
+      "summary": "Verify Save clears history\nwhen history exists",
+      "description": "Feature: Undo/Redo Visual States\nScenario: Save clears history\nGiven history exists\nWhen Save clicked successfully\nThen both buttons become disabled",
+      "acceptance": "Both buttons become disabled\nThe behavior should be validated when Save clicked successfully."
+    },
+    {
+      "test_id": "UTC-1650",
+      "srs_id": "SRS-120",
+      "sds_id": "SDS-120",
+      "summary": "Verify History stacks cleared on save\nwhen save successful",
+      "description": "Feature: Undo/Redo Visual States\nScenario: History stacks cleared on save\nGiven save successful\nWhen stacks purged\nThen undo/redo arrays should be empty",
+      "acceptance": "Undo/redo arrays should be empty\nThe behavior should be validated when stacks purged."
+    },
+    {
+      "test_id": "UTC-1651",
+      "srs_id": "SRS-120",
+      "sds_id": "SDS-120",
+      "summary": "Verify Tooltip after save\nwhen save completed",
+      "description": "Feature: Undo/Redo Visual States\nScenario: Tooltip after save\nGiven save completed\nWhen hovering buttons\nThen tooltip “History cleared after save” should appear",
+      "acceptance": "Tooltip \"History cleared after save\" should appear\nThe behavior should be validated when hovering buttons."
+    }
+  ]
+}

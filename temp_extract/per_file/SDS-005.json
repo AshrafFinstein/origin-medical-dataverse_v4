@@ -1,0 +1,147 @@
+{
+  "spec_file": "e2e/tests/qc-workflow/URS-DV-QC-01/SRS-005/SDS-005.spec.ts",
+  "plan_urs": "URS-DV-QC-01",
+  "srs_str": "005",
+  "domain": "qc-workflow",
+  "page_class": "QcWorkflowPage",
+  "page_import": "qc-workflow.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-73",
+      "srs_id": "SRS-9",
+      "sds_id": "SDS-9",
+      "summary": "Verify Image rejection at Level processes without delay\nwhen an image is in IN_REVIEW",
+      "description": "Feature: Reject action responsiveness\n\nScenario: Image rejection at Level processes without delay\n\nGiven an image is in IN_REVIEW\nWhen the Level user clicks Reject\nThen the image should move to the previous level immediately without UI freeze",
+      "acceptance": "The image should move to the previous level immediately without UI freeze\nThe behavior should be validated when the Level user clicks Reject."
+    },
+    {
+      "test_id": "UTC-74",
+      "srs_id": "SRS-9",
+      "sds_id": "SDS-9",
+      "summary": "Verify Image acceptance at Level loads smoothly\nwhen the image reaches IN_REVIEW L",
+      "description": "Feature: Multi-level approval performance consistency\n\nScenario: Image acceptance at Level loads smoothly\n\nGiven the image reaches IN_REVIEW L\nWhen the Level user accepts the image\nThen status transition to Level should occur without delay",
+      "acceptance": "Status transition to Level should occur without delay\nThe behavior should be validated when the Level user accepts the image."
+    },
+    {
+      "test_id": "UTC-75",
+      "srs_id": "SRS-9",
+      "sds_id": "SDS-9",
+      "summary": "Verify Image review at Level performs efficiently\nwhen the user logs in as Approval Level",
+      "description": "Feature: High-level approval workflow responsiveness\n\nScenario: Image review at Level performs efficiently\n\nGiven the user logs in as Approval Level\nWhen images and session details are loaded\nThen all UI elements should respond quickly without lag",
+      "acceptance": "All UI elements should respond quickly without lag\nThe behavior should be validated when images and session details are loaded."
+    },
+    {
+      "test_id": "UTC-76",
+      "srs_id": "SRS-9",
+      "sds_id": "SDS-9",
+      "summary": "Verify Final accept/reject at Level  completes without delay\nwhen the image is in IN_REVIEW L",
+      "description": "Feature: Final approval performance handling\n\nScenario: Final accept/reject at Level  completes without delay\n\nGiven the image is in IN_REVIEW L\nWhen the Level  user clicks Accept or Reject\nThen the final status update should reflect immediately",
+      "acceptance": "The final status update should reflect immediately\nThe behavior should be validated when the Level  user clicks Accept or Reject."
+    },
+    {
+      "test_id": "UTC-77",
+      "srs_id": "SRS-9",
+      "sds_id": "SDS-9",
+      "summary": "Verify UI remains responsive after accept/reject actions\nwhen an approval action is completed at any level",
+      "description": "Feature: Post-action UI stability\n\nScenario: UI remains responsive after accept/reject actions\n\nGiven an approval action is completed at any level\nWhen the image grid refreshes\nThen no UI freeze, delay, or blocking behavior should occur",
+      "acceptance": "No UI freeze, delay, or blocking behavior should occur\nThe behavior should be validated when the image grid refreshes."
+    },
+    {
+      "test_id": "UTC-78",
+      "srs_id": "SRS-9",
+      "sds_id": "SDS-9",
+      "summary": "Verify System shows non-blocking indicator if minor delay occurs\nwhen a temporary processing delay happens",
+      "description": "Feature: Non-blocking delay handling\n\nScenario: System shows non-blocking indicator if minor delay occurs\n\nGiven a temporary processing delay happens\nWhen approval action is submitted\nThen a non-blocking status indicator should be shown without locking UI",
+      "acceptance": "A non-blocking status indicator should be shown without locking UI\nThe behavior should be validated when approval action is submitted."
+    },
+    {
+      "test_id": "UTC-79",
+      "srs_id": "SRS-9",
+      "sds_id": "SDS-9",
+      "summary": "Verify Image flows from Level 1 to Level 5 smoothly\nwhen the same image is accepted sequentially from Level 1 to Level 5",
+      "description": "Feature: End-to-end approval performance\n\nScenario: Image flows from Level 1 to Level 5 smoothly\n\nGiven the same image is accepted sequentially from Level 1 to Level 5\nWhen each level user logs in and performs action\nThen no cumulative delay or performance degradation should occur",
+      "acceptance": "No cumulative delay or performance degradation should occur\nThe behavior should be validated when each level user logs in and performs action."
+    },
+    {
+      "test_id": "UTC-80",
+      "srs_id": "SRS-10",
+      "sds_id": "SDS-10",
+      "summary": "Verify Assignee and Approval users see consistent layout\nwhen the user logs in as Assignee or Approval Level user",
+      "description": "Feature: Clear and consistent UI across roles\n\nScenario: Assignee and Approval users see consistent layout\n\nGiven the user logs in as Assignee or Approval Level user\nWhen the Data Labeling page is opened\nThen the page layout, icons, and controls should be consistent across roles",
+      "acceptance": "The page layout, icons, and controls should be consistent across roles\nThe behavior should be validated when the Data Labeling page is opened."
+    },
+    {
+      "test_id": "UTC-81",
+      "srs_id": "SRS-10",
+      "sds_id": "SDS-10",
+      "summary": "Verify User can easily identify image status\nwhen images are displayed in the grid",
+      "description": "Feature: Image status clarity\n\nScenario: User can easily identify image status\n\nGiven images are displayed in the grid\nWhen the user views image cards\nThen status labels such as PENDING, IN_REVIEW, ACCEPTED, REJECTED should be clearly visible",
+      "acceptance": "Status labels such as PENDING, IN_REVIEW, ACCEPTED, REJECTED should be clearly visible\nThe behavior should be validated when the user views image cards."
+    },
+    {
+      "test_id": "UTC-82",
+      "srs_id": "SRS-10",
+      "sds_id": "SDS-10",
+      "summary": "Verify Approval level is clearly indicated on images\nwhen an image is under review",
+      "description": "Feature: Approval level indicator visibility\n\nScenario: Approval level is clearly indicated on images\n\nGiven an image is under review\nWhen the image card is displayed\nThen approval level indicators like L1, L2, L3, L4, L5 should be clearly shown",
+      "acceptance": "Approval level indicators like L1, L2, L3, L4, L5 should be clearly shown\nThe behavior should be validated when the image card is displayed."
+    },
+    {
+      "test_id": "UTC-83",
+      "srs_id": "SRS-10",
+      "sds_id": "SDS-10",
+      "summary": "Verify User navigates between sessions smoothly\nwhen the user is on the Session list page",
+      "description": "Feature: Easy navigation across sessions\n\nScenario: User navigates between sessions smoothly\n\nGiven the user is on the Session list page\nWhen the user navigates between different sessions\nThen navigation should be intuitive with clear breadcrumbs and page titles",
+      "acceptance": "Navigation should be intuitive with clear breadcrumbs and page titles\nThe behavior should be validated when the user navigates between different sessions."
+    },
+    {
+      "test_id": "UTC-84",
+      "srs_id": "SRS-10",
+      "sds_id": "SDS-10",
+      "summary": "Verify Actions remain predictable across approval levels\nwhen users at different approval levels access the same workflow",
+      "description": "Feature: Consistent action buttons across levels\n\nScenario: Actions remain predictable across approval levels\n\nGiven users at different approval levels access the same workflow\nWhen action buttons are displayed\nThen Accept, Reject, View actions should appear consistently based on role",
+      "acceptance": "Accept, Reject, View actions should appear consistently based on role\nThe behavior should be validated when action buttons are displayed."
+    },
+    {
+      "test_id": "UTC-85",
+      "srs_id": "SRS-10",
+      "sds_id": "SDS-10",
+      "summary": "Verify User understands actions via tooltips\nwhen the user hovers over icons or buttons",
+      "description": "Feature: Tooltip and label guidance\n\nScenario: User understands actions via tooltips\n\nGiven the user hovers over icons or buttons\nWhen tooltips are shown\nThen the tooltip text should clearly explain the action in simple language",
+      "acceptance": "The tooltip text should clearly explain the action in simple language\nThe behavior should be validated when tooltips are shown."
+    },
+    {
+      "test_id": "UTC-86",
+      "srs_id": "SRS-10",
+      "sds_id": "SDS-10",
+      "summary": "Verify UI updates instantly after user action\nwhen the user performs Accept or Reject action",
+      "description": "Feature: Immediate UI feedback on actions\n\nScenario: UI updates instantly after user action\n\nGiven the user performs Accept or Reject action\nWhen the action is completed\nThen image status and approval level should update immediately in the UI",
+      "acceptance": "Image status and approval level should update immediately in the UI\nThe behavior should be validated when the action is completed."
+    },
+    {
+      "test_id": "UTC-87",
+      "srs_id": "SRS-10",
+      "sds_id": "SDS-10",
+      "summary": "Verify User receives understandable error messages\nwhen a restricted or invalid action is performed",
+      "description": "Feature: Plain-language validation messages\n\nScenario: User receives understandable error messages\n\nGiven a restricted or invalid action is performed\nWhen an error message is displayed\nThen the message should be in plain, non-technical language",
+      "acceptance": "The message should be in plain, non-technical language\nThe behavior should be validated when an error message is displayed."
+    },
+    {
+      "test_id": "UTC-88",
+      "srs_id": "SRS-10",
+      "sds_id": "SDS-10",
+      "summary": "Verify User understands why actions are disabled\nwhen the image is not in the user's active approval level",
+      "description": "Feature: Role-based restriction clarity\n\nScenario: User understands why actions are disabled\n\nGiven the image is not in the user’s active approval level\nWhen the user views the image\nThen edit and action controls should be disabled with clear indication",
+      "acceptance": "Edit and action controls should be disabled with clear indication\nThe behavior should be validated when the user views the image."
+    },
+    {
+      "test_id": "UTC-89",
+      "srs_id": "SRS-10",
+      "sds_id": "SDS-10",
+      "summary": "Verify End-to-end image review is easy to understand\nwhen a user participates in the review workflow from login to action",
+      "description": "Feature: Overall review experience simplicity\n\nScenario: End-to-end image review is easy to understand\n\nGiven a user participates in the review workflow from login to action\nWhen navigating, reviewing, and approving images\nThen the workflow should feel intuitive without requiring training",
+      "acceptance": "The workflow should feel intuitive without requiring training\nThe behavior should be validated when navigating, reviewing, and approving images."
+    }
+  ]
+}

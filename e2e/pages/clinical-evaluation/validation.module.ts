@@ -1,13 +1,14 @@
 import { BaseModule } from '../shared/base-module';
+import { getDynamicSelector } from '../../selectors';
 
 export class CEValidationModule extends BaseModule {
   async areRequiredFieldsCompleted(): Promise<boolean> {
-    const hasErrors = await this.page.locator(this.selectors.clinicalEvaluation['ce-validation'].error).count();
+    const hasErrors = await this.page.locator(this.selectors.clinicalEvaluation['ce-validation-error']).count();
     return hasErrors === 0;
   }
 
   async getValidationErrors(): Promise<string[]> {
-    const errorElements = this.page.locator(this.selectors.clinicalEvaluation['ce-validation'].error);
+    const errorElements = this.page.locator(this.selectors.clinicalEvaluation['ce-validation-error']);
     const count = await errorElements.count();
     const errors: string[] = [];
 
@@ -22,11 +23,11 @@ export class CEValidationModule extends BaseModule {
   }
 
   async isEvaluationSaved(): Promise<boolean> {
-    return await this.isVisible(this.selectors.clinicalEvaluation['ce-status'].saved);
+    return await this.isVisible(this.selectors.clinicalEvaluation['ce-status-saved']);
   }
 
   async getCurrentCaseInfo(): Promise<{ current: number; total: number }> {
-    const infoText = await this.ctx.getText(this.selectors.clinicalEvaluation['ce-case-counter'].root);
+    const infoText = await this.ctx.getText(this.selectors.clinicalEvaluation['ce-case-counter']);
     const match = infoText.match(/(\d+)\s+of\s+(\d+)/);
 
     if (match) {
@@ -40,8 +41,8 @@ export class CEValidationModule extends BaseModule {
   }
 
   async isMeasurementUnreliable(data: { sectionIndex: number; measurementIndex: number }): Promise<boolean> {
-    const selector = this.ctx.getSelector(
-      this.selectors.common['`ce-measurement']['unreliable-${section.index}-${measurement.index}`'],
+    const selector = getDynamicSelector(
+      this.selectors.common['ce-measurement-unreliable-${section.index}-${measurement.index}'],
       {
         'section.index': data.sectionIndex,
         'measurement.index': data.measurementIndex
@@ -52,7 +53,7 @@ export class CEValidationModule extends BaseModule {
   }
 
   async getSectionCount(): Promise<number> {
-    const sections = this.page.locator(this.selectors.clinicalEvaluation['ce-sections'].legend);
+    const sections = this.page.locator(this.selectors.clinicalEvaluation['ce-sections-legend']);
     return await sections.count();
   }
 

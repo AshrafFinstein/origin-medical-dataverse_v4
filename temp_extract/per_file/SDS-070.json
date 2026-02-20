@@ -1,0 +1,131 @@
+{
+  "spec_file": "e2e/tests/session-management/URS-DV-GEN-19/SRS-070/SDS-070.spec.ts",
+  "plan_urs": "URS-DV-GEN-19",
+  "srs_str": "070",
+  "domain": "session-management",
+  "page_class": "SessionLockPage",
+  "page_import": "session-lock.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-2669",
+      "srs_id": "SRS-257",
+      "sds_id": "SDS-257",
+      "summary": "Verify unlock submission is blocked if reason is empty\nwhen Unlock popup is opened",
+      "description": "Feature: Unlock Session – Reason Mandatory Validation\n\nScenario: Verify unlock submission is blocked if reason is empty\n\nGiven Unlock popup is opened\nWhen the user keeps Reason field empty\nAnd clicks Submit\nThen the system should block unlock action\nAnd mandatory validation should be shown",
+      "acceptance": "The system should block unlock action\nThe behavior should be validated when the user keeps Reason field empty."
+    },
+    {
+      "test_id": "UTC-2670",
+      "srs_id": "SRS-257",
+      "sds_id": "SDS-257",
+      "summary": "Verify session unlocks successfully with valid reason\nwhen Unlock popup is opened",
+      "description": "Feature: Unlock Session – Successful Unlock\n\nScenario: Verify session unlocks successfully with valid reason\n\nGiven Unlock popup is opened\nWhen the user enters a valid unlock reason\nAnd clicks Submit\nThen the session should be unlocked successfully\nAnd session state should change to Re-open",
+      "acceptance": "The session should be unlocked successfully\nThe behavior should be validated when the user enters a valid unlock reason."
+    },
+    {
+      "test_id": "UTC-2671",
+      "srs_id": "SRS-257",
+      "sds_id": "SDS-257",
+      "summary": "Verify Edit/Delete actions are enabled after session unlock\nwhen the session was locked and then unlocked successfully",
+      "description": "Feature: Unlock Session – Actions Enabled After Unlock\n\nScenario: Verify Edit/Delete actions are enabled after session unlock\n\nGiven the session was locked and then unlocked successfully\nWhen the user views Actions column for that session\nThen Edit and Delete actions should become enabled",
+      "acceptance": "Edit and Delete actions should become enabled\nThe behavior should be validated when the user views Actions column for that session."
+    },
+    {
+      "test_id": "UTC-2672",
+      "srs_id": "SRS-257",
+      "sds_id": "SDS-257",
+      "summary": "Verify session remains locked when user cancels unlock popup\nwhen Unlock popup is opened",
+      "description": "Feature: Unlock Session – Cancel Does Not Unlock Session\n\nScenario: Verify session remains locked when user cancels unlock popup\n\nGiven Unlock popup is opened\nWhen the user enters a reason\nAnd clicks Cancel\nThen the popup should close\nAnd the session should remain locked",
+      "acceptance": "The popup should close\nThe behavior should be validated when the user enters a reason."
+    },
+    {
+      "test_id": "UTC-2673",
+      "srs_id": "SRS-257",
+      "sds_id": "SDS-257",
+      "summary": "Verify unauthorized user cannot unlock session\nwhen a session is locked",
+      "description": "Feature: Unlock Session – Only Authorized Users Can Unlock\n\nScenario: Verify unauthorized user cannot unlock session\n\nGiven a session is locked\nAnd the logged-in user does not have Lock permission\nWhen the user tries to unlock the session\nThen the system should block the unlock action\nAnd session should remain locked",
+      "acceptance": "The system should block the unlock action\nThe behavior should be validated when the user tries to unlock the session."
+    },
+    {
+      "test_id": "UTC-2674",
+      "srs_id": "SRS-257",
+      "sds_id": "SDS-257",
+      "summary": "Verify unlock reason is stored for audit and visible in history/tooltip if available\nwhen the session is unlocked with a reason",
+      "description": "Feature: Unlock Session – Unlock Reason Stored\n\nScenario: Verify unlock reason is stored for audit and visible in history/tooltip if available\n\nGiven the session is unlocked with a reason\nWhen the user checks lock/unlock info (tooltip/log if available)\nThen the unlock reason should be recorded correctly",
+      "acceptance": "The unlock reason should be recorded correctly\nThe behavior should be validated when the user checks lock/unlock info (tooltip/log if available)."
+    },
+    {
+      "test_id": "UTC-2675",
+      "srs_id": "SRS-258",
+      "sds_id": "SDS-258",
+      "summary": "Verify lock icon is visible but disabled when user belongs to group but lacks lock permission\nwhen the user is assigned to the project/session group",
+      "description": "Feature: Lock Icon – Disabled Without Lock Permission\n\nScenario: Verify lock icon is visible but disabled when user belongs to group but lacks lock permission\n\nGiven the user is assigned to the project/session group\nAnd the user role does not have Lock permission enabled\nWhen the user opens Data Labelling Session list page\nThen the Lock icon should be visible\nAnd it should be greyed out and non-clickable",
+      "acceptance": "The Lock icon should be visible\nThe behavior should be validated when the user opens Data Labelling Session list page."
+    },
+    {
+      "test_id": "UTC-2676",
+      "srs_id": "SRS-258",
+      "sds_id": "SDS-258",
+      "summary": "Verify clicking disabled lock icon does not open popup\nwhen lock icon is displayed in disabled state",
+      "description": "Feature: Lock Icon – Click Ignored in Disabled State\n\nScenario: Verify clicking disabled lock icon does not open popup\n\nGiven lock icon is displayed in disabled state\nWhen the user clicks the disabled Lock icon\nThen Lock popup should not open\nAnd no action should be performed",
+      "acceptance": "Lock popup should not open\nThe behavior should be validated when the user clicks the disabled Lock icon."
+    },
+    {
+      "test_id": "UTC-2677",
+      "srs_id": "SRS-258",
+      "sds_id": "SDS-258",
+      "summary": "Verify tooltip message indicates permission missing\nwhen lock icon is disabled",
+      "description": "Feature: Lock Icon – Tooltip for Disabled State (If Available)\n\nScenario: Verify tooltip message indicates permission missing\n\nGiven lock icon is disabled\nWhen the user hovers over the lock icon\nThen tooltip should indicate lock permission is required (if tooltip is implemented)",
+      "acceptance": "Tooltip should indicate lock permission is required (if tooltip is implemented)\nThe behavior should be validated when the user hovers over the lock icon."
+    },
+    {
+      "test_id": "UTC-2678",
+      "srs_id": "SRS-258",
+      "sds_id": "SDS-258",
+      "summary": "Verify disabled lock icon becomes enabled after Lock permission is granted\nwhen the user is in the group but lock permission is disabled initially",
+      "description": "Feature: Lock Icon – Enabled After Permission Granted\n\nScenario: Verify disabled lock icon becomes enabled after Lock permission is granted\n\nGiven the user is in the group but lock permission is disabled initially\nWhen admin enables Lock permission for the user role\nAnd the user refreshes or re-login\nThen the lock icon should become enabled and clickable",
+      "acceptance": "The lock icon should become enabled and clickable\nThe behavior should be validated when admin enables Lock permission for the user role."
+    },
+    {
+      "test_id": "UTC-2679",
+      "srs_id": "SRS-258",
+      "sds_id": "SDS-258",
+      "summary": "Verify user cannot lock session via API even if icon is visible disabled\nwhen the user belongs to the group but lacks Lock permission",
+      "description": "Feature: Lock Action – Blocked Without Permission Even If Visible\n\nScenario: Verify user cannot lock session via API even if icon is visible disabled\n\nGiven the user belongs to the group but lacks Lock permission\nWhen the user attempts lock action through direct request/API call\nThen the system should reject the request\nAnd session should remain unlocked",
+      "acceptance": "The system should reject the request\nThe behavior should be validated when the user attempts lock action through direct request/API call."
+    },
+    {
+      "test_id": "UTC-2680",
+      "srs_id": "SRS-259",
+      "sds_id": "SDS-259",
+      "summary": "Verify backend rejects update request for locked session\nwhen a session is locked successfully",
+      "description": "Feature: Locked Session – Backend Blocks Edit API\n\nScenario: Verify backend rejects update request for locked session\n\nGiven a session is locked successfully\nWhen the user attempts to update session details using direct request/API (bypass UI)\nThen the system should reject the request\nAnd return access denied response",
+      "acceptance": "The system should reject the request\nThe behavior should be validated when the user attempts to update session details using direct request/API (bypass UI)."
+    },
+    {
+      "test_id": "UTC-2681",
+      "srs_id": "SRS-259",
+      "sds_id": "SDS-259",
+      "summary": "Verify backend rejects delete request for locked session\nwhen a session is locked successfully",
+      "description": "Feature: Locked Session – Backend Blocks Delete API\n\nScenario: Verify backend rejects delete request for locked session\n\nGiven a session is locked successfully\nWhen the user attempts to delete session using direct request/API call\nThen the system should reject the request\nAnd return access denied response",
+      "acceptance": "The system should reject the request\nThe behavior should be validated when the user attempts to delete session using direct request/API call."
+    },
+    {
+      "test_id": "UTC-2682",
+      "srs_id": "SRS-259",
+      "sds_id": "SDS-259",
+      "summary": "Verify backend rejects session status update when session is locked\nwhen a session is locked",
+      "description": "Feature: Locked Session – Backend Blocks Status Change\n\nScenario: Verify backend rejects session status update when session is locked\n\nGiven a session is locked\nWhen the user attempts to change session status through API (Completed → Re-open / In progress)\nThen the system should reject the request\nAnd session status should remain unchanged",
+      "acceptance": "The system should reject the request\nThe behavior should be validated when the user attempts to change session status through API (Completed â†’ Re-open / In progress)."
+    },
+    {
+      "test_id": "UTC-2683",
+      "srs_id": "SRS-259",
+      "sds_id": "SDS-259",
+      "summary": "Verify backend blocks updates to session configuration fields when locked\nwhen a session is locked successfully",
+      "description": "Feature: Locked Session – Backend Blocks Configuration Update\n\nScenario: Verify backend blocks updates to session configuration fields when locked\n\nGiven a session is locked successfully\nWhen the user attempts to update session config fields (labels, assignees, reviewers, approval levels) using API\nThen the system should reject the update request\nAnd no changes should be saved",
+      "acceptance": "The system should reject the update request\nThe behavior should be validated when the user attempts to update session config fields (labels, assignees, reviewers, approval levels) using API."
+    }
+  ]
+}

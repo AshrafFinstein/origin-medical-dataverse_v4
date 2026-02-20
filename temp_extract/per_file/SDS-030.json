@@ -1,0 +1,1083 @@
+{
+  "spec_file": "e2e/tests/session-management/URS-DV-GEN-07/SRS-030/SDS-030.spec.ts",
+  "plan_urs": "URS-DV-GEN-07",
+  "srs_str": "030",
+  "domain": "session-management",
+  "page_class": "SessionPage",
+  "page_import": "session.page",
+  "goto_method": "navigate",
+  "test_cases": [
+    {
+      "test_id": "UTC-757",
+      "srs_id": "SRS-63",
+      "sds_id": "SDS-63",
+      "summary": "Verify Session Name field visibility\nwhen the user opens Session Creation page",
+      "description": "Feature: Unique session title input with validation and constraints\nScenario: Session Name field visibility\nGiven the user opens Session Creation page\nWhen the page loads\nThen a full-width Session Name text input should be visible",
+      "acceptance": "A full-width Session Name text input should be visible\nThe behavior should be validated when the page loads."
+    },
+    {
+      "test_id": "UTC-758",
+      "srs_id": "SRS-63",
+      "sds_id": "SDS-63",
+      "summary": "Verify Placeholder displayed\nwhen the input is empty",
+      "description": "Feature: Unique session title input with validation and constraints\nScenario: Placeholder displayed\nGiven the input is empty\nWhen field is rendered\nThen placeholder \"Enter session name\" should be shown",
+      "acceptance": "Placeholder \"Enter session name\" should be shown\nThe behavior should be validated when field is rendered."
+    },
+    {
+      "test_id": "UTC-759",
+      "srs_id": "SRS-63",
+      "sds_id": "SDS-63",
+      "summary": "Verify Accept valid text input\nwhen the user types a valid name",
+      "description": "Feature: Unique session title input with validation and constraints\nScenario: Accept valid text input\nGiven the user types a valid name\nWhen input is entered\nThen text should be accepted and displayed",
+      "acceptance": "Text should be accepted and displayed\nThe behavior should be validated when input is entered."
+    },
+    {
+      "test_id": "UTC-760",
+      "srs_id": "SRS-63",
+      "sds_id": "SDS-63",
+      "summary": "Verify Trim leading spaces\nwhen user enters spaces before text",
+      "description": "Feature: Unique session title input with validation and constraints\nScenario: Trim leading spaces\nGiven user enters spaces before text\nWhen field loses focus\nThen leading spaces should be removed",
+      "acceptance": "Leading spaces should be removed\nThe behavior should be validated when field loses focus."
+    },
+    {
+      "test_id": "UTC-761",
+      "srs_id": "SRS-63",
+      "sds_id": "SDS-63",
+      "summary": "Verify Trim trailing spaces\nwhen user enters spaces after text",
+      "description": "Feature: Unique session title input with validation and constraints\nScenario: Trim trailing spaces\nGiven user enters spaces after text\nWhen field loses focus\nThen trailing spaces should be removed",
+      "acceptance": "Trailing spaces should be removed\nThe behavior should be validated when field loses focus."
+    },
+    {
+      "test_id": "UTC-762",
+      "srs_id": "SRS-63",
+      "sds_id": "SDS-63",
+      "summary": "Verify Empty input blocked\nwhen the field is empty",
+      "description": "Feature: Unique session title input with validation and constraints\nScenario: Empty input blocked\nGiven the field is empty\nWhen user submits session\nThen submission should be prevented",
+      "acceptance": "Submission should be prevented\nThe behavior should be validated when user submits session."
+    },
+    {
+      "test_id": "UTC-763",
+      "srs_id": "SRS-63",
+      "sds_id": "SDS-63",
+      "summary": "Verify Space-only input blocked\nwhen user enters only spaces",
+      "description": "Feature: Unique session title input with validation and constraints\nScenario: Space-only input blocked\nGiven user enters only spaces\nWhen submit attempted\nThen validation message should appear",
+      "acceptance": "Validation message should appear\nThe behavior should be validated when submit attempted."
+    },
+    {
+      "test_id": "UTC-764",
+      "srs_id": "SRS-63",
+      "sds_id": "SDS-63",
+      "summary": "Verify Accept 255 characters\nwhen 255 characters entered",
+      "description": "Feature: Unique session title input with validation and constraints\nScenario: Accept 255 characters\nGiven 255 characters entered\nWhen validated\nThen input should be accepted",
+      "acceptance": "Input should be accepted\nThe behavior should be validated when validated."
+    },
+    {
+      "test_id": "UTC-765",
+      "srs_id": "SRS-63",
+      "sds_id": "SDS-63",
+      "summary": "Verify Reject >255 characters\nwhen 256+ characters entered",
+      "description": "Feature: Unique session title input with validation and constraints\nScenario: Reject >255 characters\nGiven 256+ characters entered\nWhen validated\nThen submission should be blocked",
+      "acceptance": "Submission should be blocked\nThe behavior should be validated when validated."
+    },
+    {
+      "test_id": "UTC-766",
+      "srs_id": "SRS-63",
+      "sds_id": "SDS-63",
+      "summary": "Verify Value mapped to payload\nwhen valid session name entered",
+      "description": "Feature: Unique session title input with validation and constraints\nScenario: Value mapped to payload\nGiven valid session name entered\nWhen session submitted\nThen value should map to session_title in JSON payload",
+      "acceptance": "Value should map to session_title in JSON payload\nThe behavior should be validated when session submitted."
+    },
+    {
+      "test_id": "UTC-767",
+      "srs_id": "SRS-63",
+      "sds_id": "SDS-63",
+      "summary": "Verify Duplicate name blocked\nwhen session name already exists",
+      "description": "Feature: Unique session title input with validation and constraints\nScenario: Duplicate name blocked\nGiven session name already exists\nWhen user submits duplicate\nThen system should prevent creation",
+      "acceptance": "System should prevent creation\nThe behavior should be validated when user submits duplicate."
+    },
+    {
+      "test_id": "UTC-768",
+      "srs_id": "SRS-63",
+      "sds_id": "SDS-63",
+      "summary": "Verify Stored correctly in database\nwhen valid name submitted",
+      "description": "Feature: Unique session title input with validation and constraints\nScenario: Stored correctly in database\nGiven valid name submitted\nWhen saved\nThen stored title should match input",
+      "acceptance": "Stored title should match input\nThe behavior should be validated when saved."
+    },
+    {
+      "test_id": "UTC-769",
+      "srs_id": "SRS-63",
+      "sds_id": "SDS-63",
+      "summary": "Verify Clear inline error message\nwhen invalid input",
+      "description": "Feature: Unique session title input with validation and constraints\nScenario: Clear inline error message\nGiven invalid input\nWhen validation fails\nThen user-friendly message should be displayed",
+      "acceptance": "User-friendly message should be displayed\nThe behavior should be validated when validation fails."
+    },
+    {
+      "test_id": "UTC-770",
+      "srs_id": "SRS-63",
+      "sds_id": "SDS-63",
+      "summary": "Verify Value persists during navigation\nwhen name entered",
+      "description": "Feature: Unique session title input with validation and constraints\nScenario: Value persists during navigation\nGiven name entered\nWhen user navigates within form\nThen value should remain intact",
+      "acceptance": "Value should remain intact\nThe behavior should be validated when user navigates within form."
+    },
+    {
+      "test_id": "UTC-771",
+      "srs_id": "SRS-63",
+      "sds_id": "SDS-63",
+      "summary": "Verify Validation responds instantly\nwhen user types name",
+      "description": "Feature: Unique session title input with validation and constraints\nScenario: Validation responds instantly\nGiven user types name\nWhen validation runs\nThen response should occur without delay",
+      "acceptance": "Response should occur without delay\nThe behavior should be validated when validation runs."
+    },
+    {
+      "test_id": "UTC-772",
+      "srs_id": "SRS-64",
+      "sds_id": "SDS-64",
+      "summary": "Verify Validation on blur\nwhen the Session Name field is empty",
+      "description": "Feature: Mandatory session name validation with visual alerts and submission block\nScenario: Validation on blur\nGiven the Session Name field is empty\nWhen the user clicks outside (blur)\nThen the border should turn red and “Field is required” message should appear",
+      "acceptance": "The border should turn red and \"Field is required\" message should appear\nThe behavior should be validated when the user clicks outside (blur)."
+    },
+    {
+      "test_id": "UTC-773",
+      "srs_id": "SRS-64",
+      "sds_id": "SDS-64",
+      "summary": "Verify Validation on submit\nwhen the field is empty",
+      "description": "Feature: Mandatory session name validation with visual alerts and submission block\nScenario: Validation on submit\nGiven the field is empty\nWhen the user clicks Submit\nThen validation message should appear and submission should stop",
+      "acceptance": "Validation message should appear and submission should stop\nThe behavior should be validated when the user clicks Submit."
+    },
+    {
+      "test_id": "UTC-774",
+      "srs_id": "SRS-64",
+      "sds_id": "SDS-64",
+      "summary": "Verify Space-only input treated as empty\nwhen the user enters only spaces",
+      "description": "Feature: Mandatory session name validation with visual alerts and submission block\nScenario: Space-only input treated as empty\nGiven the user enters only spaces\nWhen submit is attempted\nThen the system should treat it as invalid and show error",
+      "acceptance": "The system should treat it as invalid and show error\nThe behavior should be validated when submit is attempted."
+    },
+    {
+      "test_id": "UTC-775",
+      "srs_id": "SRS-64",
+      "sds_id": "SDS-64",
+      "summary": "Verify Valid text removes error\nwhen the field previously showed error",
+      "description": "Feature: Mandatory session name validation with visual alerts and submission block\nScenario: Valid text removes error\nGiven the field previously showed error\nWhen user enters valid text\nThen red border and error message should disappear",
+      "acceptance": "Red border and error message should disappear\nThe behavior should be validated when user enters valid text."
+    },
+    {
+      "test_id": "UTC-776",
+      "srs_id": "SRS-64",
+      "sds_id": "SDS-64",
+      "summary": "Verify Submission allowed after valid entry\nwhen a valid session name is entered",
+      "description": "Feature: Mandatory session name validation with visual alerts and submission block\nScenario: Submission allowed after valid entry\nGiven a valid session name is entered\nWhen user clicks Submit\nThen submission should proceed successfully",
+      "acceptance": "Submission should proceed successfully\nThe behavior should be validated when user clicks Submit."
+    },
+    {
+      "test_id": "UTC-777",
+      "srs_id": "SRS-64",
+      "sds_id": "SDS-64",
+      "summary": "Verify API not called on invalid input\nwhen field is empty",
+      "description": "Feature: Mandatory session name validation with visual alerts and submission block\nScenario: API not called on invalid input\nGiven field is empty\nWhen submit attempted\nThen API request should not be triggered",
+      "acceptance": "API request should not be triggered\nThe behavior should be validated when submit attempted."
+    },
+    {
+      "test_id": "UTC-778",
+      "srs_id": "SRS-64",
+      "sds_id": "SDS-64",
+      "summary": "Verify Boolean validation check executed\nwhen validation runs",
+      "description": "Feature: Mandatory session name validation with visual alerts and submission block\nScenario: Boolean validation check executed\nGiven validation runs\nWhen field is empty\nThen internal validation flag should be false",
+      "acceptance": "Internal validation flag should be false\nThe behavior should be validated when field is empty."
+    },
+    {
+      "test_id": "UTC-779",
+      "srs_id": "SRS-64",
+      "sds_id": "SDS-64",
+      "summary": "Verify Error message clarity\nwhen validation fails",
+      "description": "Feature: Mandatory session name validation with visual alerts and submission block\nScenario: Error message clarity\nGiven validation fails\nWhen message appears\nThen text should be simple and readable",
+      "acceptance": "Text should be simple and readable\nThe behavior should be validated when message appears."
+    },
+    {
+      "test_id": "UTC-780",
+      "srs_id": "SRS-64",
+      "sds_id": "SDS-64",
+      "summary": "Verify Error persists until corrected\nwhen invalid input remains",
+      "description": "Feature: Mandatory session name validation with visual alerts and submission block\nScenario: Error persists until corrected\nGiven invalid input remains\nWhen user attempts multiple submits\nThen submission should always remain blocked",
+      "acceptance": "Submission should always remain blocked\nThe behavior should be validated when user attempts multiple submits."
+    },
+    {
+      "test_id": "UTC-781",
+      "srs_id": "SRS-64",
+      "sds_id": "SDS-64",
+      "summary": "Verify Prevent backend bypass\nwhen user tries manual API call with empty name",
+      "description": "Feature: Mandatory session name validation with visual alerts and submission block\nScenario: Prevent backend bypass\nGiven user tries manual API call with empty name\nWhen backend validates request\nThen request should be rejected",
+      "acceptance": "Request should be rejected\nThe behavior should be validated when backend validates request."
+    },
+    {
+      "test_id": "UTC-782",
+      "srs_id": "SRS-64",
+      "sds_id": "SDS-64",
+      "summary": "Verify Instant validation response\nwhen user interacts with field",
+      "description": "Feature: Mandatory session name validation with visual alerts and submission block\nScenario: Instant validation response\nGiven user interacts with field\nWhen validation triggers\nThen feedback should appear immediately (<1s)",
+      "acceptance": "Feedback should appear immediately (<1s)\nThe behavior should be validated when validation triggers."
+    },
+    {
+      "test_id": "UTC-783",
+      "srs_id": "SRS-64",
+      "sds_id": "SDS-64",
+      "summary": "Verify Visual consistency\nwhen error state",
+      "description": "Feature: Mandatory session name validation with visual alerts and submission block\nScenario: Visual consistency\nGiven error state\nWhen field highlighted\nThen red styling should match system validation theme",
+      "acceptance": "Red styling should match system validation theme\nThe behavior should be validated when field highlighted."
+    },
+    {
+      "test_id": "UTC-784",
+      "srs_id": "SRS-65",
+      "sds_id": "SDS-65",
+      "summary": "Verify Auto Generate label visibility\nwhen the Session Creation page loads",
+      "description": "Feature: Automatic session name generation using timestamp/ID-based naming with conflict-safe suffix\nScenario: Auto Generate label visibility\nGiven the Session Creation page loads\nWhen the name field is displayed\nThen “Auto Generate Session Name” label should be visible and clickable",
+      "acceptance": "\"Auto Generate Session Name\" label should be visible and clickable\nThe behavior should be validated when the name field is displayed."
+    },
+    {
+      "test_id": "UTC-785",
+      "srs_id": "SRS-65",
+      "sds_id": "SDS-65",
+      "summary": "Verify Name auto-filled on click\nwhen the input field is empty",
+      "description": "Feature: Automatic session name generation using timestamp/ID-based naming with conflict-safe suffix\nScenario: Name auto-filled on click\nGiven the input field is empty\nWhen user clicks Auto Generate\nThen a generated name should populate the field",
+      "acceptance": "A generated name should populate the field\nThe behavior should be validated when user clicks Auto Generate."
+    },
+    {
+      "test_id": "UTC-786",
+      "srs_id": "SRS-65",
+      "sds_id": "SDS-65",
+      "summary": "Verify Naming format validation\nwhen Auto Generate is clicked",
+      "description": "Feature: Automatic session name generation using timestamp/ID-based naming with conflict-safe suffix\nScenario: Naming format validation\nGiven Auto Generate is clicked\nWhen name is created\nThen name should follow pattern like SES_YYYYMMDD or ID-based",
+      "acceptance": "Name should follow pattern like SES_YYYYMMDD or ID-based\nThe behavior should be validated when name is created."
+    },
+    {
+      "test_id": "UTC-787",
+      "srs_id": "SRS-65",
+      "sds_id": "SDS-65",
+      "summary": "Verify Overwrite existing text\nwhen manual text exists in field",
+      "description": "Feature: Automatic session name generation using timestamp/ID-based naming with conflict-safe suffix\nScenario: Overwrite existing text\nGiven manual text exists in field\nWhen Auto Generate is clicked\nThen field should update with generated name",
+      "acceptance": "Field should update with generated name\nThe behavior should be validated when Auto Generate is clicked."
+    },
+    {
+      "test_id": "UTC-788",
+      "srs_id": "SRS-65",
+      "sds_id": "SDS-65",
+      "summary": "Verify Generated name is valid\nwhen name is auto-generated",
+      "description": "Feature: Automatic session name generation using timestamp/ID-based naming with conflict-safe suffix\nScenario: Generated name is valid\nGiven name is auto-generated\nWhen validation runs\nThen no mandatory or format validation error should occur",
+      "acceptance": "No mandatory or format validation error should occur\nThe behavior should be validated when validation runs."
+    },
+    {
+      "test_id": "UTC-789",
+      "srs_id": "SRS-65",
+      "sds_id": "SDS-65",
+      "summary": "Verify Unique name generation\nwhen no existing duplicate",
+      "description": "Feature: Automatic session name generation using timestamp/ID-based naming with conflict-safe suffix\nScenario: Unique name generation\nGiven no existing duplicate\nWhen name is generated\nThen the name should be unique in the system",
+      "acceptance": "The name should be unique in the system\nThe behavior should be validated when name is generated."
+    },
+    {
+      "test_id": "UTC-790",
+      "srs_id": "SRS-65",
+      "sds_id": "SDS-65",
+      "summary": "Verify Conflict handling with suffix\nwhen generated name already exists",
+      "description": "Feature: Automatic session name generation using timestamp/ID-based naming with conflict-safe suffix\nScenario: Conflict handling with suffix\nGiven generated name already exists\nWhen Auto Generate runs\nThen system should append _1 or increment suffix automatically",
+      "acceptance": "System should append _1 or increment suffix automatically\nThe behavior should be validated when Auto Generate runs."
+    },
+    {
+      "test_id": "UTC-791",
+      "srs_id": "SRS-65",
+      "sds_id": "SDS-65",
+      "summary": "Verify Multiple clicks generate new values\nwhen user clicks multiple times",
+      "description": "Feature: Automatic session name generation using timestamp/ID-based naming with conflict-safe suffix\nScenario: Multiple clicks generate new values\nGiven user clicks multiple times\nWhen each click occurs\nThen each generated value should be unique",
+      "acceptance": "Each generated value should be unique\nThe behavior should be validated when each click occurs."
+    },
+    {
+      "test_id": "UTC-792",
+      "srs_id": "SRS-65",
+      "sds_id": "SDS-65",
+      "summary": "Verify Stored in payload\nwhen auto-generated value exists",
+      "description": "Feature: Automatic session name generation using timestamp/ID-based naming with conflict-safe suffix\nScenario: Stored in payload\nGiven auto-generated value exists\nWhen session is submitted\nThen generated name should be sent in API payload",
+      "acceptance": "Generated name should be sent in API payload\nThe behavior should be validated when session is submitted."
+    },
+    {
+      "test_id": "UTC-793",
+      "srs_id": "SRS-65",
+      "sds_id": "SDS-65",
+      "summary": "Verify Visual clarity of link\nwhen user views field",
+      "description": "Feature: Automatic session name generation using timestamp/ID-based naming with conflict-safe suffix\nScenario: Visual clarity of link\nGiven user views field\nWhen Auto Generate option displayed\nThen it should be styled as blue clickable label",
+      "acceptance": "It should be styled as blue clickable label\nThe behavior should be validated when Auto Generate option displayed."
+    },
+    {
+      "test_id": "UTC-794",
+      "srs_id": "SRS-65",
+      "sds_id": "SDS-65",
+      "summary": "Verify Instant generation\nwhen user clicks Auto Generate",
+      "description": "Feature: Automatic session name generation using timestamp/ID-based naming with conflict-safe suffix\nScenario: Instant generation\nGiven user clicks Auto Generate\nWhen action occurs\nThen name should populate instantly (<1s)",
+      "acceptance": "Name should populate instantly (<1s)\nThe behavior should be validated when action occurs."
+    },
+    {
+      "test_id": "UTC-795",
+      "srs_id": "SRS-65",
+      "sds_id": "SDS-65",
+      "summary": "Verify Conflict resolution works without crash\nwhen duplicate detected",
+      "description": "Feature: Automatic session name generation using timestamp/ID-based naming with conflict-safe suffix\nScenario: Conflict resolution works without crash\nGiven duplicate detected\nWhen suffix added\nThen system should not show error or block generation",
+      "acceptance": "System should not show error or block generation\nThe behavior should be validated when suffix added."
+    },
+    {
+      "test_id": "UTC-796",
+      "srs_id": "SRS-66",
+      "sds_id": "SDS-66",
+      "summary": "Verify Description field visibility\nwhen the Session Creation page loads",
+      "description": "Feature: Multi-line session description input with safe storage and XSS sanitization\nScenario: Description field visibility\nGiven the Session Creation page loads\nWhen the form renders\nThen a multi-line description textarea should be visible",
+      "acceptance": "A multi-line description textarea should be visible\nThe behavior should be validated when the form renders."
+    },
+    {
+      "test_id": "UTC-797",
+      "srs_id": "SRS-66",
+      "sds_id": "SDS-66",
+      "summary": "Verify Placeholder text displayed\nwhen the description field is empty",
+      "description": "Feature: Multi-line session description input with safe storage and XSS sanitization\nScenario: Placeholder text displayed\nGiven the description field is empty\nWhen the field loads\nThen placeholder “Enter description” should appear",
+      "acceptance": "Placeholder \"Enter description\" should appear\nThe behavior should be validated when the field loads."
+    },
+    {
+      "test_id": "UTC-798",
+      "srs_id": "SRS-66",
+      "sds_id": "SDS-66",
+      "summary": "Verify User enters multi-line text\nwhen the textarea is active",
+      "description": "Feature: Multi-line session description input with safe storage and XSS sanitization\nScenario: User enters multi-line text\nGiven the textarea is active\nWhen user types multiple lines\nThen all lines should be captured correctly",
+      "acceptance": "All lines should be captured correctly\nThe behavior should be validated when user types multiple lines."
+    },
+    {
+      "test_id": "UTC-799",
+      "srs_id": "SRS-66",
+      "sds_id": "SDS-66",
+      "summary": "Verify Field is vertically resizable\nwhen the textarea is visible",
+      "description": "Feature: Multi-line session description input with safe storage and XSS sanitization\nScenario: Field is vertically resizable\nGiven the textarea is visible\nWhen the user drags the resize handle\nThen the height should adjust smoothly",
+      "acceptance": "The height should adjust smoothly\nThe behavior should be validated when the user drags the resize handle."
+    },
+    {
+      "test_id": "UTC-800",
+      "srs_id": "SRS-66",
+      "sds_id": "SDS-66",
+      "summary": "Verify Description stored in payload\nwhen text is entered",
+      "description": "Feature: Multi-line session description input with safe storage and XSS sanitization\nScenario: Description stored in payload\nGiven text is entered\nWhen session is submitted\nThen description should be included in API payload as session_description",
+      "acceptance": "Description should be included in API payload as session_description\nThe behavior should be validated when session is submitted."
+    },
+    {
+      "test_id": "UTC-801",
+      "srs_id": "SRS-66",
+      "sds_id": "SDS-66",
+      "summary": "Verify Text persists after navigation\nwhen description is entered",
+      "description": "Feature: Multi-line session description input with safe storage and XSS sanitization\nScenario: Text persists after navigation\nGiven description is entered\nWhen user navigates within the form\nThen entered text should remain unchanged",
+      "acceptance": "Entered text should remain unchanged\nThe behavior should be validated when user navigates within the form."
+    },
+    {
+      "test_id": "UTC-802",
+      "srs_id": "SRS-66",
+      "sds_id": "SDS-66",
+      "summary": "Verify HTML tags removed\nwhen user enters HTML tags like <script>",
+      "description": "Feature: Multi-line session description input with safe storage and XSS sanitization\nScenario: HTML tags removed\nGiven user enters HTML tags like <script>\nWhen input is processed\nThen tags should be stripped before save",
+      "acceptance": "Tags should be stripped before save\nThe behavior should be validated when input is processed."
+    },
+    {
+      "test_id": "UTC-803",
+      "srs_id": "SRS-66",
+      "sds_id": "SDS-66",
+      "summary": "Verify Script injection blocked\nwhen malicious script is entered",
+      "description": "Feature: Multi-line session description input with safe storage and XSS sanitization\nScenario: Script injection blocked\nGiven malicious script is entered\nWhen session is saved\nThen script should not execute and content sanitized",
+      "acceptance": "Script should not execute and content sanitized\nThe behavior should be validated when session is saved."
+    },
+    {
+      "test_id": "UTC-804",
+      "srs_id": "SRS-66",
+      "sds_id": "SDS-66",
+      "summary": "Verify Accepts alphanumeric and symbols\nwhen user enters normal text and punctuation",
+      "description": "Feature: Multi-line session description input with safe storage and XSS sanitization\nScenario: Accepts alphanumeric and symbols\nGiven user enters normal text and punctuation\nWhen saved\nThen content should store correctly",
+      "acceptance": "Content should store correctly\nThe behavior should be validated when saved."
+    },
+    {
+      "test_id": "UTC-805",
+      "srs_id": "SRS-66",
+      "sds_id": "SDS-66",
+      "summary": "Verify No lag during typing\nwhen long text input",
+      "description": "Feature: Multi-line session description input with safe storage and XSS sanitization\nScenario: No lag during typing\nGiven long text input\nWhen typing continuously\nThen UI should remain responsive",
+      "acceptance": "UI should remain responsive\nThe behavior should be validated when typing continuously."
+    },
+    {
+      "test_id": "UTC-806",
+      "srs_id": "SRS-66",
+      "sds_id": "SDS-66",
+      "summary": "Verify Optional field behavior\nwhen description is left empty",
+      "description": "Feature: Multi-line session description input with safe storage and XSS sanitization\nScenario: Optional field behavior\nGiven description is left empty\nWhen session is submitted\nThen submission should succeed without error",
+      "acceptance": "Submission should succeed without error\nThe behavior should be validated when session is submitted."
+    },
+    {
+      "test_id": "UTC-807",
+      "srs_id": "SRS-66",
+      "sds_id": "SDS-66",
+      "summary": "Verify Refresh retains saved data\nwhen description saved successfully",
+      "description": "Feature: Multi-line session description input with safe storage and XSS sanitization\nScenario: Refresh retains saved data\nGiven description saved successfully\nWhen page reloads\nThen saved description should display correctly",
+      "acceptance": "Saved description should display correctly\nThe behavior should be validated when page reloads."
+    },
+    {
+      "test_id": "UTC-808",
+      "srs_id": "SRS-67",
+      "sds_id": "SDS-67",
+      "summary": "Verify Dropdown visible on form\nwhen Session Creation page loads",
+      "description": "Feature: Multi-select session label dropdown with removable chips and metadata persistence\nScenario: Dropdown visible on form\nGiven Session Creation page loads\nWhen the form renders\nThen Session Labels dropdown should be visible",
+      "acceptance": "Session Labels dropdown should be visible\nThe behavior should be validated when the form renders."
+    },
+    {
+      "test_id": "UTC-809",
+      "srs_id": "SRS-67",
+      "sds_id": "SDS-67",
+      "summary": "Verify Placeholder text displayed\nwhen no labels selected",
+      "description": "Feature: Multi-select session label dropdown with removable chips and metadata persistence\nScenario: Placeholder text displayed\nGiven no labels selected\nWhen dropdown loads\nThen placeholder text should be visible",
+      "acceptance": "Placeholder text should be visible\nThe behavior should be validated when dropdown loads."
+    },
+    {
+      "test_id": "UTC-810",
+      "srs_id": "SRS-67",
+      "sds_id": "SDS-67",
+      "summary": "Verify Dropdown opens list\nwhen user clicks the dropdown",
+      "description": "Feature: Multi-select session label dropdown with removable chips and metadata persistence\nScenario: Dropdown opens list\nGiven user clicks the dropdown\nWhen interaction occurs\nThen available labels should be displayed",
+      "acceptance": "Available labels should be displayed\nThe behavior should be validated when interaction occurs."
+    },
+    {
+      "test_id": "UTC-811",
+      "srs_id": "SRS-67",
+      "sds_id": "SDS-67",
+      "summary": "Verify Select single label\nwhen label list displayed",
+      "description": "Feature: Multi-select session label dropdown with removable chips and metadata persistence\nScenario: Select single label\nGiven label list displayed\nWhen one label is selected\nThen it should appear as a chip inside the field",
+      "acceptance": "It should appear as a chip inside the field\nThe behavior should be validated when one label is selected."
+    },
+    {
+      "test_id": "UTC-812",
+      "srs_id": "SRS-67",
+      "sds_id": "SDS-67",
+      "summary": "Verify Select multiple labels\nwhen multiple labels available",
+      "description": "Feature: Multi-select session label dropdown with removable chips and metadata persistence\nScenario: Select multiple labels\nGiven multiple labels available\nWhen several labels are selected\nThen multiple chips should appear",
+      "acceptance": "Multiple chips should appear\nThe behavior should be validated when several labels are selected."
+    },
+    {
+      "test_id": "UTC-813",
+      "srs_id": "SRS-67",
+      "sds_id": "SDS-67",
+      "summary": "Verify Remove selected label\nwhen labels selected",
+      "description": "Feature: Multi-select session label dropdown with removable chips and metadata persistence\nScenario: Remove selected label\nGiven labels selected\nWhen user clicks chip remove icon\nThen label should be removed from selection",
+      "acceptance": "Label should be removed from selection\nThe behavior should be validated when user clicks chip remove icon."
+    },
+    {
+      "test_id": "UTC-814",
+      "srs_id": "SRS-67",
+      "sds_id": "SDS-67",
+      "summary": "Verify Search labels\nwhen many labels exist",
+      "description": "Feature: Multi-select session label dropdown with removable chips and metadata persistence\nScenario: Search labels\nGiven many labels exist\nWhen user types search text\nThen matching labels should be filtered",
+      "acceptance": "Matching labels should be filtered\nThe behavior should be validated when user types search text."
+    },
+    {
+      "test_id": "UTC-815",
+      "srs_id": "SRS-67",
+      "sds_id": "SDS-67",
+      "summary": "Verify No search results\nwhen search term has no matches",
+      "description": "Feature: Multi-select session label dropdown with removable chips and metadata persistence\nScenario: No search results\nGiven search term has no matches\nWhen filtering occurs\nThen “No results found” message should display",
+      "acceptance": "\"No results found\" message should display\nThe behavior should be validated when filtering occurs."
+    },
+    {
+      "test_id": "UTC-816",
+      "srs_id": "SRS-67",
+      "sds_id": "SDS-67",
+      "summary": "Verify Persist selections in payload\nwhen labels selected",
+      "description": "Feature: Multi-select session label dropdown with removable chips and metadata persistence\nScenario: Persist selections in payload\nGiven labels selected\nWhen session is submitted\nThen selected label IDs should be sent as array in metadata",
+      "acceptance": "Selected label IDs should be sent as array in metadata\nThe behavior should be validated when session is submitted."
+    },
+    {
+      "test_id": "UTC-817",
+      "srs_id": "SRS-67",
+      "sds_id": "SDS-67",
+      "summary": "Verify Selection retained during navigation\nwhen labels selected",
+      "description": "Feature: Multi-select session label dropdown with removable chips and metadata persistence\nScenario: Selection retained during navigation\nGiven labels selected\nWhen navigating within form\nThen selected chips should remain intact",
+      "acceptance": "Selected chips should remain intact\nThe behavior should be validated when navigating within form."
+    },
+    {
+      "test_id": "UTC-818",
+      "srs_id": "SRS-67",
+      "sds_id": "SDS-67",
+      "summary": "Verify Master data refresh\nwhen new labels added in master",
+      "description": "Feature: Multi-select session label dropdown with removable chips and metadata persistence\nScenario: Master data refresh\nGiven new labels added in master\nWhen dropdown reopened\nThen new labels should appear dynamically",
+      "acceptance": "New labels should appear dynamically\nThe behavior should be validated when dropdown reopened."
+    },
+    {
+      "test_id": "UTC-819",
+      "srs_id": "SRS-67",
+      "sds_id": "SDS-67",
+      "summary": "Verify Chips visually distinct\nwhen labels selected",
+      "description": "Feature: Multi-select session label dropdown with removable chips and metadata persistence\nScenario: Chips visually distinct\nGiven labels selected\nWhen viewing field\nThen chips should be clearly visible and readable",
+      "acceptance": "Chips should be clearly visible and readable\nThe behavior should be validated when viewing field."
+    },
+    {
+      "test_id": "UTC-820",
+      "srs_id": "SRS-67",
+      "sds_id": "SDS-67",
+      "summary": "Verify Fast dropdown open\nwhen labels exist",
+      "description": "Feature: Multi-select session label dropdown with removable chips and metadata persistence\nScenario: Fast dropdown open\nGiven labels exist\nWhen dropdown opens\nThen list should render within acceptable time",
+      "acceptance": "List should render within acceptable time\nThe behavior should be validated when dropdown opens."
+    },
+    {
+      "test_id": "UTC-821",
+      "srs_id": "SRS-67",
+      "sds_id": "SDS-67",
+      "summary": "Verify Reopen preserves state\nwhen labels selected",
+      "description": "Feature: Multi-select session label dropdown with removable chips and metadata persistence\nScenario: Reopen preserves state\nGiven labels selected\nWhen dropdown closed and reopened\nThen previous selections should remain",
+      "acceptance": "Previous selections should remain\nThe behavior should be validated when dropdown closed and reopened."
+    },
+    {
+      "test_id": "UTC-822",
+      "srs_id": "SRS-67",
+      "sds_id": "SDS-67",
+      "summary": "Verify Invalid label blocked\nwhen manipulated/invalid label ID",
+      "description": "Feature: Multi-select session label dropdown with removable chips and metadata persistence\nScenario: Invalid label blocked\nGiven manipulated/invalid label ID\nWhen submitting session\nThen system should reject invalid label safely",
+      "acceptance": "System should reject invalid label safely\nThe behavior should be validated when submitting session."
+    },
+    {
+      "test_id": "UTC-823",
+      "srs_id": "SRS-68",
+      "sds_id": "SDS-68",
+      "summary": "Verify Dropdown visible on session form\nwhen Session Creation page loads",
+      "description": "Feature: Single-select lifecycle status dropdown with color indicators and backend state mapping\nScenario: Dropdown visible on session form\nGiven Session Creation page loads\nWhen form renders\nThen Workflow Status dropdown should be visible",
+      "acceptance": "Workflow Status dropdown should be visible\nThe behavior should be validated when form renders."
+    },
+    {
+      "test_id": "UTC-824",
+      "srs_id": "SRS-68",
+      "sds_id": "SDS-68",
+      "summary": "Verify Default status applied\nwhen new session form opens",
+      "description": "Feature: Single-select lifecycle status dropdown with color indicators and backend state mapping\nScenario: Default status applied\nGiven new session form opens\nWhen no status selected\nThen default value should be “Yet to do”",
+      "acceptance": "Default value should be \"Yet to do\"\nThe behavior should be validated when no status selected."
+    },
+    {
+      "test_id": "UTC-825",
+      "srs_id": "SRS-68",
+      "sds_id": "SDS-68",
+      "summary": "Verify Dropdown expands options\nwhen user clicks dropdown",
+      "description": "Feature: Single-select lifecycle status dropdown with color indicators and backend state mapping\nScenario: Dropdown expands options\nGiven user clicks dropdown\nWhen list opens\nThen available statuses should be displayed",
+      "acceptance": "Available statuses should be displayed\nThe behavior should be validated when list opens."
+    },
+    {
+      "test_id": "UTC-826",
+      "srs_id": "SRS-68",
+      "sds_id": "SDS-68",
+      "summary": "Verify Select status\nwhen dropdown options shown",
+      "description": "Feature: Single-select lifecycle status dropdown with color indicators and backend state mapping\nScenario: Select status\nGiven dropdown options shown\nWhen user selects “In Progress”\nThen selected value should appear in field",
+      "acceptance": "Selected value should appear in field\nThe behavior should be validated when user selects \"In Progress\"."
+    },
+    {
+      "test_id": "UTC-827",
+      "srs_id": "SRS-68",
+      "sds_id": "SDS-68",
+      "summary": "Verify Color indicator shown\nwhen status selected",
+      "description": "Feature: Single-select lifecycle status dropdown with color indicators and backend state mapping\nScenario: Color indicator shown\nGiven status selected\nWhen displayed\nThen color-coded badge should match status (e.g., blue for In progress)",
+      "acceptance": "Color-coded badge should match status (e.g., blue for In progress)\nThe behavior should be validated when displayed."
+    },
+    {
+      "test_id": "UTC-828",
+      "srs_id": "SRS-68",
+      "sds_id": "SDS-68",
+      "summary": "Verify Status stored in payload\nwhen status selected",
+      "description": "Feature: Single-select lifecycle status dropdown with color indicators and backend state mapping\nScenario: Status stored in payload\nGiven status selected\nWhen session is saved\nThen status_id should be included in API payload",
+      "acceptance": "Status_id should be included in API payload\nThe behavior should be validated when session is saved."
+    },
+    {
+      "test_id": "UTC-829",
+      "srs_id": "SRS-68",
+      "sds_id": "SDS-68",
+      "summary": "Verify Status updates backend state\nwhen session saved with status",
+      "description": "Feature: Single-select lifecycle status dropdown with color indicators and backend state mapping\nScenario: Status updates backend state\nGiven session saved with status\nWhen backend processes request\nThen workflow state machine should update correctly",
+      "acceptance": "Workflow state machine should update correctly\nThe behavior should be validated when backend processes request."
+    },
+    {
+      "test_id": "UTC-830",
+      "srs_id": "SRS-68",
+      "sds_id": "SDS-68",
+      "summary": "Verify Status retained on refresh\nwhen status selected and saved",
+      "description": "Feature: Single-select lifecycle status dropdown with color indicators and backend state mapping\nScenario: Status retained on refresh\nGiven status selected and saved\nWhen page reloads\nThen previously saved status should remain selected",
+      "acceptance": "Previously saved status should remain selected\nThe behavior should be validated when page reloads."
+    },
+    {
+      "test_id": "UTC-831",
+      "srs_id": "SRS-68",
+      "sds_id": "SDS-68",
+      "summary": "Verify Only one status selectable\nwhen dropdown opened",
+      "description": "Feature: Single-select lifecycle status dropdown with color indicators and backend state mapping\nScenario: Only one status selectable\nGiven dropdown opened\nWhen selecting a new status\nThen previous status should be deselected automatically",
+      "acceptance": "Previous status should be deselected automatically\nThe behavior should be validated when selecting a new status."
+    },
+    {
+      "test_id": "UTC-832",
+      "srs_id": "SRS-68",
+      "sds_id": "SDS-68",
+      "summary": "Verify Invalid value blocked\nwhen manipulated/invalid status id",
+      "description": "Feature: Single-select lifecycle status dropdown with color indicators and backend state mapping\nScenario: Invalid value blocked\nGiven manipulated/invalid status id\nWhen submitting form\nThen system should reject invalid status safely",
+      "acceptance": "System should reject invalid status safely\nThe behavior should be validated when submitting form."
+    },
+    {
+      "test_id": "UTC-833",
+      "srs_id": "SRS-68",
+      "sds_id": "SDS-68",
+      "summary": "Verify Clear label readability\nwhen dropdown visible",
+      "description": "Feature: Single-select lifecycle status dropdown with color indicators and backend state mapping\nScenario: Clear label readability\nGiven dropdown visible\nWhen viewing options\nThen labels should be readable and understandable",
+      "acceptance": "Labels should be readable and understandable\nThe behavior should be validated when viewing options."
+    },
+    {
+      "test_id": "UTC-834",
+      "srs_id": "SRS-68",
+      "sds_id": "SDS-68",
+      "summary": "Verify Quick dropdown load\nwhen multiple statuses exist",
+      "description": "Feature: Single-select lifecycle status dropdown with color indicators and backend state mapping\nScenario: Quick dropdown load\nGiven multiple statuses exist\nWhen dropdown opened\nThen list should render instantly without lag",
+      "acceptance": "List should render instantly without lag\nThe behavior should be validated when dropdown opened."
+    },
+    {
+      "test_id": "UTC-835",
+      "srs_id": "SRS-68",
+      "sds_id": "SDS-68",
+      "summary": "Verify Safe fallback on failure\nwhen status fetch fails",
+      "description": "Feature: Single-select lifecycle status dropdown with color indicators and backend state mapping\nScenario: Safe fallback on failure\nGiven status fetch fails\nWhen page loads\nThen default “Yet to do” should be applied automatically",
+      "acceptance": "Default \"Yet to do\" should be applied automatically\nThe behavior should be validated when page loads."
+    },
+    {
+      "test_id": "UTC-836",
+      "srs_id": "SRS-68",
+      "sds_id": "SDS-68",
+      "summary": "Verify Unauthorized change blocked\nwhen read-only user role",
+      "description": "Feature: Single-select lifecycle status dropdown with color indicators and backend state mapping\nScenario: Unauthorized change blocked\nGiven read-only user role\nWhen attempting to change status\nThen dropdown should be disabled",
+      "acceptance": "Dropdown should be disabled\nThe behavior should be validated when attempting to change status."
+    },
+    {
+      "test_id": "UTC-837",
+      "srs_id": "SRS-69",
+      "sds_id": "SDS-69",
+      "summary": "Verify Project dropdown visible\nwhen Session Creation page loads",
+      "description": "Feature: Searchable project selection dropdown with UUID mapping\nScenario: Project dropdown visible\nGiven Session Creation page loads\nWhen form renders\nThen Project Code dropdown should be visible",
+      "acceptance": "Project Code dropdown should be visible\nThe behavior should be validated when form renders."
+    },
+    {
+      "test_id": "UTC-838",
+      "srs_id": "SRS-69",
+      "sds_id": "SDS-69",
+      "summary": "Verify Dropdown opens list\nwhen user clicks Project Code field",
+      "description": "Feature: Searchable project selection dropdown with UUID mapping\nScenario: Dropdown opens list\nGiven user clicks Project Code field\nWhen dropdown expands\nThen all available projects should be listed",
+      "acceptance": "All available projects should be listed\nThe behavior should be validated when dropdown expands."
+    },
+    {
+      "test_id": "UTC-839",
+      "srs_id": "SRS-69",
+      "sds_id": "SDS-69",
+      "summary": "Verify Search filters projects\nwhen many projects exist",
+      "description": "Feature: Searchable project selection dropdown with UUID mapping\nScenario: Search filters projects\nGiven many projects exist\nWhen user types text in search bar\nThen list should filter matching project codes",
+      "acceptance": "List should filter matching project codes\nThe behavior should be validated when user types text in search bar."
+    },
+    {
+      "test_id": "UTC-840",
+      "srs_id": "SRS-69",
+      "sds_id": "SDS-69",
+      "summary": "Verify Select project\nwhen dropdown list displayed",
+      "description": "Feature: Searchable project selection dropdown with UUID mapping\nScenario: Select project\nGiven dropdown list displayed\nWhen user selects a project\nThen selected project name should appear in field",
+      "acceptance": "Selected project name should appear in field\nThe behavior should be validated when user selects a project."
+    },
+    {
+      "test_id": "UTC-841",
+      "srs_id": "SRS-69",
+      "sds_id": "SDS-69",
+      "summary": "Verify UUID stored in payload\nwhen project selected",
+      "description": "Feature: Searchable project selection dropdown with UUID mapping\nScenario: UUID stored in payload\nGiven project selected\nWhen session is created\nThen project UUID should be passed to API payload",
+      "acceptance": "Project UUID should be passed to API payload\nThe behavior should be validated when session is created."
+    },
+    {
+      "test_id": "UTC-842",
+      "srs_id": "SRS-69",
+      "sds_id": "SDS-69",
+      "summary": "Verify Value retained on refresh\nwhen project selected and saved",
+      "description": "Feature: Searchable project selection dropdown with UUID mapping\nScenario: Value retained on refresh\nGiven project selected and saved\nWhen page reloads\nThen previously selected project should remain visible",
+      "acceptance": "Previously selected project should remain visible\nThe behavior should be validated when page reloads."
+    },
+    {
+      "test_id": "UTC-843",
+      "srs_id": "SRS-69",
+      "sds_id": "SDS-69",
+      "summary": "Verify Mandatory project validation\nwhen project is required",
+      "description": "Feature: Searchable project selection dropdown with UUID mapping\nScenario: Mandatory project validation\nGiven project is required\nWhen submitting without selection\nThen validation message should appear",
+      "acceptance": "Validation message should appear\nThe behavior should be validated when submitting without selection."
+    },
+    {
+      "test_id": "UTC-844",
+      "srs_id": "SRS-69",
+      "sds_id": "SDS-69",
+      "summary": "Verify Archived project selected\nwhen project is archived/inactive",
+      "description": "Feature: Searchable project selection dropdown with UUID mapping\nScenario: Archived project selected\nGiven project is archived/inactive\nWhen user selects it\nThen system should display “Project Inactive” warning",
+      "acceptance": "System should display \"Project Inactive\" warning\nThe behavior should be validated when user selects it."
+    },
+    {
+      "test_id": "UTC-845",
+      "srs_id": "SRS-69",
+      "sds_id": "SDS-69",
+      "summary": "Verify Unauthorized project hidden\nwhen user lacks permission",
+      "description": "Feature: Searchable project selection dropdown with UUID mapping\nScenario: Unauthorized project hidden\nGiven user lacks permission\nWhen dropdown loads\nThen restricted projects should not be visible",
+      "acceptance": "Restricted projects should not be visible\nThe behavior should be validated when dropdown loads."
+    },
+    {
+      "test_id": "UTC-846",
+      "srs_id": "SRS-69",
+      "sds_id": "SDS-69",
+      "summary": "Verify Direct manipulation blocked\nwhen invalid/forged projectId in request",
+      "description": "Feature: Searchable project selection dropdown with UUID mapping\nScenario: Direct manipulation blocked\nGiven invalid/forged projectId in request\nWhen session is submitted\nThen backend should reject the request",
+      "acceptance": "Backend should reject the request\nThe behavior should be validated when session is submitted."
+    },
+    {
+      "test_id": "UTC-847",
+      "srs_id": "SRS-69",
+      "sds_id": "SDS-69",
+      "summary": "Verify Clear placeholder text\nwhen field empty",
+      "description": "Feature: Searchable project selection dropdown with UUID mapping\nScenario: Clear placeholder text\nGiven field empty\nWhen page loads\nThen placeholder “Select Project Code” should guide user",
+      "acceptance": "Placeholder \"Select Project Code\" should guide user\nThe behavior should be validated when page loads."
+    },
+    {
+      "test_id": "UTC-848",
+      "srs_id": "SRS-69",
+      "sds_id": "SDS-69",
+      "summary": "Verify Clear selection\nwhen project selected",
+      "description": "Feature: Searchable project selection dropdown with UUID mapping\nScenario: Clear selection\nGiven project selected\nWhen user clears selection\nThen field should reset to empty",
+      "acceptance": "Field should reset to empty\nThe behavior should be validated when user clears selection."
+    },
+    {
+      "test_id": "UTC-849",
+      "srs_id": "SRS-69",
+      "sds_id": "SDS-69",
+      "summary": "Verify Fast dropdown response\nwhen large project list",
+      "description": "Feature: Searchable project selection dropdown with UUID mapping\nScenario: Fast dropdown response\nGiven large project list\nWhen dropdown opened\nThen results should load within acceptable time (<2s)",
+      "acceptance": "Results should load within acceptable time (<2s)\nThe behavior should be validated when dropdown opened."
+    },
+    {
+      "test_id": "UTC-850",
+      "srs_id": "SRS-69",
+      "sds_id": "SDS-69",
+      "summary": "Verify Load failure handling\nwhen API fetch fails",
+      "description": "Feature: Searchable project selection dropdown with UUID mapping\nScenario: Load failure handling\nGiven API fetch fails\nWhen dropdown opens\nThen system should show safe empty state or retry option",
+      "acceptance": "System should show safe empty state or retry option\nThe behavior should be validated when dropdown opens."
+    },
+    {
+      "test_id": "UTC-851",
+      "srs_id": "SRS-69",
+      "sds_id": "SDS-69",
+      "summary": "Verify Keyboard navigation supported\nwhen dropdown focused",
+      "description": "Feature: Searchable project selection dropdown with UUID mapping\nScenario: Keyboard navigation supported\nGiven dropdown focused\nWhen using keyboard arrows/enter\nThen user should select project without mouse",
+      "acceptance": "User should select project without mouse\nThe behavior should be validated when using keyboard arrows/enter."
+    },
+    {
+      "test_id": "UTC-852",
+      "srs_id": "SRS-70",
+      "sds_id": "SDS-70",
+      "summary": "Verify Sub-project field visible\nwhen Session Creation page loads",
+      "description": "Feature: Dependent sub-project dropdown based on parent project selection\nScenario: Sub-project field visible\nGiven Session Creation page loads\nWhen form renders\nThen Sub-Project dropdown should be visible",
+      "acceptance": "Sub-Project dropdown should be visible\nThe behavior should be validated when form renders."
+    },
+    {
+      "test_id": "UTC-853",
+      "srs_id": "SRS-70",
+      "sds_id": "SDS-70",
+      "summary": "Verify Field disabled by default\nwhen no parent project selected",
+      "description": "Feature: Dependent sub-project dropdown based on parent project selection\nScenario: Field disabled by default\nGiven no parent project selected\nWhen page loads\nThen Sub-Project dropdown should be disabled",
+      "acceptance": "Sub-Project dropdown should be disabled\nThe behavior should be validated when page loads."
+    },
+    {
+      "test_id": "UTC-854",
+      "srs_id": "SRS-70",
+      "sds_id": "SDS-70",
+      "summary": "Verify Enable on parent selection\nwhen a parent project is selected",
+      "description": "Feature: Dependent sub-project dropdown based on parent project selection\nScenario: Enable on parent selection\nGiven a parent project is selected\nWhen selection completes\nThen Sub-Project dropdown should become enabled",
+      "acceptance": "Sub-Project dropdown should become enabled\nThe behavior should be validated when selection completes."
+    },
+    {
+      "test_id": "UTC-855",
+      "srs_id": "SRS-70",
+      "sds_id": "SDS-70",
+      "summary": "Verify Dynamic API fetch\nwhen parent project selected",
+      "description": "Feature: Dependent sub-project dropdown based on parent project selection\nScenario: Dynamic API fetch\nGiven parent project selected\nWhen Sub-Project dropdown opens\nThen API should fetch only related sub-projects",
+      "acceptance": "API should fetch only related sub-projects\nThe behavior should be validated when Sub-Project dropdown opens."
+    },
+    {
+      "test_id": "UTC-856",
+      "srs_id": "SRS-70",
+      "sds_id": "SDS-70",
+      "summary": "Verify Display filtered list\nwhen sub-projects returned from API",
+      "description": "Feature: Dependent sub-project dropdown based on parent project selection\nScenario: Display filtered list\nGiven sub-projects returned from API\nWhen dropdown expands\nThen only matching sub-projects should be listed",
+      "acceptance": "Only matching sub-projects should be listed\nThe behavior should be validated when dropdown expands."
+    },
+    {
+      "test_id": "UTC-857",
+      "srs_id": "SRS-70",
+      "sds_id": "SDS-70",
+      "summary": "Verify Select sub-project\nwhen dropdown list available",
+      "description": "Feature: Dependent sub-project dropdown based on parent project selection\nScenario: Select sub-project\nGiven dropdown list available\nWhen user selects a sub-project\nThen selected value should appear in the field",
+      "acceptance": "Selected value should appear in the field\nThe behavior should be validated when user selects a sub-project."
+    },
+    {
+      "test_id": "UTC-858",
+      "srs_id": "SRS-70",
+      "sds_id": "SDS-70",
+      "summary": "Verify UUID stored in payload\nwhen sub-project selected",
+      "description": "Feature: Dependent sub-project dropdown based on parent project selection\nScenario: UUID stored in payload\nGiven sub-project selected\nWhen session is created\nThen sub-project UUID should be included in API payload",
+      "acceptance": "Sub-project UUID should be included in API payload\nThe behavior should be validated when session is created."
+    },
+    {
+      "test_id": "UTC-859",
+      "srs_id": "SRS-70",
+      "sds_id": "SDS-70",
+      "summary": "Verify Prevent selection without parent\nwhen no parent selected",
+      "description": "Feature: Dependent sub-project dropdown based on parent project selection\nScenario: Prevent selection without parent\nGiven no parent selected\nWhen user clicks Sub-Project dropdown\nThen no selection should be allowed",
+      "acceptance": "No selection should be allowed\nThe behavior should be validated when user clicks Sub-Project dropdown."
+    },
+    {
+      "test_id": "UTC-860",
+      "srs_id": "SRS-70",
+      "sds_id": "SDS-70",
+      "summary": "Verify No sub-projects available\nwhen parent has no children",
+      "description": "Feature: Dependent sub-project dropdown based on parent project selection\nScenario: No sub-projects available\nGiven parent has no children\nWhen dropdown opens\nThen message “No Sub-Projects Available” should be displayed",
+      "acceptance": "Message \"No Sub-Projects Available\" should be displayed\nThe behavior should be validated when dropdown opens."
+    },
+    {
+      "test_id": "UTC-861",
+      "srs_id": "SRS-70",
+      "sds_id": "SDS-70",
+      "summary": "Verify Reset when parent changes\nwhen sub-project already selected",
+      "description": "Feature: Dependent sub-project dropdown based on parent project selection\nScenario: Reset when parent changes\nGiven sub-project already selected\nWhen parent project changes\nThen sub-project value should reset automatically",
+      "acceptance": "Sub-project value should reset automatically\nThe behavior should be validated when parent project changes."
+    },
+    {
+      "test_id": "UTC-862",
+      "srs_id": "SRS-70",
+      "sds_id": "SDS-70",
+      "summary": "Verify Unauthorized sub-project hidden\nwhen restricted permissions",
+      "description": "Feature: Dependent sub-project dropdown based on parent project selection\nScenario: Unauthorized sub-project hidden\nGiven restricted permissions\nWhen dropdown loads\nThen unauthorized sub-projects should not be visible",
+      "acceptance": "Unauthorized sub-projects should not be visible\nThe behavior should be validated when dropdown loads."
+    },
+    {
+      "test_id": "UTC-863",
+      "srs_id": "SRS-70",
+      "sds_id": "SDS-70",
+      "summary": "Verify Manual payload tampering blocked\nwhen forged subProjectId submitted",
+      "description": "Feature: Dependent sub-project dropdown based on parent project selection\nScenario: Manual payload tampering blocked\nGiven forged subProjectId submitted\nWhen API validates request\nThen request should be rejected",
+      "acceptance": "Request should be rejected\nThe behavior should be validated when API validates request."
+    },
+    {
+      "test_id": "UTC-864",
+      "srs_id": "SRS-70",
+      "sds_id": "SDS-70",
+      "summary": "Verify Placeholder guidance\nwhen field disabled",
+      "description": "Feature: Dependent sub-project dropdown based on parent project selection\nScenario: Placeholder guidance\nGiven field disabled\nWhen page loads\nThen placeholder should indicate “Select Project First”",
+      "acceptance": "Placeholder should indicate \"Select Project First\"\nThe behavior should be validated when page loads."
+    },
+    {
+      "test_id": "UTC-865",
+      "srs_id": "SRS-70",
+      "sds_id": "SDS-70",
+      "summary": "Verify Fast load\nwhen large sub-project dataset",
+      "description": "Feature: Dependent sub-project dropdown based on parent project selection\nScenario: Fast load\nGiven large sub-project dataset\nWhen dropdown opens\nThen results should load within acceptable time (<2s)",
+      "acceptance": "Results should load within acceptable time (<2s)\nThe behavior should be validated when dropdown opens."
+    },
+    {
+      "test_id": "UTC-866",
+      "srs_id": "SRS-70",
+      "sds_id": "SDS-70",
+      "summary": "Verify Keyboard navigation supported\nwhen dropdown focused",
+      "description": "Feature: Dependent sub-project dropdown based on parent project selection\nScenario: Keyboard navigation supported\nGiven dropdown focused\nWhen using keyboard arrows and enter\nThen user should select sub-project without mouse",
+      "acceptance": "User should select sub-project without mouse\nThe behavior should be validated when using keyboard arrows and enter."
+    },
+    {
+      "test_id": "UTC-867",
+      "srs_id": "SRS-71",
+      "sds_id": "SDS-71",
+      "summary": "Verify Dropdown visible\nwhen Session Creation page loads",
+      "description": "Feature: Use Case categorization dropdown mapping\nScenario: Dropdown visible\nGiven Session Creation page loads\nWhen form renders\nThen User Case Code dropdown should be visible",
+      "acceptance": "User Case Code dropdown should be visible\nThe behavior should be validated when form renders."
+    },
+    {
+      "test_id": "UTC-868",
+      "srs_id": "SRS-71",
+      "sds_id": "SDS-71",
+      "summary": "Verify Load use case list\nwhen page loads",
+      "description": "Feature: Use Case categorization dropdown mapping\nScenario: Load use case list\nGiven page loads\nWhen dropdown is opened\nThen all available use cases should be listed",
+      "acceptance": "All available use cases should be listed\nThe behavior should be validated when dropdown is opened."
+    },
+    {
+      "test_id": "UTC-869",
+      "srs_id": "SRS-71",
+      "sds_id": "SDS-71",
+      "summary": "Verify Single selection only\nwhen dropdown options shown",
+      "description": "Feature: Use Case categorization dropdown mapping\nScenario: Single selection only\nGiven dropdown options shown\nWhen user selects a use case\nThen only one option should be selectable",
+      "acceptance": "Only one option should be selectable\nThe behavior should be validated when user selects a use case."
+    },
+    {
+      "test_id": "UTC-870",
+      "srs_id": "SRS-71",
+      "sds_id": "SDS-71",
+      "summary": "Verify Replace selection\nwhen one use case already selected",
+      "description": "Feature: Use Case categorization dropdown mapping\nScenario: Replace selection\nGiven one use case already selected\nWhen another is selected\nThen previous value should be replaced",
+      "acceptance": "Previous value should be replaced\nThe behavior should be validated when another is selected."
+    },
+    {
+      "test_id": "UTC-871",
+      "srs_id": "SRS-71",
+      "sds_id": "SDS-71",
+      "summary": "Verify Persist selection\nwhen use case selected",
+      "description": "Feature: Use Case categorization dropdown mapping\nScenario: Persist selection\nGiven use case selected\nWhen user navigates within form\nThen selected value should remain unchanged",
+      "acceptance": "Selected value should remain unchanged\nThe behavior should be validated when user navigates within form."
+    },
+    {
+      "test_id": "UTC-872",
+      "srs_id": "SRS-71",
+      "sds_id": "SDS-71",
+      "summary": "Verify Stored in payload\nwhen session submitted",
+      "description": "Feature: Use Case categorization dropdown mapping\nScenario: Stored in payload\nGiven session submitted\nWhen API request sent\nThen use_case_code attribute should be present in payload",
+      "acceptance": "Use_case_code attribute should be present in payload\nThe behavior should be validated when API request sent."
+    },
+    {
+      "test_id": "UTC-873",
+      "srs_id": "SRS-71",
+      "sds_id": "SDS-71",
+      "summary": "Verify Search/filter within dropdown\nwhen large use case list",
+      "description": "Feature: Use Case categorization dropdown mapping\nScenario: Search/filter within dropdown\nGiven large use case list\nWhen user types search text\nThen matching options should be filtered",
+      "acceptance": "Matching options should be filtered\nThe behavior should be validated when user types search text."
+    },
+    {
+      "test_id": "UTC-874",
+      "srs_id": "SRS-71",
+      "sds_id": "SDS-71",
+      "summary": "Verify Clear placeholder text\nwhen no selection made",
+      "description": "Feature: Use Case categorization dropdown mapping\nScenario: Clear placeholder text\nGiven no selection made\nWhen dropdown visible\nThen placeholder should guide user (e.g., “Select Use Case”)",
+      "acceptance": "Placeholder should guide user (e.g., \"Select Use Case\")\nThe behavior should be validated when dropdown visible."
+    },
+    {
+      "test_id": "UTC-875",
+      "srs_id": "SRS-71",
+      "sds_id": "SDS-71",
+      "summary": "Verify Maintain value after refresh\nwhen saved session reopened",
+      "description": "Feature: Use Case categorization dropdown mapping\nScenario: Maintain value after refresh\nGiven saved session reopened\nWhen page reloads\nThen previously saved use case should auto-populate",
+      "acceptance": "Previously saved use case should auto-populate\nThe behavior should be validated when page reloads."
+    },
+    {
+      "test_id": "UTC-876",
+      "srs_id": "SRS-71",
+      "sds_id": "SDS-71",
+      "summary": "Verify No options available\nwhen lookup table empty",
+      "description": "Feature: Use Case categorization dropdown mapping\nScenario: No options available\nGiven lookup table empty\nWhen dropdown opened\nThen “N/A” should be displayed",
+      "acceptance": "\"N/A\" should be displayed\nThe behavior should be validated when dropdown opened."
+    },
+    {
+      "test_id": "UTC-877",
+      "srs_id": "SRS-71",
+      "sds_id": "SDS-71",
+      "summary": "Verify Prevent invalid value injection\nwhen forged use_case_code in payload",
+      "description": "Feature: Use Case categorization dropdown mapping\nScenario: Prevent invalid value injection\nGiven forged use_case_code in payload\nWhen API validates request\nThen request should be rejected",
+      "acceptance": "Request should be rejected\nThe behavior should be validated when API validates request."
+    },
+    {
+      "test_id": "UTC-878",
+      "srs_id": "SRS-71",
+      "sds_id": "SDS-71",
+      "summary": "Verify Fast dropdown load\nwhen large dataset",
+      "description": "Feature: Use Case categorization dropdown mapping\nScenario: Fast dropdown load\nGiven large dataset\nWhen dropdown opens\nThen options should render within acceptable time (<2s)",
+      "acceptance": "Options should render within acceptable time (<2s)\nThe behavior should be validated when dropdown opens."
+    },
+    {
+      "test_id": "UTC-879",
+      "srs_id": "SRS-71",
+      "sds_id": "SDS-71",
+      "summary": "Verify Keyboard navigation supported\nwhen dropdown focused",
+      "description": "Feature: Use Case categorization dropdown mapping\nScenario: Keyboard navigation supported\nGiven dropdown focused\nWhen using arrow keys and enter\nThen user should select value without mouse",
+      "acceptance": "User should select value without mouse\nThe behavior should be validated when using arrow keys and enter."
+    },
+    {
+      "test_id": "UTC-880",
+      "srs_id": "SRS-71",
+      "sds_id": "SDS-71",
+      "summary": "Verify Prevent blank submission if mandatory\nwhen field required",
+      "description": "Feature: Use Case categorization dropdown mapping\nScenario: Prevent blank submission if mandatory\nGiven field required\nWhen submit clicked without selection\nThen validation message should appear",
+      "acceptance": "Validation message should appear\nThe behavior should be validated when submit clicked without selection."
+    },
+    {
+      "test_id": "UTC-881",
+      "srs_id": "SRS-71",
+      "sds_id": "SDS-71",
+      "summary": "Verify Consistent styling\nwhen dropdown rendered",
+      "description": "Feature: Use Case categorization dropdown mapping\nScenario: Consistent styling\nGiven dropdown rendered\nWhen compared with other fields\nThen it should align and follow UI standards",
+      "acceptance": "It should align and follow UI standards\nThe behavior should be validated when compared with other fields."
+    },
+    {
+      "test_id": "UTC-882",
+      "srs_id": "SRS-72",
+      "sds_id": "SDS-72",
+      "summary": "Verify Dropdown visible on form\nwhen Session Creation page loads",
+      "description": "Feature: Anatomy plane orientation selection dropdown\nScenario: Dropdown visible on form\nGiven Session Creation page loads\nWhen the form renders\nThen Anatomy Plane dropdown should be visible",
+      "acceptance": "Anatomy Plane dropdown should be visible\nThe behavior should be validated when the form renders."
+    },
+    {
+      "test_id": "UTC-883",
+      "srs_id": "SRS-72",
+      "sds_id": "SDS-72",
+      "summary": "Verify Fixed options displayed\nwhen dropdown opened",
+      "description": "Feature: Anatomy plane orientation selection dropdown\nScenario: Fixed options displayed\nGiven dropdown opened\nWhen options load\nThen Axial, Coronal, Sagittal (or configured list) should be shown",
+      "acceptance": "Axial, Coronal, Sagittal (or configured list) should be shown\nThe behavior should be validated when options load."
+    },
+    {
+      "test_id": "UTC-884",
+      "srs_id": "SRS-72",
+      "sds_id": "SDS-72",
+      "summary": "Verify Select plane\nwhen options displayed",
+      "description": "Feature: Anatomy plane orientation selection dropdown\nScenario: Select plane\nGiven options displayed\nWhen user selects Axial\nThen Axial should be selected and shown in field",
+      "acceptance": "Axial should be selected and shown in field\nThe behavior should be validated when user selects Axial."
+    },
+    {
+      "test_id": "UTC-885",
+      "srs_id": "SRS-72",
+      "sds_id": "SDS-72",
+      "summary": "Verify Single-select only\nwhen one plane selected",
+      "description": "Feature: Anatomy plane orientation selection dropdown\nScenario: Single-select only\nGiven one plane selected\nWhen another selected\nThen previous value should be replaced",
+      "acceptance": "Previous value should be replaced\nThe behavior should be validated when another selected."
+    },
+    {
+      "test_id": "UTC-886",
+      "srs_id": "SRS-72",
+      "sds_id": "SDS-72",
+      "summary": "Verify Persist selection during navigation\nwhen plane selected",
+      "description": "Feature: Anatomy plane orientation selection dropdown\nScenario: Persist selection during navigation\nGiven plane selected\nWhen user navigates within form\nThen selection should remain unchanged",
+      "acceptance": "Selection should remain unchanged\nThe behavior should be validated when user navigates within form."
+    },
+    {
+      "test_id": "UTC-887",
+      "srs_id": "SRS-72",
+      "sds_id": "SDS-72",
+      "summary": "Verify Pass value to viewer initialization\nwhen session created",
+      "description": "Feature: Anatomy plane orientation selection dropdown\nScenario: Pass value to viewer initialization\nGiven session created\nWhen viewer loads image\nThen selected plane string should be passed to viewer config",
+      "acceptance": "Selected plane string should be passed to viewer config\nThe behavior should be validated when viewer loads image."
+    },
+    {
+      "test_id": "UTC-888",
+      "srs_id": "SRS-72",
+      "sds_id": "SDS-72",
+      "summary": "Verify Default value handling\nwhen no selection made",
+      "description": "Feature: Anatomy plane orientation selection dropdown\nScenario: Default value handling\nGiven no selection made\nWhen page loads\nThen default or placeholder should be displayed",
+      "acceptance": "Default or placeholder should be displayed\nThe behavior should be validated when page loads."
+    },
+    {
+      "test_id": "UTC-889",
+      "srs_id": "SRS-72",
+      "sds_id": "SDS-72",
+      "summary": "Verify Mandatory validation\nwhen field required",
+      "description": "Feature: Anatomy plane orientation selection dropdown\nScenario: Mandatory validation\nGiven field required\nWhen submit clicked without selection\nThen validation message should appear",
+      "acceptance": "Validation message should appear\nThe behavior should be validated when submit clicked without selection."
+    },
+    {
+      "test_id": "UTC-890",
+      "srs_id": "SRS-72",
+      "sds_id": "SDS-72",
+      "summary": "Verify Clear placeholder text\nwhen no selection",
+      "description": "Feature: Anatomy plane orientation selection dropdown\nScenario: Clear placeholder text\nGiven no selection\nWhen field displayed\nThen placeholder should guide user (e.g., “Select Plane”)",
+      "acceptance": "Placeholder should guide user (e.g., \"Select Plane\")\nThe behavior should be validated when field displayed."
+    }
+  ]
+}

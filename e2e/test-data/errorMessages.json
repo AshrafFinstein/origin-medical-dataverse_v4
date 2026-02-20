@@ -1,0 +1,7 @@
+{
+  "fieldRequired": "This field is required",
+  "invalidEmail": "Please enter a valid email address",
+  "loginFailed": "Wrong email or password",
+  "sessionExpired": "Your session has expired",
+  "duplicateName": "A record with this name already exists"
+}

@@ -1,0 +1,243 @@
+{
+  "spec_file": "e2e/tests/data-management/URS-DV-DM-06/SRS-026/SDS-026.spec.ts",
+  "plan_urs": "URS-DV-DM-06",
+  "srs_str": "026",
+  "domain": "data-management",
+  "page_class": "S3StoragePage",
+  "page_import": "s3-storage.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-643",
+      "srs_id": "SRS-55",
+      "sds_id": "SDS-55",
+      "summary": "Verify No bucket identifiers visible in UI\nwhen the user opens the labeling session page",
+      "description": "Feature: Session–Bucket Association\nScenario: No bucket identifiers visible in UI\nGiven the user opens the labeling session page\nWhen the header is displayed\nThen bucket details should not be exposed in UI",
+      "acceptance": "Bucket details should not be exposed in UI\nThe behavior should be validated when the header is displayed."
+    },
+    {
+      "test_id": "UTC-644",
+      "srs_id": "SRS-55",
+      "sds_id": "SDS-55",
+      "summary": "Verify Upload uses session-bound bucket\nwhen the session is active",
+      "description": "Feature: Session–Bucket Association\nScenario: Upload uses session-bound bucket\nGiven the session is active\nWhen an image is uploaded\nThen the upload should route through the session’s resolved bucket automatically",
+      "acceptance": "The upload should route through the session's resolved bucket automatically\nThe behavior should be validated when an image is uploaded."
+    },
+    {
+      "test_id": "UTC-645",
+      "srs_id": "SRS-55",
+      "sds_id": "SDS-55",
+      "summary": "Verify Download uses session-bound bucket\nwhen the session has mapped buckets",
+      "description": "Feature: Session–Bucket Association\nScenario: Download uses session-bound bucket\nGiven the session has mapped buckets\nWhen an asset is downloaded\nThen the system should fetch from the mapped bucket",
+      "acceptance": "The system should fetch from the mapped bucket\nThe behavior should be validated when an asset is downloaded."
+    },
+    {
+      "test_id": "UTC-646",
+      "srs_id": "SRS-55",
+      "sds_id": "SDS-55",
+      "summary": "Verify Processing calls reuse session mapping\nwhen bucket mapping exists in session cache",
+      "description": "Feature: Session–Bucket Association\nScenario: Processing calls reuse session mapping\nGiven bucket mapping exists in session cache\nWhen processing operations execute\nThen all operations should reuse the same mapping",
+      "acceptance": "All operations should reuse the same mapping\nThe behavior should be validated when processing operations execute."
+    },
+    {
+      "test_id": "UTC-647",
+      "srs_id": "SRS-55",
+      "sds_id": "SDS-55",
+      "summary": "Verify Cached mapping improves performance\nwhen the session is already initialized",
+      "description": "Feature: Session–Bucket Association\nScenario: Cached mapping improves performance\nGiven the session is already initialized\nWhen repeated operations occur\nThen no additional bucket resolution should be triggered",
+      "acceptance": "No additional bucket resolution should be triggered\nThe behavior should be validated when repeated operations occur."
+    },
+    {
+      "test_id": "UTC-648",
+      "srs_id": "SRS-55",
+      "sds_id": "SDS-55",
+      "summary": "Verify Mapping persists during navigation\nwhen the session is active",
+      "description": "Feature: Session–Bucket Association\nScenario: Mapping persists during navigation\nGiven the session is active\nWhen navigating between pages\nThen bucket association should remain unchanged",
+      "acceptance": "Bucket association should remain unchanged\nThe behavior should be validated when navigating between pages."
+    },
+    {
+      "test_id": "UTC-649",
+      "srs_id": "SRS-55",
+      "sds_id": "SDS-55",
+      "summary": "Verify User cannot modify bucket mapping manually\nwhen the user attempts to override bucket info",
+      "description": "Feature: Session–Bucket Association\nScenario: User cannot modify bucket mapping manually\nGiven the user attempts to override bucket info\nWhen request is submitted\nThen system should ignore manual changes and use session mapping",
+      "acceptance": "System should ignore manual changes and use session mapping\nThe behavior should be validated when request is submitted."
+    },
+    {
+      "test_id": "UTC-650",
+      "srs_id": "SRS-55",
+      "sds_id": "SDS-55",
+      "summary": "Verify Mapping created only once per session\nwhen the session initializes",
+      "description": "Feature: Session–Bucket Association\nScenario: Mapping created only once per session\nGiven the session initializes\nWhen subsequent operations occur\nThen mapping should not be recreated repeatedly",
+      "acceptance": "Mapping should not be recreated repeatedly\nThe behavior should be validated when subsequent operations occur."
+    },
+    {
+      "test_id": "UTC-651",
+      "srs_id": "SRS-55",
+      "sds_id": "SDS-55",
+      "summary": "Verify No valid bucket mapping found\nwhen no valid bucket configuration exists",
+      "description": "Feature: Session–Bucket Association\nScenario: No valid bucket mapping found\nGiven no valid bucket configuration exists\nWhen session creation is attempted\nThen session creation should abort",
+      "acceptance": "Session creation should abort\nThe behavior should be validated when session creation is attempted."
+    },
+    {
+      "test_id": "UTC-652",
+      "srs_id": "SRS-55",
+      "sds_id": "SDS-55",
+      "summary": "Verify Non-blocking toast shown on failure\nwhen bucket resolution fails",
+      "description": "Feature: Session–Bucket Association\nScenario: Non-blocking toast shown on failure\nGiven bucket resolution fails\nWhen session load occurs\nThen a clear non-blocking toast message should appear",
+      "acceptance": "A clear non-blocking toast message should appear\nThe behavior should be validated when session load occurs."
+    },
+    {
+      "test_id": "UTC-653",
+      "srs_id": "SRS-55",
+      "sds_id": "SDS-55",
+      "summary": "Verify Workflow remains seamless for users\nwhen the session is active",
+      "description": "Feature: Session–Bucket Association\nScenario: Workflow remains seamless for users\nGiven the session is active\nWhen performing normal labeling tasks\nThen no manual bucket selection or extra steps should be required",
+      "acceptance": "No manual bucket selection or extra steps should be required\nThe behavior should be validated when performing normal labeling tasks."
+    },
+    {
+      "test_id": "UTC-654",
+      "srs_id": "SRS-55",
+      "sds_id": "SDS-55",
+      "summary": "Verify Concurrent requests use correct mapping\nwhen multiple requests run simultaneously",
+      "description": "Feature: Session–Bucket Association\nScenario: Concurrent requests use correct mapping\nGiven multiple requests run simultaneously\nWhen session routing occurs\nThen each request should consistently use the correct bound bucket",
+      "acceptance": "Each request should consistently use the correct bound bucket\nThe behavior should be validated when session routing occurs."
+    },
+    {
+      "test_id": "UTC-655",
+      "srs_id": "SRS-56",
+      "sds_id": "SDS-56",
+      "summary": "Verify Bucket ID stored during asset upload\nwhen a user uploads an image",
+      "description": "Feature: Asset-Level Bucket Mapping\nScenario: Bucket ID stored during asset upload\nGiven a user uploads an image\nWhen ingestion completes\nThen the system should store bucketId in asset metadata",
+      "acceptance": "The system should store bucketId in asset metadata\nThe behavior should be validated when ingestion completes."
+    },
+    {
+      "test_id": "UTC-656",
+      "srs_id": "SRS-56",
+      "sds_id": "SDS-56",
+      "summary": "Verify Metadata persists correctly\nwhen an asset is stored",
+      "description": "Feature: Asset-Level Bucket Mapping\nScenario: Metadata persists correctly\nGiven an asset is stored\nWhen metadata is retrieved\nThen the stored bucketId should match the original bucket",
+      "acceptance": "The stored bucketId should match the original bucket\nThe behavior should be validated when metadata is retrieved."
+    },
+    {
+      "test_id": "UTC-657",
+      "srs_id": "SRS-56",
+      "sds_id": "SDS-56",
+      "summary": "Verify Correct bucket used during fetch\nwhen an asset has associated bucketId",
+      "description": "Feature: Asset-Level Bucket Mapping\nScenario: Correct bucket used during fetch\nGiven an asset has associated bucketId\nWhen the system fetches the asset\nThen data should be retrieved only from that bucket",
+      "acceptance": "Data should be retrieved only from that bucket\nThe behavior should be validated when the system fetches the asset."
+    },
+    {
+      "test_id": "UTC-658",
+      "srs_id": "SRS-56",
+      "sds_id": "SDS-56",
+      "summary": "Verify Correct bucket used during download\nwhen an asset exists",
+      "description": "Feature: Asset-Level Bucket Mapping\nScenario: Correct bucket used during download\nGiven an asset exists\nWhen download is requested\nThen the system should route to mapped bucket automatically",
+      "acceptance": "The system should route to mapped bucket automatically\nThe behavior should be validated when download is requested."
+    },
+    {
+      "test_id": "UTC-659",
+      "srs_id": "SRS-56",
+      "sds_id": "SDS-56",
+      "summary": "Verify Processing uses mapped bucket\nwhen an asset enters processing workflow",
+      "description": "Feature: Asset-Level Bucket Mapping\nScenario: Processing uses mapped bucket\nGiven an asset enters processing workflow\nWhen processing begins\nThen the system should use stored bucketId for routing",
+      "acceptance": "The system should use stored bucketId for routing\nThe behavior should be validated when processing begins."
+    },
+    {
+      "test_id": "UTC-660",
+      "srs_id": "SRS-56",
+      "sds_id": "SDS-56",
+      "summary": "Verify Bucket identifiers hidden in grid\nwhen the asset grid is displayed",
+      "description": "Feature: Asset-Level Bucket Mapping\nScenario: Bucket identifiers hidden in grid\nGiven the asset grid is displayed\nWhen the UI renders\nThen no bucket or storage location details should be visible",
+      "acceptance": "No bucket or storage location details should be visible\nThe behavior should be validated when the UI renders."
+    },
+    {
+      "test_id": "UTC-661",
+      "srs_id": "SRS-56",
+      "sds_id": "SDS-56",
+      "summary": "Verify Users cannot manually modify bucketId\nwhen an asset record exists",
+      "description": "Feature: Asset-Level Bucket Mapping\nScenario: Users cannot manually modify bucketId\nGiven an asset record exists\nWhen user attempts to alter bucketId via UI/API\nThen modification should be rejected",
+      "acceptance": "Modification should be rejected\nThe behavior should be validated when user attempts to alter bucketId via UI/API."
+    },
+    {
+      "test_id": "UTC-662",
+      "srs_id": "SRS-56",
+      "sds_id": "SDS-56",
+      "summary": "Verify Multiple assets map to different buckets correctly\nwhen assets are stored across different buckets",
+      "description": "Feature: Asset-Level Bucket Mapping\nScenario: Multiple assets map to different buckets correctly\nGiven assets are stored across different buckets\nWhen accessed\nThen each asset should route to its respective bucket",
+      "acceptance": "Each asset should route to its respective bucket\nThe behavior should be validated when accessed."
+    },
+    {
+      "test_id": "UTC-663",
+      "srs_id": "SRS-56",
+      "sds_id": "SDS-56",
+      "summary": "Verify Metadata remains consistent after edits\nwhen asset details are edited",
+      "description": "Feature: Asset-Level Bucket Mapping\nScenario: Metadata remains consistent after edits\nGiven asset details are edited\nWhen saved\nThen bucketId should remain unchanged",
+      "acceptance": "BucketId should remain unchanged\nThe behavior should be validated when saved."
+    },
+    {
+      "test_id": "UTC-664",
+      "srs_id": "SRS-56",
+      "sds_id": "SDS-56",
+      "summary": "Verify Reject upload if bucket inactive\nwhen target bucket is inactive",
+      "description": "Feature: Asset-Level Bucket Mapping\nScenario: Reject upload if bucket inactive\nGiven target bucket is inactive\nWhen ingestion is attempted\nThen upload should be rejected",
+      "acceptance": "Upload should be rejected\nThe behavior should be validated when ingestion is attempted."
+    },
+    {
+      "test_id": "UTC-665",
+      "srs_id": "SRS-56",
+      "sds_id": "SDS-56",
+      "summary": "Verify Reject upload if bucketId missing\nwhen metadata has no bucketId",
+      "description": "Feature: Asset-Level Bucket Mapping\nScenario: Reject upload if bucketId missing\nGiven metadata has no bucketId\nWhen ingestion occurs\nThen system should prevent storage",
+      "acceptance": "System should prevent storage\nThe behavior should be validated when ingestion occurs."
+    },
+    {
+      "test_id": "UTC-666",
+      "srs_id": "SRS-56",
+      "sds_id": "SDS-56",
+      "summary": "Verify Metadata validation error logged\nwhen ingestion fails due to invalid bucketId",
+      "description": "Feature: Asset-Level Bucket Mapping\nScenario: Metadata validation error logged\nGiven ingestion fails due to invalid bucketId\nWhen validation triggers\nThen system should log metadata validation error",
+      "acceptance": "System should log metadata validation error\nThe behavior should be validated when validation triggers."
+    },
+    {
+      "test_id": "UTC-667",
+      "srs_id": "SRS-56",
+      "sds_id": "SDS-56",
+      "summary": "Verify Mapping persists across sessions\nwhen asset created previously",
+      "description": "Feature: Asset-Level Bucket Mapping\nScenario: Mapping persists across sessions\nGiven asset created previously\nWhen accessed in new session\nThen same bucketId should be used",
+      "acceptance": "Same bucketId should be used\nThe behavior should be validated when accessed in new session."
+    },
+    {
+      "test_id": "UTC-668",
+      "srs_id": "SRS-56",
+      "sds_id": "SDS-56",
+      "summary": "Verify Routing does not add delay\nwhen multiple assets are fetched",
+      "description": "Feature: Asset-Level Bucket Mapping\nScenario: Routing does not add delay\nGiven multiple assets are fetched\nWhen requests execute\nThen performance should remain within SLA",
+      "acceptance": "Performance should remain within SLA\nThe behavior should be validated when requests execute."
+    },
+    {
+      "test_id": "UTC-669",
+      "srs_id": "SRS-56",
+      "sds_id": "SDS-56",
+      "summary": "Verify Concurrent fetch operations stable\nwhen multiple parallel asset requests",
+      "description": "Feature: Asset-Level Bucket Mapping\nScenario: Concurrent fetch operations stable\nGiven multiple parallel asset requests\nWhen routing occurs\nThen no conflicts or incorrect bucket access should occur",
+      "acceptance": "No conflicts or incorrect bucket access should occur\nThe behavior should be validated when routing occurs."
+    },
+    {
+      "test_id": "UTC-670",
+      "srs_id": "SRS-57",
+      "sds_id": "SDS-57",
+      "summary": "Verify Adapter selected based on bucket provider\nwhen a bucket is configured with provider type S3",
+      "description": "Feature: Provider Adapter Routing\nScenario: Adapter selected based on bucket provider\nGiven a bucket is configured with provider type S3\nWhen a storage request is initiated\nThen the system should initialize the S3 adapter automatically",
+      "acceptance": "The system should initialize the S3 adapter automatically\nThe behavior should be validated when a storage request is initiated."
+    },
+    {
+      "test_id": "UTC-671",
+      "srs_id": "SRS-57",
+      "sds_id": "SDS-57",
+      "summary": "Verify Read operation routed through correct adapter\nwhen bucket metadata exists",
+      "description": "Feature: Provider Adapter Routing\nScenario: Read operation routed through correct adapter\nGiven bucket metadata exists\nWhen a file read operation occurs\nThen the request should be routed through the resolved provider adapter",
+      "acceptance": "The request should be routed through the resolved provider adapter\nThe behavior should be validated when a file read operation occurs."
+    }
+  ]
+}

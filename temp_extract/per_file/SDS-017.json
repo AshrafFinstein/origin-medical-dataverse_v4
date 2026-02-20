@@ -1,0 +1,195 @@
+{
+  "spec_file": "e2e/tests/data-labelling/URS-DV-DL-04/SRS-017/SDS-017.spec.ts",
+  "plan_urs": "URS-DV-DL-04",
+  "srs_str": "017",
+  "domain": "data-labelling",
+  "page_class": "DataLabellingPage",
+  "page_import": "data-labelling.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-455",
+      "srs_id": "SRS-37",
+      "sds_id": "SDS-37",
+      "summary": "Verify Fast filtering\nwhen large dataset",
+      "description": "Feature: Search Performance\nScenario: Fast filtering\nGiven large dataset\nWhen searching\nThen results should load within acceptable SLA",
+      "acceptance": "Results should load within acceptable SLA\nThe behavior should be validated when searching."
+    },
+    {
+      "test_id": "UTC-456",
+      "srs_id": "SRS-37",
+      "sds_id": "SDS-37",
+      "summary": "Verify Repeated searches\nwhen user performs multiple searches consecutively",
+      "description": "Feature: Multiple Searches Stability\nScenario: Repeated searches\nGiven user performs multiple searches consecutively\nWhen grid updates repeatedly\nThen no crash or memory leak should occur",
+      "acceptance": "No crash or memory leak should occur\nThe behavior should be validated when grid updates repeatedly."
+    },
+    {
+      "test_id": "UTC-457",
+      "srs_id": "SRS-38",
+      "sds_id": "SDS-38",
+      "summary": "Verify Show empty state when no results found\nwhen filters/search return zero results",
+      "description": "Feature: Empty State Handling\nScenario: Show empty state when no results found\nGiven filters/search return zero results\nWhen grid finishes loading\nThen the system should display 'No Data Available' message",
+      "acceptance": "The system should display 'No Data Available' message\nThe behavior should be validated when grid finishes loading."
+    },
+    {
+      "test_id": "UTC-458",
+      "srs_id": "SRS-38",
+      "sds_id": "SDS-38",
+      "summary": "Verify Empty state icon visibility\nwhen no data is available",
+      "description": "Feature: Empty State Handling\nScenario: Empty state icon visibility\nGiven no data is available\nWhen empty state renders\nThen folder-with-X icon should be centered and visible",
+      "acceptance": "Folder-with-X icon should be centered and visible\nThe behavior should be validated when empty state renders."
+    },
+    {
+      "test_id": "UTC-459",
+      "srs_id": "SRS-38",
+      "sds_id": "SDS-38",
+      "summary": "Verify Grid hidden when empty\nwhen loading is false and data length equals zero",
+      "description": "Feature: Empty State Handling\nScenario: Grid hidden when empty\nGiven loading is false and data length equals zero\nWhen page renders\nThen grid component should not be displayed",
+      "acceptance": "Grid component should not be displayed\nThe behavior should be validated when page renders."
+    },
+    {
+      "test_id": "UTC-460",
+      "srs_id": "SRS-38",
+      "sds_id": "SDS-38",
+      "summary": "Verify Correct page number message\nwhen no data exists for page 3",
+      "description": "Feature: Empty State Handling\nScenario: Correct page number message\nGiven no data exists for page 3\nWhen empty state displays\nThen message should show 'not found on page 3'",
+      "acceptance": "Message should show 'not found on page 3'\nThe behavior should be validated when empty state displays."
+    },
+    {
+      "test_id": "UTC-461",
+      "srs_id": "SRS-38",
+      "sds_id": "SDS-38",
+      "summary": "Verify Clear Filter option accessible\nwhen empty state is displayed",
+      "description": "Feature: Empty State Handling\nScenario: Clear Filter option accessible\nGiven empty state is displayed\nWhen user wants to reset\nThen Clear Filter or Reset option should remain clickable",
+      "acceptance": "Clear Filter or Reset option should remain clickable\nThe behavior should be validated when user wants to reset."
+    },
+    {
+      "test_id": "UTC-462",
+      "srs_id": "SRS-38",
+      "sds_id": "SDS-38",
+      "summary": "Verify Reset restores grid data\nwhen empty state is visible",
+      "description": "Feature: Empty State Handling\nScenario: Reset restores grid data\nGiven empty state is visible\nWhen user clicks Reset\nThen grid should reload and show available data",
+      "acceptance": "Grid should reload and show available data\nThe behavior should be validated when user clicks Reset."
+    },
+    {
+      "test_id": "UTC-463",
+      "srs_id": "SRS-38",
+      "sds_id": "SDS-38",
+      "summary": "Verify Fast empty state rendering\nwhen dataset is empty",
+      "description": "Feature: Empty State Handling\nScenario: Fast empty state rendering\nGiven dataset is empty\nWhen rendering occurs\nThen empty state should appear within acceptable time (<2s)",
+      "acceptance": "Empty state should appear within acceptable time (<2s)\nThe behavior should be validated when rendering occurs."
+    },
+    {
+      "test_id": "UTC-464",
+      "srs_id": "SRS-38",
+      "sds_id": "SDS-38",
+      "summary": "Verify No infinite loading\nwhen API returns empty response",
+      "description": "Feature: Empty State Handling\nScenario: No infinite loading\nGiven API returns empty response\nWhen loading completes\nThen spinner should disappear and empty state should show",
+      "acceptance": "Spinner should disappear and empty state should show\nThe behavior should be validated when loading completes."
+    },
+    {
+      "test_id": "UTC-465",
+      "srs_id": "SRS-38",
+      "sds_id": "SDS-38",
+      "summary": "Verify Invalid filter input returns empty state\nwhen user enters unmatched filter value",
+      "description": "Feature: Empty State Handling\nScenario: Invalid filter input returns empty state\nGiven user enters unmatched filter value\nWhen search executes\nThen empty state should be displayed without errors",
+      "acceptance": "Empty state should be displayed without errors\nThe behavior should be validated when search executes."
+    },
+    {
+      "test_id": "UTC-466",
+      "srs_id": "SRS-38",
+      "sds_id": "SDS-38",
+      "summary": "Verify Clear and readable message\nwhen empty state appears",
+      "description": "Feature: Empty State Handling\nScenario: Clear and readable message\nGiven empty state appears\nWhen user reads message\nThen text should be simple and understandable",
+      "acceptance": "Text should be simple and understandable\nThe behavior should be validated when user reads message."
+    },
+    {
+      "test_id": "UTC-467",
+      "srs_id": "SRS-39",
+      "sds_id": "SDS-39",
+      "summary": "Verify Freeze button visibility\nwhen the grid page is loaded",
+      "description": "Feature: Freeze Mode Toggle\nScenario: Freeze button visibility\nGiven the grid page is loaded\nWhen the toolbar renders\nThen the Freeze toggle button should be visible",
+      "acceptance": "The Freeze toggle button should be visible\nThe behavior should be validated when the toolbar renders."
+    },
+    {
+      "test_id": "UTC-468",
+      "srs_id": "SRS-39",
+      "sds_id": "SDS-39",
+      "summary": "Verify Freeze activates locking\nwhen the grid is active",
+      "description": "Feature: Freeze Mode Toggle\nScenario: Freeze activates locking\nGiven the grid is active\nWhen the user clicks Freeze\nThen the grid interactions should be disabled",
+      "acceptance": "The grid interactions should be disabled\nThe behavior should be validated when the user clicks Freeze."
+    },
+    {
+      "test_id": "UTC-469",
+      "srs_id": "SRS-39",
+      "sds_id": "SDS-39",
+      "summary": "Verify Unfreeze restores interaction\nwhen the grid is frozen",
+      "description": "Feature: Freeze Mode Toggle\nScenario: Unfreeze restores interaction\nGiven the grid is frozen\nWhen the user clicks Unfreeze\nThen all grid interactions should be enabled again",
+      "acceptance": "All grid interactions should be enabled again\nThe behavior should be validated when the user clicks Unfreeze."
+    },
+    {
+      "test_id": "UTC-470",
+      "srs_id": "SRS-39",
+      "sds_id": "SDS-39",
+      "summary": "Verify Toggle label changes\nwhen the grid is frozen",
+      "description": "Feature: Freeze Mode Toggle\nScenario: Toggle label changes\nGiven the grid is frozen\nWhen viewing the toggle button\nThen the label should change from Freeze to Unfreeze",
+      "acceptance": "The label should change from Freeze to Unfreeze\nThe behavior should be validated when viewing the toggle button."
+    },
+    {
+      "test_id": "UTC-471",
+      "srs_id": "SRS-39",
+      "sds_id": "SDS-39",
+      "summary": "Verify Prevent image selection while frozen\nwhen the grid is frozen",
+      "description": "Feature: Freeze Mode Toggle\nScenario: Prevent image selection while frozen\nGiven the grid is frozen\nWhen the user clicks an image card\nThen the image should not be selected",
+      "acceptance": "The image should not be selected\nThe behavior should be validated when the user clicks an image card."
+    },
+    {
+      "test_id": "UTC-472",
+      "srs_id": "SRS-39",
+      "sds_id": "SDS-39",
+      "summary": "Verify Prevent bulk action execution\nwhen the grid is frozen",
+      "description": "Feature: Freeze Mode Toggle\nScenario: Prevent bulk action execution\nGiven the grid is frozen\nWhen the user clicks a bulk action\nThen the action should not execute",
+      "acceptance": "The action should not execute\nThe behavior should be validated when the user clicks a bulk action."
+    },
+    {
+      "test_id": "UTC-473",
+      "srs_id": "SRS-39",
+      "sds_id": "SDS-39",
+      "summary": "Verify Labeling blocked during freeze\nwhen images are selected and grid is frozen",
+      "description": "Feature: Freeze Mode Toggle\nScenario: Labeling blocked during freeze\nGiven images are selected and grid is frozen\nWhen the user attempts to apply labels\nThen the system should ignore the request",
+      "acceptance": "The system should ignore the request\nThe behavior should be validated when the user attempts to apply labels."
+    },
+    {
+      "test_id": "UTC-474",
+      "srs_id": "SRS-39",
+      "sds_id": "SDS-39",
+      "summary": "Verify Visual overlay displayed\nwhen the grid is frozen",
+      "description": "Feature: Freeze Mode Toggle\nScenario: Visual overlay displayed\nGiven the grid is frozen\nWhen the state changes\nThen an overlay or dimmed effect should be visible",
+      "acceptance": "An overlay or dimmed effect should be visible\nThe behavior should be validated when the state changes."
+    },
+    {
+      "test_id": "UTC-475",
+      "srs_id": "SRS-39",
+      "sds_id": "SDS-39",
+      "summary": "Verify Cursor restriction feedback\nwhen the grid is frozen",
+      "description": "Feature: Freeze Mode Toggle\nScenario: Cursor restriction feedback\nGiven the grid is frozen\nWhen hovering over disabled items\nThen a restricted cursor icon should appear",
+      "acceptance": "A restricted cursor icon should appear\nThe behavior should be validated when hovering over disabled items."
+    },
+    {
+      "test_id": "UTC-476",
+      "srs_id": "SRS-39",
+      "sds_id": "SDS-39",
+      "summary": "Verify State retained after navigation\nwhen the grid is frozen",
+      "description": "Feature: Freeze Mode Toggle\nScenario: State retained after navigation\nGiven the grid is frozen\nWhen the user refreshes or navigates within the page\nThen the freeze state should persist correctly",
+      "acceptance": "The freeze state should persist correctly\nThe behavior should be validated when the user refreshes or navigates within the page."
+    },
+    {
+      "test_id": "UTC-477",
+      "srs_id": "SRS-39",
+      "sds_id": "SDS-39",
+      "summary": "Verify Toggle responds instantly\nwhen the grid is active",
+      "description": "Feature: Freeze Mode Toggle\nScenario: Toggle responds instantly\nGiven the grid is active\nWhen the user toggles Freeze or Unfreeze\nThen the state change should occur without delay",
+      "acceptance": "The state change should occur without delay\nThe behavior should be validated when the user toggles Freeze or Unfreeze."
+    }
+  ]
+}

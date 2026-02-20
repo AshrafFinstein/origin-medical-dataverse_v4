@@ -1,0 +1,19 @@
+{
+  "session-analyze-button-${index}": "session-analyze-button-${index}",
+  "analysis-modal": "analysis-modal",
+  "analysis-modal-close-button": "analysis-modal-close-button",
+  "analysis-modal-title": "analysis-modal-title",
+  "analysis-tab-label": "analysis-tab-label",
+  "analysis-tab-annotation": "analysis-tab-annotation",
+  "analysis-tab-status": "analysis-tab-status",
+  "analysis-table": "analysis-table",
+  "analysis-page-size-select": "analysis-page-size-select",
+  "analysis-sort-name-button": "analysis-sort-name-button",
+  "analysis-sort-count-button": "analysis-sort-count-button",
+  "analysis-filter-search-input": "analysis-filter-search-input",
+  "analysis-filter-select-all": "analysis-filter-select-all",
+  "analysis-filter-apply-button": "analysis-filter-apply-button",
+  "analysis-pagination-next": "analysis-pagination-next",
+  "analysis-pagination-prev": "analysis-pagination-prev",
+  "analysis-no-data": "analysis-no-data"
+}

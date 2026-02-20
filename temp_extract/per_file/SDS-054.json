@@ -1,0 +1,363 @@
+{
+  "spec_file": "e2e/tests/general/URS-DV-GEN-14/SRS-054/SDS-054.spec.ts",
+  "plan_urs": "URS-DV-GEN-14",
+  "srs_str": "054",
+  "domain": "general",
+  "page_class": "ProjectPage",
+  "page_import": "project.page",
+  "goto_method": "navigate",
+  "test_cases": [
+    {
+      "test_id": "UTC-2043",
+      "srs_id": "SRS-192",
+      "sds_id": "SDS-192",
+      "summary": "Verify system prevents saving session when name is empty\nwhen the user is on Create Session form",
+      "description": "Feature: Session Name Mandatory – Empty Block\n\nScenario: Verify system prevents saving session when name is empty\n\nGiven the user is on Create Session form\nWhen the user leaves Session Name field empty\nAnd clicks Save/Create\nThen the system should block creation\nAnd show toast message “Name is required”",
+      "acceptance": "The system should block creation\nThe behavior should be validated when the user leaves Session Name field empty."
+    },
+    {
+      "test_id": "UTC-2044",
+      "srs_id": "SRS-192",
+      "sds_id": "SDS-192",
+      "summary": "Verify missing session name message is clear and descriptive\nwhen the user clicks Save without entering Session Name",
+      "description": "Feature: Session Name Mandatory – Error Message Clarity\n\nScenario: Verify missing session name message is clear and descriptive\n\nGiven the user clicks Save without entering Session Name\nWhen validation fails\nThen the toast message should clearly describe the missing Name field\nAnd should not show technical error codes",
+      "acceptance": "The toast message should clearly describe the missing Name field\nThe behavior should be validated when validation fails."
+    },
+    {
+      "test_id": "UTC-2045",
+      "srs_id": "SRS-193",
+      "sds_id": "SDS-193",
+      "summary": "Verify system prevents saving session when name exceeds 100 characters\nwhen the user is on Create Session form",
+      "description": "Feature: Session Name Max Length – Block >100 Characters\n\nScenario: Verify system prevents saving session when name exceeds 100 characters\n\nGiven the user is on Create Session form\nWhen the user enters Session Name with more than 100 characters\nAnd clicks Save/Create\nThen the system should block creation\nAnd show toast message “Name must be 100 characters or less”",
+      "acceptance": "The system should block creation\nThe behavior should be validated when the user enters Session Name with more than 100 characters."
+    },
+    {
+      "test_id": "UTC-2046",
+      "srs_id": "SRS-193",
+      "sds_id": "SDS-193",
+      "summary": "Verify max length message clearly mentions 100 character limit\nwhen the user enters session name exceeding 100 characters",
+      "description": "Feature: Session Name Max Length – Message Mentions Limit\n\nScenario: Verify max length message clearly mentions 100 character limit\n\nGiven the user enters session name exceeding 100 characters\nWhen Save is clicked\nThen the toast message should clearly mention the allowed maximum length",
+      "acceptance": "The toast message should clearly mention the allowed maximum length\nThe behavior should be validated when Save is clicked."
+    },
+    {
+      "test_id": "UTC-2047",
+      "srs_id": "SRS-194",
+      "sds_id": "SDS-194",
+      "summary": "Verify system prevents session name starting with a space\nwhen the user is on Create Session form",
+      "description": "Feature: Session Name Start Character – Block Leading Space\n\nScenario: Verify system prevents session name starting with a space\n\nGiven the user is on Create Session form\nWhen the user enters Session Name as “ Session_Test_01” (leading space)\nAnd clicks Save/Create\nThen the system should block creation\nAnd show toast message “Name cannot start with a space”",
+      "acceptance": "The system should block creation\nThe behavior should be validated when the user enters Session Name as \" Session_Test_01\" (leading space)."
+    },
+    {
+      "test_id": "UTC-2048",
+      "srs_id": "SRS-194",
+      "sds_id": "SDS-194",
+      "summary": "Verify leading space error message is clear and descriptive\nwhen the user enters session name starting with space",
+      "description": "Feature: Session Name Start Character – Error Message Clarity\n\nScenario: Verify leading space error message is clear and descriptive\n\nGiven the user enters session name starting with space\nWhen Save is clicked\nThen the system should display a clear message describing the issue\nAnd should not show technical error codes",
+      "acceptance": "The system should display a clear message describing the issue\nThe behavior should be validated when Save is clicked."
+    },
+    {
+      "test_id": "UTC-2049",
+      "srs_id": "SRS-195",
+      "sds_id": "SDS-195",
+      "summary": "Verify system prevents creating session with duplicate name\nwhen a session already exists with Name \"SESSION_ALPHA\"",
+      "description": "Feature: Session Name Uniqueness – Duplicate Block\n\nScenario: Verify system prevents creating session with duplicate name\n\nGiven a session already exists with Name “SESSION_ALPHA”\nWhen the user enters Session Name as “SESSION_ALPHA” again\nAnd clicks Save/Create\nThen the system should block creation\nAnd show toast message “A session with the name “SESSION_ALPHA” already exists. Please choose a different name.”",
+      "acceptance": "The system should block creation\nThe behavior should be validated when the user enters Session Name as \"SESSION_ALPHA\" again."
+    },
+    {
+      "test_id": "UTC-2050",
+      "srs_id": "SRS-195",
+      "sds_id": "SDS-195",
+      "summary": "Verify duplicate session message includes the entered session name\nwhen the user enters a session name that already exists",
+      "description": "Feature: Session Name Uniqueness – Message Contains Entered Name\n\nScenario: Verify duplicate session message includes the entered session name\n\nGiven the user enters a session name that already exists\nWhen Save is clicked\nThen the toast message should include the session name entered by the user\nAnd should not show technical database errors",
+      "acceptance": "The toast message should include the session name entered by the user\nThe behavior should be validated when Save is clicked."
+    },
+    {
+      "test_id": "UTC-2051",
+      "srs_id": "SRS-196",
+      "sds_id": "SDS-196",
+      "summary": "Verify system prevents saving session when any approval level has no user selected\nwhen the user configured Approval Levels (L1, L2...)",
+      "description": "Feature: Approval Level Population – Block Empty Level User List\n\nScenario: Verify system prevents saving session when any approval level has no user selected\n\nGiven the user configured Approval Levels (L1, L2...)\nWhen the user leaves at least one approval level without selecting any users\nAnd clicks Save/Create Session\nThen the system should block submission\nAnd show toast message “Each approval level must have at least one user selected”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user leaves at least one approval level without selecting any users."
+    },
+    {
+      "test_id": "UTC-2052",
+      "srs_id": "SRS-196",
+      "sds_id": "SDS-196",
+      "summary": "Verify approval level error message clearly explains what is missing\nwhen the user attempts to save session with empty approval level users",
+      "description": "Feature: Approval Level Population – Message Clarity\n\nScenario: Verify approval level error message clearly explains what is missing\n\nGiven the user attempts to save session with empty approval level users\nWhen validation fails\nThen the toast message should clearly state that each level requires at least one user\nAnd should not show technical error codes",
+      "acceptance": "The toast message should clearly state that each level requires at least one user\nThe behavior should be validated when validation fails."
+    },
+    {
+      "test_id": "UTC-2053",
+      "srs_id": "SRS-197",
+      "sds_id": "SDS-197",
+      "summary": "Verify system prevents adding more than 5 approval levels\nwhen the user is configuring approval levels during session creation",
+      "description": "Feature: Approval Level Limit – Restrict to Maximum 5 Levels\n\nScenario: Verify system prevents adding more than 5 approval levels\n\nGiven the user is configuring approval levels during session creation\nWhen the user adds 5 approval levels successfully\nAnd tries to add the 6th level using Add Level button\nThen the system should prevent adding the 6th level\nAnd show toast message “Maximum of 5 approval levels allowed”",
+      "acceptance": "The system should prevent adding the 6th level\nThe behavior should be validated when the user adds 5 approval levels successfully."
+    },
+    {
+      "test_id": "UTC-2054",
+      "srs_id": "SRS-197",
+      "sds_id": "SDS-197",
+      "summary": "Verify Add Level button becomes disabled after reaching 5 levels\nwhen the user has configured 5 approval levels",
+      "description": "Feature: Approval Level Limit – Add Level Button Disabled at 5\n\nScenario: Verify Add Level button becomes disabled after reaching 5 levels\n\nGiven the user has configured 5 approval levels\nWhen the user views the Add Level button\nThen the Add Level button should be disabled or inactive\nAnd should not allow adding additional levels",
+      "acceptance": "The Add Level button should be disabled or inactive\nThe behavior should be validated when the user views the Add Level button."
+    },
+    {
+      "test_id": "UTC-2055",
+      "srs_id": "SRS-198",
+      "sds_id": "SDS-198",
+      "summary": "Verify system prevents saving session without selecting assignees\nwhen the user is on Create Session form",
+      "description": "Feature: Session Assignees Mandatory – Block Empty Assignee List\n\nScenario: Verify system prevents saving session without selecting assignees\n\nGiven the user is on Create Session form\nWhen the user does not select any assignee in Assignee dropdown\nAnd clicks Save/Create Session\nThen the system should block submission\nAnd show toast message “At least one assignee is required”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user does not select any assignee in Assignee dropdown."
+    },
+    {
+      "test_id": "UTC-2056",
+      "srs_id": "SRS-198",
+      "sds_id": "SDS-198",
+      "summary": "Verify missing assignee message clearly explains requirement\nwhen the user clicks Save without selecting any assignee",
+      "description": "Feature: Session Assignees Mandatory – Message Clarity\n\nScenario: Verify missing assignee message clearly explains requirement\n\nGiven the user clicks Save without selecting any assignee\nWhen validation fails\nThen the toast message should clearly mention at least one assignee is required\nAnd should not show technical error codes",
+      "acceptance": "The toast message should clearly mention at least one assignee is required\nThe behavior should be validated when validation fails."
+    },
+    {
+      "test_id": "UTC-2057",
+      "srs_id": "SRS-199",
+      "sds_id": "SDS-199",
+      "summary": "Verify system prevents creating session with invalid Project ID\nwhen the user is attempting to create a session under a project",
+      "description": "Feature: Project ID Validity – Block Invalid Project Reference\n\nScenario: Verify system prevents creating session with invalid Project ID\n\nGiven the user is attempting to create a session under a project\nWhen the linked Project ID is invalid / deleted / inactive\nAnd the user clicks Save/Create Session\nThen the system should block creation\nAnd show toast message “Invalid reference. Please check that the related project exists and is valid.”",
+      "acceptance": "The system should block creation\nThe behavior should be validated when the linked Project ID is invalid / deleted / inactive."
+    },
+    {
+      "test_id": "UTC-2058",
+      "srs_id": "SRS-199",
+      "sds_id": "SDS-199",
+      "summary": "Verify invalid project reference message is clear and descriptive\nwhen the user attempts to save session with invalid project link",
+      "description": "Feature: Project ID Validity – Error Message Detail\n\nScenario: Verify invalid project reference message is clear and descriptive\n\nGiven the user attempts to save session with invalid project link\nWhen backend validation fails\nThen the system should show a detailed message explaining project reference is invalid\nAnd should not show technical error codes",
+      "acceptance": "The system should show a detailed message explaining project reference is invalid\nThe behavior should be validated when backend validation fails."
+    },
+    {
+      "test_id": "UTC-2059",
+      "srs_id": "SRS-200",
+      "sds_id": "SDS-200",
+      "summary": "Verify system blocks session modification when session is locked\nwhen an existing session is in Locked state",
+      "description": "Feature: Session Lock Status – Block Edit When Locked\n\nScenario: Verify system blocks session modification when session is locked\n\nGiven an existing session is in Locked state\nWhen the user tries to edit any session field\nAnd clicks Save/Update\nThen the system should block modifications\nAnd show toast message “Session is locked”",
+      "acceptance": "The system should block modifications\nThe behavior should be validated when the user tries to edit any session field."
+    },
+    {
+      "test_id": "UTC-2060",
+      "srs_id": "SRS-200",
+      "sds_id": "SDS-200",
+      "summary": "Verify Edit controls are disabled when session is locked\nwhen the session is locked",
+      "description": "Feature: Session Lock Status – UI Control Disabled\n\nScenario: Verify Edit controls are disabled when session is locked\n\nGiven the session is locked\nWhen the user views session page\nThen Edit button should be disabled or hidden\nAnd user should not be able to modify fields",
+      "acceptance": "Edit button should be disabled or hidden\nThe behavior should be validated when the user views session page."
+    },
+    {
+      "test_id": "UTC-2061",
+      "srs_id": "SRS-201",
+      "sds_id": "SDS-201",
+      "summary": "Verify system blocks save when SOP reference name or URL is missing\nwhen the user is on Create/Edit Session page",
+      "description": "Feature: SOP Link Integrity – Block Incomplete Reference Link\n\nScenario: Verify system blocks save when SOP reference name or URL is missing\n\nGiven the user is on Create/Edit Session page\nWhen the user adds a SOP reference with Name filled but URL empty\nAnd clicks Save/Create Session\nThen the system should block submission\nAnd show toast message “Please ensure all Reference Names and Links are filled.”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user adds a SOP reference with Name filled but URL empty."
+    },
+    {
+      "test_id": "UTC-2062",
+      "srs_id": "SRS-201",
+      "sds_id": "SDS-201",
+      "summary": "Verify SOP error message is clear and descriptive\nwhen the user attempts to save with incomplete SOP references",
+      "description": "Feature: SOP Link Integrity – Message Clarity\n\nScenario: Verify SOP error message is clear and descriptive\n\nGiven the user attempts to save with incomplete SOP references\nWhen validation fails\nThen the toast message should clearly mention both Name and Link are required\nAnd should not show technical error codes",
+      "acceptance": "The toast message should clearly mention both Name and Link are required\nThe behavior should be validated when validation fails."
+    },
+    {
+      "test_id": "UTC-2063",
+      "srs_id": "SRS-202",
+      "sds_id": "SDS-202",
+      "summary": "Verify system blocks saving when duplicate taxonomy group names exist\nwhen the user is configuring taxonomy groups in session creation",
+      "description": "Feature: Taxonomy Group Uniqueness – Block Duplicate Names\n\nScenario: Verify system blocks saving when duplicate taxonomy group names exist\n\nGiven the user is configuring taxonomy groups in session creation\nWhen the user enters the same taxonomy group name in two rows (e.g., “Bone”)\nAnd clicks Save/Create Session\nThen the system should block submission\nAnd show toast message “There are duplicate taxonomy group names. Please ensure all taxonomy names are unique.”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user enters the same taxonomy group name in two rows (e.g., \"Bone\")."
+    },
+    {
+      "test_id": "UTC-2064",
+      "srs_id": "SRS-202",
+      "sds_id": "SDS-202",
+      "summary": "Verify taxonomy duplicate message clearly describes the issue\nwhen the user attempts to save session with duplicate taxonomy group names",
+      "description": "Feature: Taxonomy Group Uniqueness – Message Mentions Duplicate Issue\n\nScenario: Verify taxonomy duplicate message clearly describes the issue\n\nGiven the user attempts to save session with duplicate taxonomy group names\nWhen validation fails\nThen the toast message should clearly mention duplicates exist\nAnd should not show technical error codes",
+      "acceptance": "The toast message should clearly mention duplicates exist\nThe behavior should be validated when validation fails."
+    },
+    {
+      "test_id": "UTC-2065",
+      "srs_id": "SRS-203",
+      "sds_id": "SDS-203",
+      "summary": "Verify system blocks when same user is assigned as Assignee and Approver\nwhen the user is on Create/Edit Session page",
+      "description": "Feature: User Role Conflict – Block Assignee vs Approver Conflict\n\nScenario: Verify system blocks when same user is assigned as Assignee and Approver\n\nGiven the user is on Create/Edit Session page\nWhen the user selects “User A” as an Assignee\nAnd also selects “User A” in Approval Level 1\nAnd clicks Save/Create Session\nThen the system should block submission\nAnd show toast message “User A is assigned as both Assignee and in Approval Level 1”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user selects \"User A\" as an Assignee."
+    },
+    {
+      "test_id": "UTC-2066",
+      "srs_id": "SRS-203",
+      "sds_id": "SDS-203",
+      "summary": "Verify system blocks when same user is assigned to multiple approval levels\nwhen the user is configuring approval levels",
+      "description": "Feature: User Role Conflict – Block Multiple Approval Level Assignment\n\nScenario: Verify system blocks when same user is assigned to multiple approval levels\n\nGiven the user is configuring approval levels\nWhen the user selects “User B” in Approval Level 1\nAnd also selects “User B” in Approval Level 2\nAnd clicks Save/Create Session\nThen the system should block submission\nAnd show toast message “User B is assigned to multiple Approval Levels...”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user selects \"User B\" in Approval Level 1."
+    },
+    {
+      "test_id": "UTC-2067",
+      "srs_id": "SRS-204",
+      "sds_id": "SDS-204",
+      "summary": "Verify system blocks upload when filename is missing/empty\nwhen the user is in the JSON Upload dialog",
+      "description": "Feature: Filename Mandatory – Block Empty Filename Upload\n\nScenario: Verify system blocks upload when filename is missing/empty\n\nGiven the user is in the JSON Upload dialog\nWhen the user selects a file with empty filename / invalid file object name\nAnd clicks Upload/Submit\nThen the system should block upload\nAnd show toast message “Filename cannot be empty.”",
+      "acceptance": "The system should block upload\nThe behavior should be validated when the user selects a file with empty filename / invalid file object name."
+    },
+    {
+      "test_id": "UTC-2068",
+      "srs_id": "SRS-204",
+      "sds_id": "SDS-204",
+      "summary": "Verify filename missing message is clear and descriptive\nwhen the user attempts upload without a valid filename",
+      "description": "Feature: Filename Mandatory – Error Message Clarity\n\nScenario: Verify filename missing message is clear and descriptive\n\nGiven the user attempts upload without a valid filename\nWhen validation fails\nThen the toast message should clearly describe the filename issue\nAnd should not show technical error codes",
+      "acceptance": "The toast message should clearly describe the filename issue\nThe behavior should be validated when validation fails."
+    },
+    {
+      "test_id": "UTC-2069",
+      "srs_id": "SRS-205",
+      "sds_id": "SDS-205",
+      "summary": "Verify system prevents uploading JSON file when filename already exists in session\nwhen the session already contains a file named \"sample.json\"",
+      "description": "Feature: Filename Uniqueness – Block Duplicate File Upload\n\nScenario: Verify system prevents uploading JSON file when filename already exists in session\n\nGiven the session already contains a file named “sample.json”\nWhen the user selects another file with filename “sample.json”\nAnd clicks Upload\nThen the system should block upload\nAnd show toast message “A file with the name “sample.json” already exists in this session.”",
+      "acceptance": "The system should block upload\nThe behavior should be validated when the user selects another file with filename \"sample.json\"."
+    },
+    {
+      "test_id": "UTC-2070",
+      "srs_id": "SRS-205",
+      "sds_id": "SDS-205",
+      "summary": "Verify duplicate upload message includes the filename entered/selected\nwhen the user uploads a file with duplicate filename",
+      "description": "Feature: Filename Uniqueness – Message Contains Filename\n\nScenario: Verify duplicate upload message includes the filename entered/selected\n\nGiven the user uploads a file with duplicate filename\nWhen backend detects duplication\nThen the toast message should include the duplicate filename\nAnd should not show technical storage errors",
+      "acceptance": "The toast message should include the duplicate filename\nThe behavior should be validated when backend detects duplication."
+    },
+    {
+      "test_id": "UTC-2071",
+      "srs_id": "SRS-206",
+      "sds_id": "SDS-206",
+      "summary": "Verify system blocks upload for non-JSON file types\nwhen the user is in the JSON Upload dialog",
+      "description": "Feature: File Type Validation – Reject Non-JSON File Upload\n\nScenario: Verify system blocks upload for non-JSON file types\n\nGiven the user is in the JSON Upload dialog\nWhen the user selects a file with extension “.txt” or “.csv”\nAnd clicks Upload\nThen the system should block upload\nAnd show toast message “Invalid file type. Please upload a JSON file.”",
+      "acceptance": "The system should block upload\nThe behavior should be validated when the user selects a file with extension \".txt\" or \".csv\"."
+    },
+    {
+      "test_id": "UTC-2072",
+      "srs_id": "SRS-206",
+      "sds_id": "SDS-206",
+      "summary": "Verify system rejects file when extension is .json but MIME type is not application/json\nwhen the user selects a file with \".json\" extension but incorrect MIME type",
+      "description": "Feature: File Type Validation – Reject Wrong MIME Type\n\nScenario: Verify system rejects file when extension is .json but MIME type is not application/json\n\nGiven the user selects a file with “.json” extension but incorrect MIME type\nWhen Upload is clicked\nThen the system should block upload\nAnd show toast message “Invalid file type. Please upload a JSON file.”",
+      "acceptance": "The system should block upload\nThe behavior should be validated when Upload is clicked."
+    },
+    {
+      "test_id": "UTC-2073",
+      "srs_id": "SRS-207",
+      "sds_id": "SDS-207",
+      "summary": "Verify system blocks upload when JSON cannot be parsed\nwhen the user selects a JSON file with malformed syntax (missing braces, invalid commas, etc.)",
+      "description": "Feature: JSON Format Validation – Reject Malformed JSON\n\nScenario: Verify system blocks upload when JSON cannot be parsed\n\nGiven the user selects a JSON file with malformed syntax (missing braces, invalid commas, etc.)\nWhen the user clicks Upload\nThen the system should fail parsing\nAnd show toast message “Invalid JSON format. Please check the file and try again.”",
+      "acceptance": "The system should fail parsing\nThe behavior should be validated when the user clicks Upload."
+    },
+    {
+      "test_id": "UTC-2074",
+      "srs_id": "SRS-207",
+      "sds_id": "SDS-207",
+      "summary": "Verify JSON parse error message is user-friendly\nwhen the user uploads malformed JSON",
+      "description": "Feature: JSON Format Validation – Error Message Detail\n\nScenario: Verify JSON parse error message is user-friendly\n\nGiven the user uploads malformed JSON\nWhen JSON.parse fails\nThen the system should show a friendly message\nAnd should not show raw exception stack traces",
+      "acceptance": "The system should show a friendly message\nThe behavior should be validated when JSON.parse fails."
+    },
+    {
+      "test_id": "UTC-2075",
+      "srs_id": "SRS-208",
+      "sds_id": "SDS-208",
+      "summary": "Verify system blocks upload when JSON file is empty (0 KB)\nwhen the user is in the JSON Upload dialog",
+      "description": "Feature: Empty File Validation – Reject Empty JSON File\n\nScenario: Verify system blocks upload when JSON file is empty (0 KB)\n\nGiven the user is in the JSON Upload dialog\nWhen the user selects an empty JSON file (size = 0 KB)\nAnd clicks Upload\nThen the system should reject the upload\nAnd show toast message “The uploaded file is empty.”",
+      "acceptance": "The system should reject the upload\nThe behavior should be validated when the user selects an empty JSON file (size = 0 KB)."
+    },
+    {
+      "test_id": "UTC-2076",
+      "srs_id": "SRS-208",
+      "sds_id": "SDS-208",
+      "summary": "Verify system blocks upload when JSON parses successfully but contains no content\nwhen the user selects a JSON file with content {}",
+      "description": "Feature: Empty File Validation – Reject Empty JSON Object\n\nScenario: Verify system blocks upload when JSON parses successfully but contains no content\n\nGiven the user selects a JSON file with content {}\nor empty resource structure\nWhen the user clicks Upload\nThen the system should reject processing\nAnd show toast message “The uploaded file is empty.”",
+      "acceptance": "The system should reject processing\nThe behavior should be validated when the user clicks Upload."
+    },
+    {
+      "test_id": "UTC-2077",
+      "srs_id": "SRS-209",
+      "sds_id": "SDS-209",
+      "summary": "Verify system blocks upload when required extracted resources are missing\nwhen the user selects a valid JSON file",
+      "description": "Feature: Extracted Resources Validation – Reject Missing Resource Payload\n\nScenario: Verify system blocks upload when required extracted resources are missing\n\nGiven the user selects a valid JSON file\nWhen the JSON does not contain required extracted resource keys/array\nAnd clicks Upload\nThen the system should reject processing\nAnd show toast message “The uploaded file does not contain valid extracted resources.”",
+      "acceptance": "The system should reject processing\nThe behavior should be validated when the JSON does not contain required extracted resource keys/array."
+    },
+    {
+      "test_id": "UTC-2078",
+      "srs_id": "SRS-209",
+      "sds_id": "SDS-209",
+      "summary": "Verify extracted resources error message is detailed and user-friendly\nwhen the user uploads JSON without required extracted resources",
+      "description": "Feature: Extracted Resources Validation – Message Clarity\n\nScenario: Verify extracted resources error message is detailed and user-friendly\n\nGiven the user uploads JSON without required extracted resources\nWhen validation fails\nThen the system should show a clear message describing missing core payload\nAnd should not show technical schema errors",
+      "acceptance": "The system should show a clear message describing missing core payload\nThe behavior should be validated when validation fails."
+    },
+    {
+      "test_id": "UTC-2079",
+      "srs_id": "SRS-210",
+      "sds_id": "SDS-210",
+      "summary": "Verify system shows error toast when storage upload fails\nwhen the user selects a valid JSON file for upload",
+      "description": "Feature: Storage Upload Failure – Handle Network/Permission Error\n\nScenario: Verify system shows error toast when storage upload fails\n\nGiven the user selects a valid JSON file for upload\nWhen the storage upload API fails due to network issue or permission denied\nThen the system should stop upload process\nAnd show toast message “Failed to upload file to storage. Please try again.”",
+      "acceptance": "The system should stop upload process\nThe behavior should be validated when the storage upload API fails due to network issue or permission denied."
+    },
+    {
+      "test_id": "UTC-2080",
+      "srs_id": "SRS-210",
+      "sds_id": "SDS-210",
+      "summary": "Verify system provides retry option after upload failure\nwhen the upload failed and error toast is shown",
+      "description": "Feature: Storage Upload Failure – Retry Option Available\n\nScenario: Verify system provides retry option after upload failure\n\nGiven the upload failed and error toast is shown\nWhen the user clicks Retry button (if available)\nThen the system should attempt upload again\nAnd should not crash or freeze",
+      "acceptance": "The system should attempt upload again\nThe behavior should be validated when the user clicks Retry button (if available)."
+    },
+    {
+      "test_id": "UTC-2081",
+      "srs_id": "SRS-211",
+      "sds_id": "SDS-211",
+      "summary": "Verify system shows error toast when browser fails to read file\nwhen the user is in the JSON Upload dialog",
+      "description": "Feature: File Read Error – Handle Corrupt/Locked File Read Failure\n\nScenario: Verify system shows error toast when browser fails to read file\n\nGiven the user is in the JSON Upload dialog\nWhen the user selects a corrupt/locked file that triggers FileReader error\nAnd clicks Upload\nThen the system should stop processing\nAnd show toast message “Error reading file. Please check the file and try again.”",
+      "acceptance": "The system should stop processing\nThe behavior should be validated when the user selects a corrupt/locked file that triggers FileReader error."
+    },
+    {
+      "test_id": "UTC-2082",
+      "srs_id": "SRS-211",
+      "sds_id": "SDS-211",
+      "summary": "Verify file read error message is clear and user-friendly\nwhen FileReader fails during upload",
+      "description": "Feature: File Read Error – Message Clarity\n\nScenario: Verify file read error message is clear and user-friendly\n\nGiven FileReader fails during upload\nWhen the system displays the toast\nThen the message should be readable and non-technical\nAnd should not show stack trace or browser exception text",
+      "acceptance": "The message should be readable and non-technical\nThe behavior should be validated when the system displays the toast."
+    },
+    {
+      "test_id": "UTC-2083",
+      "srs_id": "SRS-212",
+      "sds_id": "SDS-212",
+      "summary": "Verify system blocks upload when JSON contains deprecated field labelIds\nwhen the user selects a valid JSON file for upload",
+      "description": "Feature: Label Schema Validation – Reject Deprecated labelIds Field\n\nScenario: Verify system blocks upload when JSON contains deprecated field labelIds\n\nGiven the user selects a valid JSON file for upload\nWhen the JSON contains the deprecated key “labelIds” anywhere in the payload\nAnd clicks Upload\nThen the system should reject the file\nAnd show toast message File \"[filename]\": \"labelIds\". Please provide labels as \"labels\": [{ \"id\": \"\" }].",
+      "acceptance": "The system should reject the file\nThe behavior should be validated when the JSON contains the deprecated key \"labelIds\" anywhere in the payload."
+    },
+    {
+      "test_id": "UTC-2084",
+      "srs_id": "SRS-212",
+      "sds_id": "SDS-212",
+      "summary": "Verify schema error message includes filename and correction guidance\nwhen the user uploads a JSON containing labelIds",
+      "description": "Feature: Label Schema Validation – Message Includes Filename & Fix Hint\n\nScenario: Verify schema error message includes filename and correction guidance\n\nGiven the user uploads a JSON containing labelIds\nWhen validation fails\nThen the toast should include the filename\nAnd should clearly instruct to use labels object array instead",
+      "acceptance": "The toast should include the filename\nThe behavior should be validated when validation fails."
+    },
+    {
+      "test_id": "UTC-2085",
+      "srs_id": "SRS-213",
+      "sds_id": "SDS-213",
+      "summary": "Verify system rejects upload when required childAnnotation is missing for taxonomy annotation\nwhen the user selects a valid JSON file",
+      "description": "Feature: Child Annotation Validation – Block Missing childAnnotation\n\nScenario: Verify system rejects upload when required childAnnotation is missing for taxonomy annotation\n\nGiven the user selects a valid JSON file\nWhen the JSON contains a taxonomy annotation type that requires childAnnotation\nAnd the childAnnotation key is missing\nAnd clicks Upload\nThen the system should reject the file\nAnd show toast message File \"[filename]\": \"childAnnotation\" is required for taxonomy annotation \"[annotationId]\".",
+      "acceptance": "The system should reject the file\nThe behavior should be validated when the JSON contains a taxonomy annotation type that requires childAnnotation."
+    },
+    {
+      "test_id": "UTC-2086",
+      "srs_id": "SRS-213",
+      "sds_id": "SDS-213",
+      "summary": "Verify error message identifies which annotation is missing childAnnotation\nwhen the uploaded file contains multiple taxonomy annotations",
+      "description": "Feature: Child Annotation Validation – Message Includes Annotation ID\n\nScenario: Verify error message identifies which annotation is missing childAnnotation\n\nGiven the uploaded file contains multiple taxonomy annotations\nWhen one annotation is missing childAnnotation\nThen the toast message should mention the specific annotationId causing the failure\nAnd should not show technical schema dumps",
+      "acceptance": "The toast message should mention the specific annotationId causing the failure\nThe behavior should be validated when one annotation is missing childAnnotation."
+    }
+  ]
+}

@@ -11,6 +11,7 @@ import structure from './structure.json';
 import sessionCodes from './sessionCodes.json';
 import users from './users.json';
 import userGroup from './userGroup.json';
+import qcWorkflow from './qcWorkflow.json';
 
 // Type-safe selector interfaces
 export interface Selectors {
@@ -27,9 +28,10 @@ export interface Selectors {
   sessionCodes: typeof sessionCodes;
   users: typeof users;
   userGroup: typeof userGroup;
+  qcWorkflow: typeof qcWorkflow;
 }
 
-// Granular exports as requested
+// Granular exports
 export const CommonSelectors = common;
 export const EpicSelectors = epic;
 export const ProjectSelectors = project;
@@ -43,6 +45,7 @@ export const StructureSelectors = structure;
 export const SessionCodeSelectors = sessionCodes;
 export const UsersSelectors = users;
 export const UserGroupSelectors = userGroup;
+export const QcWorkflowSelectors = qcWorkflow;
 
 // Combined export
 export const Selectors: Selectors = {
@@ -59,18 +62,15 @@ export const Selectors: Selectors = {
   sessionCodes,
   users,
   userGroup,
+  qcWorkflow,
 };
 
 /**
- * Helper function to replace dynamic placeholders like {index}, ${index}, etc.
+ * Helper function to replace dynamic placeholders like ${index} in selector values.
  *
  * Usage:
- * const selector = getDynamicSelector('[data-testid="epic-table-row-${index}"]', { index: 0 });
- * // Returns: '[data-testid="epic-table-row-0"]'
- *
- * @param selector - The selector string with placeholders
- * @param replacements - Object mapping placeholder names to values
- * @returns The selector with all placeholders replaced
+ * const selector = getDynamicSelector(TaxonomySelectors['taxonomy-annotation-row-${index}'], { index: 0 });
+ * // Returns: 'taxonomy-annotation-row-0'
  */
 export function getDynamicSelector(
   selector: string,
@@ -78,41 +78,10 @@ export function getDynamicSelector(
 ): string {
   let result = selector;
   for (const [key, value] of Object.entries(replacements)) {
-    // Replace ${key} first (before {key}, since {key} is a substring of ${key})
     result = result.replace(new RegExp(`\\$\\{${key}\\}`, 'g'), value.toString());
     result = result.replace(new RegExp(`\\{${key}\\}`, 'g'), value.toString());
   }
   return result;
-}
-
-/**
- * Helper function to get a nested selector by path
- *
- * Usage:
- * const selector = getSelector(Selectors, 'epic.epic-create.button');
- * // Returns: '[data-testid="epic-create-button"]'
- *
- * @param selectors - The selectors object
- * @param path - Dot-separated path to the selector
- * @returns The selector string
- */
-export function getSelector(selectors: Selectors, path: string): string {
-  const parts = path.split('.');
-  let current: any = selectors;
-
-  for (const part of parts) {
-    if (current && typeof current === 'object' && part in current) {
-      current = current[part];
-    } else {
-      throw new Error(`Selector not found: ${path}`);
-    }
-  }
-
-  if (typeof current !== 'string') {
-    throw new Error(`Selector path does not resolve to a string: ${path}`);
-  }
-
-  return current;
 }
 
 export default Selectors;

@@ -1,0 +1,16 @@
+{
+  "validAdmin": {
+    "email": "ashraf.a@finstein.ai",
+    "password": "yxD21p)E1)SL",
+    "role": "admin"
+  },
+  "invalidUser": {
+    "email": "invalid@example.com",
+    "password": "wrongpassword"
+  },
+  "reviewer": {
+    "email": "reviewer@example.com",
+    "password": "password123",
+    "role": "reviewer"
+  }
+}

@@ -6,21 +6,21 @@ export class DLVisualizationModule extends BaseModule {
   }
 
   async lockVisualization() {
-    await this.click(this.selectors.dataLabelling['dl-visualization']['lock-button']);
+    await this.click(this.selectors.dataLabelling['dl-visualization-lock-button']);
     await this.waitForLoadingComplete();
   }
 
   async unlockVisualization() {
-    await this.click(this.selectors.dataLabelling['dl-visualization']['unlock-button']);
+    await this.click(this.selectors.dataLabelling['dl-visualization-unlock-button']);
     await this.waitForLoadingComplete();
   }
 
   async isVisualizationLocked(): Promise<boolean> {
-    return await this.isVisible(this.selectors.dataLabelling['dl-visualization']['unlock-button']);
+    return await this.isVisible(this.selectors.dataLabelling['dl-visualization-unlock-button']);
   }
 
   async invertColors(invert: boolean) {
-    const selector = this.selectors.dataLabelling['dl-invert']['color-checkbox'];
+    const selector = this.selectors.dataLabelling['dl-invert-color-checkbox'];
     const isChecked = await this.ctx.isChecked(selector);
 
     if (invert && !isChecked) {

@@ -1,0 +1,235 @@
+{
+  "spec_file": "e2e/tests/general/URS-DV-GEN-13/SRS-048/SDS-048.spec.ts",
+  "plan_urs": "URS-DV-GEN-13",
+  "srs_str": "048",
+  "domain": "general",
+  "page_class": "EpicPage",
+  "page_import": "epic.page",
+  "goto_method": "goto",
+  "test_cases": [
+    {
+      "test_id": "UTC-1845",
+      "srs_id": "SRS-141",
+      "sds_id": "SDS-141",
+      "summary": "Verify Delete button hidden by default\nwhen a user without delete permission",
+      "description": "Feature: Permission-Based Delete Button Visibility\nScenario: Delete button hidden by default\nGiven a user without delete permission\nWhen the Epic page loads\nThen the Delete Session Requests button should not be visible",
+      "acceptance": "The Delete Session Requests button should not be visible\nThe behavior should be validated when the Epic page loads."
+    },
+    {
+      "test_id": "UTC-1846",
+      "srs_id": "SRS-141",
+      "sds_id": "SDS-141",
+      "summary": "Verify Button visible for authorized user\nwhen the user has can_delete_session permission",
+      "description": "Feature: Permission-Based Delete Button Visibility\nScenario: Button visible for authorized user\nGiven the user has can_delete_session permission\nWhen the Epic page loads\nThen the Delete Session Requests button should be visible",
+      "acceptance": "The Delete Session Requests button should be visible\nThe behavior should be validated when the Epic page loads."
+    },
+    {
+      "test_id": "UTC-1847",
+      "srs_id": "SRS-141",
+      "sds_id": "SDS-141",
+      "summary": "Verify Permission fetched from master config\nwhen the page initializes",
+      "description": "Feature: Permission-Based Delete Button Visibility\nScenario: Permission fetched from master config\nGiven the page initializes\nWhen permissions are retrieved from API\nThen user permission set should include delete flag before rendering button",
+      "acceptance": "User permission set should include delete flag before rendering button\nThe behavior should be validated when permissions are retrieved from API."
+    },
+    {
+      "test_id": "UTC-1848",
+      "srs_id": "SRS-141",
+      "sds_id": "SDS-141",
+      "summary": "Verify Unauthorized DOM protection\nwhen the user lacks permission",
+      "description": "Feature: Permission-Based Delete Button Visibility\nScenario: Unauthorized DOM protection\nGiven the user lacks permission\nWhen inspecting DOM\nThen delete button element should not exist (not hidden via CSS only)",
+      "acceptance": "Delete button element should not exist (not hidden via CSS only)\nThe behavior should be validated when inspecting DOM."
+    },
+    {
+      "test_id": "UTC-1849",
+      "srs_id": "SRS-141",
+      "sds_id": "SDS-141",
+      "summary": "Verify Direct API attempt blocked\nwhen unauthorized user",
+      "description": "Feature: Permission-Based Delete Button Visibility\nScenario: Direct API attempt blocked\nGiven unauthorized user\nWhen delete API is triggered manually\nThen system should return 403 Forbidden",
+      "acceptance": "System should return 403 Forbidden\nThe behavior should be validated when delete API is triggered manually."
+    },
+    {
+      "test_id": "UTC-1850",
+      "srs_id": "SRS-141",
+      "sds_id": "SDS-141",
+      "summary": "Verify Role change reflected immediately\nwhen permission is granted dynamically",
+      "description": "Feature: Permission-Based Delete Button Visibility\nScenario: Role change reflected immediately\nGiven permission is granted dynamically\nWhen page refreshes\nThen delete button should appear",
+      "acceptance": "Delete button should appear\nThe behavior should be validated when page refreshes."
+    },
+    {
+      "test_id": "UTC-1851",
+      "srs_id": "SRS-141",
+      "sds_id": "SDS-141",
+      "summary": "Verify Permission revoked dynamically\nwhen delete access is removed",
+      "description": "Feature: Permission-Based Delete Button Visibility\nScenario: Permission revoked dynamically\nGiven delete access is removed\nWhen page reloads\nThen delete button should disappear",
+      "acceptance": "Delete button should disappear\nThe behavior should be validated when page reloads."
+    },
+    {
+      "test_id": "UTC-1852",
+      "srs_id": "SRS-141",
+      "sds_id": "SDS-141",
+      "summary": "Verify No flicker during render\nwhen unauthorized user loads page",
+      "description": "Feature: Permission-Based Delete Button Visibility\nScenario: No flicker during render\nGiven unauthorized user loads page\nWhen UI renders\nThen delete button should never briefly appear",
+      "acceptance": "Delete button should never briefly appear\nThe behavior should be validated when UI renders."
+    },
+    {
+      "test_id": "UTC-1853",
+      "srs_id": "SRS-141",
+      "sds_id": "SDS-141",
+      "summary": "Verify Permission check performance\nwhen Epic page loads",
+      "description": "Feature: Permission-Based Delete Button Visibility\nScenario: Permission check performance\nGiven Epic page loads\nWhen permission validation runs\nThen UI should render within acceptable time (<2s)",
+      "acceptance": "UI should render within acceptable time (<2s)\nThe behavior should be validated when permission validation runs."
+    },
+    {
+      "test_id": "UTC-1854",
+      "srs_id": "SRS-141",
+      "sds_id": "SDS-141",
+      "summary": "Verify Clear visibility for authorized users\nwhen delete permission granted",
+      "description": "Feature: Permission-Based Delete Button Visibility\nScenario: Clear visibility for authorized users\nGiven delete permission granted\nWhen viewing table\nThen button should be clearly labeled and clickable",
+      "acceptance": "Button should be clearly labeled and clickable\nThe behavior should be validated when viewing table."
+    },
+    {
+      "test_id": "UTC-1855",
+      "srs_id": "SRS-141",
+      "sds_id": "SDS-141",
+      "summary": "Verify Corrupted permission payload\nwhen permission API fails",
+      "description": "Feature: Permission-Based Delete Button Visibility\nScenario: Corrupted permission payload\nGiven permission API fails\nWhen page renders\nThen delete button should remain hidden by default",
+      "acceptance": "Delete button should remain hidden by default\nThe behavior should be validated when page renders."
+    },
+    {
+      "test_id": "UTC-1856",
+      "srs_id": "SRS-141",
+      "sds_id": "SDS-141",
+      "summary": "Verify Correct permission mapping\nwhen user profile contains delete flag",
+      "description": "Feature: Permission-Based Delete Button Visibility\nScenario: Correct permission mapping\nGiven user profile contains delete flag\nWhen permission is parsed\nThen can_delete_session should correctly map to UI visibility",
+      "acceptance": "Can_delete_session should correctly map to UI visibility\nThe behavior should be validated when permission is parsed."
+    },
+    {
+      "test_id": "UTC-1857",
+      "srs_id": "SRS-142",
+      "sds_id": "SDS-142",
+      "summary": "Verify Badge visible when pending requests exist\nwhen pending deletion requests > 0",
+      "description": "Feature: Delete Request Notification Badge\nScenario: Badge visible when pending requests exist\nGiven pending deletion requests > 0\nWhen Epic page loads\nThen a red notification badge should be visible on the Delete Session Requests button",
+      "acceptance": "A red notification badge should be visible on the Delete Session Requests button\nThe behavior should be validated when Epic page loads."
+    },
+    {
+      "test_id": "UTC-1858",
+      "srs_id": "SRS-142",
+      "sds_id": "SDS-142",
+      "summary": "Verify Correct count displayed\nwhen 5 pending requests exist",
+      "description": "Feature: Delete Request Notification Badge\nScenario: Correct count displayed\nGiven 5 pending requests exist\nWhen badge renders\nThen badge should display count “5”",
+      "acceptance": "Badge should display count \"5\"\nThe behavior should be validated when badge renders."
+    },
+    {
+      "test_id": "UTC-1859",
+      "srs_id": "SRS-142",
+      "sds_id": "SDS-142",
+      "summary": "Verify Badge hidden when count is zero\nwhen no pending requests",
+      "description": "Feature: Delete Request Notification Badge\nScenario: Badge hidden when count is zero\nGiven no pending requests\nWhen page loads\nThen badge should not be visible",
+      "acceptance": "Badge should not be visible\nThe behavior should be validated when page loads."
+    },
+    {
+      "test_id": "UTC-1860",
+      "srs_id": "SRS-142",
+      "sds_id": "SDS-142",
+      "summary": "Verify Real-time count update\nwhen badge shows count 2",
+      "description": "Feature: Delete Request Notification Badge\nScenario: Real-time count update\nGiven badge shows count 2\nWhen a new request is added\nThen badge should update to 3 without page refresh",
+      "acceptance": "Badge should update to 3 without page refresh\nThe behavior should be validated when a new request is added."
+    },
+    {
+      "test_id": "UTC-1861",
+      "srs_id": "SRS-142",
+      "sds_id": "SDS-142",
+      "summary": "Verify Count decreases after request resolved\nwhen count shows 3",
+      "description": "Feature: Delete Request Notification Badge\nScenario: Count decreases after request resolved\nGiven count shows 3\nWhen one request is approved or rejected\nThen badge should update to 2",
+      "acceptance": "Badge should update to 2\nThe behavior should be validated when one request is approved or rejected."
+    },
+    {
+      "test_id": "UTC-1862",
+      "srs_id": "SRS-142",
+      "sds_id": "SDS-142",
+      "summary": "Verify Correct badge position\nwhen Delete Session Requests button is visible",
+      "description": "Feature: Delete Request Notification Badge\nScenario: Correct badge position\nGiven Delete Session Requests button is visible\nWhen UI renders\nThen badge should appear at top-right corner of the button",
+      "acceptance": "Badge should appear at top-right corner of the button\nThe behavior should be validated when UI renders."
+    },
+    {
+      "test_id": "UTC-1863",
+      "srs_id": "SRS-142",
+      "sds_id": "SDS-142",
+      "summary": "Verify Badge styling consistency\nwhen badge displayed",
+      "description": "Feature: Delete Request Notification Badge\nScenario: Badge styling consistency\nGiven badge displayed\nWhen viewing UI\nThen badge should be red circular with white numeric text",
+      "acceptance": "Badge should be red circular with white numeric text\nThe behavior should be validated when viewing UI."
+    },
+    {
+      "test_id": "UTC-1864",
+      "srs_id": "SRS-142",
+      "sds_id": "SDS-142",
+      "summary": "Verify Count loads quickly\nwhen page initializes",
+      "description": "Feature: Delete Request Notification Badge\nScenario: Count loads quickly\nGiven page initializes\nWhen aggregation API is called\nThen badge count should load within acceptable time (<2s)",
+      "acceptance": "Badge count should load within acceptable time (<2s)\nThe behavior should be validated when aggregation API is called."
+    },
+    {
+      "test_id": "UTC-1865",
+      "srs_id": "SRS-142",
+      "sds_id": "SDS-142",
+      "summary": "Verify No flicker during initial render\nwhen page loads",
+      "description": "Feature: Delete Request Notification Badge\nScenario: No flicker during initial render\nGiven page loads\nWhen UI renders\nThen badge should not flash incorrect values before final count",
+      "acceptance": "Badge should not flash incorrect values before final count\nThe behavior should be validated when UI renders."
+    },
+    {
+      "test_id": "UTC-1866",
+      "srs_id": "SRS-142",
+      "sds_id": "SDS-142",
+      "summary": "Verify Unauthorized user cannot view badge\nwhen user lacks delete permission",
+      "description": "Feature: Delete Request Notification Badge\nScenario: Unauthorized user cannot view badge\nGiven user lacks delete permission\nWhen page loads\nThen Delete Session Requests button and badge should not be visible",
+      "acceptance": "Delete Session Requests button and badge should not be visible\nThe behavior should be validated when page loads."
+    },
+    {
+      "test_id": "UTC-1867",
+      "srs_id": "SRS-142",
+      "sds_id": "SDS-142",
+      "summary": "Verify API failure handling\nwhen aggregation API fails",
+      "description": "Feature: Delete Request Notification Badge\nScenario: API failure handling\nGiven aggregation API fails\nWhen UI loads\nThen badge should remain hidden and page should not break",
+      "acceptance": "Badge should remain hidden and page should not break\nThe behavior should be validated when UI loads."
+    },
+    {
+      "test_id": "UTC-1868",
+      "srs_id": "SRS-142",
+      "sds_id": "SDS-142",
+      "summary": "Verify Only PENDING status counted\nwhen requests with multiple statuses exist",
+      "description": "Feature: Delete Request Notification Badge\nScenario: Only PENDING status counted\nGiven requests with multiple statuses exist\nWhen aggregation runs\nThen only records with status “PENDING” should be included in count",
+      "acceptance": "Only records with status \"PENDING\" should be included in count\nThe behavior should be validated when aggregation runs."
+    },
+    {
+      "test_id": "UTC-1869",
+      "srs_id": "SRS-142",
+      "sds_id": "SDS-142",
+      "summary": "Verify Large count formatting\nwhen pending requests exceed 99",
+      "description": "Feature: Delete Request Notification Badge\nScenario: Large count formatting\nGiven pending requests exceed 99\nWhen badge renders\nThen value should display “99+” or capped format for readability",
+      "acceptance": "Value should display \"99+\" or capped format for readability\nThe behavior should be validated when badge renders."
+    },
+    {
+      "test_id": "UTC-1870",
+      "srs_id": "SRS-143",
+      "sds_id": "SDS-143",
+      "summary": "Verify Delete Session modal opens\nwhen user has delete permission",
+      "description": "Feature: Deletion Request Submission\nScenario: Delete Session modal opens\nGiven user has delete permission\nWhen user clicks Delete Session\nThen the Delete Session modal should open",
+      "acceptance": "The Delete Session modal should open\nThe behavior should be validated when user clicks Delete Session."
+    },
+    {
+      "test_id": "UTC-1871",
+      "srs_id": "SRS-143",
+      "sds_id": "SDS-143",
+      "summary": "Verify Session name displayed as read-only\nwhen modal is open",
+      "description": "Feature: Deletion Request Submission\nScenario: Session name displayed as read-only\nGiven modal is open\nWhen user views session name field\nThen session name should be visible and read-only",
+      "acceptance": "Session name should be visible and read-only\nThe behavior should be validated when user views session name field."
+    },
+    {
+      "test_id": "UTC-1872",
+      "srs_id": "SRS-143",
+      "sds_id": "SDS-143",
+      "summary": "Verify Reason textarea visible\nwhen modal is open",
+      "description": "Feature: Deletion Request Submission\nScenario: Reason textarea visible\nGiven modal is open\nWhen UI renders\nThen Reason textarea should be visible",
+      "acceptance": "Reason textarea should be visible\nThe behavior should be validated when UI renders."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "session-lock-button": "session-lock-button",
+  "session-unlock-button": "session-unlock-button",
+  "session-lock-icon": "session-lock-icon",
+  "session-lock-modal": "session-lock-modal",
+  "session-lock-reason-input": "session-lock-reason-input",
+  "session-lock-submit-button": "session-lock-submit-button",
+  "session-lock-cancel-button": "session-lock-cancel-button",
+  "session-unlock-modal": "session-unlock-modal",
+  "session-unlock-reason-input": "session-unlock-reason-input",
+  "session-unlock-submit-button": "session-unlock-submit-button",
+  "session-unlock-cancel-button": "session-unlock-cancel-button",
+  "session-duplicate-button": "session-duplicate-button"
+}

@@ -1,0 +1,195 @@
+{
+  "spec_file": "e2e/tests/data-labelling/URS-DV-DL-04/SRS-014/SDS-014.spec.ts",
+  "plan_urs": "URS-DV-DL-04",
+  "srs_str": "014",
+  "domain": "data-labelling",
+  "page_class": "DataLabellingPage",
+  "page_import": "data-labelling.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-386",
+      "srs_id": "SRS-33",
+      "sds_id": "SDS-33",
+      "summary": "Verify Responsive image grid with status indicators.\nwhen images exist",
+      "description": "Feature: Responsive image grid with status indicators.\nGiven images exist\nWhen page loads\nThen thumbnails shall render in grid layout",
+      "acceptance": "Thumbnails shall render in grid layout\nThe behavior should be validated when page loads."
+    },
+    {
+      "test_id": "UTC-387",
+      "srs_id": "SRS-33",
+      "sds_id": "SDS-33",
+      "summary": "Verify Responsive image grid with status indicators.\nwhen multiple screen sizes",
+      "description": "Feature: Responsive image grid with status indicators.\nGiven multiple screen sizes\nWhen screen resizes\nThen grid columns adjust responsively",
+      "acceptance": "Grid columns adjust responsively\nThe behavior should be validated when screen resizes."
+    },
+    {
+      "test_id": "UTC-388",
+      "srs_id": "SRS-33",
+      "sds_id": "SDS-33",
+      "summary": "Verify Responsive image grid with status indicators.\nwhen image status is PENDING",
+      "description": "Feature: Responsive image grid with status indicators.\nGiven image status is PENDING\nWhen grid renders\nThen grey PENDING badge shall display",
+      "acceptance": "Grey PENDING badge shall display\nThe behavior should be validated when grid renders."
+    },
+    {
+      "test_id": "UTC-389",
+      "srs_id": "SRS-33",
+      "sds_id": "SDS-33",
+      "summary": "Verify Responsive image grid with status indicators.\nwhen image status is IN_REVIEW",
+      "description": "Feature: Responsive image grid with status indicators.\nGiven image status is IN_REVIEW\nWhen grid renders\nThen yellow IN_REVIEW badge shall display",
+      "acceptance": "Yellow IN_REVIEW badge shall display\nThe behavior should be validated when grid renders."
+    },
+    {
+      "test_id": "UTC-390",
+      "srs_id": "SRS-33",
+      "sds_id": "SDS-33",
+      "summary": "Verify Responsive image grid with status indicators.\nwhen image metadata has ID",
+      "description": "Feature: Responsive image grid with status indicators.\nGiven image metadata has ID\nWhen card loads\nThen unique identifier shall be visible",
+      "acceptance": "Unique identifier shall be visible\nThe behavior should be validated when card loads."
+    },
+    {
+      "test_id": "UTC-391",
+      "srs_id": "SRS-33",
+      "sds_id": "SDS-33",
+      "summary": "Verify Responsive image grid with status indicators.\nwhen user selects image",
+      "description": "Feature: Responsive image grid with status indicators.\nGiven user selects image\nWhen card clicked\nThen thick yellow border shall highlight selection",
+      "acceptance": "Thick yellow border shall highlight selection\nThe behavior should be validated when card clicked."
+    },
+    {
+      "test_id": "UTC-392",
+      "srs_id": "SRS-33",
+      "sds_id": "SDS-33",
+      "summary": "Verify Responsive image grid with status indicators.\nwhen multiple images returned",
+      "description": "Feature: Responsive image grid with status indicators.\nGiven multiple images returned\nWhen grid loads\nThen all cards shall render correctly",
+      "acceptance": "All cards shall render correctly\nThe behavior should be validated when grid loads."
+    },
+    {
+      "test_id": "UTC-393",
+      "srs_id": "SRS-33",
+      "sds_id": "SDS-33",
+      "summary": "Verify Responsive image grid with status indicators.\nwhen API metadata available",
+      "description": "Feature: Responsive image grid with status indicators.\nGiven API metadata available\nWhen page initializes\nThen thumbnails shall populate from API",
+      "acceptance": "Thumbnails shall populate from API\nThe behavior should be validated when page initializes."
+    },
+    {
+      "test_id": "UTC-394",
+      "srs_id": "SRS-33",
+      "sds_id": "SDS-33",
+      "summary": "Verify Responsive image grid with status indicators.\nwhen valid image URL",
+      "description": "Feature: Responsive image grid with status indicators.\nGiven valid image URL\nWhen rendered\nThen thumbnail loads successfully",
+      "acceptance": "Thumbnail loads successfully\nThe behavior should be validated when rendered."
+    },
+    {
+      "test_id": "UTC-395",
+      "srs_id": "SRS-33",
+      "sds_id": "SDS-33",
+      "summary": "Verify Responsive image grid with status indicators.\nwhen broken image URL",
+      "description": "Feature: Responsive image grid with status indicators.\nGiven broken image URL\nWhen load fails\nThen placeholder icon shall display",
+      "acceptance": "Placeholder icon shall display\nThe behavior should be validated when load fails."
+    },
+    {
+      "test_id": "UTC-396",
+      "srs_id": "SRS-33",
+      "sds_id": "SDS-33",
+      "summary": "Verify Responsive image grid with status indicators.\nwhen status values exist",
+      "description": "Feature: Responsive image grid with status indicators.\nGiven status values exist\nWhen grid renders\nThen correct color codes shall map to each status",
+      "acceptance": "Correct color codes shall map to each status\nThe behavior should be validated when grid renders."
+    },
+    {
+      "test_id": "UTC-397",
+      "srs_id": "SRS-33",
+      "sds_id": "SDS-33",
+      "summary": "Verify Responsive image grid with status indicators.\nwhen badge overlays image",
+      "description": "Feature: Responsive image grid with status indicators.\nGiven badge overlays image\nWhen viewed\nThen text shall remain readable",
+      "acceptance": "Text shall remain readable\nThe behavior should be validated when viewed."
+    },
+    {
+      "test_id": "UTC-398",
+      "srs_id": "SRS-33",
+      "sds_id": "SDS-33",
+      "summary": "Verify Responsive image grid with status indicators.\nwhen up to 200 images",
+      "description": "Feature: Responsive image grid with status indicators.\nGiven up to 200 images\nWhen page loads\nThen grid renders within acceptable time",
+      "acceptance": "Grid renders within acceptable time\nThe behavior should be validated when page loads."
+    },
+    {
+      "test_id": "UTC-399",
+      "srs_id": "SRS-33",
+      "sds_id": "SDS-33",
+      "summary": "Verify Responsive image grid with status indicators.\nwhen many rows exist",
+      "description": "Feature: Responsive image grid with status indicators.\nGiven many rows exist\nWhen scrolling\nThen images remain visible without break",
+      "acceptance": "Images remain visible without break\nThe behavior should be validated when scrolling."
+    },
+    {
+      "test_id": "UTC-400",
+      "srs_id": "SRS-33",
+      "sds_id": "SDS-33",
+      "summary": "Verify Responsive image grid with status indicators.\nwhen multiple reloads",
+      "description": "Feature: Responsive image grid with status indicators.\nGiven multiple reloads\nWhen grid refreshes repeatedly\nThen no duplication or crash occurs",
+      "acceptance": "No duplication or crash occurs\nThe behavior should be validated when grid refreshes repeatedly."
+    },
+    {
+      "test_id": "UTC-401",
+      "srs_id": "SRS-33",
+      "sds_id": "SDS-33",
+      "summary": "Verify Responsive image grid with status indicators.\nwhen dataset empty",
+      "description": "Feature: Responsive image grid with status indicators.\nGiven dataset empty\nWhen page loads\nThen “No Data Available” view shall display",
+      "acceptance": "\"No Data Available\" view shall display\nThe behavior should be validated when page loads."
+    },
+    {
+      "test_id": "UTC-402",
+      "srs_id": "SRS-33",
+      "sds_id": "SDS-33",
+      "summary": "Verify Responsive image grid with status indicators.\nwhen empty dataset",
+      "description": "Feature: Responsive image grid with status indicators.\nGiven empty dataset\nWhen empty state active\nThen grid cards shall not render",
+      "acceptance": "Grid cards shall not render\nThe behavior should be validated when empty state active."
+    },
+    {
+      "test_id": "UTC-403",
+      "srs_id": "SRS-33",
+      "sds_id": "SDS-33",
+      "summary": "Verify Responsive image grid with status indicators.\nwhen metadata loaded",
+      "description": "Feature: Responsive image grid with status indicators.\nGiven metadata loaded\nWhen grid displays\nThen no sensitive/internal fields shall be exposed",
+      "acceptance": "No sensitive/internal fields shall be exposed\nThe behavior should be validated when grid displays."
+    },
+    {
+      "test_id": "UTC-404",
+      "srs_id": "SRS-33",
+      "sds_id": "SDS-33",
+      "summary": "Verify Responsive image grid with status indicators.\nwhen status changes",
+      "description": "Feature: Responsive image grid with status indicators.\nGiven status changes\nWhen grid refreshes\nThen badge updates immediately",
+      "acceptance": "Badge updates immediately\nThe behavior should be validated when grid refreshes."
+    },
+    {
+      "test_id": "UTC-405",
+      "srs_id": "SRS-33",
+      "sds_id": "SDS-33",
+      "summary": "Verify Responsive image grid with status indicators.\nwhen pagination changes",
+      "description": "Feature: Responsive image grid with status indicators.\nGiven pagination changes\nWhen new page loads\nThen grid renders correct dataset",
+      "acceptance": "Grid renders correct dataset\nThe behavior should be validated when new page loads."
+    },
+    {
+      "test_id": "UTC-406",
+      "srs_id": "SRS-34",
+      "sds_id": "SDS-34",
+      "summary": "Verify Image selection on click\nwhen the image grid is displayed",
+      "description": "Feature: Image Selection Logic\nScenario: Image selection on click\nGiven the image grid is displayed\nWhen the user clicks an image card\nThen the image should show a yellow border and checkmark",
+      "acceptance": "The image should show a yellow border and checkmark\nThe behavior should be validated when the user clicks an image card."
+    },
+    {
+      "test_id": "UTC-407",
+      "srs_id": "SRS-34",
+      "sds_id": "SDS-34",
+      "summary": "Verify Image deselection on second click\nwhen an image is already selected",
+      "description": "Feature: Image Selection Logic\nScenario: Image deselection on second click\nGiven an image is already selected\nWhen the user clicks the same image again\nThen the image should be deselected and visual indicators removed",
+      "acceptance": "The image should be deselected and visual indicators removed\nThe behavior should be validated when the user clicks the same image again."
+    },
+    {
+      "test_id": "UTC-408",
+      "srs_id": "SRS-34",
+      "sds_id": "SDS-34",
+      "summary": "Verify Multiple image selection\nwhen multiple images are displayed",
+      "description": "Feature: Image Selection Logic\nScenario: Multiple image selection\nGiven multiple images are displayed\nWhen the user selects more than one image\nThen all selected images should remain highlighted",
+      "acceptance": "All selected images should remain highlighted\nThe behavior should be validated when the user selects more than one image."
+    }
+  ]
+}

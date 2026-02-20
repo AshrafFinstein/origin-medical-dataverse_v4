@@ -1,0 +1,14 @@
+{
+  "validEpic": {
+    "name": "Automation Test Epic",
+    "description": "Created by automated test"
+  },
+  "searchTerms": {
+    "existing": "Automation",
+    "nonExistent": "XYZ_NONEXISTENT_999"
+  },
+  "validation": {
+    "emptyName": "",
+    "longName": "A very long epic name that exceeds the character limit for testing validation purposes and should trigger an error message from the application"
+  }
+}

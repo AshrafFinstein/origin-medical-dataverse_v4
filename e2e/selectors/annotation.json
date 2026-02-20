@@ -1,21 +1,13 @@
 {
-  "annotation-create": {
-    "button": "[data-testid=\"annotation-create-button\"]",
-    "modal": "[data-testid=\"annotation-create-modal\"]",
-    "name-input": "[data-testid=\"annotation-create-name-input\"]",
-    "abbreviation-input": "[data-testid=\"annotation-create-abbreviation-input\"]",
-    "taxonomy-type-select": "[data-testid=\"annotation-create-taxonomy-type-select\"]",
-    "color-picker": "[data-testid=\"annotation-create-color-picker\"]",
-    "cancel-button": "[data-testid=\"annotation-create-cancel-button\"]",
-    "submit-button": "[data-testid=\"annotation-create-submit-button\"]"
-  },
-  "annotation-export": {
-    "button": "[data-testid=\"annotation-export-button\"]"
-  },
-  "annotation-table": {
-    "root": "[data-testid=\"annotation-table\"]"
-  },
-  "annotation-update": {
-    "button": "[data-testid=\"annotation-update-button\"]"
-  }
+  "annotation-create-button": "annotation-create-button",
+  "annotation-create-modal": "annotation-create-modal",
+  "annotation-create-name-input": "annotation-create-name-input",
+  "annotation-create-abbreviation-input": "annotation-create-abbreviation-input",
+  "annotation-create-taxonomy-type-select": "annotation-create-taxonomy-type-select",
+  "annotation-create-color-picker": "annotation-create-color-picker",
+  "annotation-create-cancel-button": "annotation-create-cancel-button",
+  "annotation-create-submit-button": "annotation-create-submit-button",
+  "annotation-export-button": "annotation-export-button",
+  "annotation-table": "annotation-table",
+  "annotation-update-button": "annotation-update-button"
 }

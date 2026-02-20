@@ -2,12 +2,12 @@ import { BaseModule } from '../../shared/base-module';
 
 export class AnnotationValidationModule extends BaseModule {
   async getAnnotationCount(): Promise<number> {
-    const tableSelector = this.selectors.annotation['annotation-table'].root;
+    const tableSelector = this.selectors.annotation['annotation-table'];
     return await this.ctx.getTableRowCount(tableSelector);
   }
 
   async getAnnotationName(rowIndex: number): Promise<string> {
-    const tableSelector = this.selectors.annotation['annotation-table'].root;
+    const tableSelector = this.selectors.annotation['annotation-table'];
     return await this.ctx.getTableCellText(tableSelector, rowIndex, 1);
   }
 
@@ -16,11 +16,11 @@ export class AnnotationValidationModule extends BaseModule {
   }
 
   async waitForAnnotationTable() {
-    await this.waitForSelector(this.selectors.annotation['annotation-table'].root);
+    await this.waitForSelector(this.selectors.annotation['annotation-table']);
     await this.waitForLoadingComplete();
   }
 
   async isAnnotationCreateModalOpen(): Promise<boolean> {
-    return await this.isVisible(this.selectors.annotation['annotation-create'].modal);
+    return await this.isVisible(this.selectors.annotation['annotation-create-modal']);
   }
 }

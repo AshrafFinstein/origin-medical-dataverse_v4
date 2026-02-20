@@ -1,0 +1,75 @@
+{
+  "spec_file": "e2e/tests/annotation/URS-DV-DA-18/SRS-065/SDS-065.spec.ts",
+  "plan_urs": "URS-DV-DA-18",
+  "srs_str": "065",
+  "domain": "annotation",
+  "page_class": "DataLabellingPage",
+  "page_import": "data-labelling.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-2615",
+      "srs_id": "SRS-249",
+      "sds_id": "SDS-249",
+      "summary": "Verify Copy Annotation button is disabled when image has no annotations\nwhen the user selects an image with no existing annotations",
+      "description": "Feature: Copy Annotation – Default Disabled State\n\nScenario: Verify Copy Annotation button is disabled when image has no annotations\n\nGiven the user selects an image with no existing annotations\nWhen the image is loaded\nThen the Copy Annotation button should be disabled",
+      "acceptance": "The Copy Annotation button should be disabled\nThe behavior should be validated when the image is loaded."
+    },
+    {
+      "test_id": "UTC-2616",
+      "srs_id": "SRS-249",
+      "sds_id": "SDS-249",
+      "summary": "Verify Copy Annotation button is enabled when image has annotations\nwhen the user selects an image with at least one saved annotation",
+      "description": "Feature: Copy Annotation – Enabled State for Annotated Image\n\nScenario: Verify Copy Annotation button is enabled when image has annotations\n\nGiven the user selects an image with at least one saved annotation\nWhen the image is loaded\nThen the Copy Annotation button should be enabled",
+      "acceptance": "The Copy Annotation button should be enabled\nThe behavior should be validated when the image is loaded."
+    },
+    {
+      "test_id": "UTC-2617",
+      "srs_id": "SRS-249",
+      "sds_id": "SDS-249",
+      "summary": "Verify Copy Annotation button becomes enabled after saving an annotation\nwhen the user selects an image with no annotations",
+      "description": "Feature: Copy Annotation – Enable After Save\n\nScenario: Verify Copy Annotation button becomes enabled after saving an annotation\n\nGiven the user selects an image with no annotations\nWhen the user adds and saves a new annotation\nThen the Copy Annotation button should become enabled immediately",
+      "acceptance": "The Copy Annotation button should become enabled immediately\nThe behavior should be validated when the user adds and saves a new annotation."
+    },
+    {
+      "test_id": "UTC-2618",
+      "srs_id": "SRS-249",
+      "sds_id": "SDS-249",
+      "summary": "Verify button state updates when switching between images\nwhen the user switches between images with and without annotations",
+      "description": "Feature: Copy Annotation – Dynamic State Update on Image Change\n\nScenario: Verify button state updates when switching between images\n\nGiven the user switches between images with and without annotations\nWhen a new image is selected\nThen the Copy Annotation button state should update dynamically based on annotation presence",
+      "acceptance": "The Copy Annotation button state should update dynamically based on annotation presence\nThe behavior should be validated when a new image is selected."
+    },
+    {
+      "test_id": "UTC-2619",
+      "srs_id": "SRS-249",
+      "sds_id": "SDS-249",
+      "summary": "Verify Copy Annotation action cannot be triggered when disabled\nwhen the selected image has no annotations",
+      "description": "Feature: Copy Annotation – Disabled Action Protection\n\nScenario: Verify Copy Annotation action cannot be triggered when disabled\n\nGiven the selected image has no annotations\nWhen the user attempts to click the disabled Copy Annotation button\nThen no action should be triggered",
+      "acceptance": "No action should be triggered\nThe behavior should be validated when the user attempts to click the disabled Copy Annotation button."
+    },
+    {
+      "test_id": "UTC-2620",
+      "srs_id": "SRS-250",
+      "sds_id": "SDS-250",
+      "summary": "Verify keyboard shortcut is supported for copying annotations\nwhen the user is viewing an image with saved annotations",
+      "description": "Feature: Copy Annotations – Shortcut Availability\n\nScenario: Verify keyboard shortcut is supported for copying annotations\n\nGiven the user is viewing an image with saved annotations\nWhen the user presses Shift + Ctrl + Right Arrow\nThen the system should initiate the copy annotations action",
+      "acceptance": "The system should initiate the copy annotations action\nThe behavior should be validated when the user presses Shift + Ctrl + Right Arrow."
+    },
+    {
+      "test_id": "UTC-2621",
+      "srs_id": "SRS-250",
+      "sds_id": "SDS-250",
+      "summary": "Verify annotations are copied to the next image using shortcut\nwhen the current image has one or more saved annotations",
+      "description": "Feature: Copy Annotations – Copy to Next Image via Shortcut\n\nScenario: Verify annotations are copied to the next image using shortcut\n\nGiven the current image has one or more saved annotations\nWhen the user presses Shift + Ctrl + Right Arrow\nThen all saved annotations should be copied to the next image",
+      "acceptance": "All saved annotations should be copied to the next image\nThe behavior should be validated when the user presses Shift + Ctrl + Right Arrow."
+    },
+    {
+      "test_id": "UTC-2622",
+      "srs_id": "SRS-250",
+      "sds_id": "SDS-250",
+      "summary": "Verify Copy Annotation button triggers manual copy flow\nwhen the Copy Annotation button is enabled",
+      "description": "Feature: Copy Annotations – Manual Copy Option\n\nScenario: Verify Copy Annotation button triggers manual copy flow\n\nGiven the Copy Annotation button is enabled\nWhen the user clicks the Copy Annotation button\nThen the system should open the image selection popup",
+      "acceptance": "The system should open the image selection popup\nThe behavior should be validated when the user clicks the Copy Annotation button."
+    }
+  ]
+}

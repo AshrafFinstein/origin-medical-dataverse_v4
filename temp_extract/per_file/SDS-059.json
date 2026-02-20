@@ -1,0 +1,355 @@
+{
+  "spec_file": "e2e/tests/annotation/URS-DV-DA-16/SRS-059/SDS-059.spec.ts",
+  "plan_urs": "URS-DV-DA-16",
+  "srs_str": "059",
+  "domain": "annotation",
+  "page_class": "AnnotationLabelsPage",
+  "page_import": "annotation-labels.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-2420",
+      "srs_id": "SRS-234",
+      "sds_id": "SDS-234",
+      "summary": "Verify Visual highlight of selected labels\nwhen labels selected",
+      "description": "Feature: Label Popup – Single & Multiple Label Selection\nScenario: Visual highlight of selected labels\nGiven labels selected\nWhen checkbox checked\nThen row should be visually highlighted",
+      "acceptance": "Row should be visually highlighted\nThe behavior should be validated when checkbox checked."
+    },
+    {
+      "test_id": "UTC-2421",
+      "srs_id": "SRS-234",
+      "sds_id": "SDS-234",
+      "summary": "Verify Keyboard selection support\nwhen popup open",
+      "description": "Feature: Label Popup – Single & Multiple Label Selection\nScenario: Keyboard selection support\nGiven popup open\nWhen user navigates with keyboard and presses Space/Enter\nThen checkbox selection should toggle",
+      "acceptance": "Checkbox selection should toggle\nThe behavior should be validated when user navigates with keyboard and presses Space/Enter."
+    },
+    {
+      "test_id": "UTC-2422",
+      "srs_id": "SRS-234",
+      "sds_id": "SDS-234",
+      "summary": "Verify Prevent apply with zero selection\nwhen no labels selected",
+      "description": "Feature: Label Popup – Single & Multiple Label Selection\nScenario: Prevent apply with zero selection\nGiven no labels selected\nWhen user clicks Apply\nThen action should be blocked",
+      "acceptance": "Action should be blocked\nThe behavior should be validated when user clicks Apply."
+    },
+    {
+      "test_id": "UTC-2423",
+      "srs_id": "SRS-234",
+      "sds_id": "SDS-234",
+      "summary": "Verify Performance with many labels\nwhen 500+ labels loaded",
+      "description": "Feature: Label Popup – Single & Multiple Label Selection\nScenario: Performance with many labels\nGiven 500+ labels loaded\nWhen selecting multiple items\nThen selection should respond instantly without lag",
+      "acceptance": "Selection should respond instantly without lag\nThe behavior should be validated when selecting multiple items."
+    },
+    {
+      "test_id": "UTC-2424",
+      "srs_id": "SRS-234",
+      "sds_id": "SDS-234",
+      "summary": "Verify Cancel clears selection\nwhen multiple labels selected",
+      "description": "Feature: Label Popup – Single & Multiple Label Selection\nScenario: Cancel clears selection\nGiven multiple labels selected\nWhen popup closed or cancelled\nThen selections should reset on next open",
+      "acceptance": "Selections should reset on next open\nThe behavior should be validated when popup closed or cancelled."
+    },
+    {
+      "test_id": "UTC-2425",
+      "srs_id": "SRS-235",
+      "sds_id": "SDS-235",
+      "summary": "Verify Apply button disabled by default\nwhen label popup opens",
+      "description": "Feature: Apply Button Enablement & Label Assignment\nScenario: Apply button disabled by default\nGiven label popup opens\nWhen no labels are selected\nThen Apply button should remain disabled",
+      "acceptance": "Apply button should remain disabled\nThe behavior should be validated when no labels are selected."
+    },
+    {
+      "test_id": "UTC-2426",
+      "srs_id": "SRS-235",
+      "sds_id": "SDS-235",
+      "summary": "Verify Enable Apply after single selection\nwhen popup open",
+      "description": "Feature: Apply Button Enablement & Label Assignment\nScenario: Enable Apply after single selection\nGiven popup open\nWhen one label is selected\nThen Apply button should become enabled",
+      "acceptance": "Apply button should become enabled\nThe behavior should be validated when one label is selected."
+    },
+    {
+      "test_id": "UTC-2427",
+      "srs_id": "SRS-235",
+      "sds_id": "SDS-235",
+      "summary": "Verify Enable Apply after multiple selections\nwhen popup open",
+      "description": "Feature: Apply Button Enablement & Label Assignment\nScenario: Enable Apply after multiple selections\nGiven popup open\nWhen multiple labels are selected\nThen Apply button should remain enabled",
+      "acceptance": "Apply button should remain enabled\nThe behavior should be validated when multiple labels are selected."
+    },
+    {
+      "test_id": "UTC-2428",
+      "srs_id": "SRS-235",
+      "sds_id": "SDS-235",
+      "summary": "Verify Apply assigns labels to image\nwhen labels selected",
+      "description": "Feature: Apply Button Enablement & Label Assignment\nScenario: Apply assigns labels to image\nGiven labels selected\nWhen user clicks Apply\nThen selected labels should be mapped to the image",
+      "acceptance": "Selected labels should be mapped to the image\nThe behavior should be validated when user clicks Apply."
+    },
+    {
+      "test_id": "UTC-2429",
+      "srs_id": "SRS-235",
+      "sds_id": "SDS-235",
+      "summary": "Verify Success message displayed\nwhen Apply action succeeds",
+      "description": "Feature: Apply Button Enablement & Label Assignment\nScenario: Success message displayed\nGiven Apply action succeeds\nWhen labels assigned\nThen success toast “Successfully Labelled Image” should appear",
+      "acceptance": "Success toast \"Successfully Labelled Image\" should appear\nThe behavior should be validated when labels assigned."
+    },
+    {
+      "test_id": "UTC-2430",
+      "srs_id": "SRS-235",
+      "sds_id": "SDS-235",
+      "summary": "Verify Labels visible below image\nwhen labels applied",
+      "description": "Feature: Apply Button Enablement & Label Assignment\nScenario: Labels visible below image\nGiven labels applied\nWhen popup closes\nThen applied labels should appear below the image preview",
+      "acceptance": "Applied labels should appear below the image preview\nThe behavior should be validated when popup closes."
+    },
+    {
+      "test_id": "UTC-2431",
+      "srs_id": "SRS-235",
+      "sds_id": "SDS-235",
+      "summary": "Verify Modify selection and reapply\nwhen labels already applied",
+      "description": "Feature: Apply Button Enablement & Label Assignment\nScenario: Modify selection and reapply\nGiven labels already applied\nWhen user updates selection and clicks Apply again\nThen previous labels should be replaced with new selection",
+      "acceptance": "Previous labels should be replaced with new selection\nThe behavior should be validated when user updates selection and clicks Apply again."
+    },
+    {
+      "test_id": "UTC-2432",
+      "srs_id": "SRS-235",
+      "sds_id": "SDS-235",
+      "summary": "Verify Correct label IDs in payload\nwhen labels selected",
+      "description": "Feature: Apply Button Enablement & Label Assignment\nScenario: Correct label IDs in payload\nGiven labels selected\nWhen Apply clicked\nThen selected label IDs should be sent in API payload",
+      "acceptance": "Selected label IDs should be sent in API payload\nThe behavior should be validated when Apply clicked."
+    },
+    {
+      "test_id": "UTC-2433",
+      "srs_id": "SRS-235",
+      "sds_id": "SDS-235",
+      "summary": "Verify Prevent Apply with zero selection\nwhen no labels selected",
+      "description": "Feature: Apply Button Enablement & Label Assignment\nScenario: Prevent Apply with zero selection\nGiven no labels selected\nWhen user clicks Apply\nThen action should not execute",
+      "acceptance": "Action should not execute\nThe behavior should be validated when user clicks Apply."
+    },
+    {
+      "test_id": "UTC-2434",
+      "srs_id": "SRS-235",
+      "sds_id": "SDS-235",
+      "summary": "Verify Retain previous labels on failure\nwhen API failure occurs",
+      "description": "Feature: Apply Button Enablement & Label Assignment\nScenario: Retain previous labels on failure\nGiven API failure occurs\nWhen Apply attempted\nThen old labels should remain unchanged",
+      "acceptance": "Old labels should remain unchanged\nThe behavior should be validated when Apply attempted."
+    },
+    {
+      "test_id": "UTC-2435",
+      "srs_id": "SRS-235",
+      "sds_id": "SDS-235",
+      "summary": "Verify Clear visual confirmation\nwhen labels applied",
+      "description": "Feature: Apply Button Enablement & Label Assignment\nScenario: Clear visual confirmation\nGiven labels applied\nWhen success toast shown\nThen user should clearly understand labels assigned",
+      "acceptance": "User should clearly understand labels assigned\nThe behavior should be validated when success toast shown."
+    },
+    {
+      "test_id": "UTC-2436",
+      "srs_id": "SRS-235",
+      "sds_id": "SDS-235",
+      "summary": "Verify Instant UI update\nwhen labels applied",
+      "description": "Feature: Apply Button Enablement & Label Assignment\nScenario: Instant UI update\nGiven labels applied\nWhen Apply completes\nThen label list should refresh instantly without page reload",
+      "acceptance": "Label list should refresh instantly without page reload\nThe behavior should be validated when Apply completes."
+    },
+    {
+      "test_id": "UTC-2437",
+      "srs_id": "SRS-235",
+      "sds_id": "SDS-235",
+      "summary": "Verify Keyboard apply support\nwhen labels selected",
+      "description": "Feature: Apply Button Enablement & Label Assignment\nScenario: Keyboard apply support\nGiven labels selected\nWhen user presses Enter key on Apply\nThen labels should be assigned successfully",
+      "acceptance": "Labels should be assigned successfully\nThe behavior should be validated when user presses Enter key on Apply."
+    },
+    {
+      "test_id": "UTC-2438",
+      "srs_id": "SRS-235",
+      "sds_id": "SDS-235",
+      "summary": "Verify Large label count handling\nwhen many labels selected (100+)",
+      "description": "Feature: Apply Button Enablement & Label Assignment\nScenario: Large label count handling\nGiven many labels selected (100+)\nWhen Apply clicked\nThen assignment should complete without UI freeze",
+      "acceptance": "Assignment should complete without UI freeze\nThe behavior should be validated when Apply clicked."
+    },
+    {
+      "test_id": "UTC-2439",
+      "srs_id": "SRS-235",
+      "sds_id": "SDS-235",
+      "summary": "Verify Cancel does not assign labels\nwhen labels selected",
+      "description": "Feature: Apply Button Enablement & Label Assignment\nScenario: Cancel does not assign labels\nGiven labels selected\nWhen popup closed without Apply\nThen no labels should be assigned",
+      "acceptance": "No labels should be assigned\nThe behavior should be validated when popup closed without Apply."
+    },
+    {
+      "test_id": "UTC-2440",
+      "srs_id": "SRS-236",
+      "sds_id": "SDS-236",
+      "summary": "Verify Trigger removal with Backspace\nwhen one or more images are selected",
+      "description": "Feature: Keyboard label removal with confirmation\nScenario: Trigger removal with Backspace\nGiven one or more images are selected\nWhen user presses Backspace\nThen confirmation popup should appear",
+      "acceptance": "Confirmation popup should appear\nThe behavior should be validated when user presses Backspace."
+    },
+    {
+      "test_id": "UTC-2441",
+      "srs_id": "SRS-236",
+      "sds_id": "SDS-236",
+      "summary": "Verify Modal shows correct message\nwhen popup opened",
+      "description": "Feature: Keyboard label removal with confirmation\nScenario: Modal shows correct message\nGiven popup opened\nWhen content rendered\nThen message text should explain label removal clearly",
+      "acceptance": "Message text should explain label removal clearly\nThe behavior should be validated when content rendered."
+    },
+    {
+      "test_id": "UTC-2442",
+      "srs_id": "SRS-236",
+      "sds_id": "SDS-236",
+      "summary": "Verify Modal shows image preview\nwhen selected images exist",
+      "description": "Feature: Keyboard label removal with confirmation\nScenario: Modal shows image preview\nGiven selected images exist\nWhen popup opens\nThen image thumbnails should be visible in modal",
+      "acceptance": "Image thumbnails should be visible in modal\nThe behavior should be validated when popup opens."
+    },
+    {
+      "test_id": "UTC-2443",
+      "srs_id": "SRS-236",
+      "sds_id": "SDS-236",
+      "summary": "Verify Display label count\nwhen images have labels",
+      "description": "Feature: Keyboard label removal with confirmation\nScenario: Display label count\nGiven images have labels\nWhen popup opens\nThen correct label count should be displayed",
+      "acceptance": "Correct label count should be displayed\nThe behavior should be validated when popup opens."
+    },
+    {
+      "test_id": "UTC-2444",
+      "srs_id": "SRS-236",
+      "sds_id": "SDS-236",
+      "summary": "Verify Cancel action using No\nwhen popup displayed",
+      "description": "Feature: Keyboard label removal with confirmation\nScenario: Cancel action using No\nGiven popup displayed\nWhen user clicks No\nThen modal closes and labels remain unchanged",
+      "acceptance": "Modal closes and labels remain unchanged\nThe behavior should be validated when user clicks No."
+    },
+    {
+      "test_id": "UTC-2445",
+      "srs_id": "SRS-236",
+      "sds_id": "SDS-236",
+      "summary": "Verify Confirm removal using Yes\nwhen popup displayed",
+      "description": "Feature: Keyboard label removal with confirmation\nScenario: Confirm removal using Yes\nGiven popup displayed\nWhen user clicks Yes\nThen labels should be removed from selected images",
+      "acceptance": "Labels should be removed from selected images\nThe behavior should be validated when user clicks Yes."
+    },
+    {
+      "test_id": "UTC-2446",
+      "srs_id": "SRS-236",
+      "sds_id": "SDS-236",
+      "summary": "Verify Success toast after removal\nwhen labels removed successfully",
+      "description": "Feature: Keyboard label removal with confirmation\nScenario: Success toast after removal\nGiven labels removed successfully\nWhen operation completes\nThen toast “Labels removed successfully from selected image(s)” appears",
+      "acceptance": "Toast \"Labels removed successfully from selected image(s)\" appears\nThe behavior should be validated when operation completes."
+    },
+    {
+      "test_id": "UTC-2447",
+      "srs_id": "SRS-236",
+      "sds_id": "SDS-236",
+      "summary": "Verify Backend payload correctness\nwhen labels removed",
+      "description": "Feature: Keyboard label removal with confirmation\nScenario: Backend payload correctness\nGiven labels removed\nWhen API triggered\nThen image IDs and label IDs should be sent correctly",
+      "acceptance": "Image IDs and label IDs should be sent correctly\nThe behavior should be validated when API triggered."
+    },
+    {
+      "test_id": "UTC-2448",
+      "srs_id": "SRS-236",
+      "sds_id": "SDS-236",
+      "summary": "Verify No image selected\nwhen no image selected",
+      "description": "Feature: Keyboard label removal with confirmation\nScenario: No image selected\nGiven no image selected\nWhen Backspace pressed\nThen removal should not trigger and notification shown",
+      "acceptance": "Removal should not trigger and notification shown\nThe behavior should be validated when Backspace pressed."
+    },
+    {
+      "test_id": "UTC-2449",
+      "srs_id": "SRS-236",
+      "sds_id": "SDS-236",
+      "summary": "Verify Prevent action during text input\nwhen cursor inside search/text field",
+      "description": "Feature: Keyboard label removal with confirmation\nScenario: Prevent action during text input\nGiven cursor inside search/text field\nWhen Backspace pressed\nThen label removal should not trigger",
+      "acceptance": "Label removal should not trigger\nThe behavior should be validated when Backspace pressed."
+    },
+    {
+      "test_id": "UTC-2450",
+      "srs_id": "SRS-236",
+      "sds_id": "SDS-236",
+      "summary": "Verify Failure handling\nwhen backend removal fails",
+      "description": "Feature: Keyboard label removal with confirmation\nScenario: Failure handling\nGiven backend removal fails\nWhen operation completes\nThen previous labels remain and error toast shown",
+      "acceptance": "Previous labels remain and error toast shown\nThe behavior should be validated when operation completes."
+    },
+    {
+      "test_id": "UTC-2451",
+      "srs_id": "SRS-236",
+      "sds_id": "SDS-236",
+      "summary": "Verify Instant UI refresh\nwhen labels removed",
+      "description": "Feature: Keyboard label removal with confirmation\nScenario: Instant UI refresh\nGiven labels removed\nWhen confirmation accepted\nThen UI updates immediately without reload",
+      "acceptance": "UI updates immediately without reload\nThe behavior should be validated when confirmation accepted."
+    },
+    {
+      "test_id": "UTC-2452",
+      "srs_id": "SRS-236",
+      "sds_id": "SDS-236",
+      "summary": "Verify Clear confirmation controls\nwhen popup visible",
+      "description": "Feature: Keyboard label removal with confirmation\nScenario: Clear confirmation controls\nGiven popup visible\nWhen user reviews buttons\nThen Yes/No buttons clearly distinguishable",
+      "acceptance": "Yes/No buttons clearly distinguishable\nThe behavior should be validated when user reviews buttons."
+    },
+    {
+      "test_id": "UTC-2453",
+      "srs_id": "SRS-236",
+      "sds_id": "SDS-236",
+      "summary": "Verify Keyboard navigation\nwhen popup open",
+      "description": "Feature: Keyboard label removal with confirmation\nScenario: Keyboard navigation\nGiven popup open\nWhen user presses Tab/Enter\nThen Yes/No buttons selectable via keyboard",
+      "acceptance": "Yes/No buttons selectable via keyboard\nThe behavior should be validated when user presses Tab/Enter."
+    },
+    {
+      "test_id": "UTC-2454",
+      "srs_id": "SRS-236",
+      "sds_id": "SDS-236",
+      "summary": "Verify Multiple images removal\nwhen many images selected (50+)",
+      "description": "Feature: Keyboard label removal with confirmation\nScenario: Multiple images removal\nGiven many images selected (50+)\nWhen user confirms removal\nThen all labels removed without lag",
+      "acceptance": "All labels removed without lag\nThe behavior should be validated when user confirms removal."
+    },
+    {
+      "test_id": "UTC-2455",
+      "srs_id": "SRS-236",
+      "sds_id": "SDS-236",
+      "summary": "Verify Unauthorized user attempt\nwhen user lacks permission",
+      "description": "Feature: Keyboard label removal with confirmation\nScenario: Unauthorized user attempt\nGiven user lacks permission\nWhen Backspace pressed\nThen removal blocked and access message shown",
+      "acceptance": "Removal blocked and access message shown\nThe behavior should be validated when Backspace pressed."
+    },
+    {
+      "test_id": "UTC-2456",
+      "srs_id": "SRS-237",
+      "sds_id": "SDS-237",
+      "summary": "Verify Authorized user sees controls\nwhen user has label edit permission",
+      "description": "Feature: Role-based label modification security\nScenario: Authorized user sees controls\nGiven user has label edit permission\nWhen annotation page loads\nThen Apply and Remove controls should be enabled",
+      "acceptance": "Apply and Remove controls should be enabled\nThe behavior should be validated when annotation page loads."
+    },
+    {
+      "test_id": "UTC-2457",
+      "srs_id": "SRS-237",
+      "sds_id": "SDS-237",
+      "summary": "Verify Unauthorized user controls disabled\nwhen user has read-only role",
+      "description": "Feature: Role-based label modification security\nScenario: Unauthorized user controls disabled\nGiven user has read-only role\nWhen annotation page loads\nThen Apply and Remove controls should be disabled",
+      "acceptance": "Apply and Remove controls should be disabled\nThe behavior should be validated when annotation page loads."
+    },
+    {
+      "test_id": "UTC-2458",
+      "srs_id": "SRS-237",
+      "sds_id": "SDS-237",
+      "summary": "Verify Disabled control visual clarity\nwhen controls disabled",
+      "description": "Feature: Role-based label modification security\nScenario: Disabled control visual clarity\nGiven controls disabled\nWhen user views them\nThen opacity/disabled styling clearly indicates restriction",
+      "acceptance": "Opacity/disabled styling clearly indicates restriction\nThe behavior should be validated when user views them."
+    },
+    {
+      "test_id": "UTC-2459",
+      "srs_id": "SRS-237",
+      "sds_id": "SDS-237",
+      "summary": "Verify Prevent Apply click\nwhen unauthorized user",
+      "description": "Feature: Role-based label modification security\nScenario: Prevent Apply click\nGiven unauthorized user\nWhen clicking Apply\nThen action must not execute",
+      "acceptance": "Action must not execute\nThe behavior should be validated when clicking Apply."
+    },
+    {
+      "test_id": "UTC-2460",
+      "srs_id": "SRS-237",
+      "sds_id": "SDS-237",
+      "summary": "Verify Prevent Remove action\nwhen unauthorized user",
+      "description": "Feature: Role-based label modification security\nScenario: Prevent Remove action\nGiven unauthorized user\nWhen clicking Remove or pressing Backspace\nThen label removal must not execute",
+      "acceptance": "Label removal must not execute\nThe behavior should be validated when clicking Remove or pressing Backspace."
+    },
+    {
+      "test_id": "UTC-2461",
+      "srs_id": "SRS-237",
+      "sds_id": "SDS-237",
+      "summary": "Verify Access denied message\nwhen unauthorized action attempted",
+      "description": "Feature: Role-based label modification security\nScenario: Access denied message\nGiven unauthorized action attempted\nWhen system blocks request\nThen “Access Denied” message displayed",
+      "acceptance": "\"Access Denied\" message displayed\nThe behavior should be validated when system blocks request."
+    },
+    {
+      "test_id": "UTC-2462",
+      "srs_id": "SRS-237",
+      "sds_id": "SDS-237",
+      "summary": "Verify Backend validation enforced\nwhen user manipulates frontend via console",
+      "description": "Feature: Role-based label modification security\nScenario: Backend validation enforced\nGiven user manipulates frontend via console\nWhen API request sent directly\nThen server returns 403 Forbidden",
+      "acceptance": "Server returns 403 Forbidden\nThe behavior should be validated when API request sent directly."
+    }
+  ]
+}

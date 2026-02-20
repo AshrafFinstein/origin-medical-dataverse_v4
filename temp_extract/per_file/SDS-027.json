@@ -1,0 +1,243 @@
+{
+  "spec_file": "e2e/tests/data-management/URS-DV-DM-06/SRS-027/SDS-027.spec.ts",
+  "plan_urs": "URS-DV-DM-06",
+  "srs_str": "027",
+  "domain": "data-management",
+  "page_class": "S3StoragePage",
+  "page_import": "s3-storage.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-672",
+      "srs_id": "SRS-57",
+      "sds_id": "SDS-57",
+      "summary": "Verify Write operation routed through correct adapter\nwhen a file upload request",
+      "description": "Feature: Provider Adapter Routing\nScenario: Write operation routed through correct adapter\nGiven a file upload request\nWhen the system processes storage\nThen the provider adapter should handle the write call",
+      "acceptance": "The provider adapter should handle the write call\nThe behavior should be validated when the system processes storage."
+    },
+    {
+      "test_id": "UTC-673",
+      "srs_id": "SRS-57",
+      "sds_id": "SDS-57",
+      "summary": "Verify Delete operation routed correctly\nwhen an asset exists in storage",
+      "description": "Feature: Provider Adapter Routing\nScenario: Delete operation routed correctly\nGiven an asset exists in storage\nWhen delete is triggered\nThen deletion should occur through the same provider adapter",
+      "acceptance": "Deletion should occur through the same provider adapter\nThe behavior should be validated when delete is triggered."
+    },
+    {
+      "test_id": "UTC-674",
+      "srs_id": "SRS-57",
+      "sds_id": "SDS-57",
+      "summary": "Verify Bucket metadata drives adapter selection\nwhen bucket configuration contains provider type",
+      "description": "Feature: Provider Adapter Routing\nScenario: Bucket metadata drives adapter selection\nGiven bucket configuration contains provider type\nWhen routing engine evaluates metadata\nThen correct adapter class should be instantiated dynamically",
+      "acceptance": "Correct adapter class should be instantiated dynamically\nThe behavior should be validated when routing engine evaluates metadata."
+    },
+    {
+      "test_id": "UTC-675",
+      "srs_id": "SRS-57",
+      "sds_id": "SDS-57",
+      "summary": "Verify Provider details hidden from UI\nwhen user navigates application screens",
+      "description": "Feature: Provider Adapter Routing\nScenario: Provider details hidden from UI\nGiven user navigates application screens\nWhen storage operations occur\nThen no provider or routing information should be visible",
+      "acceptance": "No provider or routing information should be visible\nThe behavior should be validated when storage operations occur."
+    },
+    {
+      "test_id": "UTC-676",
+      "srs_id": "SRS-57",
+      "sds_id": "SDS-57",
+      "summary": "Verify Multiple providers handled independently\nwhen buckets exist with different providers",
+      "description": "Feature: Provider Adapter Routing\nScenario: Multiple providers handled independently\nGiven buckets exist with different providers\nWhen operations occur\nThen each request should use its respective adapter",
+      "acceptance": "Each request should use its respective adapter\nThe behavior should be validated when operations occur."
+    },
+    {
+      "test_id": "UTC-677",
+      "srs_id": "SRS-57",
+      "sds_id": "SDS-57",
+      "summary": "Verify Adapter reused efficiently\nwhen repeated operations for same bucket",
+      "description": "Feature: Provider Adapter Routing\nScenario: Adapter reused efficiently\nGiven repeated operations for same bucket\nWhen requests execute\nThen adapter should be reused without reinitialization overhead",
+      "acceptance": "Adapter should be reused without reinitialization overhead\nThe behavior should be validated when requests execute."
+    },
+    {
+      "test_id": "UTC-678",
+      "srs_id": "SRS-57",
+      "sds_id": "SDS-57",
+      "summary": "Verify Unsupported provider blocked\nwhen bucket has unsupported provider type",
+      "description": "Feature: Provider Adapter Routing\nScenario: Unsupported provider blocked\nGiven bucket has unsupported provider type\nWhen routing is attempted\nThen operation should be blocked",
+      "acceptance": "Operation should be blocked\nThe behavior should be validated when routing is attempted."
+    },
+    {
+      "test_id": "UTC-679",
+      "srs_id": "SRS-57",
+      "sds_id": "SDS-57",
+      "summary": "Verify Routing failure metrics recorded\nwhen routing fails due to configuration error",
+      "description": "Feature: Provider Adapter Routing\nScenario: Routing failure metrics recorded\nGiven routing fails due to configuration error\nWhen failure occurs\nThen metrics with provider and bucket identifiers should be logged",
+      "acceptance": "Metrics with provider and bucket identifiers should be logged\nThe behavior should be validated when failure occurs."
+    },
+    {
+      "test_id": "UTC-680",
+      "srs_id": "SRS-57",
+      "sds_id": "SDS-57",
+      "summary": "Verify Missing bucket configuration handled safely\nwhen bucket metadata missing",
+      "description": "Feature: Provider Adapter Routing\nScenario: Missing bucket configuration handled safely\nGiven bucket metadata missing\nWhen operation is triggered\nThen system should prevent routing and show controlled error",
+      "acceptance": "System should prevent routing and show controlled error\nThe behavior should be validated when operation is triggered."
+    },
+    {
+      "test_id": "UTC-681",
+      "srs_id": "SRS-57",
+      "sds_id": "SDS-57",
+      "summary": "Verify Routing does not degrade performance\nwhen multiple concurrent storage operations",
+      "description": "Feature: Provider Adapter Routing\nScenario: Routing does not degrade performance\nGiven multiple concurrent storage operations\nWhen routing occurs\nThen response time should remain within SLA",
+      "acceptance": "Response time should remain within SLA\nThe behavior should be validated when routing occurs."
+    },
+    {
+      "test_id": "UTC-682",
+      "srs_id": "SRS-57",
+      "sds_id": "SDS-57",
+      "summary": "Verify Concurrent operations stable\nwhen multiple parallel requests",
+      "description": "Feature: Provider Adapter Routing\nScenario: Concurrent operations stable\nGiven multiple parallel requests\nWhen adapters route traffic\nThen no cross-bucket conflicts or failures should occur",
+      "acceptance": "No cross-bucket conflicts or failures should occur\nThe behavior should be validated when adapters route traffic."
+    },
+    {
+      "test_id": "UTC-683",
+      "srs_id": "SRS-57",
+      "sds_id": "SDS-57",
+      "summary": "Verify Provider resolved before operation execution\nwhen routing engine processes request",
+      "description": "Feature: Provider Adapter Routing\nScenario: Provider resolved before operation execution\nGiven routing engine processes request\nWhen execution starts\nThen provider adapter should be selected prior to performing any action",
+      "acceptance": "Provider adapter should be selected prior to performing any action\nThe behavior should be validated when execution starts."
+    },
+    {
+      "test_id": "UTC-684",
+      "srs_id": "SRS-57",
+      "sds_id": "SDS-57",
+      "summary": "Verify Adapter selection logged for audit\nwhen routing occurs",
+      "description": "Feature: Provider Adapter Routing\nScenario: Adapter selection logged for audit\nGiven routing occurs\nWhen adapter initializes\nThen system should log provider and bucket identifiers for traceability",
+      "acceptance": "System should log provider and bucket identifiers for traceability\nThe behavior should be validated when adapter initializes."
+    },
+    {
+      "test_id": "UTC-685",
+      "srs_id": "SRS-58",
+      "sds_id": "SDS-58",
+      "summary": "Verify Image renders from resolved bucket\nwhen an image exists in a mapped bucket",
+      "description": "Feature: Multi-Bucket Image Rendering\nScenario: Image renders from resolved bucket\nGiven an image exists in a mapped bucket\nWhen the labeling canvas loads the image\nThen the PNG image should display correctly",
+      "acceptance": "The PNG image should display correctly\nThe behavior should be validated when the labeling canvas loads the image."
+    },
+    {
+      "test_id": "UTC-686",
+      "srs_id": "SRS-58",
+      "sds_id": "SDS-58",
+      "summary": "Verify Bucket resolved using metadata\nwhen asset metadata contains bucket mapping",
+      "description": "Feature: Multi-Bucket Image Rendering\nScenario: Bucket resolved using metadata\nGiven asset metadata contains bucket mapping\nWhen image fetch starts\nThen system should resolve the correct bucket automatically",
+      "acceptance": "System should resolve the correct bucket automatically\nThe behavior should be validated when image fetch starts."
+    },
+    {
+      "test_id": "UTC-687",
+      "srs_id": "SRS-58",
+      "sds_id": "SDS-58",
+      "summary": "Verify Signed URL generated for secure access\nwhen bucket is private",
+      "description": "Feature: Multi-Bucket Image Rendering\nScenario: Signed URL generated for secure access\nGiven bucket is private\nWhen image is requested\nThen a secure signed URL should be generated before streaming",
+      "acceptance": "A secure signed URL should be generated before streaming\nThe behavior should be validated when image is requested."
+    },
+    {
+      "test_id": "UTC-688",
+      "srs_id": "SRS-58",
+      "sds_id": "SDS-58",
+      "summary": "Verify Loader visible during fetch\nwhen image loading is in progress",
+      "description": "Feature: Multi-Bucket Image Rendering\nScenario: Loader visible during fetch\nGiven image loading is in progress\nWhen canvas waits for stream\nThen a loader spinner should be displayed",
+      "acceptance": "A loader spinner should be displayed\nThe behavior should be validated when canvas waits for stream."
+    },
+    {
+      "test_id": "UTC-689",
+      "srs_id": "SRS-58",
+      "sds_id": "SDS-58",
+      "summary": "Verify Image preview replaces loader after success\nwhen loader is visible",
+      "description": "Feature: Multi-Bucket Image Rendering\nScenario: Image preview replaces loader after success\nGiven loader is visible\nWhen image stream completes\nThen loader should disappear and image preview should render",
+      "acceptance": "Loader should disappear and image preview should render\nThe behavior should be validated when image stream completes."
+    },
+    {
+      "test_id": "UTC-690",
+      "srs_id": "SRS-58",
+      "sds_id": "SDS-58",
+      "summary": "Verify Multiple buckets supported\nwhen images exist across different buckets",
+      "description": "Feature: Multi-Bucket Image Rendering\nScenario: Multiple buckets supported\nGiven images exist across different buckets\nWhen navigating between assets\nThen each image should render from its respective bucket correctly",
+      "acceptance": "Each image should render from its respective bucket correctly\nThe behavior should be validated when navigating between assets."
+    },
+    {
+      "test_id": "UTC-691",
+      "srs_id": "SRS-58",
+      "sds_id": "SDS-58",
+      "summary": "Verify Automatic bucket switching per image\nwhen consecutive images belong to different buckets",
+      "description": "Feature: Multi-Bucket Image Rendering\nScenario: Automatic bucket switching per image\nGiven consecutive images belong to different buckets\nWhen user moves to next image\nThen system should fetch from the next resolved bucket seamlessly",
+      "acceptance": "System should fetch from the next resolved bucket seamlessly\nThe behavior should be validated when user moves to next image."
+    },
+    {
+      "test_id": "UTC-692",
+      "srs_id": "SRS-58",
+      "sds_id": "SDS-58",
+      "summary": "Verify Placeholder shown when fetch fails\nwhen image fetch fails",
+      "description": "Feature: Multi-Bucket Image Rendering\nScenario: Placeholder shown when fetch fails\nGiven image fetch fails\nWhen stream cannot be established\nThen a placeholder image should be displayed",
+      "acceptance": "A placeholder image should be displayed\nThe behavior should be validated when stream cannot be established."
+    },
+    {
+      "test_id": "UTC-693",
+      "srs_id": "SRS-58",
+      "sds_id": "SDS-58",
+      "summary": "Verify Failure toast displayed\nwhen image load fails",
+      "description": "Feature: Multi-Bucket Image Rendering\nScenario: Failure toast displayed\nGiven image load fails\nWhen error occurs\nThen “Image load failed” toast should appear",
+      "acceptance": "\"Image load failed\" toast should appear\nThe behavior should be validated when error occurs."
+    },
+    {
+      "test_id": "UTC-694",
+      "srs_id": "SRS-58",
+      "sds_id": "SDS-58",
+      "summary": "Verify Direct bucket URL not exposed\nwhen secure rendering process",
+      "description": "Feature: Multi-Bucket Image Rendering\nScenario: Direct bucket URL not exposed\nGiven secure rendering process\nWhen inspecting network calls\nThen raw bucket paths should not be exposed publicly",
+      "acceptance": "Raw bucket paths should not be exposed publicly\nThe behavior should be validated when inspecting network calls."
+    },
+    {
+      "test_id": "UTC-695",
+      "srs_id": "SRS-58",
+      "sds_id": "SDS-58",
+      "summary": "Verify Image loads within SLA\nwhen normal network conditions",
+      "description": "Feature: Multi-Bucket Image Rendering\nScenario: Image loads within SLA\nGiven normal network conditions\nWhen image loads\nThen rendering should complete within acceptable time (<2s)",
+      "acceptance": "Rendering should complete within acceptable time (<2s)\nThe behavior should be validated when image loads."
+    },
+    {
+      "test_id": "UTC-696",
+      "srs_id": "SRS-58",
+      "sds_id": "SDS-58",
+      "summary": "Verify Retry works after failure\nwhen initial fetch fails",
+      "description": "Feature: Multi-Bucket Image Rendering\nScenario: Retry works after failure\nGiven initial fetch fails\nWhen user retries or reloads\nThen image should load successfully",
+      "acceptance": "Image should load successfully\nThe behavior should be validated when user retries or reloads."
+    },
+    {
+      "test_id": "UTC-697",
+      "srs_id": "SRS-58",
+      "sds_id": "SDS-58",
+      "summary": "Verify Large batch rendering stable\nwhen many images are loaded sequentially",
+      "description": "Feature: Multi-Bucket Image Rendering\nScenario: Large batch rendering stable\nGiven many images are loaded sequentially\nWhen navigating rapidly\nThen system should not freeze or crash",
+      "acceptance": "System should not freeze or crash\nThe behavior should be validated when navigating rapidly."
+    },
+    {
+      "test_id": "UTC-698",
+      "srs_id": "SRS-58",
+      "sds_id": "SDS-58",
+      "summary": "Verify Correct format displayed\nwhen PNG image fetched",
+      "description": "Feature: Multi-Bucket Image Rendering\nScenario: Correct format displayed\nGiven PNG image fetched\nWhen rendered\nThen correct PNG format should be displayed without corruption",
+      "acceptance": "Correct PNG format should be displayed without corruption\nThe behavior should be validated when rendered."
+    },
+    {
+      "test_id": "UTC-699",
+      "srs_id": "SRS-58",
+      "sds_id": "SDS-58",
+      "summary": "Verify Fetch event logged for traceability\nwhen image fetch occurs",
+      "description": "Feature: Multi-Bucket Image Rendering\nScenario: Fetch event logged for traceability\nGiven image fetch occurs\nWhen stream request is made\nThen system should log bucketId and assetId",
+      "acceptance": "System should log bucketId and assetId\nThe behavior should be validated when stream request is made."
+    },
+    {
+      "test_id": "UTC-700",
+      "srs_id": "SRS-59",
+      "sds_id": "SDS-59",
+      "summary": "Verify Signed URL generated for valid request\nwhen a valid authenticated user requests an asset",
+      "description": "Feature: Secure time-bound signed URLs for asset access\nScenario: Signed URL generated for valid request\nGiven a valid authenticated user requests an asset\nWhen the system resolves the bucket\nThen a secure pre-signed URL should be generated",
+      "acceptance": "A secure pre-signed URL should be generated\nThe behavior should be validated when the system resolves the bucket."
+    }
+  ]
+}

@@ -1,23 +1,9 @@
 {
-  "ce-edit": {
-    "form": "[data-testid=\"ce-edit-form\"]"
-  },
-  "ce-comment": {
-    "textarea": "[data-testid=\"ce-comment-textarea\"]"
-  },
-  "ce-measurement": {
-    "input": "[data-testid=\"measurement-${sectionIndex}-${measurementIndex}-input\"]"
-  },
-  "ce-validation": {
-    "error": ".n-form-item-feedback--error"
-  },
-  "ce-status": {
-    "saved": "text=All changes saved"
-  },
-  "ce-case-counter": {
-    "root": ".case-counter"
-  },
-  "ce-sections": {
-    "legend": "[data-testid^=\"ce-section-legend-\"]"
-  }
+  "ce-edit-form": "ce-edit-form",
+  "ce-comment-textarea": "ce-comment-textarea",
+  "ce-measurement-input-${sectionIndex}-${measurementIndex}": "measurement-${sectionIndex}-${measurementIndex}-input",
+  "ce-validation-error": ".n-form-item-feedback--error",
+  "ce-status-saved": "text=All changes saved",
+  "ce-case-counter": ".case-counter",
+  "ce-sections-legend": "[data-testid^=\"ce-section-legend-\"]"
 }

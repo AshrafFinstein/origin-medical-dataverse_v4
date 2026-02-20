@@ -1,17 +1,8 @@
 import { BaseModule } from '../shared/base-module';
 
-type SessionSelectorEntry = {
-  button?: string;
-  input?: string;
-  select?: string;
-  modal?: string;
-  table?: string;
-  root?: string;
-};
-
 export class DLValidationModule extends BaseModule {
   async getCurrentImageInfo(): Promise<{ current: number; total: number }> {
-    const infoText = await this.ctx.getText(this.selectors.dataLabelling['dl-counter'].root);
+    const infoText = await this.ctx.getText(this.selectors.dataLabelling['dl-counter']);
     const match = infoText.match(/(\d+)\s+of\s+(\d+)/);
 
     if (match) {
@@ -25,7 +16,7 @@ export class DLValidationModule extends BaseModule {
   }
 
   async getAnnotationCount(): Promise<number> {
-    const annotations = this.page.locator(this.selectors.dataLabelling['dl-annotation-items'].root);
+    const annotations = this.page.locator(this.selectors.dataLabelling['dl-annotation-items']);
     return await annotations.count();
   }
 
@@ -39,11 +30,11 @@ export class DLValidationModule extends BaseModule {
   }
 
   async areChangesSaved(): Promise<boolean> {
-    return await this.isVisible(this.selectors.dataLabelling['dl-status']['saved-indicator']);
+    return await this.isVisible(this.selectors.dataLabelling['dl-status-saved-indicator']);
   }
 
   // ============================================================
-  // ✅ FIXED: Auto navigate to valid /project/<uuid>
+  // Auto navigate to valid /project/<uuid>
   // ============================================================
   async navigateToModule() {
     // Step 1: Go to home
@@ -75,7 +66,7 @@ export class DLValidationModule extends BaseModule {
   }
 
   async waitForSessionTable(timeout: number = 15000) {
-    await this.waitForSelector(this.selectors.session['session-table'].root, {
+    await this.waitForSelector(this.selectors.session['session-table'], {
       timeout,
       state: 'visible',
     });
@@ -83,39 +74,35 @@ export class DLValidationModule extends BaseModule {
   }
 
   async verifyTableData(): Promise<boolean> {
-    return await this.isVisible(this.selectors.session['session-table'].root);
+    return await this.isVisible(this.selectors.session['session-table']);
   }
 
   async selectFromDropdown(dropdownKey: string, value: string) {
-    const selector = this.getSessionSelector(dropdownKey)?.select;
+    const selector = this.getSessionSelector(dropdownKey);
     if (selector) {
       await this.selectOption(selector, value);
     }
   }
 
   async clickCreateButton() {
-    await this.click(this.selectors.session['session-create'].button);
+    await this.click(this.selectors.session['session-create-button']);
     await this.waitForModalOpen();
   }
 
   async fillInputField(fieldName: string, value: string) {
-    const selector = this.getSessionSelector(`session-${fieldName}`)?.input;
+    const selector = this.getSessionSelector(`session-${fieldName}`);
     if (selector) {
       await this.fill(selector, value);
     }
   }
 
   async verifyElementVisible(elementKey: string): Promise<boolean> {
-    const parts = elementKey.split('-');
-    
-    const category = parts.slice(0, 2).join('-');
-    const key = parts.slice(2).join('-') || 'root';
-    const selector = this.getSessionSelector(category)?.[key as keyof SessionSelectorEntry];
+    const selector = this.getSessionSelector(elementKey);
     return selector ? this.isVisible(selector) : false;
   }
 
   async verifyModalVisible(modalKey: string): Promise<boolean> {
-    const selector = this.getSessionSelector(modalKey)?.modal;
+    const selector = this.getSessionSelector(modalKey);
     return selector ? this.isVisible(selector) : false;
   }
 
@@ -124,26 +111,26 @@ export class DLValidationModule extends BaseModule {
   }
 
   async isInputVisible(inputKey: string): Promise<boolean> {
-    const selector = this.getSessionSelector(inputKey)?.input;
+    const selector = this.getSessionSelector(inputKey);
     return selector ? this.isVisible(selector) : false;
   }
 
   async isSessionCreateModalOpen(): Promise<boolean> {
-    return await this.isVisible(this.selectors.session['session-create'].modal);
+    return await this.isVisible(this.selectors.session['session-create-modal']);
   }
 
   async applyFilter(searchTerm: string) {
-    await this.fill(this.selectors.session['session-search'].input, searchTerm);
-    await this.click(this.selectors.session['session-search'].icon);
+    await this.fill(this.selectors.session['session-search-input'], searchTerm);
+    await this.click(this.selectors.session['session-search-icon']);
     await this.waitForLoadingComplete();
   }
 
   async getSessionCount(): Promise<number> {
-    return await this.ctx.getTableRowCount(this.selectors.session['session-table'].root);
+    return await this.ctx.getTableRowCount(this.selectors.session['session-table']);
   }
 
-  private getSessionSelector(key: string): SessionSelectorEntry | undefined {
-    const sessionSelectors = this.selectors.session as Record<string, SessionSelectorEntry>;
+  private getSessionSelector(key: string): string | undefined {
+    const sessionSelectors = this.selectors.session as Record<string, string>;
     return sessionSelectors[key];
   }
 }

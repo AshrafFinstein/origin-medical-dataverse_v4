@@ -1,0 +1,235 @@
+{
+  "spec_file": "e2e/tests/data-management/URS-DV-DM-17/SRS-061/SDS-061.spec.ts",
+  "plan_urs": "URS-DV-DM-17",
+  "srs_str": "061",
+  "domain": "data-management",
+  "page_class": "S3StoragePage",
+  "page_import": "s3-storage.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-2505",
+      "srs_id": "SRS-240",
+      "sds_id": "SDS-240",
+      "summary": "Verify Button visible on page load\nwhen Create Session page is opened",
+      "description": "Feature: S3 Upload button hover highlight feedback\nScenario: Button visible on page load\nGiven Create Session page is opened\nWhen page renders\nThen Upload from S3 button should be visible at top-right corner",
+      "acceptance": "Upload from S3 button should be visible at top-right corner\nThe behavior should be validated when page renders."
+    },
+    {
+      "test_id": "UTC-2506",
+      "srs_id": "SRS-240",
+      "sds_id": "SDS-240",
+      "summary": "Verify Default style state\nwhen button is idle",
+      "description": "Feature: S3 Upload button hover highlight feedback\nScenario: Default style state\nGiven button is idle\nWhen cursor is not hovering\nThen button should display default styling only",
+      "acceptance": "Button should display default styling only\nThe behavior should be validated when cursor is not hovering."
+    },
+    {
+      "test_id": "UTC-2507",
+      "srs_id": "SRS-240",
+      "sds_id": "SDS-240",
+      "summary": "Verify Hover visual highlight\nwhen cursor is placed over button",
+      "description": "Feature: S3 Upload button hover highlight feedback\nScenario: Hover visual highlight\nGiven cursor is placed over button\nWhen hover occurs\nThen button should change color or border/glow to indicate interactivity",
+      "acceptance": "Button should change color or border/glow to indicate interactivity\nThe behavior should be validated when hover occurs."
+    },
+    {
+      "test_id": "UTC-2508",
+      "srs_id": "SRS-240",
+      "sds_id": "SDS-240",
+      "summary": "Verify Cursor pointer change\nwhen cursor hovers on button",
+      "description": "Feature: S3 Upload button hover highlight feedback\nScenario: Cursor pointer change\nGiven cursor hovers on button\nWhen hover begins\nThen cursor should change to pointer style",
+      "acceptance": "Cursor should change to pointer style\nThe behavior should be validated when hover begins."
+    },
+    {
+      "test_id": "UTC-2509",
+      "srs_id": "SRS-240",
+      "sds_id": "SDS-240",
+      "summary": "Verify Hover style reverts on exit\nwhen hover state active",
+      "description": "Feature: S3 Upload button hover highlight feedback\nScenario: Hover style reverts on exit\nGiven hover state active\nWhen cursor leaves button\nThen styling should revert to default immediately",
+      "acceptance": "Styling should revert to default immediately\nThe behavior should be validated when cursor leaves button."
+    },
+    {
+      "test_id": "UTC-2510",
+      "srs_id": "SRS-240",
+      "sds_id": "SDS-240",
+      "summary": "Verify No backend call on hover\nwhen user hovers button",
+      "description": "Feature: S3 Upload button hover highlight feedback\nScenario: No backend call on hover\nGiven user hovers button\nWhen hover state triggers\nThen no API/network request should be initiated",
+      "acceptance": "No API/network request should be initiated\nThe behavior should be validated when hover state triggers."
+    },
+    {
+      "test_id": "UTC-2511",
+      "srs_id": "SRS-240",
+      "sds_id": "SDS-240",
+      "summary": "Verify Instant hover response\nwhen cursor moves onto button",
+      "description": "Feature: S3 Upload button hover highlight feedback\nScenario: Instant hover response\nGiven cursor moves onto button\nWhen hover activates\nThen highlight should appear within 100ms without delay",
+      "acceptance": "Highlight should appear within 100ms without delay\nThe behavior should be validated when hover activates."
+    },
+    {
+      "test_id": "UTC-2512",
+      "srs_id": "SRS-240",
+      "sds_id": "SDS-240",
+      "summary": "Verify Visual clarity of highlight\nwhen button highlighted",
+      "description": "Feature: S3 Upload button hover highlight feedback\nScenario: Visual clarity of highlight\nGiven button highlighted\nWhen user views button\nThen highlight should be clearly noticeable and distinguishable",
+      "acceptance": "Highlight should be clearly noticeable and distinguishable\nThe behavior should be validated when user views button."
+    },
+    {
+      "test_id": "UTC-2513",
+      "srs_id": "SRS-240",
+      "sds_id": "SDS-240",
+      "summary": "Verify Keyboard focus highlight\nwhen user navigates via Tab key",
+      "description": "Feature: S3 Upload button hover highlight feedback\nScenario: Keyboard focus highlight\nGiven user navigates via Tab key\nWhen button receives focus\nThen focus highlight should appear similar to hover",
+      "acceptance": "Focus highlight should appear similar to hover\nThe behavior should be validated when button receives focus."
+    },
+    {
+      "test_id": "UTC-2514",
+      "srs_id": "SRS-240",
+      "sds_id": "SDS-240",
+      "summary": "Verify Multiple hover events stable\nwhen user repeatedly moves cursor in/out",
+      "description": "Feature: S3 Upload button hover highlight feedback\nScenario: Multiple hover events stable\nGiven user repeatedly moves cursor in/out\nWhen multiple hover actions occur\nThen UI should not flicker or break styling",
+      "acceptance": "UI should not flicker or break styling\nThe behavior should be validated when multiple hover actions occur."
+    },
+    {
+      "test_id": "UTC-2515",
+      "srs_id": "SRS-240",
+      "sds_id": "SDS-240",
+      "summary": "Verify Consistent hover across browsers\nwhen user tests in supported browsers",
+      "description": "Feature: S3 Upload button hover highlight feedback\nScenario: Consistent hover across browsers\nGiven user tests in supported browsers\nWhen hovering button\nThen highlight behavior should be consistent",
+      "acceptance": "Highlight behavior should be consistent\nThe behavior should be validated when hovering button."
+    },
+    {
+      "test_id": "UTC-2516",
+      "srs_id": "SRS-240",
+      "sds_id": "SDS-240",
+      "summary": "Verify Discoverability improvement\nwhen first-time user visits page",
+      "description": "Feature: S3 Upload button hover highlight feedback\nScenario: Discoverability improvement\nGiven first-time user visits page\nWhen scanning top-right controls\nThen hover feedback should clearly indicate clickable action",
+      "acceptance": "Hover feedback should clearly indicate clickable action\nThe behavior should be validated when scanning top-right controls."
+    },
+    {
+      "test_id": "UTC-2517",
+      "srs_id": "SRS-241",
+      "sds_id": "SDS-241",
+      "summary": "Verify Upload from S3 button visibility\nwhen Create Session page loads",
+      "description": "Feature: Upload Link JSON from S3 during session creation\nScenario: Upload from S3 button visibility\nGiven Create Session page loads\nWhen page renders\nThen “Upload from S3” button should appear at top-right corner",
+      "acceptance": "\"Upload from S3\" button should appear at top-right corner\nThe behavior should be validated when page renders."
+    },
+    {
+      "test_id": "UTC-2518",
+      "srs_id": "SRS-241",
+      "sds_id": "SDS-241",
+      "summary": "Verify Modal opens on click\nwhen user clicks Upload from S3",
+      "description": "Feature: Upload Link JSON from S3 during session creation\nScenario: Modal opens on click\nGiven user clicks Upload from S3\nWhen action triggered\nThen modal dialog should open with S3 Key field and Upload button",
+      "acceptance": "Modal dialog should open with S3 Key field and Upload button\nThe behavior should be validated when action triggered."
+    },
+    {
+      "test_id": "UTC-2519",
+      "srs_id": "SRS-241",
+      "sds_id": "SDS-241",
+      "summary": "Verify Upload disabled initially\nwhen modal is opened",
+      "description": "Feature: Upload Link JSON from S3 during session creation\nScenario: Upload disabled initially\nGiven modal is opened\nWhen no S3 key entered\nThen Upload button should remain disabled",
+      "acceptance": "Upload button should remain disabled\nThe behavior should be validated when no S3 key entered."
+    },
+    {
+      "test_id": "UTC-2520",
+      "srs_id": "SRS-241",
+      "sds_id": "SDS-241",
+      "summary": "Verify Enable Upload on valid key\nwhen valid S3 key format entered",
+      "description": "Feature: Upload Link JSON from S3 during session creation\nScenario: Enable Upload on valid key\nGiven valid S3 key format entered\nWhen input validated\nThen Upload button becomes enabled",
+      "acceptance": "Upload button becomes enabled\nThe behavior should be validated when input validated."
+    },
+    {
+      "test_id": "UTC-2521",
+      "srs_id": "SRS-241",
+      "sds_id": "SDS-241",
+      "summary": "Verify Successful JSON fetch\nwhen valid accessible S3 key",
+      "description": "Feature: Upload Link JSON from S3 during session creation\nScenario: Successful JSON fetch\nGiven valid accessible S3 key\nWhen user clicks Upload\nThen JSON should be fetched and bound to session form",
+      "acceptance": "JSON should be fetched and bound to session form\nThe behavior should be validated when user clicks Upload."
+    },
+    {
+      "test_id": "UTC-2522",
+      "srs_id": "SRS-241",
+      "sds_id": "SDS-241",
+      "summary": "Verify Display uploaded file name\nwhen JSON uploaded successfully",
+      "description": "Feature: Upload Link JSON from S3 during session creation\nScenario: Display uploaded file name\nGiven JSON uploaded successfully\nWhen upload completes\nThen file name should appear below upload area with remove icon",
+      "acceptance": "File name should appear below upload area with remove icon\nThe behavior should be validated when upload completes."
+    },
+    {
+      "test_id": "UTC-2523",
+      "srs_id": "SRS-241",
+      "sds_id": "SDS-241",
+      "summary": "Verify Remove uploaded file\nwhen file is displayed",
+      "description": "Feature: Upload Link JSON from S3 during session creation\nScenario: Remove uploaded file\nGiven file is displayed\nWhen user clicks remove icon\nThen file should be removed from session state and UI list",
+      "acceptance": "File should be removed from session state and UI list\nThe behavior should be validated when user clicks remove icon."
+    },
+    {
+      "test_id": "UTC-2524",
+      "srs_id": "SRS-241",
+      "sds_id": "SDS-241",
+      "summary": "Verify Empty key validation\nwhen S3 key empty",
+      "description": "Feature: Upload Link JSON from S3 during session creation\nScenario: Empty key validation\nGiven S3 key empty\nWhen Upload attempted\nThen validation message should display",
+      "acceptance": "Validation message should display\nThe behavior should be validated when Upload attempted."
+    },
+    {
+      "test_id": "UTC-2525",
+      "srs_id": "SRS-241",
+      "sds_id": "SDS-241",
+      "summary": "Verify Invalid key format\nwhen malformed key entered",
+      "description": "Feature: Upload Link JSON from S3 during session creation\nScenario: Invalid key format\nGiven malformed key entered\nWhen validated\nThen system should show invalid format message",
+      "acceptance": "System should show invalid format message\nThe behavior should be validated when validated."
+    },
+    {
+      "test_id": "UTC-2526",
+      "srs_id": "SRS-241",
+      "sds_id": "SDS-241",
+      "summary": "Verify Access denied handling\nwhen unauthorized S3 path",
+      "description": "Feature: Upload Link JSON from S3 during session creation\nScenario: Access denied handling\nGiven unauthorized S3 path\nWhen fetch attempted\nThen failure toast should appear",
+      "acceptance": "Failure toast should appear\nThe behavior should be validated when fetch attempted."
+    },
+    {
+      "test_id": "UTC-2527",
+      "srs_id": "SRS-241",
+      "sds_id": "SDS-241",
+      "summary": "Verify File not found handling\nwhen non-existing key",
+      "description": "Feature: Upload Link JSON from S3 during session creation\nScenario: File not found handling\nGiven non-existing key\nWhen fetch attempted\nThen file-not-found message should display",
+      "acceptance": "File-not-found message should display\nThe behavior should be validated when fetch attempted."
+    },
+    {
+      "test_id": "UTC-2528",
+      "srs_id": "SRS-241",
+      "sds_id": "SDS-241",
+      "summary": "Verify Invalid JSON structure\nwhen corrupted JSON file",
+      "description": "Feature: Upload Link JSON from S3 during session creation\nScenario: Invalid JSON structure\nGiven corrupted JSON file\nWhen parsed\nThen system should reject file and show structure error",
+      "acceptance": "System should reject file and show structure error\nThe behavior should be validated when parsed."
+    },
+    {
+      "test_id": "UTC-2529",
+      "srs_id": "SRS-241",
+      "sds_id": "SDS-241",
+      "summary": "Verify Metadata stored in state\nwhen upload success",
+      "description": "Feature: Upload Link JSON from S3 during session creation\nScenario: Metadata stored in state\nGiven upload success\nWhen session form inspected\nThen file metadata (name, size, path) should be stored",
+      "acceptance": "File metadata (name, size, path) should be stored\nThe behavior should be validated when session form inspected."
+    },
+    {
+      "test_id": "UTC-2530",
+      "srs_id": "SRS-241",
+      "sds_id": "SDS-241",
+      "summary": "Verify Page remains stable on error\nwhen upload fails",
+      "description": "Feature: Upload Link JSON from S3 during session creation\nScenario: Page remains stable on error\nGiven upload fails\nWhen error occurs\nThen session creation page should remain usable",
+      "acceptance": "Session creation page should remain usable\nThe behavior should be validated when error occurs."
+    },
+    {
+      "test_id": "UTC-2531",
+      "srs_id": "SRS-241",
+      "sds_id": "SDS-241",
+      "summary": "Verify Fast upload readiness\nwhen user clicks upload",
+      "description": "Feature: Upload Link JSON from S3 during session creation\nScenario: Fast upload readiness\nGiven user clicks upload\nWhen processing\nThen spinner shows and UI remains responsive",
+      "acceptance": "Spinner shows and UI remains responsive\nThe behavior should be validated when processing."
+    },
+    {
+      "test_id": "UTC-2532",
+      "srs_id": "SRS-241",
+      "sds_id": "SDS-241",
+      "summary": "Verify Secure signed URL usage\nwhen fetch initiated",
+      "description": "Feature: Upload Link JSON from S3 during session creation\nScenario: Secure signed URL usage\nGiven fetch initiated\nWhen backend called\nThen secure signed URL should be used without exposing credentials",
+      "acceptance": "Secure signed URL should be used without exposing credentials\nThe behavior should be validated when backend called."
+    }
+  ]
+}

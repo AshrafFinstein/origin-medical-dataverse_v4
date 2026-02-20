@@ -1,42 +1,22 @@
 {
-  "taxonomy-create": {
-    "button": "[data-testid=\"taxonomy-create-button\"]",
-    "modal": "[data-testid=\"taxonomy-create-modal\"]",
-    "name-input": "[data-testid=\"taxonomy-create-name-input\"]",
-    "cancel-button": "[data-testid=\"taxonomy-create-cancel-button\"]",
-    "submit-button": "[data-testid=\"taxonomy-create-submit-button\"]"
-  },
-  "taxonomy-table": {
-    "root": "[data-testid=\"taxonomy-table\"]"
-  },
-  "taxonomy-annotation-rows": {
-    "root": "[data-testid^=\"taxonomy-annotation-row-\"]"
-  },
-  "`taxonomy-annotation": {
-    "row-${index}`": "[data-testid=\"`taxonomy-annotation-row-${index}`\"]",
-    "select-${index}`": "[data-testid=\"`taxonomy-annotation-select-${index}`\"]"
-  },
-  "`taxonomy-color": {
-    "picker-${index}`": "[data-testid=\"`taxonomy-color-picker-${index}`\"]"
-  },
-  "`taxonomy-duplicate": {
-    "button-${index}`": "[data-testid=\"`taxonomy-duplicate-button-${index}`\"]"
-  },
-  "`taxonomy-delete": {
-    "annotation-button-${index}`": "[data-testid=\"`taxonomy-delete-annotation-button-${index}`\"]"
-  },
-  "taxonomy-add": {
-    "annotation-button": "[data-testid=\"taxonomy-add-annotation-button\"]"
-  },
-  "taxonomy-update": {
-    "button": "[data-testid=\"taxonomy-update-button\"]",
-    "confirmation-modal": "[data-testid=\"taxonomy-update-confirmation-modal\"]",
-    "confirmation-cancel-button": "[data-testid=\"taxonomy-update-confirmation-cancel-button\"]",
-    "confirmation-proceed-button": "[data-testid=\"taxonomy-update-confirmation-proceed-button\"]"
-  },
-  "taxonomy-delete": {
-    "modal": "[data-testid=\"taxonomy-delete-modal\"]",
-    "cancel-button": "[data-testid=\"taxonomy-delete-cancel-button\"]",
-    "confirm-button": "[data-testid=\"taxonomy-delete-confirm-button\"]"
-  }
+  "taxonomy-create-button": "taxonomy-create-button",
+  "taxonomy-create-modal": "taxonomy-create-modal",
+  "taxonomy-create-name-input": "taxonomy-create-name-input",
+  "taxonomy-create-cancel-button": "taxonomy-create-cancel-button",
+  "taxonomy-create-submit-button": "taxonomy-create-submit-button",
+  "taxonomy-table": "taxonomy-table",
+  "taxonomy-annotation-rows": "[data-testid^=\"taxonomy-annotation-row-\"]",
+  "taxonomy-annotation-row-${index}": "taxonomy-annotation-row-${index}",
+  "taxonomy-annotation-select-${index}": "taxonomy-annotation-select-${index}",
+  "taxonomy-color-picker-${index}": "taxonomy-color-picker-${index}",
+  "taxonomy-duplicate-button-${index}": "taxonomy-duplicate-button-${index}",
+  "taxonomy-delete-annotation-button-${index}": "taxonomy-delete-annotation-button-${index}",
+  "taxonomy-add-annotation-button": "taxonomy-add-annotation-button",
+  "taxonomy-update-button": "taxonomy-update-button",
+  "taxonomy-update-confirmation-modal": "taxonomy-update-confirmation-modal",
+  "taxonomy-update-confirmation-cancel-button": "taxonomy-update-confirmation-cancel-button",
+  "taxonomy-update-confirmation-proceed-button": "taxonomy-update-confirmation-proceed-button",
+  "taxonomy-delete-modal": "taxonomy-delete-modal",
+  "taxonomy-delete-cancel-button": "taxonomy-delete-cancel-button",
+  "taxonomy-delete-confirm-button": "taxonomy-delete-confirm-button"
 }

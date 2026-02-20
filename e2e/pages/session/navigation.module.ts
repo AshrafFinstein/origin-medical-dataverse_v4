@@ -6,29 +6,29 @@ const UUID_PATTERN = /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{1
 
 export class SessionNavigationModule extends BaseModule {
   async navigateBack() {
-    await this.click(this.selectors.session['session-back'].button);
+    await this.click(this.selectors.session['session-back-button']);
     await this.waitForPageLoad();
   }
 
   async navigateToHome() {
-    await this.click(this.selectors.session['session-breadcrumb'].home);
+    await this.click(this.selectors.session['session-breadcrumb-home']);
     await this.waitForPageLoad();
   }
 
   async navigateToEpic() {
-    await this.click(this.selectors.session['session-breadcrumb'].epic);
+    await this.click(this.selectors.session['session-breadcrumb-epic']);
     await this.waitForPageLoad();
   }
 
   async navigateToProject() {
-    await this.click(this.selectors.session['session-breadcrumb'].project);
+    await this.click(this.selectors.session['session-breadcrumb-project']);
     await this.waitForPageLoad();
   }
 
   async navigateToModule() {
     // If session table is already visible, skip navigation
     try {
-      const sessionTable = this.selectors.session['session-table'].root;
+      const sessionTable = this.selectors.session['session-table'];
       const tableVisible = await this.isVisible(sessionTable);
 
       if (tableVisible) {
@@ -47,7 +47,7 @@ export class SessionNavigationModule extends BaseModule {
     await this.waitForLoadingComplete();
 
     // ─── Step 1: Click Epic "Go" button ───────────────────────────
-    const epicGoButton = getDynamicSelector(EpicSelectors['epic-go'].button, { index: 0 });
+    const epicGoButton = getDynamicSelector(EpicSelectors['epic-go-button-${index}'], { index: 0 });
     await this.waitForSelector(epicGoButton, { timeout: 15000, state: 'visible' });
     await this.waitForLoadingComplete();
     await this.click(epicGoButton);
@@ -62,7 +62,7 @@ export class SessionNavigationModule extends BaseModule {
     await this.waitForLoadingComplete();
 
     // ─── Step 2: Click Project "Go" button ────────────────────────
-    const projectGoButton = getDynamicSelector(ProjectSelectors['project-go'].button, { index: 0 });
+    const projectGoButton = getDynamicSelector(ProjectSelectors['project-go-button-${index}'], { index: 0 });
     await this.waitForSelector(projectGoButton, { timeout: 15000, state: 'visible' });
     await this.waitForLoadingComplete();
     await this.click(projectGoButton);
@@ -80,7 +80,7 @@ export class SessionNavigationModule extends BaseModule {
     await this.waitForLoadingComplete();
 
     // ─── Step 3: Wait for session table ───────────────────────────
-    const sessionTable = this.selectors.session['session-table'].root;
+    const sessionTable = this.selectors.session['session-table'];
     await this.waitForSelector(sessionTable, { timeout: 15000, state: 'visible' });
     await this.waitForLoadingComplete();
   }

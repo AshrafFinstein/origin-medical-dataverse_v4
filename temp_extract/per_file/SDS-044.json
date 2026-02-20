@@ -1,0 +1,347 @@
+{
+  "spec_file": "e2e/tests/annotation/URS-DV-DA-11/SRS-044/SDS-044.spec.ts",
+  "plan_urs": "URS-DV-DA-11",
+  "srs_str": "044",
+  "domain": "annotation",
+  "page_class": "DataLabellingPage",
+  "page_import": "data-labelling.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-1694",
+      "srs_id": "SRS-123",
+      "sds_id": "SDS-123",
+      "summary": "Verify Success toast after deletion\nwhen label is deleted successfully",
+      "description": "Feature: Label Deletion Workflow with Confirmation\nScenario: Success toast after deletion\nGiven label is deleted successfully\nWhen operation completes\nThen green success toast should be displayed",
+      "acceptance": "Green success toast should be displayed\nThe behavior should be validated when operation completes."
+    },
+    {
+      "test_id": "UTC-1695",
+      "srs_id": "SRS-123",
+      "sds_id": "SDS-123",
+      "summary": "Verify Sidebar refresh after deletion\nwhen deletion confirmed",
+      "description": "Feature: Label Deletion Workflow with Confirmation\nScenario: Sidebar refresh after deletion\nGiven deletion confirmed\nWhen sidebar updates\nThen removed label should not appear in list",
+      "acceptance": "Removed label should not appear in list\nThe behavior should be validated when sidebar updates."
+    },
+    {
+      "test_id": "UTC-1696",
+      "srs_id": "SRS-123",
+      "sds_id": "SDS-123",
+      "summary": "Verify Backend object updated\nwhen deletion confirmed",
+      "description": "Feature: Label Deletion Workflow with Confirmation\nScenario: Backend object updated\nGiven deletion confirmed\nWhen API payload is inspected\nThen label ID should be removed from image object",
+      "acceptance": "Label ID should be removed from image object\nThe behavior should be validated when API payload is inspected."
+    },
+    {
+      "test_id": "UTC-1697",
+      "srs_id": "SRS-123",
+      "sds_id": "SDS-123",
+      "summary": "Verify No label active\nwhen no active label exists",
+      "description": "Feature: Label Deletion Workflow with Confirmation\nScenario: No label active\nGiven no active label exists\nWhen Backspace pressed\nThen no modal should appear and no deletion occurs",
+      "acceptance": "No modal should appear and no deletion occurs\nThe behavior should be validated when Backspace pressed."
+    },
+    {
+      "test_id": "UTC-1698",
+      "srs_id": "SRS-123",
+      "sds_id": "SDS-123",
+      "summary": "Verify Ignore Backspace inside text input\nwhen cursor is inside a text/search field",
+      "description": "Feature: Label Deletion Workflow with Confirmation\nScenario: Ignore Backspace inside text input\nGiven cursor is inside a text/search field\nWhen Backspace pressed\nThen only text edits occur and modal should not appear",
+      "acceptance": "Only text edits occur and modal should not appear\nThe behavior should be validated when Backspace pressed."
+    },
+    {
+      "test_id": "UTC-1699",
+      "srs_id": "SRS-123",
+      "sds_id": "SDS-123",
+      "summary": "Verify Multiple deletions sequentially\nwhen multiple labels exist",
+      "description": "Feature: Label Deletion Workflow with Confirmation\nScenario: Multiple deletions sequentially\nGiven multiple labels exist\nWhen user deletes labels one by one\nThen each deletion should follow confirmation flow correctly",
+      "acceptance": "Each deletion should follow confirmation flow correctly\nThe behavior should be validated when user deletes labels one by one."
+    },
+    {
+      "test_id": "UTC-1700",
+      "srs_id": "SRS-123",
+      "sds_id": "SDS-123",
+      "summary": "Verify Modal appears quickly\nwhen Backspace pressed",
+      "description": "Feature: Label Deletion Workflow with Confirmation\nScenario: Modal appears quickly\nGiven Backspace pressed\nWhen system responds\nThen modal should appear within acceptable time (<200ms)",
+      "acceptance": "Modal should appear within acceptable time (<200ms)\nThe behavior should be validated when system responds."
+    },
+    {
+      "test_id": "UTC-1701",
+      "srs_id": "SRS-123",
+      "sds_id": "SDS-123",
+      "summary": "Verify Keyboard navigation support\nwhen modal is open",
+      "description": "Feature: Label Deletion Workflow with Confirmation\nScenario: Keyboard navigation support\nGiven modal is open\nWhen user navigates with Tab/Enter\nThen Yes/No buttons should be selectable",
+      "acceptance": "Yes/No buttons should be selectable\nThe behavior should be validated when user navigates with Tab/Enter."
+    },
+    {
+      "test_id": "UTC-1702",
+      "srs_id": "SRS-123",
+      "sds_id": "SDS-123",
+      "summary": "Verify State persistence on navigation\nwhen label deletion confirmed",
+      "description": "Feature: Label Deletion Workflow with Confirmation\nScenario: State persistence on navigation\nGiven label deletion confirmed\nWhen user navigates or refreshes\nThen deleted label should not reappear",
+      "acceptance": "Deleted label should not reappear\nThe behavior should be validated when user navigates or refreshes."
+    },
+    {
+      "test_id": "UTC-1703",
+      "srs_id": "SRS-123",
+      "sds_id": "SDS-123",
+      "summary": "Verify Rapid Backspace presses\nwhen user presses Backspace repeatedly",
+      "description": "Feature: Label Deletion Workflow with Confirmation\nScenario: Rapid Backspace presses\nGiven user presses Backspace repeatedly\nWhen system processes input\nThen only one confirmation modal should appear without duplication",
+      "acceptance": "Only one confirmation modal should appear without duplication\nThe behavior should be validated when system processes input."
+    },
+    {
+      "test_id": "UTC-1704",
+      "srs_id": "SRS-124",
+      "sds_id": "SDS-124",
+      "summary": "Verify Trigger deletion modal when mark selected\nwhen a canvas annotation mark is selected",
+      "description": "Feature: Annotation Mark Deletion with Confirmation\nScenario: Trigger deletion modal when mark selected\nGiven a canvas annotation mark is selected\nWhen user presses Backspace\nThen “Delete Annotation Marks” confirmation modal should appear",
+      "acceptance": "\"Delete Annotation Marks\" confirmation modal should appear\nThe behavior should be validated when user presses Backspace."
+    },
+    {
+      "test_id": "UTC-1705",
+      "srs_id": "SRS-124",
+      "sds_id": "SDS-124",
+      "summary": "Verify Modal UI elements visible\nwhen deletion modal is open",
+      "description": "Feature: Annotation Mark Deletion with Confirmation\nScenario: Modal UI elements visible\nGiven deletion modal is open\nWhen user views modal\nThen title and Yes/No buttons should be clearly visible",
+      "acceptance": "Title and Yes/No buttons should be clearly visible\nThe behavior should be validated when user views modal."
+    },
+    {
+      "test_id": "UTC-1706",
+      "srs_id": "SRS-124",
+      "sds_id": "SDS-124",
+      "summary": "Verify Confirm deletion\nwhen deletion modal is displayed",
+      "description": "Feature: Annotation Mark Deletion with Confirmation\nScenario: Confirm deletion\nGiven deletion modal is displayed\nWhen user clicks Yes\nThen selected mark should be removed from canvas",
+      "acceptance": "Selected mark should be removed from canvas\nThe behavior should be validated when user clicks Yes."
+    },
+    {
+      "test_id": "UTC-1707",
+      "srs_id": "SRS-124",
+      "sds_id": "SDS-124",
+      "summary": "Verify Cancel deletion\nwhen deletion modal is displayed",
+      "description": "Feature: Annotation Mark Deletion with Confirmation\nScenario: Cancel deletion\nGiven deletion modal is displayed\nWhen user clicks No\nThen the mark should remain unchanged",
+      "acceptance": "The mark should remain unchanged\nThe behavior should be validated when user clicks No."
+    },
+    {
+      "test_id": "UTC-1708",
+      "srs_id": "SRS-124",
+      "sds_id": "SDS-124",
+      "summary": "Verify Close modal without action\nwhen modal is open",
+      "description": "Feature: Annotation Mark Deletion with Confirmation\nScenario: Close modal without action\nGiven modal is open\nWhen user clicks close icon or outside modal\nThen deletion should not occur",
+      "acceptance": "Deletion should not occur\nThe behavior should be validated when user clicks close icon or outside modal."
+    },
+    {
+      "test_id": "UTC-1709",
+      "srs_id": "SRS-124",
+      "sds_id": "SDS-124",
+      "summary": "Verify Success toast after deletion\nwhen mark deletion completed",
+      "description": "Feature: Annotation Mark Deletion with Confirmation\nScenario: Success toast after deletion\nGiven mark deletion completed\nWhen operation succeeds\nThen success toast should appear at top-right",
+      "acceptance": "Success toast should appear at top-right\nThe behavior should be validated when operation succeeds."
+    },
+    {
+      "test_id": "UTC-1710",
+      "srs_id": "SRS-124",
+      "sds_id": "SDS-124",
+      "summary": "Verify Canvas layer updated\nwhen mark deleted",
+      "description": "Feature: Annotation Mark Deletion with Confirmation\nScenario: Canvas layer updated\nGiven mark deleted\nWhen canvas refreshes\nThen deleted object should not render",
+      "acceptance": "Deleted object should not render\nThe behavior should be validated when canvas refreshes."
+    },
+    {
+      "test_id": "UTC-1711",
+      "srs_id": "SRS-124",
+      "sds_id": "SDS-124",
+      "summary": "Verify Right-side data tree updated\nwhen mark deleted",
+      "description": "Feature: Annotation Mark Deletion with Confirmation\nScenario: Right-side data tree updated\nGiven mark deleted\nWhen tree refreshes\nThen corresponding UID should be removed from tree",
+      "acceptance": "Corresponding UID should be removed from tree\nThe behavior should be validated when tree refreshes."
+    },
+    {
+      "test_id": "UTC-1712",
+      "srs_id": "SRS-124",
+      "sds_id": "SDS-124",
+      "summary": "Verify Only selected mark deleted\nwhen multiple marks exist",
+      "description": "Feature: Annotation Mark Deletion with Confirmation\nScenario: Only selected mark deleted\nGiven multiple marks exist\nWhen user confirms deletion\nThen only selected mark should be deleted",
+      "acceptance": "Only selected mark should be deleted\nThe behavior should be validated when user confirms deletion."
+    },
+    {
+      "test_id": "UTC-1713",
+      "srs_id": "SRS-124",
+      "sds_id": "SDS-124",
+      "summary": "Verify No mark selected\nwhen no canvas object selected",
+      "description": "Feature: Annotation Mark Deletion with Confirmation\nScenario: No mark selected\nGiven no canvas object selected\nWhen Backspace pressed\nThen no modal should appear and no deletion occurs",
+      "acceptance": "No modal should appear and no deletion occurs\nThe behavior should be validated when Backspace pressed."
+    },
+    {
+      "test_id": "UTC-1714",
+      "srs_id": "SRS-124",
+      "sds_id": "SDS-124",
+      "summary": "Verify Locked annotation cannot be deleted\nwhen annotation is locked",
+      "description": "Feature: Annotation Mark Deletion with Confirmation\nScenario: Locked annotation cannot be deleted\nGiven annotation is locked\nWhen Backspace pressed\nThen deletion modal should not appear and “Locked” message shown",
+      "acceptance": "Deletion modal should not appear and \"Locked\" message shown\nThe behavior should be validated when Backspace pressed."
+    },
+    {
+      "test_id": "UTC-1715",
+      "srs_id": "SRS-124",
+      "sds_id": "SDS-124",
+      "summary": "Verify Multiple selections handling\nwhen multiple marks selected",
+      "description": "Feature: Annotation Mark Deletion with Confirmation\nScenario: Multiple selections handling\nGiven multiple marks selected\nWhen user confirms deletion\nThen all selected marks should be deleted",
+      "acceptance": "All selected marks should be deleted\nThe behavior should be validated when user confirms deletion."
+    },
+    {
+      "test_id": "UTC-1716",
+      "srs_id": "SRS-124",
+      "sds_id": "SDS-124",
+      "summary": "Verify Rapid Backspace presses\nwhen mark selected",
+      "description": "Feature: Annotation Mark Deletion with Confirmation\nScenario: Rapid Backspace presses\nGiven mark selected\nWhen Backspace pressed repeatedly\nThen only one modal should appear",
+      "acceptance": "Only one modal should appear\nThe behavior should be validated when Backspace pressed repeatedly."
+    },
+    {
+      "test_id": "UTC-1717",
+      "srs_id": "SRS-124",
+      "sds_id": "SDS-124",
+      "summary": "Verify Modal appears quickly\nwhen Backspace pressed",
+      "description": "Feature: Annotation Mark Deletion with Confirmation\nScenario: Modal appears quickly\nGiven Backspace pressed\nWhen system responds\nThen modal should appear instantly (<200ms)",
+      "acceptance": "Modal should appear instantly (<200ms)\nThe behavior should be validated when system responds."
+    },
+    {
+      "test_id": "UTC-1718",
+      "srs_id": "SRS-124",
+      "sds_id": "SDS-124",
+      "summary": "Verify Keyboard navigation support\nwhen modal is open",
+      "description": "Feature: Annotation Mark Deletion with Confirmation\nScenario: Keyboard navigation support\nGiven modal is open\nWhen user navigates with Tab/Enter\nThen Yes/No buttons should be selectable",
+      "acceptance": "Yes/No buttons should be selectable\nThe behavior should be validated when user navigates with Tab/Enter."
+    },
+    {
+      "test_id": "UTC-1719",
+      "srs_id": "SRS-124",
+      "sds_id": "SDS-124",
+      "summary": "Verify Persistence after refresh\nwhen deletion confirmed",
+      "description": "Feature: Annotation Mark Deletion with Confirmation\nScenario: Persistence after refresh\nGiven deletion confirmed\nWhen page refreshes\nThen deleted mark should not reappear",
+      "acceptance": "Deleted mark should not reappear\nThe behavior should be validated when page refreshes."
+    },
+    {
+      "test_id": "UTC-1720",
+      "srs_id": "SRS-124",
+      "sds_id": "SDS-124",
+      "summary": "Verify Ignore shortcut inside text input\nwhen cursor is typing in a textbox",
+      "description": "Feature: Annotation Mark Deletion with Confirmation\nScenario: Ignore shortcut inside text input\nGiven cursor is typing in a textbox\nWhen Backspace pressed\nThen text deletes only and no modal appears",
+      "acceptance": "Text deletes only and no modal appears\nThe behavior should be validated when Backspace pressed."
+    },
+    {
+      "test_id": "UTC-1721",
+      "srs_id": "SRS-124",
+      "sds_id": "SDS-124",
+      "summary": "Verify Network failure during deletion\nwhen backend deletion fails",
+      "description": "Feature: Annotation Mark Deletion with Confirmation\nScenario: Network failure during deletion\nGiven backend deletion fails\nWhen operation attempted\nThen error toast shown and mark remains intact",
+      "acceptance": "Error toast shown and mark remains intact\nThe behavior should be validated when operation attempted."
+    },
+    {
+      "test_id": "UTC-1722",
+      "srs_id": "SRS-125",
+      "sds_id": "SDS-125",
+      "summary": "Verify Modal appears for deletion\nwhen a user initiates any delete action",
+      "description": "Feature: Standardized Deletion Confirmation Modal\nScenario: Modal appears for deletion\nGiven a user initiates any delete action\nWhen delete is triggered\nThen a confirmation modal should appear",
+      "acceptance": "A confirmation modal should appear\nThe behavior should be validated when delete is triggered."
+    },
+    {
+      "test_id": "UTC-1723",
+      "srs_id": "SRS-125",
+      "sds_id": "SDS-125",
+      "summary": "Verify Overlay background displayed\nwhen the modal is open",
+      "description": "Feature: Standardized Deletion Confirmation Modal\nScenario: Overlay background displayed\nGiven the modal is open\nWhen UI renders\nThen the background should be dimmed with dark overlay",
+      "acceptance": "The background should be dimmed with dark overlay\nThe behavior should be validated when UI renders."
+    },
+    {
+      "test_id": "UTC-1724",
+      "srs_id": "SRS-125",
+      "sds_id": "SDS-125",
+      "summary": "Verify Question text clarity\nwhen modal is displayed",
+      "description": "Feature: Standardized Deletion Confirmation Modal\nScenario: Question text clarity\nGiven modal is displayed\nWhen content loads\nThen it should clearly describe items being deleted",
+      "acceptance": "It should clearly describe items being deleted\nThe behavior should be validated when content loads."
+    },
+    {
+      "test_id": "UTC-1725",
+      "srs_id": "SRS-125",
+      "sds_id": "SDS-125",
+      "summary": "Verify Yes button visible\nwhen modal appears",
+      "description": "Feature: Standardized Deletion Confirmation Modal\nScenario: Yes button visible\nGiven modal appears\nWhen user views actions\nThen green Yes button should be visible and enabled",
+      "acceptance": "Green Yes button should be visible and enabled\nThe behavior should be validated when user views actions."
+    },
+    {
+      "test_id": "UTC-1726",
+      "srs_id": "SRS-125",
+      "sds_id": "SDS-125",
+      "summary": "Verify No button visible\nwhen modal appears",
+      "description": "Feature: Standardized Deletion Confirmation Modal\nScenario: No button visible\nGiven modal appears\nWhen user views actions\nThen red No button should be visible",
+      "acceptance": "Red No button should be visible\nThe behavior should be validated when user views actions."
+    },
+    {
+      "test_id": "UTC-1727",
+      "srs_id": "SRS-125",
+      "sds_id": "SDS-125",
+      "summary": "Verify Confirm deletion\nwhen modal is open",
+      "description": "Feature: Standardized Deletion Confirmation Modal\nScenario: Confirm deletion\nGiven modal is open\nWhen user clicks Yes\nThen deletion should proceed",
+      "acceptance": "Deletion should proceed\nThe behavior should be validated when user clicks Yes."
+    },
+    {
+      "test_id": "UTC-1728",
+      "srs_id": "SRS-125",
+      "sds_id": "SDS-125",
+      "summary": "Verify Cancel deletion\nwhen modal is open",
+      "description": "Feature: Standardized Deletion Confirmation Modal\nScenario: Cancel deletion\nGiven modal is open\nWhen user clicks No\nThen deletion should be cancelled",
+      "acceptance": "Deletion should be cancelled\nThe behavior should be validated when user clicks No."
+    },
+    {
+      "test_id": "UTC-1729",
+      "srs_id": "SRS-125",
+      "sds_id": "SDS-125",
+      "summary": "Verify Escape key cancels\nwhen modal is active",
+      "description": "Feature: Standardized Deletion Confirmation Modal\nScenario: Escape key cancels\nGiven modal is active\nWhen user presses Escape\nThen modal should close and cancel action",
+      "acceptance": "Modal should close and cancel action\nThe behavior should be validated when user presses Escape."
+    },
+    {
+      "test_id": "UTC-1730",
+      "srs_id": "SRS-125",
+      "sds_id": "SDS-125",
+      "summary": "Verify Clicking outside cancels\nwhen modal is open",
+      "description": "Feature: Standardized Deletion Confirmation Modal\nScenario: Clicking outside cancels\nGiven modal is open\nWhen user clicks overlay background\nThen modal should close with No action",
+      "acceptance": "Modal should close with No action\nThe behavior should be validated when user clicks overlay background."
+    },
+    {
+      "test_id": "UTC-1731",
+      "srs_id": "SRS-125",
+      "sds_id": "SDS-125",
+      "summary": "Verify Pass deletion metadata\nwhen deletion type and count are provided",
+      "description": "Feature: Standardized Deletion Confirmation Modal\nScenario: Pass deletion metadata\nGiven deletion type and count are provided\nWhen modal opens\nThen correct item type and count should be displayed",
+      "acceptance": "Correct item type and count should be displayed\nThe behavior should be validated when modal opens."
+    },
+    {
+      "test_id": "UTC-1732",
+      "srs_id": "SRS-125",
+      "sds_id": "SDS-125",
+      "summary": "Verify Multiple delete triggers\nwhen rapid clicks occur",
+      "description": "Feature: Standardized Deletion Confirmation Modal\nScenario: Multiple delete triggers\nGiven rapid clicks occur\nWhen modal already open\nThen duplicate modals should not appear",
+      "acceptance": "Duplicate modals should not appear\nThe behavior should be validated when modal already open."
+    },
+    {
+      "test_id": "UTC-1733",
+      "srs_id": "SRS-125",
+      "sds_id": "SDS-125",
+      "summary": "Verify Keyboard navigation\nwhen modal is open",
+      "description": "Feature: Standardized Deletion Confirmation Modal\nScenario: Keyboard navigation\nGiven modal is open\nWhen user tabs through controls\nThen focus should move between Yes/No buttons",
+      "acceptance": "Focus should move between Yes/No buttons\nThe behavior should be validated when user tabs through controls."
+    },
+    {
+      "test_id": "UTC-1734",
+      "srs_id": "SRS-125",
+      "sds_id": "SDS-125",
+      "summary": "Verify Instant modal rendering\nwhen delete is clicked",
+      "description": "Feature: Standardized Deletion Confirmation Modal\nScenario: Instant modal rendering\nGiven delete is clicked\nWhen modal opens\nThen it should appear within 1 second",
+      "acceptance": "It should appear within 1 second\nThe behavior should be validated when modal opens."
+    },
+    {
+      "test_id": "UTC-1735",
+      "srs_id": "SRS-125",
+      "sds_id": "SDS-125",
+      "summary": "Verify No action without confirmation\nwhen modal is shown",
+      "description": "Feature: Standardized Deletion Confirmation Modal\nScenario: No action without confirmation\nGiven modal is shown\nWhen user closes browser/tab\nThen deletion must not execute",
+      "acceptance": "Deletion must not execute\nThe behavior should be validated when user closes browser/tab."
+    }
+  ]
+}

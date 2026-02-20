@@ -1,0 +1,331 @@
+{
+  "spec_file": "e2e/tests/analysis-modal/URS-DV-AN-02/SRS-010/SDS-010.spec.ts",
+  "plan_urs": "URS-DV-AN-02",
+  "srs_str": "010",
+  "domain": "analysis-modal",
+  "page_class": "AnalysisModalPage",
+  "page_import": "analysis-modal.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-266",
+      "srs_id": "SRS-22",
+      "sds_id": "SDS-22",
+      "summary": "Verify Cache usage\nwhen filter opened repeatedly",
+      "description": "Feature: Filter Option Caching with 5-Minute TTL\nScenario: Cache usage\nGiven filter opened repeatedly\nWhen within TTL\nThen data loads from cache without API call",
+      "acceptance": "Data loads from cache without API call\nThe behavior should be validated when within TTL."
+    },
+    {
+      "test_id": "UTC-267",
+      "srs_id": "SRS-22",
+      "sds_id": "SDS-22",
+      "summary": "Verify Cache usage\nwhen filter opened repeatedly",
+      "description": "Feature: Filter Option Caching with 5-Minute TTL\nScenario: Cache usage\nGiven filter opened repeatedly\nWhen within TTL\nThen data loads from cache without API call",
+      "acceptance": "Data loads from cache without API call\nThe behavior should be validated when within TTL."
+    },
+    {
+      "test_id": "UTC-268",
+      "srs_id": "SRS-22",
+      "sds_id": "SDS-22",
+      "summary": "Verify Cache usage\nwhen filter opened repeatedly",
+      "description": "Feature: Filter Option Caching with 5-Minute TTL\nScenario: Cache usage\nGiven filter opened repeatedly\nWhen within TTL\nThen data loads from cache without API call",
+      "acceptance": "Data loads from cache without API call\nThe behavior should be validated when within TTL."
+    },
+    {
+      "test_id": "UTC-269",
+      "srs_id": "SRS-22",
+      "sds_id": "SDS-22",
+      "summary": "Verify Cache usage\nwhen filter opened repeatedly",
+      "description": "Feature: Filter Option Caching with 5-Minute TTL\nScenario: Cache usage\nGiven filter opened repeatedly\nWhen within TTL\nThen data loads from cache without API call",
+      "acceptance": "Data loads from cache without API call\nThe behavior should be validated when within TTL."
+    },
+    {
+      "test_id": "UTC-270",
+      "srs_id": "SRS-23",
+      "sds_id": "SDS-23",
+      "summary": "Verify Large dataset rendering\nwhen dropdown opened with many items",
+      "description": "Feature: Filter Dropdown Rendering Performance Optimization\nScenario: Large dataset rendering\nGiven dropdown opened with many items\nWhen items rendered\nThen UI remains responsive and limited to 1000",
+      "acceptance": "UI remains responsive and limited to 1000\nThe behavior should be validated when items rendered."
+    },
+    {
+      "test_id": "UTC-271",
+      "srs_id": "SRS-23",
+      "sds_id": "SDS-23",
+      "summary": "Verify Large dataset rendering\nwhen dropdown opened with many items",
+      "description": "Feature: Filter Dropdown Rendering Performance Optimization\nScenario: Large dataset rendering\nGiven dropdown opened with many items\nWhen items rendered\nThen UI remains responsive and limited to 1000",
+      "acceptance": "UI remains responsive and limited to 1000\nThe behavior should be validated when items rendered."
+    },
+    {
+      "test_id": "UTC-272",
+      "srs_id": "SRS-23",
+      "sds_id": "SDS-23",
+      "summary": "Verify Large dataset rendering\nwhen dropdown opened with many items",
+      "description": "Feature: Filter Dropdown Rendering Performance Optimization\nScenario: Large dataset rendering\nGiven dropdown opened with many items\nWhen items rendered\nThen UI remains responsive and limited to 1000",
+      "acceptance": "UI remains responsive and limited to 1000\nThe behavior should be validated when items rendered."
+    },
+    {
+      "test_id": "UTC-273",
+      "srs_id": "SRS-23",
+      "sds_id": "SDS-23",
+      "summary": "Verify Large dataset rendering\nwhen dropdown opened with many items",
+      "description": "Feature: Filter Dropdown Rendering Performance Optimization\nScenario: Large dataset rendering\nGiven dropdown opened with many items\nWhen items rendered\nThen UI remains responsive and limited to 1000",
+      "acceptance": "UI remains responsive and limited to 1000\nThe behavior should be validated when items rendered."
+    },
+    {
+      "test_id": "UTC-274",
+      "srs_id": "SRS-23",
+      "sds_id": "SDS-23",
+      "summary": "Verify Large dataset rendering\nwhen dropdown opened with many items",
+      "description": "Feature: Filter Dropdown Rendering Performance Optimization\nScenario: Large dataset rendering\nGiven dropdown opened with many items\nWhen items rendered\nThen UI remains responsive and limited to 1000",
+      "acceptance": "UI remains responsive and limited to 1000\nThe behavior should be validated when items rendered."
+    },
+    {
+      "test_id": "UTC-275",
+      "srs_id": "SRS-23",
+      "sds_id": "SDS-23",
+      "summary": "Verify Large dataset rendering\nwhen dropdown opened with many items",
+      "description": "Feature: Filter Dropdown Rendering Performance Optimization\nScenario: Large dataset rendering\nGiven dropdown opened with many items\nWhen items rendered\nThen UI remains responsive and limited to 1000",
+      "acceptance": "UI remains responsive and limited to 1000\nThe behavior should be validated when items rendered."
+    },
+    {
+      "test_id": "UTC-276",
+      "srs_id": "SRS-23",
+      "sds_id": "SDS-23",
+      "summary": "Verify Large dataset rendering\nwhen dropdown opened with many items",
+      "description": "Feature: Filter Dropdown Rendering Performance Optimization\nScenario: Large dataset rendering\nGiven dropdown opened with many items\nWhen items rendered\nThen UI remains responsive and limited to 1000",
+      "acceptance": "UI remains responsive and limited to 1000\nThe behavior should be validated when items rendered."
+    },
+    {
+      "test_id": "UTC-277",
+      "srs_id": "SRS-23",
+      "sds_id": "SDS-23",
+      "summary": "Verify Large dataset rendering\nwhen dropdown opened with many items",
+      "description": "Feature: Filter Dropdown Rendering Performance Optimization\nScenario: Large dataset rendering\nGiven dropdown opened with many items\nWhen items rendered\nThen UI remains responsive and limited to 1000",
+      "acceptance": "UI remains responsive and limited to 1000\nThe behavior should be validated when items rendered."
+    },
+    {
+      "test_id": "UTC-278",
+      "srs_id": "SRS-23",
+      "sds_id": "SDS-23",
+      "summary": "Verify Large dataset rendering\nwhen dropdown opened with many items",
+      "description": "Feature: Filter Dropdown Rendering Performance Optimization\nScenario: Large dataset rendering\nGiven dropdown opened with many items\nWhen items rendered\nThen UI remains responsive and limited to 1000",
+      "acceptance": "UI remains responsive and limited to 1000\nThe behavior should be validated when items rendered."
+    },
+    {
+      "test_id": "UTC-279",
+      "srs_id": "SRS-23",
+      "sds_id": "SDS-23",
+      "summary": "Verify Large dataset rendering\nwhen dropdown opened with many items",
+      "description": "Feature: Filter Dropdown Rendering Performance Optimization\nScenario: Large dataset rendering\nGiven dropdown opened with many items\nWhen items rendered\nThen UI remains responsive and limited to 1000",
+      "acceptance": "UI remains responsive and limited to 1000\nThe behavior should be validated when items rendered."
+    },
+    {
+      "test_id": "UTC-280",
+      "srs_id": "SRS-23",
+      "sds_id": "SDS-23",
+      "summary": "Verify Large dataset rendering\nwhen dropdown opened with many items",
+      "description": "Feature: Filter Dropdown Rendering Performance Optimization\nScenario: Large dataset rendering\nGiven dropdown opened with many items\nWhen items rendered\nThen UI remains responsive and limited to 1000",
+      "acceptance": "UI remains responsive and limited to 1000\nThe behavior should be validated when items rendered."
+    },
+    {
+      "test_id": "UTC-281",
+      "srs_id": "SRS-23",
+      "sds_id": "SDS-23",
+      "summary": "Verify Large dataset rendering\nwhen dropdown opened with many items",
+      "description": "Feature: Filter Dropdown Rendering Performance Optimization\nScenario: Large dataset rendering\nGiven dropdown opened with many items\nWhen items rendered\nThen UI remains responsive and limited to 1000",
+      "acceptance": "UI remains responsive and limited to 1000\nThe behavior should be validated when items rendered."
+    },
+    {
+      "test_id": "UTC-282",
+      "srs_id": "SRS-23",
+      "sds_id": "SDS-23",
+      "summary": "Verify Large dataset rendering\nwhen dropdown opened with many items",
+      "description": "Feature: Filter Dropdown Rendering Performance Optimization\nScenario: Large dataset rendering\nGiven dropdown opened with many items\nWhen items rendered\nThen UI remains responsive and limited to 1000",
+      "acceptance": "UI remains responsive and limited to 1000\nThe behavior should be validated when items rendered."
+    },
+    {
+      "test_id": "UTC-283",
+      "srs_id": "SRS-23",
+      "sds_id": "SDS-23",
+      "summary": "Verify Large dataset rendering\nwhen dropdown opened with many items",
+      "description": "Feature: Filter Dropdown Rendering Performance Optimization\nScenario: Large dataset rendering\nGiven dropdown opened with many items\nWhen items rendered\nThen UI remains responsive and limited to 1000",
+      "acceptance": "UI remains responsive and limited to 1000\nThe behavior should be validated when items rendered."
+    },
+    {
+      "test_id": "UTC-284",
+      "srs_id": "SRS-23",
+      "sds_id": "SDS-23",
+      "summary": "Verify Large dataset rendering\nwhen dropdown opened with many items",
+      "description": "Feature: Filter Dropdown Rendering Performance Optimization\nScenario: Large dataset rendering\nGiven dropdown opened with many items\nWhen items rendered\nThen UI remains responsive and limited to 1000",
+      "acceptance": "UI remains responsive and limited to 1000\nThe behavior should be validated when items rendered."
+    },
+    {
+      "test_id": "UTC-285",
+      "srs_id": "SRS-23",
+      "sds_id": "SDS-23",
+      "summary": "Verify Large dataset rendering\nwhen dropdown opened with many items",
+      "description": "Feature: Filter Dropdown Rendering Performance Optimization\nScenario: Large dataset rendering\nGiven dropdown opened with many items\nWhen items rendered\nThen UI remains responsive and limited to 1000",
+      "acceptance": "UI remains responsive and limited to 1000\nThe behavior should be validated when items rendered."
+    },
+    {
+      "test_id": "UTC-286",
+      "srs_id": "SRS-23",
+      "sds_id": "SDS-23",
+      "summary": "Verify Large dataset rendering\nwhen dropdown opened with many items",
+      "description": "Feature: Filter Dropdown Rendering Performance Optimization\nScenario: Large dataset rendering\nGiven dropdown opened with many items\nWhen items rendered\nThen UI remains responsive and limited to 1000",
+      "acceptance": "UI remains responsive and limited to 1000\nThe behavior should be validated when items rendered."
+    },
+    {
+      "test_id": "UTC-287",
+      "srs_id": "SRS-23",
+      "sds_id": "SDS-23",
+      "summary": "Verify Large dataset rendering\nwhen dropdown opened with many items",
+      "description": "Feature: Filter Dropdown Rendering Performance Optimization\nScenario: Large dataset rendering\nGiven dropdown opened with many items\nWhen items rendered\nThen UI remains responsive and limited to 1000",
+      "acceptance": "UI remains responsive and limited to 1000\nThe behavior should be validated when items rendered."
+    },
+    {
+      "test_id": "UTC-288",
+      "srs_id": "SRS-24",
+      "sds_id": "SDS-24",
+      "summary": "Verify Error or empty state behavior\nwhen API returns empty or fails",
+      "description": "Feature: Error & Empty State Handling & User Feedback\nScenario: Error or empty state behavior\nGiven API returns empty or fails\nWhen UI renders\nThen clean empty state or friendly toast shown",
+      "acceptance": "Clean empty state or friendly toast shown\nThe behavior should be validated when UI renders."
+    },
+    {
+      "test_id": "UTC-289",
+      "srs_id": "SRS-24",
+      "sds_id": "SDS-24",
+      "summary": "Verify Error or empty state behavior\nwhen API returns empty or fails",
+      "description": "Feature: Error & Empty State Handling & User Feedback\nScenario: Error or empty state behavior\nGiven API returns empty or fails\nWhen UI renders\nThen clean empty state or friendly toast shown",
+      "acceptance": "Clean empty state or friendly toast shown\nThe behavior should be validated when UI renders."
+    },
+    {
+      "test_id": "UTC-290",
+      "srs_id": "SRS-24",
+      "sds_id": "SDS-24",
+      "summary": "Verify Error or empty state behavior\nwhen API returns empty or fails",
+      "description": "Feature: Error & Empty State Handling & User Feedback\nScenario: Error or empty state behavior\nGiven API returns empty or fails\nWhen UI renders\nThen clean empty state or friendly toast shown",
+      "acceptance": "Clean empty state or friendly toast shown\nThe behavior should be validated when UI renders."
+    },
+    {
+      "test_id": "UTC-291",
+      "srs_id": "SRS-24",
+      "sds_id": "SDS-24",
+      "summary": "Verify Error or empty state behavior\nwhen API returns empty or fails",
+      "description": "Feature: Error & Empty State Handling & User Feedback\nScenario: Error or empty state behavior\nGiven API returns empty or fails\nWhen UI renders\nThen clean empty state or friendly toast shown",
+      "acceptance": "Clean empty state or friendly toast shown\nThe behavior should be validated when UI renders."
+    },
+    {
+      "test_id": "UTC-292",
+      "srs_id": "SRS-24",
+      "sds_id": "SDS-24",
+      "summary": "Verify Error or empty state behavior\nwhen API returns empty or fails",
+      "description": "Feature: Error & Empty State Handling & User Feedback\nScenario: Error or empty state behavior\nGiven API returns empty or fails\nWhen UI renders\nThen clean empty state or friendly toast shown",
+      "acceptance": "Clean empty state or friendly toast shown\nThe behavior should be validated when UI renders."
+    },
+    {
+      "test_id": "UTC-293",
+      "srs_id": "SRS-24",
+      "sds_id": "SDS-24",
+      "summary": "Verify Error or empty state behavior\nwhen API returns empty or fails",
+      "description": "Feature: Error & Empty State Handling & User Feedback\nScenario: Error or empty state behavior\nGiven API returns empty or fails\nWhen UI renders\nThen clean empty state or friendly toast shown",
+      "acceptance": "Clean empty state or friendly toast shown\nThe behavior should be validated when UI renders."
+    },
+    {
+      "test_id": "UTC-294",
+      "srs_id": "SRS-24",
+      "sds_id": "SDS-24",
+      "summary": "Verify Error or empty state behavior\nwhen API returns empty or fails",
+      "description": "Feature: Error & Empty State Handling & User Feedback\nScenario: Error or empty state behavior\nGiven API returns empty or fails\nWhen UI renders\nThen clean empty state or friendly toast shown",
+      "acceptance": "Clean empty state or friendly toast shown\nThe behavior should be validated when UI renders."
+    },
+    {
+      "test_id": "UTC-295",
+      "srs_id": "SRS-24",
+      "sds_id": "SDS-24",
+      "summary": "Verify Error or empty state behavior\nwhen API returns empty or fails",
+      "description": "Feature: Error & Empty State Handling & User Feedback\nScenario: Error or empty state behavior\nGiven API returns empty or fails\nWhen UI renders\nThen clean empty state or friendly toast shown",
+      "acceptance": "Clean empty state or friendly toast shown\nThe behavior should be validated when UI renders."
+    },
+    {
+      "test_id": "UTC-296",
+      "srs_id": "SRS-24",
+      "sds_id": "SDS-24",
+      "summary": "Verify Error or empty state behavior\nwhen API returns empty or fails",
+      "description": "Feature: Error & Empty State Handling & User Feedback\nScenario: Error or empty state behavior\nGiven API returns empty or fails\nWhen UI renders\nThen clean empty state or friendly toast shown",
+      "acceptance": "Clean empty state or friendly toast shown\nThe behavior should be validated when UI renders."
+    },
+    {
+      "test_id": "UTC-297",
+      "srs_id": "SRS-24",
+      "sds_id": "SDS-24",
+      "summary": "Verify Error or empty state behavior\nwhen API returns empty or fails",
+      "description": "Feature: Error & Empty State Handling & User Feedback\nScenario: Error or empty state behavior\nGiven API returns empty or fails\nWhen UI renders\nThen clean empty state or friendly toast shown",
+      "acceptance": "Clean empty state or friendly toast shown\nThe behavior should be validated when UI renders."
+    },
+    {
+      "test_id": "UTC-298",
+      "srs_id": "SRS-24",
+      "sds_id": "SDS-24",
+      "summary": "Verify Error or empty state behavior\nwhen API returns empty or fails",
+      "description": "Feature: Error & Empty State Handling & User Feedback\nScenario: Error or empty state behavior\nGiven API returns empty or fails\nWhen UI renders\nThen clean empty state or friendly toast shown",
+      "acceptance": "Clean empty state or friendly toast shown\nThe behavior should be validated when UI renders."
+    },
+    {
+      "test_id": "UTC-299",
+      "srs_id": "SRS-24",
+      "sds_id": "SDS-24",
+      "summary": "Verify Error or empty state behavior\nwhen API returns empty or fails",
+      "description": "Feature: Error & Empty State Handling & User Feedback\nScenario: Error or empty state behavior\nGiven API returns empty or fails\nWhen UI renders\nThen clean empty state or friendly toast shown",
+      "acceptance": "Clean empty state or friendly toast shown\nThe behavior should be validated when UI renders."
+    },
+    {
+      "test_id": "UTC-300",
+      "srs_id": "SRS-24",
+      "sds_id": "SDS-24",
+      "summary": "Verify Error or empty state behavior\nwhen API returns empty or fails",
+      "description": "Feature: Error & Empty State Handling & User Feedback\nScenario: Error or empty state behavior\nGiven API returns empty or fails\nWhen UI renders\nThen clean empty state or friendly toast shown",
+      "acceptance": "Clean empty state or friendly toast shown\nThe behavior should be validated when UI renders."
+    },
+    {
+      "test_id": "UTC-301",
+      "srs_id": "SRS-24",
+      "sds_id": "SDS-24",
+      "summary": "Verify Error or empty state behavior\nwhen API returns empty or fails",
+      "description": "Feature: Error & Empty State Handling & User Feedback\nScenario: Error or empty state behavior\nGiven API returns empty or fails\nWhen UI renders\nThen clean empty state or friendly toast shown",
+      "acceptance": "Clean empty state or friendly toast shown\nThe behavior should be validated when UI renders."
+    },
+    {
+      "test_id": "UTC-302",
+      "srs_id": "SRS-24",
+      "sds_id": "SDS-24",
+      "summary": "Verify Error or empty state behavior\nwhen API returns empty or fails",
+      "description": "Feature: Error & Empty State Handling & User Feedback\nScenario: Error or empty state behavior\nGiven API returns empty or fails\nWhen UI renders\nThen clean empty state or friendly toast shown",
+      "acceptance": "Clean empty state or friendly toast shown\nThe behavior should be validated when UI renders."
+    },
+    {
+      "test_id": "UTC-303",
+      "srs_id": "SRS-24",
+      "sds_id": "SDS-24",
+      "summary": "Verify Error or empty state behavior\nwhen API returns empty or fails",
+      "description": "Feature: Error & Empty State Handling & User Feedback\nScenario: Error or empty state behavior\nGiven API returns empty or fails\nWhen UI renders\nThen clean empty state or friendly toast shown",
+      "acceptance": "Clean empty state or friendly toast shown\nThe behavior should be validated when UI renders."
+    },
+    {
+      "test_id": "UTC-304",
+      "srs_id": "SRS-24",
+      "sds_id": "SDS-24",
+      "summary": "Verify Error or empty state behavior\nwhen API returns empty or fails",
+      "description": "Feature: Error & Empty State Handling & User Feedback\nScenario: Error or empty state behavior\nGiven API returns empty or fails\nWhen UI renders\nThen clean empty state or friendly toast shown",
+      "acceptance": "Clean empty state or friendly toast shown\nThe behavior should be validated when UI renders."
+    },
+    {
+      "test_id": "UTC-305",
+      "srs_id": "SRS-24",
+      "sds_id": "SDS-24",
+      "summary": "Verify Error or empty state behavior\nwhen API returns empty or fails",
+      "description": "Feature: Error & Empty State Handling & User Feedback\nScenario: Error or empty state behavior\nGiven API returns empty or fails\nWhen UI renders\nThen clean empty state or friendly toast shown",
+      "acceptance": "Clean empty state or friendly toast shown\nThe behavior should be validated when UI renders."
+    }
+  ]
+}

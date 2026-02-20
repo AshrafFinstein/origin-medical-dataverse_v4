@@ -1,0 +1,363 @@
+{
+  "spec_file": "e2e/tests/analysis-modal/URS-DV-AN-02/SRS-009/SDS-009.spec.ts",
+  "plan_urs": "URS-DV-AN-02",
+  "srs_str": "009",
+  "domain": "analysis-modal",
+  "page_class": "AnalysisModalPage",
+  "page_import": "analysis-modal.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-222",
+      "srs_id": "SRS-20",
+      "sds_id": "SDS-20",
+      "summary": "Verify Filter dropdown behavior\nwhen table displayed",
+      "description": "Feature: Filtering UI & Interaction Controls\nScenario: Filter dropdown behavior\nGiven table displayed\nWhen user interacts with filter controls\nThen correct dropdown/search/selection behavior occurs",
+      "acceptance": "Correct dropdown/search/selection behavior occurs\nThe behavior should be validated when user interacts with filter controls."
+    },
+    {
+      "test_id": "UTC-223",
+      "srs_id": "SRS-20",
+      "sds_id": "SDS-20",
+      "summary": "Verify Filter dropdown behavior\nwhen table displayed",
+      "description": "Feature: Filtering UI & Interaction Controls\nScenario: Filter dropdown behavior\nGiven table displayed\nWhen user interacts with filter controls\nThen correct dropdown/search/selection behavior occurs",
+      "acceptance": "Correct dropdown/search/selection behavior occurs\nThe behavior should be validated when user interacts with filter controls."
+    },
+    {
+      "test_id": "UTC-224",
+      "srs_id": "SRS-20",
+      "sds_id": "SDS-20",
+      "summary": "Verify Filter dropdown behavior\nwhen table displayed",
+      "description": "Feature: Filtering UI & Interaction Controls\nScenario: Filter dropdown behavior\nGiven table displayed\nWhen user interacts with filter controls\nThen correct dropdown/search/selection behavior occurs",
+      "acceptance": "Correct dropdown/search/selection behavior occurs\nThe behavior should be validated when user interacts with filter controls."
+    },
+    {
+      "test_id": "UTC-225",
+      "srs_id": "SRS-20",
+      "sds_id": "SDS-20",
+      "summary": "Verify Filter dropdown behavior\nwhen table displayed",
+      "description": "Feature: Filtering UI & Interaction Controls\nScenario: Filter dropdown behavior\nGiven table displayed\nWhen user interacts with filter controls\nThen correct dropdown/search/selection behavior occurs",
+      "acceptance": "Correct dropdown/search/selection behavior occurs\nThe behavior should be validated when user interacts with filter controls."
+    },
+    {
+      "test_id": "UTC-226",
+      "srs_id": "SRS-20",
+      "sds_id": "SDS-20",
+      "summary": "Verify Filter dropdown behavior\nwhen table displayed",
+      "description": "Feature: Filtering UI & Interaction Controls\nScenario: Filter dropdown behavior\nGiven table displayed\nWhen user interacts with filter controls\nThen correct dropdown/search/selection behavior occurs",
+      "acceptance": "Correct dropdown/search/selection behavior occurs\nThe behavior should be validated when user interacts with filter controls."
+    },
+    {
+      "test_id": "UTC-227",
+      "srs_id": "SRS-20",
+      "sds_id": "SDS-20",
+      "summary": "Verify Filter dropdown behavior\nwhen table displayed",
+      "description": "Feature: Filtering UI & Interaction Controls\nScenario: Filter dropdown behavior\nGiven table displayed\nWhen user interacts with filter controls\nThen correct dropdown/search/selection behavior occurs",
+      "acceptance": "Correct dropdown/search/selection behavior occurs\nThe behavior should be validated when user interacts with filter controls."
+    },
+    {
+      "test_id": "UTC-228",
+      "srs_id": "SRS-20",
+      "sds_id": "SDS-20",
+      "summary": "Verify Filter dropdown behavior\nwhen table displayed",
+      "description": "Feature: Filtering UI & Interaction Controls\nScenario: Filter dropdown behavior\nGiven table displayed\nWhen user interacts with filter controls\nThen correct dropdown/search/selection behavior occurs",
+      "acceptance": "Correct dropdown/search/selection behavior occurs\nThe behavior should be validated when user interacts with filter controls."
+    },
+    {
+      "test_id": "UTC-229",
+      "srs_id": "SRS-20",
+      "sds_id": "SDS-20",
+      "summary": "Verify Filter dropdown behavior\nwhen table displayed",
+      "description": "Feature: Filtering UI & Interaction Controls\nScenario: Filter dropdown behavior\nGiven table displayed\nWhen user interacts with filter controls\nThen correct dropdown/search/selection behavior occurs",
+      "acceptance": "Correct dropdown/search/selection behavior occurs\nThe behavior should be validated when user interacts with filter controls."
+    },
+    {
+      "test_id": "UTC-230",
+      "srs_id": "SRS-20",
+      "sds_id": "SDS-20",
+      "summary": "Verify Filter dropdown behavior\nwhen table displayed",
+      "description": "Feature: Filtering UI & Interaction Controls\nScenario: Filter dropdown behavior\nGiven table displayed\nWhen user interacts with filter controls\nThen correct dropdown/search/selection behavior occurs",
+      "acceptance": "Correct dropdown/search/selection behavior occurs\nThe behavior should be validated when user interacts with filter controls."
+    },
+    {
+      "test_id": "UTC-231",
+      "srs_id": "SRS-20",
+      "sds_id": "SDS-20",
+      "summary": "Verify Filter dropdown behavior\nwhen table displayed",
+      "description": "Feature: Filtering UI & Interaction Controls\nScenario: Filter dropdown behavior\nGiven table displayed\nWhen user interacts with filter controls\nThen correct dropdown/search/selection behavior occurs",
+      "acceptance": "Correct dropdown/search/selection behavior occurs\nThe behavior should be validated when user interacts with filter controls."
+    },
+    {
+      "test_id": "UTC-232",
+      "srs_id": "SRS-20",
+      "sds_id": "SDS-20",
+      "summary": "Verify Filter dropdown behavior\nwhen table displayed",
+      "description": "Feature: Filtering UI & Interaction Controls\nScenario: Filter dropdown behavior\nGiven table displayed\nWhen user interacts with filter controls\nThen correct dropdown/search/selection behavior occurs",
+      "acceptance": "Correct dropdown/search/selection behavior occurs\nThe behavior should be validated when user interacts with filter controls."
+    },
+    {
+      "test_id": "UTC-233",
+      "srs_id": "SRS-20",
+      "sds_id": "SDS-20",
+      "summary": "Verify Filter dropdown behavior\nwhen table displayed",
+      "description": "Feature: Filtering UI & Interaction Controls\nScenario: Filter dropdown behavior\nGiven table displayed\nWhen user interacts with filter controls\nThen correct dropdown/search/selection behavior occurs",
+      "acceptance": "Correct dropdown/search/selection behavior occurs\nThe behavior should be validated when user interacts with filter controls."
+    },
+    {
+      "test_id": "UTC-234",
+      "srs_id": "SRS-20",
+      "sds_id": "SDS-20",
+      "summary": "Verify Filter dropdown behavior\nwhen table displayed",
+      "description": "Feature: Filtering UI & Interaction Controls\nScenario: Filter dropdown behavior\nGiven table displayed\nWhen user interacts with filter controls\nThen correct dropdown/search/selection behavior occurs",
+      "acceptance": "Correct dropdown/search/selection behavior occurs\nThe behavior should be validated when user interacts with filter controls."
+    },
+    {
+      "test_id": "UTC-235",
+      "srs_id": "SRS-21",
+      "sds_id": "SDS-21",
+      "summary": "Verify Apply filter updates dataset\nwhen records exist",
+      "description": "Feature: Filter Application Logic & Immediate Table Update\nScenario: Apply filter updates dataset\nGiven records exist\nWhen user confirms filter\nThen table refreshes with filtered results instantly",
+      "acceptance": "Table refreshes with filtered results instantly\nThe behavior should be validated when user confirms filter."
+    },
+    {
+      "test_id": "UTC-236",
+      "srs_id": "SRS-21",
+      "sds_id": "SDS-21",
+      "summary": "Verify Apply filter updates dataset\nwhen records exist",
+      "description": "Feature: Filter Application Logic & Immediate Table Update\nScenario: Apply filter updates dataset\nGiven records exist\nWhen user confirms filter\nThen table refreshes with filtered results instantly",
+      "acceptance": "Table refreshes with filtered results instantly\nThe behavior should be validated when user confirms filter."
+    },
+    {
+      "test_id": "UTC-237",
+      "srs_id": "SRS-21",
+      "sds_id": "SDS-21",
+      "summary": "Verify Apply filter updates dataset\nwhen records exist",
+      "description": "Feature: Filter Application Logic & Immediate Table Update\nScenario: Apply filter updates dataset\nGiven records exist\nWhen user confirms filter\nThen table refreshes with filtered results instantly",
+      "acceptance": "Table refreshes with filtered results instantly\nThe behavior should be validated when user confirms filter."
+    },
+    {
+      "test_id": "UTC-238",
+      "srs_id": "SRS-21",
+      "sds_id": "SDS-21",
+      "summary": "Verify Apply filter updates dataset\nwhen records exist",
+      "description": "Feature: Filter Application Logic & Immediate Table Update\nScenario: Apply filter updates dataset\nGiven records exist\nWhen user confirms filter\nThen table refreshes with filtered results instantly",
+      "acceptance": "Table refreshes with filtered results instantly\nThe behavior should be validated when user confirms filter."
+    },
+    {
+      "test_id": "UTC-239",
+      "srs_id": "SRS-21",
+      "sds_id": "SDS-21",
+      "summary": "Verify Apply filter updates dataset\nwhen records exist",
+      "description": "Feature: Filter Application Logic & Immediate Table Update\nScenario: Apply filter updates dataset\nGiven records exist\nWhen user confirms filter\nThen table refreshes with filtered results instantly",
+      "acceptance": "Table refreshes with filtered results instantly\nThe behavior should be validated when user confirms filter."
+    },
+    {
+      "test_id": "UTC-240",
+      "srs_id": "SRS-21",
+      "sds_id": "SDS-21",
+      "summary": "Verify Apply filter updates dataset\nwhen records exist",
+      "description": "Feature: Filter Application Logic & Immediate Table Update\nScenario: Apply filter updates dataset\nGiven records exist\nWhen user confirms filter\nThen table refreshes with filtered results instantly",
+      "acceptance": "Table refreshes with filtered results instantly\nThe behavior should be validated when user confirms filter."
+    },
+    {
+      "test_id": "UTC-241",
+      "srs_id": "SRS-21",
+      "sds_id": "SDS-21",
+      "summary": "Verify Apply filter updates dataset\nwhen records exist",
+      "description": "Feature: Filter Application Logic & Immediate Table Update\nScenario: Apply filter updates dataset\nGiven records exist\nWhen user confirms filter\nThen table refreshes with filtered results instantly",
+      "acceptance": "Table refreshes with filtered results instantly\nThe behavior should be validated when user confirms filter."
+    },
+    {
+      "test_id": "UTC-242",
+      "srs_id": "SRS-21",
+      "sds_id": "SDS-21",
+      "summary": "Verify Apply filter updates dataset\nwhen records exist",
+      "description": "Feature: Filter Application Logic & Immediate Table Update\nScenario: Apply filter updates dataset\nGiven records exist\nWhen user confirms filter\nThen table refreshes with filtered results instantly",
+      "acceptance": "Table refreshes with filtered results instantly\nThe behavior should be validated when user confirms filter."
+    },
+    {
+      "test_id": "UTC-243",
+      "srs_id": "SRS-21",
+      "sds_id": "SDS-21",
+      "summary": "Verify Apply filter updates dataset\nwhen records exist",
+      "description": "Feature: Filter Application Logic & Immediate Table Update\nScenario: Apply filter updates dataset\nGiven records exist\nWhen user confirms filter\nThen table refreshes with filtered results instantly",
+      "acceptance": "Table refreshes with filtered results instantly\nThe behavior should be validated when user confirms filter."
+    },
+    {
+      "test_id": "UTC-244",
+      "srs_id": "SRS-21",
+      "sds_id": "SDS-21",
+      "summary": "Verify Apply filter updates dataset\nwhen records exist",
+      "description": "Feature: Filter Application Logic & Immediate Table Update\nScenario: Apply filter updates dataset\nGiven records exist\nWhen user confirms filter\nThen table refreshes with filtered results instantly",
+      "acceptance": "Table refreshes with filtered results instantly\nThe behavior should be validated when user confirms filter."
+    },
+    {
+      "test_id": "UTC-245",
+      "srs_id": "SRS-21",
+      "sds_id": "SDS-21",
+      "summary": "Verify Apply filter updates dataset\nwhen records exist",
+      "description": "Feature: Filter Application Logic & Immediate Table Update\nScenario: Apply filter updates dataset\nGiven records exist\nWhen user confirms filter\nThen table refreshes with filtered results instantly",
+      "acceptance": "Table refreshes with filtered results instantly\nThe behavior should be validated when user confirms filter."
+    },
+    {
+      "test_id": "UTC-246",
+      "srs_id": "SRS-21",
+      "sds_id": "SDS-21",
+      "summary": "Verify Apply filter updates dataset\nwhen records exist",
+      "description": "Feature: Filter Application Logic & Immediate Table Update\nScenario: Apply filter updates dataset\nGiven records exist\nWhen user confirms filter\nThen table refreshes with filtered results instantly",
+      "acceptance": "Table refreshes with filtered results instantly\nThe behavior should be validated when user confirms filter."
+    },
+    {
+      "test_id": "UTC-247",
+      "srs_id": "SRS-21",
+      "sds_id": "SDS-21",
+      "summary": "Verify Apply filter updates dataset\nwhen records exist",
+      "description": "Feature: Filter Application Logic & Immediate Table Update\nScenario: Apply filter updates dataset\nGiven records exist\nWhen user confirms filter\nThen table refreshes with filtered results instantly",
+      "acceptance": "Table refreshes with filtered results instantly\nThe behavior should be validated when user confirms filter."
+    },
+    {
+      "test_id": "UTC-248",
+      "srs_id": "SRS-21",
+      "sds_id": "SDS-21",
+      "summary": "Verify Apply filter updates dataset\nwhen records exist",
+      "description": "Feature: Filter Application Logic & Immediate Table Update\nScenario: Apply filter updates dataset\nGiven records exist\nWhen user confirms filter\nThen table refreshes with filtered results instantly",
+      "acceptance": "Table refreshes with filtered results instantly\nThe behavior should be validated when user confirms filter."
+    },
+    {
+      "test_id": "UTC-249",
+      "srs_id": "SRS-21",
+      "sds_id": "SDS-21",
+      "summary": "Verify Apply filter updates dataset\nwhen records exist",
+      "description": "Feature: Filter Application Logic & Immediate Table Update\nScenario: Apply filter updates dataset\nGiven records exist\nWhen user confirms filter\nThen table refreshes with filtered results instantly",
+      "acceptance": "Table refreshes with filtered results instantly\nThe behavior should be validated when user confirms filter."
+    },
+    {
+      "test_id": "UTC-250",
+      "srs_id": "SRS-21",
+      "sds_id": "SDS-21",
+      "summary": "Verify Apply filter updates dataset\nwhen records exist",
+      "description": "Feature: Filter Application Logic & Immediate Table Update\nScenario: Apply filter updates dataset\nGiven records exist\nWhen user confirms filter\nThen table refreshes with filtered results instantly",
+      "acceptance": "Table refreshes with filtered results instantly\nThe behavior should be validated when user confirms filter."
+    },
+    {
+      "test_id": "UTC-251",
+      "srs_id": "SRS-21",
+      "sds_id": "SDS-21",
+      "summary": "Verify Apply filter updates dataset\nwhen records exist",
+      "description": "Feature: Filter Application Logic & Immediate Table Update\nScenario: Apply filter updates dataset\nGiven records exist\nWhen user confirms filter\nThen table refreshes with filtered results instantly",
+      "acceptance": "Table refreshes with filtered results instantly\nThe behavior should be validated when user confirms filter."
+    },
+    {
+      "test_id": "UTC-252",
+      "srs_id": "SRS-22",
+      "sds_id": "SDS-22",
+      "summary": "Verify Cache usage\nwhen filter opened repeatedly",
+      "description": "Feature: Filter Option Caching with 5-Minute TTL\nScenario: Cache usage\nGiven filter opened repeatedly\nWhen within TTL\nThen data loads from cache without API call",
+      "acceptance": "Data loads from cache without API call\nThe behavior should be validated when within TTL."
+    },
+    {
+      "test_id": "UTC-253",
+      "srs_id": "SRS-22",
+      "sds_id": "SDS-22",
+      "summary": "Verify Cache usage\nwhen filter opened repeatedly",
+      "description": "Feature: Filter Option Caching with 5-Minute TTL\nScenario: Cache usage\nGiven filter opened repeatedly\nWhen within TTL\nThen data loads from cache without API call",
+      "acceptance": "Data loads from cache without API call\nThe behavior should be validated when within TTL."
+    },
+    {
+      "test_id": "UTC-254",
+      "srs_id": "SRS-22",
+      "sds_id": "SDS-22",
+      "summary": "Verify Cache usage\nwhen filter opened repeatedly",
+      "description": "Feature: Filter Option Caching with 5-Minute TTL\nScenario: Cache usage\nGiven filter opened repeatedly\nWhen within TTL\nThen data loads from cache without API call",
+      "acceptance": "Data loads from cache without API call\nThe behavior should be validated when within TTL."
+    },
+    {
+      "test_id": "UTC-255",
+      "srs_id": "SRS-22",
+      "sds_id": "SDS-22",
+      "summary": "Verify Cache usage\nwhen filter opened repeatedly",
+      "description": "Feature: Filter Option Caching with 5-Minute TTL\nScenario: Cache usage\nGiven filter opened repeatedly\nWhen within TTL\nThen data loads from cache without API call",
+      "acceptance": "Data loads from cache without API call\nThe behavior should be validated when within TTL."
+    },
+    {
+      "test_id": "UTC-256",
+      "srs_id": "SRS-22",
+      "sds_id": "SDS-22",
+      "summary": "Verify Cache usage\nwhen filter opened repeatedly",
+      "description": "Feature: Filter Option Caching with 5-Minute TTL\nScenario: Cache usage\nGiven filter opened repeatedly\nWhen within TTL\nThen data loads from cache without API call",
+      "acceptance": "Data loads from cache without API call\nThe behavior should be validated when within TTL."
+    },
+    {
+      "test_id": "UTC-257",
+      "srs_id": "SRS-22",
+      "sds_id": "SDS-22",
+      "summary": "Verify Cache usage\nwhen filter opened repeatedly",
+      "description": "Feature: Filter Option Caching with 5-Minute TTL\nScenario: Cache usage\nGiven filter opened repeatedly\nWhen within TTL\nThen data loads from cache without API call",
+      "acceptance": "Data loads from cache without API call\nThe behavior should be validated when within TTL."
+    },
+    {
+      "test_id": "UTC-258",
+      "srs_id": "SRS-22",
+      "sds_id": "SDS-22",
+      "summary": "Verify Cache usage\nwhen filter opened repeatedly",
+      "description": "Feature: Filter Option Caching with 5-Minute TTL\nScenario: Cache usage\nGiven filter opened repeatedly\nWhen within TTL\nThen data loads from cache without API call",
+      "acceptance": "Data loads from cache without API call\nThe behavior should be validated when within TTL."
+    },
+    {
+      "test_id": "UTC-259",
+      "srs_id": "SRS-22",
+      "sds_id": "SDS-22",
+      "summary": "Verify Cache usage\nwhen filter opened repeatedly",
+      "description": "Feature: Filter Option Caching with 5-Minute TTL\nScenario: Cache usage\nGiven filter opened repeatedly\nWhen within TTL\nThen data loads from cache without API call",
+      "acceptance": "Data loads from cache without API call\nThe behavior should be validated when within TTL."
+    },
+    {
+      "test_id": "UTC-260",
+      "srs_id": "SRS-22",
+      "sds_id": "SDS-22",
+      "summary": "Verify Cache usage\nwhen filter opened repeatedly",
+      "description": "Feature: Filter Option Caching with 5-Minute TTL\nScenario: Cache usage\nGiven filter opened repeatedly\nWhen within TTL\nThen data loads from cache without API call",
+      "acceptance": "Data loads from cache without API call\nThe behavior should be validated when within TTL."
+    },
+    {
+      "test_id": "UTC-261",
+      "srs_id": "SRS-22",
+      "sds_id": "SDS-22",
+      "summary": "Verify Cache usage\nwhen filter opened repeatedly",
+      "description": "Feature: Filter Option Caching with 5-Minute TTL\nScenario: Cache usage\nGiven filter opened repeatedly\nWhen within TTL\nThen data loads from cache without API call",
+      "acceptance": "Data loads from cache without API call\nThe behavior should be validated when within TTL."
+    },
+    {
+      "test_id": "UTC-262",
+      "srs_id": "SRS-22",
+      "sds_id": "SDS-22",
+      "summary": "Verify Cache usage\nwhen filter opened repeatedly",
+      "description": "Feature: Filter Option Caching with 5-Minute TTL\nScenario: Cache usage\nGiven filter opened repeatedly\nWhen within TTL\nThen data loads from cache without API call",
+      "acceptance": "Data loads from cache without API call\nThe behavior should be validated when within TTL."
+    },
+    {
+      "test_id": "UTC-263",
+      "srs_id": "SRS-22",
+      "sds_id": "SDS-22",
+      "summary": "Verify Cache usage\nwhen filter opened repeatedly",
+      "description": "Feature: Filter Option Caching with 5-Minute TTL\nScenario: Cache usage\nGiven filter opened repeatedly\nWhen within TTL\nThen data loads from cache without API call",
+      "acceptance": "Data loads from cache without API call\nThe behavior should be validated when within TTL."
+    },
+    {
+      "test_id": "UTC-264",
+      "srs_id": "SRS-22",
+      "sds_id": "SDS-22",
+      "summary": "Verify Cache usage\nwhen filter opened repeatedly",
+      "description": "Feature: Filter Option Caching with 5-Minute TTL\nScenario: Cache usage\nGiven filter opened repeatedly\nWhen within TTL\nThen data loads from cache without API call",
+      "acceptance": "Data loads from cache without API call\nThe behavior should be validated when within TTL."
+    },
+    {
+      "test_id": "UTC-265",
+      "srs_id": "SRS-22",
+      "sds_id": "SDS-22",
+      "summary": "Verify Cache usage\nwhen filter opened repeatedly",
+      "description": "Feature: Filter Option Caching with 5-Minute TTL\nScenario: Cache usage\nGiven filter opened repeatedly\nWhen within TTL\nThen data loads from cache without API call",
+      "acceptance": "Data loads from cache without API call\nThe behavior should be validated when within TTL."
+    }
+  ]
+}

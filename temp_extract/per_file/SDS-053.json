@@ -1,0 +1,363 @@
+{
+  "spec_file": "e2e/tests/general/URS-DV-GEN-14/SRS-053/SDS-053.spec.ts",
+  "plan_urs": "URS-DV-GEN-14",
+  "srs_str": "053",
+  "domain": "general",
+  "page_class": "ProjectPage",
+  "page_import": "project.page",
+  "goto_method": "navigate",
+  "test_cases": [
+    {
+      "test_id": "UTC-1999",
+      "srs_id": "SRS-170",
+      "sds_id": "SDS-170",
+      "summary": "Verify system prevents saving user group when Name is empty\nwhen the user is on Create User Group popup/form",
+      "description": "Feature: User Group Name Mandatory – Empty Block\n\nScenario: Verify system prevents saving user group when Name is empty\n\nGiven the user is on Create User Group popup/form\nWhen the user leaves Group Name field empty\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “Name is required”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user leaves Group Name field empty."
+    },
+    {
+      "test_id": "UTC-2000",
+      "srs_id": "SRS-170",
+      "sds_id": "SDS-170",
+      "summary": "Verify missing group name error message is clear and descriptive\nwhen the user clicks Save without entering Group Name",
+      "description": "Feature: User Group Name Mandatory – Error Message Clarity\n\nScenario: Verify missing group name error message is clear and descriptive\n\nGiven the user clicks Save without entering Group Name\nWhen validation fails\nThen the error message should clearly describe the missing Name field\nAnd should not show technical codes",
+      "acceptance": "The error message should clearly describe the missing Name field\nThe behavior should be validated when validation fails."
+    },
+    {
+      "test_id": "UTC-2001",
+      "srs_id": "SRS-171",
+      "sds_id": "SDS-171",
+      "summary": "Verify system prevents saving when User Group Name exceeds 300 characters\nwhen the user is on Create User Group popup/form",
+      "description": "Feature: User Group Name Max Length – Block >300 Characters\n\nScenario: Verify system prevents saving when User Group Name exceeds 300 characters\n\nGiven the user is on Create User Group popup/form\nWhen the user enters Group Name with more than 300 characters\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “Name must be 300 characters or less”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user enters Group Name with more than 300 characters."
+    },
+    {
+      "test_id": "UTC-2002",
+      "srs_id": "SRS-171",
+      "sds_id": "SDS-171",
+      "summary": "Verify max length message clearly mentions 300 character limit\nwhen the user enters Group Name exceeding 300 characters",
+      "description": "Feature: User Group Name Max Length – Message Mentions Limit\n\nScenario: Verify max length message clearly mentions 300 character limit\n\nGiven the user enters Group Name exceeding 300 characters\nWhen Save is clicked\nThen the toast message should clearly mention the allowed maximum length",
+      "acceptance": "The toast message should clearly mention the allowed maximum length\nThe behavior should be validated when Save is clicked."
+    },
+    {
+      "test_id": "UTC-2003",
+      "srs_id": "SRS-172",
+      "sds_id": "SDS-172",
+      "summary": "Verify system prevents saving when User Group Name contains spaces/special characters\nwhen the user is on Create User Group popup/form",
+      "description": "Feature: User Group Name Format – Block Spaces & Special Characters\n\nScenario: Verify system prevents saving when User Group Name contains spaces/special characters\n\nGiven the user is on Create User Group popup/form\nWhen the user enters Group Name as “Group Name@01”\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “Name can only contain letters, numbers, underscores, and hyphens”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user enters Group Name as \"Group Name@01\"."
+    },
+    {
+      "test_id": "UTC-2004",
+      "srs_id": "SRS-172",
+      "sds_id": "SDS-172",
+      "summary": "Verify system allows saving valid group name format\nwhen the user is on Create User Group popup/form",
+      "description": "Feature: User Group Name Format – Allow Valid Name\n\nScenario: Verify system allows saving valid group name format\n\nGiven the user is on Create User Group popup/form\nWhen the user enters Group Name as “Group_Name-01”\nAnd clicks Save\nThen the system should save successfully\nAnd no format error message should appear",
+      "acceptance": "The system should save successfully\nThe behavior should be validated when the user enters Group Name as \"Group_Name-01\"."
+    },
+    {
+      "test_id": "UTC-2005",
+      "srs_id": "SRS-173",
+      "sds_id": "SDS-173",
+      "summary": "Verify system prevents saving duplicate User Group Name\nwhen a user group already exists with Name \"QC_TEAM\"",
+      "description": "Feature: User Group Name Uniqueness – Duplicate Block\n\nScenario: Verify system prevents saving duplicate User Group Name\n\nGiven a user group already exists with Name “QC_TEAM”\nWhen the user enters Group Name as “QC_TEAM” again\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “A user group with this name already exists. Please choose a different name”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user enters Group Name as \"QC_TEAM\" again."
+    },
+    {
+      "test_id": "UTC-2006",
+      "srs_id": "SRS-173",
+      "sds_id": "SDS-173",
+      "summary": "Verify duplicate message is clear and user-friendly\nwhen the user tries to save a duplicate user group name",
+      "description": "Feature: User Group Name Uniqueness – Message Clarity\n\nScenario: Verify duplicate message is clear and user-friendly\n\nGiven the user tries to save a duplicate user group name\nWhen backend returns duplicate match\nThen the system should show a clear duplicate message\nAnd should not show technical database errors",
+      "acceptance": "The system should show a clear duplicate message\nThe behavior should be validated when backend returns duplicate match."
+    },
+    {
+      "test_id": "UTC-2007",
+      "srs_id": "SRS-174",
+      "sds_id": "SDS-174",
+      "summary": "Verify system prevents saving Structure Group when Name is empty\nwhen the user is on Create Structure Group form/popup",
+      "description": "Feature: Structure Name Mandatory – Empty Block\n\nScenario: Verify system prevents saving Structure Group when Name is empty\n\nGiven the user is on Create Structure Group form/popup\nWhen the user leaves Name field empty\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “Name is required”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user leaves Name field empty."
+    },
+    {
+      "test_id": "UTC-2008",
+      "srs_id": "SRS-174",
+      "sds_id": "SDS-174",
+      "summary": "Verify missing structure name message is clear and descriptive\nwhen the user clicks Save without entering Structure Name",
+      "description": "Feature: Structure Name Mandatory – Error Message Clarity\n\nScenario: Verify missing structure name message is clear and descriptive\n\nGiven the user clicks Save without entering Structure Name\nWhen validation fails\nThen the error message should clearly describe the missing Name field\nAnd should not show technical codes",
+      "acceptance": "The error message should clearly describe the missing Name field\nThe behavior should be validated when validation fails."
+    },
+    {
+      "test_id": "UTC-2009",
+      "srs_id": "SRS-175",
+      "sds_id": "SDS-175",
+      "summary": "Verify system prevents saving when Structure Group Name exceeds 300 characters\nwhen the user is on Create Structure Group form/popup",
+      "description": "Feature: Structure Name Max Length – Block >300 Characters\n\nScenario: Verify system prevents saving when Structure Group Name exceeds 300 characters\n\nGiven the user is on Create Structure Group form/popup\nWhen the user enters Name with more than 300 characters\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “Name must be 300 characters or less”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user enters Name with more than 300 characters."
+    },
+    {
+      "test_id": "UTC-2010",
+      "srs_id": "SRS-175",
+      "sds_id": "SDS-175",
+      "summary": "Verify max length message clearly mentions 300 character limit\nwhen the user enters name exceeding 300 characters",
+      "description": "Feature: Structure Name Max Length – Message Mentions Limit\n\nScenario: Verify max length message clearly mentions 300 character limit\n\nGiven the user enters name exceeding 300 characters\nWhen Save is clicked\nThen the toast message should clearly mention the allowed maximum length",
+      "acceptance": "The toast message should clearly mention the allowed maximum length\nThe behavior should be validated when Save is clicked."
+    },
+    {
+      "test_id": "UTC-2011",
+      "srs_id": "SRS-176",
+      "sds_id": "SDS-176",
+      "summary": "Verify system prevents saving when Structure Group Name contains spaces/special characters\nwhen the user is on Create Structure Group form/popup",
+      "description": "Feature: Structure Name Format – Block Spaces & Special Characters\n\nScenario: Verify system prevents saving when Structure Group Name contains spaces/special characters\n\nGiven the user is on Create Structure Group form/popup\nWhen the user enters Name as “Structure Group@01”\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “Name can only contain letters, numbers, underscores, and hyphens”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user enters Name as \"Structure Group@01\"."
+    },
+    {
+      "test_id": "UTC-2012",
+      "srs_id": "SRS-176",
+      "sds_id": "SDS-176",
+      "summary": "Verify system allows saving valid Structure Group Name format\nwhen the user is on Create Structure Group form/popup",
+      "description": "Feature: Structure Name Format – Allow Valid Name\n\nScenario: Verify system allows saving valid Structure Group Name format\n\nGiven the user is on Create Structure Group form/popup\nWhen the user enters Name as “Structure_Group-01”\nAnd clicks Save\nThen the system should save successfully\nAnd no format error message should appear",
+      "acceptance": "The system should save successfully\nThe behavior should be validated when the user enters Name as \"Structure_Group-01\"."
+    },
+    {
+      "test_id": "UTC-2013",
+      "srs_id": "SRS-177",
+      "sds_id": "SDS-177",
+      "summary": "Verify system prevents saving duplicate Structure Group Name\nwhen a structure group already exists with Name \"HEAD_STRUCT\"",
+      "description": "Feature: Structure Name Uniqueness – Duplicate Block\n\nScenario: Verify system prevents saving duplicate Structure Group Name\n\nGiven a structure group already exists with Name “HEAD_STRUCT”\nWhen the user enters Name as “HEAD_STRUCT” again\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “A structure group with this name already exists. Please choose a different name”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user enters Name as \"HEAD_STRUCT\" again."
+    },
+    {
+      "test_id": "UTC-2014",
+      "srs_id": "SRS-177",
+      "sds_id": "SDS-177",
+      "summary": "Verify duplicate structure name message is clear and user-friendly\nwhen the user tries to save a duplicate structure group name",
+      "description": "Feature: Structure Name Uniqueness – Message Clarity\n\nScenario: Verify duplicate structure name message is clear and user-friendly\n\nGiven the user tries to save a duplicate structure group name\nWhen backend returns duplicate match\nThen the system should show a clear duplicate message\nAnd should not show technical database errors",
+      "acceptance": "The system should show a clear duplicate message\nThe behavior should be validated when backend returns duplicate match."
+    },
+    {
+      "test_id": "UTC-2015",
+      "srs_id": "SRS-178",
+      "sds_id": "SDS-178",
+      "summary": "Verify system prevents saving Session Code when Name is empty\nwhen the user is on Create Session Code form/popup",
+      "description": "Feature: Code Name Mandatory – Empty Block\n\nScenario: Verify system prevents saving Session Code when Name is empty\n\nGiven the user is on Create Session Code form/popup\nWhen the user leaves Code Name field empty\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “Name is required”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user leaves Code Name field empty."
+    },
+    {
+      "test_id": "UTC-2016",
+      "srs_id": "SRS-178",
+      "sds_id": "SDS-178",
+      "summary": "Verify missing code name message is clear and descriptive\nwhen the user clicks Save without entering Code Name",
+      "description": "Feature: Code Name Mandatory – Error Message Clarity\n\nScenario: Verify missing code name message is clear and descriptive\n\nGiven the user clicks Save without entering Code Name\nWhen validation fails\nThen the error message should clearly describe the missing Name field\nAnd should not show technical codes",
+      "acceptance": "The error message should clearly describe the missing Name field\nThe behavior should be validated when validation fails."
+    },
+    {
+      "test_id": "UTC-2017",
+      "srs_id": "SRS-179",
+      "sds_id": "SDS-179",
+      "summary": "Verify system prevents saving when Code Name exceeds 300 characters\nwhen the user is on Create Session Code form/popup",
+      "description": "Feature: Code Name Max Length – Block >300 Characters\n\nScenario: Verify system prevents saving when Code Name exceeds 300 characters\n\nGiven the user is on Create Session Code form/popup\nWhen the user enters Code Name with more than 300 characters\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “Name must be 300 characters or less”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user enters Code Name with more than 300 characters."
+    },
+    {
+      "test_id": "UTC-2018",
+      "srs_id": "SRS-179",
+      "sds_id": "SDS-179",
+      "summary": "Verify max length message clearly mentions 300 character limit\nwhen the user enters code name exceeding 300 characters",
+      "description": "Feature: Code Name Max Length – Message Mentions Limit\n\nScenario: Verify max length message clearly mentions 300 character limit\n\nGiven the user enters code name exceeding 300 characters\nWhen Save is clicked\nThen the toast message should clearly mention the allowed maximum length",
+      "acceptance": "The toast message should clearly mention the allowed maximum length\nThe behavior should be validated when Save is clicked."
+    },
+    {
+      "test_id": "UTC-2019",
+      "srs_id": "SRS-180",
+      "sds_id": "SDS-180",
+      "summary": "Verify system prevents saving when Code Name contains spaces/special characters\nwhen the user is on Create Session Code form/popup",
+      "description": "Feature: Code Name Format – Block Spaces & Special Characters\n\nScenario: Verify system prevents saving when Code Name contains spaces/special characters\n\nGiven the user is on Create Session Code form/popup\nWhen the user enters Code Name as “Project Code@01”\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “Name can only contain letters, numbers, underscores, and hyphens”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user enters Code Name as \"Project Code@01\"."
+    },
+    {
+      "test_id": "UTC-2020",
+      "srs_id": "SRS-180",
+      "sds_id": "SDS-180",
+      "summary": "Verify system allows saving valid Session Code Name format\nwhen the user is on Create Session Code form/popup",
+      "description": "Feature: Code Name Format – Allow Valid Name\n\nScenario: Verify system allows saving valid Session Code Name format\n\nGiven the user is on Create Session Code form/popup\nWhen the user enters Code Name as “PROJECT_CODE-01”\nAnd clicks Save\nThen the system should save successfully\nAnd no format error message should appear",
+      "acceptance": "The system should save successfully\nThe behavior should be validated when the user enters Code Name as \"PROJECT_CODE-01\"."
+    },
+    {
+      "test_id": "UTC-2021",
+      "srs_id": "SRS-181",
+      "sds_id": "SDS-181",
+      "summary": "Verify system prevents saving duplicate Code Name within same Code Type\nwhen a code already exists with Name \"PROJ_01\" under Code Type \"Project Code\"",
+      "description": "Feature: Code Name Uniqueness – Duplicate Block Within Same Type\n\nScenario: Verify system prevents saving duplicate Code Name within same Code Type\n\nGiven a code already exists with Name “PROJ_01” under Code Type “Project Code”\nWhen the user enters Name as “PROJ_01” again under the same Code Type\nAnd clicks Save\nThen the system should block submission\nAnd show toast message “A code with this name already exists for this type”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user enters Name as \"PROJ_01\" again under the same Code Type."
+    },
+    {
+      "test_id": "UTC-2022",
+      "srs_id": "SRS-181",
+      "sds_id": "SDS-181",
+      "summary": "Verify same code name is allowed under different code type\nwhen a code exists with Name \"PROJ_01\" under Code Type \"Project Code\"",
+      "description": "Feature: Code Name Uniqueness – Allow Same Name in Different Type\n\nScenario: Verify same code name is allowed under different code type\n\nGiven a code exists with Name “PROJ_01” under Code Type “Project Code”\nWhen the user creates a new code with Name “PROJ_01” under Code Type “Center Code”\nAnd clicks Save\nThen the system should allow save successfully\nAnd no duplicate error should appear",
+      "acceptance": "The system should allow save successfully\nThe behavior should be validated when the user creates a new code with Name \"PROJ_01\" under Code Type \"Center Code\"."
+    },
+    {
+      "test_id": "UTC-2023",
+      "srs_id": "SRS-182",
+      "sds_id": "SDS-182",
+      "summary": "Verify system prevents creating Epic when Name is empty\nwhen the user is on Create Epic form",
+      "description": "Feature: Epic Name Mandatory – Empty Block\n\nScenario: Verify system prevents creating Epic when Name is empty\n\nGiven the user is on Create Epic form\nWhen the user leaves Epic Name field empty\nAnd clicks Create/Save\nThen the system should block creation\nAnd show toast message “Name is required”",
+      "acceptance": "The system should block creation\nThe behavior should be validated when the user leaves Epic Name field empty."
+    },
+    {
+      "test_id": "UTC-2024",
+      "srs_id": "SRS-182",
+      "sds_id": "SDS-182",
+      "summary": "Verify missing epic name message is clear and descriptive\nwhen the user clicks Create without entering Epic Name",
+      "description": "Feature: Epic Name Mandatory – Error Message Clarity\n\nScenario: Verify missing epic name message is clear and descriptive\n\nGiven the user clicks Create without entering Epic Name\nWhen validation fails\nThen the toast message should clearly describe the missing Name field\nAnd should not show technical error codes",
+      "acceptance": "The toast message should clearly describe the missing Name field\nThe behavior should be validated when validation fails."
+    },
+    {
+      "test_id": "UTC-2025",
+      "srs_id": "SRS-183",
+      "sds_id": "SDS-183",
+      "summary": "Verify system prevents creating Epic when name exceeds 100 characters\nwhen the user is on Create Epic form",
+      "description": "Feature: Epic Name Max Length – Block >100 Characters\n\nScenario: Verify system prevents creating Epic when name exceeds 100 characters\n\nGiven the user is on Create Epic form\nWhen the user enters Epic Name with more than 100 characters\nAnd clicks Create/Save\nThen the system should block creation\nAnd show toast message “Name must be 100 characters or less”",
+      "acceptance": "The system should block creation\nThe behavior should be validated when the user enters Epic Name with more than 100 characters."
+    },
+    {
+      "test_id": "UTC-2026",
+      "srs_id": "SRS-183",
+      "sds_id": "SDS-183",
+      "summary": "Verify max length message clearly mentions 100 character limit\nwhen the user enters epic name exceeding 100 characters",
+      "description": "Feature: Epic Name Max Length – Message Mentions Limit\n\nScenario: Verify max length message clearly mentions 100 character limit\n\nGiven the user enters epic name exceeding 100 characters\nWhen Save is clicked\nThen the toast message should clearly mention the allowed maximum length",
+      "acceptance": "The toast message should clearly mention the allowed maximum length\nThe behavior should be validated when Save is clicked."
+    },
+    {
+      "test_id": "UTC-2027",
+      "srs_id": "SRS-184",
+      "sds_id": "SDS-184",
+      "summary": "Verify system prevents epic name starting with a space\nwhen the user is on Create Epic form",
+      "description": "Feature: Epic Name Start Character – Block Leading Space\n\nScenario: Verify system prevents epic name starting with a space\n\nGiven the user is on Create Epic form\nWhen the user enters Epic Name as “ Epic_Test_01” (leading space)\nAnd clicks Create/Save\nThen the system should block creation\nAnd show toast message “Name cannot start with a space”",
+      "acceptance": "The system should block creation\nThe behavior should be validated when the user enters Epic Name as \" Epic_Test_01\" (leading space)."
+    },
+    {
+      "test_id": "UTC-2028",
+      "srs_id": "SRS-184",
+      "sds_id": "SDS-184",
+      "summary": "Verify leading space error message is clear and descriptive\nwhen the user enters epic name starting with space",
+      "description": "Feature: Epic Name Start Character – Error Message Detail\n\nScenario: Verify leading space error message is clear and descriptive\n\nGiven the user enters epic name starting with space\nWhen Save is clicked\nThen the system should display a clear message describing the issue\nAnd should not show technical error codes",
+      "acceptance": "The system should display a clear message describing the issue\nThe behavior should be validated when Save is clicked."
+    },
+    {
+      "test_id": "UTC-2029",
+      "srs_id": "SRS-185",
+      "sds_id": "SDS-185",
+      "summary": "Verify system prevents creating epic with duplicate name\nwhen an epic already exists with Name \"EPIC_ALPHA\"",
+      "description": "Feature: Epic Name Uniqueness – Duplicate Block\n\nScenario: Verify system prevents creating epic with duplicate name\n\nGiven an epic already exists with Name “EPIC_ALPHA”\nWhen the user enters Epic Name as “EPIC_ALPHA” again\nAnd clicks Create/Save\nThen the system should block creation\nAnd show toast message “An epic with this name already exists. Please choose a different name”",
+      "acceptance": "The system should block creation\nThe behavior should be validated when the user enters Epic Name as \"EPIC_ALPHA\" again."
+    },
+    {
+      "test_id": "UTC-2030",
+      "srs_id": "SRS-185",
+      "sds_id": "SDS-185",
+      "summary": "Verify duplicate epic message is user-friendly and detailed\nwhen the user tries to save a duplicate epic name",
+      "description": "Feature: Epic Name Uniqueness – Message Clarity\n\nScenario: Verify duplicate epic message is user-friendly and detailed\n\nGiven the user tries to save a duplicate epic name\nWhen backend returns duplicate match\nThen the system should show a clear duplicate message\nAnd should not show technical database errors",
+      "acceptance": "The system should show a clear duplicate message\nThe behavior should be validated when backend returns duplicate match."
+    },
+    {
+      "test_id": "UTC-2031",
+      "srs_id": "SRS-186",
+      "sds_id": "SDS-186",
+      "summary": "Verify system prevents saving project when name is empty\nwhen the user is on Create Project form",
+      "description": "Feature: Project Name Mandatory – Empty Block\n\nScenario: Verify system prevents saving project when name is empty\n\nGiven the user is on Create Project form\nWhen the user leaves Project Name field empty\nAnd clicks Save/Create\nThen the system should block submission\nAnd show toast message “Name is required”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user leaves Project Name field empty."
+    },
+    {
+      "test_id": "UTC-2032",
+      "srs_id": "SRS-186",
+      "sds_id": "SDS-186",
+      "summary": "Verify missing project name message is clear and descriptive\nwhen the user clicks Save without entering Project Name",
+      "description": "Feature: Project Name Mandatory – Error Message Clarity\n\nScenario: Verify missing project name message is clear and descriptive\n\nGiven the user clicks Save without entering Project Name\nWhen validation fails\nThen the toast message should clearly describe the missing Name field\nAnd should not show technical error codes",
+      "acceptance": "The toast message should clearly describe the missing Name field\nThe behavior should be validated when validation fails."
+    },
+    {
+      "test_id": "UTC-2033",
+      "srs_id": "SRS-187",
+      "sds_id": "SDS-187",
+      "summary": "Verify system prevents saving project when name exceeds 100 characters\nwhen the user is on Create Project form",
+      "description": "Feature: Project Name Max Length – Block >100 Characters\n\nScenario: Verify system prevents saving project when name exceeds 100 characters\n\nGiven the user is on Create Project form\nWhen the user enters Project Name with more than 100 characters\nAnd clicks Save/Create\nThen the system should block submission\nAnd show toast message “Name must be 100 characters or less”",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user enters Project Name with more than 100 characters."
+    },
+    {
+      "test_id": "UTC-2034",
+      "srs_id": "SRS-187",
+      "sds_id": "SDS-187",
+      "summary": "Verify max length message clearly mentions 100 character limit\nwhen the user enters project name exceeding 100 characters",
+      "description": "Feature: Project Name Max Length – Message Mentions Limit\n\nScenario: Verify max length message clearly mentions 100 character limit\n\nGiven the user enters project name exceeding 100 characters\nWhen Save is clicked\nThen the toast message should clearly mention the allowed maximum length",
+      "acceptance": "The toast message should clearly mention the allowed maximum length\nThe behavior should be validated when Save is clicked."
+    },
+    {
+      "test_id": "UTC-2035",
+      "srs_id": "SRS-188",
+      "sds_id": "SDS-188",
+      "summary": "Verify system prevents project name starting with a space\nwhen the user is on Create Project form",
+      "description": "Feature: Project Name Start Character – Block Leading Space\n\nScenario: Verify system prevents project name starting with a space\n\nGiven the user is on Create Project form\nWhen the user enters Project Name as “ Project_Test_01” (leading space)\nAnd clicks Save/Create\nThen the system should block saving\nAnd show toast message “Name cannot start with a space”",
+      "acceptance": "The system should block saving\nThe behavior should be validated when the user enters Project Name as \" Project_Test_01\" (leading space)."
+    },
+    {
+      "test_id": "UTC-2036",
+      "srs_id": "SRS-188",
+      "sds_id": "SDS-188",
+      "summary": "Verify leading space error message is clear and descriptive\nwhen the user enters project name starting with space",
+      "description": "Feature: Project Name Start Character – Error Message Detail\n\nScenario: Verify leading space error message is clear and descriptive\n\nGiven the user enters project name starting with space\nWhen Save is clicked\nThen the system should display a clear message describing the issue\nAnd should not show technical error codes",
+      "acceptance": "The system should display a clear message describing the issue\nThe behavior should be validated when Save is clicked."
+    },
+    {
+      "test_id": "UTC-2037",
+      "srs_id": "SRS-189",
+      "sds_id": "SDS-189",
+      "summary": "Verify system prevents creating project with duplicate name\nwhen a project already exists with Name \"PRJ_ALPHA\"",
+      "description": "Feature: Project Name Uniqueness – Duplicate Block\n\nScenario: Verify system prevents creating project with duplicate name\n\nGiven a project already exists with Name “PRJ_ALPHA”\nWhen the user enters Project Name as “PRJ_ALPHA” again\nAnd clicks Save/Create\nThen the system should block saving\nAnd show toast message “A project with this name already exists. Please choose a different name”",
+      "acceptance": "The system should block saving\nThe behavior should be validated when the user enters Project Name as \"PRJ_ALPHA\" again."
+    },
+    {
+      "test_id": "UTC-2038",
+      "srs_id": "SRS-189",
+      "sds_id": "SDS-189",
+      "summary": "Verify duplicate project message is user-friendly and detailed\nwhen the user tries to save a duplicate project name",
+      "description": "Feature: Project Name Uniqueness – Message Clarity\n\nScenario: Verify duplicate project message is user-friendly and detailed\n\nGiven the user tries to save a duplicate project name\nWhen backend returns duplicate match\nThen the system should show a clear duplicate message\nAnd should not show technical database errors",
+      "acceptance": "The system should show a clear duplicate message\nThe behavior should be validated when backend returns duplicate match."
+    },
+    {
+      "test_id": "UTC-2039",
+      "srs_id": "SRS-190",
+      "sds_id": "SDS-190",
+      "summary": "Verify system prevents saving project without selecting assignees\nwhen the user is on Create Project form",
+      "description": "Feature: Project Assignees Mandatory – Block Empty Assignee List\n\nScenario: Verify system prevents saving project without selecting assignees\n\nGiven the user is on Create Project form\nWhen the user does not select any assignee in Assignee dropdown\nAnd clicks Save/Create\nThen the system should block saving\nAnd show toast message “At least one assignee is required”",
+      "acceptance": "The system should block saving\nThe behavior should be validated when the user does not select any assignee in Assignee dropdown."
+    },
+    {
+      "test_id": "UTC-2040",
+      "srs_id": "SRS-190",
+      "sds_id": "SDS-190",
+      "summary": "Verify missing assignee message clearly explains the requirement\nwhen the user clicks Save without selecting any assignee",
+      "description": "Feature: Project Assignees Mandatory – Error Message Clarity\n\nScenario: Verify missing assignee message clearly explains the requirement\n\nGiven the user clicks Save without selecting any assignee\nWhen validation fails\nThen the toast message should clearly mention that at least one assignee is required\nAnd should not show technical error codes",
+      "acceptance": "The toast message should clearly mention that at least one assignee is required\nThe behavior should be validated when validation fails."
+    },
+    {
+      "test_id": "UTC-2041",
+      "srs_id": "SRS-191",
+      "sds_id": "SDS-191",
+      "summary": "Verify system prevents saving project with invalid Epic ID\nwhen the user is on Create Project form",
+      "description": "Feature: Epic ID Validity – Block Invalid Epic Reference\n\nScenario: Verify system prevents saving project with invalid Epic ID\n\nGiven the user is on Create Project form\nWhen the user selects an Epic ID that does not exist / is inactive\nAnd clicks Save/Create\nThen the system should block saving\nAnd show toast message “Invalid reference. Please check that the related epic exists and is valid”",
+      "acceptance": "The system should block saving\nThe behavior should be validated when the user selects an Epic ID that does not exist / is inactive."
+    },
+    {
+      "test_id": "UTC-2042",
+      "srs_id": "SRS-191",
+      "sds_id": "SDS-191",
+      "summary": "Verify invalid epic reference message is clear and descriptive\nwhen the user attempts to save project with invalid epic link",
+      "description": "Feature: Epic ID Validity – Error Message Detail\n\nScenario: Verify invalid epic reference message is clear and descriptive\n\nGiven the user attempts to save project with invalid epic link\nWhen backend validation fails\nThen the system should show a detailed message explaining epic reference is invalid\nAnd should not show technical error codes",
+      "acceptance": "The system should show a detailed message explaining epic reference is invalid\nThe behavior should be validated when backend validation fails."
+    }
+  ]
+}

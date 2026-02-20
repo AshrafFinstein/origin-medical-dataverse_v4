@@ -1,0 +1,379 @@
+{
+  "spec_file": "e2e/tests/data-management/URS-DV-DM-08/SRS-034/SDS-034.spec.ts",
+  "plan_urs": "URS-DV-DM-08",
+  "srs_str": "034",
+  "domain": "data-management",
+  "page_class": "AnalyticsPage",
+  "page_import": "analytics.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-1204",
+      "srs_id": "SRS-93",
+      "sds_id": "SDS-93",
+      "summary": "Verify Session creation cancel\nwhen user opens session creation and cancels",
+      "description": "Feature: Workspace State Preservation During Session Creation\nScenario: Session creation cancel\nGiven user opens session creation and cancels\nWhen returning\nThen workspace should show original context",
+      "acceptance": "Workspace should show original context\nThe behavior should be validated when returning."
+    },
+    {
+      "test_id": "UTC-1205",
+      "srs_id": "SRS-93",
+      "sds_id": "SDS-93",
+      "summary": "Verify Loading indicators removed\nwhen user returns to workspace",
+      "description": "Feature: Workspace State Preservation During Session Creation\nScenario: Loading indicators removed\nGiven user returns to workspace\nWhen view restores\nThen no unnecessary loading spinners should appear",
+      "acceptance": "No unnecessary loading spinners should appear\nThe behavior should be validated when view restores."
+    },
+    {
+      "test_id": "UTC-1206",
+      "srs_id": "SRS-94",
+      "sds_id": "SDS-94",
+      "summary": "Verify Fast initial page load\nwhen user navigates to Session Creation page",
+      "description": "Feature: Session Creation Page Performance Optimization\nScenario: Fast initial page load\nGiven user navigates to Session Creation page\nWhen the page opens\nThen content should render within acceptable time (< 2 sec)",
+      "acceptance": "Content should render within acceptable time (< 2 sec)\nThe behavior should be validated when the page opens."
+    },
+    {
+      "test_id": "UTC-1207",
+      "srs_id": "SRS-94",
+      "sds_id": "SDS-94",
+      "summary": "Verify Immediate UI visibility\nwhen navigation occurs",
+      "description": "Feature: Session Creation Page Performance Optimization\nScenario: Immediate UI visibility\nGiven navigation occurs\nWhen page loads\nThen form fields should appear immediately without blank screen",
+      "acceptance": "Form fields should appear immediately without blank screen\nThe behavior should be validated when page loads."
+    },
+    {
+      "test_id": "UTC-1208",
+      "srs_id": "SRS-94",
+      "sds_id": "SDS-94",
+      "summary": "Verify JSON upload prepared in background\nwhen page is loading",
+      "description": "Feature: Session Creation Page Performance Optimization\nScenario: JSON upload prepared in background\nGiven page is loading\nWhen UI renders\nThen JSON upload component initializes asynchronously",
+      "acceptance": "JSON upload component initializes asynchronously\nThe behavior should be validated when UI renders."
+    },
+    {
+      "test_id": "UTC-1209",
+      "srs_id": "SRS-94",
+      "sds_id": "SDS-94",
+      "summary": "Verify Upload does not block page\nwhen upload initialization running",
+      "description": "Feature: Session Creation Page Performance Optimization\nScenario: Upload does not block page\nGiven upload initialization running\nWhen user interacts with form\nThen interactions should remain responsive",
+      "acceptance": "Interactions should remain responsive\nThe behavior should be validated when user interacts with form."
+    },
+    {
+      "test_id": "UTC-1210",
+      "srs_id": "SRS-94",
+      "sds_id": "SDS-94",
+      "summary": "Verify Smooth navigation\nwhen user opens page from workspace",
+      "description": "Feature: Session Creation Page Performance Optimization\nScenario: Smooth navigation\nGiven user opens page from workspace\nWhen page loads\nThen navigation should feel seamless without freeze",
+      "acceptance": "Navigation should feel seamless without freeze\nThe behavior should be validated when page loads."
+    },
+    {
+      "test_id": "UTC-1211",
+      "srs_id": "SRS-94",
+      "sds_id": "SDS-94",
+      "summary": "Verify Large metadata load\nwhen multiple dropdowns and components present",
+      "description": "Feature: Session Creation Page Performance Optimization\nScenario: Large metadata load\nGiven multiple dropdowns and components present\nWhen page renders\nThen no noticeable delay or stutter should occur",
+      "acceptance": "No noticeable delay or stutter should occur\nThe behavior should be validated when page renders."
+    },
+    {
+      "test_id": "UTC-1212",
+      "srs_id": "SRS-94",
+      "sds_id": "SDS-94",
+      "summary": "Verify JSON control readiness\nwhen page is open",
+      "description": "Feature: Session Creation Page Performance Optimization\nScenario: JSON control readiness\nGiven page is open\nWhen user selects JSON upload immediately\nThen file chooser should open instantly",
+      "acceptance": "File chooser should open instantly\nThe behavior should be validated when user selects JSON upload immediately."
+    },
+    {
+      "test_id": "UTC-1213",
+      "srs_id": "SRS-94",
+      "sds_id": "SDS-94",
+      "summary": "Verify No UI freeze during initialization\nwhen background processes executing",
+      "description": "Feature: Session Creation Page Performance Optimization\nScenario: No UI freeze during initialization\nGiven background processes executing\nWhen interacting with dropdowns/inputs\nThen UI should not freeze or hang",
+      "acceptance": "UI should not freeze or hang\nThe behavior should be validated when interacting with dropdowns/inputs."
+    },
+    {
+      "test_id": "UTC-1214",
+      "srs_id": "SRS-94",
+      "sds_id": "SDS-94",
+      "summary": "Verify Spinner behavior\nwhen upload preparation ongoing",
+      "description": "Feature: Session Creation Page Performance Optimization\nScenario: Spinner behavior\nGiven upload preparation ongoing\nWhen page renders\nThen unnecessary blocking loaders should not appear",
+      "acceptance": "Unnecessary blocking loaders should not appear\nThe behavior should be validated when page renders."
+    },
+    {
+      "test_id": "UTC-1215",
+      "srs_id": "SRS-94",
+      "sds_id": "SDS-94",
+      "summary": "Verify Multiple navigations\nwhen user repeatedly opens page",
+      "description": "Feature: Session Creation Page Performance Optimization\nScenario: Multiple navigations\nGiven user repeatedly opens page\nWhen navigating multiple times\nThen performance should remain consistent",
+      "acceptance": "Performance should remain consistent\nThe behavior should be validated when navigating multiple times."
+    },
+    {
+      "test_id": "UTC-1216",
+      "srs_id": "SRS-94",
+      "sds_id": "SDS-94",
+      "summary": "Verify Network latency tolerance\nwhen slow network",
+      "description": "Feature: Session Creation Page Performance Optimization\nScenario: Network latency tolerance\nGiven slow network\nWhen page loads\nThen core UI should render first while background tasks continue",
+      "acceptance": "Core UI should render first while background tasks continue\nThe behavior should be validated when page loads."
+    },
+    {
+      "test_id": "UTC-1217",
+      "srs_id": "SRS-94",
+      "sds_id": "SDS-94",
+      "summary": "Verify Async component initialization\nwhen page loads",
+      "description": "Feature: Session Creation Page Performance Optimization\nScenario: Async component initialization\nGiven page loads\nWhen components initialize\nThen each component should load independently",
+      "acceptance": "Each component should load independently\nThe behavior should be validated when components initialize."
+    },
+    {
+      "test_id": "UTC-1218",
+      "srs_id": "SRS-94",
+      "sds_id": "SDS-94",
+      "summary": "Verify CPU usage efficiency\nwhen page rendered",
+      "description": "Feature: Session Creation Page Performance Optimization\nScenario: CPU usage efficiency\nGiven page rendered\nWhen monitoring performance\nThen CPU usage should remain within normal range",
+      "acceptance": "CPU usage should remain within normal range\nThe behavior should be validated when monitoring performance."
+    },
+    {
+      "test_id": "UTC-1219",
+      "srs_id": "SRS-94",
+      "sds_id": "SDS-94",
+      "summary": "Verify Instant field interaction\nwhen page loaded",
+      "description": "Feature: Session Creation Page Performance Optimization\nScenario: Instant field interaction\nGiven page loaded\nWhen user types into fields\nThen typing response should be immediate",
+      "acceptance": "Typing response should be immediate\nThe behavior should be validated when user types into fields."
+    },
+    {
+      "test_id": "UTC-1220",
+      "srs_id": "SRS-94",
+      "sds_id": "SDS-94",
+      "summary": "Verify Background failure does not block page\nwhen JSON component fails initialization",
+      "description": "Feature: Session Creation Page Performance Optimization\nScenario: Background failure does not block page\nGiven JSON component fails initialization\nWhen page renders\nThen rest of UI should still function normally",
+      "acceptance": "Rest of UI should still function normally\nThe behavior should be validated when page renders."
+    },
+    {
+      "test_id": "UTC-1221",
+      "srs_id": "SRS-95",
+      "sds_id": "SDS-95",
+      "summary": "Verify No file selected\nwhen user opens JSON upload control",
+      "description": "Feature: JSON Upload Error & Empty State Handling\nScenario: No file selected\nGiven user opens JSON upload control\nWhen user clicks Upload without selecting a file\nThen system should show “Please select a JSON file” message",
+      "acceptance": "System should show \"Please select a JSON file\" message\nThe behavior should be validated when user clicks Upload without selecting a file."
+    },
+    {
+      "test_id": "UTC-1222",
+      "srs_id": "SRS-95",
+      "sds_id": "SDS-95",
+      "summary": "Verify Cancel file chooser\nwhen file dialog opens",
+      "description": "Feature: JSON Upload Error & Empty State Handling\nScenario: Cancel file chooser\nGiven file dialog opens\nWhen user cancels selection\nThen no upload should start and no error should occur",
+      "acceptance": "No upload should start and no error should occur\nThe behavior should be validated when user cancels selection."
+    },
+    {
+      "test_id": "UTC-1223",
+      "srs_id": "SRS-95",
+      "sds_id": "SDS-95",
+      "summary": "Verify Non-JSON file selected\nwhen user selects .txt or .csv file",
+      "description": "Feature: JSON Upload Error & Empty State Handling\nScenario: Non-JSON file selected\nGiven user selects .txt or .csv file\nWhen upload attempted\nThen system should reject and show “Invalid file format”",
+      "acceptance": "System should reject and show \"Invalid file format\"\nThe behavior should be validated when upload attempted."
+    },
+    {
+      "test_id": "UTC-1224",
+      "srs_id": "SRS-95",
+      "sds_id": "SDS-95",
+      "summary": "Verify Corrupted JSON content\nwhen file has malformed JSON structure",
+      "description": "Feature: JSON Upload Error & Empty State Handling\nScenario: Corrupted JSON content\nGiven file has malformed JSON structure\nWhen upload starts\nThen system should show “Invalid JSON file”",
+      "acceptance": "System should show \"Invalid JSON file\"\nThe behavior should be validated when upload starts."
+    },
+    {
+      "test_id": "UTC-1225",
+      "srs_id": "SRS-95",
+      "sds_id": "SDS-95",
+      "summary": "Verify Upload stops on invalid JSON\nwhen invalid JSON detected",
+      "description": "Feature: JSON Upload Error & Empty State Handling\nScenario: Upload stops on invalid JSON\nGiven invalid JSON detected\nWhen validation fails\nThen upload process should stop immediately",
+      "acceptance": "Upload process should stop immediately\nThe behavior should be validated when validation fails."
+    },
+    {
+      "test_id": "UTC-1226",
+      "srs_id": "SRS-95",
+      "sds_id": "SDS-95",
+      "summary": "Verify Non-technical error message\nwhen validation failure occurs",
+      "description": "Feature: JSON Upload Error & Empty State Handling\nScenario: Non-technical error message\nGiven validation failure occurs\nWhen message displayed\nThen message should be simple and user-friendly",
+      "acceptance": "Message should be simple and user-friendly\nThe behavior should be validated when message displayed."
+    },
+    {
+      "test_id": "UTC-1227",
+      "srs_id": "SRS-95",
+      "sds_id": "SDS-95",
+      "summary": "Verify Session form remains usable after error\nwhen upload fails",
+      "description": "Feature: JSON Upload Error & Empty State Handling\nScenario: Session form remains usable after error\nGiven upload fails\nWhen user continues editing form\nThen session creation inputs should still function",
+      "acceptance": "Session creation inputs should still function\nThe behavior should be validated when user continues editing form."
+    },
+    {
+      "test_id": "UTC-1228",
+      "srs_id": "SRS-95",
+      "sds_id": "SDS-95",
+      "summary": "Verify Server 500 error\nwhen server returns failure",
+      "description": "Feature: JSON Upload Error & Empty State Handling\nScenario: Server 500 error\nGiven server returns failure\nWhen upload request sent\nThen “Upload failed” toast should appear",
+      "acceptance": "\"Upload failed\" toast should appear\nThe behavior should be validated when upload request sent."
+    },
+    {
+      "test_id": "UTC-1229",
+      "srs_id": "SRS-95",
+      "sds_id": "SDS-95",
+      "summary": "Verify Technical stack trace hidden\nwhen backend error occurs",
+      "description": "Feature: JSON Upload Error & Empty State Handling\nScenario: Technical stack trace hidden\nGiven backend error occurs\nWhen message shown\nThen technical details should not be exposed",
+      "acceptance": "Technical details should not be exposed\nThe behavior should be validated when message shown."
+    },
+    {
+      "test_id": "UTC-1230",
+      "srs_id": "SRS-95",
+      "sds_id": "SDS-95",
+      "summary": "Verify Retry upload\nwhen previous upload failed",
+      "description": "Feature: JSON Upload Error & Empty State Handling\nScenario: Retry upload\nGiven previous upload failed\nWhen user retries with valid file\nThen upload should succeed normally",
+      "acceptance": "Upload should succeed normally\nThe behavior should be validated when user retries with valid file."
+    },
+    {
+      "test_id": "UTC-1231",
+      "srs_id": "SRS-95",
+      "sds_id": "SDS-95",
+      "summary": "Verify Inline message visibility\nwhen invalid file selected",
+      "description": "Feature: JSON Upload Error & Empty State Handling\nScenario: Inline message visibility\nGiven invalid file selected\nWhen error occurs\nThen message should be clearly visible near upload field",
+      "acceptance": "Message should be clearly visible near upload field\nThe behavior should be validated when error occurs."
+    },
+    {
+      "test_id": "UTC-1232",
+      "srs_id": "SRS-95",
+      "sds_id": "SDS-95",
+      "summary": "Verify No blocking during failure\nwhen upload fails",
+      "description": "Feature: JSON Upload Error & Empty State Handling\nScenario: No blocking during failure\nGiven upload fails\nWhen error handled\nThen page should remain responsive",
+      "acceptance": "Page should remain responsive\nThe behavior should be validated when error handled."
+    },
+    {
+      "test_id": "UTC-1233",
+      "srs_id": "SRS-95",
+      "sds_id": "SDS-95",
+      "summary": "Verify Clear upload state reset\nwhen upload fails",
+      "description": "Feature: JSON Upload Error & Empty State Handling\nScenario: Clear upload state reset\nGiven upload fails\nWhen user selects new file\nThen previous error state should clear automatically",
+      "acceptance": "Previous error state should clear automatically\nThe behavior should be validated when user selects new file."
+    },
+    {
+      "test_id": "UTC-1234",
+      "srs_id": "SRS-95",
+      "sds_id": "SDS-95",
+      "summary": "Verify Large invalid file\nwhen large corrupted file selected",
+      "description": "Feature: JSON Upload Error & Empty State Handling\nScenario: Large invalid file\nGiven large corrupted file selected\nWhen validation runs\nThen system should handle gracefully without crash",
+      "acceptance": "System should handle gracefully without crash\nThe behavior should be validated when validation runs."
+    },
+    {
+      "test_id": "UTC-1235",
+      "srs_id": "SRS-95",
+      "sds_id": "SDS-95",
+      "summary": "Verify Keyboard accessibility after error\nwhen error message shown",
+      "description": "Feature: JSON Upload Error & Empty State Handling\nScenario: Keyboard accessibility after error\nGiven error message shown\nWhen user navigates via keyboard\nThen upload control remains accessible",
+      "acceptance": "Upload control remains accessible\nThe behavior should be validated when user navigates via keyboard."
+    },
+    {
+      "test_id": "UTC-1236",
+      "srs_id": "SRS-96",
+      "sds_id": "SDS-96",
+      "summary": "Verify Upload zone visibility\nwhen Session page loads",
+      "description": "Feature: Multiple JSON File Selection for bulk staging\nScenario: Upload zone visibility\nGiven Session page loads\nWhen upload component renders\nThen drag-and-drop upload zone should be visible with instruction text",
+      "acceptance": "Drag-and-drop upload zone should be visible with instruction text\nThe behavior should be validated when upload component renders."
+    },
+    {
+      "test_id": "UTC-1237",
+      "srs_id": "SRS-96",
+      "sds_id": "SDS-96",
+      "summary": "Verify Select single JSON file\nwhen user opens file picker",
+      "description": "Feature: Multiple JSON File Selection for bulk staging\nScenario: Select single JSON file\nGiven user opens file picker\nWhen one JSON file selected\nThen file should appear in staging list",
+      "acceptance": "File should appear in staging list\nThe behavior should be validated when one JSON file selected."
+    },
+    {
+      "test_id": "UTC-1238",
+      "srs_id": "SRS-96",
+      "sds_id": "SDS-96",
+      "summary": "Verify Select multiple JSON files\nwhen multiple JSON files selected",
+      "description": "Feature: Multiple JSON File Selection for bulk staging\nScenario: Select multiple JSON files\nGiven multiple JSON files selected\nWhen upload confirmed\nThen all files should be added to staging list",
+      "acceptance": "All files should be added to staging list\nThe behavior should be validated when upload confirmed."
+    },
+    {
+      "test_id": "UTC-1239",
+      "srs_id": "SRS-96",
+      "sds_id": "SDS-96",
+      "summary": "Verify Drag-and-drop files\nwhen files dragged into upload zone",
+      "description": "Feature: Multiple JSON File Selection for bulk staging\nScenario: Drag-and-drop files\nGiven files dragged into upload zone\nWhen dropped\nThen files should populate staging list",
+      "acceptance": "Files should populate staging list\nThe behavior should be validated when dropped."
+    },
+    {
+      "test_id": "UTC-1240",
+      "srs_id": "SRS-96",
+      "sds_id": "SDS-96",
+      "summary": "Verify Filename display\nwhen files are staged",
+      "description": "Feature: Multiple JSON File Selection for bulk staging\nScenario: Filename display\nGiven files are staged\nWhen list renders\nThen each filename should be visible",
+      "acceptance": "Each filename should be visible\nThe behavior should be validated when list renders."
+    },
+    {
+      "test_id": "UTC-1241",
+      "srs_id": "SRS-96",
+      "sds_id": "SDS-96",
+      "summary": "Verify Files count shown\nwhen multiple files staged",
+      "description": "Feature: Multiple JSON File Selection for bulk staging\nScenario: Files count shown\nGiven multiple files staged\nWhen list updates\nThen “Files selected: X” count should update dynamically",
+      "acceptance": "\"Files selected: X\" count should update dynamically\nThe behavior should be validated when list updates."
+    },
+    {
+      "test_id": "UTC-1242",
+      "srs_id": "SRS-96",
+      "sds_id": "SDS-96",
+      "summary": "Verify Remove file using icon\nwhen file present in list",
+      "description": "Feature: Multiple JSON File Selection for bulk staging\nScenario: Remove file using icon\nGiven file present in list\nWhen user clicks remove (x)\nThen file should be removed from list",
+      "acceptance": "File should be removed from list\nThe behavior should be validated when user clicks remove (x)."
+    },
+    {
+      "test_id": "UTC-1243",
+      "srs_id": "SRS-96",
+      "sds_id": "SDS-96",
+      "summary": "Verify Remove updates count\nwhen file removed",
+      "description": "Feature: Multiple JSON File Selection for bulk staging\nScenario: Remove updates count\nGiven file removed\nWhen list updates\nThen file count should decrement immediately",
+      "acceptance": "File count should decrement immediately\nThe behavior should be validated when list updates."
+    },
+    {
+      "test_id": "UTC-1244",
+      "srs_id": "SRS-96",
+      "sds_id": "SDS-96",
+      "summary": "Verify Ignore non-JSON file\nwhen user selects .txt or .csv file",
+      "description": "Feature: Multiple JSON File Selection for bulk staging\nScenario: Ignore non-JSON file\nGiven user selects .txt or .csv file\nWhen selection occurs\nThen file should not appear in staging list",
+      "acceptance": "File should not appear in staging list\nThe behavior should be validated when selection occurs."
+    },
+    {
+      "test_id": "UTC-1245",
+      "srs_id": "SRS-96",
+      "sds_id": "SDS-96",
+      "summary": "Verify MIME type validation\nwhen file has wrong MIME type",
+      "description": "Feature: Multiple JSON File Selection for bulk staging\nScenario: MIME type validation\nGiven file has wrong MIME type\nWhen upload attempted\nThen file should be rejected",
+      "acceptance": "File should be rejected\nThe behavior should be validated when upload attempted."
+    },
+    {
+      "test_id": "UTC-1246",
+      "srs_id": "SRS-96",
+      "sds_id": "SDS-96",
+      "summary": "Verify Local state update\nwhen files selected",
+      "description": "Feature: Multiple JSON File Selection for bulk staging\nScenario: Local state update\nGiven files selected\nWhen staging occurs\nThen system should store metadata in local array",
+      "acceptance": "System should store metadata in local array\nThe behavior should be validated when staging occurs."
+    },
+    {
+      "test_id": "UTC-1247",
+      "srs_id": "SRS-96",
+      "sds_id": "SDS-96",
+      "summary": "Verify Immediate UI refresh\nwhen files added",
+      "description": "Feature: Multiple JSON File Selection for bulk staging\nScenario: Immediate UI refresh\nGiven files added\nWhen staging completes\nThen list should refresh without page reload",
+      "acceptance": "List should refresh without page reload\nThe behavior should be validated when staging completes."
+    },
+    {
+      "test_id": "UTC-1248",
+      "srs_id": "SRS-96",
+      "sds_id": "SDS-96",
+      "summary": "Verify Staged list persists before import\nwhen files selected",
+      "description": "Feature: Multiple JSON File Selection for bulk staging\nScenario: Staged list persists before import\nGiven files selected\nWhen user waits before import\nThen files should remain staged",
+      "acceptance": "Files should remain staged\nThe behavior should be validated when user waits before import."
+    },
+    {
+      "test_id": "UTC-1249",
+      "srs_id": "SRS-96",
+      "sds_id": "SDS-96",
+      "summary": "Verify No file selected\nwhen upload attempted without selection",
+      "description": "Feature: Multiple JSON File Selection for bulk staging\nScenario: No file selected\nGiven upload attempted without selection\nWhen action triggered\nThen no files should be staged",
+      "acceptance": "No files should be staged\nThe behavior should be validated when action triggered."
+    }
+  ]
+}

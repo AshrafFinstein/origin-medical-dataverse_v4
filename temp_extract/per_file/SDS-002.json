@@ -1,0 +1,155 @@
+{
+  "spec_file": "e2e/tests/qc-workflow/URS-DV-QC-01/SRS-002/SDS-002.spec.ts",
+  "plan_urs": "URS-DV-QC-01",
+  "srs_str": "002",
+  "domain": "qc-workflow",
+  "page_class": "QcWorkflowPage",
+  "page_import": "qc-workflow.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-19",
+      "srs_id": "SRS-2",
+      "sds_id": "SDS-2",
+      "summary": "Verify Edit access in active workflow level\nwhen the image belongs to the user's current workflow / approval level",
+      "description": "Feature: Workflow-Based Edit Access Control\nThe system restricts editing by workflow level.\n\nScenario: Edit access in active workflow level\n\nGiven the image belongs to the user’s current workflow / approval level\nWhen the user selects the image\nThen all editing actions should be enabled",
+      "acceptance": "All editing actions should be enabled\nThe behavior should be validated when the user selects the image."
+    },
+    {
+      "test_id": "UTC-20",
+      "srs_id": "SRS-2",
+      "sds_id": "SDS-2",
+      "summary": "Verify Access image in non-active level\nwhen the image is in a completed or other approval level",
+      "description": "Feature: Read-Only Image Access\nThe system enforces read-only mode for inactive workflow images.\n\nScenario: Access image in non-active level\n\nGiven the image is in a completed or other approval level\nWhen the user opens the image\nThen the image should be view-only and non-editable",
+      "acceptance": "The image should be view-only and non-editable\nThe behavior should be validated when the user opens the image."
+    },
+    {
+      "test_id": "UTC-21",
+      "srs_id": "SRS-3",
+      "sds_id": "SDS-3",
+      "summary": "Verify Display Send Selected to QC button\nwhen a PENDING image is selected in the image grid",
+      "description": "Feature: Data Labeling – Send to QC Action Availability\nAs an Assignee, the user wants to send images to QC so that review can begin.\n\nScenario: Display Send Selected to QC button\nGiven a PENDING image is selected in the image grid\nWhen the image is displayed in the right-side panel\nThen the Send Selected to QC button should be visible and enabled",
+      "acceptance": "The Send Selected to QC button should be visible and enabled\nThe behavior should be validated when the image is displayed in the right-side panel."
+    },
+    {
+      "test_id": "UTC-22",
+      "srs_id": "SRS-3",
+      "sds_id": "SDS-3",
+      "summary": "Verify Send image to QC workflow\nwhen a PENDING image is selected",
+      "description": "Feature: Data Labeling – Send Image to QC\nAs an Assignee, the user wants to send selected images to QC so that the approval workflow can start.\n\nScenario: Send image to QC workflow\nGiven a PENDING image is selected\nWhen the user clicks the Send Selected to QC button\nThen the image should be sent to the QC workflow",
+      "acceptance": "The image should be sent to the QC workflow\nThe behavior should be validated when the user clicks the Send Selected to QC button."
+    },
+    {
+      "test_id": "UTC-23",
+      "srs_id": "SRS-3",
+      "sds_id": "SDS-3",
+      "summary": "Verify Assign image to Approval Level 1 user\nwhen the image is sent to QC",
+      "description": "Feature: QC Routing – Image Assignment\nAs a QC workflow system, the image must be routed to the correct approval level so that review can begin.\n\nScenario: Assign image to Approval Level 1 user\nGiven the image is sent to QC\nWhen the QC assignment is processed\nThen the image should be assigned to the Approval Level 1 user",
+      "acceptance": "The image should be assigned to the Approval Level 1 user\nThe behavior should be validated when the QC assignment is processed."
+    },
+    {
+      "test_id": "UTC-24",
+      "srs_id": "SRS-3",
+      "sds_id": "SDS-3",
+      "summary": "Verify Change image status from PENDING to IN_REVIEW\nwhen the image is sent to QC",
+      "description": "Feature: QC Workflow – Status Transition\nAs a system, the image status must update correctly when entering QC.\n\nScenario: Change image status from PENDING to IN_REVIEW\nGiven the image is sent to QC\nWhen the image status is checked\nThen the status should change from PENDING to IN_REVIEW",
+      "acceptance": "The status should change from PENDING to IN_REVIEW\nThe behavior should be validated when the image status is checked."
+    },
+    {
+      "test_id": "UTC-25",
+      "srs_id": "SRS-3",
+      "sds_id": "SDS-3",
+      "summary": "Verify Display review level indicator inside image\nwhen the image is in QC review state",
+      "description": "Feature: QC Review – Visual Indicators\nAs a reviewer, the user wants to see the review level clearly on the image so that the current stage is obvious.\n\nScenario: Display review level indicator inside image\nGiven the image is in QC review state\nWhen the image is displayed in the image grid\nThen the review level indicator should be displayed inside the image",
+      "acceptance": "The review level indicator should be displayed inside the image\nThe behavior should be validated when the image is displayed in the image grid."
+    },
+    {
+      "test_id": "UTC-26",
+      "srs_id": "SRS-3",
+      "sds_id": "SDS-3",
+      "summary": "Verify Display \"IN_REVIEW L2\" label inside image\nwhen the image has moved to the QC workflow",
+      "description": "Feature: QC Review – Level Label Display\nAs a reviewer, the user wants the exact QC level to be visible on the image.\n\nScenario: Display “IN_REVIEW L2” label inside image\nGiven the image has moved to the QC workflow\nWhen the image is displayed in the grid\nThen IN_REVIEW L2 should be displayed inside the image",
+      "acceptance": "IN_REVIEW L2 should be displayed inside the image\nThe behavior should be validated when the image is displayed in the grid."
+    },
+    {
+      "test_id": "UTC-27",
+      "srs_id": "SRS-3",
+      "sds_id": "SDS-3",
+      "summary": "Verify Remove image from PENDING list after sending to QC\nwhen the image is sent to QC",
+      "description": "Feature: QC Workflow – Status Filtering\nAs a user, the user should no longer see QC images under PENDING status.\n\nScenario: Remove image from PENDING list after sending to QC\nGiven the image is sent to QC\nWhen the user filters images by PENDING status\nThen the image should not be displayed",
+      "acceptance": "The image should not be displayed\nThe behavior should be validated when the user filters images by PENDING status."
+    },
+    {
+      "test_id": "UTC-28",
+      "srs_id": "SRS-3",
+      "sds_id": "SDS-3",
+      "summary": "Verify Display image under IN_REVIEW status\nwhen the image is sent to QC",
+      "description": "Feature: QC Workflow – IN_REVIEW Listing\nAs a reviewer, the user wants QC images to appear under IN_REVIEW status.\n\nScenario: Display image under IN_REVIEW status\nGiven the image is sent to QC\nWhen the user filters images by IN_REVIEW status\nThen the image should be displayed",
+      "acceptance": "The image should be displayed\nThe behavior should be validated when the user filters images by IN_REVIEW status."
+    },
+    {
+      "test_id": "UTC-29",
+      "srs_id": "SRS-4",
+      "sds_id": "SDS-4",
+      "summary": "Verify Display QUALITY CHECKER stage for Levels\nwhen the Approval Levels user is on the Data Labeling page",
+      "description": "Feature: QC Session – Stage Display\nAs an Approval Level reviewer, the user wants to clearly identify the current session stage.\n\nScenario: Display QUALITY CHECKER stage for Levels\nGiven the Approval Levels user is on the Data Labeling page\nWhen the session details are viewed\nThen the Stage should be displayed as QUALITY CHECKER",
+      "acceptance": "The Stage should be displayed as QUALITY CHECKER\nThe behavior should be validated when the session details are viewed."
+    },
+    {
+      "test_id": "UTC-30",
+      "srs_id": "SRS-4",
+      "sds_id": "SDS-4",
+      "summary": "Verify Display Assignee name for Approval Levels\nwhen the Approval Levels user is on the Data Labeling page",
+      "description": "Feature: QC Session – Assignee Display\nAs a reviewer, the user wants to see the correct assignee information.\n\nScenario: Display Assignee name for Approval Levels\nGiven the Approval Levels user is on the Data Labeling page\nWhen the session details are viewed\nThen the Assignee should be displayed correctly",
+      "acceptance": "The Assignee should be displayed correctly\nThe behavior should be validated when the session details are viewed."
+    },
+    {
+      "test_id": "UTC-31",
+      "srs_id": "SRS-4",
+      "sds_id": "SDS-4",
+      "summary": "Verify Display Approval Level as Level 1 , Level 2 ,  Level 3, Level 4 and  Level 5\nwhen the Approval Levels user is on the Data Labeling page",
+      "description": "Feature: QC Session – Approval Level Display\nAs a reviewer, the user wants to confirm their approval levels.\n\nScenario: Display Approval Level as Level 1 , Level 2 ,  Level 3, Level 4 and  Level 5\nGiven the Approval Levels user is on the Data Labeling page\nWhen the session details are viewed\nThen the Approval Level should be displayed as Level 1 , Level 2 ,  Level 3, Level 4 and  Level 5",
+      "acceptance": "The Approval Level should be displayed as Level 1 , Level 2 ,  Level 3, Level 4 and  Level 5\nThe behavior should be validated when the session details are viewed."
+    },
+    {
+      "test_id": "UTC-32",
+      "srs_id": "SRS-4",
+      "sds_id": "SDS-4",
+      "summary": "Verify Default Select Status is IN_REVIEW\nwhen the user is logged in as Approval Levels",
+      "description": "Feature: QC Status Filtering – Default State\nAs an Approval Levels reviewer, the user wants to immediately see images pending their review.\n\nScenario: Default Select Status is IN_REVIEW\nGiven the user is logged in as Approval Levels\nWhen the user opens the Data Labeling page\nThen the Select Status field should default to IN_REVIEW",
+      "acceptance": "The Select Status field should default to IN_REVIEW\nThe behavior should be validated when the user opens the Data Labeling page."
+    },
+    {
+      "test_id": "UTC-33",
+      "srs_id": "SRS-4",
+      "sds_id": "SDS-4",
+      "summary": "Verify Auto-check Awaiting Approval for Levels\nwhen the user is logged in as Approval Level",
+      "description": "Feature: QC Filter Defaults – Awaiting Approval\nAs a reviewer, the user wants the system to automatically filter images awaiting their action.\n\nScenario: Auto-check Awaiting Approval for Levels\nGiven the user is logged in as Approval Level\nWhen the Data Labeling page is loaded\nThen Awaiting Approval should be auto-checked",
+      "acceptance": "Awaiting Approval should be auto-checked\nThe behavior should be validated when the Data Labeling page is loaded."
+    },
+    {
+      "test_id": "UTC-34",
+      "srs_id": "SRS-4",
+      "sds_id": "SDS-4",
+      "summary": "Verify Display Accept and Reject actions\nwhen an image is in IN_REVIEW  state",
+      "description": "Feature: QC Actions – Availability\nAs a Levels reviewer, the user wants to accept or reject images.\n\nScenario: Display Accept and Reject actions\nGiven an image is in IN_REVIEW  state\nWhen the image actions are viewed\nThen Accept and Reject options should be available",
+      "acceptance": "Accept and Reject options should be available\nThe behavior should be validated when the image actions are viewed."
+    },
+    {
+      "test_id": "UTC-35",
+      "srs_id": "SRS-4",
+      "sds_id": "SDS-4",
+      "summary": "Verify Any Level user accepts image\nwhen an image is in IN_REVIEW  state",
+      "description": "Feature: QC Actions – Accept at Levels\nAs a Levels reviewer, the user wants to approve images.\n\nScenario: Any Level user accepts image\nGiven an image is in IN_REVIEW  state\nWhen any Level user clicks Accept\nThen the image should be accepted at Levels",
+      "acceptance": "The image should be accepted at Levels\nThe behavior should be validated when any Level user clicks Accept."
+    },
+    {
+      "test_id": "UTC-36",
+      "srs_id": "SRS-4",
+      "sds_id": "SDS-4",
+      "summary": "Verify Reject moves image to earlier approval level\nwhen a rejected image is selected",
+      "description": "Feature: QC Rollback Workflow – Reject Action\nAs a previous level reviewer, the user wants to further reject the image.\n\nScenario: Reject moves image to earlier approval level\nGiven a rejected image is selected\nWhen the user clicks Reject\nThen the image should move to the earlier approval level",
+      "acceptance": "The image should move to the earlier approval level\nThe behavior should be validated when the user clicks Reject."
+    }
+  ]
+}

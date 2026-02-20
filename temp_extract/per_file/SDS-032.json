@@ -1,0 +1,1075 @@
+{
+  "spec_file": "e2e/tests/session-management/URS-DV-GEN-07/SRS-032/SDS-032.spec.ts",
+  "plan_urs": "URS-DV-GEN-07",
+  "srs_str": "032",
+  "domain": "session-management",
+  "page_class": "SessionPage",
+  "page_import": "session.page",
+  "goto_method": "navigate",
+  "test_cases": [
+    {
+      "test_id": "UTC-1025",
+      "srs_id": "SRS-82",
+      "sds_id": "SDS-82",
+      "summary": "Verify Selected count visible\nwhen multiple users selected",
+      "description": "Feature: Assignees Select All bulk assignment\nScenario: Selected count visible\nGiven multiple users selected\nWhen viewing field\nThen selected users should be clearly indicated (chips/count)",
+      "acceptance": "Selected users should be clearly indicated (chips/count)\nThe behavior should be validated when viewing field."
+    },
+    {
+      "test_id": "UTC-1026",
+      "srs_id": "SRS-82",
+      "sds_id": "SDS-82",
+      "summary": "Verify Large list performance\nwhen 100+ users exist",
+      "description": "Feature: Assignees Select All bulk assignment\nScenario: Large list performance\nGiven 100+ users exist\nWhen Select All clicked\nThen selection should complete without lag",
+      "acceptance": "Selection should complete without lag\nThe behavior should be validated when Select All clicked."
+    },
+    {
+      "test_id": "UTC-1027",
+      "srs_id": "SRS-82",
+      "sds_id": "SDS-82",
+      "summary": "Verify Page navigation persistence\nwhen users selected",
+      "description": "Feature: Assignees Select All bulk assignment\nScenario: Page navigation persistence\nGiven users selected\nWhen navigating within form\nThen selections should persist",
+      "acceptance": "Selections should persist\nThe behavior should be validated when navigating within form."
+    },
+    {
+      "test_id": "UTC-1028",
+      "srs_id": "SRS-82",
+      "sds_id": "SDS-82",
+      "summary": "Verify No users available\nwhen no users exist",
+      "description": "Feature: Assignees Select All bulk assignment\nScenario: No users available\nGiven no users exist\nWhen dropdown opened\nThen Select All should be disabled",
+      "acceptance": "Select All should be disabled\nThe behavior should be validated when dropdown opened."
+    },
+    {
+      "test_id": "UTC-1029",
+      "srs_id": "SRS-82",
+      "sds_id": "SDS-82",
+      "summary": "Verify Restricted role cannot assign\nwhen user lacks assignment permission",
+      "description": "Feature: Assignees Select All bulk assignment\nScenario: Restricted role cannot assign\nGiven user lacks assignment permission\nWhen dropdown opened\nThen Select All should be hidden or disabled",
+      "acceptance": "Select All should be hidden or disabled\nThe behavior should be validated when dropdown opened."
+    },
+    {
+      "test_id": "UTC-1030",
+      "srs_id": "SRS-82",
+      "sds_id": "SDS-82",
+      "summary": "Verify Keyboard accessibility\nwhen Select All checkbox focused",
+      "description": "Feature: Assignees Select All bulk assignment\nScenario: Keyboard accessibility\nGiven Select All checkbox focused\nWhen Space/Enter pressed\nThen all users should be selected",
+      "acceptance": "All users should be selected\nThe behavior should be validated when Space/Enter pressed."
+    },
+    {
+      "test_id": "UTC-1031",
+      "srs_id": "SRS-83",
+      "sds_id": "SDS-83",
+      "summary": "Verify Dropdown visibility\nwhen Session Creation page loads",
+      "description": "Feature: Select Assignees multi-user selector\nFeature Summary: Assign multiple users to session tasks\nScenario: Dropdown visibility\nGiven Session Creation page loads\nWhen metadata section renders\nThen Assignees dropdown should be visible",
+      "acceptance": "Assignees dropdown should be visible\nThe behavior should be validated when metadata section renders."
+    },
+    {
+      "test_id": "UTC-1032",
+      "srs_id": "SRS-83",
+      "sds_id": "SDS-83",
+      "summary": "Verify Checklist layout\nwhen dropdown opened",
+      "description": "Feature: Select Assignees multi-user selector\nScenario: Checklist layout\nGiven dropdown opened\nWhen users are displayed\nThen each user should show checkbox and name",
+      "acceptance": "Each user should show checkbox and name\nThe behavior should be validated when users are displayed."
+    },
+    {
+      "test_id": "UTC-1033",
+      "srs_id": "SRS-83",
+      "sds_id": "SDS-83",
+      "summary": "Verify Select single user\nwhen dropdown opened",
+      "description": "Feature: Select Assignees multi-user selector\nScenario: Select single user\nGiven dropdown opened\nWhen user selects one checkbox\nThen that user should be highlighted and marked selected",
+      "acceptance": "That user should be highlighted and marked selected\nThe behavior should be validated when user selects one checkbox."
+    },
+    {
+      "test_id": "UTC-1034",
+      "srs_id": "SRS-83",
+      "sds_id": "SDS-83",
+      "summary": "Verify Select multiple users\nwhen dropdown opened",
+      "description": "Feature: Select Assignees multi-user selector\nScenario: Select multiple users\nGiven dropdown opened\nWhen multiple checkboxes selected\nThen all selected users should remain highlighted",
+      "acceptance": "All selected users should remain highlighted\nThe behavior should be validated when multiple checkboxes selected."
+    },
+    {
+      "test_id": "UTC-1035",
+      "srs_id": "SRS-83",
+      "sds_id": "SDS-83",
+      "summary": "Verify Deselect user\nwhen users selected",
+      "description": "Feature: Select Assignees multi-user selector\nScenario: Deselect user\nGiven users selected\nWhen user unchecks checkbox\nThen that user should be removed from selection",
+      "acceptance": "That user should be removed from selection\nThe behavior should be validated when user unchecks checkbox."
+    },
+    {
+      "test_id": "UTC-1036",
+      "srs_id": "SRS-83",
+      "sds_id": "SDS-83",
+      "summary": "Verify Visual feedback\nwhen users selected",
+      "description": "Feature: Select Assignees multi-user selector\nScenario: Visual feedback\nGiven users selected\nWhen dropdown collapses\nThen selected users should appear as chips/tags in field",
+      "acceptance": "Selected users should appear as chips/tags in field\nThe behavior should be validated when dropdown collapses."
+    },
+    {
+      "test_id": "UTC-1037",
+      "srs_id": "SRS-83",
+      "sds_id": "SDS-83",
+      "summary": "Verify State array update\nwhen users selected",
+      "description": "Feature: Select Assignees multi-user selector\nScenario: State array update\nGiven users selected\nWhen inspecting component state\nThen selected user IDs should be stored in array",
+      "acceptance": "Selected user IDs should be stored in array\nThe behavior should be validated when inspecting component state."
+    },
+    {
+      "test_id": "UTC-1038",
+      "srs_id": "SRS-83",
+      "sds_id": "SDS-83",
+      "summary": "Verify Persist selection on reopen\nwhen users selected",
+      "description": "Feature: Select Assignees multi-user selector\nScenario: Persist selection on reopen\nGiven users selected\nWhen dropdown reopened\nThen previous selections should remain",
+      "acceptance": "Previous selections should remain\nThe behavior should be validated when dropdown reopened."
+    },
+    {
+      "test_id": "UTC-1039",
+      "srs_id": "SRS-83",
+      "sds_id": "SDS-83",
+      "summary": "Verify Payload inclusion\nwhen users selected",
+      "description": "Feature: Select Assignees multi-user selector\nScenario: Payload inclusion\nGiven users selected\nWhen session saved\nThen selected user IDs should be sent in API payload",
+      "acceptance": "Selected user IDs should be sent in API payload\nThe behavior should be validated when session saved."
+    },
+    {
+      "test_id": "UTC-1040",
+      "srs_id": "SRS-83",
+      "sds_id": "SDS-83",
+      "summary": "Verify Search filter users\nwhen dropdown opened",
+      "description": "Feature: Select Assignees multi-user selector\nScenario: Search filter users\nGiven dropdown opened\nWhen user types search text\nThen matching users only should appear",
+      "acceptance": "Matching users only should appear\nThe behavior should be validated when user types search text."
+    },
+    {
+      "test_id": "UTC-1041",
+      "srs_id": "SRS-83",
+      "sds_id": "SDS-83",
+      "summary": "Verify Invalid email search\nwhen invalid email typed",
+      "description": "Feature: Select Assignees multi-user selector\nScenario: Invalid email search\nGiven invalid email typed\nWhen search executed\nThen “User not found” message should display",
+      "acceptance": "\"User not found\" message should display\nThe behavior should be validated when search executed."
+    },
+    {
+      "test_id": "UTC-1042",
+      "srs_id": "SRS-83",
+      "sds_id": "SDS-83",
+      "summary": "Verify Navigation persistence\nwhen users selected",
+      "description": "Feature: Select Assignees multi-user selector\nScenario: Navigation persistence\nGiven users selected\nWhen navigating within form\nThen selections should remain intact",
+      "acceptance": "Selections should remain intact\nThe behavior should be validated when navigating within form."
+    },
+    {
+      "test_id": "UTC-1043",
+      "srs_id": "SRS-83",
+      "sds_id": "SDS-83",
+      "summary": "Verify Large user list performance\nwhen 200+ users exist",
+      "description": "Feature: Select Assignees multi-user selector\nScenario: Large user list performance\nGiven 200+ users exist\nWhen selecting multiple\nThen UI should remain responsive",
+      "acceptance": "UI should remain responsive\nThe behavior should be validated when selecting multiple."
+    },
+    {
+      "test_id": "UTC-1044",
+      "srs_id": "SRS-83",
+      "sds_id": "SDS-83",
+      "summary": "Verify Unauthorized role restriction\nwhen user lacks permission",
+      "description": "Feature: Select Assignees multi-user selector\nScenario: Unauthorized role restriction\nGiven user lacks permission\nWhen dropdown loads\nThen selector should be disabled or hidden",
+      "acceptance": "Selector should be disabled or hidden\nThe behavior should be validated when dropdown loads."
+    },
+    {
+      "test_id": "UTC-1045",
+      "srs_id": "SRS-83",
+      "sds_id": "SDS-83",
+      "summary": "Verify Keyboard navigation\nwhen dropdown focused",
+      "description": "Feature: Select Assignees multi-user selector\nScenario: Keyboard navigation\nGiven dropdown focused\nWhen using Arrow/Space/Enter keys\nThen user selection should work without mouse",
+      "acceptance": "User selection should work without mouse\nThe behavior should be validated when using Arrow/Space/Enter keys."
+    },
+    {
+      "test_id": "UTC-1046",
+      "srs_id": "SRS-84",
+      "sds_id": "SDS-84",
+      "summary": "Verify Select All checkbox visibility\nwhen Session Creation page loads",
+      "description": "Feature: Reviewers Select All checkbox for bulk reviewer assignment\nScenario: Select All checkbox visibility\nGiven Session Creation page loads\nWhen Reviewer dropdown renders\nThen “Select All” checkbox should be visible above the list",
+      "acceptance": "\"Select All\" checkbox should be visible above the list\nThe behavior should be validated when Reviewer dropdown renders."
+    },
+    {
+      "test_id": "UTC-1047",
+      "srs_id": "SRS-84",
+      "sds_id": "SDS-84",
+      "summary": "Verify Checkbox alignment\nwhen dropdown opened",
+      "description": "Feature: Reviewers Select All checkbox for bulk reviewer assignment\nScenario: Checkbox alignment\nGiven dropdown opened\nWhen UI displays reviewers\nThen Select All should appear at the top clearly separated from users",
+      "acceptance": "Select All should appear at the top clearly separated from users\nThe behavior should be validated when UI displays reviewers."
+    },
+    {
+      "test_id": "UTC-1048",
+      "srs_id": "SRS-84",
+      "sds_id": "SDS-84",
+      "summary": "Verify Select all reviewers\nwhen reviewer list loaded",
+      "description": "Feature: Reviewers Select All checkbox for bulk reviewer assignment\nScenario: Select all reviewers\nGiven reviewer list loaded\nWhen user clicks Select All\nThen all reviewers should become selected",
+      "acceptance": "All reviewers should become selected\nThe behavior should be validated when user clicks Select All."
+    },
+    {
+      "test_id": "UTC-1049",
+      "srs_id": "SRS-84",
+      "sds_id": "SDS-84",
+      "summary": "Verify Deselect all reviewers\nwhen all reviewers selected",
+      "description": "Feature: Reviewers Select All checkbox for bulk reviewer assignment\nScenario: Deselect all reviewers\nGiven all reviewers selected\nWhen user unchecks Select All\nThen all reviewers should be deselected",
+      "acceptance": "All reviewers should be deselected\nThe behavior should be validated when user unchecks Select All."
+    },
+    {
+      "test_id": "UTC-1050",
+      "srs_id": "SRS-84",
+      "sds_id": "SDS-84",
+      "summary": "Verify Manual selection updates Select All state\nwhen some reviewers manually selected",
+      "description": "Feature: Reviewers Select All checkbox for bulk reviewer assignment\nScenario: Manual selection updates Select All state\nGiven some reviewers manually selected\nWhen not all are selected\nThen Select All should show unchecked or indeterminate state",
+      "acceptance": "Select All should show unchecked or indeterminate state\nThe behavior should be validated when not all are selected."
+    },
+    {
+      "test_id": "UTC-1051",
+      "srs_id": "SRS-84",
+      "sds_id": "SDS-84",
+      "summary": "Verify Select All after partial selection\nwhen few reviewers selected",
+      "description": "Feature: Reviewers Select All checkbox for bulk reviewer assignment\nScenario: Select All after partial selection\nGiven few reviewers selected\nWhen Select All clicked\nThen remaining reviewers should also be selected",
+      "acceptance": "Remaining reviewers should also be selected\nThe behavior should be validated when Select All clicked."
+    },
+    {
+      "test_id": "UTC-1052",
+      "srs_id": "SRS-84",
+      "sds_id": "SDS-84",
+      "summary": "Verify State array update\nwhen Select All clicked",
+      "description": "Feature: Reviewers Select All checkbox for bulk reviewer assignment\nScenario: State array update\nGiven Select All clicked\nWhen checking component state\nThen all reviewer IDs should be stored in reviewers array",
+      "acceptance": "All reviewer IDs should be stored in reviewers array\nThe behavior should be validated when checking component state."
+    },
+    {
+      "test_id": "UTC-1053",
+      "srs_id": "SRS-84",
+      "sds_id": "SDS-84",
+      "summary": "Verify Payload inclusion\nwhen reviewers selected",
+      "description": "Feature: Reviewers Select All checkbox for bulk reviewer assignment\nScenario: Payload inclusion\nGiven reviewers selected\nWhen session saved\nThen all reviewer IDs should be present in API payload",
+      "acceptance": "All reviewer IDs should be present in API payload\nThe behavior should be validated when session saved."
+    },
+    {
+      "test_id": "UTC-1054",
+      "srs_id": "SRS-84",
+      "sds_id": "SDS-84",
+      "summary": "Verify Visual feedback\nwhen reviewers selected",
+      "description": "Feature: Reviewers Select All checkbox for bulk reviewer assignment\nScenario: Visual feedback\nGiven reviewers selected\nWhen dropdown collapses\nThen selected reviewers should appear as chips/tags",
+      "acceptance": "Selected reviewers should appear as chips/tags\nThe behavior should be validated when dropdown collapses."
+    },
+    {
+      "test_id": "UTC-1055",
+      "srs_id": "SRS-84",
+      "sds_id": "SDS-84",
+      "summary": "Verify Empty reviewer list\nwhen no reviewers available",
+      "description": "Feature: Reviewers Select All checkbox for bulk reviewer assignment\nScenario: Empty reviewer list\nGiven no reviewers available\nWhen dropdown opens\nThen Select All should be disabled",
+      "acceptance": "Select All should be disabled\nThe behavior should be validated when dropdown opens."
+    },
+    {
+      "test_id": "UTC-1056",
+      "srs_id": "SRS-84",
+      "sds_id": "SDS-84",
+      "summary": "Verify Search after Select All\nwhen all selected",
+      "description": "Feature: Reviewers Select All checkbox for bulk reviewer assignment\nScenario: Search after Select All\nGiven all selected\nWhen filtering list\nThen selection state should persist",
+      "acceptance": "Selection state should persist\nThe behavior should be validated when filtering list."
+    },
+    {
+      "test_id": "UTC-1057",
+      "srs_id": "SRS-84",
+      "sds_id": "SDS-84",
+      "summary": "Verify Navigation persistence\nwhen reviewers selected",
+      "description": "Feature: Reviewers Select All checkbox for bulk reviewer assignment\nScenario: Navigation persistence\nGiven reviewers selected\nWhen navigating within page\nThen selection should remain intact",
+      "acceptance": "Selection should remain intact\nThe behavior should be validated when navigating within page."
+    },
+    {
+      "test_id": "UTC-1058",
+      "srs_id": "SRS-84",
+      "sds_id": "SDS-84",
+      "summary": "Verify Large list performance\nwhen 200+ reviewers exist",
+      "description": "Feature: Reviewers Select All checkbox for bulk reviewer assignment\nScenario: Large list performance\nGiven 200+ reviewers exist\nWhen Select All clicked\nThen UI should update instantly without lag",
+      "acceptance": "UI should update instantly without lag\nThe behavior should be validated when Select All clicked."
+    },
+    {
+      "test_id": "UTC-1059",
+      "srs_id": "SRS-84",
+      "sds_id": "SDS-84",
+      "summary": "Verify Unauthorized role restriction\nwhen user lacks permission",
+      "description": "Feature: Reviewers Select All checkbox for bulk reviewer assignment\nScenario: Unauthorized role restriction\nGiven user lacks permission\nWhen page loads\nThen reviewer dropdown and Select All should be hidden or disabled",
+      "acceptance": "Reviewer dropdown and Select All should be hidden or disabled\nThe behavior should be validated when page loads."
+    },
+    {
+      "test_id": "UTC-1060",
+      "srs_id": "SRS-84",
+      "sds_id": "SDS-84",
+      "summary": "Verify Keyboard accessibility\nwhen Select All focused",
+      "description": "Feature: Reviewers Select All checkbox for bulk reviewer assignment\nScenario: Keyboard accessibility\nGiven Select All focused\nWhen Space/Enter pressed\nThen all reviewers should toggle selection",
+      "acceptance": "All reviewers should toggle selection\nThe behavior should be validated when Space/Enter pressed."
+    },
+    {
+      "test_id": "UTC-1061",
+      "srs_id": "SRS-85",
+      "sds_id": "SDS-85",
+      "summary": "Verify Dropdown visibility\nwhen Session Creation page loads",
+      "description": "Feature: Reviewer multi-select dropdown for assigning reviewers\nScenario: Dropdown visibility\nGiven Session Creation page loads\nWhen metadata section renders\nThen Reviewer dropdown should be visible",
+      "acceptance": "Reviewer dropdown should be visible\nThe behavior should be validated when metadata section renders."
+    },
+    {
+      "test_id": "UTC-1062",
+      "srs_id": "SRS-85",
+      "sds_id": "SDS-85",
+      "summary": "Verify Placeholder text\nwhen dropdown is empty",
+      "description": "Feature: Reviewer multi-select dropdown for assigning reviewers\nScenario: Placeholder text\nGiven dropdown is empty\nWhen user views field\nThen placeholder text should guide selection",
+      "acceptance": "Placeholder text should guide selection\nThe behavior should be validated when user views field."
+    },
+    {
+      "test_id": "UTC-1063",
+      "srs_id": "SRS-85",
+      "sds_id": "SDS-85",
+      "summary": "Verify Open dropdown list\nwhen user clicks field",
+      "description": "Feature: Reviewer multi-select dropdown for assigning reviewers\nScenario: Open dropdown list\nGiven user clicks field\nWhen dropdown opens\nThen list of reviewers should be displayed",
+      "acceptance": "List of reviewers should be displayed\nThe behavior should be validated when dropdown opens."
+    },
+    {
+      "test_id": "UTC-1064",
+      "srs_id": "SRS-85",
+      "sds_id": "SDS-85",
+      "summary": "Verify Select single reviewer\nwhen list visible",
+      "description": "Feature: Reviewer multi-select dropdown for assigning reviewers\nScenario: Select single reviewer\nGiven list visible\nWhen one reviewer selected\nThen reviewer should be marked selected",
+      "acceptance": "Reviewer should be marked selected\nThe behavior should be validated when one reviewer selected."
+    },
+    {
+      "test_id": "UTC-1065",
+      "srs_id": "SRS-85",
+      "sds_id": "SDS-85",
+      "summary": "Verify Select multiple reviewers\nwhen list visible",
+      "description": "Feature: Reviewer multi-select dropdown for assigning reviewers\nScenario: Select multiple reviewers\nGiven list visible\nWhen multiple reviewers selected\nThen all selected reviewers should remain highlighted",
+      "acceptance": "All selected reviewers should remain highlighted\nThe behavior should be validated when multiple reviewers selected."
+    },
+    {
+      "test_id": "UTC-1066",
+      "srs_id": "SRS-85",
+      "sds_id": "SDS-85",
+      "summary": "Verify Selected reviewers displayed as chips\nwhen reviewers selected",
+      "description": "Feature: Reviewer multi-select dropdown for assigning reviewers\nScenario: Selected reviewers displayed as chips\nGiven reviewers selected\nWhen dropdown closes\nThen selected reviewers should appear as chips/tags",
+      "acceptance": "Selected reviewers should appear as chips/tags\nThe behavior should be validated when dropdown closes."
+    },
+    {
+      "test_id": "UTC-1067",
+      "srs_id": "SRS-85",
+      "sds_id": "SDS-85",
+      "summary": "Verify Remove selected reviewer\nwhen reviewers selected",
+      "description": "Feature: Reviewer multi-select dropdown for assigning reviewers\nScenario: Remove selected reviewer\nGiven reviewers selected\nWhen user clicks chip remove icon\nThen reviewer should be deselected",
+      "acceptance": "Reviewer should be deselected\nThe behavior should be validated when user clicks chip remove icon."
+    },
+    {
+      "test_id": "UTC-1068",
+      "srs_id": "SRS-85",
+      "sds_id": "SDS-85",
+      "summary": "Verify Integrated search works\nwhen reviewer list is long",
+      "description": "Feature: Reviewer multi-select dropdown for assigning reviewers\nScenario: Integrated search works\nGiven reviewer list is long\nWhen user types in search box\nThen dropdown should filter matching reviewers",
+      "acceptance": "Dropdown should filter matching reviewers\nThe behavior should be validated when user types in search box."
+    },
+    {
+      "test_id": "UTC-1069",
+      "srs_id": "SRS-85",
+      "sds_id": "SDS-85",
+      "summary": "Verify Invalid search value\nwhen invalid name typed",
+      "description": "Feature: Reviewer multi-select dropdown for assigning reviewers\nScenario: Invalid search value\nGiven invalid name typed\nWhen no match exists\nThen “No results found” message should appear",
+      "acceptance": "\"No results found\" message should appear\nThe behavior should be validated when no match exists."
+    },
+    {
+      "test_id": "UTC-1070",
+      "srs_id": "SRS-85",
+      "sds_id": "SDS-85",
+      "summary": "Verify State update\nwhen reviewers selected",
+      "description": "Feature: Reviewer multi-select dropdown for assigning reviewers\nScenario: State update\nGiven reviewers selected\nWhen inspecting state\nThen reviewer IDs should be stored in reviewer array",
+      "acceptance": "Reviewer IDs should be stored in reviewer array\nThe behavior should be validated when inspecting state."
+    },
+    {
+      "test_id": "UTC-1071",
+      "srs_id": "SRS-85",
+      "sds_id": "SDS-85",
+      "summary": "Verify Payload mapping\nwhen reviewers selected",
+      "description": "Feature: Reviewer multi-select dropdown for assigning reviewers\nScenario: Payload mapping\nGiven reviewers selected\nWhen session saved\nThen reviewer IDs should be mapped to reviewer_list in API payload",
+      "acceptance": "Reviewer IDs should be mapped to reviewer_list in API payload\nThe behavior should be validated when session saved."
+    },
+    {
+      "test_id": "UTC-1072",
+      "srs_id": "SRS-85",
+      "sds_id": "SDS-85",
+      "summary": "Verify Selection persistence\nwhen reviewers selected",
+      "description": "Feature: Reviewer multi-select dropdown for assigning reviewers\nScenario: Selection persistence\nGiven reviewers selected\nWhen navigating inside form\nThen selections should persist",
+      "acceptance": "Selections should persist\nThe behavior should be validated when navigating inside form."
+    },
+    {
+      "test_id": "UTC-1073",
+      "srs_id": "SRS-85",
+      "sds_id": "SDS-85",
+      "summary": "Verify Prevent duplicate selection\nwhen reviewer already selected",
+      "description": "Feature: Reviewer multi-select dropdown for assigning reviewers\nScenario: Prevent duplicate selection\nGiven reviewer already selected\nWhen selecting again\nThen duplicate should not be added",
+      "acceptance": "Duplicate should not be added\nThe behavior should be validated when selecting again."
+    },
+    {
+      "test_id": "UTC-1074",
+      "srs_id": "SRS-85",
+      "sds_id": "SDS-85",
+      "summary": "Verify Unauthorized access restriction\nwhen user lacks permission",
+      "description": "Feature: Reviewer multi-select dropdown for assigning reviewers\nScenario: Unauthorized access restriction\nGiven user lacks permission\nWhen page loads\nThen dropdown should be hidden or disabled",
+      "acceptance": "Dropdown should be hidden or disabled\nThe behavior should be validated when page loads."
+    },
+    {
+      "test_id": "UTC-1075",
+      "srs_id": "SRS-85",
+      "sds_id": "SDS-85",
+      "summary": "Verify Large list performance\nwhen 200+ reviewers exist",
+      "description": "Feature: Reviewer multi-select dropdown for assigning reviewers\nScenario: Large list performance\nGiven 200+ reviewers exist\nWhen opening dropdown\nThen list should render smoothly without lag",
+      "acceptance": "List should render smoothly without lag\nThe behavior should be validated when opening dropdown."
+    },
+    {
+      "test_id": "UTC-1076",
+      "srs_id": "SRS-85",
+      "sds_id": "SDS-85",
+      "summary": "Verify Keyboard accessibility\nwhen dropdown focused",
+      "description": "Feature: Reviewer multi-select dropdown for assigning reviewers\nScenario: Keyboard accessibility\nGiven dropdown focused\nWhen using keyboard arrows and Enter\nThen reviewers should be selectable",
+      "acceptance": "Reviewers should be selectable\nThe behavior should be validated when using keyboard arrows and Enter."
+    },
+    {
+      "test_id": "UTC-1077",
+      "srs_id": "SRS-85",
+      "sds_id": "SDS-85",
+      "summary": "Verify API failure handling\nwhen fetch reviewers API fails",
+      "description": "Feature: Reviewer multi-select dropdown for assigning reviewers\nScenario: API failure handling\nGiven fetch reviewers API fails\nWhen dropdown opens\nThen friendly error message should appear",
+      "acceptance": "Friendly error message should appear\nThe behavior should be validated when dropdown opens."
+    },
+    {
+      "test_id": "UTC-1078",
+      "srs_id": "SRS-86",
+      "sds_id": "SDS-86",
+      "summary": "Verify Add Level button visibility\nwhen Session Creation page loads",
+      "description": "Feature: Add Level trigger for configuring approval workflow levels\nScenario: Add Level button visibility\nGiven Session Creation page loads\nWhen approval configuration section renders\nThen “+ Add Level” button should be visible",
+      "acceptance": "\"+ Add Level\" button should be visible\nThe behavior should be validated when approval configuration section renders."
+    },
+    {
+      "test_id": "UTC-1079",
+      "srs_id": "SRS-86",
+      "sds_id": "SDS-86",
+      "summary": "Verify Button styling clarity\nwhen Add Level button displayed",
+      "description": "Feature: Add Level trigger for configuring approval workflow levels\nScenario: Button styling clarity\nGiven Add Level button displayed\nWhen user views control\nThen it should appear as blue clickable text/button",
+      "acceptance": "It should appear as blue clickable text/button\nThe behavior should be validated when user views control."
+    },
+    {
+      "test_id": "UTC-1080",
+      "srs_id": "SRS-86",
+      "sds_id": "SDS-86",
+      "summary": "Verify Add first approval level\nwhen no levels configured",
+      "description": "Feature: Add Level trigger for configuring approval workflow levels\nScenario: Add first approval level\nGiven no levels configured\nWhen user clicks Add Level\nThen Level 1 component should be created",
+      "acceptance": "Level 1 component should be created\nThe behavior should be validated when user clicks Add Level."
+    },
+    {
+      "test_id": "UTC-1081",
+      "srs_id": "SRS-86",
+      "sds_id": "SDS-86",
+      "summary": "Verify Add second level sequentially\nwhen Level 1 exists",
+      "description": "Feature: Add Level trigger for configuring approval workflow levels\nScenario: Add second level sequentially\nGiven Level 1 exists\nWhen Add Level clicked\nThen Level 2 should be added after Level 1",
+      "acceptance": "Level 2 should be added after Level 1\nThe behavior should be validated when Add Level clicked."
+    },
+    {
+      "test_id": "UTC-1082",
+      "srs_id": "SRS-86",
+      "sds_id": "SDS-86",
+      "summary": "Verify Component renders instantly\nwhen user clicks Add Level",
+      "description": "Feature: Add Level trigger for configuring approval workflow levels\nScenario: Component renders instantly\nGiven user clicks Add Level\nWhen action completes\nThen new level should appear immediately without page reload",
+      "acceptance": "New level should appear immediately without page reload\nThe behavior should be validated when action completes."
+    },
+    {
+      "test_id": "UTC-1083",
+      "srs_id": "SRS-86",
+      "sds_id": "SDS-86",
+      "summary": "Verify Sequence count update\nwhen multiple levels added",
+      "description": "Feature: Add Level trigger for configuring approval workflow levels\nScenario: Sequence count update\nGiven multiple levels added\nWhen inspecting state\nThen sequence count should increment correctly",
+      "acceptance": "Sequence count should increment correctly\nThe behavior should be validated when inspecting state."
+    },
+    {
+      "test_id": "UTC-1084",
+      "srs_id": "SRS-86",
+      "sds_id": "SDS-86",
+      "summary": "Verify Maintain order\nwhen several levels added",
+      "description": "Feature: Add Level trigger for configuring approval workflow levels\nScenario: Maintain order\nGiven several levels added\nWhen viewing configuration\nThen levels should display in ascending order",
+      "acceptance": "Levels should display in ascending order\nThe behavior should be validated when viewing configuration."
+    },
+    {
+      "test_id": "UTC-1085",
+      "srs_id": "SRS-86",
+      "sds_id": "SDS-86",
+      "summary": "Verify Limit total levels to five\nwhen Levels 1â€“5 exist",
+      "description": "Feature: Add Level trigger for configuring approval workflow levels\nScenario: Limit total levels to five\nGiven Levels 1–5 exist\nWhen Add Level clicked\nThen no additional level should be created",
+      "acceptance": "No additional level should be created\nThe behavior should be validated when Add Level clicked."
+    },
+    {
+      "test_id": "UTC-1086",
+      "srs_id": "SRS-86",
+      "sds_id": "SDS-86",
+      "summary": "Verify Maximum level message\nwhen 5 levels configured",
+      "description": "Feature: Add Level trigger for configuring approval workflow levels\nScenario: Maximum level message\nGiven 5 levels configured\nWhen Add Level attempted\nThen validation message should indicate limit reached",
+      "acceptance": "Validation message should indicate limit reached\nThe behavior should be validated when Add Level attempted."
+    },
+    {
+      "test_id": "UTC-1087",
+      "srs_id": "SRS-86",
+      "sds_id": "SDS-86",
+      "summary": "Verify Existing level data retained\nwhen approvers assigned to existing levels",
+      "description": "Feature: Add Level trigger for configuring approval workflow levels\nScenario: Existing level data retained\nGiven approvers assigned to existing levels\nWhen new level added\nThen existing data should remain unchanged",
+      "acceptance": "Existing data should remain unchanged\nThe behavior should be validated when new level added."
+    },
+    {
+      "test_id": "UTC-1088",
+      "srs_id": "SRS-86",
+      "sds_id": "SDS-86",
+      "summary": "Verify Unauthorized users restricted\nwhen user lacks reviewer permission",
+      "description": "Feature: Add Level trigger for configuring approval workflow levels\nScenario: Unauthorized users restricted\nGiven user lacks reviewer permission\nWhen page loads\nThen Add Level control should be hidden or disabled",
+      "acceptance": "Add Level control should be hidden or disabled\nThe behavior should be validated when page loads."
+    },
+    {
+      "test_id": "UTC-1089",
+      "srs_id": "SRS-86",
+      "sds_id": "SDS-86",
+      "summary": "Verify Clear labeling\nwhen approval section visible",
+      "description": "Feature: Add Level trigger for configuring approval workflow levels\nScenario: Clear labeling\nGiven approval section visible\nWhen viewing levels\nThen each level should show clear labels (Level 1, Level 2, etc.)",
+      "acceptance": "Each level should show clear labels (Level 1, Level 2, etc.)\nThe behavior should be validated when viewing levels."
+    },
+    {
+      "test_id": "UTC-1090",
+      "srs_id": "SRS-86",
+      "sds_id": "SDS-86",
+      "summary": "Verify Rapid multiple clicks\nwhen user clicks Add Level quickly",
+      "description": "Feature: Add Level trigger for configuring approval workflow levels\nScenario: Rapid multiple clicks\nGiven user clicks Add Level quickly\nWhen system processes clicks\nThen duplicate or skipped levels should not occur",
+      "acceptance": "Duplicate or skipped levels should not occur\nThe behavior should be validated when system processes clicks."
+    },
+    {
+      "test_id": "UTC-1091",
+      "srs_id": "SRS-86",
+      "sds_id": "SDS-86",
+      "summary": "Verify Keyboard interaction\nwhen button focused",
+      "description": "Feature: Add Level trigger for configuring approval workflow levels\nScenario: Keyboard interaction\nGiven button focused\nWhen Enter or Space pressed\nThen level should be added",
+      "acceptance": "Level should be added\nThe behavior should be validated when Enter or Space pressed."
+    },
+    {
+      "test_id": "UTC-1092",
+      "srs_id": "SRS-86",
+      "sds_id": "SDS-86",
+      "summary": "Verify Retry after temporary failure\nwhen level creation temporarily fails",
+      "description": "Feature: Add Level trigger for configuring approval workflow levels\nScenario: Retry after temporary failure\nGiven level creation temporarily fails\nWhen user retries\nThen level should be added successfully",
+      "acceptance": "Level should be added successfully\nThe behavior should be validated when user retries."
+    },
+    {
+      "test_id": "UTC-1093",
+      "srs_id": "SRS-87",
+      "sds_id": "SDS-87",
+      "summary": "Verify Dropdown visibility\nwhen an approval level is added",
+      "description": "Feature: Approval Level hierarchy selector for defining workflow order\nScenario: Dropdown visibility\nGiven an approval level is added\nWhen the level renders\nThen hierarchy dropdown should be visible",
+      "acceptance": "Hierarchy dropdown should be visible\nThe behavior should be validated when the level renders."
+    },
+    {
+      "test_id": "UTC-1094",
+      "srs_id": "SRS-87",
+      "sds_id": "SDS-87",
+      "summary": "Verify Default value\nwhen Level 1 created",
+      "description": "Feature: Approval Level hierarchy selector for defining workflow order\nScenario: Default value\nGiven Level 1 created\nWhen dropdown loads\nThen default selected value should be Level 1",
+      "acceptance": "Default selected value should be Level 1\nThe behavior should be validated when dropdown loads."
+    },
+    {
+      "test_id": "UTC-1095",
+      "srs_id": "SRS-87",
+      "sds_id": "SDS-87",
+      "summary": "Verify Dropdown shows available levels\nwhen hierarchy dropdown opened",
+      "description": "Feature: Approval Level hierarchy selector for defining workflow order\nScenario: Dropdown shows available levels\nGiven hierarchy dropdown opened\nWhen options displayed\nThen all valid stages (Level 1–Level 5) should appear",
+      "acceptance": "All valid stages (Level 1â€“Level 5) should appear\nThe behavior should be validated when options displayed."
+    },
+    {
+      "test_id": "UTC-1096",
+      "srs_id": "SRS-87",
+      "sds_id": "SDS-87",
+      "summary": "Verify Select level rank\nwhen dropdown open",
+      "description": "Feature: Approval Level hierarchy selector for defining workflow order\nScenario: Select level rank\nGiven dropdown open\nWhen user selects Level 2\nThen selected value should update immediately",
+      "acceptance": "Selected value should update immediately\nThe behavior should be validated when user selects Level 2."
+    },
+    {
+      "test_id": "UTC-1097",
+      "srs_id": "SRS-87",
+      "sds_id": "SDS-87",
+      "summary": "Verify Sequence mapping to backend\nwhen Level 3 selected",
+      "description": "Feature: Approval Level hierarchy selector for defining workflow order\nScenario: Sequence mapping to backend\nGiven Level 3 selected\nWhen session saved\nThen approval_sequence should be stored as integer 3 in payload",
+      "acceptance": "Approval_sequence should be stored as integer 3 in payload\nThe behavior should be validated when session saved."
+    },
+    {
+      "test_id": "UTC-1098",
+      "srs_id": "SRS-87",
+      "sds_id": "SDS-87",
+      "summary": "Verify Prevent duplicate sequence\nwhen Level 2 already assigned to another stage",
+      "description": "Feature: Approval Level hierarchy selector for defining workflow order\nScenario: Prevent duplicate sequence\nGiven Level 2 already assigned to another stage\nWhen selecting Level 2 again\nThen system should prevent duplicate selection",
+      "acceptance": "System should prevent duplicate selection\nThe behavior should be validated when selecting Level 2 again."
+    },
+    {
+      "test_id": "UTC-1099",
+      "srs_id": "SRS-87",
+      "sds_id": "SDS-87",
+      "summary": "Verify Reordering updates sequence\nwhen two levels exist",
+      "description": "Feature: Approval Level hierarchy selector for defining workflow order\nScenario: Reordering updates sequence\nGiven two levels exist\nWhen user swaps Level 1 to Level 2\nThen order should update correctly",
+      "acceptance": "Order should update correctly\nThe behavior should be validated when user swaps Level 1 to Level 2."
+    },
+    {
+      "test_id": "UTC-1100",
+      "srs_id": "SRS-87",
+      "sds_id": "SDS-87",
+      "summary": "Verify Clear label display\nwhen dropdown closed",
+      "description": "Feature: Approval Level hierarchy selector for defining workflow order\nScenario: Clear label display\nGiven dropdown closed\nWhen value selected\nThen selected label should be clearly readable",
+      "acceptance": "Selected label should be clearly readable\nThe behavior should be validated when value selected."
+    },
+    {
+      "test_id": "UTC-1101",
+      "srs_id": "SRS-87",
+      "sds_id": "SDS-87",
+      "summary": "Verify Persist value on navigation\nwhen level selected",
+      "description": "Feature: Approval Level hierarchy selector for defining workflow order\nScenario: Persist value on navigation\nGiven level selected\nWhen user navigates within page\nThen selection should remain intact",
+      "acceptance": "Selection should remain intact\nThe behavior should be validated when user navigates within page."
+    },
+    {
+      "test_id": "UTC-1102",
+      "srs_id": "SRS-87",
+      "sds_id": "SDS-87",
+      "summary": "Verify Unauthorized user cannot modify\nwhen non-reviewer user logged in",
+      "description": "Feature: Approval Level hierarchy selector for defining workflow order\nScenario: Unauthorized user cannot modify\nGiven non-reviewer user logged in\nWhen viewing dropdown\nThen field should be disabled or hidden",
+      "acceptance": "Field should be disabled or hidden\nThe behavior should be validated when viewing dropdown."
+    },
+    {
+      "test_id": "UTC-1103",
+      "srs_id": "SRS-87",
+      "sds_id": "SDS-87",
+      "summary": "Verify Maximum level boundary\nwhen Level 5 selected",
+      "description": "Feature: Approval Level hierarchy selector for defining workflow order\nScenario: Maximum level boundary\nGiven Level 5 selected\nWhen trying to exceed range\nThen system should not allow values beyond Level 5",
+      "acceptance": "System should not allow values beyond Level 5\nThe behavior should be validated when trying to exceed range."
+    },
+    {
+      "test_id": "UTC-1104",
+      "srs_id": "SRS-87",
+      "sds_id": "SDS-87",
+      "summary": "Verify Dropdown opens quickly\nwhen user clicks dropdown",
+      "description": "Feature: Approval Level hierarchy selector for defining workflow order\nScenario: Dropdown opens quickly\nGiven user clicks dropdown\nWhen options load\nThen it should open within acceptable time (<1s)",
+      "acceptance": "It should open within acceptable time (<1s)\nThe behavior should be validated when options load."
+    },
+    {
+      "test_id": "UTC-1105",
+      "srs_id": "SRS-87",
+      "sds_id": "SDS-87",
+      "summary": "Verify Rapid changes handled safely\nwhen user changes selection multiple times",
+      "description": "Feature: Approval Level hierarchy selector for defining workflow order\nScenario: Rapid changes handled safely\nGiven user changes selection multiple times\nWhen system processes\nThen final selection should be stored correctly without crash",
+      "acceptance": "Final selection should be stored correctly without crash\nThe behavior should be validated when system processes."
+    },
+    {
+      "test_id": "UTC-1106",
+      "srs_id": "SRS-87",
+      "sds_id": "SDS-87",
+      "summary": "Verify Keyboard selection support\nwhen dropdown focused",
+      "description": "Feature: Approval Level hierarchy selector for defining workflow order\nScenario: Keyboard selection support\nGiven dropdown focused\nWhen arrow keys and Enter used\nThen user should select option via keyboard",
+      "acceptance": "User should select option via keyboard\nThe behavior should be validated when arrow keys and Enter used."
+    },
+    {
+      "test_id": "UTC-1107",
+      "srs_id": "SRS-87",
+      "sds_id": "SDS-87",
+      "summary": "Verify Invalid value handling\nwhen manipulated invalid value sent",
+      "description": "Feature: Approval Level hierarchy selector for defining workflow order\nScenario: Invalid value handling\nGiven manipulated invalid value sent\nWhen saving session\nThen backend should reject invalid sequence",
+      "acceptance": "Backend should reject invalid sequence\nThe behavior should be validated when saving session."
+    },
+    {
+      "test_id": "UTC-1108",
+      "srs_id": "SRS-88",
+      "sds_id": "SDS-88",
+      "summary": "Verify Dropdown visibility\nwhen Session Creation page loads",
+      "description": "Feature: Taxonomy selection dropdown for annotation schema configuration\nScenario: Dropdown visibility\nGiven Session Creation page loads\nWhen form renders\nThen Taxonomy dropdown should be visible near the bottom",
+      "acceptance": "Taxonomy dropdown should be visible near the bottom\nThe behavior should be validated when form renders."
+    },
+    {
+      "test_id": "UTC-1109",
+      "srs_id": "SRS-88",
+      "sds_id": "SDS-88",
+      "summary": "Verify Placeholder text\nwhen no taxonomy selected",
+      "description": "Feature: Taxonomy selection dropdown for annotation schema configuration\nScenario: Placeholder text\nGiven no taxonomy selected\nWhen dropdown displayed\nThen placeholder text should guide user (e.g., “Select Taxonomy”)",
+      "acceptance": "Placeholder text should guide user (e.g., \"Select Taxonomy\")\nThe behavior should be validated when dropdown displayed."
+    },
+    {
+      "test_id": "UTC-1110",
+      "srs_id": "SRS-88",
+      "sds_id": "SDS-88",
+      "summary": "Verify Load taxonomy list\nwhen dropdown opened",
+      "description": "Feature: Taxonomy selection dropdown for annotation schema configuration\nScenario: Load taxonomy list\nGiven dropdown opened\nWhen system fetches taxonomy list\nThen all active taxonomies should be displayed",
+      "acceptance": "All active taxonomies should be displayed\nThe behavior should be validated when system fetches taxonomy list."
+    },
+    {
+      "test_id": "UTC-1111",
+      "srs_id": "SRS-88",
+      "sds_id": "SDS-88",
+      "summary": "Verify Single taxonomy selection\nwhen dropdown options available",
+      "description": "Feature: Taxonomy selection dropdown for annotation schema configuration\nScenario: Single taxonomy selection\nGiven dropdown options available\nWhen user selects one taxonomy\nThen selected value should appear in the field",
+      "acceptance": "Selected value should appear in the field\nThe behavior should be validated when user selects one taxonomy."
+    },
+    {
+      "test_id": "UTC-1112",
+      "srs_id": "SRS-88",
+      "sds_id": "SDS-88",
+      "summary": "Verify Multi-select capability\nwhen multiple taxonomies available",
+      "description": "Feature: Taxonomy selection dropdown for annotation schema configuration\nScenario: Multi-select capability\nGiven multiple taxonomies available\nWhen user selects multiple values\nThen all selected items should appear as chips/tags",
+      "acceptance": "All selected items should appear as chips/tags\nThe behavior should be validated when user selects multiple values."
+    },
+    {
+      "test_id": "UTC-1113",
+      "srs_id": "SRS-88",
+      "sds_id": "SDS-88",
+      "summary": "Verify Fetch schema on selection\nwhen taxonomy selected",
+      "description": "Feature: Taxonomy selection dropdown for annotation schema configuration\nScenario: Fetch schema on selection\nGiven taxonomy selected\nWhen selection confirmed\nThen system should send fetch request to retrieve schema data",
+      "acceptance": "System should send fetch request to retrieve schema data\nThe behavior should be validated when selection confirmed."
+    },
+    {
+      "test_id": "UTC-1114",
+      "srs_id": "SRS-88",
+      "sds_id": "SDS-88",
+      "summary": "Verify Persist selected taxonomy\nwhen taxonomy selected",
+      "description": "Feature: Taxonomy selection dropdown for annotation schema configuration\nScenario: Persist selected taxonomy\nGiven taxonomy selected\nWhen session saved\nThen taxonomy ID(s) should be included in payload",
+      "acceptance": "Taxonomy ID(s) should be included in payload\nThe behavior should be validated when session saved."
+    },
+    {
+      "test_id": "UTC-1115",
+      "srs_id": "SRS-88",
+      "sds_id": "SDS-88",
+      "summary": "Verify Prevent invalid selection\nwhen taxonomy is inactive or deleted",
+      "description": "Feature: Taxonomy selection dropdown for annotation schema configuration\nScenario: Prevent invalid selection\nGiven taxonomy is inactive or deleted\nWhen user attempts selection\nThen system should block selection",
+      "acceptance": "System should block selection\nThe behavior should be validated when user attempts selection."
+    },
+    {
+      "test_id": "UTC-1116",
+      "srs_id": "SRS-88",
+      "sds_id": "SDS-88",
+      "summary": "Verify Retain value during navigation\nwhen taxonomy selected",
+      "description": "Feature: Taxonomy selection dropdown for annotation schema configuration\nScenario: Retain value during navigation\nGiven taxonomy selected\nWhen user navigates within form\nThen selection should persist",
+      "acceptance": "Selection should persist\nThe behavior should be validated when user navigates within form."
+    },
+    {
+      "test_id": "UTC-1117",
+      "srs_id": "SRS-88",
+      "sds_id": "SDS-88",
+      "summary": "Verify Clear removal option\nwhen taxonomy selected",
+      "description": "Feature: Taxonomy selection dropdown for annotation schema configuration\nScenario: Clear removal option\nGiven taxonomy selected\nWhen user clicks remove/clear icon\nThen taxonomy should be removed from field",
+      "acceptance": "Taxonomy should be removed from field\nThe behavior should be validated when user clicks remove/clear icon."
+    },
+    {
+      "test_id": "UTC-1118",
+      "srs_id": "SRS-88",
+      "sds_id": "SDS-88",
+      "summary": "Verify Unauthorized access restriction\nwhen user lacks session creation permission",
+      "description": "Feature: Taxonomy selection dropdown for annotation schema configuration\nScenario: Unauthorized access restriction\nGiven user lacks session creation permission\nWhen page loads\nThen taxonomy dropdown should be disabled or hidden",
+      "acceptance": "Taxonomy dropdown should be disabled or hidden\nThe behavior should be validated when page loads."
+    },
+    {
+      "test_id": "UTC-1119",
+      "srs_id": "SRS-88",
+      "sds_id": "SDS-88",
+      "summary": "Verify Fast dropdown open\nwhen dropdown clicked",
+      "description": "Feature: Taxonomy selection dropdown for annotation schema configuration\nScenario: Fast dropdown open\nGiven dropdown clicked\nWhen options load\nThen response time should be under acceptable threshold (<1s)",
+      "acceptance": "Response time should be under acceptable threshold (<1s)\nThe behavior should be validated when options load."
+    },
+    {
+      "test_id": "UTC-1120",
+      "srs_id": "SRS-88",
+      "sds_id": "SDS-88",
+      "summary": "Verify Schema applied to annotation module\nwhen taxonomy selected",
+      "description": "Feature: Taxonomy selection dropdown for annotation schema configuration\nScenario: Schema applied to annotation module\nGiven taxonomy selected\nWhen session starts labeling\nThen only selected taxonomy classes should be available",
+      "acceptance": "Only selected taxonomy classes should be available\nThe behavior should be validated when session starts labeling."
+    },
+    {
+      "test_id": "UTC-1121",
+      "srs_id": "SRS-88",
+      "sds_id": "SDS-88",
+      "summary": "Verify Fetch failure handling\nwhen schema API fails",
+      "description": "Feature: Taxonomy selection dropdown for annotation schema configuration\nScenario: Fetch failure handling\nGiven schema API fails\nWhen request returns error\nThen system should show friendly toast without crash",
+      "acceptance": "System should show friendly toast without crash\nThe behavior should be validated when request returns error."
+    },
+    {
+      "test_id": "UTC-1122",
+      "srs_id": "SRS-88",
+      "sds_id": "SDS-88",
+      "summary": "Verify Keyboard accessibility\nwhen dropdown focused",
+      "description": "Feature: Taxonomy selection dropdown for annotation schema configuration\nScenario: Keyboard accessibility\nGiven dropdown focused\nWhen user uses keyboard keys\nThen options should be selectable without mouse",
+      "acceptance": "Options should be selectable without mouse\nThe behavior should be validated when user uses keyboard keys."
+    },
+    {
+      "test_id": "UTC-1123",
+      "srs_id": "SRS-89",
+      "sds_id": "SDS-89",
+      "summary": "Verify Filter dropdown visibility\nwhen Session Creation page loads",
+      "description": "Feature: Annotation filter to control active taxonomy labels\nScenario: Filter dropdown visibility\nGiven Session Creation page loads\nWhen annotation section renders\nThen Select Annotations dropdown should be visible",
+      "acceptance": "Select Annotations dropdown should be visible\nThe behavior should be validated when annotation section renders."
+    },
+    {
+      "test_id": "UTC-1124",
+      "srs_id": "SRS-89",
+      "sds_id": "SDS-89",
+      "summary": "Verify Placeholder text displayed\nwhen no annotation selected",
+      "description": "Feature: Annotation filter to control active taxonomy labels\nScenario: Placeholder text displayed\nGiven no annotation selected\nWhen dropdown loads\nThen placeholder should show “Select Annotations”",
+      "acceptance": "Placeholder should show \"Select Annotations\"\nThe behavior should be validated when dropdown loads."
+    },
+    {
+      "test_id": "UTC-1125",
+      "srs_id": "SRS-89",
+      "sds_id": "SDS-89",
+      "summary": "Verify Load annotations from taxonomy\nwhen taxonomy selected",
+      "description": "Feature: Annotation filter to control active taxonomy labels\nScenario: Load annotations from taxonomy\nGiven taxonomy selected\nWhen dropdown opened\nThen system should display annotations belonging to selected taxonomy only",
+      "acceptance": "System should display annotations belonging to selected taxonomy only\nThe behavior should be validated when dropdown opened."
+    },
+    {
+      "test_id": "UTC-1126",
+      "srs_id": "SRS-89",
+      "sds_id": "SDS-89",
+      "summary": "Verify Select single annotation\nwhen annotation list available",
+      "description": "Feature: Annotation filter to control active taxonomy labels\nScenario: Select single annotation\nGiven annotation list available\nWhen user selects one checkbox\nThen that annotation should be marked active",
+      "acceptance": "That annotation should be marked active\nThe behavior should be validated when user selects one checkbox."
+    },
+    {
+      "test_id": "UTC-1127",
+      "srs_id": "SRS-89",
+      "sds_id": "SDS-89",
+      "summary": "Verify Select multiple annotations\nwhen multiple options available",
+      "description": "Feature: Annotation filter to control active taxonomy labels\nScenario: Select multiple annotations\nGiven multiple options available\nWhen user selects several checkboxes\nThen all selected annotations should appear active",
+      "acceptance": "All selected annotations should appear active\nThe behavior should be validated when user selects several checkboxes."
+    },
+    {
+      "test_id": "UTC-1128",
+      "srs_id": "SRS-89",
+      "sds_id": "SDS-89",
+      "summary": "Verify Select All functionality\nwhen dropdown opened",
+      "description": "Feature: Annotation filter to control active taxonomy labels\nScenario: Select All functionality\nGiven dropdown opened\nWhen user clicks “Select All”\nThen all annotations should be selected",
+      "acceptance": "All annotations should be selected\nThe behavior should be validated when user clicks \"Select All\"."
+    },
+    {
+      "test_id": "UTC-1129",
+      "srs_id": "SRS-89",
+      "sds_id": "SDS-89",
+      "summary": "Verify Deselect All functionality\nwhen all annotations selected",
+      "description": "Feature: Annotation filter to control active taxonomy labels\nScenario: Deselect All functionality\nGiven all annotations selected\nWhen user unchecks “Select All”\nThen all annotations should be deselected",
+      "acceptance": "All annotations should be deselected\nThe behavior should be validated when user unchecks \"Select All\"."
+    },
+    {
+      "test_id": "UTC-1130",
+      "srs_id": "SRS-89",
+      "sds_id": "SDS-89",
+      "summary": "Verify Store selected IDs in state\nwhen annotations selected",
+      "description": "Feature: Annotation filter to control active taxonomy labels\nScenario: Store selected IDs in state\nGiven annotations selected\nWhen selection confirmed\nThen selected annotation IDs should be stored in local state array",
+      "acceptance": "Selected annotation IDs should be stored in local state array\nThe behavior should be validated when selection confirmed."
+    },
+    {
+      "test_id": "UTC-1131",
+      "srs_id": "SRS-89",
+      "sds_id": "SDS-89",
+      "summary": "Verify Payload mapping\nwhen session saved",
+      "description": "Feature: Annotation filter to control active taxonomy labels\nScenario: Payload mapping\nGiven session saved\nWhen API request sent\nThen filtered annotation IDs should be included in payload",
+      "acceptance": "Filtered annotation IDs should be included in payload\nThe behavior should be validated when API request sent."
+    },
+    {
+      "test_id": "UTC-1132",
+      "srs_id": "SRS-89",
+      "sds_id": "SDS-89",
+      "summary": "Verify Viewer shows only active annotations\nwhen filtered annotations configured",
+      "description": "Feature: Annotation filter to control active taxonomy labels\nScenario: Viewer shows only active annotations\nGiven filtered annotations configured\nWhen labeling module opens\nThen only selected annotations should be available in toolset",
+      "acceptance": "Only selected annotations should be available in toolset\nThe behavior should be validated when labeling module opens."
+    },
+    {
+      "test_id": "UTC-1133",
+      "srs_id": "SRS-89",
+      "sds_id": "SDS-89",
+      "summary": "Verify Selected items displayed clearly\nwhen annotations selected",
+      "description": "Feature: Annotation filter to control active taxonomy labels\nScenario: Selected items displayed clearly\nGiven annotations selected\nWhen dropdown closed\nThen selected items should be visible as chips or count label",
+      "acceptance": "Selected items should be visible as chips or count label\nThe behavior should be validated when dropdown closed."
+    },
+    {
+      "test_id": "UTC-1134",
+      "srs_id": "SRS-89",
+      "sds_id": "SDS-89",
+      "summary": "Verify Prevent invalid annotation selection\nwhen annotation not part of taxonomy",
+      "description": "Feature: Annotation filter to control active taxonomy labels\nScenario: Prevent invalid annotation selection\nGiven annotation not part of taxonomy\nWhen user attempts selection\nThen system should block invalid option",
+      "acceptance": "System should block invalid option\nThe behavior should be validated when user attempts selection."
+    },
+    {
+      "test_id": "UTC-1135",
+      "srs_id": "SRS-89",
+      "sds_id": "SDS-89",
+      "summary": "Verify Selection persistence\nwhen annotations selected",
+      "description": "Feature: Annotation filter to control active taxonomy labels\nScenario: Selection persistence\nGiven annotations selected\nWhen user navigates within form\nThen selections should remain intact",
+      "acceptance": "Selections should remain intact\nThe behavior should be validated when user navigates within form."
+    },
+    {
+      "test_id": "UTC-1136",
+      "srs_id": "SRS-89",
+      "sds_id": "SDS-89",
+      "summary": "Verify Fast dropdown rendering\nwhen many annotations (1000+)",
+      "description": "Feature: Annotation filter to control active taxonomy labels\nScenario: Fast dropdown rendering\nGiven many annotations (1000+)\nWhen dropdown opens\nThen options should render smoothly without UI freeze",
+      "acceptance": "Options should render smoothly without UI freeze\nThe behavior should be validated when dropdown opens."
+    },
+    {
+      "test_id": "UTC-1137",
+      "srs_id": "SRS-89",
+      "sds_id": "SDS-89",
+      "summary": "Verify Fetch failure handling\nwhen annotation fetch fails",
+      "description": "Feature: Annotation filter to control active taxonomy labels\nScenario: Fetch failure handling\nGiven annotation fetch fails\nWhen dropdown opens\nThen system should show friendly message “Failed to load annotations”",
+      "acceptance": "System should show friendly message \"Failed to load annotations\"\nThe behavior should be validated when dropdown opens."
+    },
+    {
+      "test_id": "UTC-1138",
+      "srs_id": "SRS-89",
+      "sds_id": "SDS-89",
+      "summary": "Verify Keyboard support\nwhen dropdown focused",
+      "description": "Feature: Annotation filter to control active taxonomy labels\nScenario: Keyboard support\nGiven dropdown focused\nWhen user navigates via keyboard\nThen options should be selectable using keys",
+      "acceptance": "Options should be selectable using keys\nThe behavior should be validated when user navigates via keyboard."
+    },
+    {
+      "test_id": "UTC-1139",
+      "srs_id": "SRS-89",
+      "sds_id": "SDS-89",
+      "summary": "Verify Role-based access restriction\nwhen user lacks edit permission",
+      "description": "Feature: Annotation filter to control active taxonomy labels\nScenario: Role-based access restriction\nGiven user lacks edit permission\nWhen page loads\nThen annotation filter should be disabled or read-only",
+      "acceptance": "Annotation filter should be disabled or read-only\nThe behavior should be validated when page loads."
+    },
+    {
+      "test_id": "UTC-1140",
+      "srs_id": "SRS-90",
+      "sds_id": "SDS-90",
+      "summary": "Verify Import CSV button visibility\nwhen Session Creation page loads",
+      "description": "Feature: CSV bulk import for session data population\nScenario: Import CSV button visibility\nGiven Session Creation page loads\nWhen left column renders\nThen “Import CSV” button should be visible",
+      "acceptance": "\"Import CSV\" button should be visible\nThe behavior should be validated when left column renders."
+    },
+    {
+      "test_id": "UTC-1141",
+      "srs_id": "SRS-90",
+      "sds_id": "SDS-90",
+      "summary": "Verify Button styling clarity\nwhen page rendered",
+      "description": "Feature: CSV bulk import for session data population\nScenario: Button styling clarity\nGiven page rendered\nWhen user views controls\nThen Import CSV button should be prominent and clickable",
+      "acceptance": "Import CSV button should be prominent and clickable\nThe behavior should be validated when user views controls."
+    },
+    {
+      "test_id": "UTC-1142",
+      "srs_id": "SRS-90",
+      "sds_id": "SDS-90",
+      "summary": "Verify File picker opens\nwhen user clicks Import CSV",
+      "description": "Feature: CSV bulk import for session data population\nScenario: File picker opens\nGiven user clicks Import CSV\nWhen action triggered\nThen system should open native file chooser",
+      "acceptance": "System should open native file chooser\nThe behavior should be validated when action triggered."
+    },
+    {
+      "test_id": "UTC-1143",
+      "srs_id": "SRS-90",
+      "sds_id": "SDS-90",
+      "summary": "Verify Accept only CSV files\nwhen file chooser opened",
+      "description": "Feature: CSV bulk import for session data population\nScenario: Accept only CSV files\nGiven file chooser opened\nWhen user selects non-CSV file\nThen file should be rejected",
+      "acceptance": "File should be rejected\nThe behavior should be validated when user selects non-CSV file."
+    },
+    {
+      "test_id": "UTC-1144",
+      "srs_id": "SRS-90",
+      "sds_id": "SDS-90",
+      "summary": "Verify Valid CSV file selection\nwhen valid CSV selected",
+      "description": "Feature: CSV bulk import for session data population\nScenario: Valid CSV file selection\nGiven valid CSV selected\nWhen file uploaded\nThen system should read file using Browser File API",
+      "acceptance": "System should read file using Browser File API\nThe behavior should be validated when file uploaded."
+    },
+    {
+      "test_id": "UTC-1145",
+      "srs_id": "SRS-90",
+      "sds_id": "SDS-90",
+      "summary": "Verify Header mapping to form fields\nwhen valid CSV headers",
+      "description": "Feature: CSV bulk import for session data population\nScenario: Header mapping to form fields\nGiven valid CSV headers\nWhen parsing completes\nThen values should map correctly to form state keys",
+      "acceptance": "Values should map correctly to form state keys\nThe behavior should be validated when parsing completes."
+    },
+    {
+      "test_id": "UTC-1146",
+      "srs_id": "SRS-90",
+      "sds_id": "SDS-90",
+      "summary": "Verify Populate multiple fields\nwhen CSV contains multiple attributes",
+      "description": "Feature: CSV bulk import for session data population\nScenario: Populate multiple fields\nGiven CSV contains multiple attributes\nWhen import completes\nThen all corresponding form fields should update correctly",
+      "acceptance": "All corresponding form fields should update correctly\nThe behavior should be validated when import completes."
+    },
+    {
+      "test_id": "UTC-1147",
+      "srs_id": "SRS-90",
+      "sds_id": "SDS-90",
+      "summary": "Verify Immediate UI update\nwhen CSV parsed",
+      "description": "Feature: CSV bulk import for session data population\nScenario: Immediate UI update\nGiven CSV parsed\nWhen mapping finishes\nThen UI should reflect new values instantly without reload",
+      "acceptance": "UI should reflect new values instantly without reload\nThe behavior should be validated when mapping finishes."
+    },
+    {
+      "test_id": "UTC-1148",
+      "srs_id": "SRS-90",
+      "sds_id": "SDS-90",
+      "summary": "Verify Invalid schema handling\nwhen CSV headers mismatch system format",
+      "description": "Feature: CSV bulk import for session data population\nScenario: Invalid schema handling\nGiven CSV headers mismatch system format\nWhen user uploads file\nThen “Invalid CSV Schema” modal should appear",
+      "acceptance": "\"Invalid CSV Schema\" modal should appear\nThe behavior should be validated when user uploads file."
+    },
+    {
+      "test_id": "UTC-1149",
+      "srs_id": "SRS-90",
+      "sds_id": "SDS-90",
+      "summary": "Verify Missing required columns\nwhen required header missing",
+      "description": "Feature: CSV bulk import for session data population\nScenario: Missing required columns\nGiven required header missing\nWhen parsing occurs\nThen import should be blocked",
+      "acceptance": "Import should be blocked\nThe behavior should be validated when parsing occurs."
+    },
+    {
+      "test_id": "UTC-1150",
+      "srs_id": "SRS-90",
+      "sds_id": "SDS-90",
+      "summary": "Verify Corrupted file handling\nwhen corrupted CSV uploaded",
+      "description": "Feature: CSV bulk import for session data population\nScenario: Corrupted file handling\nGiven corrupted CSV uploaded\nWhen parsing fails\nThen friendly error message should display",
+      "acceptance": "Friendly error message should display\nThe behavior should be validated when parsing fails."
+    },
+    {
+      "test_id": "UTC-1151",
+      "srs_id": "SRS-90",
+      "sds_id": "SDS-90",
+      "summary": "Verify Existing values overwritten correctly\nwhen fields already populated",
+      "description": "Feature: CSV bulk import for session data population\nScenario: Existing values overwritten correctly\nGiven fields already populated\nWhen CSV imported\nThen new values should replace old ones correctly",
+      "acceptance": "New values should replace old ones correctly\nThe behavior should be validated when CSV imported."
+    },
+    {
+      "test_id": "UTC-1152",
+      "srs_id": "SRS-90",
+      "sds_id": "SDS-90",
+      "summary": "Verify Cancel file selection\nwhen file chooser opened",
+      "description": "Feature: CSV bulk import for session data population\nScenario: Cancel file selection\nGiven file chooser opened\nWhen user cancels\nThen no changes should occur",
+      "acceptance": "No changes should occur\nThe behavior should be validated when user cancels."
+    },
+    {
+      "test_id": "UTC-1153",
+      "srs_id": "SRS-90",
+      "sds_id": "SDS-90",
+      "summary": "Verify Large CSV processing time\nwhen large CSV (1000+ rows)",
+      "description": "Feature: CSV bulk import for session data population\nScenario: Large CSV processing time\nGiven large CSV (1000+ rows)\nWhen importing\nThen processing should complete within acceptable time (<2s)",
+      "acceptance": "Processing should complete within acceptable time (<2s)\nThe behavior should be validated when importing."
+    },
+    {
+      "test_id": "UTC-1154",
+      "srs_id": "SRS-90",
+      "sds_id": "SDS-90",
+      "summary": "Verify Success feedback\nwhen CSV imported successfully",
+      "description": "Feature: CSV bulk import for session data population\nScenario: Success feedback\nGiven CSV imported successfully\nWhen process completes\nThen success toast/message should appear",
+      "acceptance": "Success toast/message should appear\nThe behavior should be validated when process completes."
+    },
+    {
+      "test_id": "UTC-1155",
+      "srs_id": "SRS-90",
+      "sds_id": "SDS-90",
+      "summary": "Verify Script injection prevention\nwhen CSV contains malicious script text",
+      "description": "Feature: CSV bulk import for session data population\nScenario: Script injection prevention\nGiven CSV contains malicious script text\nWhen parsed\nThen input should be sanitized and not executed",
+      "acceptance": "Input should be sanitized and not executed\nThe behavior should be validated when parsed."
+    },
+    {
+      "test_id": "UTC-1156",
+      "srs_id": "SRS-90",
+      "sds_id": "SDS-90",
+      "summary": "Verify Keyboard accessibility\nwhen button focused",
+      "description": "Feature: CSV bulk import for session data population\nScenario: Keyboard accessibility\nGiven button focused\nWhen Enter/Space pressed\nThen file dialog should open",
+      "acceptance": "File dialog should open\nThe behavior should be validated when Enter/Space pressed."
+    },
+    {
+      "test_id": "UTC-1157",
+      "srs_id": "SRS-90",
+      "sds_id": "SDS-90",
+      "summary": "Verify Imported values included in payload\nwhen form auto-filled via CSV",
+      "description": "Feature: CSV bulk import for session data population\nScenario: Imported values included in payload\nGiven form auto-filled via CSV\nWhen session saved\nThen imported data should be included in API payload",
+      "acceptance": "Imported data should be included in API payload\nThe behavior should be validated when session saved."
+    }
+  ]
+}
