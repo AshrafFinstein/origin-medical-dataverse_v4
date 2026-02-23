@@ -15,13 +15,13 @@ export abstract class BasePage {
 
   // Navigation
   async goto(url: string) {
-    await this.page.goto(url);
+    await this.page.goto(url, { timeout: 60000 });
     await this.waitForPageLoad();
   }
 
   async waitForPageLoad() {
     await this.page.waitForLoadState('domcontentloaded');
-    await this.page.waitForLoadState('networkidle');
+    await this.page.waitForLoadState('networkidle').catch(() => {});
   }
 
   // Interactions

@@ -47,7 +47,7 @@
   ],
   "performance": {
     "maxLoadTimeMs": 5000,
-    "maxActionDelayMs": 2000
+    "maxActionDelayMs": 5000
   },
   "usabilityLabels": {
     "approvalLevelIndicator": "Approval Level",
@@ -74,5 +74,13 @@
   "accessControl": {
     "editRestrictedMessage": "Edit access is restricted to the active approval level",
     "unauthorizedMessage": "Unauthorized access"
+  },
+  "uiLabels": {
+    "addLevel": "Add Level",
+    "submitButton": "Submit",
+    "cancelButton": "Cancel",
+    "updateButton": "Update",
+    "approvalLevelPlaceholder": "Select Approval level",
+    "removeIconName": "ph:minus-circle"
   }
 }

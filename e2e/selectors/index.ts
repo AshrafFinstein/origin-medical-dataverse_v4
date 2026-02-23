@@ -12,6 +12,7 @@ import sessionCodes from './sessionCodes.json';
 import users from './users.json';
 import userGroup from './userGroup.json';
 import qcWorkflow from './qcWorkflow.json';
+import login from './login.json';
 
 // Type-safe selector interfaces
 export interface Selectors {
@@ -29,6 +30,7 @@ export interface Selectors {
   users: typeof users;
   userGroup: typeof userGroup;
   qcWorkflow: typeof qcWorkflow;
+  login: typeof login;
 }
 
 // Granular exports
@@ -46,6 +48,7 @@ export const SessionCodeSelectors = sessionCodes;
 export const UsersSelectors = users;
 export const UserGroupSelectors = userGroup;
 export const QcWorkflowSelectors = qcWorkflow;
+export const LoginSelectors = login;
 
 // Combined export
 export const Selectors: Selectors = {
@@ -63,6 +66,7 @@ export const Selectors: Selectors = {
   users,
   userGroup,
   qcWorkflow,
+  login,
 };
 
 /**

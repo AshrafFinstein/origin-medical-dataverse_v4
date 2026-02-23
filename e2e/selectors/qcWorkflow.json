@@ -1,8 +1,5 @@
 {
-  "qc-approval-add-level-button": "qc-approval-add-level-button",
-  "qc-approval-remove-level-button": "qc-approval-remove-level-button",
   "qc-approval-level-field": "session-approval-level-select",
-  "qc-approval-level-item": "qc-approval-level-item",
   "qc-action-send-to-qc-button": "qc-action-send-to-qc-button",
   "qc-action-accept-button": "qc-action-accept-button",
   "qc-action-reject-button": "qc-action-reject-button",
@@ -35,5 +32,9 @@
   "session-reviewers-select": "session-reviewers-select",
   "session-reviewers-select-all": "session-reviewers-select-all",
   "session-breadcrumb": "session-breadcrumb",
-  "session-table": "session-table"
+  "session-table": "session-table",
+  "qc-approval-add-level-button": "session-add-approval-level-button",
+  "qc-approval-remove-level-button": "session-remove-approval-level-button",
+  "qc-approval-level-item": "session-approval-level-item",
+  "session-name-input": "session-name-input"
 }

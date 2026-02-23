@@ -1,5 +1,6 @@
 import { test as setup } from '@playwright/test';
 import { performLogin } from '../utils/auth.service';
+import { LoginSelectors } from '../selectors';
 import * as dotenv from 'dotenv';
 import * as path from 'path';
 import * as fs from 'fs';
@@ -77,29 +78,30 @@ setup('authenticate and save storage state', async ({ browser }) => {
       console.log('   Auth0 login page detected');
 
       // Fill email/username
-      const emailInput = page.locator('input[type="email"], input[name="email"], input[name="username"], input#username').first();
+      const emailInput = page.locator(LoginSelectors['auth0-email-input']).first();
       await emailInput.waitFor({ state: 'visible', timeout: 10000 });
       await emailInput.fill(username);
 
       // Fill password
-      const passwordInput = page.locator('input[type="password"], input[name="password"], input#password').first();
+      const passwordInput = page.locator(LoginSelectors['auth0-password-input']).first();
       await passwordInput.waitFor({ state: 'visible', timeout: 10000 });
       await passwordInput.fill(password);
 
       // Short wait for any CAPTCHA to appear
       await page.waitForTimeout(2000);
 
-      // Check for CAPTCHA
-      const captchaIframe = await page.locator('iframe[src*="recaptcha"], iframe[title*="reCAPTCHA"]').count();
-      const captchaInput = await page.locator('input[name*="captcha" i], #captcha').count();
-      const captchaPresent = captchaIframe > 0 || captchaInput > 0;
+      // Check for text CAPTCHA (Auth0 image-based CAPTCHA)
+      const captchaImageCount = await page.locator(LoginSelectors['auth0-captcha-image']).count();
+      const captchaInputCount = await page.locator(LoginSelectors['auth0-captcha-input']).count();
+      const captchaContainerCount = await page.locator(LoginSelectors['auth0-captcha-container']).count();
+      const captchaPresent = captchaImageCount > 0 || captchaInputCount > 0 || captchaContainerCount > 0;
 
       if (captchaPresent) {
         console.log('');
         console.log('  ══════════════════════════════════════════════════════');
-        console.log('   CAPTCHA DETECTED — Manual action required!');
+        console.log('   TEXT CAPTCHA DETECTED — Manual action required!');
         console.log('   The browser window should be visible on your screen.');
-        console.log('   Please solve the CAPTCHA and click Continue/Submit.');
+        console.log('   Please type the distorted text and click Continue.');
         console.log('   Waiting up to 120 seconds...');
         console.log('  ══════════════════════════════════════════════════════');
         console.log('');
@@ -120,7 +122,7 @@ setup('authenticate and save storage state', async ({ browser }) => {
       } else {
         // No CAPTCHA — submit the form
         console.log('   No CAPTCHA detected — submitting login form...');
-        const submitButton = page.locator('button[type="submit"], button[name="action"], button[data-action-button-primary="true"]').first();
+        const submitButton = page.locator(LoginSelectors['auth0-submit-button']).first();
         await submitButton.click();
       }
 

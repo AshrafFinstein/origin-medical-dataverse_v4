@@ -26,7 +26,7 @@ test('My test', async ({ page }) => {
 test('My test', async ({ page }) => {
   const sessionPage = new SessionPage(page);
 
-  await sessionPage.fillSessionName('Test Session');  // ✅ Page object method
+  await sessionPage.fillSessionName(Test Session);  // ✅ Page object method
   await sessionPage.clickCreateButton();  // ✅ Page object method
   await sessionPage.verifySessionCreated();  // ✅ Page object method
 });
@@ -44,26 +44,25 @@ Store all `data-testid` selectors in JSON files:
 
 ```json
 {
-  "session-list": "[data-testid='session-list']",
-  "session-create": {
-    "button": "[data-testid='session-create-button']",
-    "modal": "[data-testid='session-create-modal']",
-    "name-input": "[data-testid='session-name-input']",
-    "description-input": "[data-testid='session-description-input']",
-    "submit-button": "[data-testid='session-submit-button']",
-    "cancel-button": "[data-testid='session-cancel-button']"
-  },
-  "session-table": {
-    "row": "[data-testid='session-table-row']",
-    "edit-button": "[data-testid='session-edit-button-{index}']",
-    "delete-button": "[data-testid='session-delete-button-{index}']"
-  }
+  "session-list": "session-list",
+
+  "session-create-button": "session-create-button",
+  "session-create-modal": "session-create-modal",
+  "session-name-input": "session-name-input",
+  "session-description-input": "session-description-input",
+  "session-submit-button": "session-submit-button",
+  "session-cancel-button": "session-cancel-button",
+
+  "session-table-row": "session-table-row",
+  "session-edit-button-{index}": "session-edit-button-{index}",
+  "session-delete-button-{index}": "session-delete-button-{index}"
 }
+
 ```
 
 ### Key Points:
-- ✅ Use `data-testid` attributes
-- ✅ Group related selectors (e.g., `session-create`)
+- ✅ Use [data-testid] attributes
+- ✅ Group related selectors (e.g., session-create)
 - ✅ Use placeholders for dynamic values (e.g., `{index}`)
 - ❌ No hardcoded CSS/XPath selectors
 
@@ -96,11 +95,11 @@ export class SessionPage {
     this.page = page;
 
     // Initialize locators from selectors
-    this.sessionList = page.locator(SessionSelectors['session-list']);
-    this.createButton = page.locator(SessionSelectors['session-create'].button);
-    this.createModal = page.locator(SessionSelectors['session-create'].modal);
-    this.nameInput = page.locator(SessionSelectors['session-create']['name-input']);
-    this.submitButton = page.locator(SessionSelectors['session-create']['submit-button']);
+    this.sessionList = page.locator(SessionSelectors[session-list]);
+    this.createButton = page.locator(SessionSelectors[session-create].button);
+    this.createModal = page.locator(SessionSelectors[session-create].modal);
+    this.nameInput = page.locator(SessionSelectors[session-create]['name-input']);
+    this.submitButton = page.locator(SessionSelectors[session-create]['submit-button']);
   }
 
   // Page object methods (business logic)
@@ -131,13 +130,13 @@ export class SessionPage {
   }
 
   async getTableRowCount(): Promise<number> {
-    const rows = this.page.locator(SessionSelectors['session-table'].row);
+    const rows = this.page.locator(SessionSelectors[session-table].row);
     return await rows.count();
   }
 
   async editSession(index: number) {
     const editButtonSelector = getDynamicSelector(
-      SessionSelectors['session-table']['edit-button'],
+      SessionSelectors[session-table]['edit-button'],
       { index }
     );
     await this.page.locator(editButtonSelector).click();
@@ -247,22 +246,21 @@ test.describe('URS-DV-GEN-002: Session Management', () => {
 ```json
 // e2e/selectors/session.json
 {
-  "approval-level": {
-    "add-button": "[data-testid='add-level-button']",
-    "field": "[data-testid='approval-level-{index}']"
-  }
+  "add-level-button": "add-level-button",
+  "approval-level-{index}": "approval-level-{index}"
 }
+
 ```
 
 ### 2. Add Method to Page Object
 ```typescript
 // e2e/pages/session.page.ts
 async clickAddLevelButton() {
-  await this.page.locator(SessionSelectors['approval-level']['add-button']).click();
+  await this.page.locator(SessionSelectors[approval-level][add-button]).click();
 }
 
 async getApprovalLevelCount(): Promise<number> {
-  const levels = this.page.locator('[data-testid^="approval-level-"]');
+  const levels = this.page.locator(this.selectors.sessionselectors[approval-level-]);
   return await levels.count();
 }
 ```
@@ -354,7 +352,7 @@ Before committing any test:
 ## 🚀 Benefits of This Architecture
 
 1. **Maintainability** - Change selector once in JSON, not in 100 tests
-2. **Readability** - `sessionPage.createSession()` vs `page.locator('button').click()`
+2. **Readability** - `sessionPage.createSession()` vs `page.locator(button).click()`
 3. **Reusability** - Page object methods used across multiple tests
 4. **Type Safety** - TypeScript catches errors at compile time
 5. **Testability** - Easy to mock page objects for unit testing
