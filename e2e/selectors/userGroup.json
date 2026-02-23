@@ -1,13 +1,11 @@
 {
-  "user-group": {
-    "create-button": "[data-testid=\"user-group-create-button\"]",
-    "table": "[data-testid=\"user-group-table\"]",
-    "create-modal": "[data-testid=\"user-group-create-modal\"]",
-    "create-name-input": "[data-testid=\"user-group-create-name-input\"]",
-    "create-description-input": "[data-testid=\"user-group-create-description-input\"]",
-    "create-select-all-assignees": "[data-testid=\"user-group-create-select-all-assignees\"]",
-    "create-assignees-select": "[data-testid=\"user-group-create-assignees-select\"]",
-    "create-cancel-button": "[data-testid=\"user-group-create-cancel-button\"]",
-    "create-submit-button": "[data-testid=\"user-group-create-submit-button\"]"
-  }
+  "user-group-create-button": "user-group-create-button",
+  "user-group-table": "user-group-table",
+  "user-group-create-modal": "user-group-create-modal",
+  "user-group-create-name-input": "user-group-create-name-input",
+  "user-group-create-description-input": "user-group-create-description-input",
+  "user-group-create-select-all-assignees": "user-group-create-select-all-assignees",
+  "user-group-create-assignees-select": "user-group-create-assignees-select",
+  "user-group-create-cancel-button": "user-group-create-cancel-button",
+  "user-group-create-submit-button": "user-group-create-submit-button"
 }

@@ -1,0 +1,355 @@
+{
+  "spec_file": "e2e/tests/annotation/URS-DV-DA-16/SRS-058/SDS-058.spec.ts",
+  "plan_urs": "URS-DV-DA-16",
+  "srs_str": "058",
+  "domain": "annotation",
+  "page_class": "AnnotationLabelsPage",
+  "page_import": "annotation-labels.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-2377",
+      "srs_id": "SRS-232",
+      "sds_id": "SDS-232",
+      "summary": "Verify Popup opens on right-click\nwhen the Annotation page is loaded with an editable image",
+      "description": "Feature: Annotation label popup on right-click\nScenario: Popup opens on right-click\nGiven the Annotation page is loaded with an editable image\nWhen the user right-clicks on the image\nThen the label selection popup should appear",
+      "acceptance": "The label selection popup should appear\nThe behavior should be validated when the user right-clicks on the image."
+    },
+    {
+      "test_id": "UTC-2378",
+      "srs_id": "SRS-232",
+      "sds_id": "SDS-232",
+      "summary": "Verify Popup components rendered\nwhen the popup is opened",
+      "description": "Feature: Annotation label popup on right-click\nScenario: Popup components rendered\nGiven the popup is opened\nWhen the popup loads\nThen search field, label list, and Apply button should be displayed",
+      "acceptance": "Search field, label list, and Apply button should be displayed\nThe behavior should be validated when the popup loads."
+    },
+    {
+      "test_id": "UTC-2379",
+      "srs_id": "SRS-232",
+      "sds_id": "SDS-232",
+      "summary": "Verify Apply button disabled by default\nwhen no label is selected",
+      "description": "Feature: Annotation label popup on right-click\nScenario: Apply button disabled by default\nGiven no label is selected\nWhen popup is displayed\nThen Apply button should remain disabled",
+      "acceptance": "Apply button should remain disabled\nThe behavior should be validated when popup is displayed."
+    },
+    {
+      "test_id": "UTC-2380",
+      "srs_id": "SRS-232",
+      "sds_id": "SDS-232",
+      "summary": "Verify Enable Apply after label selection\nwhen popup is open",
+      "description": "Feature: Annotation label popup on right-click\nScenario: Enable Apply after label selection\nGiven popup is open\nWhen the user selects at least one label\nThen Apply button should be enabled",
+      "acceptance": "Apply button should be enabled\nThe behavior should be validated when the user selects at least one label."
+    },
+    {
+      "test_id": "UTC-2381",
+      "srs_id": "SRS-232",
+      "sds_id": "SDS-232",
+      "summary": "Verify Apply attaches label to annotation\nwhen a label is selected",
+      "description": "Feature: Annotation label popup on right-click\nScenario: Apply attaches label to annotation\nGiven a label is selected\nWhen the user clicks Apply\nThen selected label should be assigned to the annotation",
+      "acceptance": "Selected label should be assigned to the annotation\nThe behavior should be validated when the user clicks Apply."
+    },
+    {
+      "test_id": "UTC-2382",
+      "srs_id": "SRS-232",
+      "sds_id": "SDS-232",
+      "summary": "Verify Search filters labels\nwhen multiple labels exist",
+      "description": "Feature: Annotation label popup on right-click\nScenario: Search filters labels\nGiven multiple labels exist\nWhen the user types text in the search field\nThen only matching labels should be displayed",
+      "acceptance": "Only matching labels should be displayed\nThe behavior should be validated when the user types text in the search field."
+    },
+    {
+      "test_id": "UTC-2383",
+      "srs_id": "SRS-232",
+      "sds_id": "SDS-232",
+      "summary": "Verify Clear search restores full list\nwhen search text is entered",
+      "description": "Feature: Annotation label popup on right-click\nScenario: Clear search restores full list\nGiven search text is entered\nWhen the user clears the search input\nThen all labels should be displayed again",
+      "acceptance": "All labels should be displayed again\nThe behavior should be validated when the user clears the search input."
+    },
+    {
+      "test_id": "UTC-2384",
+      "srs_id": "SRS-232",
+      "sds_id": "SDS-232",
+      "summary": "Verify Prevent Apply with no selection\nwhen no label selected",
+      "description": "Feature: Annotation label popup on right-click\nScenario: Prevent Apply with no selection\nGiven no label selected\nWhen user clicks Apply\nThen no action should occur",
+      "acceptance": "No action should occur\nThe behavior should be validated when user clicks Apply."
+    },
+    {
+      "test_id": "UTC-2385",
+      "srs_id": "SRS-232",
+      "sds_id": "SDS-232",
+      "summary": "Verify Popup not shown in non-editable state\nwhen image is locked or not editable",
+      "description": "Feature: Annotation label popup on right-click\nScenario: Popup not shown in non-editable state\nGiven image is locked or not editable\nWhen user right-clicks\nThen popup should not appear",
+      "acceptance": "Popup should not appear\nThe behavior should be validated when user right-clicks."
+    },
+    {
+      "test_id": "UTC-2386",
+      "srs_id": "SRS-232",
+      "sds_id": "SDS-232",
+      "summary": "Verify Multiple open/close cycles stable\nwhen popup opened and closed repeatedly",
+      "description": "Feature: Annotation label popup on right-click\nScenario: Multiple open/close cycles stable\nGiven popup opened and closed repeatedly\nWhen user reopens popup\nThen it should load correctly without UI errors",
+      "acceptance": "It should load correctly without UI errors\nThe behavior should be validated when user reopens popup."
+    },
+    {
+      "test_id": "UTC-2387",
+      "srs_id": "SRS-232",
+      "sds_id": "SDS-232",
+      "summary": "Verify Keyboard navigation support\nwhen popup is open",
+      "description": "Feature: Annotation label popup on right-click\nScenario: Keyboard navigation support\nGiven popup is open\nWhen user navigates using keyboard (Tab/Enter)\nThen controls should be focusable and selectable",
+      "acceptance": "Controls should be focusable and selectable\nThe behavior should be validated when user navigates using keyboard (Tab/Enter)."
+    },
+    {
+      "test_id": "UTC-2388",
+      "srs_id": "SRS-232",
+      "sds_id": "SDS-232",
+      "summary": "Verify Popup loads quickly\nwhen user right-clicks image",
+      "description": "Feature: Annotation label popup on right-click\nScenario: Popup loads quickly\nGiven user right-clicks image\nWhen popup renders\nThen it should appear within acceptable response time (<1s)",
+      "acceptance": "It should appear within acceptable response time (<1s)\nThe behavior should be validated when popup renders."
+    },
+    {
+      "test_id": "UTC-2389",
+      "srs_id": "SRS-233",
+      "sds_id": "SDS-233",
+      "summary": "Verify Search field visible\nwhen annotation label popup is open",
+      "description": "Feature: Label Popup – Search & Cancel Behavior\nScenario: Search field visible\nGiven annotation label popup is open\nWhen popup rendered\nThen search input should be visible at the top of the popup",
+      "acceptance": "Search input should be visible at the top of the popup\nThe behavior should be validated when popup rendered."
+    },
+    {
+      "test_id": "UTC-2390",
+      "srs_id": "SRS-233",
+      "sds_id": "SDS-233",
+      "summary": "Verify Dynamic filtering on input\nwhen search field is focused",
+      "description": "Feature: Label Popup – Search & Cancel Behavior\nScenario: Dynamic filtering on input\nGiven search field is focused\nWhen user types label text\nThen the list should update showing matching labels in real time",
+      "acceptance": "The list should update showing matching labels in real time\nThe behavior should be validated when user types label text."
+    },
+    {
+      "test_id": "UTC-2391",
+      "srs_id": "SRS-233",
+      "sds_id": "SDS-233",
+      "summary": "Verify Show full list on empty search\nwhen popup opened",
+      "description": "Feature: Label Popup – Search & Cancel Behavior\nScenario: Show full list on empty search\nGiven popup opened\nWhen search input is empty\nThen all labels should be displayed in list",
+      "acceptance": "All labels should be displayed in list\nThe behavior should be validated when search input is empty."
+    },
+    {
+      "test_id": "UTC-2392",
+      "srs_id": "SRS-233",
+      "sds_id": "SDS-233",
+      "summary": "Verify Empty state when no matches found\nwhen user types unmatched text",
+      "description": "Feature: Label Popup – Search & Cancel Behavior\nScenario: Empty state when no matches found\nGiven user types unmatched text\nWhen no matching labels exist\nThen the popup should show an empty list (empty state)",
+      "acceptance": "The popup should show an empty list (empty state)\nThe behavior should be validated when no matching labels exist."
+    },
+    {
+      "test_id": "UTC-2393",
+      "srs_id": "SRS-233",
+      "sds_id": "SDS-233",
+      "summary": "Verify Cancel clears search\nwhen the search field contains text",
+      "description": "Feature: Label Popup – Search & Cancel Behavior\nScenario: Cancel clears search\nGiven the search field contains text\nWhen user clicks the Cancel icon\nThen search field should clear and list reset to full labels",
+      "acceptance": "Search field should clear and list reset to full labels\nThe behavior should be validated when user clicks the Cancel icon."
+    },
+    {
+      "test_id": "UTC-2394",
+      "srs_id": "SRS-233",
+      "sds_id": "SDS-233",
+      "summary": "Verify Cancel closes popup\nwhen popup with search/filter state",
+      "description": "Feature: Label Popup – Search & Cancel Behavior\nScenario: Cancel closes popup\nGiven popup with search/filter state\nWhen user clicks Cancel icon\nThen popup should close and search filter cleared",
+      "acceptance": "Popup should close and search filter cleared\nThe behavior should be validated when user clicks Cancel icon."
+    },
+    {
+      "test_id": "UTC-2395",
+      "srs_id": "SRS-233",
+      "sds_id": "SDS-233",
+      "summary": "Verify No error on empty search\nwhen popup open",
+      "description": "Feature: Label Popup – Search & Cancel Behavior\nScenario: No error on empty search\nGiven popup open\nWhen search yields no results\nThen no error message should throw, just empty list",
+      "acceptance": "No error message should throw, just empty list\nThe behavior should be validated when search yields no results."
+    },
+    {
+      "test_id": "UTC-2396",
+      "srs_id": "SRS-233",
+      "sds_id": "SDS-233",
+      "summary": "Verify Search responsiveness\nwhen multiple labels exist",
+      "description": "Feature: Label Popup – Search & Cancel Behavior\nScenario: Search responsiveness\nGiven multiple labels exist\nWhen user types text quickly\nThen filtering should respond instantly (no lag)",
+      "acceptance": "Filtering should respond instantly (no lag)\nThe behavior should be validated when user types text quickly."
+    },
+    {
+      "test_id": "UTC-2397",
+      "srs_id": "SRS-233",
+      "sds_id": "SDS-233",
+      "summary": "Verify Keyboard support for Cancel\nwhen search field has focus",
+      "description": "Feature: Label Popup – Search & Cancel Behavior\nScenario: Keyboard support for Cancel\nGiven search field has focus\nWhen user presses Escape or Tab to Cancel icon and activates it\nThen search should clear and popup reset",
+      "acceptance": "Search should clear and popup reset\nThe behavior should be validated when user presses Escape or Tab to Cancel icon and activates it."
+    },
+    {
+      "test_id": "UTC-2398",
+      "srs_id": "SRS-233",
+      "sds_id": "SDS-233",
+      "summary": "Verify Ignore search if popup closed\nwhen popup is closed",
+      "description": "Feature: Label Popup – Search & Cancel Behavior\nScenario: Ignore search if popup closed\nGiven popup is closed\nWhen user types in other page area\nThen no label filtering or popup should occur",
+      "acceptance": "No label filtering or popup should occur\nThe behavior should be validated when user types in other page area."
+    },
+    {
+      "test_id": "UTC-2399",
+      "srs_id": "SRS-233",
+      "sds_id": "SDS-233",
+      "summary": "Verify Cancel stable after repeated use\nwhen repeated open/search/cancel cycles",
+      "description": "Feature: Label Popup – Search & Cancel Behavior\nScenario: Cancel stable after repeated use\nGiven repeated open/search/cancel cycles\nWhen actions repeat\nThen popup behavior should remain consistent",
+      "acceptance": "Popup behavior should remain consistent\nThe behavior should be validated when actions repeat."
+    },
+    {
+      "test_id": "UTC-2400",
+      "srs_id": "SRS-233",
+      "sds_id": "SDS-233",
+      "summary": "Verify Search field visible\nwhen annotation label popup is open",
+      "description": "Feature: Label Popup – Search & Cancel Behavior\nScenario: Search field visible\nGiven annotation label popup is open\nWhen popup rendered\nThen search input should be visible at the top of the popup",
+      "acceptance": "Search input should be visible at the top of the popup\nThe behavior should be validated when popup rendered."
+    },
+    {
+      "test_id": "UTC-2401",
+      "srs_id": "SRS-233",
+      "sds_id": "SDS-233",
+      "summary": "Verify Dynamic filtering on input\nwhen search field is focused",
+      "description": "Feature: Label Popup – Search & Cancel Behavior\nScenario: Dynamic filtering on input\nGiven search field is focused\nWhen user types label text\nThen the list should update showing matching labels in real time",
+      "acceptance": "The list should update showing matching labels in real time\nThe behavior should be validated when user types label text."
+    },
+    {
+      "test_id": "UTC-2402",
+      "srs_id": "SRS-233",
+      "sds_id": "SDS-233",
+      "summary": "Verify Show full list on empty search\nwhen popup opened",
+      "description": "Feature: Label Popup – Search & Cancel Behavior\nScenario: Show full list on empty search\nGiven popup opened\nWhen search input is empty\nThen all labels should be displayed in list",
+      "acceptance": "All labels should be displayed in list\nThe behavior should be validated when search input is empty."
+    },
+    {
+      "test_id": "UTC-2403",
+      "srs_id": "SRS-233",
+      "sds_id": "SDS-233",
+      "summary": "Verify Empty state when no matches found\nwhen user types unmatched text",
+      "description": "Feature: Label Popup – Search & Cancel Behavior\nScenario: Empty state when no matches found\nGiven user types unmatched text\nWhen no matching labels exist\nThen the popup should show an empty list (empty state)",
+      "acceptance": "The popup should show an empty list (empty state)\nThe behavior should be validated when no matching labels exist."
+    },
+    {
+      "test_id": "UTC-2404",
+      "srs_id": "SRS-233",
+      "sds_id": "SDS-233",
+      "summary": "Verify Cancel clears search\nwhen the search field contains text",
+      "description": "Feature: Label Popup – Search & Cancel Behavior\nScenario: Cancel clears search\nGiven the search field contains text\nWhen user clicks the Cancel icon\nThen search field should clear and list reset to full labels",
+      "acceptance": "Search field should clear and list reset to full labels\nThe behavior should be validated when user clicks the Cancel icon."
+    },
+    {
+      "test_id": "UTC-2405",
+      "srs_id": "SRS-233",
+      "sds_id": "SDS-233",
+      "summary": "Verify Cancel closes popup\nwhen popup with search/filter state",
+      "description": "Feature: Label Popup – Search & Cancel Behavior\nScenario: Cancel closes popup\nGiven popup with search/filter state\nWhen user clicks Cancel icon\nThen popup should close and search filter cleared",
+      "acceptance": "Popup should close and search filter cleared\nThe behavior should be validated when user clicks Cancel icon."
+    },
+    {
+      "test_id": "UTC-2406",
+      "srs_id": "SRS-233",
+      "sds_id": "SDS-233",
+      "summary": "Verify No error on empty search\nwhen popup open",
+      "description": "Feature: Label Popup – Search & Cancel Behavior\nScenario: No error on empty search\nGiven popup open\nWhen search yields no results\nThen no error message should throw, just empty list",
+      "acceptance": "No error message should throw, just empty list\nThe behavior should be validated when search yields no results."
+    },
+    {
+      "test_id": "UTC-2407",
+      "srs_id": "SRS-233",
+      "sds_id": "SDS-233",
+      "summary": "Verify Search responsiveness\nwhen multiple labels exist",
+      "description": "Feature: Label Popup – Search & Cancel Behavior\nScenario: Search responsiveness\nGiven multiple labels exist\nWhen user types text quickly\nThen filtering should respond instantly (no lag)",
+      "acceptance": "Filtering should respond instantly (no lag)\nThe behavior should be validated when user types text quickly."
+    },
+    {
+      "test_id": "UTC-2408",
+      "srs_id": "SRS-233",
+      "sds_id": "SDS-233",
+      "summary": "Verify Keyboard support for Cancel\nwhen search field has focus",
+      "description": "Feature: Label Popup – Search & Cancel Behavior\nScenario: Keyboard support for Cancel\nGiven search field has focus\nWhen user presses Escape or Tab to Cancel icon and activates it\nThen search should clear and popup reset",
+      "acceptance": "Search should clear and popup reset\nThe behavior should be validated when user presses Escape or Tab to Cancel icon and activates it."
+    },
+    {
+      "test_id": "UTC-2409",
+      "srs_id": "SRS-233",
+      "sds_id": "SDS-233",
+      "summary": "Verify Ignore search if popup closed\nwhen popup is closed",
+      "description": "Feature: Label Popup – Search & Cancel Behavior\nScenario: Ignore search if popup closed\nGiven popup is closed\nWhen user types in other page area\nThen no label filtering or popup should occur",
+      "acceptance": "No label filtering or popup should occur\nThe behavior should be validated when user types in other page area."
+    },
+    {
+      "test_id": "UTC-2410",
+      "srs_id": "SRS-233",
+      "sds_id": "SDS-233",
+      "summary": "Verify Cancel stable after repeated use\nwhen repeated open/search/cancel cycles",
+      "description": "Feature: Label Popup – Search & Cancel Behavior\nScenario: Cancel stable after repeated use\nGiven repeated open/search/cancel cycles\nWhen actions repeat\nThen popup behavior should remain consistent",
+      "acceptance": "Popup behavior should remain consistent\nThe behavior should be validated when actions repeat."
+    },
+    {
+      "test_id": "UTC-2411",
+      "srs_id": "SRS-234",
+      "sds_id": "SDS-234",
+      "summary": "Verify Checkbox visibility\nwhen annotation label popup is opened",
+      "description": "Feature: Label Popup – Single & Multiple Label Selection\nScenario: Checkbox visibility\nGiven annotation label popup is opened\nWhen labels are displayed\nThen each label should show a checkbox control",
+      "acceptance": "Each label should show a checkbox control\nThe behavior should be validated when labels are displayed."
+    },
+    {
+      "test_id": "UTC-2412",
+      "srs_id": "SRS-234",
+      "sds_id": "SDS-234",
+      "summary": "Verify Single label selection\nwhen popup open",
+      "description": "Feature: Label Popup – Single & Multiple Label Selection\nScenario: Single label selection\nGiven popup open\nWhen user selects one checkbox\nThen that label should be marked selected",
+      "acceptance": "That label should be marked selected\nThe behavior should be validated when user selects one checkbox."
+    },
+    {
+      "test_id": "UTC-2413",
+      "srs_id": "SRS-234",
+      "sds_id": "SDS-234",
+      "summary": "Verify Multiple label selection\nwhen popup open",
+      "description": "Feature: Label Popup – Single & Multiple Label Selection\nScenario: Multiple label selection\nGiven popup open\nWhen user selects multiple checkboxes\nThen all selected labels should remain checked simultaneously",
+      "acceptance": "All selected labels should remain checked simultaneously\nThe behavior should be validated when user selects multiple checkboxes."
+    },
+    {
+      "test_id": "UTC-2414",
+      "srs_id": "SRS-234",
+      "sds_id": "SDS-234",
+      "summary": "Verify Deselect label\nwhen labels selected",
+      "description": "Feature: Label Popup – Single & Multiple Label Selection\nScenario: Deselect label\nGiven labels selected\nWhen user unchecks a checkbox\nThen the label should be removed from selection list",
+      "acceptance": "The label should be removed from selection list\nThe behavior should be validated when user unchecks a checkbox."
+    },
+    {
+      "test_id": "UTC-2415",
+      "srs_id": "SRS-234",
+      "sds_id": "SDS-234",
+      "summary": "Verify Apply button disabled by default\nwhen popup opens with no selections",
+      "description": "Feature: Label Popup – Single & Multiple Label Selection\nScenario: Apply button disabled by default\nGiven popup opens with no selections\nWhen no label selected\nThen Apply button should remain disabled",
+      "acceptance": "Apply button should remain disabled\nThe behavior should be validated when no label selected."
+    },
+    {
+      "test_id": "UTC-2416",
+      "srs_id": "SRS-234",
+      "sds_id": "SDS-234",
+      "summary": "Verify Apply button enabled on selection\nwhen at least one label selected",
+      "description": "Feature: Label Popup – Single & Multiple Label Selection\nScenario: Apply button enabled on selection\nGiven at least one label selected\nWhen selection occurs\nThen Apply button should become enabled",
+      "acceptance": "Apply button should become enabled\nThe behavior should be validated when selection occurs."
+    },
+    {
+      "test_id": "UTC-2417",
+      "srs_id": "SRS-234",
+      "sds_id": "SDS-234",
+      "summary": "Verify Apply multiple labels to image\nwhen multiple labels selected",
+      "description": "Feature: Label Popup – Single & Multiple Label Selection\nScenario: Apply multiple labels to image\nGiven multiple labels selected\nWhen user clicks Apply\nThen all selected labels should be attached to the image",
+      "acceptance": "All selected labels should be attached to the image\nThe behavior should be validated when user clicks Apply."
+    },
+    {
+      "test_id": "UTC-2418",
+      "srs_id": "SRS-234",
+      "sds_id": "SDS-234",
+      "summary": "Verify Selection stored in state\nwhen labels selected",
+      "description": "Feature: Label Popup – Single & Multiple Label Selection\nScenario: Selection stored in state\nGiven labels selected\nWhen inspecting payload\nThen selected label IDs should be included in request payload array",
+      "acceptance": "Selected label IDs should be included in request payload array\nThe behavior should be validated when inspecting payload."
+    },
+    {
+      "test_id": "UTC-2419",
+      "srs_id": "SRS-234",
+      "sds_id": "SDS-234",
+      "summary": "Verify Stable selection behavior\nwhen repeated select/unselect actions",
+      "description": "Feature: Label Popup – Single & Multiple Label Selection\nScenario: Stable selection behavior\nGiven repeated select/unselect actions\nWhen user toggles quickly\nThen UI should remain stable without duplication",
+      "acceptance": "UI should remain stable without duplication\nThe behavior should be validated when user toggles quickly."
+    }
+  ]
+}

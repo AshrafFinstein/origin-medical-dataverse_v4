@@ -1,0 +1,363 @@
+{
+  "spec_file": "e2e/tests/analysis-modal/URS-DV-AN-02/SRS-007/SDS-007.spec.ts",
+  "plan_urs": "URS-DV-AN-02",
+  "srs_str": "007",
+  "domain": "analysis-modal",
+  "page_class": "AnalysisModalPage",
+  "page_import": "analysis-modal.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-134",
+      "srs_id": "SRS-14",
+      "sds_id": "SDS-14",
+      "summary": "Verify Label combination aggregation and counting\nwhen backend query executes",
+      "description": "Feature: Label combination aggregation and counting\nGiven backend query executes\nWhen SQL grouping occurs\nThen grouping should occur by extractedResourceId arrays before count",
+      "acceptance": "Grouping should occur by extractedResourceId arrays before count\nThe behavior should be validated when SQL grouping occurs."
+    },
+    {
+      "test_id": "UTC-135",
+      "srs_id": "SRS-14",
+      "sds_id": "SDS-14",
+      "summary": "Verify Label combination aggregation and counting\nwhen aggregation completes",
+      "description": "Feature: Label combination aggregation and counting\nGiven aggregation completes\nWhen API responds\nThen response format should be { labelName: string, count: number }",
+      "acceptance": "Response format should be { labelName: string, count: number }\nThe behavior should be validated when API responds."
+    },
+    {
+      "test_id": "UTC-136",
+      "srs_id": "SRS-14",
+      "sds_id": "SDS-14",
+      "summary": "Verify Label combination aggregation and counting\nwhen table renders",
+      "description": "Feature: Label combination aggregation and counting\nGiven table renders\nWhen viewing each row\nThen label combination name and count should be clearly visible",
+      "acceptance": "Label combination name and count should be clearly visible\nThe behavior should be validated when viewing each row."
+    },
+    {
+      "test_id": "UTC-137",
+      "srs_id": "SRS-14",
+      "sds_id": "SDS-14",
+      "summary": "Verify Label combination aggregation and counting\nwhen large dataset (1000+ images)",
+      "description": "Feature: Label combination aggregation and counting\nGiven large dataset (1000+ images)\nWhen aggregation runs\nThen results should display correctly without duplication",
+      "acceptance": "Results should display correctly without duplication\nThe behavior should be validated when aggregation runs."
+    },
+    {
+      "test_id": "UTC-138",
+      "srs_id": "SRS-14",
+      "sds_id": "SDS-14",
+      "summary": "Verify Label combination aggregation and counting\nwhen large dataset",
+      "description": "Feature: Label combination aggregation and counting\nGiven large dataset\nWhen Label Analysis loads\nThen aggregation should complete within acceptable time (<2s)",
+      "acceptance": "Aggregation should complete within acceptable time (<2s)\nThe behavior should be validated when Label Analysis loads."
+    },
+    {
+      "test_id": "UTC-139",
+      "srs_id": "SRS-14",
+      "sds_id": "SDS-14",
+      "summary": "Verify Label combination aggregation and counting\nwhen backend fails to fetch labels",
+      "description": "Feature: Label combination aggregation and counting\nGiven backend fails to fetch labels\nWhen API returns error\nThen system should show “Failed to fetch” message without breaking modal",
+      "acceptance": "System should show \"Failed to fetch\" message without breaking modal\nThe behavior should be validated when API returns error."
+    },
+    {
+      "test_id": "UTC-140",
+      "srs_id": "SRS-14",
+      "sds_id": "SDS-14",
+      "summary": "Verify Label combination aggregation and counting\nwhen multiple combinations exist",
+      "description": "Feature: Label combination aggregation and counting\nGiven multiple combinations exist\nWhen viewing list\nThen rows should be sorted consistently and readable",
+      "acceptance": "Rows should be sorted consistently and readable\nThe behavior should be validated when viewing list."
+    },
+    {
+      "test_id": "UTC-141",
+      "srs_id": "SRS-14",
+      "sds_id": "SDS-14",
+      "summary": "Verify Label combination aggregation and counting\nwhen session has zero labeled images",
+      "description": "Feature: Label combination aggregation and counting\nGiven session has zero labeled images\nWhen Label Analysis loads\nThen system should show empty state or “No Data” message",
+      "acceptance": "System should show empty state or \"No Data\" message\nThe behavior should be validated when Label Analysis loads."
+    },
+    {
+      "test_id": "UTC-142",
+      "srs_id": "SRS-15",
+      "sds_id": "SDS-15",
+      "summary": "Verify Hierarchical annotation count analysis\nwhen session contains annotated images",
+      "description": "Feature: Hierarchical annotation count analysis\nGiven session contains annotated images\nWhen Annotation Analysis tab opens\nThen the system should display aggregated annotation rows with counts",
+      "acceptance": "The system should display aggregated annotation rows with counts\nThe behavior should be validated when Annotation Analysis tab opens."
+    },
+    {
+      "test_id": "UTC-143",
+      "srs_id": "SRS-15",
+      "sds_id": "SDS-15",
+      "summary": "Verify Hierarchical annotation count analysis\nwhen parent annotations exist",
+      "description": "Feature: Hierarchical annotation count analysis\nGiven parent annotations exist\nWhen aggregation runs\nThen each parent annotation should display its total count",
+      "acceptance": "Each parent annotation should display its total count\nThe behavior should be validated when aggregation runs."
+    },
+    {
+      "test_id": "UTC-144",
+      "srs_id": "SRS-15",
+      "sds_id": "SDS-15",
+      "summary": "Verify Hierarchical annotation count analysis\nwhen child taxonomy annotations exist",
+      "description": "Feature: Hierarchical annotation count analysis\nGiven child taxonomy annotations exist\nWhen aggregation runs\nThen each child annotation should display its total count",
+      "acceptance": "Each child annotation should display its total count\nThe behavior should be validated when aggregation runs."
+    },
+    {
+      "test_id": "UTC-145",
+      "srs_id": "SRS-15",
+      "sds_id": "SDS-15",
+      "summary": "Verify Hierarchical annotation count analysis\nwhen multiple images share same parent annotation",
+      "description": "Feature: Hierarchical annotation count analysis\nGiven multiple images share same parent annotation\nWhen grouped\nThen count should equal total occurrences across all images",
+      "acceptance": "Count should equal total occurrences across all images\nThe behavior should be validated when grouped."
+    },
+    {
+      "test_id": "UTC-146",
+      "srs_id": "SRS-15",
+      "sds_id": "SDS-15",
+      "summary": "Verify Hierarchical annotation count analysis\nwhen multiple images share same child taxonomy",
+      "description": "Feature: Hierarchical annotation count analysis\nGiven multiple images share same child taxonomy\nWhen grouped\nThen child count should equal correct total",
+      "acceptance": "Child count should equal correct total\nThe behavior should be validated when grouped."
+    },
+    {
+      "test_id": "UTC-147",
+      "srs_id": "SRS-15",
+      "sds_id": "SDS-15",
+      "summary": "Verify Hierarchical annotation count analysis\nwhen both parent and child annotations exist",
+      "description": "Feature: Hierarchical annotation count analysis\nGiven both parent and child annotations exist\nWhen response is returned\nThen both should appear in one unified list",
+      "acceptance": "Both should appear in one unified list\nThe behavior should be validated when response is returned."
+    },
+    {
+      "test_id": "UTC-148",
+      "srs_id": "SRS-15",
+      "sds_id": "SDS-15",
+      "summary": "Verify Hierarchical annotation count analysis\nwhen backend query executes",
+      "description": "Feature: Hierarchical annotation count analysis\nGiven backend query executes\nWhen SQL runs\nThen UNION ALL should combine parent and child queries",
+      "acceptance": "UNION ALL should combine parent and child queries\nThe behavior should be validated when SQL runs."
+    },
+    {
+      "test_id": "UTC-149",
+      "srs_id": "SRS-15",
+      "sds_id": "SDS-15",
+      "summary": "Verify Hierarchical annotation count analysis\nwhen API returns results",
+      "description": "Feature: Hierarchical annotation count analysis\nGiven API returns results\nWhen inspecting payload\nThen each object should contain name, count, and isChild flag",
+      "acceptance": "Each object should contain name, count, and isChild flag\nThe behavior should be validated when inspecting payload."
+    },
+    {
+      "test_id": "UTC-150",
+      "srs_id": "SRS-15",
+      "sds_id": "SDS-15",
+      "summary": "Verify Hierarchical annotation count analysis\nwhen UI renders results",
+      "description": "Feature: Hierarchical annotation count analysis\nGiven UI renders results\nWhen viewing table\nThen parent and child annotations should appear uniformly formatted",
+      "acceptance": "Parent and child annotations should appear uniformly formatted\nThe behavior should be validated when viewing table."
+    },
+    {
+      "test_id": "UTC-151",
+      "srs_id": "SRS-15",
+      "sds_id": "SDS-15",
+      "summary": "Verify Hierarchical annotation count analysis\nwhen a parent has multiple children",
+      "description": "Feature: Hierarchical annotation count analysis\nGiven a parent has multiple children\nWhen displayed\nThen children should appear clearly associated with their parent",
+      "acceptance": "Children should appear clearly associated with their parent\nThe behavior should be validated when displayed."
+    },
+    {
+      "test_id": "UTC-152",
+      "srs_id": "SRS-15",
+      "sds_id": "SDS-15",
+      "summary": "Verify Hierarchical annotation count analysis\nwhen child annotation has no valid parent",
+      "description": "Feature: Hierarchical annotation count analysis\nGiven child annotation has no valid parent\nWhen aggregation runs\nThen it should be excluded from UI",
+      "acceptance": "It should be excluded from UI\nThe behavior should be validated when aggregation runs."
+    },
+    {
+      "test_id": "UTC-153",
+      "srs_id": "SRS-15",
+      "sds_id": "SDS-15",
+      "summary": "Verify Hierarchical annotation count analysis\nwhen orphan child exists",
+      "description": "Feature: Hierarchical annotation count analysis\nGiven orphan child exists\nWhen processed\nThen system should log warning for monitoring",
+      "acceptance": "System should log warning for monitoring\nThe behavior should be validated when processed."
+    },
+    {
+      "test_id": "UTC-154",
+      "srs_id": "SRS-15",
+      "sds_id": "SDS-15",
+      "summary": "Verify Hierarchical annotation count analysis\nwhen large dataset (1000+ annotations)",
+      "description": "Feature: Hierarchical annotation count analysis\nGiven large dataset (1000+ annotations)\nWhen loading analysis\nThen results should load within acceptable time (<2s)",
+      "acceptance": "Results should load within acceptable time (<2s)\nThe behavior should be validated when loading analysis."
+    },
+    {
+      "test_id": "UTC-155",
+      "srs_id": "SRS-15",
+      "sds_id": "SDS-15",
+      "summary": "Verify Hierarchical annotation count analysis\nwhen repeated refresh",
+      "description": "Feature: Hierarchical annotation count analysis\nGiven repeated refresh\nWhen reloading analysis\nThen counts should remain consistent without duplication",
+      "acceptance": "Counts should remain consistent without duplication\nThe behavior should be validated when reloading analysis."
+    },
+    {
+      "test_id": "UTC-156",
+      "srs_id": "SRS-15",
+      "sds_id": "SDS-15",
+      "summary": "Verify Hierarchical annotation count analysis\nwhen multiple annotations displayed",
+      "description": "Feature: Hierarchical annotation count analysis\nGiven multiple annotations displayed\nWhen viewing list\nThen annotation names and counts should be readable and aligned",
+      "acceptance": "Annotation names and counts should be readable and aligned\nThe behavior should be validated when viewing list."
+    },
+    {
+      "test_id": "UTC-157",
+      "srs_id": "SRS-15",
+      "sds_id": "SDS-15",
+      "summary": "Verify Hierarchical annotation count analysis\nwhen backend fails to fetch data",
+      "description": "Feature: Hierarchical annotation count analysis\nGiven backend fails to fetch data\nWhen API returns error\nThen “Failed to fetch” toast should appear and table should not crash",
+      "acceptance": "\"Failed to fetch\" toast should appear and table should not crash\nThe behavior should be validated when API returns error."
+    },
+    {
+      "test_id": "UTC-158",
+      "srs_id": "SRS-15",
+      "sds_id": "SDS-15",
+      "summary": "Verify Hierarchical annotation count analysis\nwhen no annotations exist",
+      "description": "Feature: Hierarchical annotation count analysis\nGiven no annotations exist\nWhen analysis loads\nThen “No Data” empty state should be displayed",
+      "acceptance": "\"No Data\" empty state should be displayed\nThe behavior should be validated when analysis loads."
+    },
+    {
+      "test_id": "UTC-159",
+      "srs_id": "SRS-16",
+      "sds_id": "SDS-16",
+      "summary": "Verify Status aggregation with conditional level formatting\nwhen session contains images with various statuses",
+      "description": "Feature: Status aggregation with conditional level formatting\nGiven session contains images with various statuses\nWhen Status Analysis tab opens\nThen system should display grouped rows with counts per status",
+      "acceptance": "System should display grouped rows with counts per status\nThe behavior should be validated when Status Analysis tab opens."
+    },
+    {
+      "test_id": "UTC-160",
+      "srs_id": "SRS-16",
+      "sds_id": "SDS-16",
+      "summary": "Verify Status aggregation with conditional level formatting\nwhen images in PENDING status exist",
+      "description": "Feature: Status aggregation with conditional level formatting\nGiven images in PENDING status exist\nWhen aggregation runs\nThen PENDING should be shown as a separate row with correct count",
+      "acceptance": "PENDING should be shown as a separate row with correct count\nThe behavior should be validated when aggregation runs."
+    },
+    {
+      "test_id": "UTC-161",
+      "srs_id": "SRS-16",
+      "sds_id": "SDS-16",
+      "summary": "Verify Status aggregation with conditional level formatting\nwhen images in IN_REVIEW at Level 1",
+      "description": "Feature: Status aggregation with conditional level formatting\nGiven images in IN_REVIEW at Level 1\nWhen results are displayed\nThen status should show as “IN_REVIEW – L1”",
+      "acceptance": "Status should show as \"IN_REVIEW â€“ L1\"\nThe behavior should be validated when results are displayed."
+    },
+    {
+      "test_id": "UTC-162",
+      "srs_id": "SRS-16",
+      "sds_id": "SDS-16",
+      "summary": "Verify Status aggregation with conditional level formatting\nwhen images in IN_REVIEW at Level 3",
+      "description": "Feature: Status aggregation with conditional level formatting\nGiven images in IN_REVIEW at Level 3\nWhen aggregated\nThen status should show “IN_REVIEW – L3”",
+      "acceptance": "Status should show \"IN_REVIEW â€“ L3\"\nThe behavior should be validated when aggregated."
+    },
+    {
+      "test_id": "UTC-163",
+      "srs_id": "SRS-16",
+      "sds_id": "SDS-16",
+      "summary": "Verify Status aggregation with conditional level formatting\nwhen images in REJECTED at Level 2",
+      "description": "Feature: Status aggregation with conditional level formatting\nGiven images in REJECTED at Level 2\nWhen displayed\nThen status should show “REJECTED – L2”",
+      "acceptance": "Status should show \"REJECTED â€“ L2\"\nThe behavior should be validated when displayed."
+    },
+    {
+      "test_id": "UTC-164",
+      "srs_id": "SRS-16",
+      "sds_id": "SDS-16",
+      "summary": "Verify Status aggregation with conditional level formatting\nwhen multiple images share same status and level",
+      "description": "Feature: Status aggregation with conditional level formatting\nGiven multiple images share same status and level\nWhen grouped\nThen count should equal total matching records",
+      "acceptance": "Count should equal total matching records\nThe behavior should be validated when grouped."
+    },
+    {
+      "test_id": "UTC-165",
+      "srs_id": "SRS-16",
+      "sds_id": "SDS-16",
+      "summary": "Verify Status aggregation with conditional level formatting\nwhen images exist across different levels",
+      "description": "Feature: Status aggregation with conditional level formatting\nGiven images exist across different levels\nWhen aggregated\nThen each level should appear as a separate grouped row",
+      "acceptance": "Each level should appear as a separate grouped row\nThe behavior should be validated when aggregated."
+    },
+    {
+      "test_id": "UTC-166",
+      "srs_id": "SRS-16",
+      "sds_id": "SDS-16",
+      "summary": "Verify Status aggregation with conditional level formatting\nwhen backend executes query",
+      "description": "Feature: Status aggregation with conditional level formatting\nGiven backend executes query\nWhen CTE runs\nThen status and approval level should be combined before response",
+      "acceptance": "Status and approval level should be combined before response\nThe behavior should be validated when CTE runs."
+    },
+    {
+      "test_id": "UTC-167",
+      "srs_id": "SRS-16",
+      "sds_id": "SDS-16",
+      "summary": "Verify Status aggregation with conditional level formatting\nwhen API response received",
+      "description": "Feature: Status aggregation with conditional level formatting\nGiven API response received\nWhen inspecting payload\nThen formatted status name and count should be precomputed by backend",
+      "acceptance": "Formatted status name and count should be precomputed by backend\nThe behavior should be validated when inspecting payload."
+    },
+    {
+      "test_id": "UTC-168",
+      "srs_id": "SRS-16",
+      "sds_id": "SDS-16",
+      "summary": "Verify Status aggregation with conditional level formatting\nwhen statuses displayed",
+      "description": "Feature: Status aggregation with conditional level formatting\nGiven statuses displayed\nWhen viewing UI\nThen each status should show readable badge/label formatting",
+      "acceptance": "Each status should show readable badge/label formatting\nThe behavior should be validated when viewing UI."
+    },
+    {
+      "test_id": "UTC-169",
+      "srs_id": "SRS-16",
+      "sds_id": "SDS-16",
+      "summary": "Verify Status aggregation with conditional level formatting\nwhen mixed statuses exist",
+      "description": "Feature: Status aggregation with conditional level formatting\nGiven mixed statuses exist\nWhen aggregated\nThen each distinct combination should appear only once",
+      "acceptance": "Each distinct combination should appear only once\nThe behavior should be validated when aggregated."
+    },
+    {
+      "test_id": "UTC-170",
+      "srs_id": "SRS-16",
+      "sds_id": "SDS-16",
+      "summary": "Verify Status aggregation with conditional level formatting\nwhen no images exist",
+      "description": "Feature: Status aggregation with conditional level formatting\nGiven no images exist\nWhen analysis loads\nThen “No Data” state should appear",
+      "acceptance": "\"No Data\" state should appear\nThe behavior should be validated when analysis loads."
+    },
+    {
+      "test_id": "UTC-171",
+      "srs_id": "SRS-16",
+      "sds_id": "SDS-16",
+      "summary": "Verify Status aggregation with conditional level formatting\nwhen large dataset (>10k images)",
+      "description": "Feature: Status aggregation with conditional level formatting\nGiven large dataset (>10k images)\nWhen analysis loads\nThen aggregation should complete within acceptable time (<2s)",
+      "acceptance": "Aggregation should complete within acceptable time (<2s)\nThe behavior should be validated when analysis loads."
+    },
+    {
+      "test_id": "UTC-172",
+      "srs_id": "SRS-16",
+      "sds_id": "SDS-16",
+      "summary": "Verify Status aggregation with conditional level formatting\nwhen repeated refresh",
+      "description": "Feature: Status aggregation with conditional level formatting\nGiven repeated refresh\nWhen analysis reloads\nThen counts remain consistent",
+      "acceptance": "Counts remain consistent\nThe behavior should be validated when analysis reloads."
+    },
+    {
+      "test_id": "UTC-173",
+      "srs_id": "SRS-16",
+      "sds_id": "SDS-16",
+      "summary": "Verify Status aggregation with conditional level formatting\nwhen backend error occurs",
+      "description": "Feature: Status aggregation with conditional level formatting\nGiven backend error occurs\nWhen request fails\nThen empty data returned and notification displayed",
+      "acceptance": "Empty data returned and notification displayed\nThe behavior should be validated when request fails."
+    },
+    {
+      "test_id": "UTC-174",
+      "srs_id": "SRS-16",
+      "sds_id": "SDS-16",
+      "summary": "Verify Status aggregation with conditional level formatting\nwhen invalid status value exists",
+      "description": "Feature: Status aggregation with conditional level formatting\nGiven invalid status value exists\nWhen aggregated\nThen record should be ignored or logged without breaking UI",
+      "acceptance": "Record should be ignored or logged without breaking UI\nThe behavior should be validated when aggregated."
+    },
+    {
+      "test_id": "UTC-175",
+      "srs_id": "SRS-16",
+      "sds_id": "SDS-16",
+      "summary": "Verify Status aggregation with conditional level formatting\nwhen multiple statuses displayed",
+      "description": "Feature: Status aggregation with conditional level formatting\nGiven multiple statuses displayed\nWhen user views table\nThen labels should be clearly readable and distinguishable",
+      "acceptance": "Labels should be clearly readable and distinguishable\nThe behavior should be validated when user views table."
+    },
+    {
+      "test_id": "UTC-176",
+      "srs_id": "SRS-17",
+      "sds_id": "SDS-17",
+      "summary": "Verify Concurrent Promise Execution\nwhen session grid loads",
+      "description": "Feature: Concurrent Promise Execution\nGiven session grid loads\nWhen API endpoint is triggered\nThen main data, count, and filter queries should execute simultaneously",
+      "acceptance": "Main data, count, and filter queries should execute simultaneously\nThe behavior should be validated when API endpoint is triggered."
+    },
+    {
+      "test_id": "UTC-177",
+      "srs_id": "SRS-17",
+      "sds_id": "SDS-17",
+      "summary": "Verify Concurrent Promise Execution\nwhen three queries configured",
+      "description": "Feature: Concurrent Promise Execution\nGiven three queries configured\nWhen executed concurrently\nThen total response time should approximate the slowest query, not the sum",
+      "acceptance": "Total response time should approximate the slowest query, not the sum\nThe behavior should be validated when executed concurrently."
+    }
+  ]
+}

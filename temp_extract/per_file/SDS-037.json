@@ -1,0 +1,299 @@
+{
+  "spec_file": "e2e/tests/annotation/URS-DV-DA-09/SRS-037/SDS-037.spec.ts",
+  "plan_urs": "URS-DV-DA-09",
+  "srs_str": "037",
+  "domain": "annotation",
+  "page_class": "DataLabellingPage",
+  "page_import": "data-labelling.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-1340",
+      "srs_id": "SRS-102",
+      "sds_id": "SDS-102",
+      "summary": "Verify Toolbar visibility\nwhen annotation screen loads",
+      "description": "Feature: Annotation toolbar lock/unlock state controls\nScenario: Toolbar visibility\nGiven annotation screen loads\nWhen toolbar renders\nThen Lock and Unlock icons should be visible",
+      "acceptance": "Lock and Unlock icons should be visible\nThe behavior should be validated when toolbar renders."
+    },
+    {
+      "test_id": "UTC-1341",
+      "srs_id": "SRS-102",
+      "sds_id": "SDS-102",
+      "summary": "Verify Icons displayed in header\nwhen annotation list displayed",
+      "description": "Feature: Annotation toolbar lock/unlock state controls\nScenario: Icons displayed in header\nGiven annotation list displayed\nWhen header loads\nThen Lock/Unlock controls should appear near anatomy types",
+      "acceptance": "Lock/Unlock controls should appear near anatomy types\nThe behavior should be validated when header loads."
+    },
+    {
+      "test_id": "UTC-1342",
+      "srs_id": "SRS-102",
+      "sds_id": "SDS-102",
+      "summary": "Verify Lock action disables editing\nwhen annotation is editable",
+      "description": "Feature: Annotation toolbar lock/unlock state controls\nScenario: Lock action disables editing\nGiven annotation is editable\nWhen user clicks Lock\nThen editing controls should be disabled",
+      "acceptance": "Editing controls should be disabled\nThe behavior should be validated when user clicks Lock."
+    },
+    {
+      "test_id": "UTC-1343",
+      "srs_id": "SRS-102",
+      "sds_id": "SDS-102",
+      "summary": "Verify Unlock action enables editing\nwhen annotation is locked",
+      "description": "Feature: Annotation toolbar lock/unlock state controls\nScenario: Unlock action enables editing\nGiven annotation is locked\nWhen user clicks Unlock\nThen editing controls should be enabled",
+      "acceptance": "Editing controls should be enabled\nThe behavior should be validated when user clicks Unlock."
+    },
+    {
+      "test_id": "UTC-1344",
+      "srs_id": "SRS-102",
+      "sds_id": "SDS-102",
+      "summary": "Verify Instant state update\nwhen user toggles lock/unlock",
+      "description": "Feature: Annotation toolbar lock/unlock state controls\nScenario: Instant state update\nGiven user toggles lock/unlock\nWhen action occurs\nThen UI state should update immediately without page reload",
+      "acceptance": "UI state should update immediately without page reload\nThe behavior should be validated when action occurs."
+    },
+    {
+      "test_id": "UTC-1345",
+      "srs_id": "SRS-102",
+      "sds_id": "SDS-102",
+      "summary": "Verify Visual clarity of state\nwhen annotation is locked",
+      "description": "Feature: Annotation toolbar lock/unlock state controls\nScenario: Visual clarity of state\nGiven annotation is locked\nWhen viewing icon\nThen lock icon should clearly indicate non-editable state",
+      "acceptance": "Lock icon should clearly indicate non-editable state\nThe behavior should be validated when viewing icon."
+    },
+    {
+      "test_id": "UTC-1346",
+      "srs_id": "SRS-102",
+      "sds_id": "SDS-102",
+      "summary": "Verify Icon toggles correctly\nwhen locked state active",
+      "description": "Feature: Annotation toolbar lock/unlock state controls\nScenario: Icon toggles correctly\nGiven locked state active\nWhen unlocking\nThen icon should change to unlocked symbol",
+      "acceptance": "Icon should change to unlocked symbol\nThe behavior should be validated when unlocking."
+    },
+    {
+      "test_id": "UTC-1347",
+      "srs_id": "SRS-102",
+      "sds_id": "SDS-102",
+      "summary": "Verify Controls remain visible during review\nwhen user navigates between images",
+      "description": "Feature: Annotation toolbar lock/unlock state controls\nScenario: Controls remain visible during review\nGiven user navigates between images\nWhen review continues\nThen toolbar controls should remain persistent",
+      "acceptance": "Toolbar controls should remain persistent\nThe behavior should be validated when review continues."
+    },
+    {
+      "test_id": "UTC-1348",
+      "srs_id": "SRS-102",
+      "sds_id": "SDS-102",
+      "summary": "Verify Prevent edit when locked\nwhen annotation locked",
+      "description": "Feature: Annotation toolbar lock/unlock state controls\nScenario: Prevent edit when locked\nGiven annotation locked\nWhen user attempts draw/edit\nThen action should be blocked",
+      "acceptance": "Action should be blocked\nThe behavior should be validated when user attempts draw/edit."
+    },
+    {
+      "test_id": "UTC-1349",
+      "srs_id": "SRS-102",
+      "sds_id": "SDS-102",
+      "summary": "Verify Allow edit when unlocked\nwhen annotation unlocked",
+      "description": "Feature: Annotation toolbar lock/unlock state controls\nScenario: Allow edit when unlocked\nGiven annotation unlocked\nWhen user edits annotation\nThen modification should be allowed",
+      "acceptance": "Modification should be allowed\nThe behavior should be validated when user edits annotation."
+    },
+    {
+      "test_id": "UTC-1350",
+      "srs_id": "SRS-102",
+      "sds_id": "SDS-102",
+      "summary": "Verify No UI lag\nwhen multiple rapid toggles",
+      "description": "Feature: Annotation toolbar lock/unlock state controls\nScenario: No UI lag\nGiven multiple rapid toggles\nWhen switching states repeatedly\nThen UI should respond smoothly",
+      "acceptance": "UI should respond smoothly\nThe behavior should be validated when switching states repeatedly."
+    },
+    {
+      "test_id": "UTC-1351",
+      "srs_id": "SRS-102",
+      "sds_id": "SDS-102",
+      "summary": "Verify Lock state persists\nwhen annotation locked",
+      "description": "Feature: Annotation toolbar lock/unlock state controls\nScenario: Lock state persists\nGiven annotation locked\nWhen navigating away and back\nThen lock state should remain unchanged",
+      "acceptance": "Lock state should remain unchanged\nThe behavior should be validated when navigating away and back."
+    },
+    {
+      "test_id": "UTC-1352",
+      "srs_id": "SRS-102",
+      "sds_id": "SDS-102",
+      "summary": "Verify Empty dataset handling\nwhen no annotations exist",
+      "description": "Feature: Annotation toolbar lock/unlock state controls\nScenario: Empty dataset handling\nGiven no annotations exist\nWhen screen loads\nThen “No Data” message should display",
+      "acceptance": "\"No Data\" message should display\nThe behavior should be validated when screen loads."
+    },
+    {
+      "test_id": "UTC-1353",
+      "srs_id": "SRS-102",
+      "sds_id": "SDS-102",
+      "summary": "Verify Network failure handling\nwhen server fetch fails",
+      "description": "Feature: Annotation toolbar lock/unlock state controls\nScenario: Network failure handling\nGiven server fetch fails\nWhen annotations requested\nThen “Failed to fetch” toast should appear",
+      "acceptance": "\"Failed to fetch\" toast should appear\nThe behavior should be validated when annotations requested."
+    },
+    {
+      "test_id": "UTC-1354",
+      "srs_id": "SRS-102",
+      "sds_id": "SDS-102",
+      "summary": "Verify Toggle without data\nwhen no annotation selected",
+      "description": "Feature: Annotation toolbar lock/unlock state controls\nScenario: Toggle without data\nGiven no annotation selected\nWhen lock/unlock clicked\nThen system should ignore safely without crash",
+      "acceptance": "System should ignore safely without crash\nThe behavior should be validated when lock/unlock clicked."
+    },
+    {
+      "test_id": "UTC-1355",
+      "srs_id": "SRS-102",
+      "sds_id": "SDS-102",
+      "summary": "Verify Keyboard accessibility\nwhen icon focused",
+      "description": "Feature: Annotation toolbar lock/unlock state controls\nScenario: Keyboard accessibility\nGiven icon focused\nWhen Enter/Space pressed\nThen lock/unlock should trigger",
+      "acceptance": "Lock/unlock should trigger\nThe behavior should be validated when Enter/Space pressed."
+    },
+    {
+      "test_id": "UTC-1356",
+      "srs_id": "SRS-102",
+      "sds_id": "SDS-102",
+      "summary": "Verify Large annotation list\nwhen many annotations exist",
+      "description": "Feature: Annotation toolbar lock/unlock state controls\nScenario: Large annotation list\nGiven many annotations exist\nWhen toggling state\nThen UI should remain stable without freeze",
+      "acceptance": "UI should remain stable without freeze\nThe behavior should be validated when toggling state."
+    },
+    {
+      "test_id": "UTC-1357",
+      "srs_id": "SRS-103",
+      "sds_id": "SDS-103",
+      "summary": "Verify annotation action icons are not visible before adding annotation\nwhen the user opens an image in annotation screen",
+      "description": "Feature: Annotation Controls – Hidden Before Annotation\n\nScenario: Verify annotation action icons are not visible before adding annotation\n\nGiven the user opens an image in annotation screen\nWhen no annotation is created yet\nThen the annotation list should not show Delete / Hide / Lock icons",
+      "acceptance": "The annotation list should not show Delete / Hide / Lock icons\nThe behavior should be validated when no annotation is created yet."
+    },
+    {
+      "test_id": "UTC-1358",
+      "srs_id": "SRS-103",
+      "sds_id": "SDS-103",
+      "summary": "Verify anatomy type appears in list after annotation is created\nwhen the user is on annotation screen",
+      "description": "Feature: Annotation Controls – Anatomy Type Appears After Annotation\n\nScenario: Verify anatomy type appears in list after annotation is created\n\nGiven the user is on annotation screen\nWhen the user adds a new annotation for an anatomy type\nThen the anatomy type should appear in the annotation list",
+      "acceptance": "The anatomy type should appear in the annotation list\nThe behavior should be validated when the user adds a new annotation for an anatomy type."
+    },
+    {
+      "test_id": "UTC-1359",
+      "srs_id": "SRS-103",
+      "sds_id": "SDS-103",
+      "summary": "Verify action icons appear once annotation exists\nwhen an annotation is created for an anatomy type",
+      "description": "Feature: Annotation Controls – Action Icons Visible After Annotation\n\nScenario: Verify action icons appear once annotation exists\n\nGiven an annotation is created for an anatomy type\nWhen the annotation list is displayed\nThen Delete, Hide/Unhide, and Lock/Unlock icons should be visible for that anatomy type",
+      "acceptance": "Delete, Hide/Unhide, and Lock/Unlock icons should be visible for that anatomy type\nThe behavior should be validated when the annotation list is displayed."
+    },
+    {
+      "test_id": "UTC-1360",
+      "srs_id": "SRS-103",
+      "sds_id": "SDS-103",
+      "summary": "Verify user can lock an annotation using Lock icon\nwhen an annotation exists for an anatomy type",
+      "description": "Feature: Annotation Controls – Lock Option Works\n\nScenario: Verify user can lock an annotation using Lock icon\n\nGiven an annotation exists for an anatomy type\nWhen the user clicks Lock icon\nThen the annotation should become locked\nAnd Unlock icon should be shown",
+      "acceptance": "The annotation should become locked\nThe behavior should be validated when the user clicks Lock icon."
+    },
+    {
+      "test_id": "UTC-1361",
+      "srs_id": "SRS-103",
+      "sds_id": "SDS-103",
+      "summary": "Verify user can unlock an annotation using Unlock icon\nwhen an annotation is locked",
+      "description": "Feature: Annotation Controls – Unlock Option Works\n\nScenario: Verify user can unlock an annotation using Unlock icon\n\nGiven an annotation is locked\nWhen the user clicks Unlock icon\nThen the annotation should become unlocked\nAnd Lock icon should be shown",
+      "acceptance": "The annotation should become unlocked\nThe behavior should be validated when the user clicks Unlock icon."
+    },
+    {
+      "test_id": "UTC-1362",
+      "srs_id": "SRS-103",
+      "sds_id": "SDS-103",
+      "summary": "Verify user can hide and unhide annotation\nwhen an annotation exists for an anatomy type",
+      "description": "Feature: Annotation Controls – Hide/Unhide Works\n\nScenario: Verify user can hide and unhide annotation\n\nGiven an annotation exists for an anatomy type\nWhen the user clicks Hide icon\nThen the annotation should be hidden in image view\nAnd Unhide icon should be shown",
+      "acceptance": "The annotation should be hidden in image view\nThe behavior should be validated when the user clicks Hide icon."
+    },
+    {
+      "test_id": "UTC-1363",
+      "srs_id": "SRS-103",
+      "sds_id": "SDS-103",
+      "summary": "Verify user can delete an annotation from list\nwhen an annotation exists for an anatomy type",
+      "description": "Feature: Annotation Controls – Delete Works\n\nScenario: Verify user can delete an annotation from list\n\nGiven an annotation exists for an anatomy type\nWhen the user clicks Delete icon\nThen the annotation should be removed\nAnd the anatomy type should disappear from list if no annotations remain",
+      "acceptance": "The annotation should be removed\nThe behavior should be validated when the user clicks Delete icon."
+    },
+    {
+      "test_id": "UTC-1364",
+      "srs_id": "SRS-103",
+      "sds_id": "SDS-103",
+      "summary": "Verify action icons disappear when annotation removed\nwhen an annotation existed and was deleted successfully",
+      "description": "Feature: Annotation Controls – Icons Hidden After Deletion\n\nScenario: Verify action icons disappear when annotation removed\n\nGiven an annotation existed and was deleted successfully\nWhen the annotation list refreshes\nThen Delete / Hide / Lock icons should no longer be visible for that anatomy type",
+      "acceptance": "Delete / Hide / Lock icons should no longer be visible for that anatomy type\nThe behavior should be validated when the annotation list refreshes."
+    },
+    {
+      "test_id": "UTC-1365",
+      "srs_id": "SRS-103",
+      "sds_id": "SDS-103",
+      "summary": "Verify annotation list refreshes correctly after changes\nwhen the user adds and removes annotations repeatedly",
+      "description": "Feature: Annotation Controls – List Refresh on Add/Remove\n\nScenario: Verify annotation list refreshes correctly after changes\n\nGiven the user adds and removes annotations repeatedly\nWhen the annotation list updates\nThen the list should refresh correctly without stale anatomy types",
+      "acceptance": "The list should refresh correctly without stale anatomy types\nThe behavior should be validated when the annotation list updates."
+    },
+    {
+      "test_id": "UTC-1366",
+      "srs_id": "SRS-103",
+      "sds_id": "SDS-103",
+      "summary": "Verify system shows clear non-technical message if action fails\nwhen an annotation exists",
+      "description": "Feature: Annotation Controls – Friendly Error on Action Failure\n\nScenario: Verify system shows clear non-technical message if action fails\n\nGiven an annotation exists\nWhen the user performs Delete/Lock/Hide action and system fails due to backend issue\nThen the system should show a clear user-friendly message\nAnd annotation workflow should not break",
+      "acceptance": "The system should show a clear user-friendly message\nThe behavior should be validated when the user performs Delete/Lock/Hide action and system fails due to backend issue."
+    },
+    {
+      "test_id": "UTC-1367",
+      "srs_id": "SRS-104",
+      "sds_id": "SDS-104",
+      "summary": "Verify Lock icon activation\nwhen an annotation exists",
+      "description": "Feature: Locked annotation disables edit interactions\nScenario: Lock icon activation\nGiven an annotation exists\nWhen user clicks Lock icon\nThen annotation state should change to locked",
+      "acceptance": "Annotation state should change to locked\nThe behavior should be validated when user clicks Lock icon."
+    },
+    {
+      "test_id": "UTC-1368",
+      "srs_id": "SRS-104",
+      "sds_id": "SDS-104",
+      "summary": "Verify Visual locked indicator\nwhen annotation is locked",
+      "description": "Feature: Locked annotation disables edit interactions\nScenario: Visual locked indicator\nGiven annotation is locked\nWhen viewing canvas\nThen locked annotation should show lock icon or visual highlight",
+      "acceptance": "Locked annotation should show lock icon or visual highlight\nThe behavior should be validated when viewing canvas."
+    },
+    {
+      "test_id": "UTC-1369",
+      "srs_id": "SRS-104",
+      "sds_id": "SDS-104",
+      "summary": "Verify Selection handles disabled\nwhen annotation is locked",
+      "description": "Feature: Locked annotation disables edit interactions\nScenario: Selection handles disabled\nGiven annotation is locked\nWhen selected\nThen resize handles should not be visible",
+      "acceptance": "Resize handles should not be visible\nThe behavior should be validated when selected."
+    },
+    {
+      "test_id": "UTC-1370",
+      "srs_id": "SRS-104",
+      "sds_id": "SDS-104",
+      "summary": "Verify Prevent move action\nwhen annotation is locked",
+      "description": "Feature: Locked annotation disables edit interactions\nScenario: Prevent move action\nGiven annotation is locked\nWhen user attempts drag\nThen annotation position should not change",
+      "acceptance": "Annotation position should not change\nThe behavior should be validated when user attempts drag."
+    },
+    {
+      "test_id": "UTC-1371",
+      "srs_id": "SRS-104",
+      "sds_id": "SDS-104",
+      "summary": "Verify Prevent resize action\nwhen annotation is locked",
+      "description": "Feature: Locked annotation disables edit interactions\nScenario: Prevent resize action\nGiven annotation is locked\nWhen user attempts resize\nThen size should remain unchanged",
+      "acceptance": "Size should remain unchanged\nThe behavior should be validated when user attempts resize."
+    },
+    {
+      "test_id": "UTC-1372",
+      "srs_id": "SRS-104",
+      "sds_id": "SDS-104",
+      "summary": "Verify Multiple move attempts ignored\nwhen locked annotation",
+      "description": "Feature: Locked annotation disables edit interactions\nScenario: Multiple move attempts ignored\nGiven locked annotation\nWhen multiple drags attempted\nThen system should ignore all attempts",
+      "acceptance": "System should ignore all attempts\nThe behavior should be validated when multiple drags attempted."
+    },
+    {
+      "test_id": "UTC-1373",
+      "srs_id": "SRS-104",
+      "sds_id": "SDS-104",
+      "summary": "Verify Multiple resize attempts ignored\nwhen locked annotation",
+      "description": "Feature: Locked annotation disables edit interactions\nScenario: Multiple resize attempts ignored\nGiven locked annotation\nWhen multiple resize attempts\nThen no size change occurs",
+      "acceptance": "No size change occurs\nThe behavior should be validated when multiple resize attempts."
+    },
+    {
+      "test_id": "UTC-1374",
+      "srs_id": "SRS-104",
+      "sds_id": "SDS-104",
+      "summary": "Verify Coordinates unchanged\nwhen locked annotation",
+      "description": "Feature: Locked annotation disables edit interactions\nScenario: Coordinates unchanged\nGiven locked annotation\nWhen move attempted\nThen stored coordinates should remain same in state",
+      "acceptance": "Stored coordinates should remain same in state\nThe behavior should be validated when move attempted."
+    },
+    {
+      "test_id": "UTC-1375",
+      "srs_id": "SRS-104",
+      "sds_id": "SDS-104",
+      "summary": "Verify Dimensions unchanged\nwhen locked annotation",
+      "description": "Feature: Locked annotation disables edit interactions\nScenario: Dimensions unchanged\nGiven locked annotation\nWhen resize attempted\nThen stored dimensions should remain same",
+      "acceptance": "Stored dimensions should remain same\nThe behavior should be validated when resize attempted."
+    }
+  ]
+}

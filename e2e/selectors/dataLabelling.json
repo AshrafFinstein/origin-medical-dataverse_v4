@@ -1,50 +1,26 @@
 {
-  "dl-visualization": {
-    "lock-button": "[data-testid=\"dl-visualization-lock-button\"]",
-    "unlock-button": "[data-testid=\"dl-visualization-unlock-button\"]"
-  },
-  "dl-annotation": {
-    "button": "[data-testid=\"dl-annotation-button\"]"
-  },
-  "dl-invert": {
-    "color-checkbox": "[data-testid=\"dl-invert-color-checkbox\"]"
-  },
-  "dl-marker": {
-    "mode-toggle-button": "[data-testid=\"dl-marker-mode-toggle-button\"]"
-  },
-  "dl-delete": {
-    "annotation-modal": "[data-testid=\"dl-delete-annotation-modal\"]",
-    "annotation-no-button": "[data-testid=\"dl-delete-annotation-no-button\"]",
-    "annotation-yes-button": "[data-testid=\"dl-delete-annotation-yes-button\"]"
-  },
-  "dl-unsaved": {
-    "changes-modal": "[data-testid=\"dl-unsaved-changes-modal\"]",
-    "discard-button": "[data-testid=\"dl-unsaved-discard-button\"]",
-    "save-button": "[data-testid=\"dl-unsaved-save-button\"]",
-    "before-qc-modal": "[data-testid=\"dl-unsaved-before-qc-modal\"]",
-    "before-qc-dont-save-button": "[data-testid=\"dl-unsaved-before-qc-dont-save-button\"]",
-    "before-qc-save-button": "[data-testid=\"dl-unsaved-before-qc-save-button\"]"
-  },
-  "dl-label": {
-    "menu": "[data-testid=\"dl-label-menu\"]",
-    "menu-search-input": "[data-testid=\"dl-label-menu-search-input\"]",
-    "menu-apply-button": "[data-testid=\"dl-label-menu-apply-button\"]"
-  },
-  "dl-canvas": {
-    "root": "canvas"
-  },
-  "dl-counter": {
-    "root": ".image-counter"
-  },
-  "dl-status": {
-    "saved-indicator": "text=All changes saved"
-  },
-  "dl-copy": {
-    "annotation-modal": "[data-testid=\"dl-copy-annotation-modal\"]",
-    "annotation-cancel-button": "[data-testid=\"dl-copy-annotation-cancel-button\"]",
-    "annotation-replace-button": "[data-testid=\"dl-copy-annotation-replace-button\"]"
-  },
-  "dl-annotation-items": {
-    "root": ".annotation-item, .konvajs-content rect"
-  }
+  "dl-visualization-lock-button": "dl-visualization-lock-button",
+  "dl-visualization-unlock-button": "dl-visualization-unlock-button",
+  "dl-annotation-button": "dl-annotation-button",
+  "dl-invert-color-checkbox": "dl-invert-color-checkbox",
+  "dl-marker-mode-toggle-button": "dl-marker-mode-toggle-button",
+  "dl-delete-annotation-modal": "dl-delete-annotation-modal",
+  "dl-delete-annotation-no-button": "dl-delete-annotation-no-button",
+  "dl-delete-annotation-yes-button": "dl-delete-annotation-yes-button",
+  "dl-unsaved-changes-modal": "dl-unsaved-changes-modal",
+  "dl-unsaved-discard-button": "dl-unsaved-discard-button",
+  "dl-unsaved-save-button": "dl-unsaved-save-button",
+  "dl-label-menu": "dl-label-menu",
+  "dl-label-menu-search-input": "dl-label-menu-search-input",
+  "dl-label-menu-apply-button": "dl-label-menu-apply-button",
+  "dl-canvas": "canvas",
+  "dl-counter": ".image-counter",
+  "dl-status-saved-indicator": "text=All changes saved",
+  "dl-unsaved-before-qc-modal": "dl-unsaved-before-qc-modal",
+  "dl-unsaved-before-qc-dont-save-button": "dl-unsaved-before-qc-dont-save-button",
+  "dl-unsaved-before-qc-save-button": "dl-unsaved-before-qc-save-button",
+  "dl-copy-annotation-modal": "dl-copy-annotation-modal",
+  "dl-copy-annotation-cancel-button": "dl-copy-annotation-cancel-button",
+  "dl-copy-annotation-replace-button": "dl-copy-annotation-replace-button",
+  "dl-annotation-items": ".annotation-item, .konvajs-content rect"
 }

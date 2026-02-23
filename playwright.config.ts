@@ -6,6 +6,8 @@ dotenv.config({ path: './.env' });
 
 const resolvedBaseUrl = (process.env.baseURL || process.env.UAT_URL || process.env.API_URL || 'http://localhost:3000').replace(/\/+$/, '');
 const useTestDataSetup = process.env.USE_TEST_DATA_SETUP === 'true';
+const isUiMode = process.argv.includes('--ui');
+const enableTestDataSetup = useTestDataSetup && !isUiMode;
 
 export default defineConfig({
   testDir: './e2e/tests',
@@ -48,21 +50,26 @@ export default defineConfig({
   },
 
   projects: [
-    // Auth setup — tries API login first, falls back to browser login.
-    // Browser runs headed so user can solve CAPTCHA if needed.
-    {
-      name: 'auth-setup',
-      testMatch: /.*auth\.setup\.ts/,
-      timeout: 180_000,
-      use: {
-        headless: false,
-      },
-    },
+    // Keep auth-setup project for non-UI runs only.
+    ...(
+      isUiMode
+        ? []
+        : [
+            {
+              name: 'auth-setup',
+              testMatch: /.*auth\.setup\.ts/,
+              timeout: 180_000,
+              use: {
+                headless: false,
+              },
+            },
+          ]
+    ),
 
     // Test data setup — optional, creates Epic + Project via browser.
     // Enable with USE_TEST_DATA_SETUP=true.
     ...(
-      useTestDataSetup
+      enableTestDataSetup
         ? [
             {
               name: 'setup',
@@ -79,7 +86,7 @@ export default defineConfig({
     // Main test project: always executes spec files from e2e/tests.
     {
       name: 'chromium',
-      dependencies: useTestDataSetup ? ['setup'] : ['auth-setup'],
+      dependencies: isUiMode ? [] : (enableTestDataSetup ? ['setup'] : ['auth-setup']),
       testMatch: /.*\.spec\.ts/,
       use: {
         ...devices['Desktop Chrome'],

@@ -1,0 +1,243 @@
+{
+  "spec_file": "e2e/tests/data-management/URS-DV-DM-06/SRS-025/SDS-025.spec.ts",
+  "plan_urs": "URS-DV-DM-06",
+  "srs_str": "025",
+  "domain": "data-management",
+  "page_class": "S3StoragePage",
+  "page_import": "s3-storage.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-614",
+      "srs_id": "SRS-53",
+      "sds_id": "SDS-53",
+      "summary": "Verify Admin can view bucket registry page\nwhen the admin logs into the system",
+      "description": "Feature: Multi-Bucket Registration\nScenario: Admin can view bucket registry page\nGiven the admin logs into the system\nWhen navigating to Bucket Configuration screen\nThen the bucket registry list should be displayed",
+      "acceptance": "The bucket registry list should be displayed\nThe behavior should be validated when navigating to Bucket Configuration screen."
+    },
+    {
+      "test_id": "UTC-615",
+      "srs_id": "SRS-53",
+      "sds_id": "SDS-53",
+      "summary": "Verify Add Bucket button visible\nwhen the registry page is open",
+      "description": "Feature: Multi-Bucket Registration\nScenario: Add Bucket button visible\nGiven the registry page is open\nWhen the page loads\nThen an “Add Bucket” button should be available",
+      "acceptance": "An \"Add Bucket\" button should be available\nThe behavior should be validated when the page loads."
+    },
+    {
+      "test_id": "UTC-616",
+      "srs_id": "SRS-53",
+      "sds_id": "SDS-53",
+      "summary": "Verify Open Add Bucket modal\nwhen the user clicks Add Bucket",
+      "description": "Feature: Multi-Bucket Registration\nScenario: Open Add Bucket modal\nGiven the user clicks Add Bucket\nWhen the action is triggered\nThen a modal form should open for bucket details entry",
+      "acceptance": "A modal form should open for bucket details entry\nThe behavior should be validated when the action is triggered."
+    },
+    {
+      "test_id": "UTC-617",
+      "srs_id": "SRS-53",
+      "sds_id": "SDS-53",
+      "summary": "Verify Enter bucket metadata\nwhen the modal is open",
+      "description": "Feature: Multi-Bucket Registration\nScenario: Enter bucket metadata\nGiven the modal is open\nWhen the user fills provider, region, lifecycle policy, and credentials\nThen all fields should accept valid input",
+      "acceptance": "All fields should accept valid input\nThe behavior should be validated when the user fills provider, region, lifecycle policy, and credentials."
+    },
+    {
+      "test_id": "UTC-618",
+      "srs_id": "SRS-53",
+      "sds_id": "SDS-53",
+      "summary": "Verify Save bucket successfully\nwhen valid bucket metadata is entered",
+      "description": "Feature: Multi-Bucket Registration\nScenario: Save bucket successfully\nGiven valid bucket metadata is entered\nWhen the user clicks Save\nThen the bucket should be stored in the registry and listed",
+      "acceptance": "The bucket should be stored in the registry and listed\nThe behavior should be validated when the user clicks Save."
+    },
+    {
+      "test_id": "UTC-619",
+      "srs_id": "SRS-53",
+      "sds_id": "SDS-53",
+      "summary": "Verify Mandatory field validation\nwhen required fields are empty",
+      "description": "Feature: Multi-Bucket Registration\nScenario: Mandatory field validation\nGiven required fields are empty\nWhen Save is clicked\nThen inline validation errors should appear and save should be blocked",
+      "acceptance": "Inline validation errors should appear and save should be blocked\nThe behavior should be validated when Save is clicked."
+    },
+    {
+      "test_id": "UTC-620",
+      "srs_id": "SRS-53",
+      "sds_id": "SDS-53",
+      "summary": "Verify Prevent duplicate bucket registration\nwhen an existing bucket name already registered",
+      "description": "Feature: Multi-Bucket Registration\nScenario: Prevent duplicate bucket registration\nGiven an existing bucket name already registered\nWhen the same bucket is added again\nThen the system should prevent saving and show error",
+      "acceptance": "The system should prevent saving and show error\nThe behavior should be validated when the same bucket is added again."
+    },
+    {
+      "test_id": "UTC-621",
+      "srs_id": "SRS-53",
+      "sds_id": "SDS-53",
+      "summary": "Verify Edit bucket configuration\nwhen a bucket exists in the list",
+      "description": "Feature: Multi-Bucket Registration\nScenario: Edit bucket configuration\nGiven a bucket exists in the list\nWhen the user clicks Edit\nThen existing values should load in modal for update",
+      "acceptance": "Existing values should load in modal for update\nThe behavior should be validated when the user clicks Edit."
+    },
+    {
+      "test_id": "UTC-622",
+      "srs_id": "SRS-53",
+      "sds_id": "SDS-53",
+      "summary": "Verify Update bucket details\nwhen the edit modal is open",
+      "description": "Feature: Multi-Bucket Registration\nScenario: Update bucket details\nGiven the edit modal is open\nWhen changes are saved\nThen updated metadata should reflect immediately in registry",
+      "acceptance": "Updated metadata should reflect immediately in registry\nThe behavior should be validated when changes are saved."
+    },
+    {
+      "test_id": "UTC-623",
+      "srs_id": "SRS-53",
+      "sds_id": "SDS-53",
+      "summary": "Verify Status badge display\nwhen buckets exist",
+      "description": "Feature: Multi-Bucket Registration\nScenario: Status badge display\nGiven buckets exist\nWhen viewing registry\nThen each bucket should show Active or Inactive status badge",
+      "acceptance": "Each bucket should show Active or Inactive status badge\nThe behavior should be validated when viewing registry."
+    },
+    {
+      "test_id": "UTC-624",
+      "srs_id": "SRS-53",
+      "sds_id": "SDS-53",
+      "summary": "Verify Services fetch configuration dynamically\nwhen services require storage routing",
+      "description": "Feature: Multi-Bucket Registration\nScenario: Services fetch configuration dynamically\nGiven services require storage routing\nWhen an operation is executed\nThen bucket configuration should be retrieved from registry dynamically",
+      "acceptance": "Bucket configuration should be retrieved from registry dynamically\nThe behavior should be validated when an operation is executed."
+    },
+    {
+      "test_id": "UTC-625",
+      "srs_id": "SRS-53",
+      "sds_id": "SDS-53",
+      "summary": "Verify Unauthorized users restricted\nwhen a non-admin user logs in",
+      "description": "Feature: Multi-Bucket Registration\nScenario: Unauthorized users restricted\nGiven a non-admin user logs in\nWhen accessing bucket configuration page\nThen access should be denied or hidden",
+      "acceptance": "Access should be denied or hidden\nThe behavior should be validated when accessing bucket configuration page."
+    },
+    {
+      "test_id": "UTC-626",
+      "srs_id": "SRS-53",
+      "sds_id": "SDS-53",
+      "summary": "Verify Cancel action discards changes\nwhen the modal is open with changes",
+      "description": "Feature: Multi-Bucket Registration\nScenario: Cancel action discards changes\nGiven the modal is open with changes\nWhen Cancel is clicked\nThen no data should be saved",
+      "acceptance": "No data should be saved\nThe behavior should be validated when Cancel is clicked."
+    },
+    {
+      "test_id": "UTC-627",
+      "srs_id": "SRS-53",
+      "sds_id": "SDS-53",
+      "summary": "Verify Registration failure handling\nwhen backend error occurs during save",
+      "description": "Feature: Multi-Bucket Registration\nScenario: Registration failure handling\nGiven backend error occurs during save\nWhen the request fails\nThen a clear error message should be displayed and configuration not saved",
+      "acceptance": "A clear error message should be displayed and configuration not saved\nThe behavior should be validated when the request fails."
+    },
+    {
+      "test_id": "UTC-628",
+      "srs_id": "SRS-53",
+      "sds_id": "SDS-53",
+      "summary": "Verify Registry loads quickly\nwhen multiple buckets are configured",
+      "description": "Feature: Multi-Bucket Registration\nScenario: Registry loads quickly\nGiven multiple buckets are configured\nWhen opening the registry page\nThen data should load within acceptable time (<2s)",
+      "acceptance": "Data should load within acceptable time (<2s)\nThe behavior should be validated when opening the registry page."
+    },
+    {
+      "test_id": "UTC-629",
+      "srs_id": "SRS-54",
+      "sds_id": "SDS-54",
+      "summary": "Verify No bucket selector visible in UI\nwhen the user opens labeling or asset listing screen",
+      "description": "Feature: Transparent Bucket Resolution\nScenario: No bucket selector visible in UI\nGiven the user opens labeling or asset listing screen\nWhen the page renders\nThen no manual bucket selection control should be displayed",
+      "acceptance": "No manual bucket selection control should be displayed\nThe behavior should be validated when the page renders."
+    },
+    {
+      "test_id": "UTC-630",
+      "srs_id": "SRS-54",
+      "sds_id": "SDS-54",
+      "summary": "Verify Automatic bucket resolution during asset fetch\nwhen asset metadata contains bucket mapping",
+      "description": "Feature: Transparent Bucket Resolution\nScenario: Automatic bucket resolution during asset fetch\nGiven asset metadata contains bucket mapping\nWhen an asset is opened\nThen the system should automatically resolve and fetch from the mapped bucket",
+      "acceptance": "The system should automatically resolve and fetch from the mapped bucket\nThe behavior should be validated when an asset is opened."
+    },
+    {
+      "test_id": "UTC-631",
+      "srs_id": "SRS-54",
+      "sds_id": "SDS-54",
+      "summary": "Verify Resolution during write operation\nwhen a user applies labels to an asset",
+      "description": "Feature: Transparent Bucket Resolution\nScenario: Resolution during write operation\nGiven a user applies labels to an asset\nWhen the system saves changes\nThen the correct bucket should be selected automatically for storage",
+      "acceptance": "The correct bucket should be selected automatically for storage\nThe behavior should be validated when the system saves changes."
+    },
+    {
+      "test_id": "UTC-632",
+      "srs_id": "SRS-54",
+      "sds_id": "SDS-54",
+      "summary": "Verify Bucket determined from metadata and session context\nwhen asset metadata and session context are available",
+      "description": "Feature: Transparent Bucket Resolution\nScenario: Bucket determined from metadata and session context\nGiven asset metadata and session context are available\nWhen resolution occurs\nThen both inputs should be evaluated to determine correct bucket",
+      "acceptance": "Both inputs should be evaluated to determine correct bucket\nThe behavior should be validated when resolution occurs."
+    },
+    {
+      "test_id": "UTC-633",
+      "srs_id": "SRS-54",
+      "sds_id": "SDS-54",
+      "summary": "Verify Multiple buckets configured\nwhen multiple storage buckets exist",
+      "description": "Feature: Transparent Bucket Resolution\nScenario: Multiple buckets configured\nGiven multiple storage buckets exist\nWhen different assets are accessed\nThen each asset should resolve to its mapped bucket independently",
+      "acceptance": "Each asset should resolve to its mapped bucket independently\nThe behavior should be validated when different assets are accessed."
+    },
+    {
+      "test_id": "UTC-634",
+      "srs_id": "SRS-54",
+      "sds_id": "SDS-54",
+      "summary": "Verify Resolution occurs hooking before operation\nwhen an asset operation is triggered",
+      "description": "Feature: Transparent Bucket Resolution\nScenario: Resolution occurs hooking before operation\nGiven an asset operation is triggered\nWhen processing starts\nThen bucket resolution should occur before read/write execution",
+      "acceptance": "Bucket resolution should occur before read/write execution\nThe behavior should be validated when processing starts."
+    },
+    {
+      "test_id": "UTC-635",
+      "srs_id": "SRS-54",
+      "sds_id": "SDS-54",
+      "summary": "Verify Default fallback when mapping missing\nwhen bucket mapping is unavailable",
+      "description": "Feature: Transparent Bucket Resolution\nScenario: Default fallback when mapping missing\nGiven bucket mapping is unavailable\nWhen resolution occurs\nThen the system should use the default bucket automatically",
+      "acceptance": "The system should use the default bucket automatically\nThe behavior should be validated when resolution occurs."
+    },
+    {
+      "test_id": "UTC-636",
+      "srs_id": "SRS-54",
+      "sds_id": "SDS-54",
+      "summary": "Verify Missing mapping logged\nwhen bucket mapping fails",
+      "description": "Feature: Transparent Bucket Resolution\nScenario: Missing mapping logged\nGiven bucket mapping fails\nWhen fallback is applied\nThen resolution failure should be logged with traceId and assetId",
+      "acceptance": "Resolution failure should be logged with traceId and assetId\nThe behavior should be validated when fallback is applied."
+    },
+    {
+      "test_id": "UTC-637",
+      "srs_id": "SRS-54",
+      "sds_id": "SDS-54",
+      "summary": "Verify User cannot override bucket manually\nwhen the user attempts to manipulate request payload",
+      "description": "Feature: Transparent Bucket Resolution\nScenario: User cannot override bucket manually\nGiven the user attempts to manipulate request payload\nWhen submitting operation\nThen system should ignore manual bucket inputs and resolve automatically",
+      "acceptance": "System should ignore manual bucket inputs and resolve automatically\nThe behavior should be validated when submitting operation."
+    },
+    {
+      "test_id": "UTC-638",
+      "srs_id": "SRS-54",
+      "sds_id": "SDS-54",
+      "summary": "Verify Resolution latency minimal\nwhen an asset request occurs",
+      "description": "Feature: Transparent Bucket Resolution\nScenario: Resolution latency minimal\nGiven an asset request occurs\nWhen bucket resolution executes\nThen resolution should not introduce noticeable delay (<100ms overhead)",
+      "acceptance": "Resolution should not introduce noticeable delay (<100ms overhead)\nThe behavior should be validated when bucket resolution executes."
+    },
+    {
+      "test_id": "UTC-639",
+      "srs_id": "SRS-54",
+      "sds_id": "SDS-54",
+      "summary": "Verify Workflow remains seamless\nwhen users perform labeling or viewing",
+      "description": "Feature: Transparent Bucket Resolution\nScenario: Workflow remains seamless\nGiven users perform labeling or viewing\nWhen interacting with assets\nThen no extra steps or configuration should be required for storage selection",
+      "acceptance": "No extra steps or configuration should be required for storage selection\nThe behavior should be validated when interacting with assets."
+    },
+    {
+      "test_id": "UTC-640",
+      "srs_id": "SRS-54",
+      "sds_id": "SDS-54",
+      "summary": "Verify Concurrent operations resolve correctly\nwhen multiple assets are processed simultaneously",
+      "description": "Feature: Transparent Bucket Resolution\nScenario: Concurrent operations resolve correctly\nGiven multiple assets are processed simultaneously\nWhen resolution runs in parallel\nThen each asset should map to its correct bucket without conflict",
+      "acceptance": "Each asset should map to its correct bucket without conflict\nThe behavior should be validated when resolution runs in parallel."
+    },
+    {
+      "test_id": "UTC-641",
+      "srs_id": "SRS-55",
+      "sds_id": "SDS-55",
+      "summary": "Verify Buckets bound during session initialization\nwhen a valid session configuration exists",
+      "description": "Feature: Session–Bucket Association\nScenario: Buckets bound during session initialization\nGiven a valid session configuration exists\nWhen the session loads\nThen resolved bucket identifiers should be bound to the session context automatically",
+      "acceptance": "Resolved bucket identifiers should be bound to the session context automatically\nThe behavior should be validated when the session loads."
+    },
+    {
+      "test_id": "UTC-642",
+      "srs_id": "SRS-55",
+      "sds_id": "SDS-55",
+      "summary": "Verify Multiple buckets supported per session\nwhen multiple buckets are mapped",
+      "description": "Feature: Session–Bucket Association\nScenario: Multiple buckets supported per session\nGiven multiple buckets are mapped\nWhen the session initializes\nThen all associated bucket identifiers should be stored together",
+      "acceptance": "All associated bucket identifiers should be stored together\nThe behavior should be validated when the session initializes."
+    }
+  ]
+}

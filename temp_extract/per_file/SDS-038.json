@@ -1,0 +1,299 @@
+{
+  "spec_file": "e2e/tests/annotation/URS-DV-DA-09/SRS-038/SDS-038.spec.ts",
+  "plan_urs": "URS-DV-DA-09",
+  "srs_str": "038",
+  "domain": "annotation",
+  "page_class": "DataLabellingPage",
+  "page_import": "data-labelling.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-1376",
+      "srs_id": "SRS-104",
+      "sds_id": "SDS-104",
+      "summary": "Verify Unlock restores edit\nwhen annotation locked",
+      "description": "Feature: Locked annotation disables edit interactions\nScenario: Unlock restores edit\nGiven annotation locked\nWhen user clicks Unlock\nThen move/resize should be enabled",
+      "acceptance": "Move/resize should be enabled\nThe behavior should be validated when user clicks Unlock."
+    },
+    {
+      "test_id": "UTC-1377",
+      "srs_id": "SRS-104",
+      "sds_id": "SDS-104",
+      "summary": "Verify Drag works after unlock\nwhen annotation unlocked",
+      "description": "Feature: Locked annotation disables edit interactions\nScenario: Drag works after unlock\nGiven annotation unlocked\nWhen user drags\nThen annotation should move",
+      "acceptance": "Annotation should move\nThe behavior should be validated when user drags."
+    },
+    {
+      "test_id": "UTC-1378",
+      "srs_id": "SRS-104",
+      "sds_id": "SDS-104",
+      "summary": "Verify Resize works after unlock\nwhen annotation unlocked",
+      "description": "Feature: Locked annotation disables edit interactions\nScenario: Resize works after unlock\nGiven annotation unlocked\nWhen user resizes\nThen annotation size should update",
+      "acceptance": "Annotation size should update\nThe behavior should be validated when user resizes."
+    },
+    {
+      "test_id": "UTC-1379",
+      "srs_id": "SRS-104",
+      "sds_id": "SDS-104",
+      "summary": "Verify No system errors on blocked action\nwhen annotation locked",
+      "description": "Feature: Locked annotation disables edit interactions\nScenario: No system errors on blocked action\nGiven annotation locked\nWhen edit attempted\nThen system should silently ignore without errors",
+      "acceptance": "System should silently ignore without errors\nThe behavior should be validated when edit attempted."
+    },
+    {
+      "test_id": "UTC-1380",
+      "srs_id": "SRS-104",
+      "sds_id": "SDS-104",
+      "summary": "Verify Rapid drag attempts\nwhen locked annotation",
+      "description": "Feature: Locked annotation disables edit interactions\nScenario: Rapid drag attempts\nGiven locked annotation\nWhen rapid drag performed\nThen annotation should remain fixed",
+      "acceptance": "Annotation should remain fixed\nThe behavior should be validated when rapid drag performed."
+    },
+    {
+      "test_id": "UTC-1381",
+      "srs_id": "SRS-104",
+      "sds_id": "SDS-104",
+      "summary": "Verify Lock multiple annotations\nwhen multiple annotations exist",
+      "description": "Feature: Locked annotation disables edit interactions\nScenario: Lock multiple annotations\nGiven multiple annotations exist\nWhen all locked\nThen none should allow edit",
+      "acceptance": "None should allow edit\nThe behavior should be validated when all locked."
+    },
+    {
+      "test_id": "UTC-1382",
+      "srs_id": "SRS-104",
+      "sds_id": "SDS-104",
+      "summary": "Verify Mixed states behavior\nwhen one locked and one unlocked annotation",
+      "description": "Feature: Locked annotation disables edit interactions\nScenario: Mixed states behavior\nGiven one locked and one unlocked annotation\nWhen editing both\nThen only unlocked should be editable",
+      "acceptance": "Only unlocked should be editable\nThe behavior should be validated when editing both."
+    },
+    {
+      "test_id": "UTC-1383",
+      "srs_id": "SRS-104",
+      "sds_id": "SDS-104",
+      "summary": "Verify Lock action performance\nwhen annotation selected",
+      "description": "Feature: Locked annotation disables edit interactions\nScenario: Lock action performance\nGiven annotation selected\nWhen lock clicked\nThen lock should apply instantly (<1s)",
+      "acceptance": "Lock should apply instantly (<1s)\nThe behavior should be validated when lock clicked."
+    },
+    {
+      "test_id": "UTC-1384",
+      "srs_id": "SRS-104",
+      "sds_id": "SDS-104",
+      "summary": "Verify Keyboard lock/unlock\nwhen icon focused",
+      "description": "Feature: Locked annotation disables edit interactions\nScenario: Keyboard lock/unlock\nGiven icon focused\nWhen Enter/Space pressed\nThen lock/unlock should toggle",
+      "acceptance": "Lock/unlock should toggle\nThe behavior should be validated when Enter/Space pressed."
+    },
+    {
+      "test_id": "UTC-1385",
+      "srs_id": "SRS-104",
+      "sds_id": "SDS-104",
+      "summary": "Verify Clear user feedback\nwhen annotation locked",
+      "description": "Feature: Locked annotation disables edit interactions\nScenario: Clear user feedback\nGiven annotation locked\nWhen viewing UI\nThen user should clearly understand it is non-editable",
+      "acceptance": "User should clearly understand it is non-editable\nThe behavior should be validated when viewing UI."
+    },
+    {
+      "test_id": "UTC-1386",
+      "srs_id": "SRS-104",
+      "sds_id": "SDS-104",
+      "summary": "Verify Large annotation lock\nwhen very large annotation",
+      "description": "Feature: Locked annotation disables edit interactions\nScenario: Large annotation lock\nGiven very large annotation\nWhen locked\nThen edit should still be blocked",
+      "acceptance": "Edit should still be blocked\nThe behavior should be validated when locked."
+    },
+    {
+      "test_id": "UTC-1387",
+      "srs_id": "SRS-105",
+      "sds_id": "SDS-105",
+      "summary": "Verify Unlock icon click\nwhen annotation is locked",
+      "description": "Feature: Unlock enables annotation editing\nScenario: Unlock icon click\nGiven annotation is locked\nWhen user clicks Unlock icon\nThen annotation state should change to editable",
+      "acceptance": "Annotation state should change to editable\nThe behavior should be validated when user clicks Unlock icon."
+    },
+    {
+      "test_id": "UTC-1388",
+      "srs_id": "SRS-105",
+      "sds_id": "SDS-105",
+      "summary": "Verify Lock icon visual reset\nwhen annotation unlocked",
+      "description": "Feature: Unlock enables annotation editing\nScenario: Lock icon visual reset\nGiven annotation unlocked\nWhen viewing toolbar\nThen lock icon should not be highlighted",
+      "acceptance": "Lock icon should not be highlighted\nThe behavior should be validated when viewing toolbar."
+    },
+    {
+      "test_id": "UTC-1389",
+      "srs_id": "SRS-105",
+      "sds_id": "SDS-105",
+      "summary": "Verify Edit handles visible\nwhen annotation unlocked",
+      "description": "Feature: Unlock enables annotation editing\nScenario: Edit handles visible\nGiven annotation unlocked\nWhen selected\nThen resize/move handles should appear",
+      "acceptance": "Resize/move handles should appear\nThe behavior should be validated when selected."
+    },
+    {
+      "test_id": "UTC-1390",
+      "srs_id": "SRS-105",
+      "sds_id": "SDS-105",
+      "summary": "Verify Drag enabled\nwhen annotation unlocked",
+      "description": "Feature: Unlock enables annotation editing\nScenario: Drag enabled\nGiven annotation unlocked\nWhen user drags annotation\nThen annotation position should update",
+      "acceptance": "Annotation position should update\nThe behavior should be validated when user drags annotation."
+    },
+    {
+      "test_id": "UTC-1391",
+      "srs_id": "SRS-105",
+      "sds_id": "SDS-105",
+      "summary": "Verify Resize enabled\nwhen annotation unlocked",
+      "description": "Feature: Unlock enables annotation editing\nScenario: Resize enabled\nGiven annotation unlocked\nWhen user resizes\nThen annotation size should update",
+      "acceptance": "Annotation size should update\nThe behavior should be validated when user resizes."
+    },
+    {
+      "test_id": "UTC-1392",
+      "srs_id": "SRS-105",
+      "sds_id": "SDS-105",
+      "summary": "Verify Coordinates stored after move\nwhen annotation unlocked",
+      "description": "Feature: Unlock enables annotation editing\nScenario: Coordinates stored after move\nGiven annotation unlocked\nWhen moved\nThen updated coordinates should be saved in state",
+      "acceptance": "Updated coordinates should be saved in state\nThe behavior should be validated when moved."
+    },
+    {
+      "test_id": "UTC-1393",
+      "srs_id": "SRS-105",
+      "sds_id": "SDS-105",
+      "summary": "Verify Dimensions stored after resize\nwhen unlocked",
+      "description": "Feature: Unlock enables annotation editing\nScenario: Dimensions stored after resize\nGiven unlocked\nWhen resized\nThen new dimensions should be saved",
+      "acceptance": "New dimensions should be saved\nThe behavior should be validated when resized."
+    },
+    {
+      "test_id": "UTC-1394",
+      "srs_id": "SRS-105",
+      "sds_id": "SDS-105",
+      "summary": "Verify Multiple annotations unlock\nwhen multiple locked annotations",
+      "description": "Feature: Unlock enables annotation editing\nScenario: Multiple annotations unlock\nGiven multiple locked annotations\nWhen each unlocked\nThen all become editable",
+      "acceptance": "All become editable\nThe behavior should be validated when each unlocked."
+    },
+    {
+      "test_id": "UTC-1395",
+      "srs_id": "SRS-105",
+      "sds_id": "SDS-105",
+      "summary": "Verify No UI refresh required\nwhen unlock action",
+      "description": "Feature: Unlock enables annotation editing\nScenario: No UI refresh required\nGiven unlock action\nWhen executed\nThen edit capability should enable instantly without reload",
+      "acceptance": "Edit capability should enable instantly without reload\nThe behavior should be validated when executed."
+    },
+    {
+      "test_id": "UTC-1396",
+      "srs_id": "SRS-105",
+      "sds_id": "SDS-105",
+      "summary": "Verify Toggle lock/unlock repeatedly\nwhen annotation",
+      "description": "Feature: Unlock enables annotation editing\nScenario: Toggle lock/unlock repeatedly\nGiven annotation\nWhen toggled multiple times\nThen state should switch correctly each time",
+      "acceptance": "State should switch correctly each time\nThe behavior should be validated when toggled multiple times."
+    },
+    {
+      "test_id": "UTC-1397",
+      "srs_id": "SRS-105",
+      "sds_id": "SDS-105",
+      "summary": "Verify Unlock already editable\nwhen annotation already unlocked",
+      "description": "Feature: Unlock enables annotation editing\nScenario: Unlock already editable\nGiven annotation already unlocked\nWhen unlock clicked again\nThen no state change or error occurs",
+      "acceptance": "No state change or error occurs\nThe behavior should be validated when unlock clicked again."
+    },
+    {
+      "test_id": "UTC-1398",
+      "srs_id": "SRS-105",
+      "sds_id": "SDS-105",
+      "summary": "Verify Selection after unlock\nwhen annotation unlocked",
+      "description": "Feature: Unlock enables annotation editing\nScenario: Selection after unlock\nGiven annotation unlocked\nWhen clicked\nThen selection box should activate normally",
+      "acceptance": "Selection box should activate normally\nThe behavior should be validated when clicked."
+    },
+    {
+      "test_id": "UTC-1399",
+      "srs_id": "SRS-105",
+      "sds_id": "SDS-105",
+      "summary": "Verify Move after immediate unlock\nwhen unlock clicked",
+      "description": "Feature: Unlock enables annotation editing\nScenario: Move after immediate unlock\nGiven unlock clicked\nWhen user drags instantly\nThen move should succeed",
+      "acceptance": "Move should succeed\nThe behavior should be validated when user drags instantly."
+    },
+    {
+      "test_id": "UTC-1400",
+      "srs_id": "SRS-105",
+      "sds_id": "SDS-105",
+      "summary": "Verify Resize after immediate unlock\nwhen unlock clicked",
+      "description": "Feature: Unlock enables annotation editing\nScenario: Resize after immediate unlock\nGiven unlock clicked\nWhen resize attempted\nThen resize should succeed",
+      "acceptance": "Resize should succeed\nThe behavior should be validated when resize attempted."
+    },
+    {
+      "test_id": "UTC-1401",
+      "srs_id": "SRS-105",
+      "sds_id": "SDS-105",
+      "summary": "Verify Clear user feedback\nwhen unlock performed",
+      "description": "Feature: Unlock enables annotation editing\nScenario: Clear user feedback\nGiven unlock performed\nWhen viewing UI\nThen user should visually understand edit is enabled",
+      "acceptance": "User should visually understand edit is enabled\nThe behavior should be validated when viewing UI."
+    },
+    {
+      "test_id": "UTC-1402",
+      "srs_id": "SRS-105",
+      "sds_id": "SDS-105",
+      "summary": "Verify Unlock performance\nwhen annotation locked",
+      "description": "Feature: Unlock enables annotation editing\nScenario: Unlock performance\nGiven annotation locked\nWhen unlock clicked\nThen state change should occur within 1s",
+      "acceptance": "State change should occur within 1s\nThe behavior should be validated when unlock clicked."
+    },
+    {
+      "test_id": "UTC-1403",
+      "srs_id": "SRS-105",
+      "sds_id": "SDS-105",
+      "summary": "Verify Keyboard unlock\nwhen unlock icon focused",
+      "description": "Feature: Unlock enables annotation editing\nScenario: Keyboard unlock\nGiven unlock icon focused\nWhen Enter/Space pressed\nThen annotation should unlock",
+      "acceptance": "Annotation should unlock\nThe behavior should be validated when Enter/Space pressed."
+    },
+    {
+      "test_id": "UTC-1404",
+      "srs_id": "SRS-105",
+      "sds_id": "SDS-105",
+      "summary": "Verify Very large annotation unlock\nwhen large annotation",
+      "description": "Feature: Unlock enables annotation editing\nScenario: Very large annotation unlock\nGiven large annotation\nWhen unlocked\nThen editing should still work smoothly",
+      "acceptance": "Editing should still work smoothly\nThe behavior should be validated when unlocked."
+    },
+    {
+      "test_id": "UTC-1405",
+      "srs_id": "SRS-105",
+      "sds_id": "SDS-105",
+      "summary": "Verify Unlock after page idle\nwhen page idle for long time",
+      "description": "Feature: Unlock enables annotation editing\nScenario: Unlock after page idle\nGiven page idle for long time\nWhen unlocked\nThen editing should still enable without failure",
+      "acceptance": "Editing should still enable without failure\nThe behavior should be validated when unlocked."
+    },
+    {
+      "test_id": "UTC-1406",
+      "srs_id": "SRS-105",
+      "sds_id": "SDS-105",
+      "summary": "Verify Mixed lock states behavior\nwhen one locked and one unlocked annotation",
+      "description": "Feature: Unlock enables annotation editing\nScenario: Mixed lock states behavior\nGiven one locked and one unlocked annotation\nWhen editing\nThen only unlocked annotations should allow edit",
+      "acceptance": "Only unlocked annotations should allow edit\nThe behavior should be validated when editing."
+    },
+    {
+      "test_id": "UTC-1407",
+      "srs_id": "SRS-106",
+      "sds_id": "SDS-106",
+      "summary": "Verify Individual lock icon visible\nwhen annotations exist",
+      "description": "Feature: Individual and overall annotation lock control\nScenario: Individual lock icon visible\nGiven annotations exist\nWhen annotation list loads\nThen each annotation should display a lock icon",
+      "acceptance": "Each annotation should display a lock icon\nThe behavior should be validated when annotation list loads."
+    },
+    {
+      "test_id": "UTC-1408",
+      "srs_id": "SRS-106",
+      "sds_id": "SDS-106",
+      "summary": "Verify Overall lock icon visible\nwhen image loaded",
+      "description": "Feature: Individual and overall annotation lock control\nScenario: Overall lock icon visible\nGiven image loaded\nWhen toolbar renders\nThen overall lock icon should be displayed in header",
+      "acceptance": "Overall lock icon should be displayed in header\nThe behavior should be validated when toolbar renders."
+    },
+    {
+      "test_id": "UTC-1409",
+      "srs_id": "SRS-106",
+      "sds_id": "SDS-106",
+      "summary": "Verify Lock single annotation\nwhen annotation unlocked",
+      "description": "Feature: Individual and overall annotation lock control\nScenario: Lock single annotation\nGiven annotation unlocked\nWhen user clicks individual lock\nThen only that annotation becomes locked",
+      "acceptance": "Only that annotation becomes locked\nThe behavior should be validated when user clicks individual lock."
+    },
+    {
+      "test_id": "UTC-1410",
+      "srs_id": "SRS-106",
+      "sds_id": "SDS-106",
+      "summary": "Verify Prevent edit for locked annotation\nwhen annotation locked",
+      "description": "Feature: Individual and overall annotation lock control\nScenario: Prevent edit for locked annotation\nGiven annotation locked\nWhen user tries move/resize\nThen action should be blocked",
+      "acceptance": "Action should be blocked\nThe behavior should be validated when user tries move/resize."
+    },
+    {
+      "test_id": "UTC-1411",
+      "srs_id": "SRS-106",
+      "sds_id": "SDS-106",
+      "summary": "Verify Other annotations unaffected\nwhen one annotation locked",
+      "description": "Feature: Individual and overall annotation lock control\nScenario: Other annotations unaffected\nGiven one annotation locked\nWhen editing another unlocked annotation\nThen edit should work normally",
+      "acceptance": "Edit should work normally\nThe behavior should be validated when editing another unlocked annotation."
+    }
+  ]
+}

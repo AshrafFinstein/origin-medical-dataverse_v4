@@ -1,0 +1,419 @@
+{
+  "spec_file": "e2e/tests/security/URS-DV-SEC-10/SRS-041/SDS-041.spec.ts",
+  "plan_urs": "URS-DV-SEC-10",
+  "srs_str": "041",
+  "domain": "security",
+  "page_class": "AnalyticsPage",
+  "page_import": "analytics.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-1498",
+      "srs_id": "SRS-111",
+      "sds_id": "SDS-111",
+      "summary": "Verify Zero images case\nwhen session has no images",
+      "description": "Feature: Session Image Count API\nScenario: Zero images case\nGiven session has no images\nWhen API called\nThen {imageCount: 0} returned",
+      "acceptance": "{imageCount: 0} returned\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1499",
+      "srs_id": "SRS-111",
+      "sds_id": "SDS-111",
+      "summary": "Verify Count accuracy validation\nwhen DB contains 100 images",
+      "description": "Feature: Session Image Count API\nScenario: Count accuracy validation\nGiven DB contains 100 images\nWhen API called\nThen returned count equals 100",
+      "acceptance": "Returned count equals 100\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1500",
+      "srs_id": "SRS-111",
+      "sds_id": "SDS-111",
+      "summary": "Verify Fast response for large dataset\nwhen 50k+ images",
+      "description": "Feature: Session Image Count API\nScenario: Fast response for large dataset\nGiven 50k+ images\nWhen API called\nThen response time should be under 2 seconds",
+      "acceptance": "Response time should be under 2 seconds\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1501",
+      "srs_id": "SRS-111",
+      "sds_id": "SDS-111",
+      "summary": "Verify Indexed query performance stability\nwhen repeated calls",
+      "description": "Feature: Session Image Count API\nScenario: Indexed query performance stability\nGiven repeated calls\nWhen 50 sequential requests executed\nThen latency remains consistent",
+      "acceptance": "Latency remains consistent\nThe behavior should be validated when 50 sequential requests executed."
+    },
+    {
+      "test_id": "UTC-1502",
+      "srs_id": "SRS-111",
+      "sds_id": "SDS-111",
+      "summary": "Verify Missing authentication token\nwhen no token",
+      "description": "Feature: Session Image Count API\nScenario: Missing authentication token\nGiven no token\nWhen API called\nThen 401 Unauthorized returned",
+      "acceptance": "401 Unauthorized returned\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1503",
+      "srs_id": "SRS-111",
+      "sds_id": "SDS-111",
+      "summary": "Verify Insufficient permission\nwhen user lacks access rights",
+      "description": "Feature: Session Image Count API\nScenario: Insufficient permission\nGiven user lacks access rights\nWhen API called\nThen 403 Forbidden returned",
+      "acceptance": "403 Forbidden returned\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1504",
+      "srs_id": "SRS-111",
+      "sds_id": "SDS-111",
+      "summary": "Verify Tenant isolation enforced\nwhen session belongs to another tenant",
+      "description": "Feature: Session Image Count API\nScenario: Tenant isolation enforced\nGiven session belongs to another tenant\nWhen API called\nThen access denied",
+      "acceptance": "Access denied\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1505",
+      "srs_id": "SRS-111",
+      "sds_id": "SDS-111",
+      "summary": "Verify Invalid sessionId format\nwhen malformed ID",
+      "description": "Feature: Session Image Count API\nScenario: Invalid sessionId format\nGiven malformed ID\nWhen API called\nThen 400 Bad Request returned",
+      "acceptance": "400 Bad Request returned\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1506",
+      "srs_id": "SRS-111",
+      "sds_id": "SDS-111",
+      "summary": "Verify Non-existent session\nwhen unknown sessionId",
+      "description": "Feature: Session Image Count API\nScenario: Non-existent session\nGiven unknown sessionId\nWhen API called\nThen 404 Not Found returned",
+      "acceptance": "404 Not Found returned\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1507",
+      "srs_id": "SRS-111",
+      "sds_id": "SDS-111",
+      "summary": "Verify Concurrent requests handling\nwhen 100 parallel calls",
+      "description": "Feature: Session Image Count API\nScenario: Concurrent requests handling\nGiven 100 parallel calls\nWhen executed\nThen all succeed without failures",
+      "acceptance": "All succeed without failures\nThe behavior should be validated when executed."
+    },
+    {
+      "test_id": "UTC-1508",
+      "srs_id": "SRS-111",
+      "sds_id": "SDS-111",
+      "summary": "Verify Recovery after transient DB error\nwhen temporary DB outage",
+      "description": "Feature: Session Image Count API\nScenario: Recovery after transient DB error\nGiven temporary DB outage\nWhen retried\nThen API returns correct count",
+      "acceptance": "API returns correct count\nThe behavior should be validated when retried."
+    },
+    {
+      "test_id": "UTC-1509",
+      "srs_id": "SRS-111",
+      "sds_id": "SDS-111",
+      "summary": "Verify No internal query details exposed\nwhen backend failure",
+      "description": "Feature: Session Image Count API\nScenario: No internal query details exposed\nGiven backend failure\nWhen API responds\nThen safe generic message returned without stack trace",
+      "acceptance": "Safe generic message returned without stack trace\nThe behavior should be validated when API responds."
+    },
+    {
+      "test_id": "UTC-1510",
+      "srs_id": "SRS-111",
+      "sds_id": "SDS-111",
+      "summary": "Verify Count updates after new image upload\nwhen new image added",
+      "description": "Feature: Session Image Count API\nScenario: Count updates after new image upload\nGiven new image added\nWhen API called again\nThen count increments correctly",
+      "acceptance": "Count increments correctly\nThe behavior should be validated when API called again."
+    },
+    {
+      "test_id": "UTC-1511",
+      "srs_id": "SRS-111",
+      "sds_id": "SDS-111",
+      "summary": "Verify Very large image count\nwhen >100k images",
+      "description": "Feature: Session Image Count API\nScenario: Very large image count\nGiven >100k images\nWhen API called\nThen large integer handled without overflow",
+      "acceptance": "Large integer handled without overflow\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1512",
+      "srs_id": "SRS-111",
+      "sds_id": "SDS-111",
+      "summary": "Verify Minimal payload size\nwhen valid request",
+      "description": "Feature: Session Image Count API\nScenario: Minimal payload size\nGiven valid request\nWhen response returned\nThen payload only includes {imageCount} and remains lightweight",
+      "acceptance": "Payload only includes {imageCount} and remains lightweight\nThe behavior should be validated when response returned."
+    },
+    {
+      "test_id": "UTC-1513",
+      "srs_id": "SRS-112",
+      "sds_id": "SDS-112",
+      "summary": "Verify Authorized user exports taxonomy\nwhen valid token and export permission",
+      "description": "Feature: Taxonomy Export API\nScenario: Authorized user exports taxonomy\nGiven valid token and export permission\nWhen export API is called with sessionId\nThen system returns 200 with taxonomy data file",
+      "acceptance": "System returns 200 with taxonomy data file\nThe behavior should be validated when export API is called with sessionId."
+    },
+    {
+      "test_id": "UTC-1514",
+      "srs_id": "SRS-112",
+      "sds_id": "SDS-112",
+      "summary": "Verify Correct taxonomy data returned\nwhen taxonomy exists for session",
+      "description": "Feature: Taxonomy Export API\nScenario: Correct taxonomy data returned\nGiven taxonomy exists for session\nWhen export completes\nThen file contains all taxonomy classes and attributes",
+      "acceptance": "File contains all taxonomy classes and attributes\nThe behavior should be validated when export completes."
+    },
+    {
+      "test_id": "UTC-1515",
+      "srs_id": "SRS-112",
+      "sds_id": "SDS-112",
+      "summary": "Verify Excel format output\nwhen format=excel",
+      "description": "Feature: Taxonomy Export API\nScenario: Excel format output\nGiven format=excel\nWhen API called\nThen response returns .xlsx file",
+      "acceptance": "Response returns .xlsx file\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1516",
+      "srs_id": "SRS-112",
+      "sds_id": "SDS-112",
+      "summary": "Verify CSV format output\nwhen format=csv",
+      "description": "Feature: Taxonomy Export API\nScenario: CSV format output\nGiven format=csv\nWhen API called\nThen response returns .csv file",
+      "acceptance": "Response returns .csv file\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1517",
+      "srs_id": "SRS-112",
+      "sds_id": "SDS-112",
+      "summary": "Verify Invalid format parameter\nwhen unsupported format provided",
+      "description": "Feature: Taxonomy Export API\nScenario: Invalid format parameter\nGiven unsupported format provided\nWhen API called\nThen 400 Bad Request returned",
+      "acceptance": "400 Bad Request returned\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1518",
+      "srs_id": "SRS-112",
+      "sds_id": "SDS-112",
+      "summary": "Verify Missing token\nwhen no authentication token",
+      "description": "Feature: Taxonomy Export API\nScenario: Missing token\nGiven no authentication token\nWhen API called\nThen 401 Unauthorized returned",
+      "acceptance": "401 Unauthorized returned\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1519",
+      "srs_id": "SRS-112",
+      "sds_id": "SDS-112",
+      "summary": "Verify Insufficient permission\nwhen user lacks export rights",
+      "description": "Feature: Taxonomy Export API\nScenario: Insufficient permission\nGiven user lacks export rights\nWhen API called\nThen 403 Forbidden returned",
+      "acceptance": "403 Forbidden returned\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1520",
+      "srs_id": "SRS-112",
+      "sds_id": "SDS-112",
+      "summary": "Verify Tenant isolation enforced\nwhen session belongs to another tenant",
+      "description": "Feature: Taxonomy Export API\nScenario: Tenant isolation enforced\nGiven session belongs to another tenant\nWhen export attempted\nThen export is blocked",
+      "acceptance": "Export is blocked\nThe behavior should be validated when export attempted."
+    },
+    {
+      "test_id": "UTC-1521",
+      "srs_id": "SRS-112",
+      "sds_id": "SDS-112",
+      "summary": "Verify Empty taxonomy case\nwhen no taxonomy configured",
+      "description": "Feature: Taxonomy Export API\nScenario: Empty taxonomy case\nGiven no taxonomy configured\nWhen export requested\nThen 404 or empty file returned",
+      "acceptance": "404 or empty file returned\nThe behavior should be validated when export requested."
+    },
+    {
+      "test_id": "UTC-1522",
+      "srs_id": "SRS-112",
+      "sds_id": "SDS-112",
+      "summary": "Verify Medium dataset performance\nwhen 1000+ taxonomy records",
+      "description": "Feature: Taxonomy Export API\nScenario: Medium dataset performance\nGiven 1000+ taxonomy records\nWhen export triggered\nThen file generated within 3 seconds",
+      "acceptance": "File generated within 3 seconds\nThe behavior should be validated when export triggered."
+    },
+    {
+      "test_id": "UTC-1523",
+      "srs_id": "SRS-112",
+      "sds_id": "SDS-112",
+      "summary": "Verify Large dataset streaming\nwhen 10k+ records",
+      "description": "Feature: Taxonomy Export API\nScenario: Large dataset streaming\nGiven 10k+ records\nWhen export requested\nThen response streamed without UI blocking or memory spikes",
+      "acceptance": "Response streamed without UI blocking or memory spikes\nThe behavior should be validated when export requested."
+    },
+    {
+      "test_id": "UTC-1524",
+      "srs_id": "SRS-112",
+      "sds_id": "SDS-112",
+      "summary": "Verify Oversized export\nwhen extremely large dataset",
+      "description": "Feature: Taxonomy Export API\nScenario: Oversized export\nGiven extremely large dataset\nWhen export exceeds limit\nThen 413 Payload Too Large returned",
+      "acceptance": "413 Payload Too Large returned\nThe behavior should be validated when export exceeds limit."
+    },
+    {
+      "test_id": "UTC-1525",
+      "srs_id": "SRS-112",
+      "sds_id": "SDS-112",
+      "summary": "Verify Timeout handling\nwhen slow backend processing",
+      "description": "Feature: Taxonomy Export API\nScenario: Timeout handling\nGiven slow backend processing\nWhen export exceeds timeout\nThen 504 Gateway Timeout returned safely",
+      "acceptance": "504 Gateway Timeout returned safely\nThe behavior should be validated when export exceeds timeout."
+    },
+    {
+      "test_id": "UTC-1526",
+      "srs_id": "SRS-112",
+      "sds_id": "SDS-112",
+      "summary": "Verify Retry export\nwhen first request fails",
+      "description": "Feature: Taxonomy Export API\nScenario: Retry export\nGiven first request fails\nWhen retried\nThen export succeeds",
+      "acceptance": "Export succeeds\nThe behavior should be validated when retried."
+    },
+    {
+      "test_id": "UTC-1527",
+      "srs_id": "SRS-112",
+      "sds_id": "SDS-112",
+      "summary": "Verify Correct column structure\nwhen export file generated",
+      "description": "Feature: Taxonomy Export API\nScenario: Correct column structure\nGiven export file generated\nWhen opened\nThen columns match taxonomy schema",
+      "acceptance": "Columns match taxonomy schema\nThe behavior should be validated when opened."
+    },
+    {
+      "test_id": "UTC-1528",
+      "srs_id": "SRS-112",
+      "sds_id": "SDS-112",
+      "summary": "Verify No sensitive metadata leak\nwhen export executed",
+      "description": "Feature: Taxonomy Export API\nScenario: No sensitive metadata leak\nGiven export executed\nWhen file inspected\nThen only allowed taxonomy fields included",
+      "acceptance": "Only allowed taxonomy fields included\nThe behavior should be validated when file inspected."
+    },
+    {
+      "test_id": "UTC-1529",
+      "srs_id": "SRS-112",
+      "sds_id": "SDS-112",
+      "summary": "Verify Correct file naming\nwhen session export",
+      "description": "Feature: Taxonomy Export API\nScenario: Correct file naming\nGiven session export\nWhen download starts\nThen filename includes sessionId and timestamp",
+      "acceptance": "Filename includes sessionId and timestamp\nThe behavior should be validated when download starts."
+    },
+    {
+      "test_id": "UTC-1530",
+      "srs_id": "SRS-112",
+      "sds_id": "SDS-112",
+      "summary": "Verify Download starts automatically\nwhen successful request",
+      "description": "Feature: Taxonomy Export API\nScenario: Download starts automatically\nGiven successful request\nWhen response received\nThen browser download begins without manual action",
+      "acceptance": "Browser download begins without manual action\nThe behavior should be validated when response received."
+    },
+    {
+      "test_id": "UTC-1531",
+      "srs_id": "SRS-113",
+      "sds_id": "SDS-113",
+      "summary": "Verify Authorized user exports labels\nwhen valid token and LABEL_EXPORT permission",
+      "description": "Feature: Label Export API\nScenario: Authorized user exports labels\nGiven valid token and LABEL_EXPORT permission\nWhen export API is called with sessionId\nThen CSV file containing label definitions should be downloaded",
+      "acceptance": "CSV file containing label definitions should be downloaded\nThe behavior should be validated when export API is called with sessionId."
+    },
+    {
+      "test_id": "UTC-1532",
+      "srs_id": "SRS-113",
+      "sds_id": "SDS-113",
+      "summary": "Verify Correct label definitions returned\nwhen labels exist for session",
+      "description": "Feature: Label Export API\nScenario: Correct label definitions returned\nGiven labels exist for session\nWhen export completes\nThen file contains all label names, IDs, and mappings",
+      "acceptance": "File contains all label names, IDs, and mappings\nThe behavior should be validated when export completes."
+    },
+    {
+      "test_id": "UTC-1533",
+      "srs_id": "SRS-113",
+      "sds_id": "SDS-113",
+      "summary": "Verify Versioned export structure\nwhen export executed",
+      "description": "Feature: Label Export API\nScenario: Versioned export structure\nGiven export executed\nWhen file opened\nThen export includes version or schema identifier column",
+      "acceptance": "Export includes version or schema identifier column\nThe behavior should be validated when file opened."
+    },
+    {
+      "test_id": "UTC-1534",
+      "srs_id": "SRS-113",
+      "sds_id": "SDS-113",
+      "summary": "Verify Label-to-session mapping included\nwhen mapped labels exist",
+      "description": "Feature: Label Export API\nScenario: Label-to-session mapping included\nGiven mapped labels exist\nWhen export generated\nThen mapping references are included",
+      "acceptance": "Mapping references are included\nThe behavior should be validated when export generated."
+    },
+    {
+      "test_id": "UTC-1535",
+      "srs_id": "SRS-113",
+      "sds_id": "SDS-113",
+      "summary": "Verify Invalid sessionId\nwhen malformed sessionId",
+      "description": "Feature: Label Export API\nScenario: Invalid sessionId\nGiven malformed sessionId\nWhen API called\nThen 400 Bad Request returned",
+      "acceptance": "400 Bad Request returned\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1536",
+      "srs_id": "SRS-113",
+      "sds_id": "SDS-113",
+      "summary": "Verify Missing token\nwhen no authentication token",
+      "description": "Feature: Label Export API\nScenario: Missing token\nGiven no authentication token\nWhen API called\nThen 401 Unauthorized returned",
+      "acceptance": "401 Unauthorized returned\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1537",
+      "srs_id": "SRS-113",
+      "sds_id": "SDS-113",
+      "summary": "Verify Insufficient permission\nwhen user without LABEL_EXPORT permission",
+      "description": "Feature: Label Export API\nScenario: Insufficient permission\nGiven user without LABEL_EXPORT permission\nWhen API called\nThen 403 Forbidden returned",
+      "acceptance": "403 Forbidden returned\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-1538",
+      "srs_id": "SRS-113",
+      "sds_id": "SDS-113",
+      "summary": "Verify Tenant isolation enforced\nwhen labels belong to another tenant",
+      "description": "Feature: Label Export API\nScenario: Tenant isolation enforced\nGiven labels belong to another tenant\nWhen export attempted\nThen access should be denied",
+      "acceptance": "Access should be denied\nThe behavior should be validated when export attempted."
+    },
+    {
+      "test_id": "UTC-1539",
+      "srs_id": "SRS-113",
+      "sds_id": "SDS-113",
+      "summary": "Verify Empty label dataset\nwhen no labels exist",
+      "description": "Feature: Label Export API\nScenario: Empty label dataset\nGiven no labels exist\nWhen export requested\nThen empty file or 404 returned gracefully",
+      "acceptance": "Empty file or 404 returned gracefully\nThe behavior should be validated when export requested."
+    },
+    {
+      "test_id": "UTC-1540",
+      "srs_id": "SRS-113",
+      "sds_id": "SDS-113",
+      "summary": "Verify Medium dataset performance\nwhen 1000 labels",
+      "description": "Feature: Label Export API\nScenario: Medium dataset performance\nGiven 1000 labels\nWhen export triggered\nThen file generated within 3 seconds",
+      "acceptance": "File generated within 3 seconds\nThe behavior should be validated when export triggered."
+    },
+    {
+      "test_id": "UTC-1541",
+      "srs_id": "SRS-113",
+      "sds_id": "SDS-113",
+      "summary": "Verify Large dataset streaming\nwhen 10k+ labels",
+      "description": "Feature: Label Export API\nScenario: Large dataset streaming\nGiven 10k+ labels\nWhen export executed\nThen streaming response without memory spike",
+      "acceptance": "Streaming response without memory spike\nThe behavior should be validated when export executed."
+    },
+    {
+      "test_id": "UTC-1542",
+      "srs_id": "SRS-113",
+      "sds_id": "SDS-113",
+      "summary": "Verify Oversized export request\nwhen extremely large dataset",
+      "description": "Feature: Label Export API\nScenario: Oversized export request\nGiven extremely large dataset\nWhen export exceeds limit\nThen bounded error returned with retry guidance",
+      "acceptance": "Bounded error returned with retry guidance\nThe behavior should be validated when export exceeds limit."
+    },
+    {
+      "test_id": "UTC-1543",
+      "srs_id": "SRS-113",
+      "sds_id": "SDS-113",
+      "summary": "Verify Retry after failure\nwhen first request fails",
+      "description": "Feature: Label Export API\nScenario: Retry after failure\nGiven first request fails\nWhen retried\nThen export succeeds",
+      "acceptance": "Export succeeds\nThe behavior should be validated when retried."
+    },
+    {
+      "test_id": "UTC-1544",
+      "srs_id": "SRS-113",
+      "sds_id": "SDS-113",
+      "summary": "Verify Serialization failure handling\nwhen export serialization error occurs",
+      "description": "Feature: Label Export API\nScenario: Serialization failure handling\nGiven export serialization error occurs\nWhen API processes data\nThen 500 safe error returned without crash",
+      "acceptance": "500 safe error returned without crash\nThe behavior should be validated when API processes data."
+    },
+    {
+      "test_id": "UTC-1545",
+      "srs_id": "SRS-113",
+      "sds_id": "SDS-113",
+      "summary": "Verify Correct column headers\nwhen file downloaded",
+      "description": "Feature: Label Export API\nScenario: Correct column headers\nGiven file downloaded\nWhen opened\nThen headers match label schema",
+      "acceptance": "Headers match label schema\nThe behavior should be validated when opened."
+    },
+    {
+      "test_id": "UTC-1546",
+      "srs_id": "SRS-113",
+      "sds_id": "SDS-113",
+      "summary": "Verify No sensitive fields exposed\nwhen export generated",
+      "description": "Feature: Label Export API\nScenario: No sensitive fields exposed\nGiven export generated\nWhen file inspected\nThen no credentials or internal IDs included",
+      "acceptance": "No credentials or internal IDs included\nThe behavior should be validated when file inspected."
+    },
+    {
+      "test_id": "UTC-1547",
+      "srs_id": "SRS-113",
+      "sds_id": "SDS-113",
+      "summary": "Verify Correct filename format\nwhen session export",
+      "description": "Feature: Label Export API\nScenario: Correct filename format\nGiven session export\nWhen download starts\nThen filename includes sessionId and timestamp",
+      "acceptance": "Filename includes sessionId and timestamp\nThe behavior should be validated when download starts."
+    },
+    {
+      "test_id": "UTC-1548",
+      "srs_id": "SRS-113",
+      "sds_id": "SDS-113",
+      "summary": "Verify Automatic download behavior\nwhen export success",
+      "description": "Feature: Label Export API\nScenario: Automatic download behavior\nGiven export success\nWhen response returned\nThen browser download starts automatically",
+      "acceptance": "Browser download starts automatically\nThe behavior should be validated when response returned."
+    }
+  ]
+}

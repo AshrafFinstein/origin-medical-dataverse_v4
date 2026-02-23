@@ -1,0 +1,163 @@
+{
+  "spec_file": "e2e/tests/masters/URS-DV-GEN-05/SRS-022/SDS-022.spec.ts",
+  "plan_urs": "URS-DV-GEN-05",
+  "srs_str": "022",
+  "domain": "masters",
+  "page_class": "SessionLabelPage",
+  "page_import": "session-label.page",
+  "goto_method": "gotoMasters",
+  "test_cases": [
+    {
+      "test_id": "UTC-558",
+      "srs_id": "SRS-47",
+      "sds_id": "SDS-47",
+      "summary": "Verify Edit mode pre-fills values\nwhen an existing label is selected for edit",
+      "description": "Feature: Session Label Popup Close, Cancel & Edit Handling\nScenario: Edit mode pre-fills values\nGiven an existing label is selected for edit\nWhen the popup opens\nThen Name, Description and Color should show existing values",
+      "acceptance": "Name, Description and Color should show existing values\nThe behavior should be validated when the popup opens."
+    },
+    {
+      "test_id": "UTC-559",
+      "srs_id": "SRS-47",
+      "sds_id": "SDS-47",
+      "summary": "Verify Update saves edited values\nwhen fields are modified in Edit mode",
+      "description": "Feature: Session Label Popup Close, Cancel & Edit Handling\nScenario: Update saves edited values\nGiven fields are modified in Edit mode\nWhen the user clicks Update/Submit\nThen the same label record should be updated successfully",
+      "acceptance": "The same label record should be updated successfully\nThe behavior should be validated when the user clicks Update/Submit."
+    },
+    {
+      "test_id": "UTC-560",
+      "srs_id": "SRS-47",
+      "sds_id": "SDS-47",
+      "summary": "Verify Cancel in Edit mode does not change record\nwhen an existing label is edited",
+      "description": "Feature: Session Label Popup Close, Cancel & Edit Handling\nScenario: Cancel in Edit mode does not change record\nGiven an existing label is edited\nWhen Cancel is clicked\nThen the original values should remain unchanged",
+      "acceptance": "The original values should remain unchanged\nThe behavior should be validated when Cancel is clicked."
+    },
+    {
+      "test_id": "UTC-561",
+      "srs_id": "SRS-47",
+      "sds_id": "SDS-47",
+      "summary": "Verify User returns to main page after dismissal\nwhen the popup is closed or canceled",
+      "description": "Feature: Session Label Popup Close, Cancel & Edit Handling\nScenario: User returns to main page after dismissal\nGiven the popup is closed or canceled\nWhen the action completes\nThen the Session Label page should remain visible without refresh",
+      "acceptance": "The Session Label page should remain visible without refresh\nThe behavior should be validated when the action completes."
+    },
+    {
+      "test_id": "UTC-562",
+      "srs_id": "SRS-47",
+      "sds_id": "SDS-47",
+      "summary": "Verify No validation triggered on cancel\nwhen invalid data exists in fields",
+      "description": "Feature: Session Label Popup Close, Cancel & Edit Handling\nScenario: No validation triggered on cancel\nGiven invalid data exists in fields\nWhen Cancel is clicked\nThen no validation or error message should appear",
+      "acceptance": "No validation or error message should appear\nThe behavior should be validated when Cancel is clicked."
+    },
+    {
+      "test_id": "UTC-563",
+      "srs_id": "SRS-48",
+      "sds_id": "SDS-48",
+      "summary": "Verify Dropdown visibility\nwhen the user opens Session Creation page",
+      "description": "Feature: Session Label Dropdown Rendering & Persistence\nScenario: Dropdown visibility\nGiven the user opens Session Creation page\nWhen the page loads\nThen the Session Label dropdown should be visible",
+      "acceptance": "The Session Label dropdown should be visible\nThe behavior should be validated when the page loads."
+    },
+    {
+      "test_id": "UTC-564",
+      "srs_id": "SRS-48",
+      "sds_id": "SDS-48",
+      "summary": "Verify Load labels from masters\nwhen labels exist in masters",
+      "description": "Feature: Session Label Dropdown Rendering & Persistence\nScenario: Load labels from masters\nGiven labels exist in masters\nWhen the dropdown is opened\nThen all active labels should be listed",
+      "acceptance": "All active labels should be listed\nThe behavior should be validated when the dropdown is opened."
+    },
+    {
+      "test_id": "UTC-565",
+      "srs_id": "SRS-48",
+      "sds_id": "SDS-48",
+      "summary": "Verify Select label\nwhen labels are available",
+      "description": "Feature: Session Label Dropdown Rendering & Persistence\nScenario: Select label\nGiven labels are available\nWhen the user selects a label\nThen the selected label should appear in the field",
+      "acceptance": "The selected label should appear in the field\nThe behavior should be validated when the user selects a label."
+    },
+    {
+      "test_id": "UTC-566",
+      "srs_id": "SRS-48",
+      "sds_id": "SDS-48",
+      "summary": "Verify Selection retention\nwhen a label is selected",
+      "description": "Feature: Session Label Dropdown Rendering & Persistence\nScenario: Selection retention\nGiven a label is selected\nWhen the user navigates within the form\nThen the selected label should remain retained",
+      "acceptance": "The selected label should remain retained\nThe behavior should be validated when the user navigates within the form."
+    },
+    {
+      "test_id": "UTC-567",
+      "srs_id": "SRS-48",
+      "sds_id": "SDS-48",
+      "summary": "Verify Remove selected label\nwhen a label is selected",
+      "description": "Feature: Session Label Dropdown Rendering & Persistence\nScenario: Remove selected label\nGiven a label is selected\nWhen the user clears/removes the label\nThen the field should become empty",
+      "acceptance": "The field should become empty\nThe behavior should be validated when the user clears/removes the label."
+    },
+    {
+      "test_id": "UTC-568",
+      "srs_id": "SRS-48",
+      "sds_id": "SDS-48",
+      "summary": "Verify Dynamic refresh of new labels\nwhen a new label is added in masters",
+      "description": "Feature: Session Label Dropdown Rendering & Persistence\nScenario: Dynamic refresh of new labels\nGiven a new label is added in masters\nWhen the dropdown is reopened or refreshed\nThen the new label should appear in the list",
+      "acceptance": "The new label should appear in the list\nThe behavior should be validated when the dropdown is reopened or refreshed."
+    },
+    {
+      "test_id": "UTC-569",
+      "srs_id": "SRS-48",
+      "sds_id": "SDS-48",
+      "summary": "Verify Save with selected label\nwhen a label is selected",
+      "description": "Feature: Session Label Dropdown Rendering & Persistence\nScenario: Save with selected label\nGiven a label is selected\nWhen the user creates the session\nThen the label should be stored in the session payload",
+      "acceptance": "The label should be stored in the session payload\nThe behavior should be validated when the user creates the session."
+    },
+    {
+      "test_id": "UTC-570",
+      "srs_id": "SRS-48",
+      "sds_id": "SDS-48",
+      "summary": "Verify Prevent invalid selection\nwhen labels are unavailable or invalid",
+      "description": "Feature: Session Label Dropdown Rendering & Persistence\nScenario: Prevent invalid selection\nGiven labels are unavailable or invalid\nWhen the user opens dropdown\nThen selection should be disabled and empty state shown",
+      "acceptance": "Selection should be disabled and empty state shown\nThe behavior should be validated when the user opens dropdown."
+    },
+    {
+      "test_id": "UTC-571",
+      "srs_id": "SRS-48",
+      "sds_id": "SDS-48",
+      "summary": "Verify Empty state clarity\nwhen no labels exist",
+      "description": "Feature: Session Label Dropdown Rendering & Persistence\nScenario: Empty state clarity\nGiven no labels exist\nWhen the dropdown is opened\nThen a clear \"No Labels Available\" message should be shown",
+      "acceptance": "A clear \"No Labels Available\" message should be shown\nThe behavior should be validated when the dropdown is opened."
+    },
+    {
+      "test_id": "UTC-572",
+      "srs_id": "SRS-48",
+      "sds_id": "SDS-48",
+      "summary": "Verify Unauthorized access restriction\nwhen the user lacks permission",
+      "description": "Feature: Session Label Dropdown Rendering & Persistence\nScenario: Unauthorized access restriction\nGiven the user lacks permission\nWhen the page loads\nThen dropdown should be hidden or disabled",
+      "acceptance": "Dropdown should be hidden or disabled\nThe behavior should be validated when the page loads."
+    },
+    {
+      "test_id": "UTC-573",
+      "srs_id": "SRS-48",
+      "sds_id": "SDS-48",
+      "summary": "Verify Fast dropdown load\nwhen many labels exist",
+      "description": "Feature: Session Label Dropdown Rendering & Persistence\nScenario: Fast dropdown load\nGiven many labels exist\nWhen the dropdown is opened\nThen the list should load without noticeable delay",
+      "acceptance": "The list should load without noticeable delay\nThe behavior should be validated when the dropdown is opened."
+    },
+    {
+      "test_id": "UTC-574",
+      "srs_id": "SRS-48",
+      "sds_id": "SDS-48",
+      "summary": "Verify API failure handling\nwhen label API fails",
+      "description": "Feature: Session Label Dropdown Rendering & Persistence\nScenario: API failure handling\nGiven label API fails\nWhen the dropdown loads\nThen system should show friendly message without crash",
+      "acceptance": "System should show friendly message without crash\nThe behavior should be validated when the dropdown loads."
+    },
+    {
+      "test_id": "UTC-575",
+      "srs_id": "SRS-49",
+      "sds_id": "SDS-49",
+      "summary": "Verify Show No Data when results are empty\nwhen the field has no records",
+      "description": "Feature: Error & Empty State Handling\nScenario: Show No Data when results are empty\nGiven the field has no records\nWhen the page loads\nThen a clean \"No Data\" message should be displayed",
+      "acceptance": "A clean \"No Data\" message should be displayed\nThe behavior should be validated when the page loads."
+    },
+    {
+      "test_id": "UTC-576",
+      "srs_id": "SRS-49",
+      "sds_id": "SDS-49",
+      "summary": "Verify Hide grid when empty\nwhen the dataset is empty",
+      "description": "Feature: Error & Empty State Handling\nScenario: Hide grid when empty\nGiven the dataset is empty\nWhen the UI renders\nThen the grid/table should be hidden and only empty state shown",
+      "acceptance": "The grid/table should be hidden and only empty state shown\nThe behavior should be validated when the UI renders."
+    }
+  ]
+}

@@ -1,11 +1,5 @@
-
 {
-  "user-table": {
-    "root": "[data-testid=\"user-table\"]"
-  },
-  "user-view": {
-    "permissions-modal": "[data-testid=\"user-view-permissions-modal\"]",
-    "permissions-cancel-button": "[data-testid=\"user-view-permissions-cancel-button\"]"
-  }
-  
+  "user-table": "user-table",
+  "user-view-permissions-modal": "user-view-permissions-modal",
+  "user-view-permissions-cancel-button": "user-view-permissions-cancel-button"
 }

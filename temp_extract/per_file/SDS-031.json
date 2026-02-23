@@ -1,0 +1,1083 @@
+{
+  "spec_file": "e2e/tests/session-management/URS-DV-GEN-07/SRS-031/SDS-031.spec.ts",
+  "plan_urs": "URS-DV-GEN-07",
+  "srs_str": "031",
+  "domain": "session-management",
+  "page_class": "SessionPage",
+  "page_import": "session.page",
+  "goto_method": "navigate",
+  "test_cases": [
+    {
+      "test_id": "UTC-891",
+      "srs_id": "SRS-72",
+      "sds_id": "SDS-72",
+      "summary": "Verify Restore saved value\nwhen saved session reopened",
+      "description": "Feature: Anatomy plane orientation selection dropdown\nScenario: Restore saved value\nGiven saved session reopened\nWhen page reloads\nThen previously selected plane should auto-populate",
+      "acceptance": "Previously selected plane should auto-populate\nThe behavior should be validated when page reloads."
+    },
+    {
+      "test_id": "UTC-892",
+      "srs_id": "SRS-72",
+      "sds_id": "SDS-72",
+      "summary": "Verify Reject invalid injection\nwhen manipulated payload with unsupported value",
+      "description": "Feature: Anatomy plane orientation selection dropdown\nScenario: Reject invalid injection\nGiven manipulated payload with unsupported value\nWhen API validates\nThen request should be rejected",
+      "acceptance": "Request should be rejected\nThe behavior should be validated when API validates."
+    },
+    {
+      "test_id": "UTC-893",
+      "srs_id": "SRS-72",
+      "sds_id": "SDS-72",
+      "summary": "Verify Quick dropdown rendering\nwhen dropdown opened",
+      "description": "Feature: Anatomy plane orientation selection dropdown\nScenario: Quick dropdown rendering\nGiven dropdown opened\nWhen options rendered\nThen list should load instantly (<2s)",
+      "acceptance": "List should load instantly (<2s)\nThe behavior should be validated when options rendered."
+    },
+    {
+      "test_id": "UTC-894",
+      "srs_id": "SRS-72",
+      "sds_id": "SDS-72",
+      "summary": "Verify Keyboard accessibility\nwhen dropdown focused",
+      "description": "Feature: Anatomy plane orientation selection dropdown\nScenario: Keyboard accessibility\nGiven dropdown focused\nWhen using arrow keys/enter\nThen selection should work without mouse",
+      "acceptance": "Selection should work without mouse\nThe behavior should be validated when using arrow keys/enter."
+    },
+    {
+      "test_id": "UTC-895",
+      "srs_id": "SRS-72",
+      "sds_id": "SDS-72",
+      "summary": "Verify No options configured\nwhen configuration empty",
+      "description": "Feature: Anatomy plane orientation selection dropdown\nScenario: No options configured\nGiven configuration empty\nWhen dropdown opened\nThen “No options available” message should show",
+      "acceptance": "\"No options available\" message should show\nThe behavior should be validated when dropdown opened."
+    },
+    {
+      "test_id": "UTC-896",
+      "srs_id": "SRS-72",
+      "sds_id": "SDS-72",
+      "summary": "Verify Consistent UI alignment\nwhen form displayed",
+      "description": "Feature: Anatomy plane orientation selection dropdown\nScenario: Consistent UI alignment\nGiven form displayed\nWhen compared with other fields\nThen dropdown should align and match style standards",
+      "acceptance": "Dropdown should align and match style standards\nThe behavior should be validated when compared with other fields."
+    },
+    {
+      "test_id": "UTC-897",
+      "srs_id": "SRS-73",
+      "sds_id": "SDS-73",
+      "summary": "Verify Dropdown visible on session form\nwhen Session Creation page loads",
+      "description": "Feature: Center identification dropdown for facility selection\nScenario: Dropdown visible on session form\nGiven Session Creation page loads\nWhen form renders\nThen Center Code dropdown should be visible",
+      "acceptance": "Center Code dropdown should be visible\nThe behavior should be validated when form renders."
+    },
+    {
+      "test_id": "UTC-898",
+      "srs_id": "SRS-73",
+      "sds_id": "SDS-73",
+      "summary": "Verify Facility list loads correctly\nwhen dropdown opened",
+      "description": "Feature: Center identification dropdown for facility selection\nScenario: Facility list loads correctly\nGiven dropdown opened\nWhen options are fetched\nThen facility names with codes should be displayed",
+      "acceptance": "Facility names with codes should be displayed\nThe behavior should be validated when options are fetched."
+    },
+    {
+      "test_id": "UTC-899",
+      "srs_id": "SRS-73",
+      "sds_id": "SDS-73",
+      "summary": "Verify Select facility\nwhen dropdown options displayed",
+      "description": "Feature: Center identification dropdown for facility selection\nScenario: Select facility\nGiven dropdown options displayed\nWhen user selects a center\nThen selected value should appear in the field",
+      "acceptance": "Selected value should appear in the field\nThe behavior should be validated when user selects a center."
+    },
+    {
+      "test_id": "UTC-900",
+      "srs_id": "SRS-73",
+      "sds_id": "SDS-73",
+      "summary": "Verify Single selection only\nwhen one center selected",
+      "description": "Feature: Center identification dropdown for facility selection\nScenario: Single selection only\nGiven one center selected\nWhen another selected\nThen previous selection should be replaced",
+      "acceptance": "Previous selection should be replaced\nThe behavior should be validated when another selected."
+    },
+    {
+      "test_id": "UTC-901",
+      "srs_id": "SRS-73",
+      "sds_id": "SDS-73",
+      "summary": "Verify Persist selection during navigation\nwhen center selected",
+      "description": "Feature: Center identification dropdown for facility selection\nScenario: Persist selection during navigation\nGiven center selected\nWhen user navigates within form\nThen selection should remain unchanged",
+      "acceptance": "Selection should remain unchanged\nThe behavior should be validated when user navigates within form."
+    },
+    {
+      "test_id": "UTC-902",
+      "srs_id": "SRS-73",
+      "sds_id": "SDS-73",
+      "summary": "Verify Include center ID in payload\nwhen session submitted",
+      "description": "Feature: Center identification dropdown for facility selection\nScenario: Include center ID in payload\nGiven session submitted\nWhen API payload generated\nThen selected centerId should be present in request",
+      "acceptance": "Selected centerId should be present in request\nThe behavior should be validated when API payload generated."
+    },
+    {
+      "test_id": "UTC-903",
+      "srs_id": "SRS-73",
+      "sds_id": "SDS-73",
+      "summary": "Verify Default placeholder shown\nwhen no selection made",
+      "description": "Feature: Center identification dropdown for facility selection\nScenario: Default placeholder shown\nGiven no selection made\nWhen page loads\nThen placeholder text should guide user",
+      "acceptance": "Placeholder text should guide user\nThe behavior should be validated when page loads."
+    },
+    {
+      "test_id": "UTC-904",
+      "srs_id": "SRS-73",
+      "sds_id": "SDS-73",
+      "summary": "Verify Mandatory validation (if required)\nwhen field required",
+      "description": "Feature: Center identification dropdown for facility selection\nScenario: Mandatory validation (if required)\nGiven field required\nWhen submit without selection\nThen validation message should appear",
+      "acceptance": "Validation message should appear\nThe behavior should be validated when submit without selection."
+    },
+    {
+      "test_id": "UTC-905",
+      "srs_id": "SRS-73",
+      "sds_id": "SDS-73",
+      "summary": "Verify Restricted centers hidden\nwhen user with limited access",
+      "description": "Feature: Center identification dropdown for facility selection\nScenario: Restricted centers hidden\nGiven user with limited access\nWhen dropdown opens\nThen restricted facilities should not appear",
+      "acceptance": "Restricted facilities should not appear\nThe behavior should be validated when dropdown opens."
+    },
+    {
+      "test_id": "UTC-906",
+      "srs_id": "SRS-73",
+      "sds_id": "SDS-73",
+      "summary": "Verify Unauthorized injection prevented\nwhen manipulated payload with unauthorized centerId",
+      "description": "Feature: Center identification dropdown for facility selection\nScenario: Unauthorized injection prevented\nGiven manipulated payload with unauthorized centerId\nWhen API validates\nThen request should be rejected",
+      "acceptance": "Request should be rejected\nThe behavior should be validated when API validates."
+    },
+    {
+      "test_id": "UTC-907",
+      "srs_id": "SRS-73",
+      "sds_id": "SDS-73",
+      "summary": "Verify Search within dropdown\nwhen many facilities exist",
+      "description": "Feature: Center identification dropdown for facility selection\nScenario: Search within dropdown\nGiven many facilities exist\nWhen user types search text\nThen matching facilities should be filtered",
+      "acceptance": "Matching facilities should be filtered\nThe behavior should be validated when user types search text."
+    },
+    {
+      "test_id": "UTC-908",
+      "srs_id": "SRS-73",
+      "sds_id": "SDS-73",
+      "summary": "Verify Quick load time\nwhen dropdown opened",
+      "description": "Feature: Center identification dropdown for facility selection\nScenario: Quick load time\nGiven dropdown opened\nWhen data loads\nThen list should render within acceptable time (<2s)",
+      "acceptance": "List should render within acceptable time (<2s)\nThe behavior should be validated when data loads."
+    },
+    {
+      "test_id": "UTC-909",
+      "srs_id": "SRS-73",
+      "sds_id": "SDS-73",
+      "summary": "Verify Restore saved value on edit\nwhen saved session reopened",
+      "description": "Feature: Center identification dropdown for facility selection\nScenario: Restore saved value on edit\nGiven saved session reopened\nWhen page loads\nThen previously selected center should auto-populate",
+      "acceptance": "Previously selected center should auto-populate\nThe behavior should be validated when page loads."
+    },
+    {
+      "test_id": "UTC-910",
+      "srs_id": "SRS-73",
+      "sds_id": "SDS-73",
+      "summary": "Verify No facilities available\nwhen facility list empty",
+      "description": "Feature: Center identification dropdown for facility selection\nScenario: No facilities available\nGiven facility list empty\nWhen dropdown opened\nThen “No Centers Available” message should show",
+      "acceptance": "\"No Centers Available\" message should show\nThe behavior should be validated when dropdown opened."
+    },
+    {
+      "test_id": "UTC-911",
+      "srs_id": "SRS-73",
+      "sds_id": "SDS-73",
+      "summary": "Verify Keyboard accessibility\nwhen dropdown focused",
+      "description": "Feature: Center identification dropdown for facility selection\nScenario: Keyboard accessibility\nGiven dropdown focused\nWhen using keyboard arrows/enter\nThen selection should work without mouse",
+      "acceptance": "Selection should work without mouse\nThe behavior should be validated when using keyboard arrows/enter."
+    },
+    {
+      "test_id": "UTC-912",
+      "srs_id": "SRS-74",
+      "sds_id": "SDS-74",
+      "summary": "Verify Dropdown visible on session form\nwhen Session Creation page loads",
+      "description": "Feature: Role type dropdown for session creator classification\nScenario: Dropdown visible on session form\nGiven Session Creation page loads\nWhen form renders\nThen User Type Code dropdown should be visible",
+      "acceptance": "User Type Code dropdown should be visible\nThe behavior should be validated when form renders."
+    },
+    {
+      "test_id": "UTC-913",
+      "srs_id": "SRS-74",
+      "sds_id": "SDS-74",
+      "summary": "Verify Role list loads correctly\nwhen dropdown opened",
+      "description": "Feature: Role type dropdown for session creator classification\nScenario: Role list loads correctly\nGiven dropdown opened\nWhen options are fetched\nThen available role types should be displayed",
+      "acceptance": "Available role types should be displayed\nThe behavior should be validated when options are fetched."
+    },
+    {
+      "test_id": "UTC-914",
+      "srs_id": "SRS-74",
+      "sds_id": "SDS-74",
+      "summary": "Verify Select role type\nwhen roles are displayed",
+      "description": "Feature: Role type dropdown for session creator classification\nScenario: Select role type\nGiven roles are displayed\nWhen user selects one option\nThen selected value should appear in the field",
+      "acceptance": "Selected value should appear in the field\nThe behavior should be validated when user selects one option."
+    },
+    {
+      "test_id": "UTC-915",
+      "srs_id": "SRS-74",
+      "sds_id": "SDS-74",
+      "summary": "Verify Single selection enforced\nwhen one role selected",
+      "description": "Feature: Role type dropdown for session creator classification\nScenario: Single selection enforced\nGiven one role selected\nWhen another role selected\nThen previous role should be replaced",
+      "acceptance": "Previous role should be replaced\nThe behavior should be validated when another role selected."
+    },
+    {
+      "test_id": "UTC-916",
+      "srs_id": "SRS-74",
+      "sds_id": "SDS-74",
+      "summary": "Verify Selection persists during navigation\nwhen role selected",
+      "description": "Feature: Role type dropdown for session creator classification\nScenario: Selection persists during navigation\nGiven role selected\nWhen user navigates within form\nThen selection should remain unchanged",
+      "acceptance": "Selection should remain unchanged\nThe behavior should be validated when user navigates within form."
+    },
+    {
+      "test_id": "UTC-917",
+      "srs_id": "SRS-74",
+      "sds_id": "SDS-74",
+      "summary": "Verify Role stored in payload\nwhen session submitted",
+      "description": "Feature: Role type dropdown for session creator classification\nScenario: Role stored in payload\nGiven session submitted\nWhen API request generated\nThen selected role should be included in metadata",
+      "acceptance": "Selected role should be included in metadata\nThe behavior should be validated when API request generated."
+    },
+    {
+      "test_id": "UTC-918",
+      "srs_id": "SRS-74",
+      "sds_id": "SDS-74",
+      "summary": "Verify Default placeholder shown\nwhen no role selected",
+      "description": "Feature: Role type dropdown for session creator classification\nScenario: Default placeholder shown\nGiven no role selected\nWhen page loads\nThen placeholder text should guide user",
+      "acceptance": "Placeholder text should guide user\nThe behavior should be validated when page loads."
+    },
+    {
+      "test_id": "UTC-919",
+      "srs_id": "SRS-74",
+      "sds_id": "SDS-74",
+      "summary": "Verify Mandatory validation if required\nwhen field required",
+      "description": "Feature: Role type dropdown for session creator classification\nScenario: Mandatory validation if required\nGiven field required\nWhen user submits without selection\nThen validation message should appear",
+      "acceptance": "Validation message should appear\nThe behavior should be validated when user submits without selection."
+    },
+    {
+      "test_id": "UTC-920",
+      "srs_id": "SRS-74",
+      "sds_id": "SDS-74",
+      "summary": "Verify Search/filter inside dropdown\nwhen many roles exist",
+      "description": "Feature: Role type dropdown for session creator classification\nScenario: Search/filter inside dropdown\nGiven many roles exist\nWhen user types in search\nThen matching roles should be filtered",
+      "acceptance": "Matching roles should be filtered\nThe behavior should be validated when user types in search."
+    },
+    {
+      "test_id": "UTC-921",
+      "srs_id": "SRS-74",
+      "sds_id": "SDS-74",
+      "summary": "Verify Fast load time\nwhen dropdown opened",
+      "description": "Feature: Role type dropdown for session creator classification\nScenario: Fast load time\nGiven dropdown opened\nWhen data loads\nThen options should render within acceptable time (<2s)",
+      "acceptance": "Options should render within acceptable time (<2s)\nThe behavior should be validated when data loads."
+    },
+    {
+      "test_id": "UTC-922",
+      "srs_id": "SRS-74",
+      "sds_id": "SDS-74",
+      "summary": "Verify Restore saved role on edit\nwhen session reopened in edit mode",
+      "description": "Feature: Role type dropdown for session creator classification\nScenario: Restore saved role on edit\nGiven session reopened in edit mode\nWhen page loads\nThen previously selected role should auto-populate",
+      "acceptance": "Previously selected role should auto-populate\nThe behavior should be validated when page loads."
+    },
+    {
+      "test_id": "UTC-923",
+      "srs_id": "SRS-74",
+      "sds_id": "SDS-74",
+      "summary": "Verify No roles available\nwhen role list empty",
+      "description": "Feature: Role type dropdown for session creator classification\nScenario: No roles available\nGiven role list empty\nWhen dropdown opened\nThen “No Roles Available” message should display",
+      "acceptance": "\"No Roles Available\" message should display\nThe behavior should be validated when dropdown opened."
+    },
+    {
+      "test_id": "UTC-924",
+      "srs_id": "SRS-74",
+      "sds_id": "SDS-74",
+      "summary": "Verify Prevent invalid value injection\nwhen manipulated payload with unauthorized role",
+      "description": "Feature: Role type dropdown for session creator classification\nScenario: Prevent invalid value injection\nGiven manipulated payload with unauthorized role\nWhen API validates\nThen request should be rejected",
+      "acceptance": "Request should be rejected\nThe behavior should be validated when API validates."
+    },
+    {
+      "test_id": "UTC-925",
+      "srs_id": "SRS-74",
+      "sds_id": "SDS-74",
+      "summary": "Verify Keyboard navigation supported\nwhen dropdown focused",
+      "description": "Feature: Role type dropdown for session creator classification\nScenario: Keyboard navigation supported\nGiven dropdown focused\nWhen user uses keyboard keys\nThen selection should work without mouse",
+      "acceptance": "Selection should work without mouse\nThe behavior should be validated when user uses keyboard keys."
+    },
+    {
+      "test_id": "UTC-926",
+      "srs_id": "SRS-74",
+      "sds_id": "SDS-74",
+      "summary": "Verify Clear selection allowed\nwhen role selected",
+      "description": "Feature: Role type dropdown for session creator classification\nScenario: Clear selection allowed\nGiven role selected\nWhen user clears selection\nThen field should reset to default state",
+      "acceptance": "Field should reset to default state\nThe behavior should be validated when user clears selection."
+    },
+    {
+      "test_id": "UTC-927",
+      "srs_id": "SRS-75",
+      "sds_id": "SDS-75",
+      "summary": "Verify Image Count field visible\nwhen Session Creation page loads",
+      "description": "Feature: Numeric input for expected session image count validation\nScenario: Image Count field visible\nGiven Session Creation page loads\nWhen form renders\nThen Image Count numeric input should be visible",
+      "acceptance": "Image Count numeric input should be visible\nThe behavior should be validated when form renders."
+    },
+    {
+      "test_id": "UTC-928",
+      "srs_id": "SRS-75",
+      "sds_id": "SDS-75",
+      "summary": "Verify Accept positive integers only\nwhen user enters value 100",
+      "description": "Feature: Numeric input for expected session image count validation\nScenario: Accept positive integers only\nGiven user enters value 100\nWhen input validated\nThen value should be accepted",
+      "acceptance": "Value should be accepted\nThe behavior should be validated when input validated."
+    },
+    {
+      "test_id": "UTC-929",
+      "srs_id": "SRS-75",
+      "sds_id": "SDS-75",
+      "summary": "Verify Reject alphabetic characters\nwhen user types letters",
+      "description": "Feature: Numeric input for expected session image count validation\nScenario: Reject alphabetic characters\nGiven user types letters\nWhen input attempted\nThen characters should not be accepted",
+      "acceptance": "Characters should not be accepted\nThe behavior should be validated when input attempted."
+    },
+    {
+      "test_id": "UTC-930",
+      "srs_id": "SRS-75",
+      "sds_id": "SDS-75",
+      "summary": "Verify Reject decimal values\nwhen user enters 10.5",
+      "description": "Feature: Numeric input for expected session image count validation\nScenario: Reject decimal values\nGiven user enters 10.5\nWhen validation runs\nThen decimals should be prevented",
+      "acceptance": "Decimals should be prevented\nThe behavior should be validated when validation runs."
+    },
+    {
+      "test_id": "UTC-931",
+      "srs_id": "SRS-75",
+      "sds_id": "SDS-75",
+      "summary": "Verify Reject negative numbers\nwhen user enters -5",
+      "description": "Feature: Numeric input for expected session image count validation\nScenario: Reject negative numbers\nGiven user enters -5\nWhen validation runs\nThen value should be rejected",
+      "acceptance": "Value should be rejected\nThe behavior should be validated when validation runs."
+    },
+    {
+      "test_id": "UTC-932",
+      "srs_id": "SRS-75",
+      "sds_id": "SDS-75",
+      "summary": "Verify Zero value handling\nwhen user enters 0",
+      "description": "Feature: Numeric input for expected session image count validation\nScenario: Zero value handling\nGiven user enters 0\nWhen validation runs\nThen system should show validation message for positive number",
+      "acceptance": "System should show validation message for positive number\nThe behavior should be validated when validation runs."
+    },
+    {
+      "test_id": "UTC-933",
+      "srs_id": "SRS-75",
+      "sds_id": "SDS-75",
+      "summary": "Verify Spinner arrows increase/decrease value\nwhen numeric control present",
+      "description": "Feature: Numeric input for expected session image count validation\nScenario: Spinner arrows increase/decrease value\nGiven numeric control present\nWhen user clicks arrows\nThen value should increment/decrement correctly",
+      "acceptance": "Value should increment/decrement correctly\nThe behavior should be validated when user clicks arrows."
+    },
+    {
+      "test_id": "UTC-934",
+      "srs_id": "SRS-75",
+      "sds_id": "SDS-75",
+      "summary": "Verify Value persists during navigation\nwhen value entered",
+      "description": "Feature: Numeric input for expected session image count validation\nScenario: Value persists during navigation\nGiven value entered\nWhen user navigates within form\nThen value should remain unchanged",
+      "acceptance": "Value should remain unchanged\nThe behavior should be validated when user navigates within form."
+    },
+    {
+      "test_id": "UTC-935",
+      "srs_id": "SRS-75",
+      "sds_id": "SDS-75",
+      "summary": "Verify Value sent in payload\nwhen session submitted",
+      "description": "Feature: Numeric input for expected session image count validation\nScenario: Value sent in payload\nGiven session submitted\nWhen API request triggered\nThen imageCount should be included in JSON payload",
+      "acceptance": "ImageCount should be included in JSON payload\nThe behavior should be validated when API request triggered."
+    },
+    {
+      "test_id": "UTC-936",
+      "srs_id": "SRS-75",
+      "sds_id": "SDS-75",
+      "summary": "Verify Progress bar calculation\nwhen expected count 100 and 50 uploaded",
+      "description": "Feature: Numeric input for expected session image count validation\nScenario: Progress bar calculation\nGiven expected count 100 and 50 uploaded\nWhen progress calculated\nThen progress should show 50%",
+      "acceptance": "Progress should show 50%\nThe behavior should be validated when progress calculated."
+    },
+    {
+      "test_id": "UTC-937",
+      "srs_id": "SRS-75",
+      "sds_id": "SDS-75",
+      "summary": "Verify Large number handling\nwhen user enters large value (100000+)",
+      "description": "Feature: Numeric input for expected session image count validation\nScenario: Large number handling\nGiven user enters large value (100000+)\nWhen saved\nThen system should handle without overflow",
+      "acceptance": "System should handle without overflow\nThe behavior should be validated when saved."
+    },
+    {
+      "test_id": "UTC-938",
+      "srs_id": "SRS-75",
+      "sds_id": "SDS-75",
+      "summary": "Verify Refresh retains value\nwhen value entered and saved",
+      "description": "Feature: Numeric input for expected session image count validation\nScenario: Refresh retains value\nGiven value entered and saved\nWhen page refreshed\nThen value should reload correctly",
+      "acceptance": "Value should reload correctly\nThe behavior should be validated when page refreshed."
+    },
+    {
+      "test_id": "UTC-939",
+      "srs_id": "SRS-75",
+      "sds_id": "SDS-75",
+      "summary": "Verify Keyboard entry supported\nwhen field focused",
+      "description": "Feature: Numeric input for expected session image count validation\nScenario: Keyboard entry supported\nGiven field focused\nWhen user types numbers\nThen input should work without mouse",
+      "acceptance": "Input should work without mouse\nThe behavior should be validated when user types numbers."
+    },
+    {
+      "test_id": "UTC-940",
+      "srs_id": "SRS-75",
+      "sds_id": "SDS-75",
+      "summary": "Verify Instant validation feedback\nwhen invalid input entered",
+      "description": "Feature: Numeric input for expected session image count validation\nScenario: Instant validation feedback\nGiven invalid input entered\nWhen validation triggered\nThen response should occur immediately without delay",
+      "acceptance": "Response should occur immediately without delay\nThe behavior should be validated when validation triggered."
+    },
+    {
+      "test_id": "UTC-941",
+      "srs_id": "SRS-75",
+      "sds_id": "SDS-75",
+      "summary": "Verify Blank submission\nwhen field left empty",
+      "description": "Feature: Numeric input for expected session image count validation\nScenario: Blank submission\nGiven field left empty\nWhen submitting form\nThen submission should be blocked or default applied",
+      "acceptance": "Submission should be blocked or default applied\nThe behavior should be validated when submitting form."
+    },
+    {
+      "test_id": "UTC-942",
+      "srs_id": "SRS-76",
+      "sds_id": "SDS-76",
+      "summary": "Verify Set Code field visible\nwhen Session Creation page loads",
+      "description": "Feature: Set Code batch grouping input for sessions\nScenario: Set Code field visible\nGiven Session Creation page loads\nWhen form renders\nThen Set Code text input should be visible",
+      "acceptance": "Set Code text input should be visible\nThe behavior should be validated when form renders."
+    },
+    {
+      "test_id": "UTC-943",
+      "srs_id": "SRS-76",
+      "sds_id": "SDS-76",
+      "summary": "Verify Accept alphanumeric value\nwhen user enters SET001",
+      "description": "Feature: Set Code batch grouping input for sessions\nScenario: Accept alphanumeric value\nGiven user enters SET001\nWhen input saved\nThen value should be accepted",
+      "acceptance": "Value should be accepted\nThe behavior should be validated when input saved."
+    },
+    {
+      "test_id": "UTC-944",
+      "srs_id": "SRS-76",
+      "sds_id": "SDS-76",
+      "summary": "Verify Accept mixed characters\nwhen user enters Batch-2026-A",
+      "description": "Feature: Set Code batch grouping input for sessions\nScenario: Accept mixed characters\nGiven user enters Batch-2026-A\nWhen saved\nThen value should be stored correctly",
+      "acceptance": "Value should be stored correctly\nThe behavior should be validated when saved."
+    },
+    {
+      "test_id": "UTC-945",
+      "srs_id": "SRS-76",
+      "sds_id": "SDS-76",
+      "summary": "Verify Placeholder visible\nwhen field loads",
+      "description": "Feature: Set Code batch grouping input for sessions\nScenario: Placeholder visible\nGiven field loads\nWhen user views input\nThen placeholder text should guide user",
+      "acceptance": "Placeholder text should guide user\nThe behavior should be validated when user views input."
+    },
+    {
+      "test_id": "UTC-946",
+      "srs_id": "SRS-76",
+      "sds_id": "SDS-76",
+      "summary": "Verify Trim leading/trailing spaces\nwhen user enters \" SET100 \"",
+      "description": "Feature: Set Code batch grouping input for sessions\nScenario: Trim leading/trailing spaces\nGiven user enters \" SET100 \"\nWhen saved\nThen spaces should be removed",
+      "acceptance": "Spaces should be removed\nThe behavior should be validated when saved."
+    },
+    {
+      "test_id": "UTC-947",
+      "srs_id": "SRS-76",
+      "sds_id": "SDS-76",
+      "summary": "Verify Prevent special characters\nwhen user enters invalid symbols (@#$%)",
+      "description": "Feature: Set Code batch grouping input for sessions\nScenario: Prevent special characters\nGiven user enters invalid symbols (@#$%)\nWhen validated\nThen system should block or sanitize invalid characters",
+      "acceptance": "System should block or sanitize invalid characters\nThe behavior should be validated when validated."
+    },
+    {
+      "test_id": "UTC-948",
+      "srs_id": "SRS-76",
+      "sds_id": "SDS-76",
+      "summary": "Verify Maximum length enforcement\nwhen input exceeds limit",
+      "description": "Feature: Set Code batch grouping input for sessions\nScenario: Maximum length enforcement\nGiven input exceeds limit\nWhen validation runs\nThen system should prevent excess characters",
+      "acceptance": "System should prevent excess characters\nThe behavior should be validated when validation runs."
+    },
+    {
+      "test_id": "UTC-949",
+      "srs_id": "SRS-76",
+      "sds_id": "SDS-76",
+      "summary": "Verify Value persists during navigation\nwhen Set Code entered",
+      "description": "Feature: Set Code batch grouping input for sessions\nScenario: Value persists during navigation\nGiven Set Code entered\nWhen navigating within form\nThen value should remain unchanged",
+      "acceptance": "Value should remain unchanged\nThe behavior should be validated when navigating within form."
+    },
+    {
+      "test_id": "UTC-950",
+      "srs_id": "SRS-76",
+      "sds_id": "SDS-76",
+      "summary": "Verify Value included in API payload\nwhen session submitted",
+      "description": "Feature: Set Code batch grouping input for sessions\nScenario: Value included in API payload\nGiven session submitted\nWhen request sent\nThen setCode should be present in payload",
+      "acceptance": "SetCode should be present in payload\nThe behavior should be validated when request sent."
+    },
+    {
+      "test_id": "UTC-951",
+      "srs_id": "SRS-76",
+      "sds_id": "SDS-76",
+      "summary": "Verify Indexed for batch search\nwhen sessions created with same Set Code",
+      "description": "Feature: Set Code batch grouping input for sessions\nScenario: Indexed for batch search\nGiven sessions created with same Set Code\nWhen searched by set value\nThen related sessions should be retrieved",
+      "acceptance": "Related sessions should be retrieved\nThe behavior should be validated when searched by set value."
+    },
+    {
+      "test_id": "UTC-952",
+      "srs_id": "SRS-76",
+      "sds_id": "SDS-76",
+      "summary": "Verify Empty field allowed\nwhen no Set Code entered",
+      "description": "Feature: Set Code batch grouping input for sessions\nScenario: Empty field allowed\nGiven no Set Code entered\nWhen session saved\nThen session should still be created successfully",
+      "acceptance": "Session should still be created successfully\nThe behavior should be validated when session saved."
+    },
+    {
+      "test_id": "UTC-953",
+      "srs_id": "SRS-76",
+      "sds_id": "SDS-76",
+      "summary": "Verify Keyboard typing supported\nwhen field focused",
+      "description": "Feature: Set Code batch grouping input for sessions\nScenario: Keyboard typing supported\nGiven field focused\nWhen typing value\nThen input should work without mouse",
+      "acceptance": "Input should work without mouse\nThe behavior should be validated when typing value."
+    },
+    {
+      "test_id": "UTC-954",
+      "srs_id": "SRS-76",
+      "sds_id": "SDS-76",
+      "summary": "Verify Refresh retains value\nwhen value saved",
+      "description": "Feature: Set Code batch grouping input for sessions\nScenario: Refresh retains value\nGiven value saved\nWhen page refreshed\nThen Set Code should reload correctly",
+      "acceptance": "Set Code should reload correctly\nThe behavior should be validated when page refreshed."
+    },
+    {
+      "test_id": "UTC-955",
+      "srs_id": "SRS-76",
+      "sds_id": "SDS-76",
+      "summary": "Verify Instant save response\nwhen value entered",
+      "description": "Feature: Set Code batch grouping input for sessions\nScenario: Instant save response\nGiven value entered\nWhen saved\nThen system should respond without noticeable delay",
+      "acceptance": "System should respond without noticeable delay\nThe behavior should be validated when saved."
+    },
+    {
+      "test_id": "UTC-956",
+      "srs_id": "SRS-76",
+      "sds_id": "SDS-76",
+      "summary": "Verify Editable after creation\nwhen session opened in edit mode",
+      "description": "Feature: Set Code batch grouping input for sessions\nScenario: Editable after creation\nGiven session opened in edit mode\nWhen modifying Set Code\nThen updated value should be saved successfully",
+      "acceptance": "Updated value should be saved successfully\nThe behavior should be validated when modifying Set Code."
+    },
+    {
+      "test_id": "UTC-957",
+      "srs_id": "SRS-77",
+      "sds_id": "SDS-77",
+      "summary": "Verify Generate button visibility\nwhen Session Creation page loads",
+      "description": "Feature: Generate Button for Session ID creation\nScenario: Generate button visibility\nGiven Session Creation page loads\nWhen metadata section renders\nThen Generate button should be visible at bottom",
+      "acceptance": "Generate button should be visible at bottom\nThe behavior should be validated when metadata section renders."
+    },
+    {
+      "test_id": "UTC-958",
+      "srs_id": "SRS-77",
+      "sds_id": "SDS-77",
+      "summary": "Verify Button label correctness\nwhen the button is displayed",
+      "description": "Feature: Generate Button for Session ID creation\nScenario: Button label correctness\nGiven the button is displayed\nWhen user views it\nThen label should read “Generate”",
+      "acceptance": "Label should read \"Generate\"\nThe behavior should be validated when user views it."
+    },
+    {
+      "test_id": "UTC-959",
+      "srs_id": "SRS-77",
+      "sds_id": "SDS-77",
+      "summary": "Verify Trigger backend call\nwhen valid metadata exists",
+      "description": "Feature: Generate Button for Session ID creation\nScenario: Trigger backend call\nGiven valid metadata exists\nWhen user clicks Generate\nThen request should be sent to backend API",
+      "acceptance": "Request should be sent to backend API\nThe behavior should be validated when user clicks Generate."
+    },
+    {
+      "test_id": "UTC-960",
+      "srs_id": "SRS-77",
+      "sds_id": "SDS-77",
+      "summary": "Verify Unique ID returned\nwhen backend processes request",
+      "description": "Feature: Generate Button for Session ID creation\nScenario: Unique ID returned\nGiven backend processes request\nWhen response received\nThen a unique session ID should be returned",
+      "acceptance": "A unique session ID should be returned\nThe behavior should be validated when response received."
+    },
+    {
+      "test_id": "UTC-961",
+      "srs_id": "SRS-77",
+      "sds_id": "SDS-77",
+      "summary": "Verify ID populated in UI\nwhen ID generated",
+      "description": "Feature: Generate Button for Session ID creation\nScenario: ID populated in UI\nGiven ID generated\nWhen response is received\nThen generated ID should populate Session ID field",
+      "acceptance": "Generated ID should populate Session ID field\nThe behavior should be validated when response is received."
+    },
+    {
+      "test_id": "UTC-962",
+      "srs_id": "SRS-77",
+      "sds_id": "SDS-77",
+      "summary": "Verify Response time within limits\nwhen metadata submitted",
+      "description": "Feature: Generate Button for Session ID creation\nScenario: Response time within limits\nGiven metadata submitted\nWhen Generate clicked\nThen ID should be returned within 2 seconds",
+      "acceptance": "ID should be returned within 2 seconds\nThe behavior should be validated when Generate clicked."
+    },
+    {
+      "test_id": "UTC-963",
+      "srs_id": "SRS-77",
+      "sds_id": "SDS-77",
+      "summary": "Verify Button disabled during processing\nwhen Generate clicked",
+      "description": "Feature: Generate Button for Session ID creation\nScenario: Button disabled during processing\nGiven Generate clicked\nWhen request is processing\nThen button should be disabled",
+      "acceptance": "Button should be disabled\nThe behavior should be validated when request is processing."
+    },
+    {
+      "test_id": "UTC-964",
+      "srs_id": "SRS-77",
+      "sds_id": "SDS-77",
+      "summary": "Verify Loading indicator shown\nwhen backend request is active",
+      "description": "Feature: Generate Button for Session ID creation\nScenario: Loading indicator shown\nGiven backend request is active\nWhen processing\nThen loading spinner should be visible",
+      "acceptance": "Loading spinner should be visible\nThe behavior should be validated when processing."
+    },
+    {
+      "test_id": "UTC-965",
+      "srs_id": "SRS-77",
+      "sds_id": "SDS-77",
+      "summary": "Verify Prevent double click\nwhen request already triggered",
+      "description": "Feature: Generate Button for Session ID creation\nScenario: Prevent double click\nGiven request already triggered\nWhen user clicks again\nThen duplicate submission should not occur",
+      "acceptance": "Duplicate submission should not occur\nThe behavior should be validated when user clicks again."
+    },
+    {
+      "test_id": "UTC-966",
+      "srs_id": "SRS-77",
+      "sds_id": "SDS-77",
+      "summary": "Verify ID uniqueness\nwhen multiple generations",
+      "description": "Feature: Generate Button for Session ID creation\nScenario: ID uniqueness\nGiven multiple generations\nWhen Generate clicked repeatedly\nThen each ID should be unique",
+      "acceptance": "Each ID should be unique\nThe behavior should be validated when Generate clicked repeatedly."
+    },
+    {
+      "test_id": "UTC-967",
+      "srs_id": "SRS-77",
+      "sds_id": "SDS-77",
+      "summary": "Verify Uses latest metadata\nwhen metadata changed before click",
+      "description": "Feature: Generate Button for Session ID creation\nScenario: Uses latest metadata\nGiven metadata changed before click\nWhen Generate pressed\nThen new metadata should be included in request",
+      "acceptance": "New metadata should be included in request\nThe behavior should be validated when Generate pressed."
+    },
+    {
+      "test_id": "UTC-968",
+      "srs_id": "SRS-77",
+      "sds_id": "SDS-77",
+      "summary": "Verify Unauthorized user blocked\nwhen user lacks permission",
+      "description": "Feature: Generate Button for Session ID creation\nScenario: Unauthorized user blocked\nGiven user lacks permission\nWhen clicking Generate\nThen action should be restricted",
+      "acceptance": "Action should be restricted\nThe behavior should be validated when clicking Generate."
+    },
+    {
+      "test_id": "UTC-969",
+      "srs_id": "SRS-77",
+      "sds_id": "SDS-77",
+      "summary": "Verify Backend failure handled\nwhen server error occurs",
+      "description": "Feature: Generate Button for Session ID creation\nScenario: Backend failure handled\nGiven server error occurs\nWhen request fails\nThen system shows error toast",
+      "acceptance": "System shows error toast\nThe behavior should be validated when request fails."
+    },
+    {
+      "test_id": "UTC-970",
+      "srs_id": "SRS-77",
+      "sds_id": "SDS-77",
+      "summary": "Verify Retry allowed\nwhen first attempt failed",
+      "description": "Feature: Generate Button for Session ID creation\nScenario: Retry allowed\nGiven first attempt failed\nWhen user retries\nThen generation should work successfully",
+      "acceptance": "Generation should work successfully\nThe behavior should be validated when user retries."
+    },
+    {
+      "test_id": "UTC-971",
+      "srs_id": "SRS-77",
+      "sds_id": "SDS-77",
+      "summary": "Verify Clear visual placement\nwhen user scrolls page",
+      "description": "Feature: Generate Button for Session ID creation\nScenario: Clear visual placement\nGiven user scrolls page\nWhen reaching metadata end\nThen Generate button should be easily discoverable",
+      "acceptance": "Generate button should be easily discoverable\nThe behavior should be validated when reaching metadata end."
+    },
+    {
+      "test_id": "UTC-972",
+      "srs_id": "SRS-77",
+      "sds_id": "SDS-77",
+      "summary": "Verify Keyboard activation\nwhen button focused",
+      "description": "Feature: Generate Button for Session ID creation\nScenario: Keyboard activation\nGiven button focused\nWhen Enter/Space pressed\nThen generation should trigger",
+      "acceptance": "Generation should trigger\nThe behavior should be validated when Enter/Space pressed."
+    },
+    {
+      "test_id": "UTC-973",
+      "srs_id": "SRS-77",
+      "sds_id": "SDS-77",
+      "summary": "Verify State persistence\nwhen ID generated",
+      "description": "Feature: Generate Button for Session ID creation\nScenario: State persistence\nGiven ID generated\nWhen navigating within form\nThen generated ID should remain intact",
+      "acceptance": "Generated ID should remain intact\nThe behavior should be validated when navigating within form."
+    },
+    {
+      "test_id": "UTC-974",
+      "srs_id": "SRS-78",
+      "sds_id": "SDS-78",
+      "summary": "Verify Add Links control visibility\nwhen Session Creation page loads",
+      "description": "Feature: Add Links Trigger for external references\nScenario: Add Links control visibility\nGiven Session Creation page loads\nWhen metadata section renders\nThen “+ Add Links” clickable element should be visible",
+      "acceptance": "\"+ Add Links\" clickable element should be visible\nThe behavior should be validated when metadata section renders."
+    },
+    {
+      "test_id": "UTC-975",
+      "srs_id": "SRS-78",
+      "sds_id": "SDS-78",
+      "summary": "Verify Visual clarity\nwhen the Add Links element is displayed",
+      "description": "Feature: Add Links Trigger for external references\nScenario: Visual clarity\nGiven the Add Links element is displayed\nWhen user views the control\nThen it should appear as blue clickable text with icon",
+      "acceptance": "It should appear as blue clickable text with icon\nThe behavior should be validated when user views the control."
+    },
+    {
+      "test_id": "UTC-976",
+      "srs_id": "SRS-79",
+      "sds_id": "SDS-79",
+      "summary": "Verify Name field visibility\nwhen Add Links row is created",
+      "description": "Feature: Link Name Input for descriptive labeling\nScenario: Name field visibility\nGiven Add Links row is created\nWhen link inputs render\nThen a Name text field should be visible beside URL field",
+      "acceptance": "A Name text field should be visible beside URL field\nThe behavior should be validated when link inputs render."
+    },
+    {
+      "test_id": "UTC-977",
+      "srs_id": "SRS-79",
+      "sds_id": "SDS-79",
+      "summary": "Verify Placeholder guidance\nwhen Name field is displayed",
+      "description": "Feature: Link Name Input for descriptive labeling\nScenario: Placeholder guidance\nGiven Name field is displayed\nWhen user views the field\nThen placeholder should show \"Enter a Name Link\"",
+      "acceptance": "Placeholder should show \"Enter a Name Link\"\nThe behavior should be validated when user views the field."
+    },
+    {
+      "test_id": "UTC-978",
+      "srs_id": "SRS-79",
+      "sds_id": "SDS-79",
+      "summary": "Verify Enter link name\nwhen Name field is active",
+      "description": "Feature: Link Name Input for descriptive labeling\nScenario: Enter link name\nGiven Name field is active\nWhen user types a label\nThen the value should be captured and retained",
+      "acceptance": "The value should be captured and retained\nThe behavior should be validated when user types a label."
+    },
+    {
+      "test_id": "UTC-979",
+      "srs_id": "SRS-79",
+      "sds_id": "SDS-79",
+      "summary": "Verify Multiple names supported\nwhen multiple links added",
+      "description": "Feature: Link Name Input for descriptive labeling\nScenario: Multiple names supported\nGiven multiple links added\nWhen user enters names for each\nThen each row should store its own name independently",
+      "acceptance": "Each row should store its own name independently\nThe behavior should be validated when user enters names for each."
+    },
+    {
+      "test_id": "UTC-980",
+      "srs_id": "SRS-79",
+      "sds_id": "SDS-79",
+      "summary": "Verify Prevent empty name submission\nwhen Name field is empty",
+      "description": "Feature: Link Name Input for descriptive labeling\nScenario: Prevent empty name submission\nGiven Name field is empty\nWhen session is submitted\nThen validation should block save or show warning",
+      "acceptance": "Validation should block save or show warning\nThe behavior should be validated when session is submitted."
+    },
+    {
+      "test_id": "UTC-981",
+      "srs_id": "SRS-79",
+      "sds_id": "SDS-79",
+      "summary": "Verify Accept alphanumeric characters\nwhen valid text entered",
+      "description": "Feature: Link Name Input for descriptive labeling\nScenario: Accept alphanumeric characters\nGiven valid text entered\nWhen saving session\nThen name should be accepted successfully",
+      "acceptance": "Name should be accepted successfully\nThe behavior should be validated when saving session."
+    },
+    {
+      "test_id": "UTC-982",
+      "srs_id": "SRS-79",
+      "sds_id": "SDS-79",
+      "summary": "Verify Restrict special characters\nwhen invalid special characters entered",
+      "description": "Feature: Link Name Input for descriptive labeling\nScenario: Restrict special characters\nGiven invalid special characters entered\nWhen validation runs\nThen restricted characters should be blocked or sanitized",
+      "acceptance": "Restricted characters should be blocked or sanitized\nThe behavior should be validated when validation runs."
+    },
+    {
+      "test_id": "UTC-983",
+      "srs_id": "SRS-79",
+      "sds_id": "SDS-79",
+      "summary": "Verify Name paired with URL in payload\nwhen name and URL entered",
+      "description": "Feature: Link Name Input for descriptive labeling\nScenario: Name paired with URL in payload\nGiven name and URL entered\nWhen session saved\nThen API payload should include nested {name, url} object",
+      "acceptance": "API payload should include nested {name, url} object\nThe behavior should be validated when session saved."
+    },
+    {
+      "test_id": "UTC-984",
+      "srs_id": "SRS-79",
+      "sds_id": "SDS-79",
+      "summary": "Verify Data persistence during navigation\nwhen name entered",
+      "description": "Feature: Link Name Input for descriptive labeling\nScenario: Data persistence during navigation\nGiven name entered\nWhen navigating within form\nThen value should remain unchanged",
+      "acceptance": "Value should remain unchanged\nThe behavior should be validated when navigating within form."
+    },
+    {
+      "test_id": "UTC-985",
+      "srs_id": "SRS-79",
+      "sds_id": "SDS-79",
+      "summary": "Verify Clear alignment with URL\nwhen link row visible",
+      "description": "Feature: Link Name Input for descriptive labeling\nScenario: Clear alignment with URL\nGiven link row visible\nWhen user views inputs\nThen Name and URL should be aligned and readable",
+      "acceptance": "Name and URL should be aligned and readable\nThe behavior should be validated when user views inputs."
+    },
+    {
+      "test_id": "UTC-986",
+      "srs_id": "SRS-79",
+      "sds_id": "SDS-79",
+      "summary": "Verify Keyboard accessibility\nwhen Name field focused",
+      "description": "Feature: Link Name Input for descriptive labeling\nScenario: Keyboard accessibility\nGiven Name field focused\nWhen user tabs through inputs\nThen focus should move correctly and allow typing",
+      "acceptance": "Focus should move correctly and allow typing\nThe behavior should be validated when user tabs through inputs."
+    },
+    {
+      "test_id": "UTC-987",
+      "srs_id": "SRS-79",
+      "sds_id": "SDS-79",
+      "summary": "Verify Instant input response\nwhen user types text rapidly",
+      "description": "Feature: Link Name Input for descriptive labeling\nScenario: Instant input response\nGiven user types text rapidly\nWhen characters entered\nThen UI should update without lag",
+      "acceptance": "UI should update without lag\nThe behavior should be validated when characters entered."
+    },
+    {
+      "test_id": "UTC-988",
+      "srs_id": "SRS-80",
+      "sds_id": "SDS-80",
+      "summary": "Verify URL field visibility\nwhen Add Links row is created",
+      "description": "Feature: Link URL Input for external references\nScenario: URL field visibility\nGiven Add Links row is created\nWhen inputs render\nThen a URL text field should be visible in the Link column",
+      "acceptance": "A URL text field should be visible in the Link column\nThe behavior should be validated when inputs render."
+    },
+    {
+      "test_id": "UTC-989",
+      "srs_id": "SRS-80",
+      "sds_id": "SDS-80",
+      "summary": "Verify Placeholder guidance\nwhen URL field is displayed",
+      "description": "Feature: Link URL Input for external references\nScenario: Placeholder guidance\nGiven URL field is displayed\nWhen user views the field\nThen placeholder should indicate valid format (e.g.,.https://example.com)",
+      "acceptance": "Placeholder should indicate valid format (e.g.,.https://example.com)\nThe behavior should be validated when user views the field."
+    },
+    {
+      "test_id": "UTC-990",
+      "srs_id": "SRS-80",
+      "sds_id": "SDS-80",
+      "summary": "Verify Enter URL value\nwhen URL field active",
+      "description": "Feature: Link URL Input for external references\nScenario: Enter URL value\nGiven URL field active\nWhen user types a web address\nThen value should be captured and retained",
+      "acceptance": "Value should be captured and retained\nThe behavior should be validated when user types a web address."
+    },
+    {
+      "test_id": "UTC-991",
+      "srs_id": "SRS-80",
+      "sds_id": "SDS-80",
+      "summary": "Verify Multiple URLs supported\nwhen multiple link rows added",
+      "description": "Feature: Link URL Input for external references\nScenario: Multiple URLs supported\nGiven multiple link rows added\nWhen URLs entered for each row\nThen each row should store its URL independently",
+      "acceptance": "Each row should store its URL independently\nThe behavior should be validated when URLs entered for each row."
+    },
+    {
+      "test_id": "UTC-992",
+      "srs_id": "SRS-80",
+      "sds_id": "SDS-80",
+      "summary": "Verify Accept valid HTTPS URL\nwhen a valid https URL entered",
+      "description": "Feature: Link URL Input for external references\nScenario: Accept valid HTTPS URL\nGiven a valid https URL entered\nWhen session saved\nThen URL should be accepted successfully",
+      "acceptance": "URL should be accepted successfully\nThe behavior should be validated when session saved."
+    },
+    {
+      "test_id": "UTC-993",
+      "srs_id": "SRS-80",
+      "sds_id": "SDS-80",
+      "summary": "Verify Accept HTTP URL\nwhen a valid http URL entered",
+      "description": "Feature: Link URL Input for external references\nScenario: Accept HTTP URL\nGiven a valid http URL entered\nWhen session saved\nThen URL should be accepted",
+      "acceptance": "URL should be accepted\nThe behavior should be validated when session saved."
+    },
+    {
+      "test_id": "UTC-994",
+      "srs_id": "SRS-80",
+      "sds_id": "SDS-80",
+      "summary": "Verify Reject invalid URL format\nwhen invalid text entered",
+      "description": "Feature: Link URL Input for external references\nScenario: Reject invalid URL format\nGiven invalid text entered\nWhen submitting session\nThen validation message should appear",
+      "acceptance": "Validation message should appear\nThe behavior should be validated when submitting session."
+    },
+    {
+      "test_id": "UTC-995",
+      "srs_id": "SRS-80",
+      "sds_id": "SDS-80",
+      "summary": "Verify Reject empty URL\nwhen URL field is blank",
+      "description": "Feature: Link URL Input for external references\nScenario: Reject empty URL\nGiven URL field is blank\nWhen user submits\nThen save should be blocked or warning shown",
+      "acceptance": "Save should be blocked or warning shown\nThe behavior should be validated when user submits."
+    },
+    {
+      "test_id": "UTC-996",
+      "srs_id": "SRS-80",
+      "sds_id": "SDS-80",
+      "summary": "Verify Prevent script injection\nwhen user enters script or malicious content",
+      "description": "Feature: Link URL Input for external references\nScenario: Prevent script injection\nGiven user enters script or malicious content\nWhen validation runs\nThen system should sanitize or block input",
+      "acceptance": "System should sanitize or block input\nThe behavior should be validated when validation runs."
+    },
+    {
+      "test_id": "UTC-997",
+      "srs_id": "SRS-80",
+      "sds_id": "SDS-80",
+      "summary": "Verify Strip unsafe protocols\nwhen javascript: or unsafe protocol entered",
+      "description": "Feature: Link URL Input for external references\nScenario: Strip unsafe protocols\nGiven javascript: or unsafe protocol entered\nWhen validating\nThen system should reject the URL",
+      "acceptance": "System should reject the URL\nThe behavior should be validated when validating."
+    },
+    {
+      "test_id": "UTC-998",
+      "srs_id": "SRS-80",
+      "sds_id": "SDS-80",
+      "summary": "Verify URL stored in payload\nwhen valid URL entered",
+      "description": "Feature: Link URL Input for external references\nScenario: URL stored in payload\nGiven valid URL entered\nWhen session saved\nThen API payload should include URL against session metadata",
+      "acceptance": "API payload should include URL against session metadata\nThe behavior should be validated when session saved."
+    },
+    {
+      "test_id": "UTC-999",
+      "srs_id": "SRS-80",
+      "sds_id": "SDS-80",
+      "summary": "Verify URL persistence during navigation\nwhen URL entered",
+      "description": "Feature: Link URL Input for external references\nScenario: URL persistence during navigation\nGiven URL entered\nWhen navigating within form\nThen URL should remain unchanged",
+      "acceptance": "URL should remain unchanged\nThe behavior should be validated when navigating within form."
+    },
+    {
+      "test_id": "UTC-1000",
+      "srs_id": "SRS-80",
+      "sds_id": "SDS-80",
+      "summary": "Verify Instant input response\nwhen rapid typing",
+      "description": "Feature: Link URL Input for external references\nScenario: Instant input response\nGiven rapid typing\nWhen characters entered\nThen UI should respond without lag",
+      "acceptance": "UI should respond without lag\nThe behavior should be validated when characters entered."
+    },
+    {
+      "test_id": "UTC-1001",
+      "srs_id": "SRS-80",
+      "sds_id": "SDS-80",
+      "summary": "Verify Keyboard accessibility\nwhen URL field focused",
+      "description": "Feature: Link URL Input for external references\nScenario: Keyboard accessibility\nGiven URL field focused\nWhen user navigates via keyboard\nThen typing and focus should work correctly",
+      "acceptance": "Typing and focus should work correctly\nThe behavior should be validated when user navigates via keyboard."
+    },
+    {
+      "test_id": "UTC-1002",
+      "srs_id": "SRS-81",
+      "sds_id": "SDS-81",
+      "summary": "Verify Remove icon visibility\nwhen at least one link row exists",
+      "description": "Feature: Remove Link Action for external references\nScenario: Remove icon visibility\nGiven at least one link row exists\nWhen the row is displayed\nThen a small “X” or trash icon should appear at the right end",
+      "acceptance": "A small \"X\" or trash icon should appear at the right end\nThe behavior should be validated when the row is displayed."
+    },
+    {
+      "test_id": "UTC-1003",
+      "srs_id": "SRS-81",
+      "sds_id": "SDS-81",
+      "summary": "Verify Icon clarity\nwhen the delete control is visible",
+      "description": "Feature: Remove Link Action for external references\nScenario: Icon clarity\nGiven the delete control is visible\nWhen user views the row\nThen icon should clearly indicate deletion action",
+      "acceptance": "Icon should clearly indicate deletion action\nThe behavior should be validated when user views the row."
+    },
+    {
+      "test_id": "UTC-1004",
+      "srs_id": "SRS-81",
+      "sds_id": "SDS-81",
+      "summary": "Verify Remove single link row\nwhen one link row exists",
+      "description": "Feature: Remove Link Action for external references\nScenario: Remove single link row\nGiven one link row exists\nWhen user clicks remove icon\nThen the selected row should be deleted immediately",
+      "acceptance": "The selected row should be deleted immediately\nThe behavior should be validated when user clicks remove icon."
+    },
+    {
+      "test_id": "UTC-1005",
+      "srs_id": "SRS-81",
+      "sds_id": "SDS-81",
+      "summary": "Verify Remove specific row only\nwhen multiple link rows exist",
+      "description": "Feature: Remove Link Action for external references\nScenario: Remove specific row only\nGiven multiple link rows exist\nWhen user deletes the second row\nThen only that specific row should be removed",
+      "acceptance": "Only that specific row should be removed\nThe behavior should be validated when user deletes the second row."
+    },
+    {
+      "test_id": "UTC-1006",
+      "srs_id": "SRS-81",
+      "sds_id": "SDS-81",
+      "summary": "Verify Immediate UI update\nwhen user clicks delete",
+      "description": "Feature: Remove Link Action for external references\nScenario: Immediate UI update\nGiven user clicks delete\nWhen action executes\nThen UI should update instantly without page refresh",
+      "acceptance": "UI should update instantly without page refresh\nThe behavior should be validated when action executes."
+    },
+    {
+      "test_id": "UTC-1007",
+      "srs_id": "SRS-81",
+      "sds_id": "SDS-81",
+      "summary": "Verify State array updated\nwhen multiple links in state array",
+      "description": "Feature: Remove Link Action for external references\nScenario: State array updated\nGiven multiple links in state array\nWhen one is removed\nThen the specific index should be deleted from local array",
+      "acceptance": "The specific index should be deleted from local array\nThe behavior should be validated when one is removed."
+    },
+    {
+      "test_id": "UTC-1008",
+      "srs_id": "SRS-81",
+      "sds_id": "SDS-81",
+      "summary": "Verify Remove last row\nwhen multiple links exist",
+      "description": "Feature: Remove Link Action for external references\nScenario: Remove last row\nGiven multiple links exist\nWhen last row deleted\nThen remaining rows should persist correctly",
+      "acceptance": "Remaining rows should persist correctly\nThe behavior should be validated when last row deleted."
+    },
+    {
+      "test_id": "UTC-1009",
+      "srs_id": "SRS-81",
+      "sds_id": "SDS-81",
+      "summary": "Verify Remove all rows\nwhen multiple links exist",
+      "description": "Feature: Remove Link Action for external references\nScenario: Remove all rows\nGiven multiple links exist\nWhen all rows deleted one by one\nThen no link rows should remain",
+      "acceptance": "No link rows should remain\nThe behavior should be validated when all rows deleted one by one."
+    },
+    {
+      "test_id": "UTC-1010",
+      "srs_id": "SRS-81",
+      "sds_id": "SDS-81",
+      "summary": "Verify No residual data after removal\nwhen link row removed",
+      "description": "Feature: Remove Link Action for external references\nScenario: No residual data after removal\nGiven link row removed\nWhen saving session\nThen deleted link should not appear in payload",
+      "acceptance": "Deleted link should not appear in payload\nThe behavior should be validated when saving session."
+    },
+    {
+      "test_id": "UTC-1011",
+      "srs_id": "SRS-81",
+      "sds_id": "SDS-81",
+      "summary": "Verify Confirmation feedback\nwhen row removed",
+      "description": "Feature: Remove Link Action for external references\nScenario: Confirmation feedback\nGiven row removed\nWhen action completes\nThen user should clearly see updated list without confusion",
+      "acceptance": "User should clearly see updated list without confusion\nThe behavior should be validated when action completes."
+    },
+    {
+      "test_id": "UTC-1012",
+      "srs_id": "SRS-81",
+      "sds_id": "SDS-81",
+      "summary": "Verify Click delete when no rows exist\nwhen no links present",
+      "description": "Feature: Remove Link Action for external references\nScenario: Click delete when no rows exist\nGiven no links present\nWhen user attempts removal\nThen no action should occur",
+      "acceptance": "No action should occur\nThe behavior should be validated when user attempts removal."
+    },
+    {
+      "test_id": "UTC-1013",
+      "srs_id": "SRS-81",
+      "sds_id": "SDS-81",
+      "summary": "Verify Multiple deletions performance\nwhen many links (10+) exist",
+      "description": "Feature: Remove Link Action for external references\nScenario: Multiple deletions performance\nGiven many links (10+) exist\nWhen rows deleted repeatedly\nThen UI should remain responsive",
+      "acceptance": "UI should remain responsive\nThe behavior should be validated when rows deleted repeatedly."
+    },
+    {
+      "test_id": "UTC-1014",
+      "srs_id": "SRS-81",
+      "sds_id": "SDS-81",
+      "summary": "Verify Keyboard accessibility\nwhen delete icon focused",
+      "description": "Feature: Remove Link Action for external references\nScenario: Keyboard accessibility\nGiven delete icon focused\nWhen Enter/Space pressed\nThen row should be removed",
+      "acceptance": "Row should be removed\nThe behavior should be validated when Enter/Space pressed."
+    },
+    {
+      "test_id": "UTC-1015",
+      "srs_id": "SRS-81",
+      "sds_id": "SDS-81",
+      "summary": "Verify Prevent accidental deletion during freeze/disabled state\nwhen form is disabled or frozen",
+      "description": "Feature: Remove Link Action for external references\nScenario: Prevent accidental deletion during freeze/disabled state\nGiven form is disabled or frozen\nWhen delete clicked\nThen removal should not occur",
+      "acceptance": "Removal should not occur\nThe behavior should be validated when delete clicked."
+    },
+    {
+      "test_id": "UTC-1016",
+      "srs_id": "SRS-82",
+      "sds_id": "SDS-82",
+      "summary": "Verify Select All checkbox visibility\nwhen Session Creation page loads",
+      "description": "Feature: Assignees Select All bulk assignment\nScenario: Select All checkbox visibility\nGiven Session Creation page loads\nWhen Assignee dropdown renders\nThen “Select All” checkbox should be visible above the list",
+      "acceptance": "\"Select All\" checkbox should be visible above the list\nThe behavior should be validated when Assignee dropdown renders."
+    },
+    {
+      "test_id": "UTC-1017",
+      "srs_id": "SRS-82",
+      "sds_id": "SDS-82",
+      "summary": "Verify Checkbox label clarity\nwhen the checkbox is displayed",
+      "description": "Feature: Assignees Select All bulk assignment\nScenario: Checkbox label clarity\nGiven the checkbox is displayed\nWhen user views the control\nThen it should clearly show label “Select All”",
+      "acceptance": "It should clearly show label \"Select All\"\nThe behavior should be validated when user views the control."
+    },
+    {
+      "test_id": "UTC-1018",
+      "srs_id": "SRS-82",
+      "sds_id": "SDS-82",
+      "summary": "Verify Select all users\nwhen multiple users are listed",
+      "description": "Feature: Assignees Select All bulk assignment\nScenario: Select all users\nGiven multiple users are listed\nWhen user checks Select All\nThen all user entries should become selected",
+      "acceptance": "All user entries should become selected\nThe behavior should be validated when user checks Select All."
+    },
+    {
+      "test_id": "UTC-1019",
+      "srs_id": "SRS-82",
+      "sds_id": "SDS-82",
+      "summary": "Verify Deselect all users\nwhen all users selected",
+      "description": "Feature: Assignees Select All bulk assignment\nScenario: Deselect all users\nGiven all users selected\nWhen user unchecks Select All\nThen all selections should be cleared",
+      "acceptance": "All selections should be cleared\nThe behavior should be validated when user unchecks Select All."
+    },
+    {
+      "test_id": "UTC-1020",
+      "srs_id": "SRS-82",
+      "sds_id": "SDS-82",
+      "summary": "Verify Immediate UI update\nwhen user toggles Select All",
+      "description": "Feature: Assignees Select All bulk assignment\nScenario: Immediate UI update\nGiven user toggles Select All\nWhen selection changes\nThen checkboxes should update instantly without reload",
+      "acceptance": "Checkboxes should update instantly without reload\nThe behavior should be validated when selection changes."
+    },
+    {
+      "test_id": "UTC-1021",
+      "srs_id": "SRS-82",
+      "sds_id": "SDS-82",
+      "summary": "Verify State array updated\nwhen users are selected using Select All",
+      "description": "Feature: Assignees Select All bulk assignment\nScenario: State array updated\nGiven users are selected using Select All\nWhen inspecting state\nThen all user IDs should be marked selected: true",
+      "acceptance": "All user IDs should be marked selected: true\nThe behavior should be validated when inspecting state."
+    },
+    {
+      "test_id": "UTC-1022",
+      "srs_id": "SRS-82",
+      "sds_id": "SDS-82",
+      "summary": "Verify Individual deselect after Select All\nwhen Select All applied",
+      "description": "Feature: Assignees Select All bulk assignment\nScenario: Individual deselect after Select All\nGiven Select All applied\nWhen user manually deselects one user\nThen that user only should be unselected",
+      "acceptance": "That user only should be unselected\nThe behavior should be validated when user manually deselects one user."
+    },
+    {
+      "test_id": "UTC-1023",
+      "srs_id": "SRS-82",
+      "sds_id": "SDS-82",
+      "summary": "Verify Selection retained on dropdown reopen\nwhen Select All applied",
+      "description": "Feature: Assignees Select All bulk assignment\nScenario: Selection retained on dropdown reopen\nGiven Select All applied\nWhen dropdown closed and reopened\nThen all users should remain selected",
+      "acceptance": "All users should remain selected\nThe behavior should be validated when dropdown closed and reopened."
+    },
+    {
+      "test_id": "UTC-1024",
+      "srs_id": "SRS-82",
+      "sds_id": "SDS-82",
+      "summary": "Verify Save payload includes all users\nwhen Select All chosen",
+      "description": "Feature: Assignees Select All bulk assignment\nScenario: Save payload includes all users\nGiven Select All chosen\nWhen session saved\nThen all user IDs should be included in API payload",
+      "acceptance": "All user IDs should be included in API payload\nThe behavior should be validated when session saved."
+    }
+  ]
+}

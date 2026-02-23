@@ -1,0 +1,235 @@
+{
+  "spec_file": "e2e/tests/session-management/URS-DV-GEN-15/SRS-055/SDS-055.spec.ts",
+  "plan_urs": "URS-DV-GEN-15",
+  "srs_str": "055",
+  "domain": "session-management",
+  "page_class": "SessionPage",
+  "page_import": "session.page",
+  "goto_method": "navigate",
+  "test_cases": [
+    {
+      "test_id": "UTC-2285",
+      "srs_id": "SRS-224",
+      "sds_id": "SDS-224",
+      "summary": "Verify Dropdown visibility on page load\nwhen Session Creation page loads",
+      "description": "Feature: Session Status Dropdown Values\nScenario: Dropdown visibility on page load\nGiven Session Creation page loads\nWhen form initializes\nThen Session Status dropdown should be visible",
+      "acceptance": "Session Status dropdown should be visible\nThe behavior should be validated when form initializes."
+    },
+    {
+      "test_id": "UTC-2286",
+      "srs_id": "SRS-224",
+      "sds_id": "SDS-224",
+      "summary": "Verify Placeholder display\nwhen dropdown is not selected",
+      "description": "Feature: Session Status Dropdown Values\nScenario: Placeholder display\nGiven dropdown is not selected\nWhen viewing field\nThen placeholder “Select session status” should be shown",
+      "acceptance": "Placeholder \"Select session status\" should be shown\nThe behavior should be validated when viewing field."
+    },
+    {
+      "test_id": "UTC-2287",
+      "srs_id": "SRS-224",
+      "sds_id": "SDS-224",
+      "summary": "Verify Load predefined values\nwhen form initializes",
+      "description": "Feature: Session Status Dropdown Values\nScenario: Load predefined values\nGiven form initializes\nWhen dropdown opens\nThen options Yet to do, In progress, Re-open should be displayed",
+      "acceptance": "Options Yet to do, In progress, Re-open should be displayed\nThe behavior should be validated when dropdown opens."
+    },
+    {
+      "test_id": "UTC-2288",
+      "srs_id": "SRS-224",
+      "sds_id": "SDS-224",
+      "summary": "Verify Single select behavior\nwhen dropdown is open",
+      "description": "Feature: Session Status Dropdown Values\nScenario: Single select behavior\nGiven dropdown is open\nWhen user selects one value\nThen only one status should be selected",
+      "acceptance": "Only one status should be selected\nThe behavior should be validated when user selects one value."
+    },
+    {
+      "test_id": "UTC-2289",
+      "srs_id": "SRS-224",
+      "sds_id": "SDS-224",
+      "summary": "Verify Select Yet to do\nwhen dropdown opened",
+      "description": "Feature: Session Status Dropdown Values\nScenario: Select Yet to do\nGiven dropdown opened\nWhen user selects Yet to do\nThen field should display Yet to do",
+      "acceptance": "Field should display Yet to do\nThe behavior should be validated when user selects Yet to do."
+    },
+    {
+      "test_id": "UTC-2290",
+      "srs_id": "SRS-224",
+      "sds_id": "SDS-224",
+      "summary": "Verify Select In progress\nwhen dropdown opened",
+      "description": "Feature: Session Status Dropdown Values\nScenario: Select In progress\nGiven dropdown opened\nWhen user selects In progress\nThen field should display In progress",
+      "acceptance": "Field should display In progress\nThe behavior should be validated when user selects In progress."
+    },
+    {
+      "test_id": "UTC-2291",
+      "srs_id": "SRS-224",
+      "sds_id": "SDS-224",
+      "summary": "Verify Select Re-open\nwhen dropdown opened",
+      "description": "Feature: Session Status Dropdown Values\nScenario: Select Re-open\nGiven dropdown opened\nWhen user selects Re-open\nThen field should display Re-open",
+      "acceptance": "Field should display Re-open\nThe behavior should be validated when user selects Re-open."
+    },
+    {
+      "test_id": "UTC-2292",
+      "srs_id": "SRS-224",
+      "sds_id": "SDS-224",
+      "summary": "Verify Value included in payload\nwhen user selects a status",
+      "description": "Feature: Session Status Dropdown Values\nScenario: Value included in payload\nGiven user selects a status\nWhen submitting session\nThen selected status should be included in API payload",
+      "acceptance": "Selected status should be included in API payload\nThe behavior should be validated when submitting session."
+    },
+    {
+      "test_id": "UTC-2293",
+      "srs_id": "SRS-224",
+      "sds_id": "SDS-224",
+      "summary": "Verify Default state when no selection\nwhen dropdown untouched",
+      "description": "Feature: Session Status Dropdown Values\nScenario: Default state when no selection\nGiven dropdown untouched\nWhen submitting\nThen system should either prevent submit or use default rule",
+      "acceptance": "System should either prevent submit or use default rule\nThe behavior should be validated when submitting."
+    },
+    {
+      "test_id": "UTC-2294",
+      "srs_id": "SRS-224",
+      "sds_id": "SDS-224",
+      "summary": "Verify Dropdown open/close behavior\nwhen dropdown closed",
+      "description": "Feature: Session Status Dropdown Values\nScenario: Dropdown open/close behavior\nGiven dropdown closed\nWhen clicked\nThen options list should open and close properly",
+      "acceptance": "Options list should open and close properly\nThe behavior should be validated when clicked."
+    },
+    {
+      "test_id": "UTC-2295",
+      "srs_id": "SRS-224",
+      "sds_id": "SDS-224",
+      "summary": "Verify Keyboard navigation\nwhen dropdown focused",
+      "description": "Feature: Session Status Dropdown Values\nScenario: Keyboard navigation\nGiven dropdown focused\nWhen using arrow keys + Enter\nThen selection should work via keyboard",
+      "acceptance": "Selection should work via keyboard\nThe behavior should be validated when using arrow keys + Enter."
+    },
+    {
+      "test_id": "UTC-2296",
+      "srs_id": "SRS-224",
+      "sds_id": "SDS-224",
+      "summary": "Verify Tab focus support\nwhen user presses Tab",
+      "description": "Feature: Session Status Dropdown Values\nScenario: Tab focus support\nGiven user presses Tab\nWhen focus reaches dropdown\nThen control should be focusable and selectable",
+      "acceptance": "Control should be focusable and selectable\nThe behavior should be validated when focus reaches dropdown."
+    },
+    {
+      "test_id": "UTC-2297",
+      "srs_id": "SRS-224",
+      "sds_id": "SDS-224",
+      "summary": "Verify Invalid manual input blocked\nwhen user tries to type custom value",
+      "description": "Feature: Session Status Dropdown Values\nScenario: Invalid manual input blocked\nGiven user tries to type custom value\nWhen submitting\nThen system should reject invalid status",
+      "acceptance": "System should reject invalid status\nThe behavior should be validated when submitting."
+    },
+    {
+      "test_id": "UTC-2298",
+      "srs_id": "SRS-224",
+      "sds_id": "SDS-224",
+      "summary": "Verify Persistence after navigation\nwhen status selected",
+      "description": "Feature: Session Status Dropdown Values\nScenario: Persistence after navigation\nGiven status selected\nWhen user navigates within form\nThen selected value should persist",
+      "acceptance": "Selected value should persist\nThe behavior should be validated when user navigates within form."
+    },
+    {
+      "test_id": "UTC-2299",
+      "srs_id": "SRS-224",
+      "sds_id": "SDS-224",
+      "summary": "Verify Instant rendering\nwhen page loads",
+      "description": "Feature: Session Status Dropdown Values\nScenario: Instant rendering\nGiven page loads\nWhen dropdown is opened\nThen options should appear instantly without delay",
+      "acceptance": "Options should appear instantly without delay\nThe behavior should be validated when dropdown is opened."
+    },
+    {
+      "test_id": "UTC-2300",
+      "srs_id": "SRS-224",
+      "sds_id": "SDS-224",
+      "summary": "Verify Reopen form after save\nwhen session saved with status",
+      "description": "Feature: Session Status Dropdown Values\nScenario: Reopen form after save\nGiven session saved with status\nWhen editing session\nThen previously selected status should pre-fill",
+      "acceptance": "Previously selected status should pre-fill\nThe behavior should be validated when editing session."
+    },
+    {
+      "test_id": "UTC-2301",
+      "srs_id": "SRS-225",
+      "sds_id": "SDS-225",
+      "summary": "Verify Dropdown visible on Create Session page\nwhen user opens Create Session page",
+      "description": "Feature: Restricted Session Status Selection\nScenario: Dropdown visible on Create Session page\nGiven user opens Create Session page\nWhen form loads\nThen Session Status dropdown should be visible",
+      "acceptance": "Session Status dropdown should be visible\nThe behavior should be validated when form loads."
+    },
+    {
+      "test_id": "UTC-2302",
+      "srs_id": "SRS-225",
+      "sds_id": "SDS-225",
+      "summary": "Verify Enabled options list\nwhen dropdown opened",
+      "description": "Feature: Restricted Session Status Selection\nScenario: Enabled options list\nGiven dropdown opened\nWhen options are displayed\nThen Yet to do and In Progress should be enabled",
+      "acceptance": "Yet to do and In Progress should be enabled\nThe behavior should be validated when options are displayed."
+    },
+    {
+      "test_id": "UTC-2303",
+      "srs_id": "SRS-225",
+      "sds_id": "SDS-225",
+      "summary": "Verify Disabled Completed option\nwhen dropdown opened",
+      "description": "Feature: Restricted Session Status Selection\nScenario: Disabled Completed option\nGiven dropdown opened\nWhen user views Completed\nThen it should appear disabled and non-selectable",
+      "acceptance": "It should appear disabled and non-selectable\nThe behavior should be validated when user views Completed."
+    },
+    {
+      "test_id": "UTC-2304",
+      "srs_id": "SRS-225",
+      "sds_id": "SDS-225",
+      "summary": "Verify Disabled Re-open option\nwhen dropdown opened",
+      "description": "Feature: Restricted Session Status Selection\nScenario: Disabled Re-open option\nGiven dropdown opened\nWhen user views Re-open\nThen it should appear disabled and non-selectable",
+      "acceptance": "It should appear disabled and non-selectable\nThe behavior should be validated when user views Re-open."
+    },
+    {
+      "test_id": "UTC-2305",
+      "srs_id": "SRS-225",
+      "sds_id": "SDS-225",
+      "summary": "Verify Prevent selection of Completed\nwhen Completed is disabled",
+      "description": "Feature: Restricted Session Status Selection\nScenario: Prevent selection of Completed\nGiven Completed is disabled\nWhen user clicks Completed\nThen selection should not occur",
+      "acceptance": "Selection should not occur\nThe behavior should be validated when user clicks Completed."
+    },
+    {
+      "test_id": "UTC-2306",
+      "srs_id": "SRS-225",
+      "sds_id": "SDS-225",
+      "summary": "Verify Prevent selection of Re-open\nwhen Re-open is disabled",
+      "description": "Feature: Restricted Session Status Selection\nScenario: Prevent selection of Re-open\nGiven Re-open is disabled\nWhen user clicks Re-open\nThen selection should not occur",
+      "acceptance": "Selection should not occur\nThe behavior should be validated when user clicks Re-open."
+    },
+    {
+      "test_id": "UTC-2307",
+      "srs_id": "SRS-225",
+      "sds_id": "SDS-225",
+      "summary": "Verify Select Yet to do\nwhen dropdown opened",
+      "description": "Feature: Restricted Session Status Selection\nScenario: Select Yet to do\nGiven dropdown opened\nWhen user selects Yet to do\nThen value should populate the field",
+      "acceptance": "Value should populate the field\nThe behavior should be validated when user selects Yet to do."
+    },
+    {
+      "test_id": "UTC-2308",
+      "srs_id": "SRS-225",
+      "sds_id": "SDS-225",
+      "summary": "Verify Select In Progress\nwhen dropdown opened",
+      "description": "Feature: Restricted Session Status Selection\nScenario: Select In Progress\nGiven dropdown opened\nWhen user selects In Progress\nThen value should populate the field",
+      "acceptance": "Value should populate the field\nThe behavior should be validated when user selects In Progress."
+    },
+    {
+      "test_id": "UTC-2309",
+      "srs_id": "SRS-225",
+      "sds_id": "SDS-225",
+      "summary": "Verify Payload contains only allowed statuses\nwhen user selects allowed status",
+      "description": "Feature: Restricted Session Status Selection\nScenario: Payload contains only allowed statuses\nGiven user selects allowed status\nWhen session is submitted\nThen API payload should include only Yet to do or In Progress",
+      "acceptance": "API payload should include only Yet to do or In Progress\nThe behavior should be validated when session is submitted."
+    },
+    {
+      "test_id": "UTC-2310",
+      "srs_id": "SRS-225",
+      "sds_id": "SDS-225",
+      "summary": "Verify Prevent manual injection of restricted status\nwhen user manipulates UI/console to send Completed",
+      "description": "Feature: Restricted Session Status Selection\nScenario: Prevent manual injection of restricted status\nGiven user manipulates UI/console to send Completed\nWhen submitting\nThen backend should reject the request",
+      "acceptance": "Backend should reject the request\nThe behavior should be validated when submitting."
+    },
+    {
+      "test_id": "UTC-2311",
+      "srs_id": "SRS-225",
+      "sds_id": "SDS-225",
+      "summary": "Verify Load configuration on form initialization\nwhen form loads",
+      "description": "Feature: Restricted Session Status Selection\nScenario: Load configuration on form initialization\nGiven form loads\nWhen config service responds\nThen allowed statuses should bind correctly",
+      "acceptance": "Allowed statuses should bind correctly\nThe behavior should be validated when config service responds."
+    },
+    {
+      "test_id": "UTC-2312",
+      "srs_id": "SRS-225",
+      "sds_id": "SDS-225",
+      "summary": "Verify Config service failure handling\nwhen configuration API fails",
+      "description": "Feature: Restricted Session Status Selection\nScenario: Config service failure handling\nGiven configuration API fails\nWhen dropdown initializes\nThen dropdown should be disabled and toast shown “Unable to load session status options”",
+      "acceptance": "Dropdown should be disabled and toast shown \"Unable to load session status options\"\nThe behavior should be validated when dropdown initializes."
+    }
+  ]
+}

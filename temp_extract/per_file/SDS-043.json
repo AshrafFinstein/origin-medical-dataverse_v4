@@ -1,0 +1,347 @@
+{
+  "spec_file": "e2e/tests/annotation/URS-DV-DA-11/SRS-043/SDS-043.spec.ts",
+  "plan_urs": "URS-DV-DA-11",
+  "srs_str": "043",
+  "domain": "annotation",
+  "page_class": "DataLabellingPage",
+  "page_import": "data-labelling.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-1652",
+      "srs_id": "SRS-120",
+      "sds_id": "SDS-120",
+      "summary": "Verify Save failure preserves history\nwhen save fails",
+      "description": "Feature: Undo/Redo Visual States\nScenario: Save failure preserves history\nGiven save fails\nWhen system shows error\nThen Undo/Redo should remain enabled",
+      "acceptance": "Undo/Redo should remain enabled\nThe behavior should be validated when system shows error."
+    },
+    {
+      "test_id": "UTC-1653",
+      "srs_id": "SRS-120",
+      "sds_id": "SDS-120",
+      "summary": "Verify Disabled prevents interaction\nwhen button disabled",
+      "description": "Feature: Undo/Redo Visual States\nScenario: Disabled prevents interaction\nGiven button disabled\nWhen clicked\nThen no action should occur",
+      "acceptance": "No action should occur\nThe behavior should be validated when clicked."
+    },
+    {
+      "test_id": "UTC-1654",
+      "srs_id": "SRS-120",
+      "sds_id": "SDS-120",
+      "summary": "Verify Keyboard navigation\nwhen button focused via Tab",
+      "description": "Feature: Undo/Redo Visual States\nScenario: Keyboard navigation\nGiven button focused via Tab\nWhen disabled\nThen Enter/Space should not trigger action",
+      "acceptance": "Enter/Space should not trigger action\nThe behavior should be validated when disabled."
+    },
+    {
+      "test_id": "UTC-1655",
+      "srs_id": "SRS-120",
+      "sds_id": "SDS-120",
+      "summary": "Verify Visual clarity\nwhen buttons disabled",
+      "description": "Feature: Undo/Redo Visual States\nScenario: Visual clarity\nGiven buttons disabled\nWhen viewed\nThen reduced opacity clearly indicates non-interactive state",
+      "acceptance": "Reduced opacity clearly indicates non-interactive state\nThe behavior should be validated when viewed."
+    },
+    {
+      "test_id": "UTC-1656",
+      "srs_id": "SRS-120",
+      "sds_id": "SDS-120",
+      "summary": "Verify State change performance\nwhen frequent actions",
+      "description": "Feature: Undo/Redo Visual States\nScenario: State change performance\nGiven frequent actions\nWhen toggling states\nThen UI should update without lag",
+      "acceptance": "UI should update without lag\nThe behavior should be validated when toggling states."
+    },
+    {
+      "test_id": "UTC-1657",
+      "srs_id": "SRS-120",
+      "sds_id": "SDS-120",
+      "summary": "Verify Rapid save clicks\nwhen multiple rapid save attempts",
+      "description": "Feature: Undo/Redo Visual States\nScenario: Rapid save clicks\nGiven multiple rapid save attempts\nWhen save processed\nThen buttons remain stable and do not flicker",
+      "acceptance": "Buttons remain stable and do not flicker\nThe behavior should be validated when save processed."
+    },
+    {
+      "test_id": "UTC-1658",
+      "srs_id": "SRS-121",
+      "sds_id": "SDS-121",
+      "summary": "Verify History cleared after successful save\nwhen annotation history exists",
+      "description": "Feature: Post-Save History Constraint\nScenario: History cleared after successful save\nGiven annotation history exists\nWhen user clicks Save and save succeeds\nThen Undo and Redo stacks should be purged immediately",
+      "acceptance": "Undo and Redo stacks should be purged immediately\nThe behavior should be validated when user clicks Save and save succeeds."
+    },
+    {
+      "test_id": "UTC-1659",
+      "srs_id": "SRS-121",
+      "sds_id": "SDS-121",
+      "summary": "Verify Undo button disabled after save\nwhen save success notification appears",
+      "description": "Feature: Post-Save History Constraint\nScenario: Undo button disabled after save\nGiven save success notification appears\nWhen toolbar refreshes\nThen Undo icon should become permanently grey and disabled",
+      "acceptance": "Undo icon should become permanently grey and disabled\nThe behavior should be validated when toolbar refreshes."
+    },
+    {
+      "test_id": "UTC-1660",
+      "srs_id": "SRS-121",
+      "sds_id": "SDS-121",
+      "summary": "Verify Redo button disabled after save\nwhen save success notification appears",
+      "description": "Feature: Post-Save History Constraint\nScenario: Redo button disabled after save\nGiven save success notification appears\nWhen toolbar refreshes\nThen Redo icon should become permanently grey and disabled",
+      "acceptance": "Redo icon should become permanently grey and disabled\nThe behavior should be validated when toolbar refreshes."
+    },
+    {
+      "test_id": "UTC-1661",
+      "srs_id": "SRS-121",
+      "sds_id": "SDS-121",
+      "summary": "Verify Undo action blocked post-save\nwhen save completed",
+      "description": "Feature: Post-Save History Constraint\nScenario: Undo action blocked post-save\nGiven save completed\nWhen user clicks Undo\nThen no action should be performed",
+      "acceptance": "No action should be performed\nThe behavior should be validated when user clicks Undo."
+    },
+    {
+      "test_id": "UTC-1662",
+      "srs_id": "SRS-121",
+      "sds_id": "SDS-121",
+      "summary": "Verify Redo action blocked post-save\nwhen save completed",
+      "description": "Feature: Post-Save History Constraint\nScenario: Redo action blocked post-save\nGiven save completed\nWhen user clicks Redo\nThen no action should be performed",
+      "acceptance": "No action should be performed\nThe behavior should be validated when user clicks Redo."
+    },
+    {
+      "test_id": "UTC-1663",
+      "srs_id": "SRS-121",
+      "sds_id": "SDS-121",
+      "summary": "Verify Ctrl+Z blocked after save\nwhen save success",
+      "description": "Feature: Post-Save History Constraint\nScenario: Ctrl+Z blocked after save\nGiven save success\nWhen user presses Ctrl+Z\nThen shortcut should be intercepted and ignored",
+      "acceptance": "Shortcut should be intercepted and ignored\nThe behavior should be validated when user presses Ctrl+Z."
+    },
+    {
+      "test_id": "UTC-1664",
+      "srs_id": "SRS-121",
+      "sds_id": "SDS-121",
+      "summary": "Verify Ctrl+Y blocked after save\nwhen save success",
+      "description": "Feature: Post-Save History Constraint\nScenario: Ctrl+Y blocked after save\nGiven save success\nWhen user presses Ctrl+Y\nThen shortcut should be intercepted and ignored",
+      "acceptance": "Shortcut should be intercepted and ignored\nThe behavior should be validated when user presses Ctrl+Y."
+    },
+    {
+      "test_id": "UTC-1665",
+      "srs_id": "SRS-121",
+      "sds_id": "SDS-121",
+      "summary": "Verify Pointer reset after purge\nwhen save success",
+      "description": "Feature: Post-Save History Constraint\nScenario: Pointer reset after purge\nGiven save success\nWhen stacks cleared\nThen history pointer should be null",
+      "acceptance": "History pointer should be null\nThe behavior should be validated when stacks cleared."
+    },
+    {
+      "test_id": "UTC-1666",
+      "srs_id": "SRS-121",
+      "sds_id": "SDS-121",
+      "summary": "Verify No revert to pre-save state\nwhen changes saved",
+      "description": "Feature: Post-Save History Constraint\nScenario: No revert to pre-save state\nGiven changes saved\nWhen attempting undo\nThen UI must not revert to earlier state",
+      "acceptance": "UI must not revert to earlier state\nThe behavior should be validated when attempting undo."
+    },
+    {
+      "test_id": "UTC-1667",
+      "srs_id": "SRS-121",
+      "sds_id": "SDS-121",
+      "summary": "Verify Stack purge performance\nwhen large history stack (100+ actions)",
+      "description": "Feature: Post-Save History Constraint\nScenario: Stack purge performance\nGiven large history stack (100+ actions)\nWhen save completes\nThen purge should occur instantly without lag",
+      "acceptance": "Purge should occur instantly without lag\nThe behavior should be validated when save completes."
+    },
+    {
+      "test_id": "UTC-1668",
+      "srs_id": "SRS-121",
+      "sds_id": "SDS-121",
+      "summary": "Verify Visual clarity of disabled state\nwhen buttons disabled",
+      "description": "Feature: Post-Save History Constraint\nScenario: Visual clarity of disabled state\nGiven buttons disabled\nWhen viewed\nThen disabled state should be clearly distinguishable",
+      "acceptance": "Disabled state should be clearly distinguishable\nThe behavior should be validated when viewed."
+    },
+    {
+      "test_id": "UTC-1669",
+      "srs_id": "SRS-121",
+      "sds_id": "SDS-121",
+      "summary": "Verify Immediate transition after toast\nwhen \"Saved Successfully\" toast appears",
+      "description": "Feature: Post-Save History Constraint\nScenario: Immediate transition after toast\nGiven “Saved Successfully” toast appears\nWhen toast is displayed\nThen buttons should disable instantly without delay",
+      "acceptance": "Buttons should disable instantly without delay\nThe behavior should be validated when toast is displayed."
+    },
+    {
+      "test_id": "UTC-1670",
+      "srs_id": "SRS-121",
+      "sds_id": "SDS-121",
+      "summary": "Verify Multiple rapid shortcut attempts\nwhen save completed",
+      "description": "Feature: Post-Save History Constraint\nScenario: Multiple rapid shortcut attempts\nGiven save completed\nWhen user presses Ctrl+Z repeatedly\nThen no unexpected behavior or errors should occur",
+      "acceptance": "No unexpected behavior or errors should occur\nThe behavior should be validated when user presses Ctrl+Z repeatedly."
+    },
+    {
+      "test_id": "UTC-1671",
+      "srs_id": "SRS-121",
+      "sds_id": "SDS-121",
+      "summary": "Verify New actions create fresh history\nwhen save completed",
+      "description": "Feature: Post-Save History Constraint\nScenario: New actions create fresh history\nGiven save completed\nWhen user performs a new annotation\nThen a new history stack should start and Undo becomes enabled",
+      "acceptance": "A new history stack should start and Undo becomes enabled\nThe behavior should be validated when user performs a new annotation."
+    },
+    {
+      "test_id": "UTC-1672",
+      "srs_id": "SRS-121",
+      "sds_id": "SDS-121",
+      "summary": "Verify Save failure does not purge history\nwhen save fails",
+      "description": "Feature: Post-Save History Constraint\nScenario: Save failure does not purge history\nGiven save fails\nWhen error shown\nThen history stacks should remain intact",
+      "acceptance": "History stacks should remain intact\nThe behavior should be validated when error shown."
+    },
+    {
+      "test_id": "UTC-1673",
+      "srs_id": "SRS-121",
+      "sds_id": "SDS-121",
+      "summary": "Verify Keyboard focus on disabled buttons\nwhen buttons disabled",
+      "description": "Feature: Post-Save History Constraint\nScenario: Keyboard focus on disabled buttons\nGiven buttons disabled\nWhen navigated using keyboard\nThen buttons should not trigger any action",
+      "acceptance": "Buttons should not trigger any action\nThe behavior should be validated when navigated using keyboard."
+    },
+    {
+      "test_id": "UTC-1674",
+      "srs_id": "SRS-122",
+      "sds_id": "SDS-122",
+      "summary": "Verify Delete selected canvas mark\nwhen an annotation mark is selected on canvas",
+      "description": "Feature: Keyboard Shortcut Mapping for Deletion\nScenario: Delete selected canvas mark\nGiven an annotation mark is selected on canvas\nWhen user presses Backspace\nThen the selected mark should be deleted",
+      "acceptance": "The selected mark should be deleted\nThe behavior should be validated when user presses Backspace."
+    },
+    {
+      "test_id": "UTC-1675",
+      "srs_id": "SRS-122",
+      "sds_id": "SDS-122",
+      "summary": "Verify Delete focused sidebar label\nwhen a sidebar label is focused",
+      "description": "Feature: Keyboard Shortcut Mapping for Deletion\nScenario: Delete focused sidebar label\nGiven a sidebar label is focused\nWhen user presses Backspace\nThen the focused label should be deleted",
+      "acceptance": "The focused label should be deleted\nThe behavior should be validated when user presses Backspace."
+    },
+    {
+      "test_id": "UTC-1676",
+      "srs_id": "SRS-122",
+      "sds_id": "SDS-122",
+      "summary": "Verify Canvas takes priority\nwhen both label and mark exist",
+      "description": "Feature: Keyboard Shortcut Mapping for Deletion\nScenario: Canvas takes priority\nGiven both label and mark exist\nAnd canvas mark is selected\nWhen Backspace is pressed\nThen only the mark should be deleted",
+      "acceptance": "Only the mark should be deleted\nThe behavior should be validated when Backspace is pressed."
+    },
+    {
+      "test_id": "UTC-1677",
+      "srs_id": "SRS-122",
+      "sds_id": "SDS-122",
+      "summary": "Verify Delete label when no mark selected\nwhen no canvas mark selected",
+      "description": "Feature: Keyboard Shortcut Mapping for Deletion\nScenario: Delete label when no mark selected\nGiven no canvas mark selected\nAnd a sidebar label is focused\nWhen Backspace is pressed\nThen the label should be deleted",
+      "acceptance": "The label should be deleted\nThe behavior should be validated when Backspace is pressed."
+    },
+    {
+      "test_id": "UTC-1678",
+      "srs_id": "SRS-122",
+      "sds_id": "SDS-122",
+      "summary": "Verify No object selected\nwhen no mark or label is selected",
+      "description": "Feature: Keyboard Shortcut Mapping for Deletion\nScenario: No object selected\nGiven no mark or label is selected\nWhen Backspace is pressed\nThen no deletion should occur",
+      "acceptance": "No deletion should occur\nThe behavior should be validated when Backspace is pressed."
+    },
+    {
+      "test_id": "UTC-1679",
+      "srs_id": "SRS-122",
+      "sds_id": "SDS-122",
+      "summary": "Verify Ignore shortcut while typing in text input\nwhen cursor is inside a text input field",
+      "description": "Feature: Keyboard Shortcut Mapping for Deletion\nScenario: Ignore shortcut while typing in text input\nGiven cursor is inside a text input field\nWhen Backspace is pressed\nThen only text should delete and no annotation/label should be removed",
+      "acceptance": "Only text should delete and no annotation/label should be removed\nThe behavior should be validated when Backspace is pressed."
+    },
+    {
+      "test_id": "UTC-1680",
+      "srs_id": "SRS-122",
+      "sds_id": "SDS-122",
+      "summary": "Verify Ignore shortcut inside search bar\nwhen search field is focused",
+      "description": "Feature: Keyboard Shortcut Mapping for Deletion\nScenario: Ignore shortcut inside search bar\nGiven search field is focused\nWhen Backspace is pressed\nThen search text updates and no deletion action occurs",
+      "acceptance": "Search text updates and no deletion action occurs\nThe behavior should be validated when Backspace is pressed."
+    },
+    {
+      "test_id": "UTC-1681",
+      "srs_id": "SRS-122",
+      "sds_id": "SDS-122",
+      "summary": "Verify UI refresh after deletion\nwhen an item is deleted using Backspace",
+      "description": "Feature: Keyboard Shortcut Mapping for Deletion\nScenario: UI refresh after deletion\nGiven an item is deleted using Backspace\nWhen deletion completes\nThen UI should update instantly without page reload",
+      "acceptance": "UI should update instantly without page reload\nThe behavior should be validated when deletion completes."
+    },
+    {
+      "test_id": "UTC-1682",
+      "srs_id": "SRS-122",
+      "sds_id": "SDS-122",
+      "summary": "Verify Backend state synchronized\nwhen deletion occurs",
+      "description": "Feature: Keyboard Shortcut Mapping for Deletion\nScenario: Backend state synchronized\nGiven deletion occurs\nWhen state/API sync runs\nThen deleted item should not exist in payload",
+      "acceptance": "Deleted item should not exist in payload\nThe behavior should be validated when state/API sync runs."
+    },
+    {
+      "test_id": "UTC-1683",
+      "srs_id": "SRS-122",
+      "sds_id": "SDS-122",
+      "summary": "Verify Multiple deletions sequentially\nwhen multiple items selected sequentially",
+      "description": "Feature: Keyboard Shortcut Mapping for Deletion\nScenario: Multiple deletions sequentially\nGiven multiple items selected sequentially\nWhen Backspace pressed repeatedly\nThen each item should delete one by one",
+      "acceptance": "Each item should delete one by one\nThe behavior should be validated when Backspace pressed repeatedly."
+    },
+    {
+      "test_id": "UTC-1684",
+      "srs_id": "SRS-122",
+      "sds_id": "SDS-122",
+      "summary": "Verify Fast response time\nwhen multiple annotations exist",
+      "description": "Feature: Keyboard Shortcut Mapping for Deletion\nScenario: Fast response time\nGiven multiple annotations exist\nWhen Backspace is pressed\nThen deletion should complete within acceptable time (<200ms)",
+      "acceptance": "Deletion should complete within acceptable time (<200ms)\nThe behavior should be validated when Backspace is pressed."
+    },
+    {
+      "test_id": "UTC-1685",
+      "srs_id": "SRS-122",
+      "sds_id": "SDS-122",
+      "summary": "Verify Keyboard-only usage\nwhen user navigates using keyboard only",
+      "description": "Feature: Keyboard Shortcut Mapping for Deletion\nScenario: Keyboard-only usage\nGiven user navigates using keyboard only\nWhen Backspace is pressed\nThen deletion should work without mouse",
+      "acceptance": "Deletion should work without mouse\nThe behavior should be validated when Backspace is pressed."
+    },
+    {
+      "test_id": "UTC-1686",
+      "srs_id": "SRS-122",
+      "sds_id": "SDS-122",
+      "summary": "Verify Works after image change\nwhen user navigates to another image",
+      "description": "Feature: Keyboard Shortcut Mapping for Deletion\nScenario: Works after image change\nGiven user navigates to another image\nWhen Backspace pressed\nThen deletion should still function correctly",
+      "acceptance": "Deletion should still function correctly\nThe behavior should be validated when Backspace pressed."
+    },
+    {
+      "test_id": "UTC-1687",
+      "srs_id": "SRS-122",
+      "sds_id": "SDS-122",
+      "summary": "Verify Rapid repeated key press handling\nwhen user presses Backspace rapidly",
+      "description": "Feature: Keyboard Shortcut Mapping for Deletion\nScenario: Rapid repeated key press handling\nGiven user presses Backspace rapidly\nWhen system processes events\nThen application should remain stable without crash",
+      "acceptance": "Application should remain stable without crash\nThe behavior should be validated when system processes events."
+    },
+    {
+      "test_id": "UTC-1688",
+      "srs_id": "SRS-122",
+      "sds_id": "SDS-122",
+      "summary": "Verify Frozen/locked mode active\nwhen grid interaction is frozen",
+      "description": "Feature: Keyboard Shortcut Mapping for Deletion\nScenario: Frozen/locked mode active\nGiven grid interaction is frozen\nWhen Backspace pressed\nThen deletion should be blocked",
+      "acceptance": "Deletion should be blocked\nThe behavior should be validated when Backspace pressed."
+    },
+    {
+      "test_id": "UTC-1689",
+      "srs_id": "SRS-123",
+      "sds_id": "SDS-123",
+      "summary": "Verify Trigger confirmation modal on Backspace without canvas selection\nwhen no canvas mark is selected",
+      "description": "Feature: Label Deletion Workflow with Confirmation\nScenario: Trigger confirmation modal on Backspace without canvas selection\nGiven no canvas mark is selected\nAnd a label exists in sidebar\nWhen user presses Backspace\nThen a “Remove Labels” confirmation modal should appear",
+      "acceptance": "A \"Remove Labels\" confirmation modal should appear\nThe behavior should be validated when user presses Backspace."
+    },
+    {
+      "test_id": "UTC-1690",
+      "srs_id": "SRS-123",
+      "sds_id": "SDS-123",
+      "summary": "Verify Modal UI elements visible\nwhen confirmation modal is open",
+      "description": "Feature: Label Deletion Workflow with Confirmation\nScenario: Modal UI elements visible\nGiven confirmation modal is open\nWhen user views the modal\nThen title “Remove Labels” and Yes/No buttons should be visible",
+      "acceptance": "Title \"Remove Labels\" and Yes/No buttons should be visible\nThe behavior should be validated when user views the modal."
+    },
+    {
+      "test_id": "UTC-1691",
+      "srs_id": "SRS-123",
+      "sds_id": "SDS-123",
+      "summary": "Verify Confirm deletion\nwhen confirmation modal is open",
+      "description": "Feature: Label Deletion Workflow with Confirmation\nScenario: Confirm deletion\nGiven confirmation modal is open\nWhen user clicks Yes\nThen the selected label should be removed",
+      "acceptance": "The selected label should be removed\nThe behavior should be validated when user clicks Yes."
+    },
+    {
+      "test_id": "UTC-1692",
+      "srs_id": "SRS-123",
+      "sds_id": "SDS-123",
+      "summary": "Verify Cancel deletion using No\nwhen confirmation modal is open",
+      "description": "Feature: Label Deletion Workflow with Confirmation\nScenario: Cancel deletion using No\nGiven confirmation modal is open\nWhen user clicks No\nThen the label should remain unchanged",
+      "acceptance": "The label should remain unchanged\nThe behavior should be validated when user clicks No."
+    },
+    {
+      "test_id": "UTC-1693",
+      "srs_id": "SRS-123",
+      "sds_id": "SDS-123",
+      "summary": "Verify Cancel deletion by closing modal\nwhen confirmation modal is open",
+      "description": "Feature: Label Deletion Workflow with Confirmation\nScenario: Cancel deletion by closing modal\nGiven confirmation modal is open\nWhen user closes the modal (X/overlay click)\nThen deletion should not occur",
+      "acceptance": "Deletion should not occur\nThe behavior should be validated when user closes the modal (X/overlay click)."
+    }
+  ]
+}

@@ -1,0 +1,363 @@
+{
+  "spec_file": "e2e/tests/data-management/URS-DV-DM-08/SRS-036/SDS-036.spec.ts",
+  "plan_urs": "URS-DV-DM-08",
+  "srs_str": "036",
+  "domain": "data-management",
+  "page_class": "AnalyticsPage",
+  "page_import": "analytics.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-1296",
+      "srs_id": "SRS-99",
+      "sds_id": "SDS-99",
+      "summary": "Verify UI remains responsive\nwhen files are processing",
+      "description": "Feature: Upload Performance Standards with Async Processing and UI Feedback\nScenario: UI remains responsive\nGiven files are processing\nWhen user scrolls or navigates grid\nThen no lag or freeze should occur",
+      "acceptance": "No lag or freeze should occur\nThe behavior should be validated when user scrolls or navigates grid."
+    },
+    {
+      "test_id": "UTC-1297",
+      "srs_id": "SRS-99",
+      "sds_id": "SDS-99",
+      "summary": "Verify Grid updates after backend confirmation\nwhen backend finishes extraction",
+      "description": "Feature: Upload Performance Standards with Async Processing and UI Feedback\nScenario: Grid updates after backend confirmation\nGiven backend finishes extraction\nWhen response received\nThen image grid should populate with images",
+      "acceptance": "Image grid should populate with images\nThe behavior should be validated when response received."
+    },
+    {
+      "test_id": "UTC-1298",
+      "srs_id": "SRS-99",
+      "sds_id": "SDS-99",
+      "summary": "Verify Status transition to PENDING\nwhen images loaded",
+      "description": "Feature: Upload Performance Standards with Async Processing and UI Feedback\nScenario: Status transition to PENDING\nGiven images loaded\nWhen extraction completes\nThen images should show PENDING status",
+      "acceptance": "Images should show PENDING status\nThe behavior should be validated when extraction completes."
+    },
+    {
+      "test_id": "UTC-1299",
+      "srs_id": "SRS-99",
+      "sds_id": "SDS-99",
+      "summary": "Verify Status transition to IN_REVIEW\nwhen review initiated",
+      "description": "Feature: Upload Performance Standards with Async Processing and UI Feedback\nScenario: Status transition to IN_REVIEW\nGiven review initiated\nWhen status updates\nThen images should show IN_REVIEW state",
+      "acceptance": "Images should show IN_REVIEW state\nThe behavior should be validated when status updates."
+    },
+    {
+      "test_id": "UTC-1300",
+      "srs_id": "SRS-99",
+      "sds_id": "SDS-99",
+      "summary": "Verify Success toast displayed\nwhen processing completes successfully",
+      "description": "Feature: Upload Performance Standards with Async Processing and UI Feedback\nScenario: Success toast displayed\nGiven processing completes successfully\nWhen grid updates\nThen success toast should appear top-right",
+      "acceptance": "Success toast should appear top-right\nThe behavior should be validated when grid updates."
+    },
+    {
+      "test_id": "UTC-1301",
+      "srs_id": "SRS-99",
+      "sds_id": "SDS-99",
+      "summary": "Verify Spinner removed after success\nwhen import successful",
+      "description": "Feature: Upload Performance Standards with Async Processing and UI Feedback\nScenario: Spinner removed after success\nGiven import successful\nWhen completion occurs\nThen spinner should disappear automatically",
+      "acceptance": "Spinner should disappear automatically\nThe behavior should be validated when completion occurs."
+    },
+    {
+      "test_id": "UTC-1302",
+      "srs_id": "SRS-99",
+      "sds_id": "SDS-99",
+      "summary": "Verify Timeout exceeded\nwhen processing exceeds defined time",
+      "description": "Feature: Upload Performance Standards with Async Processing and UI Feedback\nScenario: Timeout exceeded\nGiven processing exceeds defined time\nWhen timeout triggers\nThen spinner should be dismissed and error toast displayed",
+      "acceptance": "Spinner should be dismissed and error toast displayed\nThe behavior should be validated when timeout triggers."
+    },
+    {
+      "test_id": "UTC-1303",
+      "srs_id": "SRS-99",
+      "sds_id": "SDS-99",
+      "summary": "Verify Backend failure\nwhen server returns failure",
+      "description": "Feature: Upload Performance Standards with Async Processing and UI Feedback\nScenario: Backend failure\nGiven server returns failure\nWhen response received\nThen error message should display and grid remains unchanged",
+      "acceptance": "Error message should display and grid remains unchanged\nThe behavior should be validated when response received."
+    },
+    {
+      "test_id": "UTC-1304",
+      "srs_id": "SRS-99",
+      "sds_id": "SDS-99",
+      "summary": "Verify Large dataset performance\nwhen 1000+ images",
+      "description": "Feature: Upload Performance Standards with Async Processing and UI Feedback\nScenario: Large dataset performance\nGiven 1000+ images\nWhen imported\nThen grid should still update within acceptable performance threshold",
+      "acceptance": "Grid should still update within acceptable performance threshold\nThe behavior should be validated when imported."
+    },
+    {
+      "test_id": "UTC-1305",
+      "srs_id": "SRS-99",
+      "sds_id": "SDS-99",
+      "summary": "Verify Clear progress indication\nwhen files uploading",
+      "description": "Feature: Upload Performance Standards with Async Processing and UI Feedback\nScenario: Clear progress indication\nGiven files uploading\nWhen user observes UI\nThen spinner clearly indicates loading state",
+      "acceptance": "Spinner clearly indicates loading state\nThe behavior should be validated when user observes UI."
+    },
+    {
+      "test_id": "UTC-1306",
+      "srs_id": "SRS-99",
+      "sds_id": "SDS-99",
+      "summary": "Verify Retry after failure\nwhen previous import failed",
+      "description": "Feature: Upload Performance Standards with Async Processing and UI Feedback\nScenario: Retry after failure\nGiven previous import failed\nWhen user retries\nThen process should execute normally",
+      "acceptance": "Process should execute normally\nThe behavior should be validated when user retries."
+    },
+    {
+      "test_id": "UTC-1307",
+      "srs_id": "SRS-99",
+      "sds_id": "SDS-99",
+      "summary": "Verify Spinner accessibility\nwhen screen reader enabled",
+      "description": "Feature: Upload Performance Standards with Async Processing and UI Feedback\nScenario: Spinner accessibility\nGiven screen reader enabled\nWhen spinner appears\nThen loading state should be announced",
+      "acceptance": "Loading state should be announced\nThe behavior should be validated when spinner appears."
+    },
+    {
+      "test_id": "UTC-1308",
+      "srs_id": "SRS-100",
+      "sds_id": "SDS-100",
+      "summary": "Verify File picker shows only JSON files\nwhen user opens upload file picker",
+      "description": "Feature: Secure File Type Restriction for JSON-only uploads\nScenario: File picker shows only JSON files\nGiven user opens upload file picker\nWhen browsing files\nThen only .json files should be visible/selectable",
+      "acceptance": "Only .json files should be visible/selectable\nThe behavior should be validated when browsing files."
+    },
+    {
+      "test_id": "UTC-1309",
+      "srs_id": "SRS-100",
+      "sds_id": "SDS-100",
+      "summary": "Verify Non-JSON hidden in picker\nwhen mixed file types exist",
+      "description": "Feature: Secure File Type Restriction for JSON-only uploads\nScenario: Non-JSON hidden in picker\nGiven mixed file types exist\nWhen file dialog opens\nThen .exe/.png/.csv should not appear",
+      "acceptance": ".exe/.png/.csv should not appear\nThe behavior should be validated when file dialog opens."
+    },
+    {
+      "test_id": "UTC-1310",
+      "srs_id": "SRS-100",
+      "sds_id": "SDS-100",
+      "summary": "Verify Select valid JSON\nwhen valid JSON selected",
+      "description": "Feature: Secure File Type Restriction for JSON-only uploads\nScenario: Select valid JSON\nGiven valid JSON selected\nWhen file staged\nThen file should appear in staging list",
+      "acceptance": "File should appear in staging list\nThe behavior should be validated when file staged."
+    },
+    {
+      "test_id": "UTC-1311",
+      "srs_id": "SRS-100",
+      "sds_id": "SDS-100",
+      "summary": "Verify Reject .txt file\nwhen .txt file selected",
+      "description": "Feature: Secure File Type Restriction for JSON-only uploads\nScenario: Reject .txt file\nGiven .txt file selected\nWhen staged\nThen file should not be added",
+      "acceptance": "File should not be added\nThe behavior should be validated when staged."
+    },
+    {
+      "test_id": "UTC-1312",
+      "srs_id": "SRS-100",
+      "sds_id": "SDS-100",
+      "summary": "Verify Reject .csv file\nwhen .csv file selected",
+      "description": "Feature: Secure File Type Restriction for JSON-only uploads\nScenario: Reject .csv file\nGiven .csv file selected\nWhen staged\nThen file should be ignored",
+      "acceptance": "File should be ignored\nThe behavior should be validated when staged."
+    },
+    {
+      "test_id": "UTC-1313",
+      "srs_id": "SRS-100",
+      "sds_id": "SDS-100",
+      "summary": "Verify Reject .exe malicious file\nwhen executable file selected",
+      "description": "Feature: Secure File Type Restriction for JSON-only uploads\nScenario: Reject .exe malicious file\nGiven executable file selected\nWhen staged\nThen system must block it",
+      "acceptance": "System must block it\nThe behavior should be validated when staged."
+    },
+    {
+      "test_id": "UTC-1314",
+      "srs_id": "SRS-100",
+      "sds_id": "SDS-100",
+      "summary": "Verify Drag-drop non-JSON\nwhen user drags .png file",
+      "description": "Feature: Secure File Type Restriction for JSON-only uploads\nScenario: Drag-drop non-JSON\nGiven user drags .png file\nWhen dropped into zone\nThen system should ignore file",
+      "acceptance": "System should ignore file\nThe behavior should be validated when dropped into zone."
+    },
+    {
+      "test_id": "UTC-1315",
+      "srs_id": "SRS-100",
+      "sds_id": "SDS-100",
+      "summary": "Verify Drag-drop valid JSON\nwhen user drags .json file",
+      "description": "Feature: Secure File Type Restriction for JSON-only uploads\nScenario: Drag-drop valid JSON\nGiven user drags .json file\nWhen dropped\nThen file should stage successfully",
+      "acceptance": "File should stage successfully\nThe behavior should be validated when dropped."
+    },
+    {
+      "test_id": "UTC-1316",
+      "srs_id": "SRS-100",
+      "sds_id": "SDS-100",
+      "summary": "Verify MIME type validation\nwhen staged file MIME â‰  application/json",
+      "description": "Feature: Secure File Type Restriction for JSON-only uploads\nScenario: MIME type validation\nGiven staged file MIME ≠ application/json\nWhen validated\nThen file removed from payload",
+      "acceptance": "File removed from payload\nThe behavior should be validated when validated."
+    },
+    {
+      "test_id": "UTC-1317",
+      "srs_id": "SRS-100",
+      "sds_id": "SDS-100",
+      "summary": "Verify Payload contains only JSON\nwhen multiple staged files",
+      "description": "Feature: Secure File Type Restriction for JSON-only uploads\nScenario: Payload contains only JSON\nGiven multiple staged files\nWhen upload request sent\nThen only JSON files included in payload",
+      "acceptance": "Only JSON files included in payload\nThe behavior should be validated when upload request sent."
+    },
+    {
+      "test_id": "UTC-1318",
+      "srs_id": "SRS-100",
+      "sds_id": "SDS-100",
+      "summary": "Verify Rename attack (.exe â†’ .json)\nwhen malicious file renamed to .json",
+      "description": "Feature: Secure File Type Restriction for JSON-only uploads\nScenario: Rename attack (.exe → .json)\nGiven malicious file renamed to .json\nWhen MIME validated\nThen upload must be rejected",
+      "acceptance": "Upload must be rejected\nThe behavior should be validated when MIME validated."
+    },
+    {
+      "test_id": "UTC-1319",
+      "srs_id": "SRS-100",
+      "sds_id": "SDS-100",
+      "summary": "Verify Server-side validation\nwhen client filter bypassed",
+      "description": "Feature: Secure File Type Restriction for JSON-only uploads\nScenario: Server-side validation\nGiven client filter bypassed\nWhen upload hits server\nThen server must reject invalid type",
+      "acceptance": "Server must reject invalid type\nThe behavior should be validated when upload hits server."
+    },
+    {
+      "test_id": "UTC-1320",
+      "srs_id": "SRS-100",
+      "sds_id": "SDS-100",
+      "summary": "Verify 415 response handling\nwhen server returns 415",
+      "description": "Feature: Secure File Type Restriction for JSON-only uploads\nScenario: 415 response handling\nGiven server returns 415\nWhen response received\nThen error message should display",
+      "acceptance": "Error message should display\nThe behavior should be validated when response received."
+    },
+    {
+      "test_id": "UTC-1321",
+      "srs_id": "SRS-100",
+      "sds_id": "SDS-100",
+      "summary": "Verify Friendly validation message\nwhen invalid file selected",
+      "description": "Feature: Secure File Type Restriction for JSON-only uploads\nScenario: Friendly validation message\nGiven invalid file selected\nWhen rejected\nThen user sees clear non-technical message",
+      "acceptance": "User sees clear non-technical message\nThe behavior should be validated when rejected."
+    },
+    {
+      "test_id": "UTC-1322",
+      "srs_id": "SRS-100",
+      "sds_id": "SDS-100",
+      "summary": "Verify Valid files unaffected\nwhen valid JSON mixed with invalid",
+      "description": "Feature: Secure File Type Restriction for JSON-only uploads\nScenario: Valid files unaffected\nGiven valid JSON mixed with invalid\nWhen staging occurs\nThen valid files still accepted",
+      "acceptance": "Valid files still accepted\nThe behavior should be validated when staging occurs."
+    },
+    {
+      "test_id": "UTC-1323",
+      "srs_id": "SRS-100",
+      "sds_id": "SDS-100",
+      "summary": "Verify No script execution\nwhen malicious script file",
+      "description": "Feature: Secure File Type Restriction for JSON-only uploads\nScenario: No script execution\nGiven malicious script file\nWhen attempted upload\nThen system must prevent execution",
+      "acceptance": "System must prevent execution\nThe behavior should be validated when attempted upload."
+    },
+    {
+      "test_id": "UTC-1324",
+      "srs_id": "SRS-101",
+      "sds_id": "SDS-101",
+      "summary": "Verify Remove icon visibility\nwhen files are staged",
+      "description": "Feature: Selection Management for staged JSON files\nScenario: Remove icon visibility\nGiven files are staged\nWhen list is displayed\nThen each file should show a clickable remove (x/trash) icon",
+      "acceptance": "Each file should show a clickable remove (x/trash) icon\nThe behavior should be validated when list is displayed."
+    },
+    {
+      "test_id": "UTC-1325",
+      "srs_id": "SRS-101",
+      "sds_id": "SDS-101",
+      "summary": "Verify Hover highlight\nwhen file list displayed",
+      "description": "Feature: Selection Management for staged JSON files\nScenario: Hover highlight\nGiven file list displayed\nWhen user hovers a row\nThen row should highlight for clarity",
+      "acceptance": "Row should highlight for clarity\nThe behavior should be validated when user hovers a row."
+    },
+    {
+      "test_id": "UTC-1326",
+      "srs_id": "SRS-101",
+      "sds_id": "SDS-101",
+      "summary": "Verify Remove single file\nwhen multiple files staged",
+      "description": "Feature: Selection Management for staged JSON files\nScenario: Remove single file\nGiven multiple files staged\nWhen user clicks remove on one file\nThen only that file should be removed",
+      "acceptance": "Only that file should be removed\nThe behavior should be validated when user clicks remove on one file."
+    },
+    {
+      "test_id": "UTC-1327",
+      "srs_id": "SRS-101",
+      "sds_id": "SDS-101",
+      "summary": "Verify Correct file removed by index\nwhen 3 files staged",
+      "description": "Feature: Selection Management for staged JSON files\nScenario: Correct file removed by index\nGiven 3 files staged\nWhen removing 2nd file\nThen only 2nd file should disappear",
+      "acceptance": "Only 2nd file should disappear\nThe behavior should be validated when removing 2nd file."
+    },
+    {
+      "test_id": "UTC-1328",
+      "srs_id": "SRS-101",
+      "sds_id": "SDS-101",
+      "summary": "Verify Remaining files preserved\nwhen multiple files staged",
+      "description": "Feature: Selection Management for staged JSON files\nScenario: Remaining files preserved\nGiven multiple files staged\nWhen one is removed\nThen other files must remain unchanged",
+      "acceptance": "Other files must remain unchanged\nThe behavior should be validated when one is removed."
+    },
+    {
+      "test_id": "UTC-1329",
+      "srs_id": "SRS-101",
+      "sds_id": "SDS-101",
+      "summary": "Verify Real-time count update\nwhen 5 files staged",
+      "description": "Feature: Selection Management for staged JSON files\nScenario: Real-time count update\nGiven 5 files staged\nWhen one removed\nThen “Files selected” count updates to 4 instantly",
+      "acceptance": "\"Files selected\" count updates to 4 instantly\nThe behavior should be validated when one removed."
+    },
+    {
+      "test_id": "UTC-1330",
+      "srs_id": "SRS-101",
+      "sds_id": "SDS-101",
+      "summary": "Verify Remove multiple files sequentially\nwhen several files staged",
+      "description": "Feature: Selection Management for staged JSON files\nScenario: Remove multiple files sequentially\nGiven several files staged\nWhen removing multiple entries\nThen list updates after each action",
+      "acceptance": "List updates after each action\nThe behavior should be validated when removing multiple entries."
+    },
+    {
+      "test_id": "UTC-1331",
+      "srs_id": "SRS-101",
+      "sds_id": "SDS-101",
+      "summary": "Verify Remove all files\nwhen multiple files staged",
+      "description": "Feature: Selection Management for staged JSON files\nScenario: Remove all files\nGiven multiple files staged\nWhen user removes all\nThen staging list should be empty",
+      "acceptance": "Staging list should be empty\nThe behavior should be validated when user removes all."
+    },
+    {
+      "test_id": "UTC-1332",
+      "srs_id": "SRS-101",
+      "sds_id": "SDS-101",
+      "summary": "Verify Disable Import when empty\nwhen no files remain",
+      "description": "Feature: Selection Management for staged JSON files\nScenario: Disable Import when empty\nGiven no files remain\nWhen viewing Import button\nThen button should be disabled",
+      "acceptance": "Button should be disabled\nThe behavior should be validated when viewing Import button."
+    },
+    {
+      "test_id": "UTC-1333",
+      "srs_id": "SRS-101",
+      "sds_id": "SDS-101",
+      "summary": "Verify Prevent empty submission\nwhen no files staged",
+      "description": "Feature: Selection Management for staged JSON files\nScenario: Prevent empty submission\nGiven no files staged\nWhen clicking Import\nThen no request should be triggered",
+      "acceptance": "No request should be triggered\nThe behavior should be validated when clicking Import."
+    },
+    {
+      "test_id": "UTC-1334",
+      "srs_id": "SRS-101",
+      "sds_id": "SDS-101",
+      "summary": "Verify Instant UI update\nwhen file removed",
+      "description": "Feature: Selection Management for staged JSON files\nScenario: Instant UI update\nGiven file removed\nWhen action performed\nThen UI should update without page reload or delay",
+      "acceptance": "UI should update without page reload or delay\nThe behavior should be validated when action performed."
+    },
+    {
+      "test_id": "UTC-1335",
+      "srs_id": "SRS-101",
+      "sds_id": "SDS-101",
+      "summary": "Verify No duplicate state issues\nwhen repeated add/remove operations",
+      "description": "Feature: Selection Management for staged JSON files\nScenario: No duplicate state issues\nGiven repeated add/remove operations\nWhen actions performed rapidly\nThen list state should remain consistent",
+      "acceptance": "List state should remain consistent\nThe behavior should be validated when actions performed rapidly."
+    },
+    {
+      "test_id": "UTC-1336",
+      "srs_id": "SRS-101",
+      "sds_id": "SDS-101",
+      "summary": "Verify Remove non-existing index\nwhen file already removed",
+      "description": "Feature: Selection Management for staged JSON files\nScenario: Remove non-existing index\nGiven file already removed\nWhen remove triggered again\nThen system should ignore safely without crash",
+      "acceptance": "System should ignore safely without crash\nThe behavior should be validated when remove triggered again."
+    },
+    {
+      "test_id": "UTC-1337",
+      "srs_id": "SRS-101",
+      "sds_id": "SDS-101",
+      "summary": "Verify Clear visual feedback after removal\nwhen file removed",
+      "description": "Feature: Selection Management for staged JSON files\nScenario: Clear visual feedback after removal\nGiven file removed\nWhen list refreshes\nThen user should clearly see updated list",
+      "acceptance": "User should clearly see updated list\nThe behavior should be validated when list refreshes."
+    },
+    {
+      "test_id": "UTC-1338",
+      "srs_id": "SRS-101",
+      "sds_id": "SDS-101",
+      "summary": "Verify Keyboard remove support\nwhen remove icon focused",
+      "description": "Feature: Selection Management for staged JSON files\nScenario: Keyboard remove support\nGiven remove icon focused\nWhen Enter/Space pressed\nThen file should be removed",
+      "acceptance": "File should be removed\nThe behavior should be validated when Enter/Space pressed."
+    },
+    {
+      "test_id": "UTC-1339",
+      "srs_id": "SRS-101",
+      "sds_id": "SDS-101",
+      "summary": "Verify Large list handling\nwhen 100+ files staged",
+      "description": "Feature: Selection Management for staged JSON files\nScenario: Large list handling\nGiven 100+ files staged\nWhen removing items\nThen list updates smoothly without lag",
+      "acceptance": "List updates smoothly without lag\nThe behavior should be validated when removing items."
+    }
+  ]
+}

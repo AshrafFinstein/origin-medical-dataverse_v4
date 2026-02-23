@@ -1,0 +1,163 @@
+{
+  "spec_file": "e2e/tests/masters/URS-DV-GEN-05/SRS-019/SDS-019.spec.ts",
+  "plan_urs": "URS-DV-GEN-05",
+  "srs_str": "019",
+  "domain": "masters",
+  "page_class": "SessionLabelPage",
+  "page_import": "session-label.page",
+  "goto_method": "gotoMasters",
+  "test_cases": [
+    {
+      "test_id": "UTC-501",
+      "srs_id": "SRS-42",
+      "sds_id": "SDS-42",
+      "summary": "Verify Page loads with header and controls\nwhen the user opens the Session Label page",
+      "description": "Feature: Session Label Page Management\nScenario: Page loads with header and controls\nGiven the user opens the Session Label page\nWhen the page finishes loading\nThen header, search field, Create button, and label table should be visible",
+      "acceptance": "Header, search field, Create button, and label table should be visible\nThe behavior should be validated when the page finishes loading."
+    },
+    {
+      "test_id": "UTC-502",
+      "srs_id": "SRS-42",
+      "sds_id": "SDS-42",
+      "summary": "Verify Label data loads on page access\nwhen labels exist in the system",
+      "description": "Feature: Session Label Page Management\nScenario: Label data loads on page access\nGiven labels exist in the system\nWhen the page loads\nThen the table should display all existing labels",
+      "acceptance": "The table should display all existing labels\nThe behavior should be validated when the page loads."
+    },
+    {
+      "test_id": "UTC-503",
+      "srs_id": "SRS-42",
+      "sds_id": "SDS-42",
+      "summary": "Verify Search filters labels\nwhen multiple labels are present",
+      "description": "Feature: Session Label Page Management\nScenario: Search filters labels\nGiven multiple labels are present\nWhen the user enters text in the search field\nThen the table should display only matching labels",
+      "acceptance": "The table should display only matching labels\nThe behavior should be validated when the user enters text in the search field."
+    },
+    {
+      "test_id": "UTC-504",
+      "srs_id": "SRS-42",
+      "sds_id": "SDS-42",
+      "summary": "Verify Clear search restores full data\nwhen search results are filtered",
+      "description": "Feature: Session Label Page Management\nScenario: Clear search restores full data\nGiven search results are filtered\nWhen the user clears the search field\nThen all labels should be displayed again",
+      "acceptance": "All labels should be displayed again\nThe behavior should be validated when the user clears the search field."
+    },
+    {
+      "test_id": "UTC-505",
+      "srs_id": "SRS-42",
+      "sds_id": "SDS-42",
+      "summary": "Verify Create button opens label creation\nwhen the user is on the Session Label page",
+      "description": "Feature: Session Label Page Management\nScenario: Create button opens label creation\nGiven the user is on the Session Label page\nWhen the user clicks the Create button\nThen the label creation interface should open",
+      "acceptance": "The label creation interface should open\nThe behavior should be validated when the user clicks the Create button."
+    },
+    {
+      "test_id": "UTC-506",
+      "srs_id": "SRS-42",
+      "sds_id": "SDS-42",
+      "summary": "Verify Search field shows placeholder text\nwhen the page is displayed",
+      "description": "Feature: Session Label Page Management\nScenario: Search field shows placeholder text\nGiven the page is displayed\nWhen the search field is visible\nThen it should show an informative placeholder",
+      "acceptance": "It should show an informative placeholder\nThe behavior should be validated when the search field is visible."
+    },
+    {
+      "test_id": "UTC-507",
+      "srs_id": "SRS-42",
+      "sds_id": "SDS-42",
+      "summary": "Verify Empty state when no labels exist\nwhen no labels are available",
+      "description": "Feature: Session Label Page Management\nScenario: Empty state when no labels exist\nGiven no labels are available\nWhen the page loads\nThen a friendly empty state message should be displayed",
+      "acceptance": "A friendly empty state message should be displayed\nThe behavior should be validated when the page loads."
+    },
+    {
+      "test_id": "UTC-508",
+      "srs_id": "SRS-42",
+      "sds_id": "SDS-42",
+      "summary": "Verify Empty state when search returns no results\nwhen labels exist",
+      "description": "Feature: Session Label Page Management\nScenario: Empty state when search returns no results\nGiven labels exist\nWhen the search query matches nothing\nThen the system should show a no-results message without technical errors",
+      "acceptance": "The system should show a no-results message without technical errors\nThe behavior should be validated when the search query matches nothing."
+    },
+    {
+      "test_id": "UTC-509",
+      "srs_id": "SRS-42",
+      "sds_id": "SDS-42",
+      "summary": "Verify No technical error exposure\nwhen a backend failure occurs",
+      "description": "Feature: Session Label Page Management\nScenario: No technical error exposure\nGiven a backend failure occurs\nWhen data cannot be loaded\nThen a user-friendly message should be shown instead of raw errors",
+      "acceptance": "A user-friendly message should be shown instead of raw errors\nThe behavior should be validated when data cannot be loaded."
+    },
+    {
+      "test_id": "UTC-510",
+      "srs_id": "SRS-42",
+      "sds_id": "SDS-42",
+      "summary": "Verify Data loads quickly\nwhen the page is opened",
+      "description": "Feature: Session Label Page Management\nScenario: Data loads quickly\nGiven the page is opened\nWhen data is fetched\nThen labels should render within acceptable time without blocking UI",
+      "acceptance": "Labels should render within acceptable time without blocking UI\nThe behavior should be validated when data is fetched."
+    },
+    {
+      "test_id": "UTC-511",
+      "srs_id": "SRS-43",
+      "sds_id": "SDS-43",
+      "summary": "Verify Page loads with header and controls\nwhen the user opens the Session Label page",
+      "description": "Feature: Session Label Page Management\nScenario: Page loads with header and controls\nGiven the user opens the Session Label page\nWhen the page finishes loading\nThen header, search field, Create button, and label table should be visible",
+      "acceptance": "Header, search field, Create button, and label table should be visible\nThe behavior should be validated when the page finishes loading."
+    },
+    {
+      "test_id": "UTC-512",
+      "srs_id": "SRS-43",
+      "sds_id": "SDS-43",
+      "summary": "Verify Label data loads on page access\nwhen labels exist in the system",
+      "description": "Feature: Session Label Page Management\nScenario: Label data loads on page access\nGiven labels exist in the system\nWhen the page loads\nThen the table should display all existing labels",
+      "acceptance": "The table should display all existing labels\nThe behavior should be validated when the page loads."
+    },
+    {
+      "test_id": "UTC-513",
+      "srs_id": "SRS-43",
+      "sds_id": "SDS-43",
+      "summary": "Verify Search filters labels\nwhen multiple labels are present",
+      "description": "Feature: Session Label Page Management\nScenario: Search filters labels\nGiven multiple labels are present\nWhen the user enters text in the search field\nThen the table should display only matching labels",
+      "acceptance": "The table should display only matching labels\nThe behavior should be validated when the user enters text in the search field."
+    },
+    {
+      "test_id": "UTC-514",
+      "srs_id": "SRS-43",
+      "sds_id": "SDS-43",
+      "summary": "Verify Clear search restores full data\nwhen search results are filtered",
+      "description": "Feature: Session Label Page Management\nScenario: Clear search restores full data\nGiven search results are filtered\nWhen the user clears the search field\nThen all labels should be displayed again",
+      "acceptance": "All labels should be displayed again\nThe behavior should be validated when the user clears the search field."
+    },
+    {
+      "test_id": "UTC-515",
+      "srs_id": "SRS-43",
+      "sds_id": "SDS-43",
+      "summary": "Verify Create button opens label creation\nwhen the user is on the Session Label page",
+      "description": "Feature: Session Label Page Management\nScenario: Create button opens label creation\nGiven the user is on the Session Label page\nWhen the user clicks the Create button\nThen the label creation interface should open",
+      "acceptance": "The label creation interface should open\nThe behavior should be validated when the user clicks the Create button."
+    },
+    {
+      "test_id": "UTC-516",
+      "srs_id": "SRS-43",
+      "sds_id": "SDS-43",
+      "summary": "Verify Search field shows placeholder text\nwhen the page is displayed",
+      "description": "Feature: Session Label Page Management\nScenario: Search field shows placeholder text\nGiven the page is displayed\nWhen the search field is visible\nThen it should show an informative placeholder",
+      "acceptance": "It should show an informative placeholder\nThe behavior should be validated when the search field is visible."
+    },
+    {
+      "test_id": "UTC-517",
+      "srs_id": "SRS-43",
+      "sds_id": "SDS-43",
+      "summary": "Verify Empty state when no labels exist\nwhen no labels are available",
+      "description": "Feature: Session Label Page Management\nScenario: Empty state when no labels exist\nGiven no labels are available\nWhen the page loads\nThen a friendly empty state message should be displayed",
+      "acceptance": "A friendly empty state message should be displayed\nThe behavior should be validated when the page loads."
+    },
+    {
+      "test_id": "UTC-518",
+      "srs_id": "SRS-43",
+      "sds_id": "SDS-43",
+      "summary": "Verify Empty state when search returns no results\nwhen labels exist",
+      "description": "Feature: Session Label Page Management\nScenario: Empty state when search returns no results\nGiven labels exist\nWhen the search query matches nothing\nThen the system should show a no-results message without technical errors",
+      "acceptance": "The system should show a no-results message without technical errors\nThe behavior should be validated when the search query matches nothing."
+    },
+    {
+      "test_id": "UTC-519",
+      "srs_id": "SRS-43",
+      "sds_id": "SDS-43",
+      "summary": "Verify No technical error exposure\nwhen a backend failure occurs",
+      "description": "Feature: Session Label Page Management\nScenario: No technical error exposure\nGiven a backend failure occurs\nWhen data cannot be loaded\nThen a user-friendly message should be shown instead of raw errors",
+      "acceptance": "A user-friendly message should be shown instead of raw errors\nThe behavior should be validated when data cannot be loaded."
+    }
+  ]
+}

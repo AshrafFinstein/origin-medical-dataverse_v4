@@ -1,0 +1,363 @@
+{
+  "spec_file": "e2e/tests/analysis-modal/URS-DV-AN-02/SRS-006/SDS-006.spec.ts",
+  "plan_urs": "URS-DV-AN-02",
+  "srs_str": "006",
+  "domain": "analysis-modal",
+  "page_class": "AnalysisModalPage",
+  "page_import": "analysis-modal.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-90",
+      "srs_id": "SRS-11",
+      "sds_id": "SDS-11",
+      "summary": "Verify Analyze icon opens Analysis Modal\nwhen the Data Labelling Session table is loaded",
+      "description": "Feature: Analyze icon opens Analysis Modal\nGiven the Data Labelling Session table is loaded\nWhen the table rows are rendered\nThen an Analyze (three-dot) icon should be visible for each active session row",
+      "acceptance": "An Analyze (three-dot) icon should be visible for each active session row\nThe behavior should be validated when the table rows are rendered."
+    },
+    {
+      "test_id": "UTC-91",
+      "srs_id": "SRS-11",
+      "sds_id": "SDS-11",
+      "summary": "Verify Analyze icon opens Analysis Modal\nwhen a session row is displayed",
+      "description": "Feature: Analyze icon opens Analysis Modal\nGiven a session row is displayed\nWhen the user views the action column\nThen the Analyze icon should be displayed as an interactive IconButton",
+      "acceptance": "The Analyze icon should be displayed as an interactive IconButton\nThe behavior should be validated when the user views the action column."
+    },
+    {
+      "test_id": "UTC-92",
+      "srs_id": "SRS-11",
+      "sds_id": "SDS-11",
+      "summary": "Verify Analyze icon opens Analysis Modal\nwhen a session row is available",
+      "description": "Feature: Analyze icon opens Analysis Modal\nGiven a session row is available\nWhen the user clicks the Analyze icon\nThen the Analysis Modal should open",
+      "acceptance": "The Analysis Modal should open\nThe behavior should be validated when the user clicks the Analyze icon."
+    },
+    {
+      "test_id": "UTC-93",
+      "srs_id": "SRS-11",
+      "sds_id": "SDS-11",
+      "summary": "Verify Analyze icon opens Analysis Modal\nwhen multiple sessions exist in the table",
+      "description": "Feature: Analyze icon opens Analysis Modal\nGiven multiple sessions exist in the table\nWhen the user clicks Analyze for a specific session\nThen the modal should load data only for the selected session",
+      "acceptance": "The modal should load data only for the selected session\nThe behavior should be validated when the user clicks Analyze for a specific session."
+    },
+    {
+      "test_id": "UTC-94",
+      "srs_id": "SRS-11",
+      "sds_id": "SDS-11",
+      "summary": "Verify Analyze icon opens Analysis Modal\nwhen the Analyze icon is clicked",
+      "description": "Feature: Analyze icon opens Analysis Modal\nGiven the Analyze icon is clicked\nWhen the modal state is initialized\nThen the sessionId should be passed and isAnalysisSession should be set to true",
+      "acceptance": "The sessionId should be passed and isAnalysisSession should be set to true\nThe behavior should be validated when the modal state is initialized."
+    },
+    {
+      "test_id": "UTC-95",
+      "srs_id": "SRS-11",
+      "sds_id": "SDS-11",
+      "summary": "Verify Analyze icon opens Analysis Modal\nwhen the Analysis Modal is open",
+      "description": "Feature: Analyze icon opens Analysis Modal\nGiven the Analysis Modal is open\nWhen the modal content loads\nThen the session metadata should match the selected sessionId",
+      "acceptance": "The session metadata should match the selected sessionId\nThe behavior should be validated when the modal content loads."
+    },
+    {
+      "test_id": "UTC-96",
+      "srs_id": "SRS-11",
+      "sds_id": "SDS-11",
+      "summary": "Verify Analyze icon opens Analysis Modal\nwhen the session status is Deleted",
+      "description": "Feature: Analyze icon opens Analysis Modal\nGiven the session status is Deleted\nWhen the table is rendered\nThen the Analyze icon should be disabled",
+      "acceptance": "The Analyze icon should be disabled\nThe behavior should be validated when the table is rendered."
+    },
+    {
+      "test_id": "UTC-97",
+      "srs_id": "SRS-11",
+      "sds_id": "SDS-11",
+      "summary": "Verify Analyze icon opens Analysis Modal\nwhen the Analyze icon is disabled",
+      "description": "Feature: Analyze icon opens Analysis Modal\nGiven the Analyze icon is disabled\nWhen the user clicks the icon\nThen the Analysis Modal should not open",
+      "acceptance": "The Analysis Modal should not open\nThe behavior should be validated when the user clicks the icon."
+    },
+    {
+      "test_id": "UTC-98",
+      "srs_id": "SRS-11",
+      "sds_id": "SDS-11",
+      "summary": "Verify Analyze icon opens Analysis Modal\nwhen the Analysis Modal is already open",
+      "description": "Feature: Analyze icon opens Analysis Modal\nGiven the Analysis Modal is already open\nWhen the user clicks Analyze again\nThen duplicate modals should not be created",
+      "acceptance": "Duplicate modals should not be created\nThe behavior should be validated when the user clicks Analyze again."
+    },
+    {
+      "test_id": "UTC-99",
+      "srs_id": "SRS-11",
+      "sds_id": "SDS-11",
+      "summary": "Verify Analyze icon opens Analysis Modal\nwhen the user clicks Analyze",
+      "description": "Feature: Analyze icon opens Analysis Modal\nGiven the user clicks Analyze\nWhen the modal opens\nThen the Analysis Modal should load within acceptable time",
+      "acceptance": "The Analysis Modal should load within acceptable time\nThe behavior should be validated when the modal opens."
+    },
+    {
+      "test_id": "UTC-100",
+      "srs_id": "SRS-11",
+      "sds_id": "SDS-11",
+      "summary": "Verify Analyze icon opens Analysis Modal\nwhen the user hovers over the Analyze icon",
+      "description": "Feature: Analyze icon opens Analysis Modal\nGiven the user hovers over the Analyze icon\nWhen the tooltip is shown\nThen it should clearly indicate the Analyze action",
+      "acceptance": "It should clearly indicate the Analyze action\nThe behavior should be validated when the tooltip is shown."
+    },
+    {
+      "test_id": "UTC-101",
+      "srs_id": "SRS-11",
+      "sds_id": "SDS-11",
+      "summary": "Verify Analyze icon opens Analysis Modal\nwhen the Analyze icon is focused via keyboard",
+      "description": "Feature: Analyze icon opens Analysis Modal\nGiven the Analyze icon is focused via keyboard\nWhen Enter or Space is pressed\nThen the Analysis Modal should open",
+      "acceptance": "The Analysis Modal should open\nThe behavior should be validated when Enter or Space is pressed."
+    },
+    {
+      "test_id": "UTC-102",
+      "srs_id": "SRS-12",
+      "sds_id": "SDS-12",
+      "summary": "Verify Modal header and tabs navigation layout\nwhen the Analysis modal is opened",
+      "description": "Feature: Modal header and tabs navigation layout\nGiven the Analysis modal is opened\nWhen the modal renders\nThen a header displaying the session name should be visible at the top",
+      "acceptance": "A header displaying the session name should be visible at the top\nThe behavior should be validated when the modal renders."
+    },
+    {
+      "test_id": "UTC-103",
+      "srs_id": "SRS-12",
+      "sds_id": "SDS-12",
+      "summary": "Verify Modal header and tabs navigation layout\nwhen the modal header is visible",
+      "description": "Feature: Modal header and tabs navigation layout\nGiven the modal header is visible\nWhen the user views the top-right area\nThen a close (“X”) button should be displayed",
+      "acceptance": "A close (\"X\") button should be displayed\nThe behavior should be validated when the user views the top-right area."
+    },
+    {
+      "test_id": "UTC-104",
+      "srs_id": "SRS-12",
+      "sds_id": "SDS-12",
+      "summary": "Verify Modal header and tabs navigation layout\nwhen the modal is open",
+      "description": "Feature: Modal header and tabs navigation layout\nGiven the modal is open\nWhen the user clicks the close (“X”) button\nThen the modal should close and return to the session table",
+      "acceptance": "The modal should close and return to the session table\nThe behavior should be validated when the user clicks the close (\"X\") button."
+    },
+    {
+      "test_id": "UTC-105",
+      "srs_id": "SRS-12",
+      "sds_id": "SDS-12",
+      "summary": "Verify Modal header and tabs navigation layout\nwhen the modal loads",
+      "description": "Feature: Modal header and tabs navigation layout\nGiven the modal loads\nWhen navigation controls are displayed\nThen three tabs “Label Analysis”, “Annotation Analysis”, and “Status Analysis” should be visible",
+      "acceptance": "Three tabs \"Label Analysis\", \"Annotation Analysis\", and \"Status Analysis\" should be visible\nThe behavior should be validated when navigation controls are displayed."
+    },
+    {
+      "test_id": "UTC-106",
+      "srs_id": "SRS-12",
+      "sds_id": "SDS-12",
+      "summary": "Verify Modal header and tabs navigation layout\nwhen the modal opens",
+      "description": "Feature: Modal header and tabs navigation layout\nGiven the modal opens\nWhen initial state loads\nThen activeTab should default to LABEL and Label Analysis content should render",
+      "acceptance": "ActiveTab should default to LABEL and Label Analysis content should render\nThe behavior should be validated when initial state loads."
+    },
+    {
+      "test_id": "UTC-107",
+      "srs_id": "SRS-12",
+      "sds_id": "SDS-12",
+      "summary": "Verify Modal header and tabs navigation layout\nwhen Label tab is active",
+      "description": "Feature: Modal header and tabs navigation layout\nGiven Label tab is active\nWhen the user clicks Annotation Analysis tab\nThen activeTab should change to ANNOTATION and annotation view should render",
+      "acceptance": "ActiveTab should change to ANNOTATION and annotation view should render\nThe behavior should be validated when the user clicks Annotation Analysis tab."
+    },
+    {
+      "test_id": "UTC-108",
+      "srs_id": "SRS-12",
+      "sds_id": "SDS-12",
+      "summary": "Verify Modal header and tabs navigation layout\nwhen any tab is active",
+      "description": "Feature: Modal header and tabs navigation layout\nGiven any tab is active\nWhen the user clicks Status Analysis tab\nThen activeTab should change to STATUS and status view should render",
+      "acceptance": "ActiveTab should change to STATUS and status view should render\nThe behavior should be validated when the user clicks Status Analysis tab."
+    },
+    {
+      "test_id": "UTC-109",
+      "srs_id": "SRS-12",
+      "sds_id": "SDS-12",
+      "summary": "Verify Modal header and tabs navigation layout\nwhen the user switches between tabs",
+      "description": "Feature: Modal header and tabs navigation layout\nGiven the user switches between tabs\nWhen activeTab updates\nThen only the corresponding child component should render",
+      "acceptance": "Only the corresponding child component should render\nThe behavior should be validated when activeTab updates."
+    },
+    {
+      "test_id": "UTC-110",
+      "srs_id": "SRS-12",
+      "sds_id": "SDS-12",
+      "summary": "Verify Modal header and tabs navigation layout\nwhen the modal is opened for a session",
+      "description": "Feature: Modal header and tabs navigation layout\nGiven the modal is opened for a session\nWhen switching tabs\nThen the same sessionId should be retained across all tabs",
+      "acceptance": "The same sessionId should be retained across all tabs\nThe behavior should be validated when switching tabs."
+    },
+    {
+      "test_id": "UTC-111",
+      "srs_id": "SRS-12",
+      "sds_id": "SDS-12",
+      "summary": "Verify Modal header and tabs navigation layout\nwhen the user rapidly switches tabs",
+      "description": "Feature: Modal header and tabs navigation layout\nGiven the user rapidly switches tabs\nWhen state changes repeatedly\nThen no crash or blank screen should occur",
+      "acceptance": "No crash or blank screen should occur\nThe behavior should be validated when state changes repeatedly."
+    },
+    {
+      "test_id": "UTC-112",
+      "srs_id": "SRS-12",
+      "sds_id": "SDS-12",
+      "summary": "Verify Modal header and tabs navigation layout\nwhen the tabs are displayed",
+      "description": "Feature: Modal header and tabs navigation layout\nGiven the tabs are displayed\nWhen the active tab is selected\nThen it should be visually highlighted to indicate selection",
+      "acceptance": "It should be visually highlighted to indicate selection\nThe behavior should be validated when the active tab is selected."
+    },
+    {
+      "test_id": "UTC-113",
+      "srs_id": "SRS-12",
+      "sds_id": "SDS-12",
+      "summary": "Verify Modal header and tabs navigation layout\nwhen the modal is focused",
+      "description": "Feature: Modal header and tabs navigation layout\nGiven the modal is focused\nWhen the user navigates using keyboard (Tab/Arrow/Enter)\nThen tabs should be accessible and switchable via keyboard",
+      "acceptance": "Tabs should be accessible and switchable via keyboard\nThe behavior should be validated when the user navigates using keyboard (Tab/Arrow/Enter)."
+    },
+    {
+      "test_id": "UTC-114",
+      "srs_id": "SRS-12",
+      "sds_id": "SDS-12",
+      "summary": "Verify Modal header and tabs navigation layout\nwhen the user switches tabs",
+      "description": "Feature: Modal header and tabs navigation layout\nGiven the user switches tabs\nWhen the content loads\nThen the view should update instantly without noticeable delay",
+      "acceptance": "The view should update instantly without noticeable delay\nThe behavior should be validated when the content loads."
+    },
+    {
+      "test_id": "UTC-115",
+      "srs_id": "SRS-12",
+      "sds_id": "SDS-12",
+      "summary": "Verify Modal header and tabs navigation layout\nwhen the sessionId is missing or invalid",
+      "description": "Feature: Modal header and tabs navigation layout\nGiven the sessionId is missing or invalid\nWhen the modal opens\nThen the modal should not crash and should show safe fallback or empty state",
+      "acceptance": "The modal should not crash and should show safe fallback or empty state\nThe behavior should be validated when the modal opens."
+    },
+    {
+      "test_id": "UTC-116",
+      "srs_id": "SRS-13",
+      "sds_id": "SDS-13",
+      "summary": "Verify Default tab initialization and lazy loading\nwhen the Analysis modal is opened",
+      "description": "Feature: Default tab initialization and lazy loading\nGiven the Analysis modal is opened\nWhen the modal renders\nThen the default active tab should be “Label Analysis”",
+      "acceptance": "The default active tab should be \"Label Analysis\"\nThe behavior should be validated when the modal renders."
+    },
+    {
+      "test_id": "UTC-117",
+      "srs_id": "SRS-13",
+      "sds_id": "SDS-13",
+      "summary": "Verify Default tab initialization and lazy loading\nwhen the modal opens",
+      "description": "Feature: Default tab initialization and lazy loading\nGiven the modal opens\nWhen initialization completes\nThen Label Analysis data retrieval should automatically start",
+      "acceptance": "Label Analysis data retrieval should automatically start\nThe behavior should be validated when initialization completes."
+    },
+    {
+      "test_id": "UTC-118",
+      "srs_id": "SRS-13",
+      "sds_id": "SDS-13",
+      "summary": "Verify Default tab initialization and lazy loading\nwhen the Label Analysis tab is default",
+      "description": "Feature: Default tab initialization and lazy loading\nGiven the Label Analysis tab is default\nWhen fetch executes\nThen only Label Analysis API endpoint should be triggered",
+      "acceptance": "Only Label Analysis API endpoint should be triggered\nThe behavior should be validated when fetch executes."
+    },
+    {
+      "test_id": "UTC-119",
+      "srs_id": "SRS-13",
+      "sds_id": "SDS-13",
+      "summary": "Verify Default tab initialization and lazy loading\nwhen the modal loads",
+      "description": "Feature: Default tab initialization and lazy loading\nGiven the modal loads\nWhen only default data is fetched\nThen initial load time should be optimized with minimal delay",
+      "acceptance": "Initial load time should be optimized with minimal delay\nThe behavior should be validated when only default data is fetched."
+    },
+    {
+      "test_id": "UTC-120",
+      "srs_id": "SRS-13",
+      "sds_id": "SDS-13",
+      "summary": "Verify Default tab initialization and lazy loading\nwhen the modal opens",
+      "description": "Feature: Default tab initialization and lazy loading\nGiven the modal opens\nWhen user has not clicked other tabs\nThen Annotation and Status tabs should not initiate any API calls",
+      "acceptance": "Annotation and Status tabs should not initiate any API calls\nThe behavior should be validated when user has not clicked other tabs."
+    },
+    {
+      "test_id": "UTC-121",
+      "srs_id": "SRS-13",
+      "sds_id": "SDS-13",
+      "summary": "Verify Default tab initialization and lazy loading\nwhen the modal is open",
+      "description": "Feature: Default tab initialization and lazy loading\nGiven the modal is open\nWhen the user clicks Annotation Analysis tab\nThen Annotation data should fetch only at that moment",
+      "acceptance": "Annotation data should fetch only at that moment\nThe behavior should be validated when the user clicks Annotation Analysis tab."
+    },
+    {
+      "test_id": "UTC-122",
+      "srs_id": "SRS-13",
+      "sds_id": "SDS-13",
+      "summary": "Verify Default tab initialization and lazy loading\nwhen the modal is open",
+      "description": "Feature: Default tab initialization and lazy loading\nGiven the modal is open\nWhen the user clicks Status Analysis tab\nThen Status data should fetch only at click time",
+      "acceptance": "Status data should fetch only at click time\nThe behavior should be validated when the user clicks Status Analysis tab."
+    },
+    {
+      "test_id": "UTC-123",
+      "srs_id": "SRS-13",
+      "sds_id": "SDS-13",
+      "summary": "Verify Default tab initialization and lazy loading\nwhen Label Analysis fetch succeeds",
+      "description": "Feature: Default tab initialization and lazy loading\nGiven Label Analysis fetch succeeds\nWhen switching tabs and returning\nThen previously loaded data should remain available without refetch (unless refreshed)",
+      "acceptance": "Previously loaded data should remain available without refetch (unless refreshed)\nThe behavior should be validated when switching tabs and returning."
+    },
+    {
+      "test_id": "UTC-124",
+      "srs_id": "SRS-13",
+      "sds_id": "SDS-13",
+      "summary": "Verify Default tab initialization and lazy loading\nwhen the modal opens",
+      "description": "Feature: Default tab initialization and lazy loading\nGiven the modal opens\nWhen Label data is loading\nThen a loading spinner or placeholder should be shown",
+      "acceptance": "A loading spinner or placeholder should be shown\nThe behavior should be validated when Label data is loading."
+    },
+    {
+      "test_id": "UTC-125",
+      "srs_id": "SRS-13",
+      "sds_id": "SDS-13",
+      "summary": "Verify Default tab initialization and lazy loading\nwhen Label Analysis API fails",
+      "description": "Feature: Default tab initialization and lazy loading\nGiven Label Analysis API fails\nWhen fetch returns error\nThen system should show “Failed to fetch” notification without closing modal",
+      "acceptance": "System should show \"Failed to fetch\" notification without closing modal\nThe behavior should be validated when fetch returns error."
+    },
+    {
+      "test_id": "UTC-126",
+      "srs_id": "SRS-13",
+      "sds_id": "SDS-13",
+      "summary": "Verify Default tab initialization and lazy loading\nwhen the modal open state changes from false â†’ true",
+      "description": "Feature: Default tab initialization and lazy loading\nGiven the modal open state changes from false → true\nWhen useEffect triggers\nThen fetch function should execute once only",
+      "acceptance": "Fetch function should execute once only\nThe behavior should be validated when useEffect triggers."
+    },
+    {
+      "test_id": "UTC-127",
+      "srs_id": "SRS-13",
+      "sds_id": "SDS-13",
+      "summary": "Verify Default tab initialization and lazy loading\nwhen repeated modal open/close cycles",
+      "description": "Feature: Default tab initialization and lazy loading\nGiven repeated modal open/close cycles\nWhen reopening the modal\nThen default tab should load correctly without memory leaks or duplicated calls",
+      "acceptance": "Default tab should load correctly without memory leaks or duplicated calls\nThe behavior should be validated when reopening the modal."
+    },
+    {
+      "test_id": "UTC-128",
+      "srs_id": "SRS-14",
+      "sds_id": "SDS-14",
+      "summary": "Verify Label combination aggregation and counting\nwhen a session contains labeled images",
+      "description": "Feature: Label combination aggregation and counting\nGiven a session contains labeled images\nWhen Label Analysis loads\nThen the system should display grouped rows based on distinct label combinations",
+      "acceptance": "The system should display grouped rows based on distinct label combinations\nThe behavior should be validated when Label Analysis loads."
+    },
+    {
+      "test_id": "UTC-129",
+      "srs_id": "SRS-14",
+      "sds_id": "SDS-14",
+      "summary": "Verify Label combination aggregation and counting\nwhen multiple images share identical labels (2D, 3D)",
+      "description": "Feature: Label combination aggregation and counting\nGiven multiple images share identical labels (2D, 3D)\nWhen aggregation executes\nThen they should appear as a single row “2D, 3D” with combined count",
+      "acceptance": "They should appear as a single row \"2D, 3D\" with combined count\nThe behavior should be validated when aggregation executes."
+    },
+    {
+      "test_id": "UTC-130",
+      "srs_id": "SRS-14",
+      "sds_id": "SDS-14",
+      "summary": "Verify Label combination aggregation and counting\nwhen three images have labels A+B",
+      "description": "Feature: Label combination aggregation and counting\nGiven three images have labels A+B\nWhen results render\nThen the count column should display 3",
+      "acceptance": "The count column should display 3\nThe behavior should be validated when results render."
+    },
+    {
+      "test_id": "UTC-131",
+      "srs_id": "SRS-14",
+      "sds_id": "SDS-14",
+      "summary": "Verify Label combination aggregation and counting\nwhen images have unique label sets",
+      "description": "Feature: Label combination aggregation and counting\nGiven images have unique label sets\nWhen grouped\nThen each unique combination should appear as separate row",
+      "acceptance": "Each unique combination should appear as separate row\nThe behavior should be validated when grouped."
+    },
+    {
+      "test_id": "UTC-132",
+      "srs_id": "SRS-14",
+      "sds_id": "SDS-14",
+      "summary": "Verify Label combination aggregation and counting\nwhen a single label applied to images",
+      "description": "Feature: Label combination aggregation and counting\nGiven a single label applied to images\nWhen grouped\nThen the system should display that single label with total count",
+      "acceptance": "The system should display that single label with total count\nThe behavior should be validated when grouped."
+    },
+    {
+      "test_id": "UTC-133",
+      "srs_id": "SRS-14",
+      "sds_id": "SDS-14",
+      "summary": "Verify Label combination aggregation and counting\nwhen an image has no labels",
+      "description": "Feature: Label combination aggregation and counting\nGiven an image has no labels\nWhen aggregation runs\nThen null labels should be converted to empty string and shown safely",
+      "acceptance": "Null labels should be converted to empty string and shown safely\nThe behavior should be validated when aggregation runs."
+    }
+  ]
+}

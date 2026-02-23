@@ -1,0 +1,163 @@
+{
+  "spec_file": "e2e/tests/masters/URS-DV-GEN-05/SRS-023/SDS-023.spec.ts",
+  "plan_urs": "URS-DV-GEN-05",
+  "srs_str": "023",
+  "domain": "masters",
+  "page_class": "SessionLabelPage",
+  "page_import": "session-label.page",
+  "goto_method": "gotoMasters",
+  "test_cases": [
+    {
+      "test_id": "UTC-577",
+      "srs_id": "SRS-49",
+      "sds_id": "SDS-49",
+      "summary": "Verify Empty state message clarity\nwhen no records exist",
+      "description": "Feature: Error & Empty State Handling\nScenario: Empty state message clarity\nGiven no records exist\nWhen the empty state appears\nThen the message should be simple and non-technical",
+      "acceptance": "The message should be simple and non-technical\nThe behavior should be validated when the empty state appears."
+    },
+    {
+      "test_id": "UTC-578",
+      "srs_id": "SRS-49",
+      "sds_id": "SDS-49",
+      "summary": "Verify Show failed fetch toast on API error\nwhen the server request fails",
+      "description": "Feature: Error & Empty State Handling\nScenario: Show failed fetch toast on API error\nGiven the server request fails\nWhen the fetch attempt completes\nThen a \"Failed to fetch\" toast notification should appear",
+      "acceptance": "A \"Failed to fetch\" toast notification should appear\nThe behavior should be validated when the fetch attempt completes."
+    },
+    {
+      "test_id": "UTC-579",
+      "srs_id": "SRS-49",
+      "sds_id": "SDS-49",
+      "summary": "Verify Application remains stable on fetch failure\nwhen a network/server error occurs",
+      "description": "Feature: Error & Empty State Handling\nScenario: Application remains stable on fetch failure\nGiven a network/server error occurs\nWhen the UI handles the error\nThen the application should not crash or freeze",
+      "acceptance": "The application should not crash or freeze\nThe behavior should be validated when the UI handles the error."
+    },
+    {
+      "test_id": "UTC-580",
+      "srs_id": "SRS-49",
+      "sds_id": "SDS-49",
+      "summary": "Verify Hide technical error details\nwhen a backend failure occurs",
+      "description": "Feature: Error & Empty State Handling\nScenario: Hide technical error details\nGiven a backend failure occurs\nWhen the error message is shown\nThen no stack trace or technical details should be visible",
+      "acceptance": "No stack trace or technical details should be visible\nThe behavior should be validated when the error message is shown."
+    },
+    {
+      "test_id": "UTC-581",
+      "srs_id": "SRS-49",
+      "sds_id": "SDS-49",
+      "summary": "Verify Retry after failure\nwhen fetch failed previously",
+      "description": "Feature: Error & Empty State Handling\nScenario: Retry after failure\nGiven fetch failed previously\nWhen the user refreshes or retries\nThen the system should attempt to reload data successfully",
+      "acceptance": "The system should attempt to reload data successfully\nThe behavior should be validated when the user refreshes or retries."
+    },
+    {
+      "test_id": "UTC-582",
+      "srs_id": "SRS-49",
+      "sds_id": "SDS-49",
+      "summary": "Verify Immediate empty state rendering\nwhen data length is zero",
+      "description": "Feature: Error & Empty State Handling\nScenario: Immediate empty state rendering\nGiven data length is zero\nWhen rendering occurs\nThen empty state should display without delay",
+      "acceptance": "Empty state should display without delay\nThe behavior should be validated when rendering occurs."
+    },
+    {
+      "test_id": "UTC-583",
+      "srs_id": "SRS-49",
+      "sds_id": "SDS-49",
+      "summary": "Verify Empty message readable and visible\nwhen empty state is displayed",
+      "description": "Feature: Error & Empty State Handling\nScenario: Empty message readable and visible\nGiven empty state is displayed\nWhen user views the page\nThen text should be clearly readable and centrally aligned",
+      "acceptance": "Text should be clearly readable and centrally aligned\nThe behavior should be validated when user views the page."
+    },
+    {
+      "test_id": "UTC-584",
+      "srs_id": "SRS-50",
+      "sds_id": "SDS-50",
+      "summary": "Verify Authorized user can view Session Label dropdown\nwhen the user has session creation permission",
+      "description": "Feature: Session Label Access Security\nScenario: Authorized user can view Session Label dropdown\nGiven the user has session creation permission\nWhen the Session Creation page loads\nThen the Session Label dropdown should be visible and enabled",
+      "acceptance": "The Session Label dropdown should be visible and enabled\nThe behavior should be validated when the Session Creation page loads."
+    },
+    {
+      "test_id": "UTC-585",
+      "srs_id": "SRS-50",
+      "sds_id": "SDS-50",
+      "summary": "Verify Unauthorized user cannot view Session Label dropdown\nwhen the user does not have session creation permission",
+      "description": "Feature: Session Label Access Security\nScenario: Unauthorized user cannot view Session Label dropdown\nGiven the user does not have session creation permission\nWhen the Session Creation page loads\nThen the Session Label dropdown should be hidden",
+      "acceptance": "The Session Label dropdown should be hidden\nThe behavior should be validated when the Session Creation page loads."
+    },
+    {
+      "test_id": "UTC-586",
+      "srs_id": "SRS-50",
+      "sds_id": "SDS-50",
+      "summary": "Verify Unauthorized dropdown disabled\nwhen the user has read-only access",
+      "description": "Feature: Session Label Access Security\nScenario: Unauthorized dropdown disabled\nGiven the user has read-only access\nWhen the page renders\nThen the Session Label dropdown should be disabled and not interactive",
+      "acceptance": "The Session Label dropdown should be disabled and not interactive\nThe behavior should be validated when the page renders."
+    },
+    {
+      "test_id": "UTC-587",
+      "srs_id": "SRS-50",
+      "sds_id": "SDS-50",
+      "summary": "Verify Prevent manual interaction using UI tricks\nwhen the dropdown is disabled for unauthorized user",
+      "description": "Feature: Session Label Access Security\nScenario: Prevent manual interaction using UI tricks\nGiven the dropdown is disabled for unauthorized user\nWhen the user attempts to click or focus the field\nThen no selection action should occur",
+      "acceptance": "No selection action should occur\nThe behavior should be validated when the user attempts to click or focus the field."
+    },
+    {
+      "test_id": "UTC-588",
+      "srs_id": "SRS-50",
+      "sds_id": "SDS-50",
+      "summary": "Verify Prevent direct API label submission\nwhen an unauthorized user sends label data through API or payload tampering",
+      "description": "Feature: Session Label Access Security\nScenario: Prevent direct API label submission\nGiven an unauthorized user sends label data through API or payload tampering\nWhen the request is validated\nThen the system should reject the request with authorization restriction",
+      "acceptance": "The system should reject the request with authorization restriction\nThe behavior should be validated when the request is validated."
+    },
+    {
+      "test_id": "UTC-589",
+      "srs_id": "SRS-50",
+      "sds_id": "SDS-50",
+      "summary": "Verify Friendly restriction message shown\nwhen unauthorized access attempt occurs",
+      "description": "Feature: Session Label Access Security\nScenario: Friendly restriction message shown\nGiven unauthorized access attempt occurs\nWhen the action is blocked\nThen a non-technical permission message should be displayed",
+      "acceptance": "A non-technical permission message should be displayed\nThe behavior should be validated when the action is blocked."
+    },
+    {
+      "test_id": "UTC-590",
+      "srs_id": "SRS-50",
+      "sds_id": "SDS-50",
+      "summary": "Verify Authorized user can select label\nwhen the dropdown is enabled",
+      "description": "Feature: Session Label Access Security\nScenario: Authorized user can select label\nGiven the dropdown is enabled\nWhen the user selects a label\nThen the selected label should be applied successfully",
+      "acceptance": "The selected label should be applied successfully\nThe behavior should be validated when the user selects a label."
+    },
+    {
+      "test_id": "UTC-591",
+      "srs_id": "SRS-50",
+      "sds_id": "SDS-50",
+      "summary": "Verify Role change reflected dynamically\nwhen user role changes from authorized to unauthorized",
+      "description": "Feature: Session Label Access Security\nScenario: Role change reflected dynamically\nGiven user role changes from authorized to unauthorized\nWhen the page is refreshed\nThen the Session Label dropdown should become hidden or disabled immediately",
+      "acceptance": "The Session Label dropdown should become hidden or disabled immediately\nThe behavior should be validated when the page is refreshed."
+    },
+    {
+      "test_id": "UTC-592",
+      "srs_id": "SRS-50",
+      "sds_id": "SDS-50",
+      "summary": "Verify No data leakage in UI\nwhen the user is unauthorized",
+      "description": "Feature: Session Label Access Security\nScenario: No data leakage in UI\nGiven the user is unauthorized\nWhen the page loads\nThen label values should not be visible in DOM or dropdown list",
+      "acceptance": "Label values should not be visible in DOM or dropdown list\nThe behavior should be validated when the page loads."
+    },
+    {
+      "test_id": "UTC-593",
+      "srs_id": "SRS-50",
+      "sds_id": "SDS-50",
+      "summary": "Verify Clear disabled state indication\nwhen the dropdown is disabled",
+      "description": "Feature: Session Label Access Security\nScenario: Clear disabled state indication\nGiven the dropdown is disabled\nWhen the UI is displayed\nThen the field should clearly appear greyed out to indicate restricted access",
+      "acceptance": "The field should clearly appear greyed out to indicate restricted access\nThe behavior should be validated when the UI is displayed."
+    },
+    {
+      "test_id": "UTC-594",
+      "srs_id": "SRS-51",
+      "sds_id": "SDS-51",
+      "summary": "Verify Dropdown opens instantly\nwhen the Session Creation page is loaded",
+      "description": "Feature: Session Label Dropdown Performance\nScenario: Dropdown opens instantly\nGiven the Session Creation page is loaded\nWhen the user clicks the Session Label dropdown\nThen the dropdown should open within 2 seconds without noticeable delay",
+      "acceptance": "The dropdown should open within 2 seconds without noticeable delay\nThe behavior should be validated when the user clicks the Session Label dropdown."
+    },
+    {
+      "test_id": "UTC-595",
+      "srs_id": "SRS-51",
+      "sds_id": "SDS-51",
+      "summary": "Verify Labels load quickly\nwhen labels exist in master data",
+      "description": "Feature: Session Label Dropdown Performance\nScenario: Labels load quickly\nGiven labels exist in master data\nWhen the dropdown opens\nThen all labels should be displayed immediately without lag",
+      "acceptance": "All labels should be displayed immediately without lag\nThe behavior should be validated when the dropdown opens."
+    }
+  ]
+}

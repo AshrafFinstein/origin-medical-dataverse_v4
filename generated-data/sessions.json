@@ -1,0 +1,37 @@
+{
+  "session-1771583376292": {
+    "name": "Test Session 1771583375746",
+    "createdAt": "2026-02-20T10:29:36.292Z",
+    "approvalLevels": 1
+  },
+  "session-1771584510430": {
+    "name": "Test Session 1771584509858",
+    "createdAt": "2026-02-20T10:48:30.430Z",
+    "approvalLevels": 1
+  },
+  "session-1771586668420": {
+    "name": "Test Session 1771586667472",
+    "createdAt": "2026-02-20T11:24:28.420Z",
+    "approvalLevels": 1
+  },
+  "session-1771587866066": {
+    "name": "Test Session 1771587865716",
+    "createdAt": "2026-02-20T11:44:26.066Z",
+    "approvalLevels": 0
+  },
+  "session-1771589100613": {
+    "name": "Test Session 1771589100248",
+    "createdAt": "2026-02-20T12:05:00.613Z",
+    "approvalLevels": 0
+  },
+  "session-1771590829171": {
+    "name": "Test Session 1771590828762",
+    "createdAt": "2026-02-20T12:33:49.171Z",
+    "approvalLevels": 0
+  },
+  "session-1771599204666": {
+    "name": "Test Session 1771599204043",
+    "createdAt": "2026-02-20T14:53:24.666Z",
+    "approvalLevels": 0
+  }
+}

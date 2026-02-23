@@ -1,0 +1,243 @@
+{
+  "spec_file": "e2e/tests/data-management/URS-DV-DM-06/SRS-028/SDS-028.spec.ts",
+  "plan_urs": "URS-DV-DM-06",
+  "srs_str": "028",
+  "domain": "data-management",
+  "page_class": "S3StoragePage",
+  "page_import": "s3-storage.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-701",
+      "srs_id": "SRS-59",
+      "sds_id": "SDS-59",
+      "summary": "Verify URL contains expiration timestamp\nwhen a signed URL is generated",
+      "description": "Feature: Secure time-bound signed URLs for asset access\nScenario: URL contains expiration timestamp\nGiven a signed URL is generated\nWhen inspecting the token\nThen it should include a defined expiration time",
+      "acceptance": "It should include a defined expiration time\nThe behavior should be validated when inspecting the token."
+    },
+    {
+      "test_id": "UTC-702",
+      "srs_id": "SRS-59",
+      "sds_id": "SDS-59",
+      "summary": "Verify URL becomes invalid after expiry\nwhen a signed URL has expired",
+      "description": "Feature: Secure time-bound signed URLs for asset access\nScenario: URL becomes invalid after expiry\nGiven a signed URL has expired\nWhen accessed\nThen the request should be denied",
+      "acceptance": "The request should be denied\nThe behavior should be validated when accessed."
+    },
+    {
+      "test_id": "UTC-703",
+      "srs_id": "SRS-59",
+      "sds_id": "SDS-59",
+      "summary": "Verify Read-only scope enforcement\nwhen a signed URL is generated",
+      "description": "Feature: Secure time-bound signed URLs for asset access\nScenario: Read-only scope enforcement\nGiven a signed URL is generated\nWhen attempting write/delete operation\nThen the action should be blocked",
+      "acceptance": "The action should be blocked\nThe behavior should be validated when attempting write/delete operation."
+    },
+    {
+      "test_id": "UTC-704",
+      "srs_id": "SRS-59",
+      "sds_id": "SDS-59",
+      "summary": "Verify URL not exposed in UI\nwhen asset loads in UI",
+      "description": "Feature: Secure time-bound signed URLs for asset access\nScenario: URL not exposed in UI\nGiven asset loads in UI\nWhen inspecting tooltips or logs\nThen the signed URL should not be visible",
+      "acceptance": "The signed URL should not be visible\nThe behavior should be validated when inspecting tooltips or logs."
+    },
+    {
+      "test_id": "UTC-705",
+      "srs_id": "SRS-59",
+      "sds_id": "SDS-59",
+      "summary": "Verify URL hidden from developer console logs\nwhen debug logs enabled",
+      "description": "Feature: Secure time-bound signed URLs for asset access\nScenario: URL hidden from developer console logs\nGiven debug logs enabled\nWhen image loads\nThen signed URL should not appear in console logs",
+      "acceptance": "Signed URL should not appear in console logs\nThe behavior should be validated when image loads."
+    },
+    {
+      "test_id": "UTC-706",
+      "srs_id": "SRS-59",
+      "sds_id": "SDS-59",
+      "summary": "Verify Bucket resolved before URL creation\nwhen asset metadata includes bucket mapping",
+      "description": "Feature: Secure time-bound signed URLs for asset access\nScenario: Bucket resolved before URL creation\nGiven asset metadata includes bucket mapping\nWhen URL generation starts\nThen the correct bucket should be resolved first",
+      "acceptance": "The correct bucket should be resolved first\nThe behavior should be validated when URL generation starts."
+    },
+    {
+      "test_id": "UTC-707",
+      "srs_id": "SRS-59",
+      "sds_id": "SDS-59",
+      "summary": "Verify Asset streamed using signed URL\nwhen signed URL is generated",
+      "description": "Feature: Secure time-bound signed URLs for asset access\nScenario: Asset streamed using signed URL\nGiven signed URL is generated\nWhen client requests asset\nThen asset should stream successfully",
+      "acceptance": "Asset should stream successfully\nThe behavior should be validated when client requests asset."
+    },
+    {
+      "test_id": "UTC-708",
+      "srs_id": "SRS-59",
+      "sds_id": "SDS-59",
+      "summary": "Verify Invalid credentials block generation\nwhen credentials are invalid or expired",
+      "description": "Feature: Secure time-bound signed URLs for asset access\nScenario: Invalid credentials block generation\nGiven credentials are invalid or expired\nWhen URL generation is requested\nThen system should deny generation",
+      "acceptance": "System should deny generation\nThe behavior should be validated when URL generation is requested."
+    },
+    {
+      "test_id": "UTC-709",
+      "srs_id": "SRS-59",
+      "sds_id": "SDS-59",
+      "summary": "Verify Audit log created for failure\nwhen URL generation fails",
+      "description": "Feature: Secure time-bound signed URLs for asset access\nScenario: Audit log created for failure\nGiven URL generation fails\nWhen denial occurs\nThen a security audit log entry should be recorded",
+      "acceptance": "A security audit log entry should be recorded\nThe behavior should be validated when denial occurs."
+    },
+    {
+      "test_id": "UTC-710",
+      "srs_id": "SRS-59",
+      "sds_id": "SDS-59",
+      "summary": "Verify URL generation within SLA\nwhen normal load",
+      "description": "Feature: Secure time-bound signed URLs for asset access\nScenario: URL generation within SLA\nGiven normal load\nWhen URL is requested\nThen it should be generated within acceptable time (<1s)",
+      "acceptance": "It should be generated within acceptable time (<1s)\nThe behavior should be validated when URL is requested."
+    },
+    {
+      "test_id": "UTC-711",
+      "srs_id": "SRS-59",
+      "sds_id": "SDS-59",
+      "summary": "Verify Multiple concurrent URL requests supported\nwhen multiple assets requested simultaneously",
+      "description": "Feature: Secure time-bound signed URLs for asset access\nScenario: Multiple concurrent URL requests supported\nGiven multiple assets requested simultaneously\nWhen URLs are generated\nThen all URLs should generate successfully without conflict",
+      "acceptance": "All URLs should generate successfully without conflict\nThe behavior should be validated when URLs are generated."
+    },
+    {
+      "test_id": "UTC-712",
+      "srs_id": "SRS-59",
+      "sds_id": "SDS-59",
+      "summary": "Verify Tampered URL rejected\nwhen a signed URL is modified manually",
+      "description": "Feature: Secure time-bound signed URLs for asset access\nScenario: Tampered URL rejected\nGiven a signed URL is modified manually\nWhen accessed\nThen the request should fail",
+      "acceptance": "The request should fail\nThe behavior should be validated when accessed."
+    },
+    {
+      "test_id": "UTC-713",
+      "srs_id": "SRS-59",
+      "sds_id": "SDS-59",
+      "summary": "Verify Very short expiry still enforced\nwhen expiry set to minimal duration",
+      "description": "Feature: Secure time-bound signed URLs for asset access\nScenario: Very short expiry still enforced\nGiven expiry set to minimal duration\nWhen accessed after expiry\nThen URL should not allow access",
+      "acceptance": "URL should not allow access\nThe behavior should be validated when accessed after expiry."
+    },
+    {
+      "test_id": "UTC-714",
+      "srs_id": "SRS-60",
+      "sds_id": "SDS-60",
+      "summary": "Verify Correct credential used for bucket access\nwhen a request targets Bucket A",
+      "description": "Feature: Bucket-wise isolated credential enforcement\nScenario: Correct credential used for bucket access\nGiven a request targets Bucket A\nWhen the system resolves credentials\nThen only Bucket A’s credential reference should be used",
+      "acceptance": "Only Bucket A's credential reference should be used\nThe behavior should be validated when the system resolves credentials."
+    },
+    {
+      "test_id": "UTC-715",
+      "srs_id": "SRS-60",
+      "sds_id": "SDS-60",
+      "summary": "Verify Prevent cross-bucket credential usage\nwhen a request targets Bucket A",
+      "description": "Feature: Bucket-wise isolated credential enforcement\nScenario: Prevent cross-bucket credential usage\nGiven a request targets Bucket A\nWhen a credential for Bucket B is attempted\nThen the system should block the request",
+      "acceptance": "The system should block the request\nThe behavior should be validated when a credential for Bucket B is attempted."
+    },
+    {
+      "test_id": "UTC-716",
+      "srs_id": "SRS-60",
+      "sds_id": "SDS-60",
+      "summary": "Verify Credential binding validated before operation\nwhen bucket ID is resolved",
+      "description": "Feature: Bucket-wise isolated credential enforcement\nScenario: Credential binding validated before operation\nGiven bucket ID is resolved\nWhen storage operation starts\nThen system should validate credentialRef mapping first",
+      "acceptance": "System should validate credentialRef mapping first\nThe behavior should be validated when storage operation starts."
+    },
+    {
+      "test_id": "UTC-717",
+      "srs_id": "SRS-60",
+      "sds_id": "SDS-60",
+      "summary": "Verify No credentials exposed in UI\nwhen user accesses any UI screen",
+      "description": "Feature: Bucket-wise isolated credential enforcement\nScenario: No credentials exposed in UI\nGiven user accesses any UI screen\nWhen inspecting page or logs\nThen credentials or tokens should not be visible",
+      "acceptance": "Credentials or tokens should not be visible\nThe behavior should be validated when inspecting page or logs."
+    },
+    {
+      "test_id": "UTC-718",
+      "srs_id": "SRS-60",
+      "sds_id": "SDS-60",
+      "summary": "Verify Credentials not printed in console logs\nwhen debug mode enabled",
+      "description": "Feature: Bucket-wise isolated credential enforcement\nScenario: Credentials not printed in console logs\nGiven debug mode enabled\nWhen operations execute\nThen credentials must not appear in console or network logs",
+      "acceptance": "Credentials must not appear in console or network logs\nThe behavior should be validated when operations execute."
+    },
+    {
+      "test_id": "UTC-719",
+      "srs_id": "SRS-60",
+      "sds_id": "SDS-60",
+      "summary": "Verify Access blocked when credentialRef mismatched\nwhen credentialRef does not match bucket",
+      "description": "Feature: Bucket-wise isolated credential enforcement\nScenario: Access blocked when credentialRef mismatched\nGiven credentialRef does not match bucket\nWhen request is processed\nThen operation should be rejected",
+      "acceptance": "Operation should be rejected\nThe behavior should be validated when request is processed."
+    },
+    {
+      "test_id": "UTC-720",
+      "srs_id": "SRS-60",
+      "sds_id": "SDS-60",
+      "summary": "Verify Audit log created for mismatch\nwhen credential mismatch occurs",
+      "description": "Feature: Bucket-wise isolated credential enforcement\nScenario: Audit log created for mismatch\nGiven credential mismatch occurs\nWhen request is blocked\nThen system should log an audit entry with bucketId and credentialRef",
+      "acceptance": "System should log an audit entry with bucketId and credentialRef\nThe behavior should be validated when request is blocked."
+    },
+    {
+      "test_id": "UTC-721",
+      "srs_id": "SRS-60",
+      "sds_id": "SDS-60",
+      "summary": "Verify Successful access with valid mapping\nwhen bucketId and credentialRef are correctly mapped",
+      "description": "Feature: Bucket-wise isolated credential enforcement\nScenario: Successful access with valid mapping\nGiven bucketId and credentialRef are correctly mapped\nWhen operation executes\nThen storage access should succeed",
+      "acceptance": "Storage access should succeed\nThe behavior should be validated when operation executes."
+    },
+    {
+      "test_id": "UTC-722",
+      "srs_id": "SRS-60",
+      "sds_id": "SDS-60",
+      "summary": "Verify Unauthorized manual credential injection blocked\nwhen a user attempts manual credential override",
+      "description": "Feature: Bucket-wise isolated credential enforcement\nScenario: Unauthorized manual credential injection blocked\nGiven a user attempts manual credential override\nWhen request is sent\nThen override should be rejected",
+      "acceptance": "Override should be rejected\nThe behavior should be validated when request is sent."
+    },
+    {
+      "test_id": "UTC-723",
+      "srs_id": "SRS-60",
+      "sds_id": "SDS-60",
+      "summary": "Verify Credential cache isolation\nwhen multiple buckets accessed sequentially",
+      "description": "Feature: Bucket-wise isolated credential enforcement\nScenario: Credential cache isolation\nGiven multiple buckets accessed sequentially\nWhen credentials are cached\nThen cache should not reuse credentials across buckets",
+      "acceptance": "Cache should not reuse credentials across buckets\nThe behavior should be validated when credentials are cached."
+    },
+    {
+      "test_id": "UTC-724",
+      "srs_id": "SRS-60",
+      "sds_id": "SDS-60",
+      "summary": "Verify Expired credentials blocked\nwhen credentialRef is expired",
+      "description": "Feature: Bucket-wise isolated credential enforcement\nScenario: Expired credentials blocked\nGiven credentialRef is expired\nWhen operation executes\nThen access should be denied",
+      "acceptance": "Access should be denied\nThe behavior should be validated when operation executes."
+    },
+    {
+      "test_id": "UTC-725",
+      "srs_id": "SRS-60",
+      "sds_id": "SDS-60",
+      "summary": "Verify Credential lookup performance\nwhen multiple concurrent bucket requests",
+      "description": "Feature: Bucket-wise isolated credential enforcement\nScenario: Credential lookup performance\nGiven multiple concurrent bucket requests\nWhen credentials resolve\nThen lookup should complete within acceptable SLA (<1s)",
+      "acceptance": "Lookup should complete within acceptable SLA (<1s)\nThe behavior should be validated when credentials resolve."
+    },
+    {
+      "test_id": "UTC-726",
+      "srs_id": "SRS-60",
+      "sds_id": "SDS-60",
+      "summary": "Verify Access attempt without credentialRef\nwhen no credentialRef found",
+      "description": "Feature: Bucket-wise isolated credential enforcement\nScenario: Access attempt without credentialRef\nGiven no credentialRef found\nWhen operation executes\nThen system should block request",
+      "acceptance": "System should block request\nThe behavior should be validated when operation executes."
+    },
+    {
+      "test_id": "UTC-727",
+      "srs_id": "SRS-61",
+      "sds_id": "SDS-61",
+      "summary": "Verify Multiple buckets handled simultaneously\nwhen concurrent operations for 5+ buckets",
+      "description": "Feature: Bucket-wise isolated credential enforcement\nScenario: Multiple buckets handled simultaneously\nGiven concurrent operations for 5+ buckets\nWhen credentials resolve\nThen each bucket must use its own dedicated credential without mix-up",
+      "acceptance": "Each bucket must use its own dedicated credential without mix-up\nThe behavior should be validated when credentials resolve."
+    },
+    {
+      "test_id": "UTC-728",
+      "srs_id": "SRS-61",
+      "sds_id": "SDS-61",
+      "summary": "Verify Assets from different buckets processed uniformly\nwhen assets originate from multiple buckets",
+      "description": "Feature: Unified cross-bucket processing pipeline\nScenario: Assets from different buckets processed uniformly\nGiven assets originate from multiple buckets\nWhen they enter the processing engine\nThen all assets should follow the same pipeline steps",
+      "acceptance": "All assets should follow the same pipeline steps\nThe behavior should be validated when they enter the processing engine."
+    },
+    {
+      "test_id": "UTC-729",
+      "srs_id": "SRS-61",
+      "sds_id": "SDS-61",
+      "summary": "Verify Asset normalization before labeling\nwhen an asset is retrieved",
+      "description": "Feature: Unified cross-bucket processing pipeline\nScenario: Asset normalization before labeling\nGiven an asset is retrieved\nWhen normalization occurs\nThen asset should be converted to supported format",
+      "acceptance": "Asset should be converted to supported format\nThe behavior should be validated when normalization occurs."
+    }
+  ]
+}

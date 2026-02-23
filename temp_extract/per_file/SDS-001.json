@@ -1,0 +1,155 @@
+{
+  "spec_file": "e2e/tests/qc-workflow/URS-DV-QC-01/SRS-001/SDS-001.spec.ts",
+  "plan_urs": "URS-DV-QC-01",
+  "srs_str": "001",
+  "domain": "qc-workflow",
+  "page_class": "QcWorkflowPage",
+  "page_import": "qc-workflow.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-1",
+      "srs_id": "SRS-1",
+      "sds_id": "SDS-1",
+      "summary": "Verify Default state of Approval Level field\nwhen the user is on the Create Session page",
+      "description": "Feature: Approval Level Initialization\nThe system controls default visibility of Approval Level fields.\n\nScenario: Default state of Approval Level field\n\nGiven the user is on the Create Session page\nWhen the page loads\nThen only the Add Level button should be visible and no Approval Level field should be displayed",
+      "acceptance": "Only the Add Level button should be visible and no Approval Level field should be displayed\nThe behavior should be validated when the page loads."
+    },
+    {
+      "test_id": "UTC-2",
+      "srs_id": "SRS-1",
+      "sds_id": "SDS-1",
+      "summary": "Verify Display Approval Level field on Add Level click\nwhen the user is on the Create Session page",
+      "description": "Feature: Dynamic Approval Level Addition\nThe system allows users to add approval levels dynamically.\n\nScenario: Display Approval Level field on Add Level click\n\nGiven the user is on the Create Session page\nWhen the user clicks the Add Level button\nThen a new Approval Level field should be displayed",
+      "acceptance": "A new Approval Level field should be displayed\nThe behavior should be validated when the user clicks the Add Level button."
+    },
+    {
+      "test_id": "UTC-3",
+      "srs_id": "SRS-1",
+      "sds_id": "SDS-1",
+      "summary": "Verify Add approval levels up to maximum limit\nwhen the user keeps clicking Add Level",
+      "description": "Feature: Approval Level Limit Control\nThe system restricts the number of approval levels.\n\nScenario: Add approval levels up to maximum limit\n\nGiven the user keeps clicking Add Level\nWhen five Approval Level fields are added\nThen the system should not allow adding more than 5 levels",
+      "acceptance": "The system should not allow adding more than 5 levels\nThe behavior should be validated when five Approval Level fields are added."
+    },
+    {
+      "test_id": "UTC-4",
+      "srs_id": "SRS-1",
+      "sds_id": "SDS-1",
+      "summary": "Verify Submit session with empty Approval Level fields\nwhen one or more Approval Level fields are added",
+      "description": "Feature: Mandatory User Selection Validation\nThe system validates user selection in approval levels.\n\nScenario: Submit session with empty Approval Level fields\n\nGiven one or more Approval Level fields are added\nAnd no user or group is selected in a level\nWhen the user clicks Create Session\nThen a toast message should be displayed saying:\n“Error creating session: Each approval level must have at least one user selected”",
+      "acceptance": "A toast message should be displayed saying:\nThe behavior should be validated when the user clicks Create Session."
+    },
+    {
+      "test_id": "UTC-5",
+      "srs_id": "SRS-1",
+      "sds_id": "SDS-1",
+      "summary": "Verify Select multiple users in a single approval level\nwhen an Approval Level field is displayed",
+      "description": "Feature: Multiple User Selection per Level\nThe system supports assigning multiple users or groups per level.\n\nScenario: Select multiple users in a single approval level\n\nGiven an Approval Level field is displayed\nWhen the user selects multiple users or user groups\nThen all selected users or groups should be added successfully",
+      "acceptance": "All selected users or groups should be added successfully\nThe behavior should be validated when the user selects multiple users or user groups."
+    },
+    {
+      "test_id": "UTC-6",
+      "srs_id": "SRS-1",
+      "sds_id": "SDS-1",
+      "summary": "Verify Same user added individually and via group\nwhen a user is already part of a selected user group",
+      "description": "Feature: Duplicate User Conflict Prevention (Individual vs Group)\nThe system prevents duplicate user assignments.\n\nScenario: Same user added individually and via group\n\nGiven a user is already part of a selected user group\nWhen the same user is selected individually in the same level\nThen the system should prevent the selection or show validation",
+      "acceptance": "The system should prevent the selection or show validation\nThe behavior should be validated when the same user is selected individually in the same level."
+    },
+    {
+      "test_id": "UTC-7",
+      "srs_id": "SRS-1",
+      "sds_id": "SDS-1",
+      "summary": "Verify User group added after individual user selection\nwhen an individual user is already selected in a level",
+      "description": "Feature: Duplicate User Conflict Prevention (Group vs Individual)\nThe system enforces unique user assignment per level.\n\nScenario: User group added after individual user selection\n\nGiven an individual user is already selected in a level\nWhen a group containing the same user is selected\nThen the system should restrict the group selection or exclude the duplicate user",
+      "acceptance": "The system should restrict the group selection or exclude the duplicate user\nThe behavior should be validated when a group containing the same user is selected."
+    },
+    {
+      "test_id": "UTC-8",
+      "srs_id": "SRS-1",
+      "sds_id": "SDS-1",
+      "summary": "Verify Submit session with valid approval levels\nwhen all Approval Levels have at least one unique user or group selected",
+      "description": "Feature: Approval Level Data Integrity\nThe system ensures each level has valid and unique users.\n\nScenario: Submit session with valid approval levels\n\nGiven all Approval Levels have at least one unique user or group selected\nAnd no duplicate users exist across individual and group selections\nWhen the user submits the session\nThen the session should be created successfully",
+      "acceptance": "The session should be created successfully\nThe behavior should be validated when the user submits the session."
+    },
+    {
+      "test_id": "UTC-9",
+      "srs_id": "SRS-2",
+      "sds_id": "SDS-2",
+      "summary": "Verify Open status dropdown on clicking Select Status\nwhen the user is on the Data Labeling page",
+      "description": "Feature: Data Labeling – Status Dropdown Interaction\nAs a user, the user wants the status dropdown to open so that filtering options can be selected.\n\nScenario: Open status dropdown on clicking Select Status\nGiven the user is on the Data Labeling page\nWhen the user clicks the Select Status field\nThen the status dropdown should be opened",
+      "acceptance": "The status dropdown should be opened\nThe behavior should be validated when the user clicks the Select Status field."
+    },
+    {
+      "test_id": "UTC-10",
+      "srs_id": "SRS-2",
+      "sds_id": "SDS-2",
+      "summary": "Verify Display all supported statuses in dropdown\nwhen the Select Status dropdown is opened",
+      "description": "Feature: Data Labeling – Status Options Display\nAs a user, the user wants to view all supported image statuses so that correct filtering can be applied.\n\nScenario: Display all supported statuses in dropdown\nGiven the Select Status dropdown is opened\nWhen the user views the dropdown options\nThen  statuses should be displayed",
+      "acceptance": "Statuses should be displayed\nThe behavior should be validated when the user views the dropdown options."
+    },
+    {
+      "test_id": "UTC-11",
+      "srs_id": "SRS-2",
+      "sds_id": "SDS-2",
+      "summary": "Verify Filter images using PENDING status\nwhen the Select Status dropdown is opened",
+      "description": "Feature: Data Labeling – Status-Based Filtering\nAs a user, the user wants to filter images by PENDING status so that only pending work is visible.\n\nScenario: Filter images using PENDING status\nGiven the Select Status dropdown is opened\nWhen the user selects the PENDING status\nThen only PENDING images should be displayed",
+      "acceptance": "Only PENDING images should be displayed\nThe behavior should be validated when the user selects the PENDING status."
+    },
+    {
+      "test_id": "UTC-12",
+      "srs_id": "SRS-2",
+      "sds_id": "SDS-2",
+      "summary": "Verify Display no images message for PENDING status\nwhen no images exist with PENDING status",
+      "description": "Feature: Data Labeling – No Images Handling\nAs a user, the user wants a clear message when no images are available so that system state is understood.\n\nScenario: Display no images message for PENDING status\nGiven no images exist with PENDING status\nWhen the user selects PENDING status\nThen a “No images available” message should be displayed",
+      "acceptance": "A \"No images available\" message should be displayed\nThe behavior should be validated when the user selects PENDING status."
+    },
+    {
+      "test_id": "UTC-13",
+      "srs_id": "SRS-2",
+      "sds_id": "SDS-2",
+      "summary": "Verify Tools visibility on image selection\nwhen the user is on the Data Labeling page",
+      "description": "Feature: Pending Image\nThe system displays editing tools for selected pending images.\n\nScenario: Tools visibility on image selection\n\nGiven the user is on the Data Labeling page\nAnd an image in Pending status is selected\nWhen the image is selected\nThen Annotation button, Invert Color checkbox, Zoom In, Zoom Out, Reset Zoom, Rotate Clockwise, Flip, Pen icon, Brightness control, and Contrast control should be displayed",
+      "acceptance": "Annotation button, Invert Color checkbox, Zoom In, Zoom Out, Reset Zoom, Rotate Clockwise, Flip, Pen icon, Brightness control, and Contrast control should be displayed\nThe behavior should be validated when the image is selected."
+    },
+    {
+      "test_id": "UTC-14",
+      "srs_id": "SRS-2",
+      "sds_id": "SDS-2",
+      "summary": "Verify Annotate selected image\nwhen a Pending status image is selected",
+      "description": "Feature: Image Annotation Actions\nThe system allows annotation on pending images.\n\nScenario: Annotate selected image\n\nGiven a Pending status image is selected\nWhen the user clicks the Annotation button\nThen the user should be able to draw and mark on the image",
+      "acceptance": "The user should be able to draw and mark on the image\nThe behavior should be validated when the user clicks the Annotation button."
+    },
+    {
+      "test_id": "UTC-15",
+      "srs_id": "SRS-2",
+      "sds_id": "SDS-2",
+      "summary": "Verify Invert image colors\nwhen a Pending image is selected",
+      "description": "Feature: Image Color Manipulation\nThe system supports color inversion.\n\nScenario: Invert image colors\n\nGiven a Pending image is selected\nWhen the user checks the Invert Color checkbox\nThen the image colors should be inverted",
+      "acceptance": "The image colors should be inverted\nThe behavior should be validated when the user checks the Invert Color checkbox."
+    },
+    {
+      "test_id": "UTC-16",
+      "srs_id": "SRS-2",
+      "sds_id": "SDS-2",
+      "summary": "Verify Zoom in, zoom out and reset zoom\nwhen a Pending image is selected",
+      "description": "Feature: Zoom Controls\nThe system allows zoom operations.\n\nScenario: Zoom in, zoom out and reset zoom\n\nGiven a Pending image is selected\nWhen the user clicks Zoom In, Zoom Out, and Reset Zoom\nThen the image zoom level should adjust correctly and reset to default",
+      "acceptance": "The image zoom level should adjust correctly and reset to default\nThe behavior should be validated when the user clicks Zoom In, Zoom Out, and Reset Zoom."
+    },
+    {
+      "test_id": "UTC-17",
+      "srs_id": "SRS-2",
+      "sds_id": "SDS-2",
+      "summary": "Verify Rotate and flip image\nwhen a Pending image is selected",
+      "description": "Feature: Image Rotation and Flip\nThe system supports image orientation controls.\n\nScenario: Rotate and flip image\n\nGiven a Pending image is selected\nWhen the user clicks Rotate Clockwise and Flip icons\nThen the image orientation should update correctly",
+      "acceptance": "The image orientation should update correctly\nThe behavior should be validated when the user clicks Rotate Clockwise and Flip icons."
+    },
+    {
+      "test_id": "UTC-18",
+      "srs_id": "SRS-2",
+      "sds_id": "SDS-2",
+      "summary": "Verify Adjust brightness and contrast\nwhen a Pending image is selected",
+      "description": "Feature: Brightness & Contrast Adjustments\nThe system supports visual adjustments.\n\nScenario: Adjust brightness and contrast\n\nGiven a Pending image is selected\nWhen the user adjusts Brightness and Contrast controls\nThen the image appearance should change accordingly",
+      "acceptance": "The image appearance should change accordingly\nThe behavior should be validated when the user adjusts Brightness and Contrast controls."
+    }
+  ]
+}

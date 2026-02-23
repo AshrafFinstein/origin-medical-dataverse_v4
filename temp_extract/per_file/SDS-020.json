@@ -1,0 +1,163 @@
+{
+  "spec_file": "e2e/tests/masters/URS-DV-GEN-05/SRS-020/SDS-020.spec.ts",
+  "plan_urs": "URS-DV-GEN-05",
+  "srs_str": "020",
+  "domain": "masters",
+  "page_class": "SessionLabelPage",
+  "page_import": "session-label.page",
+  "goto_method": "gotoMasters",
+  "test_cases": [
+    {
+      "test_id": "UTC-520",
+      "srs_id": "SRS-43",
+      "sds_id": "SDS-43",
+      "summary": "Verify Data loads quickly\nwhen the page is opened",
+      "description": "Feature: Session Label Page Management\nScenario: Data loads quickly\nGiven the page is opened\nWhen data is fetched\nThen labels should render within acceptable time without blocking UI",
+      "acceptance": "Labels should render within acceptable time without blocking UI\nThe behavior should be validated when data is fetched."
+    },
+    {
+      "test_id": "UTC-521",
+      "srs_id": "SRS-44",
+      "sds_id": "SDS-44",
+      "summary": "Verify Name cannot be empty\nwhen the Create Session Label popup is open",
+      "description": "Feature: Session Label Name Validation – Mandatory Field\nScenario: Name cannot be empty\nGiven the Create Session Label popup is open\nWhen the Name field is left empty and user clicks Create\nThen submission should be blocked and inline validation message displayed",
+      "acceptance": "Submission should be blocked and inline validation message displayed\nThe behavior should be validated when the Name field is left empty and user clicks Create."
+    },
+    {
+      "test_id": "UTC-522",
+      "srs_id": "SRS-44",
+      "sds_id": "SDS-44",
+      "summary": "Verify Name contains only spaces\nwhen the Name field contains only spaces",
+      "description": "Feature: Session Label Name Validation – Space-only Restriction\nScenario: Name contains only spaces\nGiven the Name field contains only spaces\nWhen the user submits\nThen system should trim input and display validation error",
+      "acceptance": "System should trim input and display validation error\nThe behavior should be validated when the user submits."
+    },
+    {
+      "test_id": "UTC-523",
+      "srs_id": "SRS-44",
+      "sds_id": "SDS-44",
+      "summary": "Verify Valid alphanumeric name accepted\nwhen the user enters a valid label name",
+      "description": "Feature: Session Label Name Validation – Valid Input Acceptance\nScenario: Valid alphanumeric name accepted\nGiven the user enters a valid label name\nWhen the user submits\nThen the label should be created successfully",
+      "acceptance": "The label should be created successfully\nThe behavior should be validated when the user submits."
+    },
+    {
+      "test_id": "UTC-524",
+      "srs_id": "SRS-44",
+      "sds_id": "SDS-44",
+      "summary": "Verify Restricted characters entered\nwhen the Name field contains invalid characters (!,@,#,$,%, etc.)",
+      "description": "Feature: Session Label Name Validation – Invalid Special Characters\nScenario: Restricted characters entered\nGiven the Name field contains invalid characters (!,@,#,$,%, etc.)\nWhen validation runs\nThen invalid characters should be rejected and error displayed",
+      "acceptance": "Invalid characters should be rejected and error displayed\nThe behavior should be validated when validation runs."
+    },
+    {
+      "test_id": "UTC-525",
+      "srs_id": "SRS-44",
+      "sds_id": "SDS-44",
+      "summary": "Verify Exceed max character limit\nwhen the Name exceeds the maximum allowed length",
+      "description": "Feature: Session Label Name Validation – Maximum Length\nScenario: Exceed max character limit\nGiven the Name exceeds the maximum allowed length\nWhen user types beyond the limit\nThen input should be blocked or truncated",
+      "acceptance": "Input should be blocked or truncated\nThe behavior should be validated when user types beyond the limit."
+    },
+    {
+      "test_id": "UTC-526",
+      "srs_id": "SRS-44",
+      "sds_id": "SDS-44",
+      "summary": "Verify Error message placement\nwhen validation fails",
+      "description": "Feature: Session Label Name Validation – Inline Error Visibility\nScenario: Error message placement\nGiven validation fails\nWhen error appears\nThen inline message should display below field with red highlight",
+      "acceptance": "Inline message should display below field with red highlight\nThe behavior should be validated when error appears."
+    },
+    {
+      "test_id": "UTC-527",
+      "srs_id": "SRS-44",
+      "sds_id": "SDS-44",
+      "summary": "Verify Validate on blur\nwhen user leaves Name field (blur)",
+      "description": "Feature: Session Label Name Validation – Blur Validation\nScenario: Validate on blur\nGiven user leaves Name field (blur)\nWhen invalid input exists\nThen validation message should trigger immediately",
+      "acceptance": "Validation message should trigger immediately\nThe behavior should be validated when invalid input exists."
+    },
+    {
+      "test_id": "UTC-528",
+      "srs_id": "SRS-44",
+      "sds_id": "SDS-44",
+      "summary": "Verify Validate again on submit\nwhen valid input earlier",
+      "description": "Feature: Session Label Name Validation – Submit Validation\nScenario: Validate again on submit\nGiven valid input earlier\nWhen submitting\nThen system should revalidate before API call",
+      "acceptance": "System should revalidate before API call\nThe behavior should be validated when submitting."
+    },
+    {
+      "test_id": "UTC-529",
+      "srs_id": "SRS-44",
+      "sds_id": "SDS-44",
+      "summary": "Verify Validation fails\nwhen invalid name",
+      "description": "Feature: Session Label Name Validation – Prevent API Call on Failure\nScenario: Validation fails\nGiven invalid name\nWhen submit pressed\nThen no API request should be triggered",
+      "acceptance": "No API request should be triggered\nThe behavior should be validated when submit pressed."
+    },
+    {
+      "test_id": "UTC-530",
+      "srs_id": "SRS-44",
+      "sds_id": "SDS-44",
+      "summary": "Verify Non-technical error messages\nwhen validation fails",
+      "description": "Feature: Session Label Name Validation – User-friendly Messaging\nScenario: Non-technical error messages\nGiven validation fails\nWhen message shown\nThen message should be simple and understandable",
+      "acceptance": "Message should be simple and understandable\nThe behavior should be validated when message shown."
+    },
+    {
+      "test_id": "UTC-531",
+      "srs_id": "SRS-45",
+      "sds_id": "SDS-45",
+      "summary": "Verify Description field is visible\nwhen the Create/Edit Session Label popup is opened",
+      "description": "Feature: Session Label Description Validation – Description field available for optional details\nScenario: Description field is visible\nGiven the Create/Edit Session Label popup is opened\nWhen the form loads\nThen the Description input field should be visible and editable",
+      "acceptance": "The Description input field should be visible and editable\nThe behavior should be validated when the form loads."
+    },
+    {
+      "test_id": "UTC-532",
+      "srs_id": "SRS-45",
+      "sds_id": "SDS-45",
+      "summary": "Verify User enters alphanumeric text\nwhen the Description field is focused",
+      "description": "Feature: Session Label Description Validation – Accept valid characters\nScenario: User enters alphanumeric text\nGiven the Description field is focused\nWhen the user types valid characters\nThen the input should be accepted without validation errors",
+      "acceptance": "The input should be accepted without validation errors\nThe behavior should be validated when the user types valid characters."
+    },
+    {
+      "test_id": "UTC-533",
+      "srs_id": "SRS-45",
+      "sds_id": "SDS-45",
+      "summary": "Verify Enter description within limit\nwhen the maximum limit is defined",
+      "description": "Feature: Session Label Description Validation – Maximum character limit enforcement\nScenario: Enter description within limit\nGiven the maximum limit is defined\nWhen the user enters text less than or equal to the limit\nThen the system should allow saving successfully",
+      "acceptance": "The system should allow saving successfully\nThe behavior should be validated when the user enters text less than or equal to the limit."
+    },
+    {
+      "test_id": "UTC-534",
+      "srs_id": "SRS-45",
+      "sds_id": "SDS-45",
+      "summary": "Verify Enter description equal to max length\nwhen the maximum limit",
+      "description": "Feature: Session Label Description Validation – Exact limit acceptance\nScenario: Enter description equal to max length\nGiven the maximum limit\nWhen the user enters exactly the max characters\nThen saving should still be permitted",
+      "acceptance": "Saving should still be permitted\nThe behavior should be validated when the user enters exactly the max characters."
+    },
+    {
+      "test_id": "UTC-535",
+      "srs_id": "SRS-45",
+      "sds_id": "SDS-45",
+      "summary": "Verify Enter description exceeding max length\nwhen the Description field has a limit",
+      "description": "Feature: Session Label Description Validation – Block over-limit input\nScenario: Enter description exceeding max length\nGiven the Description field has a limit\nWhen the user enters text exceeding the limit\nThen saving should be blocked",
+      "acceptance": "Saving should be blocked\nThe behavior should be validated when the user enters text exceeding the limit."
+    },
+    {
+      "test_id": "UTC-536",
+      "srs_id": "SRS-45",
+      "sds_id": "SDS-45",
+      "summary": "Verify Over-limit validation message\nwhen text exceeds the limit",
+      "description": "Feature: Session Label Description Validation – Error message display\nScenario: Over-limit validation message\nGiven text exceeds the limit\nWhen the user attempts to save\nThen a clear validation message should be shown",
+      "acceptance": "A clear validation message should be shown\nThe behavior should be validated when the user attempts to save."
+    },
+    {
+      "test_id": "UTC-537",
+      "srs_id": "SRS-45",
+      "sds_id": "SDS-45",
+      "summary": "Verify Save without description\nwhen the Description is empty",
+      "description": "Feature: Session Label Description Validation – Optional field behavior\nScenario: Save without description\nGiven the Description is empty\nWhen the user clicks Save\nThen the label should still be created successfully",
+      "acceptance": "The label should still be created successfully\nThe behavior should be validated when the user clicks Save."
+    },
+    {
+      "test_id": "UTC-538",
+      "srs_id": "SRS-45",
+      "sds_id": "SDS-45",
+      "summary": "Verify Description saved in request\nwhen valid text is entered",
+      "description": "Feature: Session Label Description Validation – Payload inclusion\nScenario: Description saved in request\nGiven valid text is entered\nWhen the user saves\nThen the Description should be included in the API payload",
+      "acceptance": "The Description should be included in the API payload\nThe behavior should be validated when the user saves."
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "spec_file": "e2e/tests/qc-workflow/URS-DV-QC-01/SRS-004/SDS-004.spec.ts",
+  "plan_urs": "URS-DV-QC-01",
+  "srs_str": "004",
+  "domain": "qc-workflow",
+  "page_class": "QcWorkflowPage",
+  "page_import": "qc-workflow.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-55",
+      "srs_id": "SRS-7",
+      "sds_id": "SDS-7",
+      "summary": "Verify Display IN_REVIEW L images\nwhen Select Status is IN_REVIEW",
+      "description": "Feature: QC Awaiting Approval – Final Level\nAs a final reviewer, the user wants to see images awaiting action.\n\nScenario: Display IN_REVIEW L images\nGiven Select Status is IN_REVIEW\nAnd Awaiting Approval is checked\nWhen the image grid is displayed\nThen IN_REVIEW L images should be displayed",
+      "acceptance": "IN_REVIEW L images should be displayed\nThe behavior should be validated when the image grid is displayed."
+    },
+    {
+      "test_id": "UTC-56",
+      "srs_id": "SRS-7",
+      "sds_id": "SDS-7",
+      "summary": "Verify Enable Accept and Reject for IN_REVIEW L\nwhen an IN_REVIEW L image is selected",
+      "description": "Feature: QC Final Actions – Accept & Reject\nAs a final reviewer, the user wants to take decision on images.\n\nScenario: Enable Accept and Reject for IN_REVIEW L\nGiven an IN_REVIEW L image is selected\nWhen the image action panel is viewed\nThen Accept and Reject buttons should be enabled",
+      "acceptance": "Accept and Reject buttons should be enabled\nThe behavior should be validated when the image action panel is viewed."
+    },
+    {
+      "test_id": "UTC-57",
+      "srs_id": "SRS-7",
+      "sds_id": "SDS-7",
+      "summary": "Verify Image moves to ACCEPTED on Accept\nwhen an IN_REVIEW  image is selected",
+      "description": "Feature: QC Final Acceptance Workflow\nAs a final reviewer, the user wants to accept the image.\n\nScenario: Image moves to ACCEPTED on Accept\nGiven an IN_REVIEW  image is selected\nWhen the user clicks Accept\nThen the image should move to ACCEPTED status",
+      "acceptance": "The image should move to ACCEPTED status\nThe behavior should be validated when the user clicks Accept."
+    },
+    {
+      "test_id": "UTC-58",
+      "srs_id": "SRS-7",
+      "sds_id": "SDS-7",
+      "summary": "Verify ACCEPTED status available after final acceptance\nwhen the image is accepted at final level",
+      "description": "Feature: QC Status Filter – ACCEPTED\nAs a user, the user wants to filter accepted images.\n\nScenario: ACCEPTED status available after final acceptance\nGiven the image is accepted at final level\nWhen the user views Select Status options\nThen ACCEPTED status should be available",
+      "acceptance": "ACCEPTED status should be available\nThe behavior should be validated when the user views Select Status options."
+    },
+    {
+      "test_id": "UTC-59",
+      "srs_id": "SRS-7",
+      "sds_id": "SDS-7",
+      "summary": "Verify Display accepted image under ACCEPTED status\nwhen the user selects ACCEPTED from Select Status dropdown",
+      "description": "Feature: QC Image Listing – ACCEPTED\nAs a user, the user wants to view accepted images.\n\nScenario: Display accepted image under ACCEPTED status\nGiven the user selects ACCEPTED from Select Status dropdown\nWhen the image grid is displayed\nThen the accepted image should be displayed",
+      "acceptance": "The accepted image should be displayed\nThe behavior should be validated when the image grid is displayed."
+    },
+    {
+      "test_id": "UTC-60",
+      "srs_id": "SRS-7",
+      "sds_id": "SDS-7",
+      "summary": "Verify Assignee views accepted images\nwhen the image is in ACCEPTED status",
+      "description": "Feature: QC Visibility – Assignee Accepted Images\nAs an assignee, the user wants to view accepted images.\n\nScenario: Assignee views accepted images\nGiven the image is in ACCEPTED status\nWhen the assignee logs in and selects ACCEPTED\nThen the accepted image should be visible",
+      "acceptance": "The accepted image should be visible\nThe behavior should be validated when the assignee logs in and selects ACCEPTED."
+    },
+    {
+      "test_id": "UTC-61",
+      "srs_id": "SRS-7",
+      "sds_id": "SDS-7",
+      "summary": "Verify All approval levels view accepted images\nwhen the image is in ACCEPTED status",
+      "description": "Feature: QC Visibility – All Approval Levels\nAs a system, accepted images must be visible to all approval levels.\n\nScenario: All approval levels view accepted images\nGiven the image is in ACCEPTED status\nWhen any approval level user selects ACCEPTED\nThen the accepted image should be visible",
+      "acceptance": "The accepted image should be visible\nThe behavior should be validated when any approval level user selects ACCEPTED."
+    },
+    {
+      "test_id": "UTC-62",
+      "srs_id": "SRS-7",
+      "sds_id": "SDS-7",
+      "summary": "Verify Display ACCEPTED indicator on image\nwhen an accepted image is displayed",
+      "description": "Feature: QC Accepted Indicator\nAs a user, the user wants clear accepted status visibility.\n\nScenario: Display ACCEPTED indicator on image\nGiven an accepted image is displayed\nWhen the image card is viewed\nThen ACCEPTED status should be displayed inside the image",
+      "acceptance": "ACCEPTED status should be displayed inside the image\nThe behavior should be validated when the image card is viewed."
+    },
+    {
+      "test_id": "UTC-63",
+      "srs_id": "SRS-8",
+      "sds_id": "SDS-8",
+      "summary": "Verify User can edit image only at their active approval level\nwhen an image is in IN_REVIEW status at a specific approval level",
+      "description": "Feature: Role & approval level based image access control\n\nScenario: User can edit image only at their active approval level\n\nGiven an image is in IN_REVIEW status at a specific approval level\nAnd the user belongs to the same active approval level\nWhen the user opens the image on the Data Labeling page\nThen all edit and action controls (Annotation, Zoom, Rotate, Pen, Brightness, etc.) should be enabled",
+      "acceptance": "All edit and action controls (Annotation, Zoom, Rotate, Pen, Brightness, etc.) should be enabled\nThe behavior should be validated when the user opens the image on the Data Labeling page."
+    },
+    {
+      "test_id": "UTC-64",
+      "srs_id": "SRS-8",
+      "sds_id": "SDS-8",
+      "summary": "Verify Image becomes non-editable for previous level after moving forward\nwhen an image is accepted and moved to the next approval level",
+      "description": "Feature: Edit restriction for previous approval level\n\nScenario: Image becomes non-editable for previous level after moving forward\n\nGiven an image is accepted and moved to the next approval level\nWhen a user from the previous approval level opens the same image\nThen all image edit and action controls should be disabled and image should be read-only",
+      "acceptance": "All image edit and action controls should be disabled and image should be read-only\nThe behavior should be validated when a user from the previous approval level opens the same image."
+    },
+    {
+      "test_id": "UTC-65",
+      "srs_id": "SRS-8",
+      "sds_id": "SDS-8",
+      "summary": "Verify Image becomes editable only for the new active level after rejection\nwhen an image is rejected and moved back to a previous approval level",
+      "description": "Feature: Access update when image moves backward in workflow\n\nScenario: Image becomes editable only for the new active level after rejection\n\nGiven an image is rejected and moved back to a previous approval level\nWhen a user from the new active level opens the image\nThen the image should be editable, and controls enabled only for that level",
+      "acceptance": "The image should be editable, and controls enabled only for that level\nThe behavior should be validated when a user from the new active level opens the image."
+    },
+    {
+      "test_id": "UTC-66",
+      "srs_id": "SRS-8",
+      "sds_id": "SDS-8",
+      "summary": "Verify System blocks edit actions by non-active level users\nwhen a user does not belong to the current active approval level",
+      "description": "Feature: Unauthorized edit attempt blocking\n\nScenario: System blocks edit actions by non-active level users\n\nGiven a user does not belong to the current active approval level\nWhen the user attempts any edit or action on the image (via UI or shortcut)\nThen the system shall block the action and prevent modification",
+      "acceptance": "The system shall block the action and prevent modification\nThe behavior should be validated when the user attempts any edit or action on the image (via UI or shortcut)."
+    },
+    {
+      "test_id": "UTC-67",
+      "srs_id": "SRS-8",
+      "sds_id": "SDS-8",
+      "summary": "Verify Edit and action controls are hidden or disabled for unauthorized users\nwhen a user opens an image outside their approval level",
+      "description": "Feature: UI-level access enforcement\n\nScenario: Edit and action controls are hidden or disabled for unauthorized users\n\nGiven a user opens an image outside their approval level\nWhen the Data Labeling page loads\nThen edit icons, buttons, and shortcuts should be disabled or non-interactive",
+      "acceptance": "Edit icons, buttons, and shortcuts should be disabled or non-interactive\nThe behavior should be validated when the Data Labeling page loads."
+    },
+    {
+      "test_id": "UTC-68",
+      "srs_id": "SRS-8",
+      "sds_id": "SDS-8",
+      "summary": "Verify Backend validates role and approval level before allowing image actions\nwhen a user attempts an image action through API or forced UI trigger",
+      "description": "Feature: Backend authorization validation\n\nScenario: Backend validates role and approval level before allowing image actions\n\nGiven a user attempts an image action through API or forced UI trigger\nWhen role, approval level, or group mapping does not match active level\nThen the backend shall reject the request and not apply changes",
+      "acceptance": "The backend shall reject the request and not apply changes\nThe behavior should be validated when role, approval level, or group mapping does not match active level."
+    },
+    {
+      "test_id": "UTC-69",
+      "srs_id": "SRS-8",
+      "sds_id": "SDS-8",
+      "summary": "Verify Only one approval level has edit access at any time\nwhen the image exists across multiple workflow stages",
+      "description": "Feature: Single active-level edit enforcement\n\nScenario: Only one approval level has edit access at any time\n\nGiven the image exists across multiple workflow stages\nWhen users from different approval levels access the image simultaneously\nThen only the current active level user should be able to edit the image",
+      "acceptance": "Only the current active level user should be able to edit the image\nThe behavior should be validated when users from different approval levels access the image simultaneously."
+    },
+    {
+      "test_id": "UTC-70",
+      "srs_id": "SRS-9",
+      "sds_id": "SDS-9",
+      "summary": "Verify Image grid loads smoothly for Approval Level 1 user\nwhen the user logs in as Approval Level",
+      "description": "Feature: Approval workflow performance across levels\n\nScenario: Image grid loads smoothly for Approval Level 1 user\n\nGiven the user logs in as Approval Level\nWhen the Data Labeling page is opened\nThen image grid, session details, and status indicators should load without noticeable delay",
+      "acceptance": "Image grid, session details, and status indicators should load without noticeable delay\nThe behavior should be validated when the Data Labeling page is opened."
+    },
+    {
+      "test_id": "UTC-71",
+      "srs_id": "SRS-9",
+      "sds_id": "SDS-9",
+      "summary": "Verify Image acceptance at Level completes without delay\nwhen an image is in IN_REVIEW state",
+      "description": "Feature: Accept action responsiveness\n\nScenario: Image acceptance at Level completes without delay\n\nGiven an image is in IN_REVIEW state\nWhen the Level user clicks Accept\nThen the image status should update and move to Level 2 immediately",
+      "acceptance": "The image status should update and move to Level 2 immediately\nThe behavior should be validated when the Level user clicks Accept."
+    },
+    {
+      "test_id": "UTC-72",
+      "srs_id": "SRS-9",
+      "sds_id": "SDS-9",
+      "summary": "Verify Image loads quickly for Approval Level after Level acceptance\nwhen the image has moved to IN_REVIEW",
+      "description": "Feature: Approval workflow performance continuity\n\nScenario: Image loads quickly for Approval Level after Level acceptance\n\nGiven the image has moved to IN_REVIEW\nWhen the Level user logs in and opens the session\nThen the image and action buttons should load promptly",
+      "acceptance": "The image and action buttons should load promptly\nThe behavior should be validated when the Level user logs in and opens the session."
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "spec_file": "e2e/tests/annotation/URS-DV-DA-18/SRS-067/SDS-067.spec.ts",
+  "plan_urs": "URS-DV-DA-18",
+  "srs_str": "067",
+  "domain": "annotation",
+  "page_class": "DataLabellingPage",
+  "page_import": "data-labelling.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-2631",
+      "srs_id": "SRS-251",
+      "sds_id": "SDS-251",
+      "summary": "Verify confirmation message after successful copy to previous image\nwhen annotations are copied successfully to a previous image",
+      "description": "Feature: Copy Annotations – Success Confirmation Message (Previous Image)\n\nScenario: Verify confirmation message after successful copy to previous image\n\nGiven annotations are copied successfully to a previous image\nWhen the copy operation completes\nThen a confirmation message such as “Annotations copied to image XX” should be displayed",
+      "acceptance": "A confirmation message such as \"Annotations copied to image XX\" should be displayed\nThe behavior should be validated when the copy operation completes."
+    },
+    {
+      "test_id": "UTC-2632",
+      "srs_id": "SRS-251",
+      "sds_id": "SDS-251",
+      "summary": "Verify copy is blocked when unsaved annotations exist\nwhen the current image has unsaved annotations",
+      "description": "Feature: Copy Annotations – Unsaved Annotation Restriction (Previous Image)\n\nScenario: Verify copy is blocked when unsaved annotations exist\n\nGiven the current image has unsaved annotations\nWhen the user attempts to copy annotations to a previous image using shortcut or button\nThen the copy action should be blocked\nAnd an error message “Cannot copy annotations: Please save your annotations first. You have X unsaved annotation(s).” should be displayed",
+      "acceptance": "The copy action should be blocked\nThe behavior should be validated when the user attempts to copy annotations to a previous image using shortcut or button."
+    },
+    {
+      "test_id": "UTC-2633",
+      "srs_id": "SRS-251",
+      "sds_id": "SDS-251",
+      "summary": "Verify previous image view refreshes after copy\nwhen annotations are copied to a previous image",
+      "description": "Feature: Copy Annotations – Target Image Refresh\n\nScenario: Verify previous image view refreshes after copy\n\nGiven annotations are copied to a previous image\nWhen the previous image is opened\nThen the copied annotations should be visible and editable",
+      "acceptance": "The copied annotations should be visible and editable\nThe behavior should be validated when the previous image is opened."
+    },
+    {
+      "test_id": "UTC-2634",
+      "srs_id": "SRS-252",
+      "sds_id": "SDS-252",
+      "summary": "Verify conflict popup appears when copying to next image with existing annotations\nwhen the source image has saved annotations",
+      "description": "Feature: Copy Annotation – Conflict Detection on Next Image\n\nScenario: Verify conflict popup appears when copying to next image with existing annotations\n\nGiven the source image has saved annotations\nAnd the next image already contains annotations\nWhen the user copies annotations to the next image\nThen the “Existing Annotations Found” popup should be displayed",
+      "acceptance": "The \"Existing Annotations Found\" popup should be displayed\nThe behavior should be validated when the user copies annotations to the next image."
+    },
+    {
+      "test_id": "UTC-2635",
+      "srs_id": "SRS-252",
+      "sds_id": "SDS-252",
+      "summary": "Verify conflict popup appears when copying to previous image with existing annotations\nwhen the source image has saved annotations",
+      "description": "Feature: Copy Annotation – Conflict Detection on Previous Image\n\nScenario: Verify conflict popup appears when copying to previous image with existing annotations\n\nGiven the source image has saved annotations\nAnd the previous image already contains annotations\nWhen the user copies annotations to the previous image\nThen the “Existing Annotations Found” popup should be displayed",
+      "acceptance": "The \"Existing Annotations Found\" popup should be displayed\nThe behavior should be validated when the user copies annotations to the previous image."
+    },
+    {
+      "test_id": "UTC-2636",
+      "srs_id": "SRS-252",
+      "sds_id": "SDS-252",
+      "summary": "Verify background is blocked when conflict popup is displayed\nwhen the \"Existing Annotations Found\" popup is open",
+      "description": "Feature: Copy Annotation – Background Interaction Block\n\nScenario: Verify background is blocked when conflict popup is displayed\n\nGiven the “Existing Annotations Found” popup is open\nWhen the user attempts to interact with the background image or controls\nThen no background interaction should be allowed until popup action is taken",
+      "acceptance": "No background interaction should be allowed until popup action is taken\nThe behavior should be validated when the user attempts to interact with the background image or controls."
+    },
+    {
+      "test_id": "UTC-2637",
+      "srs_id": "SRS-252",
+      "sds_id": "SDS-252",
+      "summary": "Verify old annotations are fully removed before copy\nwhen the target image contains existing annotations",
+      "description": "Feature: Copy Annotation – Replace Overwrite Validation\n\nScenario: Verify old annotations are fully removed before copy\n\nGiven the target image contains existing annotations\nWhen the user selects Replace in the conflict popup\nThen all existing annotations should be removed\nAnd only copied annotations should be present",
+      "acceptance": "All existing annotations should be removed\nThe behavior should be validated when the user selects Replace in the conflict popup."
+    },
+    {
+      "test_id": "UTC-2638",
+      "srs_id": "SRS-252",
+      "sds_id": "SDS-252",
+      "summary": "Verify partial replacement does not occur\nwhen the conflict popup is displayed",
+      "description": "Feature: Copy Annotation – No Partial Replace\n\nScenario: Verify partial replacement does not occur\n\nGiven the conflict popup is displayed\nWhen the user selects Replace\nThen the system should not retain any previous annotations on the target image",
+      "acceptance": "The system should not retain any previous annotations on the target image\nThe behavior should be validated when the user selects Replace."
+    }
+  ]
+}

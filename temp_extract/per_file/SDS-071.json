@@ -1,0 +1,123 @@
+{
+  "spec_file": "e2e/tests/session-management/URS-DV-GEN-19/SRS-071/SDS-071.spec.ts",
+  "plan_urs": "URS-DV-GEN-19",
+  "srs_str": "071",
+  "domain": "session-management",
+  "page_class": "SessionLockPage",
+  "page_import": "session-lock.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-2684",
+      "srs_id": "SRS-259",
+      "sds_id": "SDS-259",
+      "summary": "Verify backend allows creating a new duplicated session while original is locked\nwhen the original session is locked",
+      "description": "Feature: Locked Session – Backend Allows Duplicate Creation Only\n\nScenario: Verify backend allows creating a new duplicated session while original is locked\n\nGiven the original session is locked\nWhen the user duplicates the session (new session creation request)\nThen the system should allow duplication\nAnd create a new session record successfully",
+      "acceptance": "The system should allow duplication\nThe behavior should be validated when the user duplicates the session (new session creation request)."
+    },
+    {
+      "test_id": "UTC-2685",
+      "srs_id": "SRS-259",
+      "sds_id": "SDS-259",
+      "summary": "Verify access denied response is safe and non-technical\nwhen a session is locked",
+      "description": "Feature: Locked Session – Access Denied Message Non-Technical\n\nScenario: Verify access denied response is safe and non-technical\n\nGiven a session is locked\nWhen the user triggers a blocked update request\nThen the system should return access denied response\nAnd it should not expose internal server or stack details",
+      "acceptance": "The system should return access denied response\nThe behavior should be validated when the user triggers a blocked update request."
+    },
+    {
+      "test_id": "UTC-2686",
+      "srs_id": "SRS-260",
+      "sds_id": "SDS-260",
+      "summary": "Verify session lock completes without noticeable delay\nwhen the user is on Data Labelling Session list page",
+      "description": "Feature: Lock Action – Quick Completion\n\nScenario: Verify session lock completes without noticeable delay\n\nGiven the user is on Data Labelling Session list page\nWhen the user locks a Completed session with valid reason\nThen the lock action should complete quickly\nAnd lock state should reflect immediately in grid",
+      "acceptance": "The lock action should complete quickly\nThe behavior should be validated when the user locks a Completed session with valid reason."
+    },
+    {
+      "test_id": "UTC-2687",
+      "srs_id": "SRS-260",
+      "sds_id": "SDS-260",
+      "summary": "Verify session unlock completes without noticeable delay\nwhen a session is locked",
+      "description": "Feature: Unlock Action – Quick Completion\n\nScenario: Verify session unlock completes without noticeable delay\n\nGiven a session is locked\nWhen the user unlocks the session with valid reason\nThen the unlock action should complete quickly\nAnd session status should update to Re-open instantly",
+      "acceptance": "The unlock action should complete quickly\nThe behavior should be validated when the user unlocks the session with valid reason."
+    },
+    {
+      "test_id": "UTC-2688",
+      "srs_id": "SRS-260",
+      "sds_id": "SDS-260",
+      "summary": "Verify loader is shown during lock/unlock processing\nwhen the user triggers Lock or Unlock action",
+      "description": "Feature: Lock/Unlock – Loader Visibility\n\nScenario: Verify loader is shown during lock/unlock processing\n\nGiven the user triggers Lock or Unlock action\nWhen the system processes the request\nThen a loader/processing indicator should be shown until completion",
+      "acceptance": "A loader/processing indicator should be shown until completion\nThe behavior should be validated when the system processes the request."
+    },
+    {
+      "test_id": "UTC-2689",
+      "srs_id": "SRS-260",
+      "sds_id": "SDS-260",
+      "summary": "Verify grid refresh happens instantly without full page reload\nwhen the session list page is open",
+      "description": "Feature: Lock Action – Grid Refresh Without Full Page Reload\n\nScenario: Verify grid refresh happens instantly without full page reload\n\nGiven the session list page is open\nWhen the user locks a session\nThen the grid should refresh immediately\nAnd the page should not fully reload",
+      "acceptance": "The grid should refresh immediately\nThe behavior should be validated when the user locks a session."
+    },
+    {
+      "test_id": "UTC-2690",
+      "srs_id": "SRS-260",
+      "sds_id": "SDS-260",
+      "summary": "Verify retry option/message appears when lock action times out\nwhen the user triggers lock/unlock action",
+      "description": "Feature: Lock/Unlock Timeout Retry Handling\n\nScenario: Verify retry option/message appears when lock action times out\n\nGiven the user triggers lock/unlock action\nWhen the request times out due to slow network/backend delay\nThen the system should show retry option or timeout message\nAnd user should be able to retry without breaking UI",
+      "acceptance": "The system should show retry option or timeout message\nThe behavior should be validated when the request times out due to slow network/backend delay."
+    },
+    {
+      "test_id": "UTC-2691",
+      "srs_id": "SRS-261",
+      "sds_id": "SDS-261",
+      "summary": "Verify locked session is clearly identifiable in session list\nwhen a session is locked successfully",
+      "description": "Feature: Lock Status – Visual Indicator Visible\n\nScenario: Verify locked session is clearly identifiable in session list\n\nGiven a session is locked successfully\nWhen the session list page is displayed\nThen a lock icon/badge should be clearly visible for the locked session",
+      "acceptance": "A lock icon/badge should be clearly visible for the locked session\nThe behavior should be validated when the session list page is displayed."
+    },
+    {
+      "test_id": "UTC-2692",
+      "srs_id": "SRS-261",
+      "sds_id": "SDS-261",
+      "summary": "Verify lock indicator is removed after unlocking session\nwhen a session was locked and then unlocked",
+      "description": "Feature: Unlock Status – Visual Indicator Removed\n\nScenario: Verify lock indicator is removed after unlocking session\n\nGiven a session was locked and then unlocked\nWhen the session list refreshes\nThen the lock icon/badge should no longer be visible",
+      "acceptance": "The lock icon/badge should no longer be visible\nThe behavior should be validated when the session list refreshes."
+    },
+    {
+      "test_id": "UTC-2693",
+      "srs_id": "SRS-261",
+      "sds_id": "SDS-261",
+      "summary": "Verify tooltip displays lock reason clearly\nwhen a session is locked with a reason",
+      "description": "Feature: Lock Status – Tooltip Shows Reason\n\nScenario: Verify tooltip displays lock reason clearly\n\nGiven a session is locked with a reason\nWhen the user hovers over the lock icon/badge\nThen the tooltip should display “Session is locked. Reason: <reason>”",
+      "acceptance": "The tooltip should display \"Session is locked. Reason: <reason>\"\nThe behavior should be validated when the user hovers over the lock icon/badge."
+    },
+    {
+      "test_id": "UTC-2694",
+      "srs_id": "SRS-261",
+      "sds_id": "SDS-261",
+      "summary": "Verify disabled actions are visually distinguishable for locked session\nwhen a session is locked",
+      "description": "Feature: Locked Session – Disabled Actions Visually Distinct\n\nScenario: Verify disabled actions are visually distinguishable for locked session\n\nGiven a session is locked\nWhen the user views Edit/Delete actions\nThen disabled actions should appear greyed out or hidden\nAnd clearly indicate non-interactive state",
+      "acceptance": "Disabled actions should appear greyed out or hidden\nThe behavior should be validated when the user views Edit/Delete actions."
+    },
+    {
+      "test_id": "UTC-2695",
+      "srs_id": "SRS-261",
+      "sds_id": "SDS-261",
+      "summary": "Verify Duplicate action is clearly available even when session is locked\nwhen a session is locked",
+      "description": "Feature: Locked Session – Duplicate Action Clearly Available\n\nScenario: Verify Duplicate action is clearly available even when session is locked\n\nGiven a session is locked\nWhen the user views Actions column\nThen Duplicate option should remain clearly enabled and usable",
+      "acceptance": "Duplicate option should remain clearly enabled and usable\nThe behavior should be validated when the user views Actions column."
+    },
+    {
+      "test_id": "UTC-2696",
+      "srs_id": "SRS-261",
+      "sds_id": "SDS-261",
+      "summary": "Verify lock indicators remain clear after refresh or re-login\nwhen a session is locked",
+      "description": "Feature: Lock Status – Consistent Indicators Across Refresh\n\nScenario: Verify lock indicators remain clear after refresh or re-login\n\nGiven a session is locked\nWhen the user refreshes the page or logs out and logs in again\nThen the lock icon/badge and tooltip should still display correctly",
+      "acceptance": "The lock icon/badge and tooltip should still display correctly\nThe behavior should be validated when the user refreshes the page or logs out and logs in again."
+    },
+    {
+      "test_id": "UTC-2697",
+      "srs_id": "SRS-261",
+      "sds_id": "SDS-261",
+      "summary": "Verify lock/unlock indicators do not confuse users\nwhen multiple sessions exist (locked and unlocked)",
+      "description": "Feature: Lock Status – No Ambiguous Messaging\n\nScenario: Verify lock/unlock indicators do not confuse users\n\nGiven multiple sessions exist (locked and unlocked)\nWhen the user scans the session list\nThen locked and unlocked sessions should be clearly distinguishable at a glance",
+      "acceptance": "Locked and unlocked sessions should be clearly distinguishable at a glance\nThe behavior should be validated when the user scans the session list."
+    }
+  ]
+}

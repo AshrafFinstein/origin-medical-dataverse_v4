@@ -1,21 +1,11 @@
 {
-  "structure-create": {
-    "button": "[data-testid=\"structure-create-button\"]",
-    "modal": "[data-testid=\"structure-create-modal\"]",
-    "name-input": "[data-testid=\"structure-create-name-input\"]",
-    "cancel-button": "[data-testid=\"structure-create-cancel-button\"]",
-    "submit-button": "[data-testid=\"structure-create-submit-button\"]"
-  },
-  "structure-table": {
-    "root": "[data-testid=\"structure-table\"]"
-  },
-  "`structure-create": {
-    "structure-input-${index}`": "[data-testid=\"`structure-create-structure-input-${index}`\"]"
-  },
-  "structure-add": {
-    "structure-button": "[data-testid=\"structure-add-structure-button\"]"
-  },
-  "structure-update": {
-    "button": "[data-testid=\"structure-update-button\"]"
-  }
+  "structure-create-button": "structure-create-button",
+  "structure-create-modal": "structure-create-modal",
+  "structure-create-name-input": "structure-create-name-input",
+  "structure-create-cancel-button": "structure-create-cancel-button",
+  "structure-create-submit-button": "structure-create-submit-button",
+  "structure-table": "structure-table",
+  "structure-create-structure-input-${index}": "structure-create-structure-input-${index}",
+  "structure-add-structure-button": "structure-add-structure-button",
+  "structure-update-button": "structure-update-button"
 }

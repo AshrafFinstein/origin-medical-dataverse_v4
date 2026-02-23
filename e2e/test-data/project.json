@@ -1,0 +1,14 @@
+{
+  "validProject": {
+    "name": "Automation Test Project",
+    "description": "Created by automated test"
+  },
+  "searchTerms": {
+    "existing": "Automation",
+    "nonExistent": "XYZ_NONEXISTENT_999"
+  },
+  "validation": {
+    "emptyName": "",
+    "longName": "A very long project name that exceeds the character limit for testing validation purposes and should trigger an error message"
+  }
+}

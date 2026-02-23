@@ -1,0 +1,235 @@
+{
+  "spec_file": "e2e/tests/data-management/URS-DV-DM-17/SRS-063/SDS-063.spec.ts",
+  "plan_urs": "URS-DV-DM-17",
+  "srs_str": "063",
+  "domain": "data-management",
+  "page_class": "S3StoragePage",
+  "page_import": "s3-storage.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-2561",
+      "srs_id": "SRS-243",
+      "sds_id": "SDS-243",
+      "summary": "Verify Confirmation appears quickly\nwhen upload triggered",
+      "description": "Feature: S3 Folder Existence Confirmation\nScenario: Confirmation appears quickly\nGiven upload triggered\nWhen folder missing\nThen dialog appears within acceptable time (<1s)",
+      "acceptance": "Dialog appears within acceptable time (<1s)\nThe behavior should be validated when folder missing."
+    },
+    {
+      "test_id": "UTC-2562",
+      "srs_id": "SRS-243",
+      "sds_id": "SDS-243",
+      "summary": "Verify Close dialog without action\nwhen confirmation dialog visible",
+      "description": "Feature: S3 Folder Existence Confirmation\nScenario: Close dialog without action\nGiven confirmation dialog visible\nWhen user closes modal (X/Escape)\nThen upload should be cancelled safely",
+      "acceptance": "Upload should be cancelled safely\nThe behavior should be validated when user closes modal (X/Escape)."
+    },
+    {
+      "test_id": "UTC-2563",
+      "srs_id": "SRS-244",
+      "sds_id": "SDS-244",
+      "summary": "Verify Push to S3 button visibility\nwhen Session page loads",
+      "description": "Feature: Push Session JSON to S3\nScenario: Push to S3 button visibility\nGiven Session page loads\nWhen actions are rendered\nThen “Push to S3” button should be visible",
+      "acceptance": "\"Push to S3\" button should be visible\nThe behavior should be validated when actions are rendered."
+    },
+    {
+      "test_id": "UTC-2564",
+      "srs_id": "SRS-244",
+      "sds_id": "SDS-244",
+      "summary": "Verify Upload dialog opens\nwhen user clicks Push to S3",
+      "description": "Feature: Push Session JSON to S3\nScenario: Upload dialog opens\nGiven user clicks Push to S3\nWhen action triggered\nThen upload dialog or path input should open",
+      "acceptance": "Upload dialog or path input should open\nThe behavior should be validated when action triggered."
+    },
+    {
+      "test_id": "UTC-2565",
+      "srs_id": "SRS-244",
+      "sds_id": "SDS-244",
+      "summary": "Verify Dialog fields present\nwhen dialog opened",
+      "description": "Feature: Push Session JSON to S3\nScenario: Dialog fields present\nGiven dialog opened\nWhen viewing form\nThen S3 path input and Push button should be displayed",
+      "acceptance": "S3 path input and Push button should be displayed\nThe behavior should be validated when viewing form."
+    },
+    {
+      "test_id": "UTC-2566",
+      "srs_id": "SRS-244",
+      "sds_id": "SDS-244",
+      "summary": "Verify Push disabled without path\nwhen no S3 path entered",
+      "description": "Feature: Push Session JSON to S3\nScenario: Push disabled without path\nGiven no S3 path entered\nWhen viewing dialog\nThen Push button remains disabled",
+      "acceptance": "Push button remains disabled\nThe behavior should be validated when viewing dialog."
+    },
+    {
+      "test_id": "UTC-2567",
+      "srs_id": "SRS-244",
+      "sds_id": "SDS-244",
+      "summary": "Verify Valid path enables push\nwhen valid S3 key entered",
+      "description": "Feature: Push Session JSON to S3\nScenario: Valid path enables push\nGiven valid S3 key entered\nWhen input validated\nThen Push button becomes enabled",
+      "acceptance": "Push button becomes enabled\nThe behavior should be validated when input validated."
+    },
+    {
+      "test_id": "UTC-2568",
+      "srs_id": "SRS-244",
+      "sds_id": "SDS-244",
+      "summary": "Verify Upload starts on push\nwhen valid file and path",
+      "description": "Feature: Push Session JSON to S3\nScenario: Upload starts on push\nGiven valid file and path\nWhen user clicks Push\nThen upload should begin",
+      "acceptance": "Upload should begin\nThe behavior should be validated when user clicks Push."
+    },
+    {
+      "test_id": "UTC-2569",
+      "srs_id": "SRS-244",
+      "sds_id": "SDS-244",
+      "summary": "Verify Progress feedback shown\nwhen upload in progress",
+      "description": "Feature: Push Session JSON to S3\nScenario: Progress feedback shown\nGiven upload in progress\nWhen transfer occurs\nThen progress spinner or bar should display",
+      "acceptance": "Progress spinner or bar should display\nThe behavior should be validated when transfer occurs."
+    },
+    {
+      "test_id": "UTC-2570",
+      "srs_id": "SRS-244",
+      "sds_id": "SDS-244",
+      "summary": "Verify Successful upload\nwhen upload completes",
+      "description": "Feature: Push Session JSON to S3\nScenario: Successful upload\nGiven upload completes\nWhen response received\nThen success toast should appear",
+      "acceptance": "Success toast should appear\nThe behavior should be validated when response received."
+    },
+    {
+      "test_id": "UTC-2571",
+      "srs_id": "SRS-244",
+      "sds_id": "SDS-244",
+      "summary": "Verify File stored in correct folder\nwhen upload success",
+      "description": "Feature: Push Session JSON to S3\nScenario: File stored in correct folder\nGiven upload success\nWhen checking bucket\nThen JSON should exist in specified path",
+      "acceptance": "JSON should exist in specified path\nThe behavior should be validated when checking bucket."
+    },
+    {
+      "test_id": "UTC-2572",
+      "srs_id": "SRS-244",
+      "sds_id": "SDS-244",
+      "summary": "Verify Reject invalid path\nwhen malformed S3 key",
+      "description": "Feature: Push Session JSON to S3\nScenario: Reject invalid path\nGiven malformed S3 key\nWhen push attempted\nThen validation message should appear",
+      "acceptance": "Validation message should appear\nThe behavior should be validated when push attempted."
+    },
+    {
+      "test_id": "UTC-2573",
+      "srs_id": "SRS-244",
+      "sds_id": "SDS-244",
+      "summary": "Verify Access denied path\nwhen unauthorized bucket/folder",
+      "description": "Feature: Push Session JSON to S3\nScenario: Access denied path\nGiven unauthorized bucket/folder\nWhen push attempted\nThen access denied error should display",
+      "acceptance": "Access denied error should display\nThe behavior should be validated when push attempted."
+    },
+    {
+      "test_id": "UTC-2574",
+      "srs_id": "SRS-244",
+      "sds_id": "SDS-244",
+      "summary": "Verify Prevent partial uploads on failure\nwhen network fails mid-upload",
+      "description": "Feature: Push Session JSON to S3\nScenario: Prevent partial uploads on failure\nGiven network fails mid-upload\nWhen transfer interrupted\nThen partial file should not remain",
+      "acceptance": "Partial file should not remain\nThe behavior should be validated when transfer interrupted."
+    },
+    {
+      "test_id": "UTC-2575",
+      "srs_id": "SRS-244",
+      "sds_id": "SDS-244",
+      "summary": "Verify Server failure\nwhen server error occurs",
+      "description": "Feature: Push Session JSON to S3\nScenario: Server failure\nGiven server error occurs\nWhen upload attempted\nThen failure toast should display",
+      "acceptance": "Failure toast should display\nThe behavior should be validated when upload attempted."
+    },
+    {
+      "test_id": "UTC-2576",
+      "srs_id": "SRS-244",
+      "sds_id": "SDS-244",
+      "summary": "Verify Cancel upload\nwhen dialog open",
+      "description": "Feature: Push Session JSON to S3\nScenario: Cancel upload\nGiven dialog open\nWhen user clicks Cancel\nThen upload process should stop",
+      "acceptance": "Upload process should stop\nThe behavior should be validated when user clicks Cancel."
+    },
+    {
+      "test_id": "UTC-2577",
+      "srs_id": "SRS-244",
+      "sds_id": "SDS-244",
+      "summary": "Verify Fast upload response\nwhen normal network",
+      "description": "Feature: Push Session JSON to S3\nScenario: Fast upload response\nGiven normal network\nWhen pushing file\nThen completion should occur within acceptable time",
+      "acceptance": "Completion should occur within acceptable time\nThe behavior should be validated when pushing file."
+    },
+    {
+      "test_id": "UTC-2578",
+      "srs_id": "SRS-244",
+      "sds_id": "SDS-244",
+      "summary": "Verify No file selected\nwhen no JSON available",
+      "description": "Feature: Push Session JSON to S3\nScenario: No file selected\nGiven no JSON available\nWhen push clicked\nThen system blocks action with message",
+      "acceptance": "System blocks action with message\nThe behavior should be validated when push clicked."
+    },
+    {
+      "test_id": "UTC-2579",
+      "srs_id": "SRS-244",
+      "sds_id": "SDS-244",
+      "summary": "Verify Keyboard support\nwhen Push button focused",
+      "description": "Feature: Push Session JSON to S3\nScenario: Keyboard support\nGiven Push button focused\nWhen Enter pressed\nThen upload should start",
+      "acceptance": "Upload should start\nThe behavior should be validated when Enter pressed."
+    },
+    {
+      "test_id": "UTC-2580",
+      "srs_id": "SRS-245",
+      "sds_id": "SDS-245",
+      "summary": "Verify Success toast shown after upload\nwhen a valid JSON file upload completes successfully",
+      "description": "Feature: Upload Success Notification\nScenario: Success toast shown after upload\nGiven a valid JSON file upload completes successfully\nWhen the system receives a success response\nThen a success notification should be displayed",
+      "acceptance": "A success notification should be displayed\nThe behavior should be validated when the system receives a success response."
+    },
+    {
+      "test_id": "UTC-2581",
+      "srs_id": "SRS-245",
+      "sds_id": "SDS-245",
+      "summary": "Verify Success toast shown after S3 link\nwhen a valid S3 JSON link operation completes successfully",
+      "description": "Feature: Upload Success Notification\nScenario: Success toast shown after S3 link\nGiven a valid S3 JSON link operation completes successfully\nWhen the link is confirmed\nThen a success notification should be displayed",
+      "acceptance": "A success notification should be displayed\nThe behavior should be validated when the link is confirmed."
+    },
+    {
+      "test_id": "UTC-2582",
+      "srs_id": "SRS-245",
+      "sds_id": "SDS-245",
+      "summary": "Verify Notification triggered only after success\nwhen upload is in progress",
+      "description": "Feature: Upload Success Notification\nScenario: Notification triggered only after success\nGiven upload is in progress\nWhen success response is not yet received\nThen success notification should not be shown",
+      "acceptance": "Success notification should not be shown\nThe behavior should be validated when success response is not yet received."
+    },
+    {
+      "test_id": "UTC-2583",
+      "srs_id": "SRS-245",
+      "sds_id": "SDS-245",
+      "summary": "Verify UI reflects updated file state\nwhen upload succeeds",
+      "description": "Feature: Upload Success Notification\nScenario: UI reflects updated file state\nGiven upload succeeds\nWhen notification appears\nThen uploaded/linked file status should be updated in UI",
+      "acceptance": "Uploaded/linked file status should be updated in UI\nThe behavior should be validated when notification appears."
+    },
+    {
+      "test_id": "UTC-2584",
+      "srs_id": "SRS-245",
+      "sds_id": "SDS-245",
+      "summary": "Verify No success toast on failure\nwhen upload fails",
+      "description": "Feature: Upload Success Notification\nScenario: No success toast on failure\nGiven upload fails\nWhen error response is received\nThen success notification should not be displayed",
+      "acceptance": "Success notification should not be displayed\nThe behavior should be validated when error response is received."
+    },
+    {
+      "test_id": "UTC-2585",
+      "srs_id": "SRS-245",
+      "sds_id": "SDS-245",
+      "summary": "Verify Error message shown instead of success\nwhen upload or link operation fails",
+      "description": "Feature: Upload Success Notification\nScenario: Error message shown instead of success\nGiven upload or link operation fails\nWhen failure occurs\nThen an appropriate error message should be displayed",
+      "acceptance": "An appropriate error message should be displayed\nThe behavior should be validated when failure occurs."
+    },
+    {
+      "test_id": "UTC-2586",
+      "srs_id": "SRS-245",
+      "sds_id": "SDS-245",
+      "summary": "Verify Success message clarity\nwhen success toast is displayed",
+      "description": "Feature: Upload Success Notification\nScenario: Success message clarity\nGiven success toast is displayed\nWhen user reads the message\nThen it should clearly indicate successful upload or link",
+      "acceptance": "It should clearly indicate successful upload or link\nThe behavior should be validated when user reads the message."
+    },
+    {
+      "test_id": "UTC-2587",
+      "srs_id": "SRS-245",
+      "sds_id": "SDS-245",
+      "summary": "Verify Single notification per operation\nwhen one successful upload/link action",
+      "description": "Feature: Upload Success Notification\nScenario: Single notification per operation\nGiven one successful upload/link action\nWhen operation completes\nThen only one success notification should be shown",
+      "acceptance": "Only one success notification should be shown\nThe behavior should be validated when operation completes."
+    },
+    {
+      "test_id": "UTC-2588",
+      "srs_id": "SRS-246",
+      "sds_id": "SDS-246",
+      "summary": "Verify Authorized user can view S3 actions\nwhen the user has S3 upload permission",
+      "description": "Feature: Role-Based S3 Access Control\nScenario: Authorized user can view S3 actions\nGiven the user has S3 upload permission\nWhen the Create Session page loads\nThen “Upload from S3” and “Push to S3” options should be visible and enabled",
+      "acceptance": "\"Upload from S3\" and \"Push to S3\" options should be visible and enabled\nThe behavior should be validated when the Create Session page loads."
+    }
+  ]
+}

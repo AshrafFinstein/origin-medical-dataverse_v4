@@ -1,0 +1,163 @@
+{
+  "spec_file": "e2e/tests/masters/URS-DV-GEN-05/SRS-021/SDS-021.spec.ts",
+  "plan_urs": "URS-DV-GEN-05",
+  "srs_str": "021",
+  "domain": "masters",
+  "page_class": "SessionLabelPage",
+  "page_import": "session-label.page",
+  "goto_method": "gotoMasters",
+  "test_cases": [
+    {
+      "test_id": "UTC-539",
+      "srs_id": "SRS-45",
+      "sds_id": "SDS-45",
+      "summary": "Verify System handles large invalid input safely\nwhen extremely long text is pasted",
+      "description": "Feature: Session Label Description Validation – Prevent technical errors\nScenario: System handles large invalid input safely\nGiven extremely long text is pasted\nWhen validation runs\nThen the system should not crash and should show an error message",
+      "acceptance": "The system should not crash and should show an error message\nThe behavior should be validated when validation runs."
+    },
+    {
+      "test_id": "UTC-540",
+      "srs_id": "SRS-45",
+      "sds_id": "SDS-45",
+      "summary": "Verify Visual highlight on error\nwhen validation fails",
+      "description": "Feature: Session Label Description Validation – Clear feedback\nScenario: Visual highlight on error\nGiven validation fails\nWhen the message appears\nThen the Description field should be visually highlighted",
+      "acceptance": "The Description field should be visually highlighted\nThe behavior should be validated when the message appears."
+    },
+    {
+      "test_id": "UTC-541",
+      "srs_id": "SRS-46",
+      "sds_id": "SDS-46",
+      "summary": "Verify Color Picker visible with default white\nwhen the Create Session Label popup is open",
+      "description": "Feature: Session Label Color & Submit Handling\nScenario: Color Picker visible with default white\nGiven the Create Session Label popup is open\nWhen the user performs the action\nThen the system should behave accordingly",
+      "acceptance": "The system should behave accordingly\nThe behavior should be validated when the user performs the action."
+    },
+    {
+      "test_id": "UTC-542",
+      "srs_id": "SRS-46",
+      "sds_id": "SDS-46",
+      "summary": "Verify User selects a color successfully\nwhen the Create Session Label popup is open",
+      "description": "Feature: Session Label Color & Submit Handling\nScenario: User selects a color successfully\nGiven the Create Session Label popup is open\nWhen the user performs the action\nThen the system should behave accordingly",
+      "acceptance": "The system should behave accordingly\nThe behavior should be validated when the user performs the action."
+    },
+    {
+      "test_id": "UTC-543",
+      "srs_id": "SRS-46",
+      "sds_id": "SDS-46",
+      "summary": "Verify Selected color reflected in preview\nwhen the Create Session Label popup is open",
+      "description": "Feature: Session Label Color & Submit Handling\nScenario: Selected color reflected in preview\nGiven the Create Session Label popup is open\nWhen the user performs the action\nThen the system should behave accordingly",
+      "acceptance": "The system should behave accordingly\nThe behavior should be validated when the user performs the action."
+    },
+    {
+      "test_id": "UTC-544",
+      "srs_id": "SRS-46",
+      "sds_id": "SDS-46",
+      "summary": "Verify Submit disabled when mandatory fields empty\nwhen the Create Session Label popup is open",
+      "description": "Feature: Session Label Color & Submit Handling\nScenario: Submit disabled when mandatory fields empty\nGiven the Create Session Label popup is open\nWhen the user performs the action\nThen the system should behave accordingly",
+      "acceptance": "The system should behave accordingly\nThe behavior should be validated when the user performs the action."
+    },
+    {
+      "test_id": "UTC-545",
+      "srs_id": "SRS-46",
+      "sds_id": "SDS-46",
+      "summary": "Verify Submit enabled when all fields valid\nwhen the Create Session Label popup is open",
+      "description": "Feature: Session Label Color & Submit Handling\nScenario: Submit enabled when all fields valid\nGiven the Create Session Label popup is open\nWhen the user performs the action\nThen the system should behave accordingly",
+      "acceptance": "The system should behave accordingly\nThe behavior should be validated when the user performs the action."
+    },
+    {
+      "test_id": "UTC-546",
+      "srs_id": "SRS-46",
+      "sds_id": "SDS-46",
+      "summary": "Verify Color saved in payload on submit\nwhen the Create Session Label popup is open",
+      "description": "Feature: Session Label Color & Submit Handling\nScenario: Color saved in payload on submit\nGiven the Create Session Label popup is open\nWhen the user performs the action\nThen the system should behave accordingly",
+      "acceptance": "The system should behave accordingly\nThe behavior should be validated when the user performs the action."
+    },
+    {
+      "test_id": "UTC-547",
+      "srs_id": "SRS-46",
+      "sds_id": "SDS-46",
+      "summary": "Verify Popup retains selected color before submission\nwhen the Create Session Label popup is open",
+      "description": "Feature: Session Label Color & Submit Handling\nScenario: Popup retains selected color before submission\nGiven the Create Session Label popup is open\nWhen the user performs the action\nThen the system should behave accordingly",
+      "acceptance": "The system should behave accordingly\nThe behavior should be validated when the user performs the action."
+    },
+    {
+      "test_id": "UTC-548",
+      "srs_id": "SRS-46",
+      "sds_id": "SDS-46",
+      "summary": "Verify Prevent submit when invalid name\nwhen the Create Session Label popup is open",
+      "description": "Feature: Session Label Color & Submit Handling\nScenario: Prevent submit when invalid name\nGiven the Create Session Label popup is open\nWhen the user performs the action\nThen the system should behave accordingly",
+      "acceptance": "The system should behave accordingly\nThe behavior should be validated when the user performs the action."
+    },
+    {
+      "test_id": "UTC-549",
+      "srs_id": "SRS-46",
+      "sds_id": "SDS-46",
+      "summary": "Verify Multiple color changes handled correctly\nwhen the Create Session Label popup is open",
+      "description": "Feature: Session Label Color & Submit Handling\nScenario: Multiple color changes handled correctly\nGiven the Create Session Label popup is open\nWhen the user performs the action\nThen the system should behave accordingly",
+      "acceptance": "The system should behave accordingly\nThe behavior should be validated when the user performs the action."
+    },
+    {
+      "test_id": "UTC-550",
+      "srs_id": "SRS-46",
+      "sds_id": "SDS-46",
+      "summary": "Verify Clear visual feedback for selected color\nwhen the Create Session Label popup is open",
+      "description": "Feature: Session Label Color & Submit Handling\nScenario: Clear visual feedback for selected color\nGiven the Create Session Label popup is open\nWhen the user performs the action\nThen the system should behave accordingly",
+      "acceptance": "The system should behave accordingly\nThe behavior should be validated when the user performs the action."
+    },
+    {
+      "test_id": "UTC-551",
+      "srs_id": "SRS-46",
+      "sds_id": "SDS-46",
+      "summary": "Verify Unauthorized users cannot submit label\nwhen the Create Session Label popup is open",
+      "description": "Feature: Session Label Color & Submit Handling\nScenario: Unauthorized users cannot submit label\nGiven the Create Session Label popup is open\nWhen the user performs the action\nThen the system should behave accordingly",
+      "acceptance": "The system should behave accordingly\nThe behavior should be validated when the user performs the action."
+    },
+    {
+      "test_id": "UTC-552",
+      "srs_id": "SRS-46",
+      "sds_id": "SDS-46",
+      "summary": "Verify API failure shows friendly error\nwhen the Create Session Label popup is open",
+      "description": "Feature: Session Label Color & Submit Handling\nScenario: API failure shows friendly error\nGiven the Create Session Label popup is open\nWhen the user performs the action\nThen the system should behave accordingly",
+      "acceptance": "The system should behave accordingly\nThe behavior should be validated when the user performs the action."
+    },
+    {
+      "test_id": "UTC-553",
+      "srs_id": "SRS-47",
+      "sds_id": "SDS-47",
+      "summary": "Verify Popup opens in Create mode\nwhen the user clicks Create Session Label",
+      "description": "Feature: Session Label Popup Close, Cancel & Edit Handling\nScenario: Popup opens in Create mode\nGiven the user clicks Create Session Label\nWhen the popup is displayed\nThen Name, Description and Color fields should be visible",
+      "acceptance": "Name, Description and Color fields should be visible\nThe behavior should be validated when the popup is displayed."
+    },
+    {
+      "test_id": "UTC-554",
+      "srs_id": "SRS-47",
+      "sds_id": "SDS-47",
+      "summary": "Verify Close icon dismisses popup\nwhen the popup is open",
+      "description": "Feature: Session Label Popup Close, Cancel & Edit Handling\nScenario: Close icon dismisses popup\nGiven the popup is open\nWhen the user clicks the Close (X) icon\nThen the popup should close without saving any data",
+      "acceptance": "The popup should close without saving any data\nThe behavior should be validated when the user clicks the Close (X) icon."
+    },
+    {
+      "test_id": "UTC-555",
+      "srs_id": "SRS-47",
+      "sds_id": "SDS-47",
+      "summary": "Verify Cancel button dismisses popup\nwhen the popup is open",
+      "description": "Feature: Session Label Popup Close, Cancel & Edit Handling\nScenario: Cancel button dismisses popup\nGiven the popup is open\nWhen the user clicks Cancel\nThen the popup should close and discard changes",
+      "acceptance": "The popup should close and discard changes\nThe behavior should be validated when the user clicks Cancel."
+    },
+    {
+      "test_id": "UTC-556",
+      "srs_id": "SRS-47",
+      "sds_id": "SDS-47",
+      "summary": "Verify Unsaved data is discarded on Close\nwhen the user enters label details",
+      "description": "Feature: Session Label Popup Close, Cancel & Edit Handling\nScenario: Unsaved data is discarded on Close\nGiven the user enters label details\nWhen the popup is closed using X\nThen reopening should show empty/default values",
+      "acceptance": "Reopening should show empty/default values\nThe behavior should be validated when the popup is closed using X."
+    },
+    {
+      "test_id": "UTC-557",
+      "srs_id": "SRS-47",
+      "sds_id": "SDS-47",
+      "summary": "Verify Unsaved data is discarded on Cancel\nwhen the user modifies fields",
+      "description": "Feature: Session Label Popup Close, Cancel & Edit Handling\nScenario: Unsaved data is discarded on Cancel\nGiven the user modifies fields\nWhen Cancel is clicked\nThen no backend save or API call should occur",
+      "acceptance": "No backend save or API call should occur\nThe behavior should be validated when Cancel is clicked."
+    }
+  ]
+}

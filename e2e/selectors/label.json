@@ -1,19 +1,11 @@
 {
-  "label-create": {
-    "button": "[data-testid=\"label-create-button\"]",
-    "modal": "[data-testid=\"label-create-modal\"]",
-    "name-input": "[data-testid=\"label-create-name-input\"]",
-    "abbreviation-input": "[data-testid=\"label-create-abbreviation-input\"]",
-    "cancel-button": "[data-testid=\"label-create-cancel-button\"]",
-    "submit-button": "[data-testid=\"label-create-submit-button\"]"
-  },
-  "label-export": {
-    "button": "[data-testid=\"label-export-button\"]"
-  },
-  "label-table": {
-    "root": "[data-testid=\"label-table\"]"
-  },
-  "label-search": {
-    "input": "input[type=\"search\"], input[placeholder*=\"Search\"]"
-  }
+  "label-create-button": "label-create-button",
+  "label-create-modal": "label-create-modal",
+  "label-create-name-input": "label-create-name-input",
+  "label-create-abbreviation-input": "label-create-abbreviation-input",
+  "label-create-cancel-button": "label-create-cancel-button",
+  "label-create-submit-button": "label-create-submit-button",
+  "label-export-button": "label-export-button",
+  "label-table": "label-table",
+  "label-search-input": "input[type=\"search\"], input[placeholder*=\"Search\"]"
 }

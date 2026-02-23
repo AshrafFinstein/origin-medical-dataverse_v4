@@ -80,5 +80,27 @@
   },
   "epic-pagination": {
     "root": "epic-table"
-  }
+  },
+  "epic-search-button": "epic-search-button",
+  "epic-search-modal": "epic-search-modal",
+  "epic-search-input": "epic-search-input",
+  "epic-search-submit-button": "epic-search-submit-button",
+  "epic-search-results-table": "epic-search-results-table",
+  "epic-delete-session-requests-button": "epic-delete-session-requests-button",
+  "epic-delete-modal": "epic-delete-modal",
+  "epic-delete-cancel-button": "epic-delete-cancel-button",
+  "epic-delete-confirm-button": "epic-delete-confirm-button",
+  "epic-create-button": "epic-create-button",
+  "epic-create-name-input": "epic-create-name-input",
+  "epic-create-description-input": "epic-create-description-input",
+  "epic-create-cancel-button": "epic-create-cancel-button",
+  "epic-create-submit-button": "epic-create-submit-button",
+  "delete-session-requests-modal": "delete-session-requests-modal",
+  "delete-session-requests-table": "delete-session-requests-table",
+  "reject-delete-request-modal": "reject-delete-request-modal",
+  "reject-request-session-name-input": "reject-request-session-name-input",
+  "reject-request-reason-input": "reject-request-reason-input",
+  "reject-request-cancel-button": "reject-request-cancel-button",
+  "reject-request-confirm-button": "reject-request-confirm-button",
+  "epic-go-button-${index}": "epic-go-button-${index}"
 }

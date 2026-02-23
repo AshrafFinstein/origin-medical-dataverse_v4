@@ -1,0 +1,155 @@
+{
+  "spec_file": "e2e/tests/masters/URS-DV-GEN-05/SRS-024/SDS-024.spec.ts",
+  "plan_urs": "URS-DV-GEN-05",
+  "srs_str": "024",
+  "domain": "masters",
+  "page_class": "SessionLabelPage",
+  "page_import": "session-label.page",
+  "goto_method": "gotoMasters",
+  "test_cases": [
+    {
+      "test_id": "UTC-596",
+      "srs_id": "SRS-51",
+      "sds_id": "SDS-51",
+      "summary": "Verify Loading indicator shown during delay\nwhen network latency occurs",
+      "description": "Feature: Session Label Dropdown Performance\nScenario: Loading indicator shown during delay\nGiven network latency occurs\nWhen the dropdown is opened\nThen a loading spinner or indicator should be displayed until data loads",
+      "acceptance": "A loading spinner or indicator should be displayed until data loads\nThe behavior should be validated when the dropdown is opened."
+    },
+    {
+      "test_id": "UTC-597",
+      "srs_id": "SRS-51",
+      "sds_id": "SDS-51",
+      "summary": "Verify Smooth scrolling with many labels\nwhen 200+ labels exist",
+      "description": "Feature: Session Label Dropdown Performance\nScenario: Smooth scrolling with many labels\nGiven 200+ labels exist\nWhen the user scrolls the dropdown\nThen scrolling should remain smooth without UI freeze",
+      "acceptance": "Scrolling should remain smooth without UI freeze\nThe behavior should be validated when the user scrolls the dropdown."
+    },
+    {
+      "test_id": "UTC-598",
+      "srs_id": "SRS-51",
+      "sds_id": "SDS-51",
+      "summary": "Verify No page blocking during load\nwhen dropdown data is being fetched",
+      "description": "Feature: Session Label Dropdown Performance\nScenario: No page blocking during load\nGiven dropdown data is being fetched\nWhen the request is processing\nThen the rest of the page should remain responsive",
+      "acceptance": "The rest of the page should remain responsive\nThe behavior should be validated when the request is processing."
+    },
+    {
+      "test_id": "UTC-599",
+      "srs_id": "SRS-51",
+      "sds_id": "SDS-51",
+      "summary": "Verify Cached labels load faster on reopen\nwhen the dropdown was opened once",
+      "description": "Feature: Session Label Dropdown Performance\nScenario: Cached labels load faster on reopen\nGiven the dropdown was opened once\nWhen reopened again within short time\nThen labels should appear faster using cached data",
+      "acceptance": "Labels should appear faster using cached data\nThe behavior should be validated when reopened again within short time."
+    },
+    {
+      "test_id": "UTC-600",
+      "srs_id": "SRS-51",
+      "sds_id": "SDS-51",
+      "summary": "Verify Failed load shows safe empty state\nwhen label fetch API fails",
+      "description": "Feature: Session Label Dropdown Performance\nScenario: Failed load shows safe empty state\nGiven label fetch API fails\nWhen the dropdown opens\nThen an empty state should be shown without breaking the page",
+      "acceptance": "An empty state should be shown without breaking the page\nThe behavior should be validated when the dropdown opens."
+    },
+    {
+      "test_id": "UTC-601",
+      "srs_id": "SRS-51",
+      "sds_id": "SDS-51",
+      "summary": "Verify Retry works after failure\nwhen first fetch fails",
+      "description": "Feature: Session Label Dropdown Performance\nScenario: Retry works after failure\nGiven first fetch fails\nWhen the user retries opening the dropdown\nThen labels should load successfully",
+      "acceptance": "Labels should load successfully\nThe behavior should be validated when the user retries opening the dropdown."
+    },
+    {
+      "test_id": "UTC-602",
+      "srs_id": "SRS-51",
+      "sds_id": "SDS-51",
+      "summary": "Verify Large dataset load within threshold\nwhen 500+ labels exist",
+      "description": "Feature: Session Label Dropdown Performance\nScenario: Large dataset load within threshold\nGiven 500+ labels exist\nWhen dropdown loads\nThen response time should remain within acceptable threshold (<2–3s)",
+      "acceptance": "Response time should remain within acceptable threshold (<2â€“3s)\nThe behavior should be validated when dropdown loads."
+    },
+    {
+      "test_id": "UTC-603",
+      "srs_id": "SRS-51",
+      "sds_id": "SDS-51",
+      "summary": "Verify No visual flicker during render\nwhen the dropdown loads",
+      "description": "Feature: Session Label Dropdown Performance\nScenario: No visual flicker during render\nGiven the dropdown loads\nWhen labels are displayed\nThen there should be no layout shift or flicker",
+      "acceptance": "There should be no layout shift or flicker\nThe behavior should be validated when labels are displayed."
+    },
+    {
+      "test_id": "UTC-604",
+      "srs_id": "SRS-52",
+      "sds_id": "SDS-52",
+      "summary": "Verify Placeholder text visible\nwhen the Session Creation page loads",
+      "description": "Feature: Session Label Usability & Clarity\nScenario: Placeholder text visible\nGiven the Session Creation page loads\nWhen the Session Label field is displayed\nThen a clear placeholder text (e.g., \"Select Session Label\") should be visible",
+      "acceptance": "A clear placeholder text (e.g., \"Select Session Label\") should be visible\nThe behavior should be validated when the Session Label field is displayed."
+    },
+    {
+      "test_id": "UTC-605",
+      "srs_id": "SRS-52",
+      "sds_id": "SDS-52",
+      "summary": "Verify Dropdown alignment consistent\nwhen the form fields are displayed",
+      "description": "Feature: Session Label Usability & Clarity\nScenario: Dropdown alignment consistent\nGiven the form fields are displayed\nWhen viewing the Session Label dropdown\nThen the field should align consistently with other input controls",
+      "acceptance": "The field should align consistently with other input controls\nThe behavior should be validated when viewing the Session Label dropdown."
+    },
+    {
+      "test_id": "UTC-606",
+      "srs_id": "SRS-52",
+      "sds_id": "SDS-52",
+      "summary": "Verify Labels clearly readable\nwhen labels exist in dropdown",
+      "description": "Feature: Session Label Usability & Clarity\nScenario: Labels clearly readable\nGiven labels exist in dropdown\nWhen the dropdown opens\nThen label names should be clearly readable without truncation or overlap",
+      "acceptance": "Label names should be clearly readable without truncation or overlap\nThe behavior should be validated when the dropdown opens."
+    },
+    {
+      "test_id": "UTC-607",
+      "srs_id": "SRS-52",
+      "sds_id": "SDS-52",
+      "summary": "Verify Selected label visible after selection\nwhen the user selects a label",
+      "description": "Feature: Session Label Usability & Clarity\nScenario: Selected label visible after selection\nGiven the user selects a label\nWhen the dropdown closes\nThen the selected label should be displayed clearly in the field",
+      "acceptance": "The selected label should be displayed clearly in the field\nThe behavior should be validated when the dropdown closes."
+    },
+    {
+      "test_id": "UTC-608",
+      "srs_id": "SRS-52",
+      "sds_id": "SDS-52",
+      "summary": "Verify Clear selection feedback\nwhen the user selects a label",
+      "description": "Feature: Session Label Usability & Clarity\nScenario: Clear selection feedback\nGiven the user selects a label\nWhen selection occurs\nThen visual feedback (highlight/checkmark) should confirm selection",
+      "acceptance": "Visual feedback (highlight/checkmark) should confirm selection\nThe behavior should be validated when selection occurs."
+    },
+    {
+      "test_id": "UTC-609",
+      "srs_id": "SRS-52",
+      "sds_id": "SDS-52",
+      "summary": "Verify Easy open and close behavior\nwhen the dropdown is visible",
+      "description": "Feature: Session Label Usability & Clarity\nScenario: Easy open and close behavior\nGiven the dropdown is visible\nWhen the user clicks the field or outside area\nThen it should open and close smoothly without confusion",
+      "acceptance": "It should open and close smoothly without confusion\nThe behavior should be validated when the user clicks the field or outside area."
+    },
+    {
+      "test_id": "UTC-610",
+      "srs_id": "SRS-52",
+      "sds_id": "SDS-52",
+      "summary": "Verify Empty state message clarity\nwhen no labels exist",
+      "description": "Feature: Session Label Usability & Clarity\nScenario: Empty state message clarity\nGiven no labels exist\nWhen the dropdown opens\nThen a clear “No Labels Available” message should be displayed",
+      "acceptance": "A clear \"No Labels Available\" message should be displayed\nThe behavior should be validated when the dropdown opens."
+    },
+    {
+      "test_id": "UTC-611",
+      "srs_id": "SRS-52",
+      "sds_id": "SDS-52",
+      "summary": "Verify Remove selected label easily\nwhen a label is selected",
+      "description": "Feature: Session Label Usability & Clarity\nScenario: Remove selected label easily\nGiven a label is selected\nWhen the user clicks remove/clear option\nThen the field should reset to empty state",
+      "acceptance": "The field should reset to empty state\nThe behavior should be validated when the user clicks remove/clear option."
+    },
+    {
+      "test_id": "UTC-612",
+      "srs_id": "SRS-52",
+      "sds_id": "SDS-52",
+      "summary": "Verify No confusing technical errors\nwhen an invalid or empty state occurs",
+      "description": "Feature: Session Label Usability & Clarity\nScenario: No confusing technical errors\nGiven an invalid or empty state occurs\nWhen validation is triggered\nThen a simple non-technical message should be shown",
+      "acceptance": "A simple non-technical message should be shown\nThe behavior should be validated when validation is triggered."
+    },
+    {
+      "test_id": "UTC-613",
+      "srs_id": "SRS-52",
+      "sds_id": "SDS-52",
+      "summary": "Verify Keyboard accessibility support\nwhen the user uses keyboard navigation",
+      "description": "Feature: Session Label Usability & Clarity\nScenario: Keyboard accessibility support\nGiven the user uses keyboard navigation\nWhen pressing Tab/Enter/Arrow keys\nThen the dropdown should be operable without mouse",
+      "acceptance": "The dropdown should be operable without mouse\nThe behavior should be validated when pressing Tab/Enter/Arrow keys."
+    }
+  ]
+}

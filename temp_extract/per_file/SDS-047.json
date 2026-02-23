@@ -1,0 +1,291 @@
+{
+  "spec_file": "e2e/tests/general/URS-DV-GEN-12/SRS-047/SDS-047.spec.ts",
+  "plan_urs": "URS-DV-GEN-12",
+  "srs_str": "047",
+  "domain": "general",
+  "page_class": "VersionTrackerPage",
+  "page_import": "version-tracker.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-1810",
+      "srs_id": "SRS-136",
+      "sds_id": "SDS-136",
+      "summary": "Verify version history loads consistently with large dataset\nwhen a session has 100+ versions stored",
+      "description": "Feature: Version History – Fast Load for Large Dataset\n\nScenario: Verify version history loads consistently with large dataset\n\nGiven a session has 100+ versions stored\nWhen the user opens the Version History panel\nThen the system should load the version list smoothly without UI freeze",
+      "acceptance": "The system should load the version list smoothly without UI freeze\nThe behavior should be validated when the user opens the Version History panel."
+    },
+    {
+      "test_id": "UTC-1811",
+      "srs_id": "SRS-136",
+      "sds_id": "SDS-136",
+      "summary": "Verify UI remains responsive while loading version history\nwhen a session contains many versions",
+      "description": "Feature: Version History – No UI Freeze During Load\n\nScenario: Verify UI remains responsive while loading version history\n\nGiven a session contains many versions\nWhen the user opens Version History panel\nThen the UI should remain responsive\nAnd user should not face page freeze",
+      "acceptance": "The UI should remain responsive\nThe behavior should be validated when the user opens Version History panel."
+    },
+    {
+      "test_id": "UTC-1812",
+      "srs_id": "SRS-136",
+      "sds_id": "SDS-136",
+      "summary": "Verify pagination navigation is fast\nwhen version history is paginated across multiple pages",
+      "description": "Feature: Version History – Pagination Performance\n\nScenario: Verify pagination navigation is fast\n\nGiven version history is paginated across multiple pages\nWhen the user navigates between pages\nThen each page transition should load quickly without delay",
+      "acceptance": "Each page transition should load quickly without delay\nThe behavior should be validated when the user navigates between pages."
+    },
+    {
+      "test_id": "UTC-1813",
+      "srs_id": "SRS-136",
+      "sds_id": "SDS-136",
+      "summary": "Verify system loads records in batches (not full dataset at once)\nwhen a session has a large version history dataset",
+      "description": "Feature: Version History – Batch Fetch Validation\n\nScenario: Verify system loads records in batches (not full dataset at once)\n\nGiven a session has a large version history dataset\nWhen the user opens Version History panel\nThen the system should fetch records in batches using pagination\nAnd should not load all records in a single request",
+      "acceptance": "The system should fetch records in batches using pagination\nThe behavior should be validated when the user opens Version History panel."
+    },
+    {
+      "test_id": "UTC-1814",
+      "srs_id": "SRS-136",
+      "sds_id": "SDS-136",
+      "summary": "Verify response times remain predictable across repeated loads\nwhen a session contains many versions",
+      "description": "Feature: Version History – Consistent Response Time\n\nScenario: Verify response times remain predictable across repeated loads\n\nGiven a session contains many versions\nWhen the user opens Version History panel multiple times\nThen the load time should remain consistent across attempts",
+      "acceptance": "The load time should remain consistent across attempts\nThe behavior should be validated when the user opens Version History panel multiple times."
+    },
+    {
+      "test_id": "UTC-1815",
+      "srs_id": "SRS-136",
+      "sds_id": "SDS-136",
+      "summary": "Verify smooth scrolling inside Version History list\nwhen many version records exist in the table",
+      "description": "Feature: Version History – Scroll Performance with Large Dataset\n\nScenario: Verify smooth scrolling inside Version History list\n\nGiven many version records exist in the table\nWhen the user scrolls through the version list\nThen scrolling should remain smooth without lag",
+      "acceptance": "Scrolling should remain smooth without lag\nThe behavior should be validated when the user scrolls through the version list."
+    },
+    {
+      "test_id": "UTC-1816",
+      "srs_id": "SRS-137",
+      "sds_id": "SDS-137",
+      "summary": "Verify downloaded JSON is not partial/incomplete\nwhen the user selects a version from Version History list",
+      "description": "Feature: JSON Download – Complete File Transfer\n\nScenario: Verify downloaded JSON is not partial/incomplete\n\nGiven the user selects a version from Version History list\nWhen the user downloads the JSON file\nThen the file should download completely without truncation",
+      "acceptance": "The file should download completely without truncation\nThe behavior should be validated when the user downloads the JSON file."
+    },
+    {
+      "test_id": "UTC-1817",
+      "srs_id": "SRS-137",
+      "sds_id": "SDS-137",
+      "summary": "Verify downloaded JSON file is not corrupted\nwhen a valid JSON version exists in storage",
+      "description": "Feature: JSON Download – File Integrity Validation\n\nScenario: Verify downloaded JSON file is not corrupted\n\nGiven a valid JSON version exists in storage\nWhen the user downloads the version file\nThen the downloaded file should open successfully\nAnd should contain valid JSON format",
+      "acceptance": "The downloaded file should open successfully\nThe behavior should be validated when the user downloads the version file."
+    },
+    {
+      "test_id": "UTC-1818",
+      "srs_id": "SRS-137",
+      "sds_id": "SDS-137",
+      "summary": "Verify repeated downloads of same version give same output\nwhen version V4 exists in history",
+      "description": "Feature: JSON Download – Multiple Downloads Consistency\n\nScenario: Verify repeated downloads of same version give same output\n\nGiven version V4 exists in history\nWhen the user downloads V4 multiple times\nThen the downloaded file content should remain consistent each time",
+      "acceptance": "The downloaded file content should remain consistent each time\nThe behavior should be validated when the user downloads V4 multiple times."
+    },
+    {
+      "test_id": "UTC-1819",
+      "srs_id": "SRS-137",
+      "sds_id": "SDS-137",
+      "summary": "Verify large JSON version downloads without corruption\nwhen a version exists with large JSON size",
+      "description": "Feature: JSON Download – Large JSON File Download Reliability\n\nScenario: Verify large JSON version downloads without corruption\n\nGiven a version exists with large JSON size\nWhen the user downloads the version file\nThen the download should complete successfully without corruption",
+      "acceptance": "The download should complete successfully without corruption\nThe behavior should be validated when the user downloads the version file."
+    },
+    {
+      "test_id": "UTC-1820",
+      "srs_id": "SRS-137",
+      "sds_id": "SDS-137",
+      "summary": "Verify system handles download interruption safely\nwhen a download is in progress",
+      "description": "Feature: JSON Download – Network Interruption Handling\n\nScenario: Verify system handles download interruption safely\n\nGiven a download is in progress\nWhen the network disconnects temporarily\nThen the download should fail safely without partial corrupted file being treated as success\nAnd system should show retry notification",
+      "acceptance": "The download should fail safely without partial corrupted file being treated as success\nThe behavior should be validated when the network disconnects temporarily."
+    },
+    {
+      "test_id": "UTC-1821",
+      "srs_id": "SRS-137",
+      "sds_id": "SDS-137",
+      "summary": "Verify retry notification shown if download fails\nwhen the system fails to retrieve the version file due to server issue",
+      "description": "Feature: JSON Download – Retry Notification on Failure\n\nScenario: Verify retry notification shown if download fails\n\nGiven the system fails to retrieve the version file due to server issue\nWhen the user clicks Download\nThen the system should show retry notification to the user",
+      "acceptance": "The system should show retry notification to the user\nThe behavior should be validated when the user clicks Download."
+    },
+    {
+      "test_id": "UTC-1822",
+      "srs_id": "SRS-137",
+      "sds_id": "SDS-137",
+      "summary": "Verify UI shows success feedback after successful download\nwhen the user downloads a JSON version successfully",
+      "description": "Feature: JSON Download – Success Feedback After Completion\n\nScenario: Verify UI shows success feedback after successful download\n\nGiven the user downloads a JSON version successfully\nWhen the download completes\nThen the UI should show success feedback (download complete toast / progress completed)",
+      "acceptance": "The UI should show success feedback (download complete toast / progress completed)\nThe behavior should be validated when the download completes."
+    },
+    {
+      "test_id": "UTC-1823",
+      "srs_id": "SRS-138",
+      "sds_id": "SDS-138",
+      "summary": "Verify Version History panel is not visible for users without permission\nwhen the user logs in with a role that has no version access permission",
+      "description": "Feature: Version History – Hide Panel for Unauthorized Users\n\nScenario: Verify Version History panel is not visible for users without permission\n\nGiven the user logs in with a role that has no version access permission\nWhen the user opens a session page\nThen the Version History panel/Version Tracker option should not be visible",
+      "acceptance": "The Version History panel/Version Tracker option should not be visible\nThe behavior should be validated when the user opens a session page."
+    },
+    {
+      "test_id": "UTC-1824",
+      "srs_id": "SRS-138",
+      "sds_id": "SDS-138",
+      "summary": "Verify system blocks access even if UI is forced open\nwhen the user is unauthorized for version access",
+      "description": "Feature: Version History – Block Interaction if Panel Visible\n\nScenario: Verify system blocks access even if UI is forced open\n\nGiven the user is unauthorized for version access\nWhen the user tries to open Version History via direct URL or forced UI action\nThen the system should block access safely",
+      "acceptance": "The system should block access safely\nThe behavior should be validated when the user tries to open Version History via direct URL or forced UI action."
+    },
+    {
+      "test_id": "UTC-1825",
+      "srs_id": "SRS-138",
+      "sds_id": "SDS-138",
+      "summary": "Verify backend checks authorization before returning version metadata\nwhen the user is unauthorized",
+      "description": "Feature: Version History – Authorization Before Metadata Retrieval\n\nScenario: Verify backend checks authorization before returning version metadata\n\nGiven the user is unauthorized\nWhen the user attempts to fetch version metadata via API call\nThen the system should reject the request\nAnd should not return any version metadata",
+      "acceptance": "The system should reject the request\nThe behavior should be validated when the user attempts to fetch version metadata via API call."
+    },
+    {
+      "test_id": "UTC-1826",
+      "srs_id": "SRS-138",
+      "sds_id": "SDS-138",
+      "summary": "Verify backend checks authorization before streaming JSON file\nwhen the user is unauthorized",
+      "description": "Feature: Version Download – Authorization Before File Streaming\n\nScenario: Verify backend checks authorization before streaming JSON file\n\nGiven the user is unauthorized\nWhen the user attempts to download a JSON version via API call\nThen the backend should reject the request\nAnd should not stream any file data",
+      "acceptance": "The backend should reject the request\nThe behavior should be validated when the user attempts to download a JSON version via API call."
+    },
+    {
+      "test_id": "UTC-1827",
+      "srs_id": "SRS-138",
+      "sds_id": "SDS-138",
+      "summary": "Verify user gets safe message when access is denied\nwhen the user is unauthorized for version access",
+      "description": "Feature: Version History – Safe Notification for Unauthorized Access\n\nScenario: Verify user gets safe message when access is denied\n\nGiven the user is unauthorized for version access\nWhen the user attempts to access Version History panel\nThen the system should show a safe notification (ex: “Access denied”)\nAnd should not expose technical error details",
+      "acceptance": "The system should show a safe notification (ex: \"Access denied\")\nThe behavior should be validated when the user attempts to access Version History panel."
+    },
+    {
+      "test_id": "UTC-1828",
+      "srs_id": "SRS-138",
+      "sds_id": "SDS-138",
+      "summary": "Verify authorized users can view version history list\nwhen the user logs in with a role that has version access permission",
+      "description": "Feature: Version History – Authorized Users Can View Metadata\n\nScenario: Verify authorized users can view version history list\n\nGiven the user logs in with a role that has version access permission\nWhen the user opens Version History panel\nThen the system should display version metadata normally",
+      "acceptance": "The system should display version metadata normally\nThe behavior should be validated when the user opens Version History panel."
+    },
+    {
+      "test_id": "UTC-1829",
+      "srs_id": "SRS-138",
+      "sds_id": "SDS-138",
+      "summary": "Verify authorized users can download selected JSON versions\nwhen the user has download permission",
+      "description": "Feature: Version Download – Authorized Users Can Download\n\nScenario: Verify authorized users can download selected JSON versions\n\nGiven the user has download permission\nWhen the user selects a version and clicks Download\nThen the system should allow file download successfully",
+      "acceptance": "The system should allow file download successfully\nThe behavior should be validated when the user selects a version and clicks Download."
+    },
+    {
+      "test_id": "UTC-1830",
+      "srs_id": "SRS-138",
+      "sds_id": "SDS-138",
+      "summary": "Verify unauthorized user cannot see version metadata values\nwhen the user is unauthorized",
+      "description": "Feature: Version Access – Prevent Unauthorized Data Exposure\n\nScenario: Verify unauthorized user cannot see version metadata values\n\nGiven the user is unauthorized\nWhen the user attempts to access version metadata using browser devtools or API calls\nThen the system should not expose any version number/date/user data",
+      "acceptance": "The system should not expose any version number/date/user data\nThe behavior should be validated when the user attempts to access version metadata using browser devtools or API calls."
+    },
+    {
+      "test_id": "UTC-1831",
+      "srs_id": "SRS-139",
+      "sds_id": "SDS-139",
+      "summary": "Verify version history columns have clear labels\nwhen the user opens the Version History panel",
+      "description": "Feature: Version History – Clear Column Labels\n\nScenario: Verify version history columns have clear labels\n\nGiven the user opens the Version History panel\nWhen the version table is displayed\nThen Version Number, Date/Time, and Generated By columns should have clear labels",
+      "acceptance": "Version Number, Date/Time, and Generated By columns should have clear labels\nThe behavior should be validated when the version table is displayed."
+    },
+    {
+      "test_id": "UTC-1832",
+      "srs_id": "SRS-139",
+      "sds_id": "SDS-139",
+      "summary": "Verify metadata values are aligned properly in table columns\nwhen version history contains multiple entries",
+      "description": "Feature: Version History – Aligned Columns Layout\n\nScenario: Verify metadata values are aligned properly in table columns\n\nGiven version history contains multiple entries\nWhen the version list is displayed\nThen all values should appear aligned under correct headers without shifting",
+      "acceptance": "All values should appear aligned under correct headers without shifting\nThe behavior should be validated when the version list is displayed."
+    },
+    {
+      "test_id": "UTC-1833",
+      "srs_id": "SRS-139",
+      "sds_id": "SDS-139",
+      "summary": "Verify version history is easy to read at a glance\nwhen version history table is displayed",
+      "description": "Feature: Version History – Easy Readability\n\nScenario: Verify version history is easy to read at a glance\n\nGiven version history table is displayed\nWhen the user scans version rows\nThen the format should be readable and not cluttered",
+      "acceptance": "The format should be readable and not cluttered\nThe behavior should be validated when the user scans version rows."
+    },
+    {
+      "test_id": "UTC-1834",
+      "srs_id": "SRS-139",
+      "sds_id": "SDS-139",
+      "summary": "Verify user can quickly identify versions using metadata\nwhen multiple versions exist with different timestamps and users",
+      "description": "Feature: Version History – Distinguish Versions Quickly\n\nScenario: Verify user can quickly identify versions using metadata\n\nGiven multiple versions exist with different timestamps and users\nWhen the user checks the version history table\nThen the user should be able to differentiate versions easily using version number + date/time + generated user",
+      "acceptance": "The user should be able to differentiate versions easily using version number + date/time + generated user\nThe behavior should be validated when the user checks the version history table."
+    },
+    {
+      "test_id": "UTC-1835",
+      "srs_id": "SRS-139",
+      "sds_id": "SDS-139",
+      "summary": "Verify metadata is displayed without transformation\nwhen a version exists with stored date/time format and username format",
+      "description": "Feature: Version History – No Confusing Transformation\n\nScenario: Verify metadata is displayed without transformation\n\nGiven a version exists with stored date/time format and username format\nWhen the version history is displayed\nThen metadata should be shown as stored without confusing reformatting",
+      "acceptance": "Metadata should be shown as stored without confusing reformatting\nThe behavior should be validated when the version history is displayed."
+    },
+    {
+      "test_id": "UTC-1836",
+      "srs_id": "SRS-139",
+      "sds_id": "SDS-139",
+      "summary": "Verify UI handles long usernames or timestamps without breaking layout\nwhen a version exists with long Generated By value",
+      "description": "Feature: Version History – Long Values Handling\n\nScenario: Verify UI handles long usernames or timestamps without breaking layout\n\nGiven a version exists with long Generated By value\nWhen the version history table is displayed\nThen the table should remain readable\nAnd values should not overlap or break UI",
+      "acceptance": "The table should remain readable\nThe behavior should be validated when the version history table is displayed."
+    },
+    {
+      "test_id": "UTC-1837",
+      "srs_id": "SRS-139",
+      "sds_id": "SDS-139",
+      "summary": "Verify table remains clear after refresh or reopen\nwhen version history is displayed clearly",
+      "description": "Feature: Version History – Consistent Display After Refresh\n\nScenario: Verify table remains clear after refresh or reopen\n\nGiven version history is displayed clearly\nWhen the user refreshes the page or reopens the Version History panel\nThen the table should remain clear and readable",
+      "acceptance": "The table should remain clear and readable\nThe behavior should be validated when the user refreshes the page or reopens the Version History panel."
+    },
+    {
+      "test_id": "UTC-1838",
+      "srs_id": "SRS-140",
+      "sds_id": "SDS-140",
+      "summary": "Verify version history loads correctly with 100+ stored versions\nwhen a session has more than 100 JSON versions stored",
+      "description": "Feature: Version History – Supports 100+ Versions\n\nScenario: Verify version history loads correctly with 100+ stored versions\n\nGiven a session has more than 100 JSON versions stored\nWhen the user opens Version History panel\nThen the version list should load successfully without crash or UI freeze",
+      "acceptance": "The version list should load successfully without crash or UI freeze\nThe behavior should be validated when the user opens Version History panel."
+    },
+    {
+      "test_id": "UTC-1839",
+      "srs_id": "SRS-140",
+      "sds_id": "SDS-140",
+      "summary": "Verify version history remains stable with 500+ versions\nwhen a session has more than 500 JSON versions stored",
+      "description": "Feature: Version History – Supports 500+ Versions\n\nScenario: Verify version history remains stable with 500+ versions\n\nGiven a session has more than 500 JSON versions stored\nWhen the user opens Version History panel\nThen the system should remain stable\nAnd should not show errors or blank list",
+      "acceptance": "The system should remain stable\nThe behavior should be validated when the user opens Version History panel."
+    },
+    {
+      "test_id": "UTC-1840",
+      "srs_id": "SRS-140",
+      "sds_id": "SDS-140",
+      "summary": "Verify UI uses pagination or lazy loading for large datasets\nwhen many version records exist",
+      "description": "Feature: Version History – Pagination Prevents Overcrowding\n\nScenario: Verify UI uses pagination or lazy loading for large datasets\n\nGiven many version records exist\nWhen the Version History table loads\nThen pagination or lazy loading should be applied\nAnd the UI should not display an overcrowded single long table",
+      "acceptance": "Pagination or lazy loading should be applied\nThe behavior should be validated when the Version History table loads."
+    },
+    {
+      "test_id": "UTC-1841",
+      "srs_id": "SRS-140",
+      "sds_id": "SDS-140",
+      "summary": "Verify retrieval time does not degrade significantly with large history\nwhen sessions exist with 10 versions and 500 versions",
+      "description": "Feature: Version History – Consistent Retrieval Time as Versions Grow\n\nScenario: Verify retrieval time does not degrade significantly with large history\n\nGiven sessions exist with 10 versions and 500 versions\nWhen the user opens Version History for both sessions\nThen the load time should remain consistent without major degradation",
+      "acceptance": "The load time should remain consistent without major degradation\nThe behavior should be validated when the user opens Version History for both sessions."
+    },
+    {
+      "test_id": "UTC-1842",
+      "srs_id": "SRS-140",
+      "sds_id": "SDS-140",
+      "summary": "Verify pagination navigation works correctly for large dataset\nwhen version history spans multiple pages",
+      "description": "Feature: Version History – Page Navigation Stability\n\nScenario: Verify pagination navigation works correctly for large dataset\n\nGiven version history spans multiple pages\nWhen the user navigates to last page and back to first page\nThen the table should load correctly without missing records or UI errors",
+      "acceptance": "The table should load correctly without missing records or UI errors\nThe behavior should be validated when the user navigates to last page and back to first page."
+    },
+    {
+      "test_id": "UTC-1843",
+      "srs_id": "SRS-140",
+      "sds_id": "SDS-140",
+      "summary": "Verify UI does not crash due to large version list rendering\nwhen 500+ version rows exist",
+      "description": "Feature: Version History – No Browser Memory Crash\n\nScenario: Verify UI does not crash due to large version list rendering\n\nGiven 500+ version rows exist\nWhen the user scrolls and navigates pages repeatedly\nThen the browser should not crash or become unresponsive",
+      "acceptance": "The browser should not crash or become unresponsive\nThe behavior should be validated when the user scrolls and navigates pages repeatedly."
+    },
+    {
+      "test_id": "UTC-1844",
+      "srs_id": "SRS-140",
+      "sds_id": "SDS-140",
+      "summary": "Verify backend query handles large version history efficiently\nwhen many versions exist in storage for a session",
+      "description": "Feature: Version History – Backend Query Scalability\n\nScenario: Verify backend query handles large version history efficiently\n\nGiven many versions exist in storage for a session\nWhen the system fetches version metadata in batches\nThen the backend should return results successfully without timeout or failure",
+      "acceptance": "The backend should return results successfully without timeout or failure\nThe behavior should be validated when the system fetches version metadata in batches."
+    }
+  ]
+}

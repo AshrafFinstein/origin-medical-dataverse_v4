@@ -1,0 +1,219 @@
+{
+  "spec_file": "e2e/tests/session-management/URS-DV-GEN-03/SRS-013/SDS-013.spec.ts",
+  "plan_urs": "URS-DV-GEN-03",
+  "srs_str": "013",
+  "domain": "session-management",
+  "page_class": "QcWorkflowPage",
+  "page_import": "qc-workflow.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-360",
+      "srs_id": "SRS-29",
+      "sds_id": "SDS-29",
+      "summary": "Verify Prevent removal after submission attempt\nwhen the session is already submitted",
+      "description": "Scenario: Prevent removal after submission attempt\nGiven the session is already submitted\nWhen the user tries to remove a level\nThen removal should not occur and a restriction message should appear",
+      "acceptance": "Removal should not occur and a restriction message should appear\nThe behavior should be validated when the user tries to remove a level."
+    },
+    {
+      "test_id": "UTC-361",
+      "srs_id": "SRS-29",
+      "sds_id": "SDS-29",
+      "summary": "Verify Immediate UI update after removal\nwhen the user clicks Remove",
+      "description": "Scenario: Immediate UI update after removal\nGiven the user clicks Remove\nWhen the action is executed\nThen the UI should update instantly without page reload",
+      "acceptance": "The UI should update instantly without page reload\nThe behavior should be validated when the action is executed."
+    },
+    {
+      "test_id": "UTC-362",
+      "srs_id": "SRS-29",
+      "sds_id": "SDS-29",
+      "summary": "Verify Clear visual feedback on removal\nwhen a level is removed",
+      "description": "Scenario: Clear visual feedback on removal\nGiven a level is removed\nWhen the action completes\nThen the user should clearly see updated level list without confusion",
+      "acceptance": "The user should clearly see updated level list without confusion\nThe behavior should be validated when the action completes."
+    },
+    {
+      "test_id": "UTC-363",
+      "srs_id": "SRS-29",
+      "sds_id": "SDS-29",
+      "summary": "Verify Remove until only Level 1 remains\nwhen multiple levels exist",
+      "description": "Scenario: Remove until only Level 1 remains\nGiven multiple levels exist\nWhen the user removes all additional levels\nThen Level 1 should remain as the minimum required level",
+      "acceptance": "Level 1 should remain as the minimum required level\nThe behavior should be validated when the user removes all additional levels."
+    },
+    {
+      "test_id": "UTC-364",
+      "srs_id": "SRS-29",
+      "sds_id": "SDS-29",
+      "summary": "Verify Removal before saving persists correctly\nwhen levels are removed before submission",
+      "description": "Scenario: Removal before saving persists correctly\nGiven levels are removed before submission\nWhen the session is saved\nThen removed levels should not reappear",
+      "acceptance": "Removed levels should not reappear\nThe behavior should be validated when the session is saved."
+    },
+    {
+      "test_id": "UTC-365",
+      "srs_id": "SRS-29",
+      "sds_id": "SDS-29",
+      "summary": "Verify Clicking remove with no levels available\nwhen only default Level 1 exists",
+      "description": "Scenario: Clicking remove with no levels available\nGiven only default Level 1 exists\nWhen no removable levels remain\nThen no removal action should be allowed",
+      "acceptance": "No removal action should be allowed\nThe behavior should be validated when no removable levels remain."
+    },
+    {
+      "test_id": "UTC-366",
+      "srs_id": "SRS-30",
+      "sds_id": "SDS-30",
+      "summary": "Verify Reviewer can view approval section\nwhen the user has Reviewer role",
+      "description": "Feature: Approval Level Access Security\nScenario: Reviewer can view approval section\nGiven the user has Reviewer role\nWhen the Session Creation page loads\nThen the Approval Level configuration section should be visible",
+      "acceptance": "The Approval Level configuration section should be visible\nThe behavior should be validated when the Session Creation page loads."
+    },
+    {
+      "test_id": "UTC-367",
+      "srs_id": "SRS-30",
+      "sds_id": "SDS-30",
+      "summary": "Verify Non-reviewer cannot view approval section\nwhen the user is a Non-Reviewer",
+      "description": "Scenario: Non-reviewer cannot view approval section\nGiven the user is a Non-Reviewer\nWhen the Session Creation page loads\nThen the Approval Level section should be hidden",
+      "acceptance": "The Approval Level section should be hidden\nThe behavior should be validated when the Session Creation page loads."
+    },
+    {
+      "test_id": "UTC-368",
+      "srs_id": "SRS-30",
+      "sds_id": "SDS-30",
+      "summary": "Verify Non-reviewer cannot add level\nwhen the user is a Non-Reviewer",
+      "description": "Scenario: Non-reviewer cannot add level\nGiven the user is a Non-Reviewer\nWhen the user attempts to access Add Level\nThen Add Level action should not be available",
+      "acceptance": "Add Level action should not be available\nThe behavior should be validated when the user attempts to access Add Level."
+    },
+    {
+      "test_id": "UTC-369",
+      "srs_id": "SRS-30",
+      "sds_id": "SDS-30",
+      "summary": "Verify Non-reviewer cannot edit approvers\nwhen approval levels exist",
+      "description": "Scenario: Non-reviewer cannot edit approvers\nGiven approval levels exist\nWhen a Non-Reviewer views the page\nThen approver fields should be read-only or hidden",
+      "acceptance": "Approver fields should be read-only or hidden\nThe behavior should be validated when a Non-Reviewer views the page."
+    },
+    {
+      "test_id": "UTC-370",
+      "srs_id": "SRS-30",
+      "sds_id": "SDS-30",
+      "summary": "Verify Non-reviewer cannot delete levels\nwhen approval levels exist",
+      "description": "Scenario: Non-reviewer cannot delete levels\nGiven approval levels exist\nWhen a Non-Reviewer attempts removal\nThen Remove icon should not be available",
+      "acceptance": "Remove icon should not be available\nThe behavior should be validated when a Non-Reviewer attempts removal."
+    },
+    {
+      "test_id": "UTC-371",
+      "srs_id": "SRS-30",
+      "sds_id": "SDS-30",
+      "summary": "Verify Direct URL access blocked\nwhen a Non-Reviewer manually navigates using a direct URL",
+      "description": "Scenario: Direct URL access blocked\nGiven a Non-Reviewer manually navigates using a direct URL\nWhen the system validates access\nThen the action should be blocked with restriction message",
+      "acceptance": "The action should be blocked with restriction message\nThe behavior should be validated when the system validates access."
+    },
+    {
+      "test_id": "UTC-372",
+      "srs_id": "SRS-30",
+      "sds_id": "SDS-30",
+      "summary": "Verify Role validated on page load\nwhen the page initializes",
+      "description": "Scenario: Role validated on page load\nGiven the page initializes\nWhen role validation occurs\nThen only permitted roles should receive approval configuration data",
+      "acceptance": "Only permitted roles should receive approval configuration data\nThe behavior should be validated when role validation occurs."
+    },
+    {
+      "test_id": "UTC-373",
+      "srs_id": "SRS-30",
+      "sds_id": "SDS-30",
+      "summary": "Verify Friendly error message shown\nwhen unauthorized access attempt occurs",
+      "description": "Scenario: Friendly error message shown\nGiven unauthorized access attempt occurs\nWhen action is blocked\nThen a clear non-technical restriction message should be displayed",
+      "acceptance": "A clear non-technical restriction message should be displayed\nThe behavior should be validated when action is blocked."
+    },
+    {
+      "test_id": "UTC-374",
+      "srs_id": "SRS-31",
+      "sds_id": "SDS-31",
+      "summary": "Verify Section loads instantly\nwhen the Session Creation page loads",
+      "description": "Feature: Approval Level Performance\nScenario: Section loads instantly\nGiven the Session Creation page loads\nWhen the approval section is rendered\nThen it should load without noticeable delay",
+      "acceptance": "It should load without noticeable delay\nThe behavior should be validated when the approval section is rendered."
+    },
+    {
+      "test_id": "UTC-375",
+      "srs_id": "SRS-31",
+      "sds_id": "SDS-31",
+      "summary": "Verify Add Level responds instantly\nwhen approval section is visible",
+      "description": "Scenario: Add Level responds instantly\nGiven approval section is visible\nWhen Add Level is clicked\nThen new level should appear immediately",
+      "acceptance": "New level should appear immediately\nThe behavior should be validated when Add Level is clicked."
+    },
+    {
+      "test_id": "UTC-376",
+      "srs_id": "SRS-31",
+      "sds_id": "SDS-31",
+      "summary": "Verify Remove Level responds instantly\nwhen levels exist",
+      "description": "Scenario: Remove Level responds instantly\nGiven levels exist\nWhen Remove icon is clicked\nThen level should disappear instantly",
+      "acceptance": "Level should disappear instantly\nThe behavior should be validated when Remove icon is clicked."
+    },
+    {
+      "test_id": "UTC-377",
+      "srs_id": "SRS-31",
+      "sds_id": "SDS-31",
+      "summary": "Verify No page reload required\nwhen approval actions are performed",
+      "description": "Scenario: No page reload required\nGiven approval actions are performed\nWhen adding or removing levels\nThen actions should complete without page refresh",
+      "acceptance": "Actions should complete without page refresh\nThe behavior should be validated when adding or removing levels."
+    },
+    {
+      "test_id": "UTC-378",
+      "srs_id": "SRS-31",
+      "sds_id": "SDS-31",
+      "summary": "Verify Multiple levels load efficiently\nwhen 5 levels configured",
+      "description": "Scenario: Multiple levels load efficiently\nGiven 5 levels configured\nWhen page loads\nThen all levels should render smoothly without UI freeze",
+      "acceptance": "All levels should render smoothly without UI freeze\nThe behavior should be validated when page loads."
+    },
+    {
+      "test_id": "UTC-379",
+      "srs_id": "SRS-31",
+      "sds_id": "SDS-31",
+      "summary": "Verify Retry on load failure\nwhen loading temporarily fails",
+      "description": "Scenario: Retry on load failure\nGiven loading temporarily fails\nWhen retry is triggered\nThen approval configuration should load successfully",
+      "acceptance": "Approval configuration should load successfully\nThe behavior should be validated when retry is triggered."
+    },
+    {
+      "test_id": "UTC-380",
+      "srs_id": "SRS-32",
+      "sds_id": "SDS-32",
+      "summary": "Verify Clear level labels displayed\nwhen approval section is visible",
+      "description": "Feature: Approval Level Usability\nScenario: Clear level labels displayed\nGiven approval section is visible\nWhen levels are listed\nThen labels should display as Level 1–Level 5 clearly",
+      "acceptance": "Labels should display as Level 1â€“Level 5 clearly\nThe behavior should be validated when levels are listed."
+    },
+    {
+      "test_id": "UTC-381",
+      "srs_id": "SRS-32",
+      "sds_id": "SDS-32",
+      "summary": "Verify Add Level icon clarity\nwhen user views approval section",
+      "description": "Scenario: Add Level icon clarity\nGiven user views approval section\nWhen Add Level is shown\nThen it should be easily identifiable",
+      "acceptance": "It should be easily identifiable\nThe behavior should be validated when Add Level is shown."
+    },
+    {
+      "test_id": "UTC-382",
+      "srs_id": "SRS-32",
+      "sds_id": "SDS-32",
+      "summary": "Verify Remove icon clarity\nwhen levels exist",
+      "description": "Scenario: Remove icon clarity\nGiven levels exist\nWhen Remove icon is displayed\nThen icon should clearly indicate deletion",
+      "acceptance": "Icon should clearly indicate deletion\nThe behavior should be validated when Remove icon is displayed."
+    },
+    {
+      "test_id": "UTC-383",
+      "srs_id": "SRS-32",
+      "sds_id": "SDS-32",
+      "summary": "Verify Approver fields readable\nwhen approver fields are shown",
+      "description": "Scenario: Approver fields readable\nGiven approver fields are shown\nWhen user views dropdowns\nThen names should be readable and selectable easily",
+      "acceptance": "Names should be readable and selectable easily\nThe behavior should be validated when user views dropdowns."
+    },
+    {
+      "test_id": "UTC-384",
+      "srs_id": "SRS-32",
+      "sds_id": "SDS-32",
+      "summary": "Verify Immediate UI feedback\nwhen user adds or removes a level",
+      "description": "Scenario: Immediate UI feedback\nGiven user adds or removes a level\nWhen action completes\nThen UI should update immediately",
+      "acceptance": "UI should update immediately\nThe behavior should be validated when action completes."
+    },
+    {
+      "test_id": "UTC-385",
+      "srs_id": "SRS-32",
+      "sds_id": "SDS-32",
+      "summary": "Verify Validation message clarity\nwhen invalid configuration occurs",
+      "description": "Scenario: Validation message clarity\nGiven invalid configuration occurs\nWhen validation message appears\nThen message should be simple and non-technical",
+      "acceptance": "Message should be simple and non-technical\nThe behavior should be validated when validation message appears."
+    }
+  ]
+}

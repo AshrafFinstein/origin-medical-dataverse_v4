@@ -1,0 +1,227 @@
+{
+  "spec_file": "e2e/tests/session-management/URS-DV-GEN-03/SRS-012/SDS-012.spec.ts",
+  "plan_urs": "URS-DV-GEN-03",
+  "srs_str": "012",
+  "domain": "session-management",
+  "page_class": "QcWorkflowPage",
+  "page_import": "qc-workflow.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-333",
+      "srs_id": "SRS-27",
+      "sds_id": "SDS-27",
+      "summary": "Verify Correct sequential order maintained\nwhen multiple levels are added",
+      "description": "Scenario: Correct sequential order maintained\nGiven multiple levels are added\nWhen viewing the approval configuration\nThen levels should display in ascending order (L1 → L5)",
+      "acceptance": "Levels should display in ascending order (L1 â†’ L5)\nThe behavior should be validated when viewing the approval configuration."
+    },
+    {
+      "test_id": "UTC-334",
+      "srs_id": "SRS-27",
+      "sds_id": "SDS-27",
+      "summary": "Verify Adding beyond Level 5 restricted\nwhen Levels 1 to 5 already exist",
+      "description": "Scenario: Adding beyond Level 5 restricted\nGiven Levels 1 to 5 already exist\nWhen the user clicks Add Level again\nThen Level 6 should not be created",
+      "acceptance": "Level 6 should not be created\nThe behavior should be validated when the user clicks Add Level again."
+    },
+    {
+      "test_id": "UTC-335",
+      "srs_id": "SRS-27",
+      "sds_id": "SDS-27",
+      "summary": "Verify Validation message for maximum levels\nwhen 5 levels already configured",
+      "description": "Scenario: Validation message for maximum levels\nGiven 5 levels already configured\nWhen the user attempts to add another level\nThen a clear message should indicate that maximum 5 levels are allowed",
+      "acceptance": "A clear message should indicate that maximum 5 levels are allowed\nThe behavior should be validated when the user attempts to add another level."
+    },
+    {
+      "test_id": "UTC-336",
+      "srs_id": "SRS-27",
+      "sds_id": "SDS-27",
+      "summary": "Verify Previously configured levels retained\nwhen multiple levels are added with approvers",
+      "description": "Scenario: Previously configured levels retained\nGiven multiple levels are added with approvers\nWhen a new level is added\nThen existing level data should remain unchanged",
+      "acceptance": "Existing level data should remain unchanged\nThe behavior should be validated when a new level is added."
+    },
+    {
+      "test_id": "UTC-337",
+      "srs_id": "SRS-27",
+      "sds_id": "SDS-27",
+      "summary": "Verify User clearly sees level labels\nwhen levels are added",
+      "description": "Scenario: User clearly sees level labels\nGiven levels are added\nWhen the approval section is displayed\nThen each level should show clear labels (Level 1, Level 2, … Level 5)",
+      "acceptance": "Each level should show clear labels (Level 1, Level 2, â€¦ Level 5)\nThe behavior should be validated when the approval section is displayed."
+    },
+    {
+      "test_id": "UTC-338",
+      "srs_id": "SRS-28",
+      "sds_id": "SDS-28",
+      "summary": "Verify Load images only for current approval level\nwhen the user logs in as a Level 1 reviewer",
+      "description": "Feature: Multi-Level Image Approval Flow\nScenario: Load images only for current approval level\nGiven the user logs in as a Level 1 reviewer\nWhen the image grid loads\nThen only Level 1 assigned images should be displayed",
+      "acceptance": "Only Level 1 assigned images should be displayed\nThe behavior should be validated when the image grid loads."
+    },
+    {
+      "test_id": "UTC-339",
+      "srs_id": "SRS-28",
+      "sds_id": "SDS-28",
+      "summary": "Verify Show current level indicator\nwhen the user opens an image",
+      "description": "Scenario: Show current level indicator\nGiven the user opens an image\nWhen the image details panel is displayed\nThen the current approval level should be shown clearly",
+      "acceptance": "The current approval level should be shown clearly\nThe behavior should be validated when the image details panel is displayed."
+    },
+    {
+      "test_id": "UTC-340",
+      "srs_id": "SRS-28",
+      "sds_id": "SDS-28",
+      "summary": "Verify Accept button enabled for assigned user\nwhen the image belongs to the user's active level",
+      "description": "Scenario: Accept button enabled for assigned user\nGiven the image belongs to the user’s active level\nWhen the image loads\nThen the Accept button should be enabled",
+      "acceptance": "The Accept button should be enabled\nThe behavior should be validated when the image loads."
+    },
+    {
+      "test_id": "UTC-341",
+      "srs_id": "SRS-28",
+      "sds_id": "SDS-28",
+      "summary": "Verify Reject button enabled for assigned user\nwhen the image belongs to the user's active level",
+      "description": "Scenario: Reject button enabled for assigned user\nGiven the image belongs to the user’s active level\nWhen the image loads\nThen the Reject button should be enabled",
+      "acceptance": "The Reject button should be enabled\nThe behavior should be validated when the image loads."
+    },
+    {
+      "test_id": "UTC-342",
+      "srs_id": "SRS-28",
+      "sds_id": "SDS-28",
+      "summary": "Verify Accept moves image to next level\nwhen an image is at Level 1",
+      "description": "Scenario: Accept moves image to next level\nGiven an image is at Level 1\nWhen the user clicks Accept\nThen the image should move to Level 2 and be removed from Level 1 list",
+      "acceptance": "The image should move to Level 2 and be removed from Level 1 list\nThe behavior should be validated when the user clicks Accept."
+    },
+    {
+      "test_id": "UTC-343",
+      "srs_id": "SRS-28",
+      "sds_id": "SDS-28",
+      "summary": "Verify Reject moves image to previous level\nwhen an image is at Level 2",
+      "description": "Scenario: Reject moves image to previous level\nGiven an image is at Level 2\nWhen the user clicks Reject\nThen the image should move back to Level 1",
+      "acceptance": "The image should move back to Level 1\nThe behavior should be validated when the user clicks Reject."
+    },
+    {
+      "test_id": "UTC-344",
+      "srs_id": "SRS-28",
+      "sds_id": "SDS-28",
+      "summary": "Verify Final approval completes workflow\nwhen an image is at Level 5",
+      "description": "Scenario: Final approval completes workflow\nGiven an image is at Level 5\nWhen the user clicks Accept\nThen the image status should change to Approved/Completed and exit the approval queue",
+      "acceptance": "The image status should change to Approved/Completed and exit the approval queue\nThe behavior should be validated when the user clicks Accept."
+    },
+    {
+      "test_id": "UTC-345",
+      "srs_id": "SRS-28",
+      "sds_id": "SDS-28",
+      "summary": "Verify Other level users cannot view image\nwhen an image is assigned to Level 2",
+      "description": "Scenario: Other level users cannot view image\nGiven an image is assigned to Level 2\nWhen a Level 1 user logs in\nThen the image should not be visible",
+      "acceptance": "The image should not be visible\nThe behavior should be validated when a Level 1 user logs in."
+    },
+    {
+      "test_id": "UTC-346",
+      "srs_id": "SRS-28",
+      "sds_id": "SDS-28",
+      "summary": "Verify Multiple users at same level can act\nwhen multiple reviewers are assigned to Level 1",
+      "description": "Scenario: Multiple users at same level can act\nGiven multiple reviewers are assigned to Level 1\nWhen any reviewer performs Accept or Reject\nThen the action should be processed successfully",
+      "acceptance": "The action should be processed successfully\nThe behavior should be validated when any reviewer performs Accept or Reject."
+    },
+    {
+      "test_id": "UTC-347",
+      "srs_id": "SRS-28",
+      "sds_id": "SDS-28",
+      "summary": "Verify User group members can access images\nwhen a user belongs to an assigned approval group",
+      "description": "Scenario: User group members can access images\nGiven a user belongs to an assigned approval group\nWhen images are loaded\nThen the group user should be able to review and act",
+      "acceptance": "The group user should be able to review and act\nThe behavior should be validated when images are loaded."
+    },
+    {
+      "test_id": "UTC-348",
+      "srs_id": "SRS-28",
+      "sds_id": "SDS-28",
+      "summary": "Verify Status updates immediately after action\nwhen the user clicks Accept or Reject",
+      "description": "Scenario: Status updates immediately after action\nGiven the user clicks Accept or Reject\nWhen the action completes\nThen the image status and level should update instantly without reload",
+      "acceptance": "The image status and level should update instantly without reload\nThe behavior should be validated when the action completes."
+    },
+    {
+      "test_id": "UTC-349",
+      "srs_id": "SRS-28",
+      "sds_id": "SDS-28",
+      "summary": "Verify Actions disabled for unauthorized users\nwhen the user is not assigned to the current level",
+      "description": "Scenario: Actions disabled for unauthorized users\nGiven the user is not assigned to the current level\nWhen viewing the image\nThen Accept and Reject buttons should be disabled",
+      "acceptance": "Accept and Reject buttons should be disabled\nThe behavior should be validated when viewing the image."
+    },
+    {
+      "test_id": "UTC-350",
+      "srs_id": "SRS-28",
+      "sds_id": "SDS-28",
+      "summary": "Verify Prevent duplicate actions\nwhen the user clicks Accept once",
+      "description": "Scenario: Prevent duplicate actions\nGiven the user clicks Accept once\nWhen the request is processing\nThen additional clicks should be ignored",
+      "acceptance": "Additional clicks should be ignored\nThe behavior should be validated when the request is processing."
+    },
+    {
+      "test_id": "UTC-351",
+      "srs_id": "SRS-28",
+      "sds_id": "SDS-28",
+      "summary": "Verify Status and level clearly visible\nwhen multiple images exist across levels",
+      "description": "Scenario: Status and level clearly visible\nGiven multiple images exist across levels\nWhen the grid is displayed\nThen each image should show clear status and level labels",
+      "acceptance": "Each image should show clear status and level labels\nThe behavior should be validated when the grid is displayed."
+    },
+    {
+      "test_id": "UTC-352",
+      "srs_id": "SRS-29",
+      "sds_id": "SDS-29",
+      "summary": "Verify Remove icon visibility\nwhen the user is on the Session Creation page",
+      "description": "Feature: Approval Level Removal Before Submission\nScenario: Remove icon visibility\nGiven the user is on the Session Creation page\nWhen approval levels are displayed\nThen each level should show a visible Remove (–) icon",
+      "acceptance": "Each level should show a visible Remove (â€“) icon\nThe behavior should be validated when approval levels are displayed."
+    },
+    {
+      "test_id": "UTC-353",
+      "srs_id": "SRS-29",
+      "sds_id": "SDS-29",
+      "summary": "Verify Remove level successfully before submission\nwhen multiple approval levels exist",
+      "description": "Scenario: Remove level successfully before submission\nGiven multiple approval levels exist\nWhen the user clicks the Remove (–) icon on Level 3\nThen Level 3 should be deleted immediately from the list",
+      "acceptance": "Level 3 should be deleted immediately from the list\nThe behavior should be validated when the user clicks the Remove (â€“) icon on Level 3."
+    },
+    {
+      "test_id": "UTC-354",
+      "srs_id": "SRS-29",
+      "sds_id": "SDS-29",
+      "summary": "Verify Level sequence updates after removal\nwhen Level 1, Level 2, Level 3 are configured",
+      "description": "Scenario: Level sequence updates after removal\nGiven Level 1, Level 2, Level 3 are configured\nWhen Level 2 is removed\nThen remaining levels should reorder sequentially without gaps",
+      "acceptance": "Remaining levels should reorder sequentially without gaps\nThe behavior should be validated when Level 2 is removed."
+    },
+    {
+      "test_id": "UTC-355",
+      "srs_id": "SRS-29",
+      "sds_id": "SDS-29",
+      "summary": "Verify Remove last level only\nwhen multiple levels exist",
+      "description": "Scenario: Remove last level only\nGiven multiple levels exist\nWhen the user removes the last level\nThen only the selected last level should be removed and others remain unchanged",
+      "acceptance": "Only the selected last level should be removed and others remain unchanged\nThe behavior should be validated when the user removes the last level."
+    },
+    {
+      "test_id": "UTC-356",
+      "srs_id": "SRS-29",
+      "sds_id": "SDS-29",
+      "summary": "Verify Remove middle level only\nwhen Level 1â€“Level 4 exist",
+      "description": "Scenario: Remove middle level only\nGiven Level 1–Level 4 exist\nWhen Level 2 is removed\nThen only Level 2 should be removed and other levels retained",
+      "acceptance": "Only Level 2 should be removed and other levels retained\nThe behavior should be validated when Level 2 is removed."
+    },
+    {
+      "test_id": "UTC-357",
+      "srs_id": "SRS-29",
+      "sds_id": "SDS-29",
+      "summary": "Verify Remove clears assigned users/groups\nwhen Level 3 has assigned users or groups",
+      "description": "Scenario: Remove clears assigned users/groups\nGiven Level 3 has assigned users or groups\nWhen the level is removed\nThen associated assignments should also be cleared",
+      "acceptance": "Associated assignments should also be cleared\nThe behavior should be validated when the level is removed."
+    },
+    {
+      "test_id": "UTC-358",
+      "srs_id": "SRS-29",
+      "sds_id": "SDS-29",
+      "summary": "Verify Add level after removal\nwhen a level was removed",
+      "description": "Scenario: Add level after removal\nGiven a level was removed\nWhen the user clicks Add Level again\nThen a new level should be added correctly without errors",
+      "acceptance": "A new level should be added correctly without errors\nThe behavior should be validated when the user clicks Add Level again."
+    },
+    {
+      "test_id": "UTC-359",
+      "srs_id": "SRS-29",
+      "sds_id": "SDS-29",
+      "summary": "Verify Removal disabled after submission\nwhen the session is submitted or updated",
+      "description": "Scenario: Removal disabled after submission\nGiven the session is submitted or updated\nWhen the user views approval levels\nThen the Remove icon should be disabled or hidden",
+      "acceptance": "The Remove icon should be disabled or hidden\nThe behavior should be validated when the user views approval levels."
+    }
+  ]
+}

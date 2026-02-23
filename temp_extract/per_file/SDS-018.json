@@ -1,0 +1,195 @@
+{
+  "spec_file": "e2e/tests/data-labelling/URS-DV-DL-04/SRS-018/SDS-018.spec.ts",
+  "plan_urs": "URS-DV-DL-04",
+  "srs_str": "018",
+  "domain": "data-labelling",
+  "page_class": "DataLabellingPage",
+  "page_import": "data-labelling.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-478",
+      "srs_id": "SRS-39",
+      "sds_id": "SDS-39",
+      "summary": "Verify Multiple rapid toggles handled safely\nwhen the user clicks Freeze and Unfreeze rapidly",
+      "description": "Feature: Freeze Mode Toggle\nScenario: Multiple rapid toggles handled safely\nGiven the user clicks Freeze and Unfreeze rapidly\nWhen the actions are processed\nThen the system should remain stable without errors",
+      "acceptance": "The system should remain stable without errors\nThe behavior should be validated when the actions are processed."
+    },
+    {
+      "test_id": "UTC-479",
+      "srs_id": "SRS-40",
+      "sds_id": "SDS-40",
+      "summary": "Verify Grid renders within 2 seconds for 200 items\nwhen a dataset containing 200 images per page",
+      "description": "Feature: Image Grid Rendering Performance\nScenario: Grid renders within 2 seconds for 200 items\nGiven a dataset containing 200 images per page\nWhen the grid loads\nThen the grid should render completely within 2 seconds",
+      "acceptance": "The grid should render completely within 2 seconds\nThe behavior should be validated when the grid loads."
+    },
+    {
+      "test_id": "UTC-480",
+      "srs_id": "SRS-40",
+      "sds_id": "SDS-40",
+      "summary": "Verify Pagination transition is seamless\nwhen the grid is loaded with images",
+      "description": "Feature: Image Grid Rendering Performance\nScenario: Pagination transition is seamless\nGiven the grid is loaded with images\nWhen the user navigates to the next page\nThen the transition should occur smoothly without noticeable lag",
+      "acceptance": "The transition should occur smoothly without noticeable lag\nThe behavior should be validated when the user navigates to the next page."
+    },
+    {
+      "test_id": "UTC-481",
+      "srs_id": "SRS-40",
+      "sds_id": "SDS-40",
+      "summary": "Verify Skeleton screen appears immediately\nwhen the user navigates to a new page",
+      "description": "Feature: Loading Skeleton Feedback\nScenario: Skeleton screen appears immediately\nGiven the user navigates to a new page\nWhen the data is being fetched\nThen loading skeletons should display instantly",
+      "acceptance": "Loading skeletons should display instantly\nThe behavior should be validated when the data is being fetched."
+    },
+    {
+      "test_id": "UTC-482",
+      "srs_id": "SRS-40",
+      "sds_id": "SDS-40",
+      "summary": "Verify Images load only when entering viewport\nwhen the grid contains many images",
+      "description": "Feature: Lazy Loading Optimization\nScenario: Images load only when entering viewport\nGiven the grid contains many images\nWhen the user scrolls\nThen images should load only when visible in the viewport",
+      "acceptance": "Images should load only when visible in the viewport\nThe behavior should be validated when the user scrolls."
+    },
+    {
+      "test_id": "UTC-483",
+      "srs_id": "SRS-40",
+      "sds_id": "SDS-40",
+      "summary": "Verify Compressed thumbnails reduce bandwidth\nwhen the grid loads thumbnails",
+      "description": "Feature: Thumbnail Compression\nScenario: Compressed thumbnails reduce bandwidth\nGiven the grid loads thumbnails\nWhen images are requested from server\nThen compressed JPEG thumbnails should be delivered",
+      "acceptance": "Compressed JPEG thumbnails should be delivered\nThe behavior should be validated when images are requested from server."
+    },
+    {
+      "test_id": "UTC-484",
+      "srs_id": "SRS-40",
+      "sds_id": "SDS-40",
+      "summary": "Verify Efficient DOM diffing prevents flicker\nwhen the grid updates state",
+      "description": "Feature: Stable Re-rendering\nScenario: Efficient DOM diffing prevents flicker\nGiven the grid updates state\nWhen images refresh\nThen UI should not flicker or re-render unnecessarily",
+      "acceptance": "UI should not flicker or re-render unnecessarily\nThe behavior should be validated when images refresh."
+    },
+    {
+      "test_id": "UTC-485",
+      "srs_id": "SRS-40",
+      "sds_id": "SDS-40",
+      "summary": "Verify Items per page update quickly\nwhen the user changes page size to 200",
+      "description": "Feature: Fast Page Size Change\nScenario: Items per page update quickly\nGiven the user changes page size to 200\nWhen the grid refreshes\nThen updated results should render within 2 seconds",
+      "acceptance": "Updated results should render within 2 seconds\nThe behavior should be validated when the grid refreshes."
+    },
+    {
+      "test_id": "UTC-486",
+      "srs_id": "SRS-40",
+      "sds_id": "SDS-40",
+      "summary": "Verify System handles continuous page navigation\nwhen the user navigates pages repeatedly",
+      "description": "Feature: High Volume Stability\nScenario: System handles continuous page navigation\nGiven the user navigates pages repeatedly\nWhen switching 10+ times rapidly\nThen the system should remain responsive without crashes",
+      "acceptance": "The system should remain responsive without crashes\nThe behavior should be validated when switching 10+ times rapidly."
+    },
+    {
+      "test_id": "UTC-487",
+      "srs_id": "SRS-40",
+      "sds_id": "SDS-40",
+      "summary": "Verify Smooth scrolling across grid\nwhen many images are displayed",
+      "description": "Feature: Scroll Performance\nScenario: Smooth scrolling across grid\nGiven many images are displayed\nWhen the user scrolls quickly\nThen scrolling should remain smooth (~60fps)",
+      "acceptance": "Scrolling should remain smooth (~60fps)\nThe behavior should be validated when the user scrolls quickly."
+    },
+    {
+      "test_id": "UTC-488",
+      "srs_id": "SRS-40",
+      "sds_id": "SDS-40",
+      "summary": "Verify Slow connection alert displayed\nwhen network latency exceeds 5 seconds",
+      "description": "Feature: Slow Network Warning\nScenario: Slow connection alert displayed\nGiven network latency exceeds 5 seconds\nWhen data fetch is delayed\nThen a 'Connection Slow' warning toast should appear",
+      "acceptance": "A 'Connection Slow' warning toast should appear\nThe behavior should be validated when data fetch is delayed."
+    },
+    {
+      "test_id": "UTC-489",
+      "srs_id": "SRS-40",
+      "sds_id": "SDS-40",
+      "summary": "Verify Retry after slow network\nwhen the connection slow warning is shown",
+      "description": "Feature: Retry Fetch Capability\nScenario: Retry after slow network\nGiven the connection slow warning is shown\nWhen the user clicks retry\nThen the grid should reload successfully",
+      "acceptance": "The grid should reload successfully\nThe behavior should be validated when the user clicks retry."
+    },
+    {
+      "test_id": "UTC-490",
+      "srs_id": "SRS-40",
+      "sds_id": "SDS-40",
+      "summary": "Verify Continuous workflow without blocking\nwhen the user performs labeling or navigation",
+      "description": "Feature: Workflow Efficiency\nScenario: Continuous workflow without blocking\nGiven the user performs labeling or navigation\nWhen switching between pages\nThen actions should not block the workflow",
+      "acceptance": "Actions should not block the workflow\nThe behavior should be validated when switching between pages."
+    },
+    {
+      "test_id": "UTC-491",
+      "srs_id": "SRS-41",
+      "sds_id": "SDS-41",
+      "summary": "Verify Logged-in username is visible\nwhen the user is authenticated",
+      "description": "Feature: Role-Based Access Control – Header Identity Display\nScenario: Logged-in username is visible\nGiven the user is authenticated\nWhen the grid page loads\nThen the header should display 'Logged in as: [username]'",
+      "acceptance": "The header should display 'Logged in as: [username]'\nThe behavior should be validated when the grid page loads."
+    },
+    {
+      "test_id": "UTC-492",
+      "srs_id": "SRS-41",
+      "sds_id": "SDS-41",
+      "summary": "Verify Label button enabled for authorized role\nwhen user.permissions.canLabel = true",
+      "description": "Feature: Role-Based Access Control – Label Permission\nScenario: Label button enabled for authorized role\nGiven user.permissions.canLabel = true\nWhen images are selected\nThen the APPLY button should be enabled",
+      "acceptance": "The APPLY button should be enabled\nThe behavior should be validated when images are selected."
+    },
+    {
+      "test_id": "UTC-493",
+      "srs_id": "SRS-41",
+      "sds_id": "SDS-41",
+      "summary": "Verify Label button disabled for read-only role\nwhen user.permissions.canLabel = false",
+      "description": "Feature: Role-Based Access Control – Label Restriction\nScenario: Label button disabled for read-only role\nGiven user.permissions.canLabel = false\nWhen the page loads\nThen the APPLY button should be hidden or disabled",
+      "acceptance": "The APPLY button should be hidden or disabled\nThe behavior should be validated when the page loads."
+    },
+    {
+      "test_id": "UTC-494",
+      "srs_id": "SRS-41",
+      "sds_id": "SDS-41",
+      "summary": "Verify Send for QC enabled for authorized users\nwhen user has QC permission",
+      "description": "Feature: Role-Based Access Control – Send for QC Permission\nScenario: Send for QC enabled for authorized users\nGiven user has QC permission\nWhen images are selected\nThen the Send for QC button should be clickable",
+      "acceptance": "The Send for QC button should be clickable\nThe behavior should be validated when images are selected."
+    },
+    {
+      "test_id": "UTC-495",
+      "srs_id": "SRS-41",
+      "sds_id": "SDS-41",
+      "summary": "Verify Send for QC hidden for read-only users\nwhen user lacks QC permission",
+      "description": "Feature: Role-Based Access Control – Send for QC Restriction\nScenario: Send for QC hidden for read-only users\nGiven user lacks QC permission\nWhen viewing grid\nThen Send for QC button should not be displayed",
+      "acceptance": "Send for QC button should not be displayed\nThe behavior should be validated when viewing grid."
+    },
+    {
+      "test_id": "UTC-496",
+      "srs_id": "SRS-41",
+      "sds_id": "SDS-41",
+      "summary": "Verify Unauthorized API action blocked\nwhen read-only user triggers label API",
+      "description": "Feature: Role-Based Access Control – Backend Enforcement\nScenario: Unauthorized API action blocked\nGiven read-only user triggers label API\nWhen request is sent\nThen API should return 403/401 and action should fail",
+      "acceptance": "API should return 403/401 and action should fail\nThe behavior should be validated when request is sent."
+    },
+    {
+      "test_id": "UTC-497",
+      "srs_id": "SRS-41",
+      "sds_id": "SDS-41",
+      "summary": "Verify Session expires during action\nwhen session timeout occurs",
+      "description": "Feature: Role-Based Access Control – Session Expiry Handling\nScenario: Session expires during action\nGiven session timeout occurs\nWhen user performs any API action\nThen system redirects to login page immediately",
+      "acceptance": "System redirects to login page immediately\nThe behavior should be validated when user performs any API action."
+    },
+    {
+      "test_id": "UTC-498",
+      "srs_id": "SRS-41",
+      "sds_id": "SDS-41",
+      "summary": "Verify Disabled controls clearly indicated\nwhen user lacks permissions",
+      "description": "Feature: Role-Based Access Control – Visual Consistency\nScenario: Disabled controls clearly indicated\nGiven user lacks permissions\nWhen viewing buttons\nThen disabled buttons should show greyed-out state or tooltip",
+      "acceptance": "Disabled buttons should show greyed-out state or tooltip\nThe behavior should be validated when viewing buttons."
+    },
+    {
+      "test_id": "UTC-499",
+      "srs_id": "SRS-41",
+      "sds_id": "SDS-41",
+      "summary": "Verify User permissions stored in session state\nwhen user logs in",
+      "description": "Feature: Role-Based Access Control – Session Data Storage\nScenario: User permissions stored in session state\nGiven user logs in\nWhen session is inspected\nThen permissions object should exist in session state",
+      "acceptance": "Permissions object should exist in session state\nThe behavior should be validated when session is inspected."
+    },
+    {
+      "test_id": "UTC-500",
+      "srs_id": "SRS-41",
+      "sds_id": "SDS-41",
+      "summary": "Verify Manual DOM enable attempt prevented\nwhen user manually enables disabled button via dev tools",
+      "description": "Feature: Role-Based Access Control – Unauthorized UI Attempt\nScenario: Manual DOM enable attempt prevented\nGiven user manually enables disabled button via dev tools\nWhen action is triggered\nThen backend should still reject request",
+      "acceptance": "Backend should still reject request\nThe behavior should be validated when action is triggered."
+    }
+  ]
+}

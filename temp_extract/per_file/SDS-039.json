@@ -1,0 +1,291 @@
+{
+  "spec_file": "e2e/tests/annotation/URS-DV-DA-09/SRS-039/SDS-039.spec.ts",
+  "plan_urs": "URS-DV-DA-09",
+  "srs_str": "039",
+  "domain": "annotation",
+  "page_class": "DataLabellingPage",
+  "page_import": "data-labelling.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-1412",
+      "srs_id": "SRS-106",
+      "sds_id": "SDS-106",
+      "summary": "Verify Unlock single annotation\nwhen annotation locked",
+      "description": "Feature: Individual and overall annotation lock control\nScenario: Unlock single annotation\nGiven annotation locked\nWhen unlock clicked\nThen annotation becomes editable",
+      "acceptance": "Annotation becomes editable\nThe behavior should be validated when unlock clicked."
+    },
+    {
+      "test_id": "UTC-1413",
+      "srs_id": "SRS-106",
+      "sds_id": "SDS-106",
+      "summary": "Verify Apply overall lock\nwhen multiple annotations exist",
+      "description": "Feature: Individual and overall annotation lock control\nScenario: Apply overall lock\nGiven multiple annotations exist\nWhen overall lock clicked\nThen all annotations become locked",
+      "acceptance": "All annotations become locked\nThe behavior should be validated when overall lock clicked."
+    },
+    {
+      "test_id": "UTC-1414",
+      "srs_id": "SRS-106",
+      "sds_id": "SDS-106",
+      "summary": "Verify Prevent edit during overall lock\nwhen overall lock active",
+      "description": "Feature: Individual and overall annotation lock control\nScenario: Prevent edit during overall lock\nGiven overall lock active\nWhen editing any annotation\nThen edit should be disabled",
+      "acceptance": "Edit should be disabled\nThe behavior should be validated when editing any annotation."
+    },
+    {
+      "test_id": "UTC-1415",
+      "srs_id": "SRS-106",
+      "sds_id": "SDS-106",
+      "summary": "Verify Overall lock visual highlight\nwhen overall lock enabled",
+      "description": "Feature: Individual and overall annotation lock control\nScenario: Overall lock visual highlight\nGiven overall lock enabled\nWhen viewing toolbar\nThen lock icon should appear highlighted",
+      "acceptance": "Lock icon should appear highlighted\nThe behavior should be validated when viewing toolbar."
+    },
+    {
+      "test_id": "UTC-1416",
+      "srs_id": "SRS-106",
+      "sds_id": "SDS-106",
+      "summary": "Verify Unlock overall\nwhen overall lock active",
+      "description": "Feature: Individual and overall annotation lock control\nScenario: Unlock overall\nGiven overall lock active\nWhen unlock clicked\nThen all annotations become editable",
+      "acceptance": "All annotations become editable\nThe behavior should be validated when unlock clicked."
+    },
+    {
+      "test_id": "UTC-1417",
+      "srs_id": "SRS-106",
+      "sds_id": "SDS-106",
+      "summary": "Verify Lock state persisted in state model\nwhen annotation locked",
+      "description": "Feature: Individual and overall annotation lock control\nScenario: Lock state persisted in state model\nGiven annotation locked\nWhen saving state\nThen locked flag should be stored",
+      "acceptance": "Locked flag should be stored\nThe behavior should be validated when saving state."
+    },
+    {
+      "test_id": "UTC-1418",
+      "srs_id": "SRS-106",
+      "sds_id": "SDS-106",
+      "summary": "Verify No page reload needed\nwhen lock/unlock action",
+      "description": "Feature: Individual and overall annotation lock control\nScenario: No page reload needed\nGiven lock/unlock action\nWhen executed\nThen UI updates instantly",
+      "acceptance": "UI updates instantly\nThe behavior should be validated when executed."
+    },
+    {
+      "test_id": "UTC-1419",
+      "srs_id": "SRS-106",
+      "sds_id": "SDS-106",
+      "summary": "Verify Lock multiple individually\nwhen multiple annotations",
+      "description": "Feature: Individual and overall annotation lock control\nScenario: Lock multiple individually\nGiven multiple annotations\nWhen locking each individually\nThen each should lock independently",
+      "acceptance": "Each should lock independently\nThe behavior should be validated when locking each individually."
+    },
+    {
+      "test_id": "UTC-1420",
+      "srs_id": "SRS-106",
+      "sds_id": "SDS-106",
+      "summary": "Verify Lock already locked annotation\nwhen annotation already locked",
+      "description": "Feature: Individual and overall annotation lock control\nScenario: Lock already locked annotation\nGiven annotation already locked\nWhen lock clicked again\nThen no duplicate state change or error",
+      "acceptance": "No duplicate state change or error\nThe behavior should be validated when lock clicked again."
+    },
+    {
+      "test_id": "UTC-1421",
+      "srs_id": "SRS-106",
+      "sds_id": "SDS-106",
+      "summary": "Verify Individual unlock during overall lock\nwhen overall lock active",
+      "description": "Feature: Individual and overall annotation lock control\nScenario: Individual unlock during overall lock\nGiven overall lock active\nWhen individual unlock clicked\nThen annotation should remain locked due to overall lock",
+      "acceptance": "Annotation should remain locked due to overall lock\nThe behavior should be validated when individual unlock clicked."
+    },
+    {
+      "test_id": "UTC-1422",
+      "srs_id": "SRS-106",
+      "sds_id": "SDS-106",
+      "summary": "Verify Large number of annotations\nwhen 100+ annotations",
+      "description": "Feature: Individual and overall annotation lock control\nScenario: Large number of annotations\nGiven 100+ annotations\nWhen overall lock applied\nThen all should lock without lag",
+      "acceptance": "All should lock without lag\nThe behavior should be validated when overall lock applied."
+    },
+    {
+      "test_id": "UTC-1423",
+      "srs_id": "SRS-106",
+      "sds_id": "SDS-106",
+      "summary": "Verify Lock performance\nwhen many annotations",
+      "description": "Feature: Individual and overall annotation lock control\nScenario: Lock performance\nGiven many annotations\nWhen overall lock clicked\nThen response should occur within 1s",
+      "acceptance": "Response should occur within 1s\nThe behavior should be validated when overall lock clicked."
+    },
+    {
+      "test_id": "UTC-1424",
+      "srs_id": "SRS-106",
+      "sds_id": "SDS-106",
+      "summary": "Verify Keyboard toggle\nwhen lock icon focused",
+      "description": "Feature: Individual and overall annotation lock control\nScenario: Keyboard toggle\nGiven lock icon focused\nWhen Enter/Space pressed\nThen lock/unlock should toggle",
+      "acceptance": "Lock/unlock should toggle\nThe behavior should be validated when Enter/Space pressed."
+    },
+    {
+      "test_id": "UTC-1425",
+      "srs_id": "SRS-106",
+      "sds_id": "SDS-106",
+      "summary": "Verify Clear lock feedback\nwhen lock applied",
+      "description": "Feature: Individual and overall annotation lock control\nScenario: Clear lock feedback\nGiven lock applied\nWhen viewing annotation\nThen clear visual locked indicator should show",
+      "acceptance": "Clear visual locked indicator should show\nThe behavior should be validated when viewing annotation."
+    },
+    {
+      "test_id": "UTC-1426",
+      "srs_id": "SRS-106",
+      "sds_id": "SDS-106",
+      "summary": "Verify Lock state after refresh\nwhen annotations locked",
+      "description": "Feature: Individual and overall annotation lock control\nScenario: Lock state after refresh\nGiven annotations locked\nWhen page refreshed\nThen lock states should persist correctly",
+      "acceptance": "Lock states should persist correctly\nThe behavior should be validated when page refreshed."
+    },
+    {
+      "test_id": "UTC-1427",
+      "srs_id": "SRS-107",
+      "sds_id": "SDS-107",
+      "summary": "Verify Individual lock icon visible\nwhen an image with annotations",
+      "description": "Feature: Annotation lock/unlock with keyboard shortcuts\nScenario: Individual lock icon visible\nGiven an image with annotations\nWhen annotation panel loads\nThen each annotation should display a lock icon",
+      "acceptance": "Each annotation should display a lock icon\nThe behavior should be validated when annotation panel loads."
+    },
+    {
+      "test_id": "UTC-1428",
+      "srs_id": "SRS-107",
+      "sds_id": "SDS-107",
+      "summary": "Verify Overall lock icon visible\nwhen annotation toolbar visible",
+      "description": "Feature: Annotation lock/unlock with keyboard shortcuts\nScenario: Overall lock icon visible\nGiven annotation toolbar visible\nWhen header renders\nThen overall lock/unlock icon should be displayed",
+      "acceptance": "Overall lock/unlock icon should be displayed\nThe behavior should be validated when header renders."
+    },
+    {
+      "test_id": "UTC-1429",
+      "srs_id": "SRS-107",
+      "sds_id": "SDS-107",
+      "summary": "Verify Lock selected annotation using key L\nwhen an annotation is selected",
+      "description": "Feature: Annotation lock/unlock with keyboard shortcuts\nScenario: Lock selected annotation using key L\nGiven an annotation is selected\nWhen user presses L\nThen the selected annotation should become locked",
+      "acceptance": "The selected annotation should become locked\nThe behavior should be validated when user presses L."
+    },
+    {
+      "test_id": "UTC-1430",
+      "srs_id": "SRS-107",
+      "sds_id": "SDS-107",
+      "summary": "Verify Unlock selected annotation using key L\nwhen selected annotation locked",
+      "description": "Feature: Annotation lock/unlock with keyboard shortcuts\nScenario: Unlock selected annotation using key L\nGiven selected annotation locked\nWhen user presses L\nThen annotation becomes editable",
+      "acceptance": "Annotation becomes editable\nThe behavior should be validated when user presses L."
+    },
+    {
+      "test_id": "UTC-1431",
+      "srs_id": "SRS-107",
+      "sds_id": "SDS-107",
+      "summary": "Verify Lock all annotations using Ctrl + L\nwhen multiple annotations exist",
+      "description": "Feature: Annotation lock/unlock with keyboard shortcuts\nScenario: Lock all annotations using Ctrl + L\nGiven multiple annotations exist\nWhen user presses Ctrl + L\nThen all annotations should be locked",
+      "acceptance": "All annotations should be locked\nThe behavior should be validated when user presses Ctrl + L."
+    },
+    {
+      "test_id": "UTC-1432",
+      "srs_id": "SRS-107",
+      "sds_id": "SDS-107",
+      "summary": "Verify Unlock all annotations using Ctrl + L\nwhen all annotations locked",
+      "description": "Feature: Annotation lock/unlock with keyboard shortcuts\nScenario: Unlock all annotations using Ctrl + L\nGiven all annotations locked\nWhen user presses Ctrl + L again\nThen all annotations should be unlocked",
+      "acceptance": "All annotations should be unlocked\nThe behavior should be validated when user presses Ctrl + L again."
+    },
+    {
+      "test_id": "UTC-1433",
+      "srs_id": "SRS-107",
+      "sds_id": "SDS-107",
+      "summary": "Verify Locked annotation cannot be moved\nwhen annotation locked",
+      "description": "Feature: Annotation lock/unlock with keyboard shortcuts\nScenario: Locked annotation cannot be moved\nGiven annotation locked\nWhen dragging\nThen movement should not occur",
+      "acceptance": "Movement should not occur\nThe behavior should be validated when dragging."
+    },
+    {
+      "test_id": "UTC-1434",
+      "srs_id": "SRS-107",
+      "sds_id": "SDS-107",
+      "summary": "Verify Locked annotation cannot be resized\nwhen annotation locked",
+      "description": "Feature: Annotation lock/unlock with keyboard shortcuts\nScenario: Locked annotation cannot be resized\nGiven annotation locked\nWhen resizing\nThen resize should be blocked",
+      "acceptance": "Resize should be blocked\nThe behavior should be validated when resizing."
+    },
+    {
+      "test_id": "UTC-1435",
+      "srs_id": "SRS-107",
+      "sds_id": "SDS-107",
+      "summary": "Verify Unlocked annotation can be edited\nwhen annotation unlocked",
+      "description": "Feature: Annotation lock/unlock with keyboard shortcuts\nScenario: Unlocked annotation can be edited\nGiven annotation unlocked\nWhen dragging or resizing\nThen edit should succeed",
+      "acceptance": "Edit should succeed\nThe behavior should be validated when dragging or resizing."
+    },
+    {
+      "test_id": "UTC-1436",
+      "srs_id": "SRS-107",
+      "sds_id": "SDS-107",
+      "summary": "Verify Visual highlight for locked state\nwhen annotation locked",
+      "description": "Feature: Annotation lock/unlock with keyboard shortcuts\nScenario: Visual highlight for locked state\nGiven annotation locked\nWhen viewing list\nThen lock icon should be highlighted",
+      "acceptance": "Lock icon should be highlighted\nThe behavior should be validated when viewing list."
+    },
+    {
+      "test_id": "UTC-1437",
+      "srs_id": "SRS-107",
+      "sds_id": "SDS-107",
+      "summary": "Verify Lock state stored correctly\nwhen annotation locked",
+      "description": "Feature: Annotation lock/unlock with keyboard shortcuts\nScenario: Lock state stored correctly\nGiven annotation locked\nWhen state saved\nThen locked flag should be stored in model",
+      "acceptance": "Locked flag should be stored in model\nThe behavior should be validated when state saved."
+    },
+    {
+      "test_id": "UTC-1438",
+      "srs_id": "SRS-107",
+      "sds_id": "SDS-107",
+      "summary": "Verify Lock persists after refresh\nwhen annotation locked",
+      "description": "Feature: Annotation lock/unlock with keyboard shortcuts\nScenario: Lock persists after refresh\nGiven annotation locked\nWhen page refreshed\nThen lock state should persist",
+      "acceptance": "Lock state should persist\nThe behavior should be validated when page refreshed."
+    },
+    {
+      "test_id": "UTC-1439",
+      "srs_id": "SRS-107",
+      "sds_id": "SDS-107",
+      "summary": "Verify Press L without selection\nwhen no annotation selected",
+      "description": "Feature: Annotation lock/unlock with keyboard shortcuts\nScenario: Press L without selection\nGiven no annotation selected\nWhen user presses L\nThen no action should occur",
+      "acceptance": "No action should occur\nThe behavior should be validated when user presses L."
+    },
+    {
+      "test_id": "UTC-1440",
+      "srs_id": "SRS-107",
+      "sds_id": "SDS-107",
+      "summary": "Verify Shortcut ignored in text field\nwhen cursor inside text input",
+      "description": "Feature: Annotation lock/unlock with keyboard shortcuts\nScenario: Shortcut ignored in text field\nGiven cursor inside text input\nWhen user presses L\nThen lock action should not trigger",
+      "acceptance": "Lock action should not trigger\nThe behavior should be validated when user presses L."
+    },
+    {
+      "test_id": "UTC-1441",
+      "srs_id": "SRS-107",
+      "sds_id": "SDS-107",
+      "summary": "Verify UI and shortcut sync\nwhen locked via keyboard",
+      "description": "Feature: Annotation lock/unlock with keyboard shortcuts\nScenario: UI and shortcut sync\nGiven locked via keyboard\nWhen viewing lock icon\nThen icon state should reflect locked",
+      "acceptance": "Icon state should reflect locked\nThe behavior should be validated when viewing lock icon."
+    },
+    {
+      "test_id": "UTC-1442",
+      "srs_id": "SRS-107",
+      "sds_id": "SDS-107",
+      "summary": "Verify UI lock toggles keyboard behavior\nwhen locked via UI",
+      "description": "Feature: Annotation lock/unlock with keyboard shortcuts\nScenario: UI lock toggles keyboard behavior\nGiven locked via UI\nWhen pressing L\nThen annotation unlocks",
+      "acceptance": "Annotation unlocks\nThe behavior should be validated when pressing L."
+    },
+    {
+      "test_id": "UTC-1443",
+      "srs_id": "SRS-107",
+      "sds_id": "SDS-107",
+      "summary": "Verify Large number of annotations\nwhen 100+ annotations",
+      "description": "Feature: Annotation lock/unlock with keyboard shortcuts\nScenario: Large number of annotations\nGiven 100+ annotations\nWhen Ctrl + L pressed\nThen all should lock correctly",
+      "acceptance": "All should lock correctly\nThe behavior should be validated when Ctrl + L pressed."
+    },
+    {
+      "test_id": "UTC-1444",
+      "srs_id": "SRS-107",
+      "sds_id": "SDS-107",
+      "summary": "Verify Shortcut performance\nwhen many annotations",
+      "description": "Feature: Annotation lock/unlock with keyboard shortcuts\nScenario: Shortcut performance\nGiven many annotations\nWhen Ctrl + L pressed\nThen locking should complete within 1 second",
+      "acceptance": "Locking should complete within 1 second\nThe behavior should be validated when Ctrl + L pressed."
+    },
+    {
+      "test_id": "UTC-1445",
+      "srs_id": "SRS-107",
+      "sds_id": "SDS-107",
+      "summary": "Verify Keyboard-only usage\nwhen user uses keyboard only",
+      "description": "Feature: Annotation lock/unlock with keyboard shortcuts\nScenario: Keyboard-only usage\nGiven user uses keyboard only\nWhen pressing L or Ctrl + L\nThen locking should work without mouse",
+      "acceptance": "Locking should work without mouse\nThe behavior should be validated when pressing L or Ctrl + L."
+    },
+    {
+      "test_id": "UTC-1446",
+      "srs_id": "SRS-107",
+      "sds_id": "SDS-107",
+      "summary": "Verify Clear feedback on toggle\nwhen shortcut pressed",
+      "description": "Feature: Annotation lock/unlock with keyboard shortcuts\nScenario: Clear feedback on toggle\nGiven shortcut pressed\nWhen state changes\nThen visual cue should appear immediately",
+      "acceptance": "Visual cue should appear immediately\nThe behavior should be validated when state changes."
+    }
+  ]
+}

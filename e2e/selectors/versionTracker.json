@@ -1,0 +1,11 @@
+{
+  "version-tracker-button": "version-tracker-button",
+  "version-tracker-panel": "version-tracker-panel",
+  "version-list": "version-list",
+  "version-item-${index}": "version-item-${index}",
+  "version-number-${index}": "version-number-${index}",
+  "version-date-${index}": "version-date-${index}",
+  "version-user-${index}": "version-user-${index}",
+  "version-download-button": "version-download-button",
+  "version-select-radio-${index}": "version-select-radio-${index}"
+}

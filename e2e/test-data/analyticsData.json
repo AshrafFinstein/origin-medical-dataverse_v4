@@ -1,0 +1,16 @@
+{
+  "timing": {
+    "gridRenderMaxMs": 2000,
+    "uploadProcessMaxMs": 3000,
+    "apiResponseMaxMs": 5000
+  },
+  "jsonFile": {
+    "allowedExtension": ".json",
+    "displayAreaLabel": "Uploaded Files"
+  },
+  "timeOnTask": {
+    "unit": "seconds",
+    "displayFormat": "HH:MM:SS",
+    "accuracyMarginMs": 500
+  }
+}

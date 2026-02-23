@@ -1,0 +1,235 @@
+{
+  "spec_file": "e2e/tests/general/URS-DV-GEN-13/SRS-049/SDS-049.spec.ts",
+  "plan_urs": "URS-DV-GEN-13",
+  "srs_str": "049",
+  "domain": "general",
+  "page_class": "EpicPage",
+  "page_import": "epic.page",
+  "goto_method": "goto",
+  "test_cases": [
+    {
+      "test_id": "UTC-1873",
+      "srs_id": "SRS-143",
+      "sds_id": "SDS-143",
+      "summary": "Verify Request button disabled by default\nwhen modal opens",
+      "description": "Feature: Deletion Request Submission\nScenario: Request button disabled by default\nGiven modal opens\nWhen no reason is entered\nThen Request Approval button should be disabled",
+      "acceptance": "Request Approval button should be disabled\nThe behavior should be validated when no reason is entered."
+    },
+    {
+      "test_id": "UTC-1874",
+      "srs_id": "SRS-143",
+      "sds_id": "SDS-143",
+      "summary": "Verify Enable submit after input\nwhen modal is open",
+      "description": "Feature: Deletion Request Submission\nScenario: Enable submit after input\nGiven modal is open\nWhen user enters at least one character\nThen Request Approval button should be enabled",
+      "acceptance": "Request Approval button should be enabled\nThe behavior should be validated when user enters at least one character."
+    },
+    {
+      "test_id": "UTC-1875",
+      "srs_id": "SRS-143",
+      "sds_id": "SDS-143",
+      "summary": "Verify Leading/trailing spaces trimmed\nwhen reason entered with spaces",
+      "description": "Feature: Deletion Request Submission\nScenario: Leading/trailing spaces trimmed\nGiven reason entered with spaces\nWhen Request Approval is clicked\nThen submitted reason should be trimmed",
+      "acceptance": "Submitted reason should be trimmed\nThe behavior should be validated when Request Approval is clicked."
+    },
+    {
+      "test_id": "UTC-1876",
+      "srs_id": "SRS-143",
+      "sds_id": "SDS-143",
+      "summary": "Verify Character counter displayed\nwhen modal is open",
+      "description": "Feature: Deletion Request Submission\nScenario: Character counter displayed\nGiven modal is open\nWhen user types reason\nThen character counter should update correctly",
+      "acceptance": "Character counter should update correctly\nThe behavior should be validated when user types reason."
+    },
+    {
+      "test_id": "UTC-1877",
+      "srs_id": "SRS-143",
+      "sds_id": "SDS-143",
+      "summary": "Verify Max character limit enforced\nwhen 500 characters entered",
+      "description": "Feature: Deletion Request Submission\nScenario: Max character limit enforced\nGiven 500 characters entered\nWhen user tries to exceed limit\nThen additional characters should not be accepted",
+      "acceptance": "Additional characters should not be accepted\nThe behavior should be validated when user tries to exceed limit."
+    },
+    {
+      "test_id": "UTC-1878",
+      "srs_id": "SRS-143",
+      "sds_id": "SDS-143",
+      "summary": "Verify Submit request successfully\nwhen valid reason entered",
+      "description": "Feature: Deletion Request Submission\nScenario: Submit request successfully\nGiven valid reason entered\nWhen user clicks Request Approval\nThen deletion request should be created",
+      "acceptance": "Deletion request should be created\nThe behavior should be validated when user clicks Request Approval."
+    },
+    {
+      "test_id": "UTC-1879",
+      "srs_id": "SRS-143",
+      "sds_id": "SDS-143",
+      "summary": "Verify Status set to PENDING\nwhen request is submitted",
+      "description": "Feature: Deletion Request Submission\nScenario: Status set to PENDING\nGiven request is submitted\nWhen backend stores request\nThen status should be saved as PENDING",
+      "acceptance": "Status should be saved as PENDING\nThe behavior should be validated when backend stores request."
+    },
+    {
+      "test_id": "UTC-1880",
+      "srs_id": "SRS-143",
+      "sds_id": "SDS-143",
+      "summary": "Verify Correct payload sent\nwhen Request Approval clicked",
+      "description": "Feature: Deletion Request Submission\nScenario: Correct payload sent\nGiven Request Approval clicked\nWhen API request is sent\nThen payload should contain sessionId and reason",
+      "acceptance": "Payload should contain sessionId and reason\nThe behavior should be validated when API request is sent."
+    },
+    {
+      "test_id": "UTC-1881",
+      "srs_id": "SRS-143",
+      "sds_id": "SDS-143",
+      "summary": "Verify Cancel button behavior\nwhen modal is open",
+      "description": "Feature: Deletion Request Submission\nScenario: Cancel button behavior\nGiven modal is open\nWhen user clicks Cancel\nThen modal should close without saving",
+      "acceptance": "Modal should close without saving\nThe behavior should be validated when user clicks Cancel."
+    },
+    {
+      "test_id": "UTC-1882",
+      "srs_id": "SRS-143",
+      "sds_id": "SDS-143",
+      "summary": "Verify Unauthorized access blocked\nwhen user lacks delete permission",
+      "description": "Feature: Deletion Request Submission\nScenario: Unauthorized access blocked\nGiven user lacks delete permission\nWhen Delete Session is attempted\nThen modal should not open",
+      "acceptance": "Modal should not open\nThe behavior should be validated when Delete Session is attempted."
+    },
+    {
+      "test_id": "UTC-1883",
+      "srs_id": "SRS-143",
+      "sds_id": "SDS-143",
+      "summary": "Verify No duplicate submissions\nwhen Request Approval clicked once",
+      "description": "Feature: Deletion Request Submission\nScenario: No duplicate submissions\nGiven Request Approval clicked once\nWhen button is disabled during API call\nThen duplicate requests should not be created",
+      "acceptance": "Duplicate requests should not be created\nThe behavior should be validated when button is disabled during API call."
+    },
+    {
+      "test_id": "UTC-1884",
+      "srs_id": "SRS-143",
+      "sds_id": "SDS-143",
+      "summary": "Verify API failure handling\nwhen backend error occurs",
+      "description": "Feature: Deletion Request Submission\nScenario: API failure handling\nGiven backend error occurs\nWhen Request Approval is clicked\nThen error message should be shown and request not saved",
+      "acceptance": "Error message should be shown and request not saved\nThe behavior should be validated when Request Approval is clicked."
+    },
+    {
+      "test_id": "UTC-1885",
+      "srs_id": "SRS-144",
+      "sds_id": "SDS-144",
+      "summary": "Verify Dashboard page loads\nwhen admin logs in",
+      "description": "Feature: Administrative Request Dashboard\nScenario: Dashboard page loads\nGiven admin logs in\nWhen navigating to Delete Request Dashboard\nThen the dashboard page should load successfully",
+      "acceptance": "The dashboard page should load successfully\nThe behavior should be validated when navigating to Delete Request Dashboard."
+    },
+    {
+      "test_id": "UTC-1886",
+      "srs_id": "SRS-144",
+      "sds_id": "SDS-144",
+      "summary": "Verify Table structure displayed\nwhen dashboard is open",
+      "description": "Feature: Administrative Request Dashboard\nScenario: Table structure displayed\nGiven dashboard is open\nWhen UI renders\nThen table should show columns Session Name, Requested By, Reason, Rejection Reason, Status, Actions",
+      "acceptance": "Table should show columns Session Name, Requested By, Reason, Rejection Reason, Status, Actions\nThe behavior should be validated when UI renders."
+    },
+    {
+      "test_id": "UTC-1887",
+      "srs_id": "SRS-144",
+      "sds_id": "SDS-144",
+      "summary": "Verify Fetch all requests\nwhen requests exist in database",
+      "description": "Feature: Administrative Request Dashboard\nScenario: Fetch all requests\nGiven requests exist in database\nWhen dashboard loads\nThen all requests should be displayed in the table",
+      "acceptance": "All requests should be displayed in the table\nThe behavior should be validated when dashboard loads."
+    },
+    {
+      "test_id": "UTC-1888",
+      "srs_id": "SRS-144",
+      "sds_id": "SDS-144",
+      "summary": "Verify Show requester details\nwhen requests displayed",
+      "description": "Feature: Administrative Request Dashboard\nScenario: Show requester details\nGiven requests displayed\nWhen viewing Requested By column\nThen requester name should be shown correctly",
+      "acceptance": "Requester name should be shown correctly\nThe behavior should be validated when viewing Requested By column."
+    },
+    {
+      "test_id": "UTC-1889",
+      "srs_id": "SRS-144",
+      "sds_id": "SDS-144",
+      "summary": "Verify Show reason text\nwhen requests displayed",
+      "description": "Feature: Administrative Request Dashboard\nScenario: Show reason text\nGiven requests displayed\nWhen viewing Reason column\nThen provided reason should be visible",
+      "acceptance": "Provided reason should be visible\nThe behavior should be validated when viewing Reason column."
+    },
+    {
+      "test_id": "UTC-1890",
+      "srs_id": "SRS-144",
+      "sds_id": "SDS-144",
+      "summary": "Verify Status color coding\nwhen requests shown",
+      "description": "Feature: Administrative Request Dashboard\nScenario: Status color coding\nGiven requests shown\nWhen viewing status badges\nThen statuses should be color-coded (Pending/Approved/Rejected)",
+      "acceptance": "Statuses should be color-coded (Pending/Approved/Rejected)\nThe behavior should be validated when viewing status badges."
+    },
+    {
+      "test_id": "UTC-1891",
+      "srs_id": "SRS-144",
+      "sds_id": "SDS-144",
+      "summary": "Verify Approve button available\nwhen request status is Pending",
+      "description": "Feature: Administrative Request Dashboard\nScenario: Approve button available\nGiven request status is Pending\nWhen viewing Actions column\nThen Approve button should be enabled",
+      "acceptance": "Approve button should be enabled\nThe behavior should be validated when viewing Actions column."
+    },
+    {
+      "test_id": "UTC-1892",
+      "srs_id": "SRS-144",
+      "sds_id": "SDS-144",
+      "summary": "Verify Reject button available\nwhen request status is Pending",
+      "description": "Feature: Administrative Request Dashboard\nScenario: Reject button available\nGiven request status is Pending\nWhen viewing Actions column\nThen Reject button should be enabled",
+      "acceptance": "Reject button should be enabled\nThe behavior should be validated when viewing Actions column."
+    },
+    {
+      "test_id": "UTC-1893",
+      "srs_id": "SRS-144",
+      "sds_id": "SDS-144",
+      "summary": "Verify Approve request successfully\nwhen Pending request exists",
+      "description": "Feature: Administrative Request Dashboard\nScenario: Approve request successfully\nGiven Pending request exists\nWhen admin clicks Approve\nThen status should change to Approved",
+      "acceptance": "Status should change to Approved\nThe behavior should be validated when admin clicks Approve."
+    },
+    {
+      "test_id": "UTC-1894",
+      "srs_id": "SRS-144",
+      "sds_id": "SDS-144",
+      "summary": "Verify Reject request successfully\nwhen Pending request exists",
+      "description": "Feature: Administrative Request Dashboard\nScenario: Reject request successfully\nGiven Pending request exists\nWhen admin clicks Reject\nThen request should be marked Rejected",
+      "acceptance": "Request should be marked Rejected\nThe behavior should be validated when admin clicks Reject."
+    },
+    {
+      "test_id": "UTC-1895",
+      "srs_id": "SRS-144",
+      "sds_id": "SDS-144",
+      "summary": "Verify Rejection reason required\nwhen admin clicks Reject",
+      "description": "Feature: Administrative Request Dashboard\nScenario: Rejection reason required\nGiven admin clicks Reject\nWhen no reason entered\nThen submission should be blocked",
+      "acceptance": "Submission should be blocked\nThe behavior should be validated when no reason entered."
+    },
+    {
+      "test_id": "UTC-1896",
+      "srs_id": "SRS-144",
+      "sds_id": "SDS-144",
+      "summary": "Verify Show rejection reason only for rejected\nwhen rejected request exists",
+      "description": "Feature: Administrative Request Dashboard\nScenario: Show rejection reason only for rejected\nGiven rejected request exists\nWhen viewing row\nThen rejection reason should be visible only for rejected rows",
+      "acceptance": "Rejection reason should be visible only for rejected rows\nThe behavior should be validated when viewing row."
+    },
+    {
+      "test_id": "UTC-1897",
+      "srs_id": "SRS-144",
+      "sds_id": "SDS-144",
+      "summary": "Verify Filter by requester name\nwhen multiple requests exist",
+      "description": "Feature: Administrative Request Dashboard\nScenario: Filter by requester name\nGiven multiple requests exist\nWhen admin searches by requester\nThen matching records should be shown",
+      "acceptance": "Matching records should be shown\nThe behavior should be validated when admin searches by requester."
+    },
+    {
+      "test_id": "UTC-1898",
+      "srs_id": "SRS-144",
+      "sds_id": "SDS-144",
+      "summary": "Verify Filter by status\nwhen multiple statuses exist",
+      "description": "Feature: Administrative Request Dashboard\nScenario: Filter by status\nGiven multiple statuses exist\nWhen admin filters Pending\nThen only pending records should be shown",
+      "acceptance": "Only pending records should be shown\nThe behavior should be validated when admin filters Pending."
+    },
+    {
+      "test_id": "UTC-1899",
+      "srs_id": "SRS-144",
+      "sds_id": "SDS-144",
+      "summary": "Verify Unauthorized user blocked\nwhen non-admin user logged in",
+      "description": "Feature: Administrative Request Dashboard\nScenario: Unauthorized user blocked\nGiven non-admin user logged in\nWhen accessing dashboard URL\nThen access should be denied",
+      "acceptance": "Access should be denied\nThe behavior should be validated when accessing dashboard URL."
+    },
+    {
+      "test_id": "UTC-1900",
+      "srs_id": "SRS-144",
+      "sds_id": "SDS-144",
+      "summary": "Verify No data state\nwhen no requests exist",
+      "description": "Feature: Administrative Request Dashboard\nScenario: No data state\nGiven no requests exist\nWhen dashboard loads\nThen 'No Data' placeholder should be displayed",
+      "acceptance": "No Data' placeholder should be displayed\nThe behavior should be validated when dashboard loads."
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "spec_file": "e2e/tests/session-management/URS-DV-GEN-19/SRS-069/SDS-069.spec.ts",
+  "plan_urs": "URS-DV-GEN-19",
+  "srs_str": "069",
+  "domain": "session-management",
+  "page_class": "SessionLockPage",
+  "page_import": "session-lock.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-2654",
+      "srs_id": "SRS-255",
+      "sds_id": "SDS-255",
+      "summary": "Verify Lock confirmation popup opens on clicking Lock icon\nwhen the user is on Data Labelling Session list page",
+      "description": "Feature: Lock Session – Popup Open\n\nScenario: Verify Lock confirmation popup opens on clicking Lock icon\n\nGiven the user is on Data Labelling Session list page\nAnd a session status is Completed\nWhen the user clicks the Lock icon\nThen the Lock popup should open with Reason textbox and Submit/Cancel buttons",
+      "acceptance": "The Lock popup should open with Reason textbox and Submit/Cancel buttons\nThe behavior should be validated when the user clicks the Lock icon."
+    },
+    {
+      "test_id": "UTC-2655",
+      "srs_id": "SRS-255",
+      "sds_id": "SDS-255",
+      "summary": "Verify submission is blocked if reason is empty\nwhen Lock popup is opened",
+      "description": "Feature: Lock Session – Reason Mandatory\n\nScenario: Verify submission is blocked if reason is empty\n\nGiven Lock popup is opened\nWhen the user keeps Reason field empty\nAnd clicks Submit\nThen the system should block submission\nAnd mandatory validation should be shown for Reason",
+      "acceptance": "The system should block submission\nThe behavior should be validated when the user keeps Reason field empty."
+    },
+    {
+      "test_id": "UTC-2656",
+      "srs_id": "SRS-255",
+      "sds_id": "SDS-255",
+      "summary": "Verify session is locked when valid reason is entered\nwhen Lock popup is opened",
+      "description": "Feature: Lock Session – Lock Success with Valid Reason\n\nScenario: Verify session is locked when valid reason is entered\n\nGiven Lock popup is opened\nWhen the user enters a valid reason (Ex:For testing lock)\nAnd clicks Submit\nThen the session should be locked successfully\nAnd lock state should be applied in UI",
+      "acceptance": "The session should be locked successfully\nThe behavior should be validated when the user enters a valid reason (Ex:For testing lock)."
+    },
+    {
+      "test_id": "UTC-2657",
+      "srs_id": "SRS-255",
+      "sds_id": "SDS-255",
+      "summary": "Verify session is not locked when user cancels popup\nwhen Lock popup is opened",
+      "description": "Feature: Lock Session – Cancel Does Not Lock Session\n\nScenario: Verify session is not locked when user cancels popup\n\nGiven Lock popup is opened\nWhen the user enters a reason\nAnd clicks Cancel\nThen the popup should close\nAnd session should remain unlocked",
+      "acceptance": "The popup should close\nThe behavior should be validated when the user enters a reason."
+    },
+    {
+      "test_id": "UTC-2658",
+      "srs_id": "SRS-255",
+      "sds_id": "SDS-255",
+      "summary": "Verify lock reason is stored and visible as tooltip after locking\nwhen the session is locked using a reason",
+      "description": "Feature: Lock Session – Reason Stored for Audit\n\nScenario: Verify lock reason is stored and visible as tooltip after locking\n\nGiven the session is locked using a reason\nWhen the user hovers over lock indicator/icon in session list\nThen the tooltip should show “Session is locked. Reason: <entered reason>”",
+      "acceptance": "The tooltip should show \"Session is locked. Reason: <entered reason>\"\nThe behavior should be validated when the user hovers over lock indicator/icon in session list."
+    },
+    {
+      "test_id": "UTC-2659",
+      "srs_id": "SRS-256",
+      "sds_id": "SDS-256",
+      "summary": "Verify Edit is disabled/hidden when session is locked\nwhen a session is locked successfully",
+      "description": "Feature: Locked Session – Edit Action Disabled\n\nScenario: Verify Edit is disabled/hidden when session is locked\n\nGiven a session is locked successfully\nWhen the user views Actions column for that session\nThen Edit option should be disabled or hidden",
+      "acceptance": "Edit option should be disabled or hidden\nThe behavior should be validated when the user views Actions column for that session."
+    },
+    {
+      "test_id": "UTC-2660",
+      "srs_id": "SRS-256",
+      "sds_id": "SDS-256",
+      "summary": "Verify Delete is disabled/hidden when session is locked\nwhen a session is locked successfully",
+      "description": "Feature: Locked Session – Delete Action Disabled\n\nScenario: Verify Delete is disabled/hidden when session is locked\n\nGiven a session is locked successfully\nWhen the user views Actions column for that session\nThen Delete option should be disabled or hidden",
+      "acceptance": "Delete option should be disabled or hidden\nThe behavior should be validated when the user views Actions column for that session."
+    },
+    {
+      "test_id": "UTC-2661",
+      "srs_id": "SRS-256",
+      "sds_id": "SDS-256",
+      "summary": "Verify Duplicate action remains enabled for locked session\nwhen a session is locked successfully",
+      "description": "Feature: Locked Session – Duplicate Allowed\n\nScenario: Verify Duplicate action remains enabled for locked session\n\nGiven a session is locked successfully\nWhen the user views Actions column for that session\nThen Duplicate option should remain enabled and clickable",
+      "acceptance": "Duplicate option should remain enabled and clickable\nThe behavior should be validated when the user views Actions column for that session."
+    },
+    {
+      "test_id": "UTC-2662",
+      "srs_id": "SRS-256",
+      "sds_id": "SDS-256",
+      "summary": "Verify user can duplicate a locked session successfully\nwhen a session is locked",
+      "description": "Feature: Locked Session – Duplicate Creates New Session\n\nScenario: Verify user can duplicate a locked session successfully\n\nGiven a session is locked\nWhen the user clicks Duplicate\nAnd enters a new valid session name\nAnd submits\nThen the system should create a new session successfully",
+      "acceptance": "The system should create a new session successfully\nThe behavior should be validated when the user clicks Duplicate."
+    },
+    {
+      "test_id": "UTC-2663",
+      "srs_id": "SRS-256",
+      "sds_id": "SDS-256",
+      "summary": "Verify direct API edit request is rejected for locked session\nwhen the session is locked",
+      "description": "Feature: Locked Session – API Blocks Edit\n\nScenario: Verify direct API edit request is rejected for locked session\n\nGiven the session is locked\nWhen the user attempts to edit session using direct request/API call\nThen the system should reject the request\nAnd session data should remain unchanged",
+      "acceptance": "The system should reject the request\nThe behavior should be validated when the user attempts to edit session using direct request/API call."
+    },
+    {
+      "test_id": "UTC-2664",
+      "srs_id": "SRS-256",
+      "sds_id": "SDS-256",
+      "summary": "Verify direct API delete request is rejected for locked session\nwhen the session is locked",
+      "description": "Feature: Locked Session – API Blocks Delete\n\nScenario: Verify direct API delete request is rejected for locked session\n\nGiven the session is locked\nWhen the user attempts to delete session using direct request/API call\nThen the system should reject the request\nAnd session should not be deleted",
+      "acceptance": "The system should reject the request\nThe behavior should be validated when the user attempts to delete session using direct request/API call."
+    },
+    {
+      "test_id": "UTC-2665",
+      "srs_id": "SRS-256",
+      "sds_id": "SDS-256",
+      "summary": "Verify Edit/Delete available when session is unlocked\nwhen a session is not locked",
+      "description": "Feature: Locked Session – Normal Actions for Unlocked Session\n\nScenario: Verify Edit/Delete available when session is unlocked\n\nGiven a session is not locked\nWhen the user views Actions column\nThen Edit and Delete options should be enabled normally",
+      "acceptance": "Edit and Delete options should be enabled normally\nThe behavior should be validated when the user views Actions column."
+    },
+    {
+      "test_id": "UTC-2666",
+      "srs_id": "SRS-256",
+      "sds_id": "SDS-256",
+      "summary": "Verify locked session cannot be edited via direct URL navigation\nwhen the session is locked",
+      "description": "Feature: Locked Session – Prevent Access to Edit Screen via URL\n\nScenario: Verify locked session cannot be edited via direct URL navigation\n\nGiven the session is locked\nWhen the user tries to open Edit Session page via direct URL\nThen the system should block access\nAnd show safe message or redirect back",
+      "acceptance": "The system should block access\nThe behavior should be validated when the user tries to open Edit Session page via direct URL."
+    },
+    {
+      "test_id": "UTC-2667",
+      "srs_id": "SRS-257",
+      "sds_id": "SDS-257",
+      "summary": "Verify Unlock icon is visible for locked session\nwhen a session is locked successfully",
+      "description": "Feature: Unlock Session – Unlock Icon Visibility\n\nScenario: Verify Unlock icon is visible for locked session\n\nGiven a session is locked successfully\nWhen the session list page is displayed\nThen Unlock icon should be visible for that locked session row",
+      "acceptance": "Unlock icon should be visible for that locked session row\nThe behavior should be validated when the session list page is displayed."
+    },
+    {
+      "test_id": "UTC-2668",
+      "srs_id": "SRS-257",
+      "sds_id": "SDS-257",
+      "summary": "Verify Unlock popup opens on clicking unlock icon\nwhen the session is locked",
+      "description": "Feature: Unlock Session – Popup Open\n\nScenario: Verify Unlock popup opens on clicking unlock icon\n\nGiven the session is locked\nWhen the user clicks Unlock icon\nThen Unlock popup should open with Reason textbox and Submit/Cancel buttons",
+      "acceptance": "Unlock popup should open with Reason textbox and Submit/Cancel buttons\nThe behavior should be validated when the user clicks Unlock icon."
+    }
+  ]
+}

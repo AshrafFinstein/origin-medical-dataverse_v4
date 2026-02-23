@@ -1,5 +1,5 @@
 import { Page, Locator } from '@playwright/test';
-import { Selectors, getDynamicSelector } from '../selectors';
+import { Selectors, CommonSelectors, getDynamicSelector } from '../selectors';
 
 /**
  * BasePage provides common page interaction methods
@@ -15,13 +15,13 @@ export abstract class BasePage {
 
   // Navigation
   async goto(url: string) {
-    await this.page.goto(url);
+    await this.page.goto(url, { timeout: 60000 });
     await this.waitForPageLoad();
   }
 
   async waitForPageLoad() {
     await this.page.waitForLoadState('domcontentloaded');
-    await this.page.waitForLoadState('networkidle');
+    await this.page.waitForLoadState('networkidle').catch(() => {});
   }
 
   // Interactions
@@ -229,7 +229,7 @@ export abstract class BasePage {
   }
 
   async waitForToast(type: 'success' | 'error' = 'success', timeout: number = 5000) {
-    const toastSelector = this.selectors.common['ui-toast'][type];
+    const toastSelector = CommonSelectors[`ui-toast-${type}` as keyof typeof CommonSelectors];
     try {
       await this.waitForSelector(toastSelector, { timeout, state: 'visible' });
     } catch {
@@ -239,16 +239,17 @@ export abstract class BasePage {
 
   async getToastMessage(type: 'success' | 'error', timeout: number = 5000): Promise<string> {
     await this.waitForToast(type, timeout);
-    const message = await this.page.locator(this.selectors.common['ui-toast'][type]).first().textContent();
+    const toastSelector = CommonSelectors[`ui-toast-${type}` as keyof typeof CommonSelectors];
+    const message = await this.page.locator(toastSelector).first().textContent();
     return message ?? '';
   }
 
   async waitForLoadingComplete() {
     // Wait for all loading indicators to disappear
     const loadingSelectors = [
-      this.selectors.common['ui-loading'].spin,
-      this.selectors.common['ui-loading'].skeleton,
-      this.selectors.common['ui-loading']['custom-indicator'],
+      CommonSelectors['ui-loading-spin'],
+      CommonSelectors['ui-loading-skeleton'],
+      CommonSelectors['ui-loading-custom-indicator'],
     ];
 
     for (const selector of loadingSelectors) {
@@ -270,11 +271,11 @@ export abstract class BasePage {
   }
 
   async waitForModalOpen(timeout: number = 5000) {
-    await this.waitForSelector(this.selectors.common['ui-modal'].container, { timeout, state: 'visible' });
+    await this.waitForSelector(CommonSelectors['ui-modal-container'], { timeout, state: 'visible' });
   }
 
   async waitForModalClose(timeout: number = 5000) {
-    await this.waitForSelector(this.selectors.common['ui-modal'].container, { timeout, state: 'hidden' });
+    await this.waitForSelector(CommonSelectors['ui-modal-container'], { timeout, state: 'hidden' });
   }
 
   // Screenshot helpers

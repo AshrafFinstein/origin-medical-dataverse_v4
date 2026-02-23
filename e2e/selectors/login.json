@@ -1,0 +1,13 @@
+{
+  "auth0-email-input": "input#username, input[type='email'], input[name='email'], input[name='username']",
+  "auth0-password-input": "input#password, input[type='password'], input[name='password']",
+  "auth0-submit-button": "button[data-action-button-primary='true'], button[type='submit'], button[name='action']",
+  "auth0-captcha-image": ".captcha-image, img[alt*='captcha' i], img[alt*='code' i]",
+  "auth0-captcha-input": "input[placeholder*='code shown above' i], input[name*='captcha' i], input[aria-label*='captcha' i], #captcha-input",
+  "auth0-captcha-container": ".captcha-container, .captcha, [class*='captcha' i]",
+  "auth0-error-message": "[class*='error'], [id*='error'], .ulp-input-error",
+  "header-logout-button": "header-logout-button",
+  "logout-modal": "logout-modal",
+  "logout-confirm-button": "logout-confirm-button",
+  "logout-cancel-button": "logout-cancel-button"
+}

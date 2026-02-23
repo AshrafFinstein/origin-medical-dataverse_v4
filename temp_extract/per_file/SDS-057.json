@@ -1,0 +1,219 @@
+{
+  "spec_file": "e2e/tests/session-management/URS-DV-GEN-15/SRS-057/SDS-057.spec.ts",
+  "plan_urs": "URS-DV-GEN-15",
+  "srs_str": "057",
+  "domain": "session-management",
+  "page_class": "SessionPage",
+  "page_import": "session.page",
+  "goto_method": "navigate",
+  "test_cases": [
+    {
+      "test_id": "UTC-2341",
+      "srs_id": "SRS-228",
+      "sds_id": "SDS-228",
+      "summary": "Verify Color updates after status change\nwhen a session changes from \"In Progress\" to \"Yet to do\"",
+      "description": "Feature: Yet To Do Status Color Indicator\nScenario: Color updates after status change\nGiven a session changes from “In Progress” to “Yet to do”\nWhen the page refreshes or updates\nThen the badge should immediately turn red",
+      "acceptance": "The badge should immediately turn red\nThe behavior should be validated when the page refreshes or updates."
+    },
+    {
+      "test_id": "UTC-2342",
+      "srs_id": "SRS-228",
+      "sds_id": "SDS-228",
+      "summary": "Verify Red indicator clearly visible\nwhen multiple sessions are displayed",
+      "description": "Feature: Yet To Do Status Color Indicator\nScenario: Red indicator clearly visible\nGiven multiple sessions are displayed\nWhen user scans the list\nThen pending sessions should be easily distinguishable",
+      "acceptance": "Pending sessions should be easily distinguishable\nThe behavior should be validated when user scans the list."
+    },
+    {
+      "test_id": "UTC-2343",
+      "srs_id": "SRS-228",
+      "sds_id": "SDS-228",
+      "summary": "Verify Accessible contrast ratio\nwhen red badge is displayed",
+      "description": "Feature: Yet To Do Status Color Indicator\nScenario: Accessible contrast ratio\nGiven red badge is displayed\nWhen checked for accessibility\nThen color contrast should meet WCAG readability standards",
+      "acceptance": "Color contrast should meet WCAG readability standards\nThe behavior should be validated when checked for accessibility."
+    },
+    {
+      "test_id": "UTC-2344",
+      "srs_id": "SRS-228",
+      "sds_id": "SDS-228",
+      "summary": "Verify Color retained after refresh\nwhen a session has \"Yet to do\" status",
+      "description": "Feature: Yet To Do Status Color Indicator\nScenario: Color retained after refresh\nGiven a session has “Yet to do” status\nWhen the user refreshes the page\nThen red indicator should persist",
+      "acceptance": "Red indicator should persist\nThe behavior should be validated when the user refreshes the page."
+    },
+    {
+      "test_id": "UTC-2345",
+      "srs_id": "SRS-228",
+      "sds_id": "SDS-228",
+      "summary": "Verify Styling applied without delay\nwhen the list loads with many sessions",
+      "description": "Feature: Yet To Do Status Color Indicator\nScenario: Styling applied without delay\nGiven the list loads with many sessions\nWhen rendering completes\nThen red styling should apply instantly without flicker",
+      "acceptance": "Red styling should apply instantly without flicker\nThe behavior should be validated when rendering completes."
+    },
+    {
+      "test_id": "UTC-2346",
+      "srs_id": "SRS-228",
+      "sds_id": "SDS-228",
+      "summary": "Verify Unknown status fallback\nwhen an unexpected or null status value",
+      "description": "Feature: Yet To Do Status Color Indicator\nScenario: Unknown status fallback\nGiven an unexpected or null status value\nWhen UI renders\nThen default neutral styling should apply without red",
+      "acceptance": "Default neutral styling should apply without red\nThe behavior should be validated when UI renders."
+    },
+    {
+      "test_id": "UTC-2347",
+      "srs_id": "SRS-229",
+      "sds_id": "SDS-229",
+      "summary": "Verify Blue badge shown in session list\nwhen a session status is \"In Progress\"",
+      "description": "Feature: In Progress Status Color Indicator\nScenario: Blue badge shown in session list\nGiven a session status is “In Progress”\nWhen the session list loads\nThen the status badge should display in blue color",
+      "acceptance": "The status badge should display in blue color\nThe behavior should be validated when the session list loads."
+    },
+    {
+      "test_id": "UTC-2348",
+      "srs_id": "SRS-229",
+      "sds_id": "SDS-229",
+      "summary": "Verify Blue label shown in session details page\nwhen a session with \"In Progress\" status is opened",
+      "description": "Feature: In Progress Status Color Indicator\nScenario: Blue label shown in session details page\nGiven a session with “In Progress” status is opened\nWhen the details page renders\nThen the status label should appear in blue",
+      "acceptance": "The status label should appear in blue\nThe behavior should be validated when the details page renders."
+    },
+    {
+      "test_id": "UTC-2349",
+      "srs_id": "SRS-229",
+      "sds_id": "SDS-229",
+      "summary": "Verify Dynamic styling based on backend value\nwhen backend returns status = \"In Progress\"",
+      "description": "Feature: In Progress Status Color Indicator\nScenario: Dynamic styling based on backend value\nGiven backend returns status = “In Progress”\nWhen UI binds data\nThen blue styling should automatically apply",
+      "acceptance": "Blue styling should automatically apply\nThe behavior should be validated when UI binds data."
+    },
+    {
+      "test_id": "UTC-2350",
+      "srs_id": "SRS-229",
+      "sds_id": "SDS-229",
+      "summary": "Verify No blue color for other statuses\nwhen the session status is \"Yet to do\" or \"Completed\"",
+      "description": "Feature: In Progress Status Color Indicator\nScenario: No blue color for other statuses\nGiven the session status is “Yet to do” or “Completed”\nWhen the list loads\nThen the badge should not appear blue",
+      "acceptance": "The badge should not appear blue\nThe behavior should be validated when the list loads."
+    },
+    {
+      "test_id": "UTC-2351",
+      "srs_id": "SRS-229",
+      "sds_id": "SDS-229",
+      "summary": "Verify Color updates after status change\nwhen a session changes from \"Yet to do\" to \"In Progress\"",
+      "description": "Feature: In Progress Status Color Indicator\nScenario: Color updates after status change\nGiven a session changes from “Yet to do” to “In Progress”\nWhen the UI refreshes or updates\nThen the badge should immediately turn blue",
+      "acceptance": "The badge should immediately turn blue\nThe behavior should be validated when the UI refreshes or updates."
+    },
+    {
+      "test_id": "UTC-2352",
+      "srs_id": "SRS-229",
+      "sds_id": "SDS-229",
+      "summary": "Verify Easy identification of active sessions\nwhen multiple sessions exist",
+      "description": "Feature: In Progress Status Color Indicator\nScenario: Easy identification of active sessions\nGiven multiple sessions exist\nWhen user scans the list\nThen “In Progress” sessions should be visually distinguishable with blue",
+      "acceptance": "\"In Progress\" sessions should be visually distinguishable with blue\nThe behavior should be validated when user scans the list."
+    },
+    {
+      "test_id": "UTC-2353",
+      "srs_id": "SRS-229",
+      "sds_id": "SDS-229",
+      "summary": "Verify Blue color meets contrast requirements\nwhen blue badge is displayed",
+      "description": "Feature: In Progress Status Color Indicator\nScenario: Blue color meets contrast requirements\nGiven blue badge is displayed\nWhen checked for accessibility standards\nThen the text and background contrast should meet WCAG guidelines",
+      "acceptance": "The text and background contrast should meet WCAG guidelines\nThe behavior should be validated when checked for accessibility standards."
+    },
+    {
+      "test_id": "UTC-2354",
+      "srs_id": "SRS-229",
+      "sds_id": "SDS-229",
+      "summary": "Verify Color persists after page reload\nwhen session status is \"In Progress\"",
+      "description": "Feature: In Progress Status Color Indicator\nScenario: Color persists after page reload\nGiven session status is “In Progress”\nWhen user refreshes page\nThen the blue indicator should remain visible",
+      "acceptance": "The blue indicator should remain visible\nThe behavior should be validated when user refreshes page."
+    },
+    {
+      "test_id": "UTC-2355",
+      "srs_id": "SRS-229",
+      "sds_id": "SDS-229",
+      "summary": "Verify Styling applied without flicker\nwhen large session list loads",
+      "description": "Feature: In Progress Status Color Indicator\nScenario: Styling applied without flicker\nGiven large session list loads\nWhen rendering completes\nThen blue styling should apply instantly without delay",
+      "acceptance": "Blue styling should apply instantly without delay\nThe behavior should be validated when rendering completes."
+    },
+    {
+      "test_id": "UTC-2356",
+      "srs_id": "SRS-229",
+      "sds_id": "SDS-229",
+      "summary": "Verify Unknown/null status fallback\nwhen session status is null or unexpected",
+      "description": "Feature: In Progress Status Color Indicator\nScenario: Unknown/null status fallback\nGiven session status is null or unexpected\nWhen UI renders\nThen default neutral styling should apply without blue",
+      "acceptance": "Default neutral styling should apply without blue\nThe behavior should be validated when UI renders."
+    },
+    {
+      "test_id": "UTC-2357",
+      "srs_id": "SRS-230",
+      "sds_id": "SDS-230",
+      "summary": "Verify Completed option enabled after eligibility\nwhen a session is eligible for completion",
+      "description": "Feature: Update Session Status to Completed\nScenario: Completed option enabled after eligibility\nGiven a session is eligible for completion\nWhen the Session Status dropdown is opened\nThen the “Completed” option should be enabled",
+      "acceptance": "The \"Completed\" option should be enabled\nThe behavior should be validated when the Session Status dropdown is opened."
+    },
+    {
+      "test_id": "UTC-2358",
+      "srs_id": "SRS-230",
+      "sds_id": "SDS-230",
+      "summary": "Verify Change status to Completed\nwhen the session is eligible",
+      "description": "Feature: Update Session Status to Completed\nScenario: Change status to Completed\nGiven the session is eligible\nWhen the user selects “Completed” from the dropdown\nThen the session status should change to “Completed”",
+      "acceptance": "The session status should change to \"Completed\"\nThe behavior should be validated when the user selects \"Completed\" from the dropdown."
+    },
+    {
+      "test_id": "UTC-2359",
+      "srs_id": "SRS-230",
+      "sds_id": "SDS-230",
+      "summary": "Verify Persist Completed status in backend\nwhen \"Completed\" is selected",
+      "description": "Feature: Update Session Status to Completed\nScenario: Persist Completed status in backend\nGiven “Completed” is selected\nWhen the update request is sent\nThen the backend should persist the status as “Completed”",
+      "acceptance": "The backend should persist the status as \"Completed\"\nThe behavior should be validated when the update request is sent."
+    },
+    {
+      "test_id": "UTC-2360",
+      "srs_id": "SRS-230",
+      "sds_id": "SDS-230",
+      "summary": "Verify Completed status visible in session list\nwhen session status is \"Completed\"",
+      "description": "Feature: Update Session Status to Completed\nScenario: Completed status visible in session list\nGiven session status is “Completed”\nWhen the session list loads\nThen the session row should display “Completed” status",
+      "acceptance": "The session row should display \"Completed\" status\nThe behavior should be validated when the session list loads."
+    },
+    {
+      "test_id": "UTC-2361",
+      "srs_id": "SRS-230",
+      "sds_id": "SDS-230",
+      "summary": "Verify Completed status visible in session detail view\nwhen session is marked Completed",
+      "description": "Feature: Update Session Status to Completed\nScenario: Completed status visible in session detail view\nGiven session is marked Completed\nWhen the session detail page opens\nThen the status field should show “Completed”",
+      "acceptance": "The status field should show \"Completed\"\nThe behavior should be validated when the session detail page opens."
+    },
+    {
+      "test_id": "UTC-2362",
+      "srs_id": "SRS-230",
+      "sds_id": "SDS-230",
+      "summary": "Verify Status persists after page refresh\nwhen the session is marked Completed",
+      "description": "Feature: Update Session Status to Completed\nScenario: Status persists after page refresh\nGiven the session is marked Completed\nWhen the user refreshes the page\nThen the status should remain “Completed”",
+      "acceptance": "The status should remain \"Completed\"\nThe behavior should be validated when the user refreshes the page."
+    },
+    {
+      "test_id": "UTC-2363",
+      "srs_id": "SRS-230",
+      "sds_id": "SDS-230",
+      "summary": "Verify Restore previous status on failure\nwhen backend update fails",
+      "description": "Feature: Update Session Status to Completed\nScenario: Restore previous status on failure\nGiven backend update fails\nWhen user selects “Completed”\nThen the previous session status should be restored",
+      "acceptance": "The previous session status should be restored\nThe behavior should be validated when user selects \"Completed\"."
+    },
+    {
+      "test_id": "UTC-2364",
+      "srs_id": "SRS-230",
+      "sds_id": "SDS-230",
+      "summary": "Verify Prevent completion when not eligible\nwhen the session is not eligible",
+      "description": "Feature: Update Session Status to Completed\nScenario: Prevent completion when not eligible\nGiven the session is not eligible\nWhen the dropdown is opened\nThen “Completed” option should be disabled",
+      "acceptance": "\"Completed\" option should be disabled\nThe behavior should be validated when the dropdown is opened."
+    },
+    {
+      "test_id": "UTC-2365",
+      "srs_id": "SRS-230",
+      "sds_id": "SDS-230",
+      "summary": "Verify Clear user feedback on status change\nwhen the status is updated successfully",
+      "description": "Feature: Update Session Status to Completed\nScenario: Clear user feedback on status change\nGiven the status is updated successfully\nWhen the update completes\nThen the user should see clear visual confirmation",
+      "acceptance": "The user should see clear visual confirmation\nThe behavior should be validated when the update completes."
+    },
+    {
+      "test_id": "UTC-2366",
+      "srs_id": "SRS-230",
+      "sds_id": "SDS-230",
+      "summary": "Verify Fast status update response\nwhen user selects \"Completed\"",
+      "description": "Feature: Update Session Status to Completed\nScenario: Fast status update response\nGiven user selects “Completed”\nWhen the update request is sent\nThen the UI should update without noticeable delay",
+      "acceptance": "The UI should update without noticeable delay\nThe behavior should be validated when the update request is sent."
+    }
+  ]
+}

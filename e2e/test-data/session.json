@@ -1,0 +1,12 @@
+{
+  "dlSession": {
+    "name": "DL Test Session",
+    "type": "Data Labelling"
+  },
+  "ceSession": {
+    "name": "CE Test Session",
+    "type": "Clinical Evaluation"
+  },
+  "statuses": ["Active", "Completed", "Archived"],
+  "defaultDescription": "Created by automated test"
+}

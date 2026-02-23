@@ -1,0 +1,86 @@
+{
+  "approvalLevels": {
+    "minimum": 1,
+    "maximum": 5,
+    "default": "1",
+    "levels": ["Level 1", "Level 2", "Level 3", "Level 4", "Level 5"]
+  },
+  "imageStatuses": {
+    "pending": "PENDING",
+    "inReview": "IN_REVIEW",
+    "accepted": "ACCEPTED",
+    "rejected": "REJECTED"
+  },
+  "statusDisplayFormats": {
+    "inReviewWithLevel": "IN_REVIEW L{level}",
+    "rejectedWithLevel": "REJECTED L{level}",
+    "accepted": "ACCEPTED"
+  },
+  "stageLabels": {
+    "qualityChecker": "QUALITY CHECKER",
+    "assignee": "ASSIGNEE"
+  },
+  "errorMessages": {
+    "emptyApprovalLevel": "Error creating session: Each approval level must have at least one user selected",
+    "duplicateUser": "Duplicate user detected",
+    "unauthorizedAccess": "Unauthorized access",
+    "editRestricted": "Edit access is restricted to the active approval level"
+  },
+  "successMessages": {
+    "sessionCreated": "Session created successfully",
+    "imageSentToQc": "Image sent to QC",
+    "imageAccepted": "Image accepted",
+    "imageRejected": "Image rejected"
+  },
+  "noImagesMessage": "No images available",
+  "expectedTools": [
+    "Annotation",
+    "Invert Color",
+    "Zoom In",
+    "Zoom Out",
+    "Reset Zoom",
+    "Rotate Clockwise",
+    "Flip",
+    "Pen",
+    "Brightness",
+    "Contrast"
+  ],
+  "performance": {
+    "maxLoadTimeMs": 5000,
+    "maxActionDelayMs": 5000
+  },
+  "usabilityLabels": {
+    "approvalLevelIndicator": "Approval Level",
+    "statusPending": "PENDING",
+    "statusInReview": "IN_REVIEW",
+    "statusAccepted": "ACCEPTED",
+    "statusRejected": "REJECTED",
+    "breadcrumbHome": "Home",
+    "breadcrumbEpic": "Epic",
+    "breadcrumbProject": "Project"
+  },
+  "tooltips": {
+    "accept": "Accept this image",
+    "reject": "Reject this image",
+    "sendToQc": "Send selected images for QC review",
+    "zoomIn": "Zoom In",
+    "zoomOut": "Zoom Out",
+    "resetZoom": "Reset Zoom",
+    "rotateClockwise": "Rotate Clockwise",
+    "flip": "Flip",
+    "brightness": "Adjust Brightness",
+    "contrast": "Adjust Contrast"
+  },
+  "accessControl": {
+    "editRestrictedMessage": "Edit access is restricted to the active approval level",
+    "unauthorizedMessage": "Unauthorized access"
+  },
+  "uiLabels": {
+    "addLevel": "Add Level",
+    "submitButton": "Submit",
+    "cancelButton": "Cancel",
+    "updateButton": "Update",
+    "approvalLevelPlaceholder": "Select Approval level",
+    "removeIconName": "ph:minus-circle"
+  }
+}

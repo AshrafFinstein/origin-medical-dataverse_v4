@@ -1,0 +1,195 @@
+{
+  "spec_file": "e2e/tests/data-labelling/URS-DV-DL-04/SRS-015/SDS-015.spec.ts",
+  "plan_urs": "URS-DV-DL-04",
+  "srs_str": "015",
+  "domain": "data-labelling",
+  "page_class": "DataLabellingPage",
+  "page_import": "data-labelling.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-409",
+      "srs_id": "SRS-34",
+      "sds_id": "SDS-34",
+      "summary": "Verify Selected items array update on select\nwhen no images are selected",
+      "description": "Feature: Image Selection Logic\nScenario: Selected items array update on select\nGiven no images are selected\nWhen the user selects an image\nThen the image ID should be added to selectedItems array",
+      "acceptance": "The image ID should be added to selectedItems array\nThe behavior should be validated when the user selects an image."
+    },
+    {
+      "test_id": "UTC-410",
+      "srs_id": "SRS-34",
+      "sds_id": "SDS-34",
+      "summary": "Verify Selected items array update on deselect\nwhen an image is selected",
+      "description": "Feature: Image Selection Logic\nScenario: Selected items array update on deselect\nGiven an image is selected\nWhen the user deselects the image\nThen the image ID should be removed from selectedItems array",
+      "acceptance": "The image ID should be removed from selectedItems array\nThe behavior should be validated when the user deselects the image."
+    },
+    {
+      "test_id": "UTC-411",
+      "srs_id": "SRS-34",
+      "sds_id": "SDS-34",
+      "summary": "Verify Select All option visible\nwhen the image grid header is displayed",
+      "description": "Feature: Image Selection Logic\nScenario: Select All option visible\nGiven the image grid header is displayed\nWhen the page loads\nThen the Select All checkbox should be visible",
+      "acceptance": "The Select All checkbox should be visible\nThe behavior should be validated when the page loads."
+    },
+    {
+      "test_id": "UTC-412",
+      "srs_id": "SRS-34",
+      "sds_id": "SDS-34",
+      "summary": "Verify Select All selects all images on page\nwhen multiple images exist on the current page",
+      "description": "Feature: Image Selection Logic\nScenario: Select All selects all images on page\nGiven multiple images exist on the current page\nWhen the user clicks Select All\nThen all images on the page should be selected",
+      "acceptance": "All images on the page should be selected\nThe behavior should be validated when the user clicks Select All."
+    },
+    {
+      "test_id": "UTC-413",
+      "srs_id": "SRS-34",
+      "sds_id": "SDS-34",
+      "summary": "Verify Deselect All clears selection\nwhen multiple images are selected",
+      "description": "Feature: Image Selection Logic\nScenario: Deselect All clears selection\nGiven multiple images are selected\nWhen the user toggles Select All off\nThen all selected images should be deselected",
+      "acceptance": "All selected images should be deselected\nThe behavior should be validated when the user toggles Select All off."
+    },
+    {
+      "test_id": "UTC-414",
+      "srs_id": "SRS-34",
+      "sds_id": "SDS-34",
+      "summary": "Verify Send Selected for QC enabled\nwhen at least one image is selected",
+      "description": "Feature: Image Selection Logic\nScenario: Send Selected for QC enabled\nGiven at least one image is selected\nWhen the UI updates\nThen Send Selected for QC button should be enabled",
+      "acceptance": "Send Selected for QC button should be enabled\nThe behavior should be validated when the UI updates."
+    },
+    {
+      "test_id": "UTC-415",
+      "srs_id": "SRS-34",
+      "sds_id": "SDS-34",
+      "summary": "Verify Send Selected for QC disabled when no selection\nwhen no images are selected",
+      "description": "Feature: Image Selection Logic\nScenario: Send Selected for QC disabled when no selection\nGiven no images are selected\nWhen the grid is displayed\nThen Send Selected for QC button should remain disabled",
+      "acceptance": "Send Selected for QC button should remain disabled\nThe behavior should be validated when the grid is displayed."
+    },
+    {
+      "test_id": "UTC-416",
+      "srs_id": "SRS-34",
+      "sds_id": "SDS-34",
+      "summary": "Verify Selection blocked in Freeze mode\nwhen the grid is in Freeze mode",
+      "description": "Feature: Image Selection Logic\nScenario: Selection blocked in Freeze mode\nGiven the grid is in Freeze mode\nWhen the user clicks an image\nThen selection should be blocked",
+      "acceptance": "Selection should be blocked\nThe behavior should be validated when the user clicks an image."
+    },
+    {
+      "test_id": "UTC-417",
+      "srs_id": "SRS-34",
+      "sds_id": "SDS-34",
+      "summary": "Verify Cursor restriction indicator in Freeze mode\nwhen Freeze mode is active",
+      "description": "Feature: Image Selection Logic\nScenario: Cursor restriction indicator in Freeze mode\nGiven Freeze mode is active\nWhen the user hovers over an image\nThen a restricted cursor icon should appear",
+      "acceptance": "A restricted cursor icon should appear\nThe behavior should be validated when the user hovers over an image."
+    },
+    {
+      "test_id": "UTC-418",
+      "srs_id": "SRS-34",
+      "sds_id": "SDS-34",
+      "summary": "Verify No partial selection in Freeze mode\nwhen Freeze mode is active",
+      "description": "Feature: Image Selection Logic\nScenario: No partial selection in Freeze mode\nGiven Freeze mode is active\nWhen user attempts multiple clicks\nThen no image should be added to selectedItems",
+      "acceptance": "No image should be added to selectedItems\nThe behavior should be validated when user attempts multiple clicks."
+    },
+    {
+      "test_id": "UTC-419",
+      "srs_id": "SRS-34",
+      "sds_id": "SDS-34",
+      "summary": "Verify Clear visual distinction between selected and unselected images\nwhen images are selected and unselected",
+      "description": "Feature: Image Selection Logic\nScenario: Clear visual distinction between selected and unselected images\nGiven images are selected and unselected\nWhen viewed together\nThen selected images should be clearly distinguishable",
+      "acceptance": "Selected images should be clearly distinguishable\nThe behavior should be validated when viewed together."
+    },
+    {
+      "test_id": "UTC-420",
+      "srs_id": "SRS-34",
+      "sds_id": "SDS-34",
+      "summary": "Verify Immediate UI response on selection\nwhen the grid is loaded",
+      "description": "Feature: Image Selection Logic\nScenario: Immediate UI response on selection\nGiven the grid is loaded\nWhen the user selects an image\nThen the UI should update instantly without lag",
+      "acceptance": "The UI should update instantly without lag\nThe behavior should be validated when the user selects an image."
+    },
+    {
+      "test_id": "UTC-421",
+      "srs_id": "SRS-34",
+      "sds_id": "SDS-34",
+      "summary": "Verify Selecting all images on last page\nwhen the last page contains fewer images",
+      "description": "Feature: Image Selection Logic\nScenario: Selecting all images on last page\nGiven the last page contains fewer images\nWhen Select All is clicked\nThen only images on that page should be selected",
+      "acceptance": "Only images on that page should be selected\nThe behavior should be validated when Select All is clicked."
+    },
+    {
+      "test_id": "UTC-422",
+      "srs_id": "SRS-34",
+      "sds_id": "SDS-34",
+      "summary": "Verify Selection persists during scroll\nwhen images are selected",
+      "description": "Feature: Image Selection Logic\nScenario: Selection persists during scroll\nGiven images are selected\nWhen the user scrolls the grid\nThen selected images should remain selected",
+      "acceptance": "Selected images should remain selected\nThe behavior should be validated when the user scrolls the grid."
+    },
+    {
+      "test_id": "UTC-423",
+      "srs_id": "SRS-35",
+      "sds_id": "SDS-35",
+      "summary": "Verify Dropdown visible with selected images\nwhen one or more images are selected",
+      "description": "Feature: Label Application Workflow\nScenario: Dropdown visible with selected images\nGiven one or more images are selected\nWhen the user views the toolbar\nThen the 'Select label(s)' dropdown should be enabled and clickable",
+      "acceptance": "The 'Select label(s)' dropdown should be enabled and clickable\nThe behavior should be validated when the user views the toolbar."
+    },
+    {
+      "test_id": "UTC-424",
+      "srs_id": "SRS-35",
+      "sds_id": "SDS-35",
+      "summary": "Verify No images selected\nwhen no images are selected",
+      "description": "Feature: Label Application Workflow\nScenario: No images selected\nGiven no images are selected\nWhen the user views the toolbar\nThen the labeling dropdown should be disabled",
+      "acceptance": "The labeling dropdown should be disabled\nThe behavior should be validated when the user views the toolbar."
+    },
+    {
+      "test_id": "UTC-425",
+      "srs_id": "SRS-35",
+      "sds_id": "SDS-35",
+      "summary": "Verify Labels displayed as checkboxes\nwhen the dropdown is opened",
+      "description": "Feature: Label Application Workflow\nScenario: Labels displayed as checkboxes\nGiven the dropdown is opened\nWhen the menu expands\nThen label options should appear as selectable checkboxes",
+      "acceptance": "Label options should appear as selectable checkboxes\nThe behavior should be validated when the menu expands."
+    },
+    {
+      "test_id": "UTC-426",
+      "srs_id": "SRS-35",
+      "sds_id": "SDS-35",
+      "summary": "Verify Select multiple labels\nwhen label checkboxes are displayed",
+      "description": "Feature: Label Application Workflow\nScenario: Select multiple labels\nGiven label checkboxes are displayed\nWhen the user selects multiple labels\nThen all selected checkboxes should remain marked",
+      "acceptance": "All selected checkboxes should remain marked\nThe behavior should be validated when the user selects multiple labels."
+    },
+    {
+      "test_id": "UTC-427",
+      "srs_id": "SRS-35",
+      "sds_id": "SDS-35",
+      "summary": "Verify APPLY button presence\nwhen the dropdown is opened",
+      "description": "Feature: Label Application Workflow\nScenario: APPLY button presence\nGiven the dropdown is opened\nWhen the footer is displayed\nThen a blue APPLY button should be visible",
+      "acceptance": "A blue APPLY button should be visible\nThe behavior should be validated when the footer is displayed."
+    },
+    {
+      "test_id": "UTC-428",
+      "srs_id": "SRS-35",
+      "sds_id": "SDS-35",
+      "summary": "Verify Apply sends request\nwhen images and labels are selected",
+      "description": "Feature: Label Application Workflow\nScenario: Apply sends request\nGiven images and labels are selected\nWhen the user clicks APPLY\nThen a POST request should be sent with imageIDs and labelTags",
+      "acceptance": "A POST request should be sent with imageIDs and labelTags\nThe behavior should be validated when the user clicks APPLY."
+    },
+    {
+      "test_id": "UTC-429",
+      "srs_id": "SRS-35",
+      "sds_id": "SDS-35",
+      "summary": "Verify Metadata updates immediately\nwhen labels are applied successfully",
+      "description": "Feature: Label Application Workflow\nScenario: Metadata updates immediately\nGiven labels are applied successfully\nWhen the request completes\nThen the grid should refresh and show updated labels",
+      "acceptance": "The grid should refresh and show updated labels\nThe behavior should be validated when the request completes."
+    },
+    {
+      "test_id": "UTC-430",
+      "srs_id": "SRS-35",
+      "sds_id": "SDS-35",
+      "summary": "Verify Apply one label\nwhen one label selected",
+      "description": "Feature: Label Application Workflow\nScenario: Apply one label\nGiven one label selected\nWhen APPLY is clicked\nThen all selected images should show that label",
+      "acceptance": "All selected images should show that label\nThe behavior should be validated when APPLY is clicked."
+    },
+    {
+      "test_id": "UTC-431",
+      "srs_id": "SRS-35",
+      "sds_id": "SDS-35",
+      "summary": "Verify Apply to multiple images\nwhen multiple images selected",
+      "description": "Feature: Label Application Workflow\nScenario: Apply to multiple images\nGiven multiple images selected\nWhen APPLY is clicked\nThen all selected images should receive labels simultaneously",
+      "acceptance": "All selected images should receive labels simultaneously\nThe behavior should be validated when APPLY is clicked."
+    }
+  ]
+}

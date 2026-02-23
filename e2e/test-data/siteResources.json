@@ -1,0 +1,12 @@
+{
+  "primaryColor": "#1890ff",
+  "errorColor": "#ff4d4f",
+  "urlPatterns": {
+    "dashboard": "/",
+    "epic": "/epic/",
+    "project": "/project/",
+    "dataLabelling": "/data-labelling/",
+    "master": "/master"
+  },
+  "defaultTimeout": 15000
+}

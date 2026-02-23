@@ -1,0 +1,363 @@
+{
+  "spec_file": "e2e/tests/analysis-modal/URS-DV-AN-02/SRS-008/SDS-008.spec.ts",
+  "plan_urs": "URS-DV-AN-02",
+  "srs_str": "008",
+  "domain": "analysis-modal",
+  "page_class": "AnalysisModalPage",
+  "page_import": "analysis-modal.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-178",
+      "srs_id": "SRS-17",
+      "sds_id": "SDS-17",
+      "summary": "Verify Concurrent Promise Execution\nwhen Promise.all is used",
+      "description": "Feature: Concurrent Promise Execution\nGiven Promise.all is used\nWhen inspecting code execution\nThen dataQuery(), countQuery(), filterQuery() start together",
+      "acceptance": "DataQuery(), countQuery(), filterQuery() start together\nThe behavior should be validated when inspecting code execution."
+    },
+    {
+      "test_id": "UTC-179",
+      "srs_id": "SRS-17",
+      "sds_id": "SDS-17",
+      "summary": "Verify Concurrent Promise Execution\nwhen all promises resolve",
+      "description": "Feature: Concurrent Promise Execution\nGiven all promises resolve\nWhen API responds\nThen single consolidated JSON should contain rows, totalCount, and filters",
+      "acceptance": "Single consolidated JSON should contain rows, totalCount, and filters\nThe behavior should be validated when API responds."
+    },
+    {
+      "test_id": "UTC-180",
+      "srs_id": "SRS-17",
+      "sds_id": "SDS-17",
+      "summary": "Verify Concurrent Promise Execution\nwhen pagination requested",
+      "description": "Feature: Concurrent Promise Execution\nGiven pagination requested\nWhen response received\nThen table rows and total count should match correctly",
+      "acceptance": "Table rows and total count should match correctly\nThe behavior should be validated when response received."
+    },
+    {
+      "test_id": "UTC-181",
+      "srs_id": "SRS-17",
+      "sds_id": "SDS-17",
+      "summary": "Verify Concurrent Promise Execution\nwhen filters exist",
+      "description": "Feature: Concurrent Promise Execution\nGiven filters exist\nWhen grid loads\nThen filter options should populate without extra API calls",
+      "acceptance": "Filter options should populate without extra API calls\nThe behavior should be validated when grid loads."
+    },
+    {
+      "test_id": "UTC-182",
+      "srs_id": "SRS-17",
+      "sds_id": "SDS-17",
+      "summary": "Verify Concurrent Promise Execution\nwhen large dataset",
+      "description": "Feature: Concurrent Promise Execution\nGiven large dataset\nWhen page loads\nThen grid should render within SLA (<2–3s)",
+      "acceptance": "Grid should render within SLA (<2â€“3s)\nThe behavior should be validated when page loads."
+    },
+    {
+      "test_id": "UTC-183",
+      "srs_id": "SRS-17",
+      "sds_id": "SDS-17",
+      "summary": "Verify Concurrent Promise Execution\nwhen one query slower than others",
+      "description": "Feature: Concurrent Promise Execution\nGiven one query slower than others\nWhen awaiting Promise.all\nThen system should wait for completion without partial UI render",
+      "acceptance": "System should wait for completion without partial UI render\nThe behavior should be validated when awaiting Promise.all."
+    },
+    {
+      "test_id": "UTC-184",
+      "srs_id": "SRS-17",
+      "sds_id": "SDS-17",
+      "summary": "Verify Concurrent Promise Execution\nwhen dataQuery fails",
+      "description": "Feature: Concurrent Promise Execution\nGiven dataQuery fails\nWhen Promise.all rejects\nThen API should return unified error response",
+      "acceptance": "API should return unified error response\nThe behavior should be validated when Promise.all rejects."
+    },
+    {
+      "test_id": "UTC-185",
+      "srs_id": "SRS-17",
+      "sds_id": "SDS-17",
+      "summary": "Verify Concurrent Promise Execution\nwhen countQuery fails",
+      "description": "Feature: Concurrent Promise Execution\nGiven countQuery fails\nWhen executed\nThen system should catch aggregated error in single catch block",
+      "acceptance": "System should catch aggregated error in single catch block\nThe behavior should be validated when executed."
+    },
+    {
+      "test_id": "UTC-186",
+      "srs_id": "SRS-17",
+      "sds_id": "SDS-17",
+      "summary": "Verify Concurrent Promise Execution\nwhen filterQuery fails",
+      "description": "Feature: Concurrent Promise Execution\nGiven filterQuery fails\nWhen executed\nThen response should return error without partial dataset",
+      "acceptance": "Response should return error without partial dataset\nThe behavior should be validated when executed."
+    },
+    {
+      "test_id": "UTC-187",
+      "srs_id": "SRS-17",
+      "sds_id": "SDS-17",
+      "summary": "Verify Concurrent Promise Execution\nwhen API call in progress",
+      "description": "Feature: Concurrent Promise Execution\nGiven API call in progress\nWhen waiting\nThen grid should display loading spinner until all results arrive",
+      "acceptance": "Grid should display loading spinner until all results arrive\nThe behavior should be validated when waiting."
+    },
+    {
+      "test_id": "UTC-188",
+      "srs_id": "SRS-17",
+      "sds_id": "SDS-17",
+      "summary": "Verify Concurrent Promise Execution\nwhen multiple pages",
+      "description": "Feature: Concurrent Promise Execution\nGiven multiple pages\nWhen navigating pages\nThen rows and counts remain consistent",
+      "acceptance": "Rows and counts remain consistent\nThe behavior should be validated when navigating pages."
+    },
+    {
+      "test_id": "UTC-189",
+      "srs_id": "SRS-17",
+      "sds_id": "SDS-17",
+      "summary": "Verify Concurrent Promise Execution\nwhen concurrent users",
+      "description": "Feature: Concurrent Promise Execution\nGiven concurrent users\nWhen multiple requests fire\nThen queries execute independently without blocking",
+      "acceptance": "Queries execute independently without blocking\nThe behavior should be validated when multiple requests fire."
+    },
+    {
+      "test_id": "UTC-190",
+      "srs_id": "SRS-17",
+      "sds_id": "SDS-17",
+      "summary": "Verify Concurrent Promise Execution\nwhen sequential vs parallel benchmark",
+      "description": "Feature: Concurrent Promise Execution\nGiven sequential vs parallel benchmark\nWhen compared\nThen parallel execution should show reduced latency",
+      "acceptance": "Parallel execution should show reduced latency\nThe behavior should be validated when compared."
+    },
+    {
+      "test_id": "UTC-191",
+      "srs_id": "SRS-17",
+      "sds_id": "SDS-17",
+      "summary": "Verify Concurrent Promise Execution\nwhen malformed query parameter",
+      "description": "Feature: Concurrent Promise Execution\nGiven malformed query parameter\nWhen request sent\nThen system should reject safely without crashing server",
+      "acceptance": "System should reject safely without crashing server\nThe behavior should be validated when request sent."
+    },
+    {
+      "test_id": "UTC-192",
+      "srs_id": "SRS-17",
+      "sds_id": "SDS-17",
+      "summary": "Verify Concurrent Promise Execution\nwhen data loads",
+      "description": "Feature: Concurrent Promise Execution\nGiven data loads\nWhen UI renders\nThen users experience minimal wait and responsive controls",
+      "acceptance": "Users experience minimal wait and responsive controls\nThe behavior should be validated when UI renders."
+    },
+    {
+      "test_id": "UTC-193",
+      "srs_id": "SRS-18",
+      "sds_id": "SDS-18",
+      "summary": "Verify Default pagination\nwhen session table loads",
+      "description": "Feature: Default pagination\nGiven session table loads\nWhen page initializes\nThen first page should display default page size records only",
+      "acceptance": "First page should display default page size records only\nThe behavior should be validated when page initializes."
+    },
+    {
+      "test_id": "UTC-194",
+      "srs_id": "SRS-18",
+      "sds_id": "SDS-18",
+      "summary": "Verify Page size 20\nwhen page size changed to 20",
+      "description": "Feature: Page size 20\nGiven page size changed to 20\nWhen data refreshes\nThen exactly 20 rows should load",
+      "acceptance": "Exactly 20 rows should load\nThe behavior should be validated when data refreshes."
+    },
+    {
+      "test_id": "UTC-195",
+      "srs_id": "SRS-18",
+      "sds_id": "SDS-18",
+      "summary": "Verify Page size 30\nwhen page size changed to 30",
+      "description": "Feature: Page size 30\nGiven page size changed to 30\nWhen data refreshes\nThen exactly 30 rows should load",
+      "acceptance": "Exactly 30 rows should load\nThe behavior should be validated when data refreshes."
+    },
+    {
+      "test_id": "UTC-196",
+      "srs_id": "SRS-18",
+      "sds_id": "SDS-18",
+      "summary": "Verify Offset logic\nwhen page=2 and size=10",
+      "description": "Feature: Offset logic\nGiven page=2 and size=10\nWhen API called\nThen query must use OFFSET 10 LIMIT 10",
+      "acceptance": "Query must use OFFSET 10 LIMIT 10\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-197",
+      "srs_id": "SRS-18",
+      "sds_id": "SDS-18",
+      "summary": "Verify Offset calculation\nwhen page=3 and size=20",
+      "description": "Feature: Offset calculation\nGiven page=3 and size=20\nWhen API called\nThen OFFSET should be 40",
+      "acceptance": "OFFSET should be 40\nThe behavior should be validated when API called."
+    },
+    {
+      "test_id": "UTC-198",
+      "srs_id": "SRS-18",
+      "sds_id": "SDS-18",
+      "summary": "Verify Next button\nwhen user clicks Next",
+      "description": "Feature: Next button\nGiven user clicks Next\nWhen page increments\nThen next set of records should load",
+      "acceptance": "Next set of records should load\nThe behavior should be validated when page increments."
+    },
+    {
+      "test_id": "UTC-199",
+      "srs_id": "SRS-18",
+      "sds_id": "SDS-18",
+      "summary": "Verify Previous button\nwhen user clicks Previous",
+      "description": "Feature: Previous button\nGiven user clicks Previous\nWhen page decrements\nThen previous set loads",
+      "acceptance": "Previous set loads\nThe behavior should be validated when page decrements."
+    },
+    {
+      "test_id": "UTC-200",
+      "srs_id": "SRS-18",
+      "sds_id": "SDS-18",
+      "summary": "Verify Total count display\nwhen 50 records",
+      "description": "Feature: Total count display\nGiven 50 records\nWhen page loads\nThen footer shows “1–10 of 50” format",
+      "acceptance": "Footer shows \"1â€“10 of 50\" format\nThe behavior should be validated when page loads."
+    },
+    {
+      "test_id": "UTC-201",
+      "srs_id": "SRS-18",
+      "sds_id": "SDS-18",
+      "summary": "Verify Last page navigation\nwhen user reaches last page",
+      "description": "Feature: Last page navigation\nGiven user reaches last page\nWhen Next clicked\nThen Next should be disabled",
+      "acceptance": "Next should be disabled\nThe behavior should be validated when Next clicked."
+    },
+    {
+      "test_id": "UTC-202",
+      "srs_id": "SRS-18",
+      "sds_id": "SDS-18",
+      "summary": "Verify First page boundary\nwhen page=1",
+      "description": "Feature: First page boundary\nGiven page=1\nWhen Previous clicked\nThen Previous should be disabled",
+      "acceptance": "Previous should be disabled\nThe behavior should be validated when Previous clicked."
+    },
+    {
+      "test_id": "UTC-203",
+      "srs_id": "SRS-18",
+      "sds_id": "SDS-18",
+      "summary": "Verify Payload minimization\nwhen page size=10",
+      "description": "Feature: Payload minimization\nGiven page size=10\nWhen API returns\nThen payload contains only 10 records (not full dataset)",
+      "acceptance": "Payload contains only 10 records (not full dataset)\nThe behavior should be validated when API returns."
+    },
+    {
+      "test_id": "UTC-204",
+      "srs_id": "SRS-18",
+      "sds_id": "SDS-18",
+      "summary": "Verify Response time\nwhen large dataset (10k+ rows)",
+      "description": "Feature: Response time\nGiven large dataset (10k+ rows)\nWhen fetching a page\nThen response should meet SLA (<2–3s)",
+      "acceptance": "Response should meet SLA (<2â€“3s)\nThe behavior should be validated when fetching a page."
+    },
+    {
+      "test_id": "UTC-205",
+      "srs_id": "SRS-18",
+      "sds_id": "SDS-18",
+      "summary": "Verify Loading indicator\nwhen page change",
+      "description": "Feature: Loading indicator\nGiven page change\nWhen fetch pending\nThen spinner should appear until data loads",
+      "acceptance": "Spinner should appear until data loads\nThe behavior should be validated when fetch pending."
+    },
+    {
+      "test_id": "UTC-206",
+      "srs_id": "SRS-18",
+      "sds_id": "SDS-18",
+      "summary": "Verify No duplicates\nwhen sequential navigation",
+      "description": "Feature: No duplicates\nGiven sequential navigation\nWhen moving pages\nThen records should not repeat across pages",
+      "acceptance": "Records should not repeat across pages\nThe behavior should be validated when moving pages."
+    },
+    {
+      "test_id": "UTC-207",
+      "srs_id": "SRS-18",
+      "sds_id": "SDS-18",
+      "summary": "Verify No missing rows\nwhen full navigation",
+      "description": "Feature: No missing rows\nGiven full navigation\nWhen iterating all pages\nThen all records are covered exactly once",
+      "acceptance": "All records are covered exactly once\nThe behavior should be validated when iterating all pages."
+    },
+    {
+      "test_id": "UTC-208",
+      "srs_id": "SRS-18",
+      "sds_id": "SDS-18",
+      "summary": "Verify Page reset on size change\nwhen page=5",
+      "description": "Feature: Page reset on size change\nGiven page=5\nWhen page size changed\nThen page resets to 1",
+      "acceptance": "Page resets to 1\nThe behavior should be validated when page size changed."
+    },
+    {
+      "test_id": "UTC-209",
+      "srs_id": "SRS-18",
+      "sds_id": "SDS-18",
+      "summary": "Verify Invalid page request\nwhen page beyond max",
+      "description": "Feature: Invalid page request\nGiven page beyond max\nWhen requested\nThen system auto-corrects to last page",
+      "acceptance": "System auto-corrects to last page\nThe behavior should be validated when requested."
+    },
+    {
+      "test_id": "UTC-210",
+      "srs_id": "SRS-18",
+      "sds_id": "SDS-18",
+      "summary": "Verify Offset tampering\nwhen manual API param manipulation",
+      "description": "Feature: Offset tampering\nGiven manual API param manipulation\nWhen invalid offset used\nThen backend validates and restricts query",
+      "acceptance": "Backend validates and restricts query\nThe behavior should be validated when invalid offset used."
+    },
+    {
+      "test_id": "UTC-211",
+      "srs_id": "SRS-18",
+      "sds_id": "SDS-18",
+      "summary": "Verify Smooth navigation\nwhen repeated page switches",
+      "description": "Feature: Smooth navigation\nGiven repeated page switches\nWhen interacting\nThen UI remains responsive without freeze",
+      "acceptance": "UI remains responsive without freeze\nThe behavior should be validated when interacting."
+    },
+    {
+      "test_id": "UTC-212",
+      "srs_id": "SRS-18",
+      "sds_id": "SDS-18",
+      "summary": "Verify Zero records\nwhen no data available",
+      "description": "Feature: Zero records\nGiven no data available\nWhen page loads\nThen table shows “No Data” with disabled navigation",
+      "acceptance": "Table shows \"No Data\" with disabled navigation\nThe behavior should be validated when page loads."
+    },
+    {
+      "test_id": "UTC-213",
+      "srs_id": "SRS-19",
+      "sds_id": "SDS-19",
+      "summary": "Verify Sort by Name ascending\nwhen analysis table loaded with multiple records",
+      "description": "Feature: Server-Side Sorting Across Full Dataset\nScenario: Sort by Name ascending\nGiven analysis table loaded with multiple records\nWhen user clicks Name header once\nThen system sorts entire dataset ascending before pagination",
+      "acceptance": "System sorts entire dataset ascending before pagination\nThe behavior should be validated when user clicks Name header once."
+    },
+    {
+      "test_id": "UTC-214",
+      "srs_id": "SRS-19",
+      "sds_id": "SDS-19",
+      "summary": "Verify Sort by Name descending\nwhen Name column sorted ascending",
+      "description": "Feature: Server-Side Sorting Across Full Dataset\nScenario: Sort by Name descending\nGiven Name column sorted ascending\nWhen user clicks Name header again\nThen system sorts entire dataset descending",
+      "acceptance": "System sorts entire dataset descending\nThe behavior should be validated when user clicks Name header again."
+    },
+    {
+      "test_id": "UTC-215",
+      "srs_id": "SRS-19",
+      "sds_id": "SDS-19",
+      "summary": "Verify Sort by Count ascending\nwhen Count values displayed",
+      "description": "Feature: Server-Side Sorting Across Full Dataset\nScenario: Sort by Count ascending\nGiven Count values displayed\nWhen user clicks Count header\nThen records sorted low to high across full dataset",
+      "acceptance": "Records sorted low to high across full dataset\nThe behavior should be validated when user clicks Count header."
+    },
+    {
+      "test_id": "UTC-216",
+      "srs_id": "SRS-19",
+      "sds_id": "SDS-19",
+      "summary": "Verify Sort by Count descending\nwhen Count sorted ascending",
+      "description": "Feature: Server-Side Sorting Across Full Dataset\nScenario: Sort by Count descending\nGiven Count sorted ascending\nWhen user clicks again\nThen records sorted high to low",
+      "acceptance": "Records sorted high to low\nThe behavior should be validated when user clicks again."
+    },
+    {
+      "test_id": "UTC-217",
+      "srs_id": "SRS-19",
+      "sds_id": "SDS-19",
+      "summary": "Verify Sorting applies to full dataset not current page only\nwhen pagination enabled",
+      "description": "Feature: Server-Side Sorting Across Full Dataset\nScenario: Sorting applies to full dataset not current page only\nGiven pagination enabled\nWhen sorting applied\nThen backend sorts before LIMIT/OFFSET",
+      "acceptance": "Backend sorts before LIMIT/OFFSET\nThe behavior should be validated when sorting applied."
+    },
+    {
+      "test_id": "UTC-218",
+      "srs_id": "SRS-20",
+      "sds_id": "SDS-20",
+      "summary": "Verify Filter dropdown behavior\nwhen table displayed",
+      "description": "Feature: Filtering UI & Interaction Controls\nScenario: Filter dropdown behavior\nGiven table displayed\nWhen user interacts with filter controls\nThen correct dropdown/search/selection behavior occurs",
+      "acceptance": "Correct dropdown/search/selection behavior occurs\nThe behavior should be validated when user interacts with filter controls."
+    },
+    {
+      "test_id": "UTC-219",
+      "srs_id": "SRS-20",
+      "sds_id": "SDS-20",
+      "summary": "Verify Filter dropdown behavior\nwhen table displayed",
+      "description": "Feature: Filtering UI & Interaction Controls\nScenario: Filter dropdown behavior\nGiven table displayed\nWhen user interacts with filter controls\nThen correct dropdown/search/selection behavior occurs",
+      "acceptance": "Correct dropdown/search/selection behavior occurs\nThe behavior should be validated when user interacts with filter controls."
+    },
+    {
+      "test_id": "UTC-220",
+      "srs_id": "SRS-20",
+      "sds_id": "SDS-20",
+      "summary": "Verify Filter dropdown behavior\nwhen table displayed",
+      "description": "Feature: Filtering UI & Interaction Controls\nScenario: Filter dropdown behavior\nGiven table displayed\nWhen user interacts with filter controls\nThen correct dropdown/search/selection behavior occurs",
+      "acceptance": "Correct dropdown/search/selection behavior occurs\nThe behavior should be validated when user interacts with filter controls."
+    },
+    {
+      "test_id": "UTC-221",
+      "srs_id": "SRS-20",
+      "sds_id": "SDS-20",
+      "summary": "Verify Filter dropdown behavior\nwhen table displayed",
+      "description": "Feature: Filtering UI & Interaction Controls\nScenario: Filter dropdown behavior\nGiven table displayed\nWhen user interacts with filter controls\nThen correct dropdown/search/selection behavior occurs",
+      "acceptance": "Correct dropdown/search/selection behavior occurs\nThe behavior should be validated when user interacts with filter controls."
+    }
+  ]
+}

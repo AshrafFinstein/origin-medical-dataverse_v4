@@ -1,0 +1,227 @@
+{
+  "spec_file": "e2e/tests/session-management/URS-DV-GEN-03/SRS-011/SDS-011.spec.ts",
+  "plan_urs": "URS-DV-GEN-03",
+  "srs_str": "011",
+  "domain": "session-management",
+  "page_class": "QcWorkflowPage",
+  "page_import": "qc-workflow.page",
+  "goto_method": "gotoSession",
+  "test_cases": [
+    {
+      "test_id": "UTC-306",
+      "srs_id": "SRS-25",
+      "sds_id": "SDS-25",
+      "summary": "Verify Reviewer can view Approval configuration\nwhen the user has Reviewer role",
+      "description": "Feature: Approval Level Access Control\nScenario: Reviewer can view Approval configuration\nGiven the user has Reviewer role\nWhen the user navigates to Session Creation page\nThen the Approval Level section should be visible",
+      "acceptance": "The Approval Level section should be visible\nThe behavior should be validated when the user navigates to Session Creation page."
+    },
+    {
+      "test_id": "UTC-307",
+      "srs_id": "SRS-25",
+      "sds_id": "SDS-25",
+      "summary": "Verify Default Approval state\nwhen the Approval Level section is visible",
+      "description": "Feature: Approval Level Access Control\nScenario: Default Approval state\nGiven the Approval Level section is visible\nWhen the page loads\nThen only the “Add Level” button should be displayed by default",
+      "acceptance": "Only the \"Add Level\" button should be displayed by default\nThe behavior should be validated when the page loads."
+    },
+    {
+      "test_id": "UTC-308",
+      "srs_id": "SRS-25",
+      "sds_id": "SDS-25",
+      "summary": "Verify Add Level interaction\nwhen the reviewer is on Session Creation page",
+      "description": "Feature: Approval Level Access Control\nScenario: Add Level interaction\nGiven the reviewer is on Session Creation page\nWhen the user clicks the Add Level button\nThen Level 1 approval field should be displayed",
+      "acceptance": "Level 1 approval field should be displayed\nThe behavior should be validated when the user clicks the Add Level button."
+    },
+    {
+      "test_id": "UTC-309",
+      "srs_id": "SRS-25",
+      "sds_id": "SDS-25",
+      "summary": "Verify Multiple Add Level visibility\nwhen Level 1 is already added",
+      "description": "Feature: Approval Level Access Control\nScenario: Multiple Add Level visibility\nGiven Level 1 is already added\nWhen the reviewer clicks Add Level again\nThen the next sequential level field should be displayed",
+      "acceptance": "The next sequential level field should be displayed\nThe behavior should be validated when the reviewer clicks Add Level again."
+    },
+    {
+      "test_id": "UTC-310",
+      "srs_id": "SRS-25",
+      "sds_id": "SDS-25",
+      "summary": "Verify Non-reviewer cannot view approval section\nwhen the user does not have Reviewer role",
+      "description": "Feature: Approval Level Access Control\nScenario: Non-reviewer cannot view approval section\nGiven the user does not have Reviewer role\nWhen the user opens Session Creation page\nThen the Approval Level section should not be visible",
+      "acceptance": "The Approval Level section should not be visible\nThe behavior should be validated when the user opens Session Creation page."
+    },
+    {
+      "test_id": "UTC-311",
+      "srs_id": "SRS-25",
+      "sds_id": "SDS-25",
+      "summary": "Verify Non-reviewer cannot configure approval levels\nwhen a non-reviewer is logged in",
+      "description": "Feature: Approval Level Access Control\nScenario: Non-reviewer cannot configure approval levels\nGiven a non-reviewer is logged in\nWhen the user attempts to add or edit approval levels\nThen the action should be disabled or blocked",
+      "acceptance": "The action should be disabled or blocked\nThe behavior should be validated when the user attempts to add or edit approval levels."
+    },
+    {
+      "test_id": "UTC-312",
+      "srs_id": "SRS-25",
+      "sds_id": "SDS-25",
+      "summary": "Verify Direct access restriction\nwhen a non-reviewer user",
+      "description": "Feature: Approval Level Access Control\nScenario: Direct access restriction\nGiven a non-reviewer user\nWhen the user attempts to access approval configuration via direct URL or API\nThen the system should block access with authorization restriction",
+      "acceptance": "The system should block access with authorization restriction\nThe behavior should be validated when the user attempts to access approval configuration via direct URL or API."
+    },
+    {
+      "test_id": "UTC-313",
+      "srs_id": "SRS-25",
+      "sds_id": "SDS-25",
+      "summary": "Verify UI clarity for reviewer\nwhen the reviewer views the Approval Level section",
+      "description": "Feature: Approval Level Access Control\nScenario: UI clarity for reviewer\nGiven the reviewer views the Approval Level section\nWhen the section is displayed\nThen Add Level button should be clearly enabled and clickable",
+      "acceptance": "Add Level button should be clearly enabled and clickable\nThe behavior should be validated when the section is displayed."
+    },
+    {
+      "test_id": "UTC-314",
+      "srs_id": "SRS-25",
+      "sds_id": "SDS-25",
+      "summary": "Verify Role change effect\nwhen a reviewer role is changed to non-reviewer",
+      "description": "Feature: Approval Level Access Control\nScenario: Role change effect\nGiven a reviewer role is changed to non-reviewer\nWhen the user refreshes the page\nThen Approval Level section should no longer be accessible",
+      "acceptance": "Approval Level section should no longer be accessible\nThe behavior should be validated when the user refreshes the page."
+    },
+    {
+      "test_id": "UTC-315",
+      "srs_id": "SRS-25",
+      "sds_id": "SDS-25",
+      "summary": "Verify Secure rendering\nwhen the page is loading for a non-reviewer",
+      "description": "Feature: Approval Level Access Control\nScenario: Secure rendering\nGiven the page is loading for a non-reviewer\nWhen UI renders\nThen approval controls should never briefly appear during load",
+      "acceptance": "Approval controls should never briefly appear during load\nThe behavior should be validated when UI renders."
+    },
+    {
+      "test_id": "UTC-316",
+      "srs_id": "SRS-26",
+      "sds_id": "SDS-26",
+      "summary": "Verify Level 1 appears after Add Level click\nwhen the reviewer is on Session Creation page",
+      "description": "Feature: Level 1 Approval Initialization\nScenario: Level 1 appears after Add Level click\nGiven the reviewer is on Session Creation page\nWhen the user clicks the Add Level button\nThen Level 1 approval section should be displayed immediately",
+      "acceptance": "Level 1 approval section should be displayed immediately\nThe behavior should be validated when the user clicks the Add Level button."
+    },
+    {
+      "test_id": "UTC-317",
+      "srs_id": "SRS-26",
+      "sds_id": "SDS-26",
+      "summary": "Verify Level 1 is fixed first level\nwhen the user clicks Add Level for the first time",
+      "description": "Scenario: Level 1 is fixed first level\nGiven the user clicks Add Level for the first time\nWhen the level is created\nThen the level label should be “Level 1” and should not allow skipping or reordering",
+      "acceptance": "The level label should be \"Level 1\" and should not allow skipping or reordering\nThe behavior should be validated when the level is created."
+    },
+    {
+      "test_id": "UTC-318",
+      "srs_id": "SRS-26",
+      "sds_id": "SDS-26",
+      "summary": "Verify Approver selection field visible\nwhen Level 1 is displayed",
+      "description": "Scenario: Approver selection field visible\nGiven Level 1 is displayed\nWhen the section loads\nThen an approver selection dropdown/multi-select field should be visible",
+      "acceptance": "An approver selection dropdown/multi-select field should be visible\nThe behavior should be validated when the section loads."
+    },
+    {
+      "test_id": "UTC-319",
+      "srs_id": "SRS-26",
+      "sds_id": "SDS-26",
+      "summary": "Verify User can select Level 1 approver\nwhen the approver dropdown is available",
+      "description": "Scenario: User can select Level 1 approver\nGiven the approver dropdown is available\nWhen the user selects one or more approvers\nThen selected approvers should be displayed and retained in the field",
+      "acceptance": "Selected approvers should be displayed and retained in the field\nThe behavior should be validated when the user selects one or more approvers."
+    },
+    {
+      "test_id": "UTC-320",
+      "srs_id": "SRS-26",
+      "sds_id": "SDS-26",
+      "summary": "Verify Submission blocked without approver\nwhen Level 1 is added",
+      "description": "Scenario: Submission blocked without approver\nGiven Level 1 is added\nAnd no approver is selected\nWhen the user clicks Submit/Create Session\nThen session submission should be blocked",
+      "acceptance": "Session submission should be blocked\nThe behavior should be validated when the user clicks Submit/Create Session."
+    },
+    {
+      "test_id": "UTC-321",
+      "srs_id": "SRS-26",
+      "sds_id": "SDS-26",
+      "summary": "Verify Validation message displayed for empty Level 1\nwhen no approver is selected for Level 1",
+      "description": "Scenario: Validation message displayed for empty Level 1\nGiven no approver is selected for Level 1\nWhen the user attempts to submit\nThen a clear validation message should be displayed indicating Level 1 approver is mandatory",
+      "acceptance": "A clear validation message should be displayed indicating Level 1 approver is mandatory\nThe behavior should be validated when the user attempts to submit."
+    },
+    {
+      "test_id": "UTC-322",
+      "srs_id": "SRS-26",
+      "sds_id": "SDS-26",
+      "summary": "Verify Submission allowed with valid approver\nwhen Level 1 approver is selected",
+      "description": "Scenario: Submission allowed with valid approver\nGiven Level 1 approver is selected\nWhen the user clicks Submit/Create Session\nThen the session should be created successfully",
+      "acceptance": "The session should be created successfully\nThe behavior should be validated when the user clicks Submit/Create Session."
+    },
+    {
+      "test_id": "UTC-323",
+      "srs_id": "SRS-26",
+      "sds_id": "SDS-26",
+      "summary": "Verify Selected approver retained during navigation\nwhen Level 1 approver is selected",
+      "description": "Scenario: Selected approver retained during navigation\nGiven Level 1 approver is selected\nWhen the user navigates within the form or scrolls\nThen the selected approver value should remain unchanged",
+      "acceptance": "The selected approver value should remain unchanged\nThe behavior should be validated when the user navigates within the form or scrolls."
+    },
+    {
+      "test_id": "UTC-324",
+      "srs_id": "SRS-26",
+      "sds_id": "SDS-26",
+      "summary": "Verify Approver stored in payload\nwhen Level 1 approver is selected",
+      "description": "Scenario: Approver stored in payload\nGiven Level 1 approver is selected\nWhen the session is submitted\nThen the selected approver should be included in the session creation payload",
+      "acceptance": "The selected approver should be included in the session creation payload\nThe behavior should be validated when the session is submitted."
+    },
+    {
+      "test_id": "UTC-325",
+      "srs_id": "SRS-26",
+      "sds_id": "SDS-26",
+      "summary": "Verify No duplicate Level 1 creation\nwhen Level 1 already exists",
+      "description": "Scenario: No duplicate Level 1 creation\nGiven Level 1 already exists\nWhen the user clicks Add Level again\nThen Level 2 should be created instead of another Level 1",
+      "acceptance": "Level 2 should be created instead of another Level 1\nThe behavior should be validated when the user clicks Add Level again."
+    },
+    {
+      "test_id": "UTC-326",
+      "srs_id": "SRS-27",
+      "sds_id": "SDS-27",
+      "summary": "Verify Add Level button is visible\nwhen the reviewer is on Session Creation page",
+      "description": "Feature: Multi-Level Approval Setup\nScenario: Add Level button is visible\nGiven the reviewer is on Session Creation page\nWhen the Approval Level section loads\nThen the Add Level button should be visible",
+      "acceptance": "The Add Level button should be visible\nThe behavior should be validated when the Approval Level section loads."
+    },
+    {
+      "test_id": "UTC-327",
+      "srs_id": "SRS-27",
+      "sds_id": "SDS-27",
+      "summary": "Verify Level 1 created on first click\nwhen no approval levels exist",
+      "description": "Scenario: Level 1 created on first click\nGiven no approval levels exist\nWhen the user clicks Add Level\nThen Level 1 should be added and displayed",
+      "acceptance": "Level 1 should be added and displayed\nThe behavior should be validated when the user clicks Add Level."
+    },
+    {
+      "test_id": "UTC-328",
+      "srs_id": "SRS-27",
+      "sds_id": "SDS-27",
+      "summary": "Verify Level 2 created sequentially\nwhen Level 1 exists",
+      "description": "Scenario: Level 2 created sequentially\nGiven Level 1 exists\nWhen the user clicks Add Level\nThen Level 2 should be added after Level 1",
+      "acceptance": "Level 2 should be added after Level 1\nThe behavior should be validated when the user clicks Add Level."
+    },
+    {
+      "test_id": "UTC-329",
+      "srs_id": "SRS-27",
+      "sds_id": "SDS-27",
+      "summary": "Verify Level 3 created sequentially\nwhen Levels 1 and 2 exist",
+      "description": "Scenario: Level 3 created sequentially\nGiven Levels 1 and 2 exist\nWhen the user clicks Add Level\nThen Level 3 should be added in sequence",
+      "acceptance": "Level 3 should be added in sequence\nThe behavior should be validated when the user clicks Add Level."
+    },
+    {
+      "test_id": "UTC-330",
+      "srs_id": "SRS-27",
+      "sds_id": "SDS-27",
+      "summary": "Verify Level 4 created sequentially\nwhen Levels 1 to 3 exist",
+      "description": "Scenario: Level 4 created sequentially\nGiven Levels 1 to 3 exist\nWhen the user clicks Add Level\nThen Level 4 should be added correctly",
+      "acceptance": "Level 4 should be added correctly\nThe behavior should be validated when the user clicks Add Level."
+    },
+    {
+      "test_id": "UTC-331",
+      "srs_id": "SRS-27",
+      "sds_id": "SDS-27",
+      "summary": "Verify Level 5 created sequentially\nwhen Levels 1 to 4 exist",
+      "description": "Scenario: Level 5 created sequentially\nGiven Levels 1 to 4 exist\nWhen the user clicks Add Level\nThen Level 5 should be added correctly",
+      "acceptance": "Level 5 should be added correctly\nThe behavior should be validated when the user clicks Add Level."
+    },
+    {
+      "test_id": "UTC-332",
+      "srs_id": "SRS-27",
+      "sds_id": "SDS-27",
+      "summary": "Verify Levels appear immediately after creation\nwhen user clicks Add Level",
+      "description": "Scenario: Levels appear immediately after creation\nGiven user clicks Add Level\nWhen the level is added\nThen the new level should appear instantly without page reload",
+      "acceptance": "The new level should appear instantly without page reload\nThe behavior should be validated when the level is added."
+    }
+  ]
+}
