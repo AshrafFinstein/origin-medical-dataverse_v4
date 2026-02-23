@@ -1,5 +1,5 @@
 import { test, expect } from '../../fixtures/auth.fixture';
-import { EpicPage } from '../../pages/epic.page';
+import { EpicPage } from '../../pages/epic';
 import { TestData } from '../../test-data/test-data';
 import epicData from '../../test-data/epic.json';
 import { generateRandomString, generateString } from '../../utils/randomFunction';

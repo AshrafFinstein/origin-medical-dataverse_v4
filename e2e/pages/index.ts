@@ -5,7 +5,7 @@
 
 // Core Module Pages
 export { BasePage } from './base.page';
-export { EpicPage } from './epic.page';
+export { EpicPage } from './epic';
 export { ProjectPage } from './project.page';
 export { SessionPage } from './session.page';
 export { DataLabellingPage } from './data-labelling.page';
@@ -17,7 +17,7 @@ export { AnnotationPage } from './masters/annotation.page';
 export { TaxonomyPage } from './masters/taxonomy.page';
 
 // Type exports
-export type { EpicData, EpicSearchCriteria } from './epic.page';
+export type { EpicData, EpicSearchCriteria } from './epic';
 export type { ProjectData, ProjectSearchCriteria } from './project.page';
 export type { SessionData, SessionSearchCriteria, ImageSearchCriteria } from './session.page';
 export type { AnnotationData as DLAnnotationData } from './data-labelling.page';

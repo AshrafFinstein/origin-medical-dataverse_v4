@@ -22,7 +22,7 @@ e2e/
 │   └── auth.fixture.ts                # Authenticated page fixture
 ├── pages/
 │   ├── base.page.ts                   # Base page class
-│   └── epic.page.ts                   # Epic page object (example)
+│   └── epic/                          # Epic page object modules (example)
 ├── selectors/
 │   ├── *.json                         # Selector JSON files by module
 │   └── index.ts                       # TypeScript selector exports
@@ -164,7 +164,7 @@ Available modules:
 All page objects extend `BasePage` for common functionality:
 
 ```typescript
-import { EpicPage } from './e2e/pages/epic.page';
+import { EpicPage } from './e2e/pages/epic';
 
 test('Create epic', async ({ authenticatedPage }) => {
   const epicPage = new EpicPage(authenticatedPage);
