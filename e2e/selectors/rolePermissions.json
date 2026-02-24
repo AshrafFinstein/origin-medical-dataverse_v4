@@ -1,0 +1,7 @@
+{
+  "permissionsTable": "permissions-table",
+  "sessionPermissionRow": "permission-row-session",
+  "sessionLockCheckbox": "session-lock-checkbox",
+  "updatePermissionButton": "permissions-update-button",
+  "permissionUpdateSuccessToast": "permission-update-success"
+}

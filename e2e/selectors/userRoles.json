@@ -1,0 +1,9 @@
+{
+  "mastersMenu": "masters-menu",
+  "userRolesMenu": "user-roles-menu",
+  "editRoleButton": "edit-role-button",
+  "permissionsTab": "permissions-tab",
+  "sessionsPermissionExpand": "permissions-sessions-expand",
+  "sessionsLockCheckbox": "permissions-sessions-lock-checkbox",
+  "savePermissionButton": "permissions-save-button"
+}

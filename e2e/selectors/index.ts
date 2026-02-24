@@ -13,6 +13,9 @@ import users from './users.json';
 import userGroup from './userGroup.json';
 import qcWorkflow from './qcWorkflow.json';
 import login from './login.json';
+import sessionLock from './sessionLock.json';
+import userRoles from './userRoles.json';
+import rolePermissions from './rolePermissions.json';
 
 // Type-safe selector interfaces
 export interface Selectors {
@@ -31,6 +34,9 @@ export interface Selectors {
   userGroup: typeof userGroup;
   qcWorkflow: typeof qcWorkflow;
   login: typeof login;
+  sessionLock: typeof sessionLock;
+  userRoles: typeof userRoles;
+  rolePermissions: typeof rolePermissions;
 }
 
 // Granular exports
@@ -49,6 +55,9 @@ export const UsersSelectors = users;
 export const UserGroupSelectors = userGroup;
 export const QcWorkflowSelectors = qcWorkflow;
 export const LoginSelectors = login;
+export const SessionLockSelectors = sessionLock;
+export const UserRolesSelectors = userRoles;
+export const RolePermissionsSelectors = rolePermissions;
 
 // Combined export
 export const Selectors: Selectors = {
@@ -67,6 +76,9 @@ export const Selectors: Selectors = {
   userGroup,
   qcWorkflow,
   login,
+  sessionLock,
+  userRoles,
+  rolePermissions,
 };
 
 /**

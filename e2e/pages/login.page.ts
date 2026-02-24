@@ -190,12 +190,19 @@ export class LoginPage extends BasePage {
     // Wait for logout confirmation modal
     const modalVisible = await this.page.locator(tid(logoutModal)).isVisible({ timeout: 5000 }).catch(() => false);
     if (modalVisible) {
-      await this.click(tid(logoutConfirmButton));
+      const confirm = this.page.locator(tid(logoutConfirmButton)).first();
+      await confirm.waitFor({ state: 'visible', timeout: 5000 }).catch(() => {});
+      try {
+        await confirm.click({ force: true, timeout: 10000 });
+      } catch {
+        await confirm.evaluate((el) => (el as HTMLElement).click());
+      }
+      await this.page.locator(tid(logoutModal)).waitFor({ state: 'hidden', timeout: 10000 }).catch(() => {});
     } else {
       // Fallback: click "Log out" button or confirm button by role
       const confirmBtn = this.page.getByRole('button', { name: /confirm|yes|log\s?out/i }).first();
       if (await confirmBtn.isVisible({ timeout: 3000 }).catch(() => false)) {
-        await confirmBtn.click();
+        await confirmBtn.click({ force: true });
       }
     }
     // Wait for page load — may fail if redirect target (Auth0) is unreachable

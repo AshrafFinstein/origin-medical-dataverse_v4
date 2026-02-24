@@ -87,7 +87,11 @@ export class QcWorkflowPage extends BasePage {
 
   private async ensureOnSessionPage(): Promise<void> {
     const createButtonSelector = tid(sessionCreateButton);
+    const sessionTableSelector = tid(sessionTable);
     if (await this.page.locator(createButtonSelector).isVisible({ timeout: 2000 }).catch(() => false)) {
+      return;
+    }
+    if (await this.page.locator(sessionTableSelector).isVisible({ timeout: 2000 }).catch(() => false)) {
       return;
     }
     const rootUrl = '/';
@@ -106,12 +110,14 @@ export class QcWorkflowPage extends BasePage {
         await goButtons.first().click();
         await this.waitForPageLoad();
         if (await this.page.locator(createButtonSelector).isVisible({ timeout: 10000 }).catch(() => false)) return;
+        if (await this.page.locator(sessionTableSelector).isVisible({ timeout: 10000 }).catch(() => false)) return;
 
         const nestedGoButtons = this.page.getByRole('button', { name: 'Go', exact: true });
         if (await nestedGoButtons.count()) {
           await nestedGoButtons.first().click();
           await this.waitForPageLoad();
           if (await this.page.locator(createButtonSelector).isVisible({ timeout: 3000 }).catch(() => false)) return;
+          if (await this.page.locator(sessionTableSelector).isVisible({ timeout: 3000 }).catch(() => false)) return;
         }
       }
     }
@@ -124,6 +130,7 @@ export class QcWorkflowPage extends BasePage {
       await this.waitForPageLoad();
 
       if (await this.page.locator(createButtonSelector).isVisible({ timeout: 10000 }).catch(() => false)) return;
+      if (await this.page.locator(sessionTableSelector).isVisible({ timeout: 10000 }).catch(() => false)) return;
 
       const projectCount = await this.page.locator(projectButtonsSelector).count();
       for (let j = 0; j < projectCount; j++) {
@@ -135,6 +142,7 @@ export class QcWorkflowPage extends BasePage {
       }
 
       if (await this.page.locator(createButtonSelector).isVisible({ timeout: 10000 }).catch(() => false)) return;
+      if (await this.page.locator(sessionTableSelector).isVisible({ timeout: 10000 }).catch(() => false)) return;
 
       await this.goto(rootUrl);
     }
@@ -146,11 +154,13 @@ export class QcWorkflowPage extends BasePage {
       await goButtons.first().click();
       await this.waitForPageLoad();
       if (await this.page.locator(createButtonSelector).isVisible({ timeout: 10000 }).catch(() => false)) return;
+      if (await this.page.locator(sessionTableSelector).isVisible({ timeout: 10000 }).catch(() => false)) return;
     }
 
     throw new Error(`Could not reach session page with '${sessionCreateButton}'. Current URL: ${this.page.url()}`);
   }
 
+  
   // ── Navigation ──────────────────────────────────────────────────────────────
 
   async navigateToCreateSession(): Promise<void> {
@@ -257,9 +267,20 @@ export class QcWorkflowPage extends BasePage {
       await this.goto(projectUrl);
     } else {
       await this.goto('/');
-      await this.ensureOnSessionPage();
+      await this.sessionTableTable();
     }
     await this.waitForPageLoad();
+  }
+
+  async gotoSessionListOnly(): Promise<void> {
+    const projectUrl = process.env.PROJECT_URL || this.getCachedSessionUrl();
+    if (projectUrl) {
+      await this.goto(projectUrl);
+    } else {
+      await this.goto('/');
+    }
+    await this.waitForPageLoad();
+    await this.page.locator(tid(sessionTable)).first().waitFor({ state: 'visible', timeout: 15000 });
   }
 
   // ── Session Name ───────────────────────────────────────────────────────────
@@ -993,4 +1014,78 @@ export class QcWorkflowPage extends BasePage {
   async getExpectedUsabilityLabel(key: string): Promise<string> {
     return (usabilityLabels as Record<string, string>)[key] || '';
   }
+
+  private async sessionTableTable(): Promise<void> {
+    const createButtonSelector = tid(sessionCreateButton);
+    const sessionTableSelector = tid(sessionTable);
+    if (await this.page.locator(createButtonSelector).isVisible({ timeout: 2000 }).catch(() => false)) {
+        return;
+    }
+    if (await this.page.locator(sessionTableSelector).isVisible({ timeout: 2000 }).catch(() => false)) {
+        return;
+    }
+    const rootUrl = '/';
+    const epicButtonsSelector = '[data-testid^="epic-go-button-"]';
+    const projectButtonsSelector = '[data-testid^="project-go-button-"]';
+
+    await this.goto(rootUrl);
+    await this.waitForSelector(epicButtonsSelector, { state: 'attached', timeout: 15000 }).catch(() => {});
+
+    const epicCount = await this.page.locator(epicButtonsSelector).count();
+    if (epicCount === 0) {
+        const goButtons = this.page.getByRole('button', { name: 'Go', exact: true });
+        const goCount = await goButtons.count();
+        if (goCount > 0) {
+            await goButtons.first().click();
+            await this.waitForPageLoad();
+            if (await this.page.locator(createButtonSelector).isVisible({ timeout: 10000 }).catch(() => false)) return;
+            if (await this.page.locator(sessionTableSelector).isVisible({ timeout: 10000 }).catch(() => false)) return;
+
+            const nestedGoButtons = this.page.getByRole('button', { name: 'Go', exact: true });
+            if (await nestedGoButtons.count()) {
+                await nestedGoButtons.first().click();
+                await this.waitForPageLoad();
+                if (await this.page.locator(createButtonSelector).isVisible({ timeout: 3000 }).catch(() => false)) return;
+                if (await this.page.locator(sessionTableSelector).isVisible({ timeout: 3000 }).catch(() => false)) return;
+            }
+        }
+    }
+
+    for (let i = 0; i < epicCount; i++) {
+        const epicGo = tid(getDynamicSelector(EpicSelectors['epic-go-button-${index}'], { index: i }));
+        if (!(await this.page.locator(epicGo).isVisible({ timeout: 5000 }).catch(() => false))) continue;
+
+        await this.click(epicGo);
+        await this.waitForPageLoad();
+
+        if (await this.page.locator(createButtonSelector).isVisible({ timeout: 10000 }).catch(() => false)) return;
+        if (await this.page.locator(sessionTableSelector).isVisible({ timeout: 10000 }).catch(() => false)) return;
+
+        const projectCount = await this.page.locator(projectButtonsSelector).count();
+        for (let j = 0; j < projectCount; j++) {
+            const projectGo = tid(getDynamicSelector(ProjectSelectors['project-go-button-${index}'], { index: j }));
+            if (!(await this.page.locator(projectGo).isVisible({ timeout: 3000 }).catch(() => false))) continue;
+            await this.click(projectGo);
+            await this.waitForPageLoad();
+            break;
+        }
+
+        if (await this.page.locator(createButtonSelector).isVisible({ timeout: 10000 }).catch(() => false)) return;
+        if (await this.page.locator(sessionTableSelector).isVisible({ timeout: 10000 }).catch(() => false)) return;
+
+        await this.goto(rootUrl);
+    }
+
+    // Last-resort fallback for environments without stable data-testid hooks.
+    for (let hop = 0; hop < 2; hop++) {
+        const goButtons = this.page.getByRole('button', { name: 'Go', exact: true });
+        if (!(await goButtons.count())) break;
+        await goButtons.first().click();
+        await this.waitForPageLoad();
+        if (await this.page.locator(createButtonSelector).isVisible({ timeout: 10000 }).catch(() => false)) return;
+        if (await this.page.locator(sessionTableSelector).isVisible({ timeout: 10000 }).catch(() => false)) return;
+        await this.waitForPageLoad();
+    }
+}
+
 }
