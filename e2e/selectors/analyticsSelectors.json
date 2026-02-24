@@ -3,5 +3,12 @@
   "image-active-timer": "image-active-timer",
   "json-upload-file-name-${index}": "json-upload-file-name-${index}",
   "json-upload-file-list": "json-upload-file-list",
-  "json-upload-success-message": "json-upload-success-message"
+  "json-upload-success-message": "json-upload-success-message",
+  "analytics-upload-root": ".create-session-upload-wrapper",
+  "analytics-upload-input": ".create-session-upload-wrapper input[type='file']",
+  "analytics-upload-row": ".create-session-upload-wrapper .n-upload-file",
+  "analytics-upload-row-name": ".create-session-upload-wrapper .n-upload-file-info__name, .create-session-upload-wrapper .n-upload-file-info__name-text",
+  "analytics-upload-row-remove": ".create-session-upload-wrapper .n-upload-file .n-upload-file-info__action, .create-session-upload-wrapper .n-upload-file .n-base-icon",
+  "analytics-upload-selected-summary": ".create-session-upload-wrapper .upload-dragger-full .text-primary-500",
+  "analytics-uploaded-files-header": "Uploaded Files:"
 }

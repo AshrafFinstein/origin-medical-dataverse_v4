@@ -1,5 +1,8 @@
 import { Page, Locator } from '@playwright/test';
 import { Selectors, CommonSelectors, getDynamicSelector } from '../selectors';
+import { highlight, HighlightOptions } from '../utils/highlight.util';
+
+type SelectOptionArgs = Parameters<Page['selectOption']>[1];
 
 /**
  * BasePage provides common page interaction methods
@@ -8,9 +11,43 @@ import { Selectors, CommonSelectors, getDynamicSelector } from '../selectors';
 export abstract class BasePage {
   public page: Page;
   public selectors = Selectors;
+  private readonly highlightEnabled: boolean;
+  private readonly highlightDurationMs: number;
 
   constructor(page: Page) {
     this.page = page;
+    this.highlightEnabled = process.env.HIGHLIGHT_CLICKS !== 'false';
+    this.highlightDurationMs = parseInt(process.env.HIGHLIGHT_DURATION_MS || '2000', 10);
+  }
+
+  protected async highlightElement(
+    cssSelector: string,
+    options: HighlightOptions = {},
+  ): Promise<void> {
+    if (!this.highlightEnabled) return;
+    try {
+      await highlight(this.page.locator(cssSelector).first(), {
+        durationMs: this.highlightDurationMs,
+        ...options,
+      });
+    } catch {
+      // best-effort: highlight failure must never break a test
+    }
+  }
+
+  protected async highlightLocator(
+    locator: Locator,
+    options: HighlightOptions = {},
+  ): Promise<void> {
+    if (!this.highlightEnabled) return;
+    try {
+      await highlight(locator, {
+        durationMs: this.highlightDurationMs,
+        ...options,
+      });
+    } catch {
+      // best-effort: highlight failure must never break a test
+    }
   }
 
   // Navigation
@@ -26,42 +63,52 @@ export abstract class BasePage {
 
   // Interactions
   async click(selector: string) {
+    await this.highlightElement(selector);
     await this.page.click(selector);
   }
 
   async clickByText(text: string) {
-    await this.page.getByText(text, { exact: true }).click();
+    const locator = this.page.getByText(text, { exact: true }).first();
+    await this.highlightLocator(locator);
+    await locator.click();
   }
 
   async fill(selector: string, value: string) {
+    await this.highlightElement(selector);
     await this.page.fill(selector, value);
   }
 
   async clear(selector: string) {
+    await this.highlightElement(selector);
     await this.page.fill(selector, '');
   }
 
-  async selectOption(selector: string, value: string) {
+  async selectOption(selector: string, value: SelectOptionArgs) {
+    await this.highlightElement(selector);
     await this.page.selectOption(selector, value);
   }
 
   async selectMultipleOptions(selector: string, values: string[]) {
-    await this.page.selectOption(selector, values);
+    await this.selectOption(selector, values);
   }
 
   async check(selector: string) {
+    await this.highlightElement(selector);
     await this.page.check(selector);
   }
 
   async uncheck(selector: string) {
+    await this.highlightElement(selector);
     await this.page.uncheck(selector);
   }
 
   async hover(selector: string) {
+    await this.highlightElement(selector);
     await this.page.hover(selector);
   }
 
   async press(selector: string, key: string) {
+    await this.highlightElement(selector);
     await this.page.press(selector, key);
   }
 
@@ -200,6 +247,7 @@ export abstract class BasePage {
   }
 
   async takeElementScreenshot(selector: string, name: string) {
+    await this.highlightElement(selector);
     await this.page.locator(selector).screenshot({ path: `screenshots/${name}.png` });
   }
 
@@ -248,6 +296,7 @@ export abstract class BasePage {
   }
 
   async submitForm(formSelector: string) {
+    await this.highlightElement(formSelector);
     await this.page.locator(formSelector).evaluate((form) => (form as HTMLFormElement).submit());
   }
 }

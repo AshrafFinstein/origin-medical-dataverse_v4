@@ -1,0 +1,36 @@
+{
+  "sessionName": "E2E-DL-Session",
+  "description": "Automated test session for Data Labelling",
+  "statuses": ["Completed", "In-progress", "Yet to do", "Not set"],
+  "defaultStatus": "Yet to do",
+  "codeFields": {
+    "projectCode": "PRJ",
+    "subProjectCode": "SUB",
+    "useCaseCode": "UC",
+    "anatomyPlaneCode": "AP",
+    "centerCode": "CTR",
+    "userTypeCode": "UT"
+  },
+  "imageCount": 10,
+  "setCode": "SET01",
+  "validationMessages": {
+    "sessionCreatedSuccess": "Session created successfully",
+    "requiredFieldError": "This field is required",
+    "fileCountError": "FileCount",
+    "dataSubCaseCodeError": "DataSubCaseCode"
+  },
+  "approvalLevels": {
+    "minimum": 1,
+    "maximum": 5
+  },
+  "s3": {
+    "testKey": "SampleLinkJSON/new_link_json_format+1.json"
+  },
+  "uiLabels": {
+    "submitButton": "Submit",
+    "cancelButton": "Cancel",
+    "createSessionButton": "Create Session",
+    "addLevel": "Add Level",
+    "autoGenerate": "Auto Generate"
+  }
+}

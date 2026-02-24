@@ -8,7 +8,7 @@ This repo has **two package roots** with separate `node_modules`:
 
 | Path | Purpose | Commands from |
 |------|---------|---------------|
-| `datavaerese_frontend_&_backend/` | Main Nuxt 3 application | That directory |
+| `dv-frontend-backend/` | Main Nuxt 3 application | That directory |
 | Root (`./`) | E2E Playwright test framework | Root directory |
 
 ## Project Overview
@@ -19,7 +19,7 @@ Dataverse Platform is a Nuxt 3 application for validation, grading, and clinical
 
 ## Development Commands
 
-### App Setup & Dev (run from `datavaerese_frontend_&_backend/`)
+### App Setup & Dev (run from `dv-frontend-backend/`)
 
 ```bash
 npm install
@@ -34,7 +34,7 @@ npm run lint:fix                              # Fix ESLint errors
 npm run typecheck                             # TypeScript type checking
 ```
 
-### Unit Tests (run from `datavaerese_frontend_&_backend/`)
+### Unit Tests (run from `dv-frontend-backend/`)
 
 ```bash
 npm run test:unit                             # Run all Vitest unit tests
@@ -51,13 +51,14 @@ npm run test:ui                               # Open Playwright UI
 npm run test:debug                            # Debug specific test
 npm run test:report                           # Open HTML report
 npm run test:parallel                         # Run with 6 parallel workers
+npm run test:qc                               # Run QC workflow tests only
 npm run extract-selectors                     # Extract data-testid from Vue components
 npm run generate-tests                        # Generate tests from Excel
 npm run generate-tests:stats                  # View test case statistics
 npm run generate-tests:dry-run                # Preview test structure (no files)
 ```
 
-### Prisma (run from `datavaerese_frontend_&_backend/`)
+### Prisma (run from `dv-frontend-backend/`)
 
 ```bash
 npx prisma migrate dev                        # Create and apply migration
@@ -71,7 +72,7 @@ npm run prisma:generate                       # Generate + inline for Nuxt
 ### High-Level Structure
 
 ```
-datavaerese_frontend_&_backend/
+dv-frontend-backend/
 ├── server/
 │   ├── api/                          # Nuxt server routes (REST endpoints)
 │   ├── trpc/                         # tRPC API layer
@@ -151,7 +152,7 @@ Use `withTransaction` from `server/infrastructures/database/transaction.ts` to w
 
 ### Environment Variables
 
-Download `.env` from the Software Team shared drive folder. Required variables are documented in `datavaerese_frontend_&_backend/.env.example` (Auth0, AWS S3, Database).
+Download `.env` from the Software Team shared drive folder. Required variables are documented in `dv-frontend-backend/.env.example` (Auth0, AWS S3, Database).
 
 ## E2E Testing Framework (Playwright)
 
@@ -170,52 +171,86 @@ e2e/
 ├── pages/                            # Page Object Model
 │   ├── base.page.ts                  # Base class with 40+ common methods
 │   ├── epic.page.ts                  # Epic CRUD, search, navigation
-│   ├── project.page.ts              # Project CRUD, user management
-│   ├── session.page.ts              # Session CRUD, codes, labels
-│   ├── data-labelling.page.ts       # Annotations, visualization
-│   ├── clinical-evaluation.page.ts  # Measurements, assessments
-│   ├── login.page.ts                # Login page with Auth0
-│   ├── dashboard.page.ts            # Dashboard page
-│   └── masters/                     # Label, Annotation, Taxonomy pages
-├── selectors/                       # 266+ extracted data-testid selectors
-├── test-data/
-│   └── test-data.ts                 # Centralized URLs, credentials, sample data, timeouts
+│   ├── project.page.ts               # Project CRUD, user management
+│   ├── session.page.ts               # Session CRUD, codes, labels
+│   ├── data-labelling.page.ts        # Annotations, visualization
+│   ├── clinical-evaluation.page.ts   # Measurements, assessments
+│   ├── login.page.ts                 # Login page with Auth0
+│   ├── dashboard.page.ts             # Dashboard page
+│   └── masters/                      # Label, Annotation, Taxonomy pages
+├── selectors/                        # 266+ extracted data-testid selectors
+├── test-data/                        # 14 JSON files + index.ts + test-data.ts
+│   ├── index.ts                      # Named exports: EpicData, UsersData, QcWorkflowData, etc.
+│   └── test-data.ts                  # TestData class: aggregates URLs, credentials, timeouts
 ├── scripts/
-│   ├── extract-selectors.ts         # Selector extraction from Vue components
-│   └── generate-tests.ts            # Test generator from Excel
+│   ├── extract-selectors.ts          # Selector extraction from Vue components
+│   └── generate-tests.ts             # Test generator from Excel
 ├── utils/
-│   ├── excel-parser.ts              # Parse test cases from Excel
-│   └── test-generator.ts            # Generate spec files
-├── flows/                           # Reusable test flows
-├── config/                          # Configuration files
-└── global-setup.ts                  # One-time browser-based Auth0 login
+│   ├── randomGenerate.ts             # generateEpicName(), generateProjectName(), generateSessionName(), generateRandomEmail(), generateRandomColor(), randomInt()
+│   ├── errorCodes.ts                 # HTTP_STATUS enum, APP_ERRORS, AUTH_ERRORS constants
+│   ├── additionalFunction.ts         # takeScreenshot(), waitForNetworkIdle(), ScreenshotHelper class
+│   ├── dragFn.ts                     # dragAndDrop(), dragByOffset(), reorderListItem()
+│   ├── auth.service.ts               # Auth0 login logic, 12-hour cache, sealed cookies
+│   ├── generatedDataStore.ts         # Persists generated test data to generated-data/sessions.json
+│   ├── excel-parser.ts               # Parse test cases from Excel
+│   └── test-generator.ts             # Generate spec files from Excel
+├── flows/                            # Reusable test flows
+├── config/                           # Configuration files
+└── global-setup.ts                   # One-time browser-based Auth0 login
+```
+
+### E2E Environment Variables
+
+Configure these in the root `.env`:
+
+```
+AUTH_MODE           - 'api' | 'captcha-solver' | 'browser'
+APP_USERNAME        - Login credentials (admin user)
+APP_PASSWORD        - Login password
+baseURL / UAT_URL   - Test application URL (default: http://localhost:3000)
+USE_TEST_DATA_SETUP - 'true' to auto-create Epic + Project before tests
+HEADLESS            - 'true'/'false' browser visibility
+TEST_TIMEOUT        - Test timeout in ms (default: 60000)
+CI                  - Set for CI environment
 ```
 
 ### Authentication Strategy
 
-The framework uses **browser-based login** with CAPTCHA support:
+`AUTH_MODE` controls which login strategy is used:
 
-1. **Global Setup** (`e2e/global-setup.ts`): Launches a headed browser, navigates to the app, fills Auth0 login form
-2. **CAPTCHA Handling**: If CAPTCHA detected, waits 120s for manual solving
-3. **State Caching**: Saves to `playwright/.auth/state.json`, reuses if < 12 hours old
-4. **Shared State**: All parallel workers share the authenticated storage state
+- **`'api'`** — Auth0 Password Grant (`grant_type=password-realm`). Requires Password Grant enabled in the Auth0 tenant. **Currently disabled** on `originhealth.us.auth0.com`.
+- **`'captcha-solver'`** — Automated CAPTCHA solving via Tesseract OCR.
+- **`'browser'`** — Headed browser, manual CAPTCHA solving. Always works.
 
-Credentials come from `datavaerese_frontend_&_backend/.env` (env vars `ADMIN_USERNAME`, `ADMIN_PASSWORD`). Auth0 tenant must have **Password Grant** enabled.
+Auth flow:
+1. **Auth Setup** (`e2e/tests/auth.setup.ts`): Calls `e2e/utils/auth.service.ts` using the configured `AUTH_MODE`
+2. **State Caching**: Saves to `playwright/.auth/state.json`, reused if < 12 hours old
+3. **Shared State**: All parallel workers share the authenticated storage state
+
+Credentials come from root `.env` (env vars `APP_USERNAME`, `APP_PASSWORD`).
+
+### Key playwright.config.ts Settings
+
+- **Timeout**: 60s per test
+- **Viewport**: 1920×1080
+- **Screenshots**: always (on pass and fail)
+- **Video**: on failure only
+- **Workers**: 1 locally; `auth-setup` project runs before `chromium` project
 
 ### Test Organization
 
-Tests are organized by domain and requirement hierarchy (`URS → SRS-SDS`):
+Tests are organized by domain and requirement hierarchy (`URS → SRS → SDS`):
 
 ```
 e2e/tests/
-├── qc-workflow/URS-DV-QC-01/SRS-1-SDS-1.spec.ts
-├── session-management/URS-DV-GEN-07/SRS-63-SDS-63.spec.ts
-├── data-labelling/URS-DV-DL-04/SRS-33-SDS-33.spec.ts
-├── annotation/URS-DV-DA-10/SRS-102-SDS-102.spec.ts
-├── data-management/URS-DV-DM-11/SRS-108-SDS-108.spec.ts
-├── analytics/URS-DV-AN-13/SRS-114-SDS-114.spec.ts
-├── security/URS-DV-SEC-18/SRS-141-SDS-141.spec.ts
-├── general/URS-DV-GEN-15/SRS-118-SDS-118.spec.ts
+├── qc-workflow/URS-DV-QC-01/SRS-001/SDS-001.spec.ts
+├── session-management/URS-DV-GEN-07/SRS-063/SDS-063.spec.ts
+├── data-labelling/URS-DV-DL-04/SRS-033/SDS-033.spec.ts
+├── annotation/URS-DV-DA-10/SRS-102/SDS-102.spec.ts
+├── data-management/URS-DV-DM-11/SRS-108/SDS-108.spec.ts
+├── analytics/URS-DV-AN-13/SRS-114/SDS-114.spec.ts
+├── security/URS-DV-SEC-18/SRS-141/SDS-141.spec.ts
+├── general/URS-DV-GEN-15/SRS-118/SDS-118.spec.ts
 ├── global.setup.ts                    # Test data setup project
 └── examples/                          # Example tests
 ```
@@ -258,16 +293,32 @@ import { test, expect } from '../../../fixtures/test-data.fixture';
 
 - Always use **page objects** from `e2e/pages/` — never raw selectors
 - Use `TestData` from `e2e/test-data/test-data.ts` for URLs, timeouts, sample data
-- Use `Selectors` from `e2e/selectors/` for `data-testid` lookups
+- Use named selector exports from `e2e/selectors/index.ts` (e.g. `EpicSelectors`, `CommonSelectors`) for `data-testid` lookups — **no hardcoded `data-testid=` strings** in pages or tests
+- Use named data exports from `e2e/test-data/index.ts` (e.g. `EpicData`, `UsersData`, `QcWorkflowData`) — **no hardcoded test values** in tests
 - Run `npm run extract-selectors` after changing `data-testid` attributes in Vue components
-- Current config: **1 worker** locally, `setup` project runs before `chromium` project
+- Current config: **1 worker** locally, `auth-setup` project runs before `chromium` project
+
+#### Dynamic Selectors
+
+For selectors with `${placeholder}` syntax, use `getDynamicSelector()`:
+
+```typescript
+import { getDynamicSelector } from '../../selectors';
+getDynamicSelector('ra-video-thumbnail-${index}', { index: 0 })
+// → 'ra-video-thumbnail-0'
+```
+
+#### Generated Data Persistence
+
+`generatedDataStore.ts` persists generated IDs/names across runs to `generated-data/sessions.json`. Use it when tests need to reference data created in a previous test.
 
 ### Troubleshooting E2E
 
-- **Auth fails**: Check `.env` credentials, ensure Password Grant enabled in Auth0
-- **Selector not found**: Run `npm run extract-selectors`, verify `data-testid` exists in Vue component
-- **Tests timeout**: Use `waitForLoadState()`, check element visibility, increase timeout
-- **CAPTCHA blocks**: Global setup opens headed browser — solve CAPTCHA manually within 120s
+- **Auth fails**: Check root `.env` credentials (`APP_USERNAME`, `APP_PASSWORD`). Try switching `AUTH_MODE` to `'browser'` for manual CAPTCHA solving.
+- **Password Grant errors**: `AUTH_MODE=api` requires Password Grant enabled in Auth0 — currently disabled on this tenant.
+- **Selector not found**: Run `npm run extract-selectors`, verify `data-testid` exists in the Vue component
+- **Tests timeout**: Use `waitForLoadState()`, check element visibility, increase `TEST_TIMEOUT`
+- **CAPTCHA blocks**: Set `AUTH_MODE=browser` — opens headed browser, solve CAPTCHA manually within 120s
 
 ## Docker
 

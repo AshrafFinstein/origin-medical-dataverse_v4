@@ -12,3 +12,4 @@ export { default as VersionTrackerData } from './versionTracker.json';
 export { default as AnalyticsData } from './analyticsData.json';
 export { default as SessionStatusData } from './sessionStatus.json';
 export { default as SessionLockData } from './sessionLock.json';
+export { default as SessionCreateData } from './sessionCreate.json';

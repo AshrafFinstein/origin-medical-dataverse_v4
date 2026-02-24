@@ -13,6 +13,7 @@ import users from './users.json';
 import userGroup from './userGroup.json';
 import qcWorkflow from './qcWorkflow.json';
 import login from './login.json';
+import analyticsSelectors from './analyticsSelectors.json';
 
 // Type-safe selector interfaces
 export interface Selectors {
@@ -31,6 +32,7 @@ export interface Selectors {
   userGroup: typeof userGroup;
   qcWorkflow: typeof qcWorkflow;
   login: typeof login;
+  analyticsSelectors: typeof analyticsSelectors;
 }
 
 // Granular exports
@@ -49,6 +51,7 @@ export const UsersSelectors = users;
 export const UserGroupSelectors = userGroup;
 export const QcWorkflowSelectors = qcWorkflow;
 export const LoginSelectors = login;
+export const AnalyticsSelectors = analyticsSelectors;
 
 // Combined export
 export const Selectors: Selectors = {
@@ -67,6 +70,7 @@ export const Selectors: Selectors = {
   userGroup,
   qcWorkflow,
   login,
+  analyticsSelectors,
 };
 
 /**

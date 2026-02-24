@@ -1,0 +1,10 @@
+{
+  "images": [
+    {
+      "id": "img-2001",
+      "labels": [
+        "heart"
+      ]
+    }
+  ]
+}
