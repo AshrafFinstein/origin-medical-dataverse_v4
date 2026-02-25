@@ -10,5 +10,11 @@
   "session-unlock-reason-input": "session-unlock-reason-input",
   "session-unlock-submit-button": "session-unlock-submit-button",
   "session-unlock-cancel-button": "session-unlock-cancel-button",
-  "session-duplicate-button": "session-duplicate-button"
+  "session-duplicate-button": "session-duplicate-button",
+  "session-edit-button": "session-edit-button",
+  "session-delete-button": "session-delete-button",
+  "session-duplicate-modal": "session-duplicate-modal",
+  "session-duplicate-name-input": "session-duplicate-name-input",
+  "session-duplicate-submit-button": "session-duplicate-submit-button",
+  "session-duplicate-cancel-button": "session-duplicate-cancel-button"
 }

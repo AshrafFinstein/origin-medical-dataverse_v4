@@ -29,7 +29,7 @@ export async function logoutFromApplication(page: Page): Promise<void> {
 
 export async function navigateToModule(page: Page): Promise<void> {
   const qcPage = new QcWorkflowPage(page);
-  await qcPage.gotoSessionList();
+  await qcPage.gotoSessionTableOnly();
 }
 
 export async function navigateToSessionListOnly(page: Page): Promise<void> {

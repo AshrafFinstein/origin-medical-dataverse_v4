@@ -77,8 +77,8 @@ export class RolePermissionsPage extends BasePage {
   async isSessionLockCheckedInCurrentModal(): Promise<boolean> {
     const checkbox = await this.findSessionLockCheckbox();
     if (!checkbox) {
-      throw new Error('Session lock checkbox not found.');
-    }
+        throw new Error('Session lock checkbox not found.');
+      }
     const current = await this.readToggleState(checkbox);
     if (current === null) {
       throw new Error('Unable to determine session lock checkbox state.');
@@ -86,20 +86,20 @@ export class RolePermissionsPage extends BasePage {
     return current;
   }
 
-  async setSessionLockInCurrentModal(enabled: boolean): Promise<boolean> {
-    const checkbox = await this.findSessionLockCheckbox();
-    if (!checkbox) {
-      throw new Error('Session lock checkbox not found.');
-    }
-    const current = await this.readToggleState(checkbox);
-    if (current === null || current !== enabled) {
-      await checkbox.click();
-      await this.page.waitForTimeout(300);
-      await this.clickUpdatePermissionsButton();
-      return true;
-    }
-    return false;
+async setSessionLockInCurrentModal(enabled: boolean): Promise<boolean> {
+  const checkbox = await this.findSessionLockCheckbox();
+  if (!checkbox) {
+    throw new Error('Session lock checkbox not found.');
   }
+  const current = await this.readToggleState(checkbox);
+  if (current === null || current !== enabled) {
+    await checkbox.click();
+    await this.page.waitForTimeout(300);
+    await this.clickUpdatePermissionsButton();
+    return true;
+  }
+  return false;
+}
 
   private async ensureOnApp(): Promise<void> {
     const currentUrl = this.page.url();
@@ -183,8 +183,7 @@ export class RolePermissionsPage extends BasePage {
       await this.page.waitForLoadState('networkidle').catch(() => {});
       return;
     }
-
-    const userRolesLink = this.page.locator(mastersUserRolesTab).first();
+  const userRolesLink = this.page.locator(mastersUserRolesTab).first();
     if (await userRolesLink.isVisible().catch(() => false)) {
       await userRolesLink.click();
       await this.page.waitForLoadState('networkidle').catch(() => {});
@@ -196,6 +195,23 @@ export class RolePermissionsPage extends BasePage {
       await rolePermissionsButton.click();
       await this.page.waitForLoadState('networkidle').catch(() => {});
       return;
+    }
+
+    if (await userRolesLink.isVisible().catch(() => false)) {
+      await userRolesLink.click();
+      await this.page.waitForLoadState('networkidle').catch(() => {});
+      const roleTabAfterUserRoles = this.page.getByRole('tab', { name: /role permissions/i }).first();
+      if (await roleTabAfterUserRoles.isVisible().catch(() => false)) {
+        await roleTabAfterUserRoles.click();
+        await this.page.waitForLoadState('networkidle').catch(() => {});
+        return;
+      }
+      const rolePermissionsButtonAfterUserRoles = this.page.locator(mastersRolePermissionsTab).first();
+      if (await rolePermissionsButtonAfterUserRoles.isVisible().catch(() => false)) {
+        await rolePermissionsButtonAfterUserRoles.click();
+        await this.page.waitForLoadState('networkidle').catch(() => {});
+        return;
+      }
     }
 
     const rolesFallback = this.page.locator(mastersRolesTabFallback).first();
@@ -475,6 +491,30 @@ export class RolePermissionsPage extends BasePage {
     }
 
     return this.page;
+  }
+
+  private async closePermissionsEditorIfOpen(): Promise<void> {
+    const dialog = this.page.getByRole('dialog').first();
+    const modal = this.page.locator('.n-modal-container, .n-drawer, .modal, .drawer, [role="dialog"]').first();
+    const root = (await dialog.isVisible().catch(() => false)) ? dialog : modal;
+    if (!(await root.isVisible().catch(() => false))) {
+      return;
+    }
+
+    const closeCandidates = [
+      root.getByRole('button', { name: /close|cancel|done|ok|x/i }).first(),
+      root.locator('[aria-label="Close"], [aria-label*="close" i], .n-base-close').first(),
+    ];
+    for (const candidate of closeCandidates) {
+      if (await candidate.isVisible({ timeout: 500 }).catch(() => false)) {
+        await candidate.click({ force: true }).catch(() => {});
+        await root.waitFor({ state: 'hidden', timeout: 3000 }).catch(() => {});
+        if (!(await root.isVisible().catch(() => false))) return;
+      }
+    }
+
+    await this.page.keyboard.press('Escape').catch(() => {});
+    await root.waitFor({ state: 'hidden', timeout: 3000 }).catch(() => {});
   }
   
 }
