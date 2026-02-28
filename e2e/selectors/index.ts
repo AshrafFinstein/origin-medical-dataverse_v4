@@ -6,6 +6,7 @@ import dataLabelling from './dataLabelling.json';
 import clinicalEvaluation from './clinicalEvaluation.json';
 import label from './label.json';
 import annotation from './annotation.json';
+import copyAnnotation from './copyAnnotation.json';
 import taxonomy from './taxonomy.json';
 import structure from './structure.json';
 import sessionCodes from './sessionCodes.json';
@@ -27,6 +28,7 @@ export interface Selectors {
   clinicalEvaluation: typeof clinicalEvaluation;
   label: typeof label;
   annotation: typeof annotation;
+  copyAnnotation: typeof copyAnnotation;
   taxonomy: typeof taxonomy;
   structure: typeof structure;
   sessionCodes: typeof sessionCodes;
@@ -48,6 +50,7 @@ export const DataLabellingSelectors = dataLabelling;
 export const ClinicalEvaluationSelectors = clinicalEvaluation;
 export const LabelSelectors = label;
 export const AnnotationSelectors = annotation;
+export const CopyAnnotationSelectors = copyAnnotation;
 export const TaxonomySelectors = taxonomy;
 export const StructureSelectors = structure;
 export const SessionCodeSelectors = sessionCodes;
@@ -69,6 +72,7 @@ export const Selectors: Selectors = {
   clinicalEvaluation,
   label,
   annotation,
+  copyAnnotation,
   taxonomy,
   structure,
   sessionCodes,

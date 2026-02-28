@@ -1,0 +1,85 @@
+import { test, expect } from '@playwright/test';
+import { CopyAnnotationPage } from '../../../../pages/copy-annotation.page';
+
+test.describe('SRS-249 - SDS-249', () => {
+  let copyPage: CopyAnnotationPage;
+
+  test.beforeEach(async ({ page }) => {
+    copyPage = new CopyAnnotationPage(page);
+    await copyPage.openDataLabellingSession();
+  });
+
+  test('UTC-2615: Verify Copy Annotation button is disabled when image has no annotations when the user selects an image with no existing annotations', async () => {
+    await copyPage.clickFilterUnannotatedCheckbox();
+    await copyPage.selectPendingImageFromGrid();
+    await copyPage.waitForCanvasReady();
+    const annotationVisible = await copyPage.isAnnotationButtonVisible();
+    expect(annotationVisible).toBe(true);
+    await copyPage.clickAnnotationButton();
+    await expect(copyPage.getCopyAnnotationButton()).toBeVisible();
+    const isDisabled = await copyPage.isCopyAnnotationButtonDisabled();
+    expect(isDisabled).toBe(true);
+  });
+
+  test('UTC-2616: Verify Copy Annotation button is enabled when image has annotations when the user selects an image with at least one saved annotation', async () => {
+    await copyPage.clickFilterAnnotatedCheckbox();
+    await copyPage.selectPendingImageFromGrid();
+    await copyPage.waitForCanvasReady();
+    const annotationVisible = await copyPage.isAnnotationButtonVisible();
+    expect(annotationVisible).toBe(true);
+    await copyPage.clickAnnotationButton();
+    await expect(copyPage.getCopyAnnotationButton()).toBeVisible();
+    await expect(copyPage.getCopyAnnotationButton()).toBeEnabled();
+  });
+
+  test('UTC-2617: Verify Copy Annotation button becomes enabled after saving an annotation when the user selects an image with no annotations', async () => {
+    await copyPage.clickFilterUnannotatedCheckbox();
+    await copyPage.selectPendingImageFromGrid();
+    await copyPage.waitForCanvasReady();
+    const annotationVisible = await copyPage.isAnnotationButtonVisible();
+    expect(annotationVisible).toBe(true);
+    await copyPage.clickAnnotationButton();
+    await expect(copyPage.getCopyAnnotationButton()).toBeVisible();
+    await expect(copyPage.getCopyAnnotationButton()).toBeDisabled();
+    await copyPage.waitForPageLoad();
+
+    const taxonomies = await copyPage.listAvailableTaxonomies();
+    expect(taxonomies.length).toEqual(0);
+    await copyPage.selectFirstTaxonomy();
+    await copyPage.createUnsavedAnnotation();
+    await copyPage.clickSaveAnnotationButton();
+
+    await copyPage.clickAnnotationButton();
+    await expect(copyPage.getCopyAnnotationButton()).toBeEnabled();
+  });
+
+  test('UTC-2618: Verify button state updates when switching between images when the user switches between images with and without annotations', async () => {
+    await copyPage.selectPendingImageFromGrid();
+    await copyPage.createAndSaveAnnotation();
+    await copyPage.clickAnnotationButton();
+    const popupVisible = await copyPage.isAnnotationPopupVisible();
+    expect(popupVisible).toBe(true);
+    const enabledOnAnnotated = await copyPage.isCopyAnnotationButtonEnabled();
+    expect(enabledOnAnnotated).toBe(true);
+
+    await copyPage.selectImageWithoutAnnotations();
+    await copyPage.clickAnnotationButton();
+    const popupVisible2 = await copyPage.isAnnotationPopupVisible();
+    expect(popupVisible2).toBe(true);
+    const disabledOnUnannotated = await copyPage.isCopyAnnotationButtonDisabled();
+    expect(disabledOnUnannotated).toBe(true);
+  });
+
+  test('UTC-2619: Verify Copy Annotation action cannot be triggered when disabled when the selected image has no annotations', async () => {
+    await copyPage.selectPendingImageFromGrid();
+    await copyPage.clickAnnotationButton();
+    const popupVisible = await copyPage.isAnnotationPopupVisible();
+    expect(popupVisible).toBe(true);
+    const isDisabled = await copyPage.isCopyAnnotationButtonDisabled();
+    expect(isDisabled).toBe(true);
+
+    await copyPage.attemptClickCopyAnnotationButton();
+    const modalVisible = await copyPage.isCopyAnnotationModalVisible();
+    expect(modalVisible).toBe(false);
+  });
+});

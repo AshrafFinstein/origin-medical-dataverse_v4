@@ -1,0 +1,22 @@
+{
+  "annotation-button": "dl-annotation-button",
+  "pending-image-card": "div.border-4:has-text(\"PENDING\")",
+  "annotation-popup": "button:has-text(\"Copy Annotation\")",
+  "copy-annotation-button": "button:has-text(\"Copy Annotation\")",
+  "filter-annotated-checkbox": "text=Filter Annotated",
+  "filter-unannotated-checkbox": "text=Filter Unannotated",
+  "annotation-save-button": "button:has-text(\"Save\")",
+  "taxonomy-panel": ".taxonomy-panel",
+  "taxonomy-content": "ul.taxonomy-content",
+  "taxonomy-group": "li[data-draggable-list=\"taxonomy-groups\"]",
+  "taxonomy-item": "li[data-draggable-list=\"taxonomy-items\"]",
+  "taxonomy-item-label": ".text-[20px]",
+  "copy-annotation-modal": "dl-copy-annotation-modal",
+  "copy-annotation-target-option-${index}": "dl-copy-annotation-target-option-${index}",
+  "copy-annotation-confirm-button": "dl-copy-annotation-confirm-button",
+  "copy-annotation-cancel-button": "dl-copy-annotation-cancel-button",
+  "copy-annotation-replace-button": "dl-copy-annotation-replace-button",
+  "copy-annotation-conflict-modal": "dl-copy-annotation-conflict-modal",
+  "copy-annotation-conflict-title": "dl-copy-annotation-conflict-title",
+  "copy-annotation-canvas": "div.konvajs-content, canvas, [data-testid='dl-canvas']"
+}
