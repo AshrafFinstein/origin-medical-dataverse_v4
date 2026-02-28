@@ -2,14 +2,20 @@
  * Centralized test data for all E2E tests
  */
 
+const resolvedBaseUrl = process.env.BASE_URL?.replace(/\/+$/, '');
+
+if (!resolvedBaseUrl) {
+  throw new Error('Missing required environment variable: BASE_URL');
+}
+
 export const TestData = {
-  baseUrl: process.env.baseURL || process.env.UAT_URL || process.env.API_URL || 'http://localhost:3000',
+  baseUrl: resolvedBaseUrl,
 
   // URLs
   urls: {
-    loginPage: `${process.env.baseURL || process.env.UAT_URL || process.env.API_URL || 'http://localhost:3000'}/login`,
-    homePage: process.env.baseURL || process.env.UAT_URL || process.env.API_URL || 'http://localhost:3000',
-    dashboard: `${process.env.baseURL || process.env.UAT_URL || process.env.API_URL || 'http://localhost:3000'}/dashboard`,
+    loginPage: `${resolvedBaseUrl}/login`,
+    homePage: resolvedBaseUrl,
+    dashboard: `${resolvedBaseUrl}/dashboard`,
   },
 
   // Valid credentials

@@ -1,15 +1,13 @@
 import { test, expect, Page, Locator } from '@playwright/test';
-import { loginToApplication, logoutFromApplication, navigateToModule } from '../../../../utils/helpers';
+import { reloginAndPersistSession, navigateToModule } from '../../../../utils/helpers';
 import { SessionLockPage } from '../../../../pages/session-lock.page';
 import { RolePermissionsPage } from '../../../../pages/masters/role-permissions.page';
 import { UserRolesPage } from '../../../../pages/user-roles.page';
-import TestData from '../../../../test-data/test-data';
 
 const lockReason = 'Automation lock reason';
 const unlockReason = 'Automation unlock reason';
 
 async function setLockPermissionEnabled(page: Page): Promise<void> {
-  await loginToApplication(page, TestData.testUsers.admin);
   const userRolesPage = new UserRolesPage(page);
   await userRolesPage.navigateToUserRoles();
   await userRolesPage.openEditRole('Admin');
@@ -20,9 +18,7 @@ async function setLockPermissionEnabled(page: Page): Promise<void> {
   await expect(await rolePermissionsPage.isSessionLockCheckedInCurrentModal()).toBe(true);
 
   if (changed) {
-    await logoutFromApplication(page);
-    await loginToApplication(page, TestData.testUsers.admin);
-    await page.waitForLoadState('networkidle');
+    await reloginAndPersistSession(page);
   }
 }
 
@@ -128,8 +124,7 @@ test.describe('SRS-261 - SDS-261', () => {
     await expect(refreshedRow).toBeVisible();
     await expect(await sessionLockPage.isLockIndicatorVisibleForRow(refreshedRow)).toBe(true);
 
-    await logoutFromApplication(page);
-    await loginToApplication(page, TestData.testUsers.admin);
+    await reloginAndPersistSession(page);
     await navigateToModule(page);
     await sessionLockPage.waitForSessionList();
     await sessionLockPage.scrollSessionTableToRight();

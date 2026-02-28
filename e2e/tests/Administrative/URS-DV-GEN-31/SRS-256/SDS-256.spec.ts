@@ -1,7 +1,6 @@
 import { test, expect, Locator, Page } from '@playwright/test';
-import { loginToApplication, navigateToModule } from '../../../../utils/helpers';
+import { navigateToModule } from '../../../../utils/helpers';
 import { SessionLockPage } from '../../../../pages/session-lock.page';
-import TestData from '../../../../test-data/test-data';
 
 const lockReason = 'Automation lock reason';
 const unlockReason = 'Unlock for setup';
@@ -112,7 +111,6 @@ async function getCompletedRowForDuplicateAction(page: Page, sessionLockPage: Se
 
 test.describe('SRS-256 - SDS-256', () => {
   test('UTC-2659: Verify Edit is disabled/hidden when session is locked when a session is locked successfully', async ({ page }) => {
-    await loginToApplication(page, TestData.testUsers.admin);
     const sessionLockPage = new SessionLockPage(page);
     const lockedRow = await getLockedCompletedRow(page, sessionLockPage);
 
@@ -121,7 +119,6 @@ test.describe('SRS-256 - SDS-256', () => {
   });
 
   test('UTC-2660: Verify Delete is disabled/hidden when session is locked when a session is locked successfully', async ({ page }) => {
-    await loginToApplication(page, TestData.testUsers.admin);
     const sessionLockPage = new SessionLockPage(page);
     const lockedRow = await getLockedCompletedRow(page, sessionLockPage);
 
@@ -130,7 +127,6 @@ test.describe('SRS-256 - SDS-256', () => {
   });
 
   test('UTC-2661: Verify Duplicate action remains enabled for locked session when a session is locked successfully', async ({ page }) => {
-    await loginToApplication(page, TestData.testUsers.admin);
     const sessionLockPage = new SessionLockPage(page);
     const lockedRow = await getLockedCompletedRow(page, sessionLockPage);
 
@@ -139,7 +135,6 @@ test.describe('SRS-256 - SDS-256', () => {
   });
 
   test('UTC-2662: Verify user can duplicate a locked session successfully when a session is locked', async ({ page }) => {
-    await loginToApplication(page, TestData.testUsers.admin);
     const sessionLockPage = new SessionLockPage(page);
     const completedRow = await getCompletedRowForDuplicateAction(page, sessionLockPage);
     await expect(completedRow).toContainText(/completed/i);
@@ -157,7 +152,6 @@ test.describe('SRS-256 - SDS-256', () => {
   });
 
   test('UTC-2663: Verify direct API edit request is rejected for locked session when the session is locked', async ({ page }) => {
-    await loginToApplication(page, TestData.testUsers.admin);
     const sessionLockPage = new SessionLockPage(page);
     const lockedRow = await getLockedCompletedRow(page, sessionLockPage);
     const sessionName = await sessionLockPage.getSessionNameFromRow(lockedRow);
@@ -168,7 +162,6 @@ test.describe('SRS-256 - SDS-256', () => {
   });
 
   test('UTC-2664: Verify direct API delete request is rejected for locked session when the session is locked', async ({ page }) => {
-    await loginToApplication(page, TestData.testUsers.admin);
     const sessionLockPage = new SessionLockPage(page);
     const lockedRow = await getLockedCompletedRow(page, sessionLockPage);
     const sessionName = await sessionLockPage.getSessionNameFromRow(lockedRow);
@@ -179,7 +172,6 @@ test.describe('SRS-256 - SDS-256', () => {
   });
 
   test('UTC-2665: Verify Edit/Delete available when session is unlocked when a session is not locked', async ({ page }) => {
-    await loginToApplication(page, TestData.testUsers.admin);
     const sessionLockPage = new SessionLockPage(page);
     await navigateToModule(page);
     await sessionLockPage.waitForSessionList();
@@ -195,7 +187,6 @@ test.describe('SRS-256 - SDS-256', () => {
   });
 
   test('UTC-2666: Verify locked session cannot be edited via direct URL navigation when the session is locked', async ({ page }) => {
-    await loginToApplication(page, TestData.testUsers.admin);
     const sessionLockPage = new SessionLockPage(page);
     await navigateToModule(page);
     await sessionLockPage.waitForSessionList();

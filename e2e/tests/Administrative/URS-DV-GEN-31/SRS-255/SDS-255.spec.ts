@@ -1,7 +1,6 @@
 import { test, expect, Locator, Page } from '@playwright/test';
-import { loginToApplication, navigateToModule } from '../../../../utils/helpers';
+import { navigateToModule } from '../../../../utils/helpers';
 import { SessionLockPage } from '../../../../pages/session-lock.page';
-import TestData from '../../../../test-data/test-data';
 
 const lockReason = 'For testing lock';
 const unlockReason = 'Unlock for test setup';
@@ -63,7 +62,6 @@ async function getCompletedRowForLockAction(page: Page, sessionLockPage: Session
 
 test.describe('SRS-255 - SDS-255', () => {
   test('UTC-2654: Verify Lock confirmation popup opens on clicking Lock icon when the user is on Data Labelling Session list page', async ({ page }) => {
-    await loginToApplication(page, TestData.testUsers.admin);
     const sessionLockPage = new SessionLockPage(page);
     await navigateToModule(page);
 
@@ -78,7 +76,6 @@ test.describe('SRS-255 - SDS-255', () => {
   });
 
   test('UTC-2655: Verify submission is blocked if reason is empty when Lock popup is opened', async ({ page }) => {
-    await loginToApplication(page, TestData.testUsers.admin);
     const sessionLockPage = new SessionLockPage(page);
     await navigateToModule(page);
 
@@ -92,7 +89,6 @@ test.describe('SRS-255 - SDS-255', () => {
   });
 
   test('UTC-2656: Verify session is locked when valid reason is entered when Lock popup is opened', async ({ page }) => {
-    await loginToApplication(page, TestData.testUsers.admin);
     const sessionLockPage = new SessionLockPage(page);
     await navigateToModule(page);
 
@@ -113,7 +109,6 @@ test.describe('SRS-255 - SDS-255', () => {
   });
 
   test('UTC-2657: Verify session is not locked when user cancels popup when Lock popup is opened', async ({ page }) => {
-    await loginToApplication(page, TestData.testUsers.admin);
     const sessionLockPage = new SessionLockPage(page);
     await navigateToModule(page);
 
@@ -134,7 +129,6 @@ test.describe('SRS-255 - SDS-255', () => {
   });
 
   test('UTC-2658: Verify lock tooltip is displayed when user hovers on locked icon after session is locked', async ({ page }) => {
-      await loginToApplication(page, TestData.testUsers.admin);
     const sessionLockPage = new SessionLockPage(page);
     await navigateToModule(page);
 

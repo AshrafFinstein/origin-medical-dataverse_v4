@@ -4,7 +4,12 @@ import * as dotenv from 'dotenv';
 // Load environment variables from repository root .env only.
 dotenv.config({ path: './.env' });
 
-const resolvedBaseUrl = (process.env.baseURL || process.env.UAT_URL || process.env.API_URL || 'http://localhost:3000').replace(/\/+$/, '');
+const baseUrlFromEnv = process.env.BASE_URL;
+if (!baseUrlFromEnv) {
+  throw new Error('Missing required environment variable: BASE_URL');
+}
+
+const resolvedBaseUrl = baseUrlFromEnv.replace(/\/+$/, '');
 const useTestDataSetup = process.env.USE_TEST_DATA_SETUP === 'true';
 const isUiMode = process.argv.includes('--ui');
 const enableTestDataSetup = useTestDataSetup && !isUiMode;
@@ -50,13 +55,13 @@ export default defineConfig({
   },
 
   projects: [
-    // Keep auth-setup project for non-UI runs only.
+    // Authenticate once and persist storage state.
     ...(
       isUiMode
         ? []
         : [
             {
-              name: 'auth-setup',
+              name: 'setup',
               testMatch: /.*auth\.setup\.ts/,
               timeout: 180_000,
               use: {
@@ -72,9 +77,9 @@ export default defineConfig({
       enableTestDataSetup
         ? [
             {
-              name: 'setup',
+              name: 'test-data-setup',
               testMatch: /.*global\.setup\.ts/,
-              dependencies: ['auth-setup'],
+              dependencies: ['setup'],
               use: {
                 storageState: './playwright/.auth/state.json',
               },
@@ -85,12 +90,13 @@ export default defineConfig({
 
     // Main test project: always executes spec files from e2e/tests.
     {
-      name: 'chromium',
-      dependencies: isUiMode ? [] : (enableTestDataSetup ? ['setup'] : ['auth-setup']),
+      name: 'uat-tests',
+      dependencies: isUiMode ? [] : (enableTestDataSetup ? ['test-data-setup'] : ['setup']),
       testMatch: /.*\.spec\.ts/,
       use: {
         ...devices['Desktop Chrome'],
         headless: process.env.HEADLESS === 'true',
+        baseURL: process.env.BASE_URL,
         storageState: './playwright/.auth/state.json',
       },
     },
@@ -136,7 +142,7 @@ export default defineConfig({
   // webServer: {
   //   command: 'npm run dev',
   //   cwd: './datavaerese_frontend_&_backend',
-  //   url: 'http://localhost:3000',
+  //   url: process.env.BASE_URL,
   //   reuseExistingServer: !process.env.CI,
   //   timeout: 120000,
   // },

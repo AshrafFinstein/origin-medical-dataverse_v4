@@ -19,37 +19,24 @@ const AUTH_STATE_PATH = './playwright/.auth/state.json';
  * Works with Auth0 New Universal Login (unlike the Classic /usernamepassword/login flow).
  *
  * Flow:
- *   1. Check 12-hour cache — reuse state.json if still fresh
- *   2. POST /oauth/token with grant_type=password-realm → get tokens directly
- *   3. Verify id_token via JWKS
- *   4. Seal cookie payload with @hapi/iron (same as backend callback.ts)
- *   5. Write Playwright storageState with the sealed cookie
+ *   1. POST /oauth/token with grant_type=password-realm → get tokens directly
+ *   2. Verify id_token via JWKS
+ *   3. Seal cookie payload with @hapi/iron (same as backend callback.ts)
+ *   4. Write Playwright storageState with the sealed cookie
  */
 export async function performLogin(): Promise<void> {
-  // ─── 12-hour cache ──────────────────────────────────────────────────
-  if (isAuthValid()) {
-    console.log('Using existing auth state (< 12 hours old)');
-    return;
-  }
-
   const domain = requireEnv('AUTH0_DOMAIN').replace(/^https?:\/\//, '').replace(/\/+$/, '');
   const clientId = requireEnv('AUTH0_CLIENT_ID');
   const clientSecret = requireEnv('AUTH0_CLIENT_SECRET');
   const audience = process.env.AUTH0_AUDIENCE || 'origin-health-ai-dataverse-api';
   const connection = process.env.AUTH0_DATABASE_CONNECTION || 'Dataverse-User-DB';
   const cookieName = process.env.AUTH0_COOKIE_NAME || 'dataverse-auth0-cookies';
-  const baseUrl = (
-    process.env.AUTH0_BASE_URL ||
-    process.env.baseURL ||
-    process.env.UAT_URL ||
-    process.env.API_URL ||
-    'http://localhost:3000'
-  ).replace(/\/+$/, '');
+  const baseUrl = (process.env.AUTH0_BASE_URL || process.env.BASE_URL || '').replace(/\/+$/, '');
   const username = process.env.APP_USERNAME || process.env.ADMIN_USERNAME;
   const password = process.env.APP_PASSWORD || process.env.ADMIN_PASSWORD;
 
-  if (!username || !password) {
-    throw new Error('APP_USERNAME/ADMIN_USERNAME and APP_PASSWORD/ADMIN_PASSWORD must be set in .env');
+  if (!username || !password || !baseUrl) {
+    throw new Error('APP_USERNAME/ADMIN_USERNAME, APP_PASSWORD/ADMIN_PASSWORD, and BASE_URL must be set in .env');
   }
 
   console.log('Authenticating via Auth0 Password Grant (NO CAPTCHA, NO browser)...');
@@ -198,11 +185,4 @@ function requireEnv(name: string): string {
     throw new Error(`Missing required environment variable: ${name}`);
   }
   return value;
-}
-
-function isAuthValid(): boolean {
-  if (!fs.existsSync(AUTH_STATE_PATH)) return false;
-  const stats = fs.statSync(AUTH_STATE_PATH);
-  const ageInHours = (Date.now() - stats.mtimeMs) / (1000 * 60 * 60);
-  return ageInHours < 12;
 }

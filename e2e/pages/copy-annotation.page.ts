@@ -6,14 +6,7 @@ import {
   QcWorkflowSelectors,
   CommonSelectors,
 } from '../selectors';
-import { loginToApplication } from '../utils/helpers';
-import TestData from '../test-data/test-data';
 import { QcWorkflowPage } from './qc-workflow.page';
-
-type Credentials = {
-  email: string;
-  password: string;
-};
 
 export class CopyAnnotationPage extends BasePage {
   private qcPage: QcWorkflowPage;
@@ -23,8 +16,7 @@ export class CopyAnnotationPage extends BasePage {
     this.qcPage = new QcWorkflowPage(page);
   }
 
-  async openDataLabellingSession(credentials: Credentials = TestData.testUsers.admin): Promise<void> {
-    await loginToApplication(this.page, credentials);
+  async openDataLabellingSession(): Promise<void> {
     await this.qcPage.navigateToDataLabelling();
   }
 

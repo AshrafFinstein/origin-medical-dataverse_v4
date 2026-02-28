@@ -1,15 +1,17 @@
+const uatBaseUrl = process.env.BASE_URL || 'https://uat.dataverse.com';
+
 export const environments = {
   dev: {
-    baseURL: 'http://localhost:3000',
-    apiURL: 'http://localhost:3000/api',
+    baseURL: uatBaseUrl,
+    apiURL: `${uatBaseUrl}/api`,
   },
   staging: {
     baseURL: 'https://staging.dataverse.com',
     apiURL: 'https://staging.dataverse.com/api',
   },
   uat: {
-    baseURL: process.env.UAT_URL || 'https://uat.dataverse.com',
-    apiURL: process.env.UAT_API_URL || `${process.env.UAT_URL || 'https://uat.dataverse.com'}/api`,
+    baseURL: uatBaseUrl,
+    apiURL: `${uatBaseUrl}/api`,
   },
   production: {
     baseURL: 'https://dataverse.com',

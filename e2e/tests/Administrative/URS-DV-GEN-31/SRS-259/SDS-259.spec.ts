@@ -1,9 +1,8 @@
 import { test, expect, Page, Locator } from '@playwright/test';
-import { loginToApplication, logoutFromApplication, navigateToModule } from '../../../../utils/helpers';
+import { reloginAndPersistSession, navigateToModule } from '../../../../utils/helpers';
 import { SessionLockPage } from '../../../../pages/session-lock.page';
 import { RolePermissionsPage } from '../../../../pages/masters/role-permissions.page';
 import { UserRolesPage } from '../../../../pages/user-roles.page';
-import TestData from '../../../../test-data/test-data';
 
 const lockReason = 'Automation lock reason';
 
@@ -12,7 +11,6 @@ function uniqueSessionName(prefix: string): string {
 }
 
 async function setLockPermissionEnabled(page: Page): Promise<void> {
-  await loginToApplication(page, TestData.testUsers.admin);
   const userRolesPage = new UserRolesPage(page);
   await userRolesPage.navigateToUserRoles();
   await userRolesPage.openEditRole('Admin');
@@ -23,9 +21,7 @@ async function setLockPermissionEnabled(page: Page): Promise<void> {
   await expect(await rolePermissionsPage.isSessionLockCheckedInCurrentModal()).toBe(true);
 
   if (changed) {
-    await logoutFromApplication(page);
-    await loginToApplication(page, TestData.testUsers.admin);
-    await page.waitForLoadState('networkidle');
+    await reloginAndPersistSession(page);
   }
 }
 

@@ -1,11 +1,9 @@
 import { test, expect } from '@playwright/test';
-import { loginToApplication, navigateToModule } from '../../../../utils/helpers';
+import { navigateToModule } from '../../../../utils/helpers';
 import { SessionLockPage } from '../../../../pages/session-lock.page';
-import TestData from '../../../../test-data/test-data';
 
 test.describe('SRS-254 - SDS-254', () => {
   test('UTC-2649: Verify lock icon is displayed when session status is Completed when the user is on Data Labelling Session list page', async ({ page }) => {
-    await loginToApplication(page, TestData.testUsers.admin);
     const sessionLockPage = new SessionLockPage(page);
     await navigateToModule(page);
     await sessionLockPage.scrollSessionTableToRight();
@@ -16,7 +14,6 @@ test.describe('SRS-254 - SDS-254', () => {
   });
 
   test('UTC-2650: Verify lock icon is not shown when session status is Yet to do when the user is on Data Labelling Session list page', async ({ page }) => {
-    await loginToApplication(page, TestData.testUsers.admin);
     const sessionLockPage = new SessionLockPage(page);
     await navigateToModule(page);
     await sessionLockPage.scrollSessionTableToRight();
@@ -27,7 +24,6 @@ test.describe('SRS-254 - SDS-254', () => {
   });
 
   test('UTC-2651: Verify lock icon is not shown when session status is In progress when the user is on Data Labelling Session list page', async ({ page }) => {
-    await loginToApplication(page, TestData.testUsers.admin);
     const sessionLockPage = new SessionLockPage(page);
     await navigateToModule(page);
     await sessionLockPage.scrollSessionTableToRight();
@@ -38,7 +34,6 @@ test.describe('SRS-254 - SDS-254', () => {
   });
 
   test('UTC-2652: Verify lock icon appears after session status is updated to Completed when the session status is not Completed initially', async ({ page }) => {
-    await loginToApplication(page, TestData.testUsers.admin);
     const sessionLockPage = new SessionLockPage(page);
     await navigateToModule(page);
 
@@ -58,7 +53,6 @@ test.describe('SRS-254 - SDS-254', () => {
   });
 
   test('UTC-2653: Verify lock icon disappears if session status is changed from Completed to other status when the session status is Completed and Lock icon is visible', async ({ page }) => {
-    await loginToApplication(page, TestData.testUsers.admin);
     const sessionLockPage = new SessionLockPage(page);
     await navigateToModule(page);
 

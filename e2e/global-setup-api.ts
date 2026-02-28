@@ -21,8 +21,10 @@ async function globalSetup(config: FullConfig) {
   dotenv.config({ path: rootEnv });
   dotenv.config({ path: backendEnv }); // won't overwrite existing keys
 
-  const baseUrl = (process.env.baseURL || process.env.UAT_URL || process.env.API_URL || 'http://localhost:3000')
-    .replace(/\/+$/, '');
+  const baseUrl = (process.env.BASE_URL || '').replace(/\/+$/, '');
+  if (!baseUrl) {
+    throw new Error('Missing required environment variable: BASE_URL');
+  }
 
   // ─── Check 12-hour cache ───
   const authStatePath = './playwright/.auth/state.json';

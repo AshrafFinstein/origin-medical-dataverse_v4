@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { loginToApplication, logoutFromApplication, navigateToModule } from '../../../../utils/helpers';
+import { reloginAndPersistSession, navigateToModule } from '../../../../utils/helpers';
 import { SessionLockPage } from '../../../../pages/session-lock.page';
 import { RolePermissionsPage } from '../../../../pages/masters/role-permissions.page';
 import { UserRolesPage } from '../../../../pages/user-roles.page';
@@ -19,7 +19,6 @@ const disableLockPermission = {
 
 test.describe('SRS-253 - SDS-253', () => {
 test('UTC-2639: Verify Lock icon is visible when Lock permission is enabled in role when the admin enables "Lock" permission in Masters -> User Roles -> Session for the logged-in user role', async ({ page }) => {
-    await loginToApplication(page, enableLockPermission.updatedUserCredentials ?? TestData.testUsers.admin);
     const userRolesPage = new UserRolesPage(page);
     await userRolesPage.navigateToUserRoles();
     await userRolesPage.openEditRole(enableLockPermission.roleName);
@@ -29,9 +28,7 @@ test('UTC-2639: Verify Lock icon is visible when Lock permission is enabled in r
     const isChecked = await rolePermissionsPage.isSessionLockCheckedInCurrentModal();
     await expect(isChecked).toBe(true);
     if (changed) {
-        await logoutFromApplication(page);
-        await loginToApplication(page, enableLockPermission.updatedUserCredentials ?? TestData.testUsers.admin);
-        await page.waitForLoadState('networkidle');
+        await reloginAndPersistSession(page);
     }
     const sessionLockPage = new SessionLockPage(page);
     await navigateToModule(page);
@@ -41,7 +38,6 @@ test('UTC-2639: Verify Lock icon is visible when Lock permission is enabled in r
 });
 
   test('UTC-2640: Verify Lock icon is hidden when Lock permission is disabled in role when the admin disables "Lock" permission in Masters -> User Roles -> Session for the logged-in user role', async ({ page }) => {
-    await loginToApplication(page, disableLockPermission.updatedUserCredentials ?? TestData.testUsers.admin);
     const userRolesPage = new UserRolesPage(page);
     await userRolesPage.navigateToUserRoles();
     await userRolesPage.openEditRole(disableLockPermission.roleName);
@@ -52,9 +48,7 @@ test('UTC-2639: Verify Lock icon is visible when Lock permission is enabled in r
     await expect(isChecked).toBe(false);
 
     if (changed) {
-      await logoutFromApplication(page);
-      await loginToApplication(page, disableLockPermission.updatedUserCredentials ?? TestData.testUsers.admin);
-      await page.waitForLoadState('networkidle');
+      await reloginAndPersistSession(page);
     }
 
     const sessionLockPage = new SessionLockPage(page);
@@ -65,7 +59,6 @@ test('UTC-2639: Verify Lock icon is visible when Lock permission is enabled in r
   });
 
   test('UTC-2641: Verify unauthorized user cannot access Lock Session popup when the user role does not have Lock permission enabled', async ({ page }) => {
-    await loginToApplication(page, disableLockPermission.updatedUserCredentials ?? TestData.testUsers.admin);
     const userRolesPage = new UserRolesPage(page);
     await userRolesPage.navigateToUserRoles();
     await userRolesPage.openEditRole(disableLockPermission.roleName);
@@ -76,9 +69,7 @@ test('UTC-2639: Verify Lock icon is visible when Lock permission is enabled in r
     await expect(isChecked).toBe(false);
 
     if (changed) {
-      await logoutFromApplication(page);
-      await loginToApplication(page, disableLockPermission.updatedUserCredentials ?? TestData.testUsers.admin);
-      await page.waitForLoadState('networkidle');
+      await reloginAndPersistSession(page);
     }
 
     const sessionLockPage = new SessionLockPage(page);
@@ -91,7 +82,6 @@ test('UTC-2639: Verify Lock icon is visible when Lock permission is enabled in r
   });
 
   test('UTC-2642: Verify Lock icon visibility updates after permission change when the user is logged in with a role where Lock permission is disabled', async ({ page }) => {
-    await loginToApplication(page, disableLockPermission.updatedUserCredentials ?? TestData.testUsers.admin);
     const userRolesPage = new UserRolesPage(page);
     await userRolesPage.navigateToUserRoles();
     await userRolesPage.openEditRole(disableLockPermission.roleName);
@@ -103,9 +93,7 @@ test('UTC-2639: Verify Lock icon is visible when Lock permission is enabled in r
     await expect(isDisabled).toBe(false);
 
     if (disabled) {
-      await logoutFromApplication(page);
-      await loginToApplication(page, disableLockPermission.updatedUserCredentials ?? TestData.testUsers.admin);
-      await page.waitForLoadState('networkidle');
+      await reloginAndPersistSession(page);
     }
 
     await userRolesPage.navigateToUserRoles();
@@ -116,9 +104,7 @@ test('UTC-2639: Verify Lock icon is visible when Lock permission is enabled in r
     await expect(isEnabled).toBe(true);
 
     if (enabled) {
-      await logoutFromApplication(page);
-      await loginToApplication(page, enableLockPermission.updatedUserCredentials ?? TestData.testUsers.admin);
-      await page.waitForLoadState('networkidle');
+      await reloginAndPersistSession(page);
     }
 
     const sessionLockPage = new SessionLockPage(page);
@@ -129,7 +115,6 @@ test('UTC-2639: Verify Lock icon is visible when Lock permission is enabled in r
   });
 
   test('UTC-2643: Verify lock action is rejected even if API is triggered without permission when the user does not have Lock permission', async ({ page }) => {
-    await loginToApplication(page, disableLockPermission.updatedUserCredentials ?? TestData.testUsers.admin);
     const userRolesPage = new UserRolesPage(page);
     await userRolesPage.navigateToUserRoles();
     await userRolesPage.openEditRole(disableLockPermission.roleName);
@@ -140,9 +125,7 @@ test('UTC-2639: Verify Lock icon is visible when Lock permission is enabled in r
     await expect(isChecked).toBe(false);
 
     if (changed) {
-      await logoutFromApplication(page);
-      await loginToApplication(page, disableLockPermission.updatedUserCredentials ?? TestData.testUsers.admin);
-      await page.waitForLoadState('networkidle');
+      await reloginAndPersistSession(page);
     }
 
     const sessionLockPage = new SessionLockPage(page);
@@ -157,7 +140,6 @@ test('UTC-2639: Verify Lock icon is visible when Lock permission is enabled in r
   });
 
   test('UTC-2644: Verify Unlock action is visible only if Lock permission exists when the user role has Lock permission enabled', async ({ page }) => {
-    await loginToApplication(page, enableLockPermission.updatedUserCredentials ?? TestData.testUsers.admin);
     const userRolesPage = new UserRolesPage(page);
     await userRolesPage.navigateToUserRoles();
     await userRolesPage.openEditRole(enableLockPermission.roleName);
@@ -168,9 +150,7 @@ test('UTC-2639: Verify Lock icon is visible when Lock permission is enabled in r
     await expect(isChecked).toBe(true);
 
     if (changed) {
-      await logoutFromApplication(page);
-      await loginToApplication(page, enableLockPermission.updatedUserCredentials ?? TestData.testUsers.admin);
-      await page.waitForLoadState('networkidle');
+      await reloginAndPersistSession(page);
     }
 
     const sessionLockPage = new SessionLockPage(page);
@@ -182,7 +162,6 @@ test('UTC-2639: Verify Lock icon is visible when Lock permission is enabled in r
   });
 
   test('UTC-2645: Verify Unlock action is hidden when Lock permission is removed when a session is locked', async ({ page }) => {
-    await loginToApplication(page, enableLockPermission.updatedUserCredentials ?? TestData.testUsers.admin);
     const userRolesPage = new UserRolesPage(page);
     await userRolesPage.navigateToUserRoles();
     await userRolesPage.openEditRole(enableLockPermission.roleName);
@@ -193,9 +172,7 @@ test('UTC-2639: Verify Lock icon is visible when Lock permission is enabled in r
     await expect(isChecked).toBe(true);
 
     if (enabled) {
-      await logoutFromApplication(page);
-      await loginToApplication(page, enableLockPermission.updatedUserCredentials ?? TestData.testUsers.admin);
-      await page.waitForLoadState('networkidle');
+      await reloginAndPersistSession(page);
     }
 
     const sessionLockPage = new SessionLockPage(page);
@@ -211,9 +188,7 @@ test('UTC-2639: Verify Lock icon is visible when Lock permission is enabled in r
     await expect(isDisabled).toBe(false);
 
     if (disabled) {
-      await logoutFromApplication(page);
-      await loginToApplication(page, disableLockPermission.updatedUserCredentials ?? TestData.testUsers.admin);
-      await page.waitForLoadState('networkidle');
+      await reloginAndPersistSession(page);
     }
 
     await navigateToModule(page);
@@ -222,7 +197,6 @@ test('UTC-2639: Verify Lock icon is visible when Lock permission is enabled in r
   });
 
   test('UTC-2646: Verify unauthorized user cannot unlock a locked session when a session is locked', async ({ page }) => {
-    await loginToApplication(page, enableLockPermission.updatedUserCredentials ?? TestData.testUsers.admin);
     const userRolesPage = new UserRolesPage(page);
     await userRolesPage.navigateToUserRoles();
     await userRolesPage.openEditRole(enableLockPermission.roleName);
@@ -233,9 +207,7 @@ test('UTC-2639: Verify Lock icon is visible when Lock permission is enabled in r
     await expect(isChecked).toBe(true);
 
     if (enabled) {
-      await logoutFromApplication(page);
-      await loginToApplication(page, enableLockPermission.updatedUserCredentials ?? TestData.testUsers.admin);
-      await page.waitForLoadState('networkidle');
+      await reloginAndPersistSession(page);
     }
 
     const sessionLockPage = new SessionLockPage(page);
@@ -251,9 +223,7 @@ test('UTC-2639: Verify Lock icon is visible when Lock permission is enabled in r
     await expect(isDisabled).toBe(false);
 
     if (disabled) {
-      await logoutFromApplication(page);
-      await loginToApplication(page, disableLockPermission.updatedUserCredentials ?? TestData.testUsers.admin);
-      await page.waitForLoadState('networkidle');
+      await reloginAndPersistSession(page);
     }
 
     await navigateToModule(page);
@@ -265,7 +235,6 @@ test('UTC-2639: Verify Lock icon is visible when Lock permission is enabled in r
   });
 
   test('UTC-2647: Verify authorized user can lock and unlock session successfully when the user role has Lock permission enabled', async ({ page }) => {
-    await loginToApplication(page, enableLockPermission.updatedUserCredentials ?? TestData.testUsers.admin);
     const userRolesPage = new UserRolesPage(page);
     await userRolesPage.navigateToUserRoles();
     await userRolesPage.openEditRole(enableLockPermission.roleName);
@@ -276,9 +245,7 @@ test('UTC-2639: Verify Lock icon is visible when Lock permission is enabled in r
     await expect(isChecked).toBe(true);
 
     if (changed) {
-      await logoutFromApplication(page);
-      await loginToApplication(page, enableLockPermission.updatedUserCredentials ?? TestData.testUsers.admin);
-      await page.waitForLoadState('networkidle');
+      await reloginAndPersistSession(page);
     }
 
     const sessionLockPage = new SessionLockPage(page);
@@ -293,7 +260,6 @@ test('UTC-2639: Verify Lock icon is visible when Lock permission is enabled in r
   });
 
   test('UTC-2648: Verify lock controls are fully hidden when permission is not granted when Lock permission is disabled for the role', async ({ page }) => {
-    await loginToApplication(page, disableLockPermission.updatedUserCredentials ?? TestData.testUsers.admin);
     const userRolesPage = new UserRolesPage(page);
     await userRolesPage.navigateToUserRoles();
     await userRolesPage.openEditRole(disableLockPermission.roleName);
@@ -304,9 +270,7 @@ test('UTC-2639: Verify Lock icon is visible when Lock permission is enabled in r
     await expect(isChecked).toBe(false);
 
     if (changed) {
-      await logoutFromApplication(page);
-      await loginToApplication(page, disableLockPermission.updatedUserCredentials ?? TestData.testUsers.admin);
-      await page.waitForLoadState('networkidle');
+      await reloginAndPersistSession(page);
     }
 
     const sessionLockPage = new SessionLockPage(page);

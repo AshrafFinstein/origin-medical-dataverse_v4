@@ -41,16 +41,10 @@ function isAuthStateFresh(): boolean {
 async function loginViaBrowser(): Promise<void> {
   const username = process.env.APP_USERNAME || process.env.ADMIN_USERNAME;
   const password = process.env.APP_PASSWORD || process.env.ADMIN_PASSWORD;
-  const baseUrl = (
-    process.env.AUTH0_BASE_URL ||
-    process.env.baseURL ||
-    process.env.UAT_URL ||
-    process.env.API_URL ||
-    'http://localhost:3000'
-  ).replace(/\/+$/, '');
+  const baseUrl = (process.env.AUTH0_BASE_URL || process.env.BASE_URL || '').replace(/\/+$/, '');
 
-  if (!username || !password) {
-    throw new Error('APP_USERNAME and APP_PASSWORD must be set in .env');
+  if (!username || !password || !baseUrl) {
+    throw new Error('APP_USERNAME, APP_PASSWORD, and BASE_URL must be set in .env');
   }
 
   const authDir = path.resolve('playwright/.auth');

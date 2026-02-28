@@ -15,10 +15,10 @@ async function globalSetup(config: FullConfig) {
 
   const username = process.env.APP_USERNAME || process.env.ADMIN_USERNAME;
   const password = process.env.APP_PASSWORD || process.env.ADMIN_PASSWORD;
-  const baseUrl = process.env.baseURL || process.env.UAT_URL || process.env.API_URL || 'http://localhost:3000';
+  const baseUrl = process.env.BASE_URL;
 
-  if (!username || !password) {
-    throw new Error('APP_USERNAME and APP_PASSWORD (or ADMIN_USERNAME and ADMIN_PASSWORD) must be set for browser authentication setup.');
+  if (!username || !password || !baseUrl) {
+    throw new Error('APP_USERNAME, APP_PASSWORD, and BASE_URL (or ADMIN_USERNAME/ADMIN_PASSWORD) must be set for browser authentication setup.');
   }
 
   // Check if auth state already exists and is recent (less than 12 hours old)
@@ -128,7 +128,7 @@ async function globalSetup(config: FullConfig) {
 
       try {
         // Wait for redirect (either user submitted after CAPTCHA, or auto-submit worked)
-        await page.waitForURL(/dataverse|dashboard|localhost:\d+\/(?!login)/, { timeout: 60000 });
+        await page.waitForURL((url) => !url.toString().includes('auth0.com'), { timeout: 60000 });
         console.log(`   ✓ Redirected to: ${page.url()}`);
         await page.waitForLoadState('networkidle');
 

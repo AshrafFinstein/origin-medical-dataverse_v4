@@ -27,6 +27,17 @@ export async function logoutFromApplication(page: Page): Promise<void> {
   await loginPage.logout();
 }
 
+export async function reloginAndPersistSession(
+  page: Page,
+  credentials: Credentials = TestData.testUsers.admin,
+  statePath: string = './playwright/.auth/state.json'
+): Promise<void> {
+  await logoutFromApplication(page);
+  await loginToApplication(page, credentials);
+  await page.waitForLoadState('networkidle');
+  await page.context().storageState({ path: statePath });
+}
+
 export async function navigateToModule(page: Page): Promise<void> {
   const qcPage = new QcWorkflowPage(page);
   await qcPage.gotoSessionTableOnly();

@@ -14,14 +14,9 @@ dotenv.config({
 const AUTH_STATE_PATH = './playwright/.auth/state.json';
 
 setup('authenticate and save storage state', async ({ browser }) => {
-  // ─── 12-hour cache ──────────────────────────────────────────────────
+  // Always refresh session in setup to avoid stale/invalid auth state.
   if (fs.existsSync(AUTH_STATE_PATH)) {
-    const stats = fs.statSync(AUTH_STATE_PATH);
-    const ageInHours = (Date.now() - stats.mtimeMs) / (1000 * 60 * 60);
-    if (ageInHours < 12) {
-      console.log(`Using existing auth state (${ageInHours.toFixed(1)} hours old)`);
-      return;
-    }
+    fs.rmSync(AUTH_STATE_PATH, { force: true });
   }
 
   // ─── Strategy 1: API-based login (Password Grant — no browser) ────
@@ -40,16 +35,10 @@ setup('authenticate and save storage state', async ({ browser }) => {
   // ─── Strategy 2: Browser-based login ──────────────────────────────
   const username = process.env.APP_USERNAME || process.env.ADMIN_USERNAME;
   const password = process.env.APP_PASSWORD || process.env.ADMIN_PASSWORD;
-  const baseUrl = (
-    process.env.AUTH0_BASE_URL ||
-    process.env.baseURL ||
-    process.env.UAT_URL ||
-    process.env.API_URL ||
-    'http://localhost:3000'
-  ).replace(/\/+$/, '');
+  const baseUrl = (process.env.AUTH0_BASE_URL || process.env.BASE_URL || '').replace(/\/+$/, '');
 
-  if (!username || !password) {
-    throw new Error('APP_USERNAME and APP_PASSWORD must be set in .env');
+  if (!username || !password || !baseUrl) {
+    throw new Error('APP_USERNAME, APP_PASSWORD, and BASE_URL must be set in .env');
   }
 
   console.log('Authenticating via browser login...');
