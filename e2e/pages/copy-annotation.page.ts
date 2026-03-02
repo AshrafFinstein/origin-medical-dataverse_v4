@@ -48,7 +48,25 @@ export class CopyAnnotationPage extends BasePage {
   }
 
   async clickAnnotationButton(): Promise<void> {
+    // Annotation panel can already be open; avoid re-clicking through modal overlays.
+    const copyButtonVisible = await this.getCopyAnnotationButton().isVisible().catch(() => false);
+    if (copyButtonVisible) return;
+    await this.waitForLoadingComplete();
     await this.click(CopyAnnotationSelectors['annotation-button']);
+  }
+
+  async clickPreviousImageButton(): Promise<void> {
+    const button = this.page.getByRole('button', { name: 'Previous Image' }).first();
+    await button.waitFor({ state: 'visible', timeout: 10000 });
+    await button.click();
+    await this.waitForCanvasReady();
+  }
+
+  async clickNextImageButton(): Promise<void> {
+    const button = this.page.getByRole('button', { name: 'Next Image' }).first();
+    await button.waitFor({ state: 'visible', timeout: 10000 });
+    await button.click();
+    await this.waitForCanvasReady();
   }
 
   async clickFilterAnnotatedCheckbox(): Promise<void> {

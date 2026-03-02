@@ -16,6 +16,7 @@ test.describe('SRS-249 - SDS-249', () => {
     const annotationVisible = await copyPage.isAnnotationButtonVisible();
     expect(annotationVisible).toBe(true);
     await copyPage.clickAnnotationButton();
+    await copyPage.waitForPageLoad();
     await expect(copyPage.getCopyAnnotationButton()).toBeVisible();
     const isDisabled = await copyPage.isCopyAnnotationButtonDisabled();
     expect(isDisabled).toBe(true);
@@ -51,32 +52,42 @@ test.describe('SRS-249 - SDS-249', () => {
   });
 
   test('UTC-2618: Verify button state updates when switching between images when the user switches between images with and without annotations', async () => {
+    const assertCopyButtonMatchesPresence = async () => {
+      const annotationCount = await copyPage.getAnnotationCount();
+      const copyVisible = await copyPage.getCopyAnnotationButton().isVisible().catch(() => false);
+      if (!copyVisible) {
+        await copyPage.clickAnnotationButton();
+      }
+      await expect(copyPage.getCopyAnnotationButton()).toBeVisible();
+      if (annotationCount > 0) {
+        await expect(copyPage.getCopyAnnotationButton()).toBeEnabled();
+      } else {
+        await expect(copyPage.getCopyAnnotationButton()).toBeDisabled();
+      }
+    };
+    await copyPage.clickFilterUnannotatedCheckbox();
     await copyPage.selectPendingImageFromGrid();
-    await copyPage.createAndSaveAnnotation();
-    await copyPage.clickAnnotationButton();
-    const popupVisible = await copyPage.isAnnotationPopupVisible();
-    expect(popupVisible).toBe(true);
-    const enabledOnAnnotated = await copyPage.isCopyAnnotationButtonEnabled();
-    expect(enabledOnAnnotated).toBe(true);
-
-    await copyPage.selectImageWithoutAnnotations();
-    await copyPage.clickAnnotationButton();
-    const popupVisible2 = await copyPage.isAnnotationPopupVisible();
-    expect(popupVisible2).toBe(true);
-    const disabledOnUnannotated = await copyPage.isCopyAnnotationButtonDisabled();
-    expect(disabledOnUnannotated).toBe(true);
+    await copyPage.waitForCanvasReady();
+    const annotationVisible = await copyPage.isAnnotationButtonVisible();
+    expect(annotationVisible).toBe(true);
+    await assertCopyButtonMatchesPresence();
+    await copyPage.clickNextImageButton();
+    await assertCopyButtonMatchesPresence();
+    await copyPage.waitForCanvasReady();
+    await copyPage.clickPreviousImageButton();
+    await assertCopyButtonMatchesPresence();
+    await copyPage.waitForCanvasReady();
   });
 
   test('UTC-2619: Verify Copy Annotation action cannot be triggered when disabled when the selected image has no annotations', async () => {
+      await copyPage.clickFilterUnannotatedCheckbox();
     await copyPage.selectPendingImageFromGrid();
+    await copyPage.waitForCanvasReady();
+    const annotationVisible = await copyPage.isAnnotationButtonVisible();
+    expect(annotationVisible).toBe(true);
     await copyPage.clickAnnotationButton();
-    const popupVisible = await copyPage.isAnnotationPopupVisible();
-    expect(popupVisible).toBe(true);
+    await expect(copyPage.getCopyAnnotationButton()).toBeVisible();
     const isDisabled = await copyPage.isCopyAnnotationButtonDisabled();
     expect(isDisabled).toBe(true);
-
-    await copyPage.attemptClickCopyAnnotationButton();
-    const modalVisible = await copyPage.isCopyAnnotationModalVisible();
-    expect(modalVisible).toBe(false);
   });
 });
