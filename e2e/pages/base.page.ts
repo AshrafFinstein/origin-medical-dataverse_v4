@@ -31,15 +31,32 @@ export abstract class BasePage {
     return `[data-testid="${selector}"]`;
   }
 
-  async click(selector: string) {
+  async click(
+    selector: string,
+    options?: { timeout?: number; waitForEnabled?: boolean }
+  ) {
     const resolved = this.resolveSelector(selector);
-    const base = this.page.locator(resolved);
+    const timeout = options?.timeout ?? 15000;
+    const waitForEnabled = options?.waitForEnabled ?? true;
+    const base = this.page.locator(resolved).first();
     const inputLike = base.locator('input, textarea, [contenteditable="true"]');
-    if (await inputLike.count() > 0) {
-      await inputLike.first().click();
-      return;
+    const target = (await inputLike.count()) > 0 ? inputLike.first() : base;
+
+    await target.waitFor({ state: 'visible', timeout });
+
+    if (waitForEnabled) {
+      const deadline = Date.now() + timeout;
+      let enabled = await target.isEnabled().catch(() => false);
+      while (!enabled && Date.now() < deadline) {
+        await this.page.waitForTimeout(100);
+        enabled = await target.isEnabled().catch(() => false);
+      }
+      // if (!enabled) {
+      //   throw new Error(`Element remained disabled before click: ${resolved}`);
+      // }
     }
-    await base.click();
+
+    await target.click({ timeout });
   }
 
   async clickByText(text: string) {

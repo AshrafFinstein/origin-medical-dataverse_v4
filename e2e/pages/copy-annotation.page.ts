@@ -21,10 +21,11 @@ export class CopyAnnotationPage extends BasePage {
   }
 
   async waitForCanvasReady(): Promise<void> {
-    await this.waitForSelector(CopyAnnotationSelectors['copy-annotation-canvas'], {
-      state: 'visible',
-      timeout: 20000,
-    });
+    const stage = await this.findVisibleCanvasStage(20000);
+    const box = await stage.boundingBox();
+    if (!box || box.width < 50 || box.height < 50) {
+      throw new Error('Canvas stage is not ready for drawing.');
+    }
     await this.waitForLoadingComplete();
   }
 
@@ -88,17 +89,25 @@ export class CopyAnnotationPage extends BasePage {
     const dialog = this.page.getByRole('dialog');
     await dialog.waitFor({ state: 'visible', timeout: 10000 });
 
-    const checkbox = dialog.getByRole('checkbox').first();
-    await checkbox.waitFor({ state: 'visible', timeout: 10000 });
-    await checkbox.click();
+    // Prefer drawable taxonomy types supported by our canvas helpers.
+    const preferred = dialog
+      .getByRole('checkbox')
+      .filter({ hasText: /ellipse|bounding box|landmark|crossbar/i })
+      .first();
+    if (await preferred.count()) {
+      await preferred.waitFor({ state: 'visible', timeout: 10000 });
+      await preferred.click();
+      return;
+    }
+
+    const fallback = dialog.getByRole('checkbox').first();
+    await fallback.waitFor({ state: 'visible', timeout: 10000 });
+    await fallback.click();
   }
 
   async clickSaveAnnotationButton(): Promise<void> {
     await this.click(CopyAnnotationSelectors['annotation-save-button']);
-    await this.waitForSelector(DataLabellingSelectors['dl-status-saved-indicator'], {
-      state: 'visible',
-      timeout: 10000,
-    });
+    await this.waitForLoadingComplete();
   }
 
   async clickCopyAnnotationButton(): Promise<void> {
@@ -303,23 +312,199 @@ export class CopyAnnotationPage extends BasePage {
 
   // ── Annotation Creation Helpers ───────────────────────────────────────────
 
-  private async drawOnCanvas(): Promise<void> {
-    const canvas = this.getLocator(CopyAnnotationSelectors['copy-annotation-canvas']).first();
-    const box = await canvas.boundingBox();
-    if (!box) return;
-    const startX = box.x + Math.max(5, box.width * 0.2);
-    const startY = box.y + Math.max(5, box.height * 0.2);
-    const endX = startX + Math.max(10, box.width * 0.1);
-    const endY = startY + Math.max(10, box.height * 0.1);
-    await this.page.mouse.move(startX, startY);
+  private getDialogCanvasStage(): Locator {
+    return this.page
+      .getByRole('dialog')
+      .last()
+      .locator('[data-testid="dl-canvas"], div.konvajs-content, canvas')
+      .first();
+  }
+
+  private getPageCanvasStage(): Locator {
+    return this.page.locator('[data-testid="dl-canvas"], div.konvajs-content, canvas').first();
+  }
+
+  private async findVisibleCanvasStage(timeoutMs: number, preferDialog: boolean = false): Promise<Locator> {
+    const start = Date.now();
+    while (Date.now() - start < timeoutMs) {
+      const dialogStage = this.getDialogCanvasStage();
+      const dialogVisible = await dialogStage.isVisible().catch(() => false);
+      if (dialogVisible) return dialogStage;
+
+      if (preferDialog) {
+        await this.page.waitForTimeout(100);
+        continue;
+      }
+
+      const pageStage = this.getPageCanvasStage();
+      if (await pageStage.isVisible().catch(() => false)) return pageStage;
+
+      await this.page.waitForTimeout(100);
+    }
+    throw new Error('No visible canvas stage found.');
+  }
+
+  private async getCanvasStage(): Promise<Locator> {
+    return this.findVisibleCanvasStage(5000);
+  }
+
+  private async getDrawingCanvasStage(): Promise<Locator> {
+    return this.findVisibleCanvasStage(5000, true);
+  }
+
+  private async waitForCanvasUnblocked(timeoutMs: number = 5000): Promise<void> {
+    const blockers = this.page.locator('.custom-loading-indicator');
+    const start = Date.now();
+    while (Date.now() - start < timeoutMs) {
+      const count = await blockers.count().catch(() => 0);
+      let visible = false;
+      for (let i = 0; i < count; i++) {
+        if (await blockers.nth(i).isVisible().catch(() => false)) {
+          visible = true;
+          break;
+        }
+      }
+      if (!visible) return;
+      await this.page.waitForTimeout(100);
+    }
+  }
+
+  private getInnerPoint(
+    box: { x: number; y: number; width: number; height: number },
+    px: number,
+    py: number
+  ): { x: number; y: number } {
+    const margin = 10;
+    const minX = box.x + margin;
+    const maxX = box.x + box.width - margin;
+    const minY = box.y + margin;
+    const maxY = box.y + box.height - margin;
+    return {
+      x: Math.max(minX, Math.min(maxX, box.x + box.width * px)),
+      y: Math.max(minY, Math.min(maxY, box.y + box.height * py)),
+    };
+  }
+
+  private async drawDragShape(): Promise<void> {
+    const stage = await this.getDrawingCanvasStage();
+    const box = await stage.boundingBox();
+    if (!box) throw new Error('Canvas stage bounding box not available for drag draw.');
+    const start = this.getInnerPoint(box, 0.3, 0.35);
+    const end = this.getInnerPoint(box, 0.55, 0.6);
+    await this.waitForCanvasUnblocked();
+    await this.page.mouse.move(start.x, start.y);
     await this.page.mouse.down();
-    await this.page.mouse.move(endX, endY);
+    await this.page.mouse.move(end.x, end.y, { steps: 20 });
     await this.page.mouse.up();
   }
 
+  private async drawSinglePoint(): Promise<void> {
+    const stage = await this.getDrawingCanvasStage();
+    const box = await stage.boundingBox();
+    if (!box) throw new Error('Canvas stage bounding box not available for point draw.');
+    const point = this.getInnerPoint(box, 0.5, 0.5);
+    await this.waitForCanvasUnblocked();
+    await this.page.mouse.click(point.x, point.y);
+  }
+
+  private async drawTwoPointLine(): Promise<void> {
+    const stage = await this.getDrawingCanvasStage();
+    const box = await stage.boundingBox();
+    if (!box) throw new Error('Canvas stage bounding box not available for line draw.');
+    const p1 = this.getInnerPoint(box, 0.35, 0.5);
+    const p2 = this.getInnerPoint(box, 0.65, 0.5);
+    await this.waitForCanvasUnblocked();
+    await this.page.mouse.click(p1.x, p1.y);
+    await this.page.mouse.click(p2.x, p2.y);
+  }
+
+  private async getSelectedTaxonomyAnnotationType(): Promise<string> {
+    const selectedItem = this.getLocator(CopyAnnotationSelectors['taxonomy-selected-item']).first();
+    const exists = (await selectedItem.count()) > 0;
+    if (!exists) return '';
+    const text = (await selectedItem.textContent())?.trim() ?? '';
+    const parts = text.split('-');
+    return (parts[parts.length - 1] ?? '').trim().toLowerCase();
+  }
+
+  private async activateSelectedParentTool(): Promise<void> {
+    const selectedItem = this.getLocator(CopyAnnotationSelectors['taxonomy-selected-item']).first();
+    if (!(await selectedItem.count())) return;
+    const label = selectedItem.locator('.button__label, span').first();
+    if (await label.isVisible().catch(() => false)) {
+      await label.click();
+    } else {
+      const box = await selectedItem.boundingBox();
+      if (box) {
+        const targetX = box.x + (box.width * 0.65);
+        const targetY = box.y + (box.height * 0.5);
+        await this.page.mouse.click(targetX, targetY);
+      } else {
+        await selectedItem.click();
+      }
+    }
+    await this.waitForCanvasUnblocked().catch(() => {});
+  }
+
+  private async ensureDrawModeReady(): Promise<void> {
+    const markerToggle = this.page.getByTestId(DataLabellingSelectors['dl-marker-mode-toggle-button']);
+    if (await markerToggle.isVisible().catch(() => false)) {
+      const ariaPressed = await markerToggle.getAttribute('aria-pressed');
+      const isEnabled = ariaPressed === 'true' || /active|selected|checked/.test((await markerToggle.getAttribute('class')) ?? '');
+      if (!isEnabled) {
+        await markerToggle.click();
+      }
+      await this.page.waitForTimeout(120);
+      return;
+    }
+
+    const annotationButton = this.page.getByRole('button', { name: 'Annotation' });
+    if (await annotationButton.isVisible().catch(() => false)) {
+      await annotationButton.click();
+      await this.page.waitForTimeout(120);
+    }
+  }
+
+  private async waitForSaveEnabled(timeoutMs: number = 4000): Promise<void> {
+    const saveButton = this.page.locator(CopyAnnotationSelectors['annotation-save-button']).first();
+    await saveButton.waitFor({ state: 'visible', timeout: timeoutMs });
+    const start = Date.now();
+    while (Date.now() - start < timeoutMs) {
+      const enabled = await saveButton.isEnabled().catch(() => false);
+      if (enabled) return;
+      await this.page.waitForTimeout(100);
+    }
+    throw new Error('Save button did not become enabled after drawing annotation.');
+  }
+
+  private async drawBySelectedType(selectedType: string): Promise<void> {
+    if (selectedType.includes('landmark')) {
+      await this.drawSinglePoint();
+      return;
+    }
+    if (selectedType.includes('crossbar')) {
+      await this.drawTwoPointLine();
+      return;
+    }
+    await this.drawDragShape();
+  }
+
+  private async captureDrawDebug(selectedType: string): Promise<void> {
+    const saveEnabled = await this.page.locator(CopyAnnotationSelectors['annotation-save-button']).first().isEnabled().catch(() => false);
+    const annotationCount = await this.getAnnotationCount().catch(() => -1);
+    const stage = await this.getCanvasStage().catch(() => null);
+    const stageBox = stage ? await stage.boundingBox().catch(() => null) : null;
+    console.log(
+      `[CopyAnnotationDebug] type=${selectedType} saveEnabled=${String(saveEnabled)} annotationCount=${annotationCount} stageBox=${JSON.stringify(stageBox)}`
+    );
+    await this.page.screenshot({
+      path: `test-results/copy-annotation-draw-failure-${Date.now()}.png`,
+      fullPage: true,
+    }).catch(() => {});
+  }
+
   async createAndSaveAnnotation(): Promise<void> {
-    await this.click(DataLabellingSelectors['dl-marker-mode-toggle-button']);
-    await this.drawOnCanvas();
+    await this.createUnsavedAnnotation();
     const labelMenuVisible = await this.isVisible(DataLabellingSelectors['dl-label-menu']).catch(() => false);
     if (labelMenuVisible) {
       await this.click(DataLabellingSelectors['dl-label-menu']);
@@ -332,15 +517,33 @@ export class CopyAnnotationPage extends BasePage {
   }
 
   async createUnsavedAnnotation(): Promise<void> {
-    await this.click(DataLabellingSelectors['dl-marker-mode-toggle-button']);
+    await this.ensureDrawModeReady();
     await this.waitForCanvasReady();
-    await this.drawOnCanvas();
+    const selectedType = await this.getSelectedTaxonomyAnnotationType();
+    await this.activateSelectedParentTool();
+    await this.drawBySelectedType(selectedType);
+
+    try {
+      await this.waitForSaveEnabled();
+      return;
+    } catch {
+      await this.ensureDrawModeReady();
+      await this.activateSelectedParentTool();
+      await this.drawBySelectedType(selectedType);
+      try {
+        await this.waitForSaveEnabled();
+        return;
+      } catch (error) {
+        await this.captureDrawDebug(selectedType);
+        throw error;
+      }
+    }
   }
 
   async isBackgroundInteractionBlocked(): Promise<boolean> {
     const modalVisible = await this.isConflictModalVisible().catch(() => false);
     if (!modalVisible) return false;
-    await this.drawOnCanvas();
+    await this.drawDragShape();
     return this.isConflictModalVisible().catch(() => false);
   }
 }

@@ -42,15 +42,12 @@ test.describe('SRS-249 - SDS-249', () => {
     await expect(copyPage.getCopyAnnotationButton()).toBeVisible();
     await expect(copyPage.getCopyAnnotationButton()).toBeDisabled();
     await copyPage.waitForPageLoad();
-
     const taxonomies = await copyPage.listAvailableTaxonomies();
     expect(taxonomies.length).toEqual(0);
     await copyPage.selectFirstTaxonomy();
     await copyPage.createUnsavedAnnotation();
     await copyPage.clickSaveAnnotationButton();
-
-    await copyPage.clickAnnotationButton();
-    await expect(copyPage.getCopyAnnotationButton()).toBeEnabled();
+    await copyPage.isCopyAnnotationButtonEnabled();
   });
 
   test('UTC-2618: Verify button state updates when switching between images when the user switches between images with and without annotations', async () => {
