@@ -149,6 +149,14 @@ export class CopyAnnotationPage extends BasePage {
     return this.isVisible(CopyAnnotationSelectors['copy-annotation-conflict-modal']);
   }
 
+  async isUnsavedChangesModalVisible(): Promise<boolean> {
+    return this.isVisible(DataLabellingSelectors['dl-unsaved-changes-modal']);
+  }
+
+  async clickUnsavedChangesDiscardButton(): Promise<void> {
+    await this.click(DataLabellingSelectors['dl-unsaved-discard-button']);
+  }
+
   async getConflictModalTitleText(): Promise<string> {
     return this.getText(CopyAnnotationSelectors['copy-annotation-conflict-title']);
   }
@@ -170,6 +178,29 @@ export class CopyAnnotationPage extends BasePage {
   }
 
   async replaceAnnotationsInConflictModal(): Promise<void> {
+    const conflictDialog = this.page.getByRole('dialog').filter({ hasText: 'Existing Annotations Found' }).first();
+    await conflictDialog.waitFor({ state: 'visible', timeout: 10000 });
+
+    const replaceByRole = conflictDialog.getByRole('button', { name: /^Replace$/i }).first();
+    if (await replaceByRole.isVisible().catch(() => false)) {
+      for (let attempt = 0; attempt < 3; attempt++) {
+        await this.waitForLoadingComplete();
+        try {
+          await replaceByRole.click({ timeout: 3000 });
+          return;
+        } catch {
+          await this.page.waitForTimeout(200);
+        }
+      }
+    }
+
+    const replaceByText = conflictDialog.locator('span:has-text("Replace")').first();
+    if (await replaceByText.isVisible().catch(() => false)) {
+      await this.waitForLoadingComplete();
+      await replaceByText.click({ timeout: 5000 });
+      return;
+    }
+
     await this.click(CopyAnnotationSelectors['copy-annotation-replace-button']);
   }
 

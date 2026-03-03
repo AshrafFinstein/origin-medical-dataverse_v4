@@ -257,7 +257,10 @@ export abstract class BasePage {
   async getToastMessage(type: 'success' | 'error', timeout: number = 5000): Promise<string> {
     await this.waitForToast(type, timeout);
     const toastSelector = CommonSelectors[`ui-toast-${type}` as keyof typeof CommonSelectors];
-    const message = await this.page.locator(toastSelector).first().textContent();
+    const toast = this.page.locator(toastSelector).first();
+    const visible = await toast.isVisible().catch(() => false);
+    if (!visible) return '';
+    const message = await toast.textContent().catch(() => null);
     return message ?? '';
   }
 

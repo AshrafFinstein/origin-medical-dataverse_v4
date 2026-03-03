@@ -276,6 +276,9 @@ export class QcWorkflowPage extends BasePage {
     const table = this.page.locator(tid(sessionTable));
     await table.waitFor({ state: 'visible', timeout: 15000 }).catch(() => {});
 
+    const noDataVisible = await this.page.getByText('No Data', { exact: true }).isVisible().catch(() => false);
+    if (noDataVisible) return false;
+
     // Prefer a session with "In progress" status (likely has images/data)
     const preferredStatuses = ['In progress', 'Completed', 'Yet to do'];
     for (const status of preferredStatuses) {
@@ -303,6 +306,12 @@ export class QcWorkflowPage extends BasePage {
     return false;
   }
 
+  private async hasNoSessionsInTable(): Promise<boolean> {
+    const tableVisible = await this.page.locator(tid(sessionTable)).isVisible().catch(() => false);
+    if (!tableVisible) return false;
+    return this.page.getByText('No Data', { exact: true }).isVisible().catch(() => false);
+  }
+
   async navigateToDataLabelling(): Promise<void> {
     const dlUrl = process.env.DL_SESSION_URL;
     if (dlUrl) {
@@ -314,6 +323,10 @@ export class QcWorkflowPage extends BasePage {
     // Try up to 2 attempts (first attempt + 1 retry)
     for (let attempt = 0; attempt < 2; attempt++) {
       await this.gotoSessionList();
+
+      if (await this.hasNoSessionsInTable()) {
+        throw new Error('No sessions available in session table (No Data).');
+      }
 
       if (await this.tryClickGoOnSession()) return;
 

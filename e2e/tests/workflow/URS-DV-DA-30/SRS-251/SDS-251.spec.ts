@@ -35,6 +35,10 @@ test.describe('SRS-251 - SDS-251', () => {
 
   test('UTC-2629: Verify manual copy flow allows selecting a previous image when the Copy Annotation button is enabled', async () => {
     await copyPage.selectImageWithAnnotations();
+    const annotationVisible = await copyPage.isAnnotationButtonVisible();
+    expect(annotationVisible).toBe(true);
+    await copyPage.clickAnnotationButton();
+    await expect(copyPage.getCopyAnnotationButton()).toBeVisible();
     const isEnabled = await copyPage.isCopyAnnotationButtonEnabled();
     expect(isEnabled).toBe(true);
 
@@ -48,6 +52,8 @@ test.describe('SRS-251 - SDS-251', () => {
     const sourceCount = await copyPage.getAnnotationCount();
     const targetIndex = sourceIndex - 1;
 
+    await copyPage.clickAnnotationButton();
+    await expect(copyPage.getCopyAnnotationButton()).toBeVisible();
     await copyPage.clickCopyAnnotationButton();
     await copyPage.selectCopyTargetOption(targetIndex);
     await copyPage.confirmCopyInModal();
@@ -62,6 +68,8 @@ test.describe('SRS-251 - SDS-251', () => {
     const sourceIndex = await copyPage.findAnnotatedImageWithPreviousUnannotated();
     const targetIndex = sourceIndex - 1;
 
+    await copyPage.clickAnnotationButton();
+    await expect(copyPage.getCopyAnnotationButton()).toBeVisible();
     await copyPage.clickCopyAnnotationButton();
     await copyPage.selectCopyTargetOption(targetIndex);
     await copyPage.confirmCopyInModal();
@@ -84,6 +92,8 @@ test.describe('SRS-251 - SDS-251', () => {
     const sourceCount = await copyPage.getAnnotationCount();
     const targetIndex = sourceIndex - 1;
 
+    await copyPage.clickAnnotationButton();
+    await expect(copyPage.getCopyAnnotationButton()).toBeVisible();
     await copyPage.clickCopyAnnotationButton();
     await copyPage.selectCopyTargetOption(targetIndex);
     await copyPage.confirmCopyInModal();
