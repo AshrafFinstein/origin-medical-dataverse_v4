@@ -1,0 +1,17 @@
+{
+  "dl-annotation-button": "dl-annotation-button",
+  "dl-label-menu": "dl-label-menu",
+  "dl-label-menu-search-input": "dl-label-menu-search-input",
+  "dl-label-menu-apply-button": "dl-label-menu-apply-button",
+  "dl-delete-annotation-modal": "dl-delete-annotation-modal",
+  "dl-delete-annotation-no-button": "dl-delete-annotation-no-button",
+  "dl-delete-annotation-yes-button": "dl-delete-annotation-yes-button",
+  "label-popup-cancel-icon": "[data-testid='dl-label-menu'] [aria-label='close'], [data-testid='dl-label-menu'] .n-base-close, [data-testid='dl-label-menu'] button:has-text('Cancel')",
+  "label-popup-checkbox": "[data-testid='dl-label-menu'] input[type='checkbox']",
+  "label-popup-selected-checkbox": "[data-testid='dl-label-menu'] input[type='checkbox']:checked",
+  "label-popup-empty-state": "[data-testid='dl-label-menu'] :text('No results found'), [data-testid='dl-label-menu'] :text('No labels found')",
+  "label-popup-body": "[data-testid='dl-label-menu']",
+  "label-popup-row": "[data-testid='dl-label-menu'] .n-checkbox, [data-testid='dl-label-menu'] [role='checkbox']",
+  "success-toast": ".n-message--success-type",
+  "error-toast": ".n-message--error-type"
+}

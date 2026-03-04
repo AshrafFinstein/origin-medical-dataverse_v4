@@ -19,6 +19,7 @@
     "test:clean": "ts-node -e \"require('./e2e/utils/test-generator').TestGenerator.prototype.cleanGeneratedTests()\"",
     "extract-selectors": "ts-node e2e/scripts/extract-selectors.ts",
     "generate-tests": "ts-node e2e/scripts/generate-tests.ts -e requirements-excel-file/dataverse-Testcases-V4.xlsx",
+    "generate-da27-tests": "ts-node e2e/scripts/generate-da27-tests.ts",
     "generate-tests:stats": "ts-node e2e/scripts/generate-tests.ts -e requirements-excel-file/dataverse-Testcases-V4.xlsx --stats",
     "generate-tests:dry-run": "ts-node e2e/scripts/generate-tests.ts -e requirements-excel-file/dataverse-Testcases-V4.xlsx --dry-run",
     "generate-tests:high-priority": "ts-node e2e/scripts/generate-tests.ts -e requirements-excel-file/dataverse-Testcases-V4.xlsx -p high",

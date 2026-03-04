@@ -17,6 +17,7 @@ import login from './login.json';
 import sessionLock from './sessionLock.json';
 import userRoles from './userRoles.json';
 import rolePermissions from './rolePermissions.json';
+import da27Annotation from './da27Annotation.json';
 
 // Type-safe selector interfaces
 export interface Selectors {
@@ -39,6 +40,7 @@ export interface Selectors {
   sessionLock: typeof sessionLock;
   userRoles: typeof userRoles;
   rolePermissions: typeof rolePermissions;
+  da27Annotation: typeof da27Annotation;
 }
 
 // Granular exports
@@ -61,6 +63,7 @@ export const LoginSelectors = login;
 export const SessionLockSelectors = sessionLock;
 export const UserRolesSelectors = userRoles;
 export const RolePermissionsSelectors = rolePermissions;
+export const Da27AnnotationSelectors = da27Annotation;
 
 // Combined export
 export const Selectors: Selectors = {
@@ -83,6 +86,7 @@ export const Selectors: Selectors = {
   sessionLock,
   userRoles,
   rolePermissions,
+  da27Annotation,
 };
 
 /**
