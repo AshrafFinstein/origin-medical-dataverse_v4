@@ -33,9 +33,9 @@ test.describe('SRS-232 - SDS-232', () => {
     const da27Page = new Da27AnnotationPage(page);
     await da27Page.selectPendingImageFromGrid();
     await da27Page.ensurePopupOpen();
-    await da27Page.unselectLabel();
-    await da27Page.clearLabelSearch();
-    await da27Page.ensurePopupOpen();
+    await da27Page.isDisplaylabelselectionpopup();
+    await da27Page.isSearchVisible();
+    await da27Page.isLabelListVisible();
     await da27Page.isApplyDisabled();
   });
 
@@ -53,7 +53,7 @@ test.describe('SRS-232 - SDS-232', () => {
     await da27Page.ensurePopupOpen();
     await da27Page.selectSingleLabel();
     await da27Page.clickApplyButton();
-    await da27Page.verifyUiStable();
+    await da27Page.isSelectedLabelDisplayedUnderImage();
   });
 
   test('UTC-2382: Given multiple labels exist When the user types text in the search field Then only matching labels should be displayed\nGiven multiple labels exist\nWhen the user types text in the search field\nThen only matching labels should be displayed\n', async ({ page }) => {
@@ -74,23 +74,26 @@ test.describe('SRS-232 - SDS-232', () => {
     await da27Page.isLabelListVisible();
   });
 
-  test('UTC-2384: Given no label selected When user clicks Apply Then no action should occur\nGiven no label selected\nWhen user clicks Apply\nThen no action should occur\n', async ({ page }) => {
-    const da27Page = new Da27AnnotationPage(page);
-    await da27Page.selectPendingImageFromGrid();
-    await da27Page.ensurePopupOpen();
-    await da27Page.unselectLabel();
-    await da27Page.clearLabelSearch();
-    await da27Page.clickApplyButton();
-    await da27Page.verifyNoActionOccurred();
-  });
+  // wrong test case - as per new design, Apply button will be disabled if no label is selected.
+  // test('UTC-2384: Given no label selected When user clicks Apply Then no action should occur\nGiven no label selected\nWhen user clicks Apply\nThen no action should occur\n', async ({ page }) => {
+  //   const da27Page = new Da27AnnotationPage(page);
+  //   await da27Page.selectPendingImageFromGrid();
+  //   await da27Page.ensurePopupOpen();
+  //   await da27Page.unselectLabel();
+  //   await da27Page.clearLabelSearch();
+  //   await da27Page.clickApplyButton();
+  //   await da27Page.verifyNoActionOccurred();
+  // });
 
-  test('UTC-2385: Given image is locked or not editable When user right-clicks Then popup should not appear\nGiven image is locked or not editable\nWhen user right-clicks\nThen popup should not appear\n', async ({ page }) => {
-    const da27Page = new Da27AnnotationPage(page);
-    await da27Page.selectPendingImageFromGrid();
-    await da27Page.waitForUiSync();
-    await da27Page.imageRightClick();
-    await da27Page.isPopupHidden();
-  });
+
+  // wrong test case - as per new design, Session will not open if Session is locked or not editable.
+  // test('UTC-2385: Given image is locked or not editable When user right-clicks Then popup should not appear\nGiven image is locked or not editable\nWhen user right-clicks\nThen popup should not appear\n', async ({ page }) => {
+  //   const da27Page = new Da27AnnotationPage(page);
+  //   await da27Page.selectPendingImageFromGrid();
+  //   await da27Page.waitForUiSync();
+  //   await da27Page.imageRightClick();
+  //   await da27Page.isPopupHidden();
+  // });
 
   test('UTC-2386: Given popup opened and closed repeatedly When user reopens popup Then it should load correctly without UI errors\nGiven popup opened and closed repeatedly\nWhen user reopens popup\nThen it should load correctly without UI errors\n', async ({ page }) => {
     const da27Page = new Da27AnnotationPage(page);

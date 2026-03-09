@@ -7,11 +7,11 @@
   "dl-delete-annotation-no-button": "dl-delete-annotation-no-button",
   "dl-delete-annotation-yes-button": "dl-delete-annotation-yes-button",
   "label-popup-cancel-icon": "[data-testid='dl-label-menu'] [aria-label='close'], [data-testid='dl-label-menu'] .n-base-close, [data-testid='dl-label-menu'] button:has-text('Cancel')",
-  "label-popup-checkbox": "[data-testid='dl-label-menu'] input[type='checkbox']",
-  "label-popup-selected-checkbox": "[data-testid='dl-label-menu'] input[type='checkbox']:checked",
+  "label-popup-checkbox": "[data-testid='dl-label-menu'] input[type='checkbox'], .z-50.absolute input[type='checkbox'], .n-popover input[type='checkbox']",
+  "label-popup-selected-checkbox": "[data-testid='dl-label-menu'] input[type='checkbox']:checked, .z-50.absolute input[type='checkbox']:checked, .n-popover input[type='checkbox']:checked",
   "label-popup-empty-state": "[data-testid='dl-label-menu'] :text('No results found'), [data-testid='dl-label-menu'] :text('No labels found')",
   "label-popup-body": "[data-testid='dl-label-menu']",
-  "label-popup-row": "[data-testid='dl-label-menu'] .n-checkbox, [data-testid='dl-label-menu'] [role='checkbox']",
+  "label-popup-row": "[data-testid='dl-label-menu'] .n-checkbox, [data-testid='dl-label-menu'] [role='checkbox'], .z-50.absolute .n-checkbox, .z-50.absolute [role='checkbox'], .z-50.absolute p, .n-popover .n-checkbox, .n-popover [role='checkbox'], .n-popover p",
   "success-toast": ".n-message--success-type",
   "error-toast": ".n-message--error-type"
 }
